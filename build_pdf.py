@@ -17,7 +17,8 @@ FONT_MONO = "Consolas"
 PAGE_W, PAGE_H = 595.28, 841.89  # A4 points
 ML = MR = MT = MB = 56.7          # 2cm margins
 CONTENT_W = PAGE_W - ML - MR
-OUT_PDF = r"C:\deepseek-harness-master\soundinsight\SoundInsight_创意方案.pdf"
+OUT_PDF = sys.argv[1] if len(sys.argv) > 1 else \
+    r"C:\deepseek-harness-master\soundinsight\SoundInsight_创意方案.pdf"
 TXT_FILE = r"C:\deepseek-harness-master\soundinsight\training_output.txt"
 
 TITLE_TEXT = "方案名称：SoundInsight 蓝牙耳机音质差评智能归因系统"
@@ -48,7 +49,7 @@ SECTIONS = [
     ("",
      "训练结果验证：验证集准确率98.3%，F1值0.37（小样本下合理），混淆矩阵显示TN=978、FP=9、FN=8、TP=5。"),
     ("",
-     "数据与代码：全部代码已整理至 GitHub 仓库，地址为 https://github.com/你的用户名/soundinsight，包含数据获取、标注、训练、推理和Demo全流程脚本。"),
+     "数据与代码：全部代码已整理至 GitHub 仓库，地址为 https://github.com/DaiYanQBZ95Doll/soundinsight，包含数据获取、标注、训练、推理和Demo全流程脚本。"),
 ]
 
 IMAGE_PAGE_1 = (
