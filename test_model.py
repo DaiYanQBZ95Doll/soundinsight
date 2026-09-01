@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-# 本脚本用于模型验证：在验证集上输出准确率、F1 与阈值扫描结果，并给出示例预测。
 """Smoke test: evaluate saved sound_model on the held-out validation split."""
 import json
 import os
@@ -11,7 +10,8 @@ import numpy as np
 import pandas as pd
 import torch
 from sklearn.metrics import (accuracy_score, classification_report,
-                             f1_score, precision_score, recall_score)
+                             confusion_matrix, f1_score, precision_score,
+                             recall_score)
 from sklearn.model_selection import train_test_split
 from transformers import (DistilBertForSequenceClassification,
                           DistilBertTokenizer)
@@ -48,6 +48,35 @@ for thr in [0.5, 0.2, 0.1, 0.05, 0.01, 0.001]:
           f"{recall_score(y_va, pred, zero_division=0):>7.4f} "
           f"{f1_score(y_va, pred, zero_division=0):>7.4f} "
           f"{int(pred.sum()):>8}")
+
+print("\nConfusion matrix at tuned threshold:")
+pred_tuned = (probs >= THR).astype(int)
+cm = confusion_matrix(y_va, pred_tuned, labels=[0, 1])
+print(cm)
+print(f"  TN={cm[0, 0]} FP={cm[0, 1]} FN={cm[1, 0]} TP={cm[1, 1]}")
+
+import matplotlib
+
+matplotlib.use("Agg")
+import matplotlib.pyplot as plt
+
+plt.rcParams["font.sans-serif"] = ["Microsoft YaHei", "SimHei"]
+plt.rcParams["axes.unicode_minus"] = False
+fig, ax = plt.subplots(figsize=(5, 4.5))
+im = ax.imshow(cm, cmap="Blues")
+ax.set_xticks([0, 1])
+ax.set_yticks([0, 1])
+ax.set_xticklabels(["音质正常(预测)", "音质负面(预测)"])
+ax.set_yticklabels(["音质正常(实际)", "音质负面(实际)"])
+for i in range(2):
+    for j in range(2):
+        ax.text(j, i, str(cm[i, j]), ha="center", va="center", fontsize=18)
+ax.set_title(f"验证集混淆矩阵 (阈值={THR:.2f})")
+fig.colorbar(im, ax=ax)
+fig.tight_layout()
+cm_png = os.path.join(BASE, "confusion_matrix.png")
+plt.savefig(cm_png, dpi=150)
+print(f"saved {cm_png} (threshold={THR})")
 
 print("\nSample predictions on real reviews:")
 for text in [
