@@ -21,7 +21,7 @@ ML = MR = MT = MB = 56.7
 CONTENT_W = PAGE_W - ML - MR
 HERE = os.path.dirname(os.path.abspath(__file__))
 SRC_TXT = os.path.join(HERE, "competition_v2.txt")
-OUT_PDF = os.path.join(HERE, "SoundInsight_创意方案_v4.pdf")
+OUT_PDF = os.path.join(HERE, "SoundInsight_创意方案_v5.pdf")
 TXT_FILE = os.path.join(HERE, "training_output.txt")
 
 # 图片预留页标题与说明：英文硬编码，避免中文编码兼容问题
