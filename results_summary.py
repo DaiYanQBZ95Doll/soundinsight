@@ -60,6 +60,23 @@ def main() -> None:
             lines.append(f"- {l}")
     lines.append("")
 
+    lines.append("## DistilBERT 交叉验证（LLM 清洗标签）")
+    cv_log2 = read_lines("distilbert_cv_clean.log")
+    for l in cv_log2:
+        if "acc=" in l and "f1" in l:
+            lines.append(f"- {l}")
+    for l in cv_log2:
+        if "交叉验证汇总" in l or l.startswith("accuracy") or \
+                l.startswith("f1@"):
+            lines.append(f"- {l}")
+    lines.append("")
+
+    lines.append("## 最终二分类模型（LLM 清洗标签训练）")
+    for l in read_lines("train_final.log"):
+        if "FINAL" in l or "confusion matrix" in l or "epoch" in l:
+            lines.append(f"- {l}")
+    lines.append("")
+
     lines.append("## 教师一致性（DistilBERT vs LLM 标签）")
     for l in read_lines("vs_llm.log"):
         if "一致率" in l or "平均预测概率" in l:
