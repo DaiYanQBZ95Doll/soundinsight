@@ -110,7 +110,7 @@ def analyze(csv_path: str) -> str:
     lines.append("")
     lines.append("## 差评示例")
     for i in neg_idx[:5]:
-        lines.append(f"- （{probs[i]:.0%}）{texts[i][:120]}")
+        lines.append(f"- （{probs[i]:.1%}）{texts[i][:120]}")
     lines.append("")
     lines.append("## 改进建议")
     top = sorted(issue_counts.items(), key=lambda x: -x[1])[0]

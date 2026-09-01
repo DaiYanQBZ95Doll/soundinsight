@@ -42,8 +42,9 @@ def main() -> None:
     pos = int(df_llm["sound_negative_llm"].sum())
     lines.append("## 数据与标注")
     lines.append(f"- 评论总量：{n}")
-    lines.append(f"- 弱标注正例：1502（LLM 复核确认率 51.80%）")
-    lines.append(f"- 清洗后正例：{pos}（{pos / n:.2%}）")
+    lines.append("- 弱标注正例：1502（LLM 复核确认率 51.80%）")
+    lines.append("- 三星补漏复核：1271 条中确认 479 条漏检正例")
+    lines.append(f"- 最终正例：{pos}（{pos / n:.2%}）")
     lines.append("")
 
     lines.append("## 基线对比（5折×3种子，调优阈值 F1）")
