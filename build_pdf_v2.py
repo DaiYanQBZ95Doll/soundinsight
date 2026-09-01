@@ -21,17 +21,20 @@ ML = MR = MT = MB = 56.7
 CONTENT_W = PAGE_W - ML - MR
 HERE = os.path.dirname(os.path.abspath(__file__))
 SRC_TXT = os.path.join(HERE, "competition_v2.txt")
-OUT_PDF = os.path.join(HERE, "SoundInsight_创意方案_v3.pdf")
+OUT_PDF = os.path.join(HERE, "SoundInsight_创意方案_v4.pdf")
 TXT_FILE = os.path.join(HERE, "training_output.txt")
 
+# 图片预留页标题与说明：英文硬编码，避免中文编码兼容问题
 IMAGE_PAGE_1 = (
-    "图1：三条测试评论预测概率柱状图",
-    "三条测试评论的音质负面概率预测柱状图，含阈值参考线",
+    "Demo: Three Test Reviews",
+    "Predicted sound-negative probabilities of three test reviews with "
+    "threshold reference line",
     os.path.join(HERE, "demo_output.png"),
 )
 IMAGE_PAGE_2 = (
-    "图2：验证集混淆矩阵",
-    "验证集混淆矩阵，展示模型对音质负面与正常评论的判定分布",
+    "Confusion Matrix (Threshold = 0.97)",
+    "Validation-set confusion matrix showing classification of "
+    "sound-negative vs normal reviews",
     os.path.join(HERE, "confusion_matrix.png"),
 )
 
@@ -165,7 +168,14 @@ class Doc:
         if text.startswith("|"):
             self.table(text, size=10)
             return
-        self.draw_text(text, size)
+        # 保留段落内的硬换行：每行独立渲染，行与行之间换行不空行
+        for line in text.split("\n"):
+            line = line.strip()
+            if not line:
+                self.gap(size * 0.6)
+                continue
+            self.draw_text(line, size)
+            self.y -= size * 0.35
         self.gap(size * 0.9)
 
     def subheading(self, text, size=13):
