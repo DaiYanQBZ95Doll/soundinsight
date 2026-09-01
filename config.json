@@ -1,0 +1,10 @@
+{
+  "bin_model_dir": "sound_model",
+  "multi_label_dir": "multi_label_model",
+  "threshold_file": "sound_model/threshold.json",
+  "issue_labels_file": "multi_label_model/issue_labels.json",
+  "max_len": 128,
+  "batch_size": 64,
+  "server_host": "127.0.0.1",
+  "server_port": 7860
+}

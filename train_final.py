@@ -28,7 +28,6 @@ BATCH_SIZE = 16
 LR = 2e-5
 MAX_LEN = 128
 SEED = 42
-OVERSAMPLE_RATIO = 0.2
 
 
 def main() -> None:
@@ -49,13 +48,16 @@ def main() -> None:
     rng = np.random.RandomState(SEED)
     pos = [i for i, y in enumerate(y_tr) if y == 1]
     neg = [i for i, y in enumerate(y_tr) if y == 0]
-    n_target = max(len(pos), int(OVERSAMPLE_RATIO * len(neg) / (1 - OVERSAMPLE_RATIO)))
-    extra = rng.choice(pos, size=n_target - len(pos))
-    idx = neg + pos + extra.tolist()
+    # 负例欠采样至 1:10（约 1000 正例 + 10000 负例），加速训练并缓解不平衡
+    n_neg_keep = len(pos) * 10
+    if len(neg) > n_neg_keep:
+        neg = rng.choice(neg, size=n_neg_keep, replace=False).tolist()
+    idx = neg + pos
     rng.shuffle(idx)
     X_tr = [X_tr[i] for i in idx]
     y_tr = [y_tr[i] for i in idx]
-    print(f"train oversampled: {len(X_tr)} (pos ratio {sum(y_tr) / len(y_tr):.2%})")
+    print(f"train subsampled 1:10: {len(X_tr)} (pos {sum(y_tr)}, "
+          f"ratio {sum(y_tr) / len(y_tr):.2%})")
 
     tok = DistilBertTokenizer.from_pretrained(MODEL_DIR)
     model = DistilBertForSequenceClassification.from_pretrained(

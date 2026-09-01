@@ -16,10 +16,14 @@ from transformers import (DistilBertForSequenceClassification,
 sys.stdout.reconfigure(encoding="utf-8", errors="replace")
 
 HERE = os.path.dirname(os.path.abspath(__file__))
-BIN_MODEL = os.path.join(HERE, "sound_model")
-ML_MODEL = os.path.join(HERE, "multi_label_model")
-BATCH = 64
-MAX_LEN = 128
+with open(os.path.join(HERE, "config.json"), encoding="utf-8") as f:
+    CFG = json.load(f)
+BIN_MODEL = os.path.join(HERE, CFG["bin_model_dir"])
+ML_MODEL = os.path.join(HERE, CFG["multi_label_dir"])
+THR_FILE = os.path.join(HERE, CFG["threshold_file"])
+ISSUE_FILE = os.path.join(HERE, CFG["issue_labels_file"])
+BATCH = int(CFG["batch_size"])
+MAX_LEN = int(CFG["max_len"])
 
 
 def load():
@@ -28,12 +32,12 @@ def load():
     bin_model = DistilBertForSequenceClassification.from_pretrained(
         BIN_MODEL).to(device)
     bin_model.eval()
-    with open(os.path.join(BIN_MODEL, "threshold.json"), encoding="utf-8") as f:
+    with open(THR_FILE, encoding="utf-8") as f:
         thr = float(json.load(f)["threshold"])
     ml_model = DistilBertForSequenceClassification.from_pretrained(
         ML_MODEL).to(device)
     ml_model.eval()
-    with open(os.path.join(ML_MODEL, "issue_labels.json"), encoding="utf-8") as f:
+    with open(ISSUE_FILE, encoding="utf-8") as f:
         issue_info = json.load(f)
     return device, tok, bin_model, thr, ml_model, issue_info
 

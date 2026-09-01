@@ -63,6 +63,10 @@ def main() -> None:
     for l in cv_log:
         if "acc=" in l and "f1" in l:
             lines.append(f"- {l}")
+    for l in cv_log:
+        if "交叉验证汇总" in l or l.startswith("accuracy") or \
+                l.startswith("f1@"):
+            lines.append(f"- {l}")
     lines.append("")
 
     lines.append("## DistilBERT 交叉验证（LLM 清洗标签）")
