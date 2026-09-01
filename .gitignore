@@ -20,3 +20,6 @@ distilbert-base-uncased/
 Thumbs.db
 
 multi_label_model/
+
+insight_report.md
+batch_report.txt
