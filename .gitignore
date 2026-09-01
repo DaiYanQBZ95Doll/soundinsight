@@ -18,3 +18,5 @@ sound_model/
 distilbert-base-uncased/
 .DS_Store
 Thumbs.db
+
+multi_label_model/
