@@ -19,8 +19,18 @@ def read_lines(name):
         p = os.path.join(os.path.dirname(HERE), name)
     if not os.path.exists(p):
         return []
-    with open(p, encoding="utf-8", errors="replace") as f:
-        return [l.rstrip() for l in f]
+    with open(p, "rb") as f:
+        raw = f.read()
+    text = None
+    for enc in ("utf-8-sig", "utf-16"):
+        try:
+            text = raw.decode(enc)
+            break
+        except UnicodeDecodeError:
+            continue
+    if text is None:
+        text = raw.decode("utf-8", errors="replace")
+    return [l.rstrip() for l in text.splitlines()]
 
 
 def main() -> None:
