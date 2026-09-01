@@ -63,9 +63,17 @@ def evaluate(name, X, y, make_model):
 
 
 def main() -> None:
-    df = pd.read_csv(INPUT_CSV, encoding="utf-8")
+    import argparse
+
+    ap = argparse.ArgumentParser()
+    ap.add_argument("--csv", type=str, default=INPUT_CSV)
+    ap.add_argument("--label", type=str, default="sound_negative")
+    args = ap.parse_args()
+
+    df = pd.read_csv(args.csv, encoding="utf-8")
     X = df["text"].astype(str).tolist()
-    y = df["sound_negative"].astype(int).tolist()
+    y = df[args.label].astype(int).tolist()
+    print(f"csv: {args.csv} | label: {args.label}")
     print(f"数据: {len(X)} 行 | 正例 {sum(y)} ({sum(y) / len(y):.2%})")
 
     evaluate("dummy(全判正常)", X, y,

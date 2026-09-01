@@ -52,6 +52,11 @@ def main() -> None:
         if "±" in l:
             lines.append(f"- {l}")
     lines.append("")
+    lines.append("## 基线对比（LLM 清洗标签）")
+    for l in read_lines("baseline_cv_clean.log"):
+        if "±" in l:
+            lines.append(f"- {l}")
+    lines.append("")
 
     lines.append("## DistilBERT 交叉验证（弱标注标签）")
     cv_log = read_lines("distilbert_cv.log")
