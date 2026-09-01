@@ -1,0 +1,118 @@
+# -*- coding: utf-8 -*-
+# 本脚本是升级版 Gradio Demo：支持单条评论即时判定与批量 CSV 上传生成洞察报告。
+import json
+import os
+import sys
+
+sys.stdout.reconfigure(encoding="utf-8", errors="replace")
+
+import gradio as gr
+import numpy as np
+import pandas as pd
+import torch
+from transformers import (DistilBertForSequenceClassification,
+                          DistilBertTokenizer)
+
+HERE = os.path.dirname(os.path.abspath(__file__))
+BIN_MODEL = os.path.join(HERE, "sound_model")
+ML_MODEL = os.path.join(HERE, "multi_label_model")
+
+device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+tok = DistilBertTokenizer.from_pretrained(BIN_MODEL)
+bin_model = DistilBertForSequenceClassification.from_pretrained(
+    BIN_MODEL).to(device)
+bin_model.eval()
+with open(os.path.join(BIN_MODEL, "threshold.json"), encoding="utf-8") as f:
+    THR = float(json.load(f)["threshold"])
+ml_model = DistilBertForSequenceClassification.from_pretrained(
+    ML_MODEL).to(device)
+ml_model.eval()
+with open(os.path.join(ML_MODEL, "issue_labels.json"), encoding="utf-8") as f:
+    ISSUE_INFO = json.load(f)
+print(f"loaded models on {device} | threshold={THR:.4f}")
+
+
+def single_predict(text):
+    if not text or not text.strip():
+        return "请输入英文评论"
+    enc = tok(text.strip(), padding=True, truncation=True, max_length=128,
+              return_tensors="pt")
+    enc = {k: v.to(device) for k, v in enc.items()}
+    with torch.no_grad():
+        prob = float(torch.softmax(bin_model(**enc).logits, -1)[0, 1])
+        issues = torch.sigmoid(ml_model(**enc).logits)[0].cpu().numpy()
+    label = "音质负面" if prob >= THR else "音质正常"
+    hit = [ISSUE_INFO["names"][k] for k in range(len(issues))
+           if issues[k] >= 0.5]
+    issue_text = "；".join(hit) if hit else "无明显问题类别"
+    return f"{label}（音质负面概率 {prob:.1%}）\n问题归因：{issue_text}"
+
+
+def batch_analyze(file_obj):
+    if file_obj is None:
+        return "请先上传 CSV 文件", None
+    try:
+        df = pd.read_csv(file_obj.name, encoding="utf-8")
+    except Exception as e:  # noqa: BLE001 - report to user
+        return f"读取失败：{e}", None
+    text_col = next((c for c in ("text", "reviewText", "review")
+                     if c in df.columns), df.columns[0])
+    texts = df[text_col].astype(str).tolist()
+    probs = []
+    with torch.no_grad():
+        for b in range(0, len(texts), 64):
+            enc = tok(texts[b:b + 64], padding=True, truncation=True,
+                      max_length=128, return_tensors="pt")
+            enc = {k: v.to(device) for k, v in enc.items()}
+            probs.append(torch.softmax(bin_model(**enc).logits, -1)
+                         [:, 1].cpu().numpy())
+    probs = np.concatenate(probs)
+    neg_idx = [i for i, p in enumerate(probs) if p >= THR]
+    issue_counts = {name: 0 for name in ISSUE_INFO["names"]}
+    if neg_idx:
+        neg_texts = [texts[i] for i in neg_idx]
+        ml_out = []
+        with torch.no_grad():
+            for b in range(0, len(neg_texts), 64):
+                enc = tok(neg_texts[b:b + 64], padding=True, truncation=True,
+                          max_length=128, return_tensors="pt")
+                enc = {k: v.to(device) for k, v in enc.items()}
+                ml_out.append(torch.sigmoid(ml_model(**enc).logits)
+                              .cpu().numpy())
+        ml_pred = (np.vstack(ml_out) >= 0.5).astype(int)
+        for k, name in enumerate(ISSUE_INFO["names"]):
+            issue_counts[name] = int(ml_pred[:, k].sum())
+    lines = [f"评论总数：{len(texts)}",
+             f"音质差评：{len(neg_idx)}（{len(neg_idx) / len(texts):.2%}）",
+             "音质问题分布："]
+    for name, cnt in sorted(issue_counts.items(), key=lambda x: -x[1]):
+        lines.append(f"  {name}：{cnt}")
+    lines.append("")
+    lines.append("差评示例：")
+    for i in neg_idx[:5]:
+        lines.append(f"- （{probs[i]:.0%}）{texts[i][:100]}")
+    report_text = "\n".join(lines)
+    report_path = os.path.join(HERE, "batch_report.txt")
+    with open(report_path, "w", encoding="utf-8") as f:
+        f.write(report_text)
+    return report_text, report_path
+
+
+with gr.Blocks(title="🔊 蓝牙耳机音质差评检测器") as demo:
+    gr.Markdown("# 🔊 蓝牙耳机音质差评检测器")
+    gr.Markdown("SoundInsight：音质差评自动识别 + 问题归因。")
+    with gr.Tab("单条评论"):
+        inp = gr.Textbox(label="英文评论", lines=4,
+                         placeholder="Paste an English product review...")
+        btn = gr.Button("检测")
+        out = gr.Textbox(label="判定结果")
+        btn.click(single_predict, inputs=inp, outputs=out)
+    with gr.Tab("批量分析"):
+        fup = gr.File(label="上传评论 CSV（含 text 列）")
+        btn2 = gr.Button("生成洞察报告")
+        out2 = gr.Textbox(label="报告摘要")
+        dload = gr.File(label="下载报告文件")
+        btn2.click(batch_analyze, inputs=fup, outputs=[out2, dload])
+
+if __name__ == "__main__":
+    demo.launch(server_name="127.0.0.1", server_port=7860, share=False)
