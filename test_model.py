@@ -1,5 +1,7 @@
 # -*- coding: utf-8 -*-
-"""Smoke test: evaluate saved sound_model on the held-out validation split."""
+# 本脚本用于模型验证：在指定标签集上输出准确率、F1、阈值扫描与混淆矩阵。
+"""Smoke test: evaluate saved sound_model on a held-out validation split."""
+import argparse
 import json
 import os
 import sys
@@ -17,6 +19,12 @@ from transformers import (DistilBertForSequenceClassification,
                           DistilBertTokenizer)
 
 BASE = os.path.dirname(os.path.abspath(__file__))
+ap = argparse.ArgumentParser()
+ap.add_argument("--csv", type=str,
+                default=os.path.join(BASE, "labeled_llm.csv"))
+ap.add_argument("--label", type=str, default="sound_negative_llm")
+args = ap.parse_args()
+
 tok = DistilBertTokenizer.from_pretrained(os.path.join(BASE, "sound_model"))
 model = DistilBertForSequenceClassification.from_pretrained(
     os.path.join(BASE, "sound_model"))
@@ -25,9 +33,10 @@ with open(os.path.join(BASE, "sound_model", "threshold.json"),
           encoding="utf-8") as f:
     THR = float(json.load(f)["threshold"])
 
-df = pd.read_csv(os.path.join(BASE, "labeled_data_final.csv"))
+df = pd.read_csv(args.csv)
 texts = df["text"].astype(str).tolist()
-labels = df["sound_negative"].astype(int).tolist()
+labels = df[args.label].astype(int).tolist()
+print(f"csv: {args.csv} | label: {args.label}")
 _, X_va, _, y_va = train_test_split(texts, labels, test_size=0.2,
                                     random_state=42, stratify=labels)
 
