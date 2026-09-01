@@ -156,6 +156,9 @@ class Doc:
 
     def paragraph(self, text, size=11.5):
         text = text.rstrip()
+        if text.startswith("### "):
+            self.subheading(text[4:].strip(), size=13)
+            return
         if text.startswith("## "):
             self.heading(text[3:].strip(), size=15)
             return
@@ -164,6 +167,11 @@ class Doc:
             return
         self.draw_text(text, size)
         self.gap(size * 0.9)
+
+    def subheading(self, text, size=13):
+        self.gap(size * 0.9)
+        self.draw_text(text, size, weight="bold")
+        self.gap(size * 0.5)
 
     def heading(self, text, size=16):
         self.gap(size * 1.1)
