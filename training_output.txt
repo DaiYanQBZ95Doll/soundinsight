@@ -1,21 +1,22 @@
-val n=1000 pos=13
+csv: C:\deepseek-harness-master\soundinsight\labeled_llm.csv | label: sound_negative_llm
+val n=20000 pos=251
 
 threshold sweep on validation set:
    thr     acc    prec     rec      f1 pred_pos
- 0.500  0.9870  0.5000  0.1538  0.2353        4
- 0.200  0.9840  0.2857  0.1538  0.2000        7
- 0.100  0.9840  0.2857  0.1538  0.2000        7
- 0.050  0.9840  0.2857  0.1538  0.2000        7
- 0.010  0.9820  0.2727  0.2308  0.2500       11
- 0.001  0.9830  0.3750  0.4615  0.4138       16
+ 0.500  0.9865  0.4787  0.8964  0.6241      470
+ 0.200  0.9837  0.4291  0.9044  0.5821      529
+ 0.100  0.9813  0.3948  0.9124  0.5511      580
+ 0.050  0.9800  0.3789  0.9283  0.5381      615
+ 0.010  0.9727  0.3102  0.9602  0.4689      777
+ 0.001  0.9158  0.1289  0.9920  0.2282     1931
 
 Confusion matrix at tuned threshold:
-[[977  10]
- [  6   7]]
-  TN=977 FP=10 FN=6 TP=7
-saved C:\deepseek-harness-master\soundinsight\confusion_matrix.png (threshold=0.0008712369599379599)
+[[19658    91]
+ [   72   179]]
+  TN=19658 FP=91 FN=72 TP=179
+saved C:\deepseek-harness-master\soundinsight\confusion_matrix.png (threshold=0.9744497537612915)
 
 Sample predictions on real reviews:
-  [99.9%] The sound quality is terrible, the bass is muddy and there is constant
+  [99.0%] The sound quality is terrible, the bass is muddy and there is constant
   [0.0%] Great battery life and very comfortable fit.
-  [99.9%] Sounds crackle and hiss constantly, completely unusable.
+  [98.8%] Sounds crackle and hiss constantly, completely unusable.

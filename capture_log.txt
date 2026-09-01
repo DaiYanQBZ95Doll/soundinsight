@@ -1,0 +1,9 @@
+SoundInsight Demo 推理结果
+判定阈值: 0.97
+评论 1: The sound quality is terrible, the bass is muddy and there is constant static.
+  预测: 音质负面 | 音质负面概率: 99.0%
+评论 2: Great battery life and very comfortable to wear.
+  预测: 音质正常 | 音质负面概率: 0.0%
+评论 3: Sounds crackle and hiss constantly, completely unusable.
+  预测: 音质负面 | 音质负面概率: 98.8%
+图表已保存: C:\deepseek-harness-master\soundinsight\demo_output.png
