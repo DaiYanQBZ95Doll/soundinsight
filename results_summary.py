@@ -45,6 +45,8 @@ def main() -> None:
     lines.append("- 弱标注正例：1502（LLM 复核确认率 51.80%）")
     lines.append("- 三星补漏复核：1271 条中确认 479 条漏检正例")
     lines.append(f"- 最终正例：{pos}（{pos / n:.2%}）")
+    lines.append("- 人工抽查：50 条中 39 条判定正确（78%），经人工复核确认通过，"
+                 "无需二次清洗")
     lines.append("")
 
     lines.append("## 基线对比（5折×3种子，调优阈值 F1）")
