@@ -27,31 +27,30 @@ SEED = 42
 
 
 def main() -> None:
+    import argparse
+
+    ap = argparse.ArgumentParser()
+    ap.add_argument("--seeds", type=str, default="42,7,2024")
+    args = ap.parse_args()
+    seeds = [int(s) for s in args.seeds.split(",")]
+
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
-    torch.manual_seed(SEED)
-    np.random.seed(SEED)
+    torch.manual_seed(seeds[0])
+    np.random.seed(seeds[0])
 
     df = pd.read_csv(LABELED, encoding="utf-8")
-    reviewed = df[df["sound_negative_llm"] != 0]  # LLM 确认为正例的样本
+    reviewed = df[df["sound_negative_llm"] != 0]
     pos_texts = reviewed["text"].astype(str).tolist()
-    pos_labels = reviewed["sound_negative_llm"].astype(int).tolist()
-    # 补入等量 LLM 未确认（规则误报）样本作为负例，标签为 0
     neg_mask = (df["sound_related"] == 1) & (df["rating"] <= 2) & \
         (df["sound_negative_llm"] == 0)
     neg_pool = df[neg_mask]
     n_neg = min(len(pos_texts), len(neg_pool))
-    neg_df = neg_pool.sample(n=n_neg, random_state=SEED)
-    texts = pos_texts[:n_neg] + neg_df["text"].astype(str).tolist()
-    labels = [1] * n_neg + [0] * n_neg
-    print(f"对比集: {len(texts)} (pos {sum(labels)}) | teacher=LLM 复核标签")
+    texts_all = pos_texts[:n_neg] + neg_pool["text"].astype(str).tolist()[:n_neg]
+    labels_all = [1] * n_neg + [0] * n_neg
+    print(f"对比集: {len(texts_all)} (pos {sum(labels_all)}) | teacher=LLM 复核标签")
 
-    X_tr, X_va, y_tr, y_va = train_test_split(
-        texts, labels, test_size=0.2, random_state=SEED, stratify=labels)
-
+    accs, f1s = [], []
     tok = DistilBertTokenizer.from_pretrained(MODEL_DIR)
-    model = DistilBertForSequenceClassification.from_pretrained(
-        MODEL_DIR, num_labels=2).to(device)
-    optimizer = AdamW(model.parameters(), lr=LR)
 
     def run(X, y, train=True):
         model.train(train)
@@ -74,15 +73,27 @@ def main() -> None:
             probs.extend(torch.softmax(out.logits, -1)[:, 1].tolist())
         return np.asarray(probs)
 
-    for ep in range(EPOCHS):
-        run(X_tr, y_tr, True)
-    va_p = run(X_va, y_va, False)
-    pred = (va_p >= 0.5).astype(int)
-    acc = accuracy_score(y_va, pred)
-    f1 = f1_score(y_va, pred, zero_division=0)
-    print(f"与教师答案一致率(acc)={acc:.4f} | f1={f1:.4f}")
-    print(f"平均预测概率: 正例 {va_p[np.asarray(y_va) == 1].mean():.3f} | "
-          f"负例 {va_p[np.asarray(y_va) == 0].mean():.3f}")
+    for seed in seeds:
+        torch.manual_seed(seed)
+        np.random.seed(seed)
+        X_tr, X_va, y_tr, y_va = train_test_split(
+            texts_all, labels_all, test_size=0.2, random_state=seed,
+            stratify=labels_all)
+        model = DistilBertForSequenceClassification.from_pretrained(
+            MODEL_DIR, num_labels=2).to(device)
+        optimizer = AdamW(model.parameters(), lr=LR)
+        for ep in range(EPOCHS):
+            run(X_tr, y_tr, True)
+        va_p = run(X_va, y_va, False)
+        pred = (va_p >= 0.5).astype(int)
+        acc = accuracy_score(y_va, pred)
+        f1 = f1_score(y_va, pred, zero_division=0)
+        accs.append(acc)
+        f1s.append(f1)
+        print(f"seed={seed} 一致率(acc)={acc:.4f} | f1={f1:.4f}")
+
+    print(f"\n汇总: acc={np.mean(accs):.4f}±{np.std(accs):.4f} | "
+          f"f1={np.mean(f1s):.4f}±{np.std(f1s):.4f} ({len(seeds)} seeds)")
 
 
 if __name__ == "__main__":
