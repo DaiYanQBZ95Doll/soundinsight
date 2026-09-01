@@ -16,6 +16,8 @@ OUT = os.path.join(HERE, "results_summary.md")
 def read_lines(name):
     p = os.path.join(HERE, name)
     if not os.path.exists(p):
+        p = os.path.join(os.path.dirname(HERE), name)
+    if not os.path.exists(p):
         return []
     with open(p, encoding="utf-8", errors="replace") as f:
         return [l.rstrip() for l in f]
