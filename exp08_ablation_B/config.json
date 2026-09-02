@@ -1,0 +1,29 @@
+{
+  "mode": "B",
+  "loss": "cross_entropy+class_weight_balanced",
+  "batch_size": 16,
+  "lr": 2e-05,
+  "epochs": 3,
+  "max_len": 128,
+  "seed": 42,
+  "train_rows": 11066,
+  "train_pos": 1006,
+  "val_rows": 20000,
+  "val_pos": 251,
+  "acc": 0.9783,
+  "f1_05": 0.5079365079365079,
+  "f1_best": 0.6304347826081997,
+  "thr_best": 0.9973010420799255,
+  "precision": 0.3549920760697306,
+  "recall": 0.8924302788844621,
+  "cm": [
+    [
+      19342,
+      407
+    ],
+    [
+      27,
+      224
+    ]
+  ]
+}
