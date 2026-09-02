@@ -25,3 +25,5 @@ insight_report.md
 batch_report.txt
 
 *.pt
+
+roberta-base/

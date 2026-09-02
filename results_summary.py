@@ -100,6 +100,19 @@ def main() -> None:
             lines.append(f"- {l}")
     lines.append("")
 
+    lines.append("## RoBERTa-base 1折快速验证（基座消融）")
+    lines.append("- 说明：ModelScope 无 uer/roberta-base-english 镜像，"
+                 "采用同规格的 roberta-base 原版替代")
+    lines.append("- 配置：约 3300 条训练样本（341 正例），batch 8，epochs 2，"
+                 "lr 2e-5，固定验证集 val_v2.csv（20000 条 / 251 正例）")
+    for l in read_lines("roberta_quick.log"):
+        if "epoch" in l and "f1_best" in l:
+            lines.append(f"- {l}")
+    for l in read_lines("roberta_quick.log"):
+        if "决策:" in l or "RoBERTa-base 快速验证结果" in l:
+            lines.append(f"- {l}")
+    lines.append("")
+
     text = "\n".join(lines)
     with open(OUT, "w", encoding="utf-8") as f:
         f.write(text)

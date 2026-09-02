@@ -61,3 +61,11 @@
 - [epoch 2] loss=0.4197 macro_f1=0.5864 低音=0.85 清晰度=0.76 杂音=0.64 音量=0.68 高音=0.00
 - [epoch 3] loss=0.3133 macro_f1=0.6045 低音=0.82 清晰度=0.78 杂音=0.64 音量=0.79 高音=0.00
 - [epoch 4] loss=0.2415 macro_f1=0.6481 低音=0.79 清晰度=0.77 杂音=0.84 音量=0.84 高音=0.00
+
+## RoBERTa-base 1折快速验证（基座消融）
+- 说明：ModelScope 无 uer/roberta-base-english 镜像，采用同规格的 roberta-base 原版替代
+- 配置：约 3300 条训练样本（341 正例），batch 8，epochs 2，lr 2e-5，固定验证集 val_v2.csv（20000 条 / 251 正例）
+- [epoch 1] bs=8 accum=1 loss=0.1946 | val acc=0.9869 f1@0.5=0.5871 f1_best=0.6169 @thr=0.9812 | 125s
+- [epoch 2] bs=8 accum=1 loss=0.0846 | val acc=0.9755 f1@0.5=0.4928 f1_best=0.6044 @thr=0.9983 | 130s
+- === RoBERTa-base 快速验证结果 ===
+- 决策: 低于 0.68：DistilBERT 选型正确，RoBERTa 作为消融基座对比
