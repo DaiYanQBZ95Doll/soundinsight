@@ -1,0 +1,14 @@
+  batch 200 (23s)
+  batch 400 (46s)
+  batch 600 (70s)
+[epoch 1] loss=0.0111 acc=0.9910 f1@0.5=0.6786 f1_best=0.6837 @thr=0.5205 | 120s
+  batch 200 (24s)
+  batch 400 (47s)
+  batch 600 (71s)
+[epoch 2] loss=0.0048 acc=0.9885 f1@0.5=0.6169 f1_best=0.6319 @thr=0.5098 | 121s
+  batch 200 (23s)
+  batch 400 (47s)
+  batch 600 (70s)
+[epoch 3] loss=0.0025 acc=0.9888 f1@0.5=0.6353 f1_best=0.6423 @thr=0.5881 | 119s
+FINAL acc=0.9888 f1@0.5=0.6353 f1_best=0.6423 prec=0.5355 rec=0.7809
+confusion matrix: [[19579, 170], [55, 196]]
