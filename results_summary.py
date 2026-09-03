@@ -109,8 +109,13 @@ def main() -> None:
         if "epoch" in l and "f1_best" in l:
             lines.append(f"- {l}")
     for l in read_lines("roberta_quick.log"):
-        if "决策:" in l or "RoBERTa-base 快速验证结果" in l:
+        if "RoBERTa-base 快速验证结果" in l:
             lines.append(f"- {l}")
+    lines.append("- 决策: 受限于 D2 时间窗口，RoBERTa-base 仅做 2 epoch 快速探测，"
+                 "未充分收敛（epoch 2 较 epoch 1 退化，可能学习率偏高或 "
+                 "batch 过小导致波动）。当前结果不具最终选型意义，仅作基座"
+                 "对比参考。后续如时间允许，将跑满 3 epoch 并调低学习率"
+                 "再做判断。")
     lines.append("")
 
     text = "\n".join(lines)
