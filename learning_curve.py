@@ -34,6 +34,10 @@ BATCH_SIZE = 16
 LR = 2e-5
 MAX_LEN = 128
 NEG_RATIO = 10
+# 训练池使用高音补捞前的标签集（1257 正例口径），与 val_v2 同源同划分，
+# 保证训练池正例恰为 1006 条且与验证集零重叠
+INPUT_CSV = os.path.join(HERE, "labeled_llm_before_treble.csv")
+RESULTS_JSON = os.path.join(HERE, "learning_curve_results.json")
 
 
 def evaluate(model, tok, X, y, device):
@@ -78,8 +82,22 @@ def train_once(X, y, seed, device):
 
 
 def main() -> None:
+    import argparse
+
+    global POS_COUNTS, RUN_SEEDS
+    ap = argparse.ArgumentParser()
+    ap.add_argument("--points", type=str, default="",
+                    help="逗号分隔的数据点，缺省跑全部")
+    ap.add_argument("--seeds", type=str, default="",
+                    help="逗号分隔的种子，缺省 42,7")
+    args = ap.parse_args()
+    if args.points:
+        POS_COUNTS = [int(p) for p in args.points.split(",")]
+    if args.seeds:
+        RUN_SEEDS = [int(s) for s in args.seeds.split(",")]
+
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
-    print(f"device: {device}")
+    print(f"device: {device} | points={POS_COUNTS} seeds={RUN_SEEDS}")
 
     df = pd.read_csv(INPUT_CSV, encoding="utf-8")
     va = pd.read_csv(VAL_CSV, encoding="utf-8")
@@ -102,18 +120,15 @@ def main() -> None:
             rng = np.random.RandomState(seed)
             if n <= len(pos_all):
                 pos = rng.choice(pos_all, size=n, replace=False)
-                X_sub = ([X_tr_full[i] for i in pos] +
-                         [X_tr_full[i] for i in rng.choice(
-                             neg_all, size=n * NEG_RATIO, replace=False)])
-                y_sub = [1] * n + [0] * (n * NEG_RATIO)
             else:
                 # 训练正例不足 N 时，从训练池正例有放回重采样补齐，
-                # 验证集 val_v2 严格独立，绝不混入训练数据
+                # 验证集 val_v2 严格独立，绝不混入训练数据；
+                # 训练池正例恰为 1006 条，1257 档实际使用的不重复正例 ≤ 1006
                 pos = rng.choice(pos_all, size=n, replace=True)
-                X_sub = ([X_tr_full[i] for i in pos] +
-                         [X_tr_full[i] for i in rng.choice(
-                             neg_all, size=n * NEG_RATIO, replace=False)])
-                y_sub = [1] * n + [0] * (n * NEG_RATIO)
+            X_sub = ([X_tr_full[i] for i in pos] +
+                     [X_tr_full[i] for i in rng.choice(
+                         neg_all, size=n * NEG_RATIO, replace=False)])
+            y_sub = [1] * n + [0] * (n * NEG_RATIO)
             combined = list(zip(X_sub, y_sub))
             rng.shuffle(combined)
             X_sub = [c[0] for c in combined]
@@ -125,6 +140,12 @@ def main() -> None:
             print(f"n={n} seed={seed} f1@0.5={f1:.4f} "
                   f"({time.time() - t0:.0f}s)", flush=True)
         results[n] = (float(np.mean(f1s)), float(np.std(f1s)))
+
+    import json
+
+    with open(RESULTS_JSON, "w", encoding="utf-8") as f:
+        json.dump({str(n): results[n] for n in results}, f, indent=2)
+    print(f"结果已存 -> {RESULTS_JSON}")
 
     xs = list(results.keys())
     means = [results[n][0] for n in xs]
