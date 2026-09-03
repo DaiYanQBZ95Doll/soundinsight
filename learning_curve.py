@@ -107,14 +107,13 @@ def main() -> None:
                              neg_all, size=n * NEG_RATIO, replace=False)])
                 y_sub = [1] * n + [0] * (n * NEG_RATIO)
             else:
-                # 1257 点：训练正例 = 训练池 1006 + 验证集 251（含泄漏，图中有标注）
-                extra_pos = [i for i, y in enumerate(y_va) if y == 1]
-                X_sub = ([X_tr_full[i] for i in pos_all] +
-                         [X_va[i] for i in extra_pos] +
+                # 训练正例不足 N 时，从训练池正例有放回重采样补齐，
+                # 验证集 val_v2 严格独立，绝不混入训练数据
+                pos = rng.choice(pos_all, size=n, replace=True)
+                X_sub = ([X_tr_full[i] for i in pos] +
                          [X_tr_full[i] for i in rng.choice(
                              neg_all, size=n * NEG_RATIO, replace=False)])
-                y_sub = ([1] * len(pos_all) + [1] * len(extra_pos) +
-                         [0] * (n * NEG_RATIO))
+                y_sub = [1] * n + [0] * (n * NEG_RATIO)
             combined = list(zip(X_sub, y_sub))
             rng.shuffle(combined)
             X_sub = [c[0] for c in combined]
@@ -141,9 +140,9 @@ def main() -> None:
     ax.set_ylabel("验证集 F1@0.5（val_v2）")
     ax.set_title("学习曲线：正例数量对音质差评识别 F1 的影响")
     ax.set_xlim(0, 1350)
-    ax.annotate("1257 点含验证集正例，略偏高", xy=(1257, means[-1]),
-                xytext=(900, means[-1] - 0.03), fontsize=8,
-                arrowprops=dict(arrowstyle="->", color="gray"))
+    ax.annotate("所有数据量均严格使用独立验证集 val_v2",
+                xy=(1257, means[-1]), xytext=(850, means[-1] - 0.03),
+                fontsize=8, arrowprops=dict(arrowstyle="->", color="gray"))
     fig.tight_layout()
     plt.savefig(OUT_PNG, dpi=150)
     print(f"保存 -> {OUT_PNG}")

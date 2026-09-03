@@ -100,32 +100,77 @@ def analyze(csv_path: str) -> str:
     else:
         avg_rating = float("nan")
 
+    # 优先级规则：占比前三且数量 >= 总差评数 10% 的类别 -> 高；
+    # 其余有正数的类别 -> 中；数量为 0 的类别 -> 低
+    total_issue = sum(issue_counts.values())
+    ranked = sorted(issue_counts.items(), key=lambda x: -x[1])
+    priority = {}
+    for rank, (name, cnt) in enumerate(ranked):
+        if cnt > 0 and rank < 3 and total_issue > 0 and \
+                cnt >= max(total_issue, 1) * 0.1:
+            priority[name] = "高"
+        elif cnt > 0:
+            priority[name] = "中"
+        else:
+            priority[name] = "低"
+
+    rate = n_neg / n
+    if rate >= 0.03:
+        verdict = "严重，音质差评率显著偏高，建议立即排查"
+    elif rate >= 0.015:
+        verdict = "偏高，建议关注并启动整改"
+    else:
+        verdict = "正常，音质口碑处于健康水平"
+
+    src_name = os.path.basename(csv_path)
     lines = []
     lines.append("# SoundInsight 音质洞察报告")
-    lines.append(f"生成时间：{datetime.now():%Y-%m-%d %H:%M}")
-    lines.append(f"评论总数：{n}")
-    lines.append(f"音质差评数：{n_neg}（占比 {n_neg / n:.2%}）")
+    lines.append("")
+    lines.append("## 一、总体概况")
+    lines.append(f"分析对象：{src_name}")
+    lines.append(f"分析时间：{datetime.now():%Y-%m-%d %H:%M}")
+    lines.append(f"评论总数：{n} 条")
+    lines.append(f"音质差评数：{n_neg} 条（占比 {rate:.2%}）")
     if not np.isnan(avg_rating):
         lines.append(f"平均评分：{avg_rating:.2f}")
+    lines.append(f"结论一句话：{verdict}")
     lines.append("")
-    lines.append("## 音质问题分布")
-    for name, cnt in sorted(issue_counts.items(), key=lambda x: -x[1]):
-        lines.append(f"- {name}：{cnt} 条")
+    lines.append("## 二、问题分布")
+    lines.append("| 问题类别 | 数量 | 占比 | 优先级 |")
+    lines.append("|---------|------|------|--------|")
+    for name, cnt in ranked:
+        pct = f"{cnt / max(total_issue, 1):.1%}"
+        lines.append(f"| {name} | {cnt} | {pct} | {priority[name]} |")
     lines.append("")
-    lines.append("## 差评示例")
-    for i in neg_idx[:5]:
-        lines.append(f"- （{probs[i]:.1%}）{texts[i][:120]}")
+    lines.append("## 三、典型案例")
+    shown = 0
+    neg_sorted = sorted(neg_idx, key=lambda i: -probs[i])
+    for i in neg_sorted[:5]:
+        lines.append(f"{shown + 1}. （{probs[i]:.1%}）{texts[i][:120]}")
+        shown += 1
+    if shown == 0:
+        lines.append("未检测到音质负面评论。")
     lines.append("")
-    lines.append("## 改进建议")
-    top = sorted(issue_counts.items(), key=lambda x: -x[1])[0]
-    if top[1] > 0:
-        lines.append(f"优先处理占比最高的音质问题：{top[0]}，"
-                     f"建议结合具体评论样例定位到产品批次或固件版本。")
-    else:
-        lines.append("未检测到明显音质问题，建议维持当前品控。")
+    lines.append("## 四、行动建议")
+    highs = [name for name, cnt in ranked if priority[name] == "高"]
+    for name in highs:
+        obj = "生产/质检" if name in ("杂音", "低音") else "客服/详情页"
+        lines.append(f"- 紧急（{name}）：建议检查 {obj} 环节，"
+                     f"预期降低该类差评率。")
+    if not highs:
+        lines.append("未检测到集中性音质问题，建议维持当前品控。")
+    lines.append("")
+    lines.append("## 五、验证指标")
+    lines.append("建议复评周期：2-4 周后重新运行批量分析，"
+                 "追踪同口径差评率变化。")
+    lines.append("")
+    lines.append("## 六、附注")
+    lines.append("本报告由 SoundInsight 自动生成，判定基于 DistilBERT "
+                 "微调模型（验证集 F1 0.687，阈值 0.97）与五类多标签归因"
+                 "模型，边界案例存在一定误差，关键决策建议结合人工抽查。")
     report = "\n".join(lines)
 
-    out_path = os.path.join(HERE, "insight_report.md")
+    out_path = os.path.join(HERE, "insight_report_v2.md")
     with open(out_path, "w", encoding="utf-8") as f:
         f.write(report)
     print(f"报告已保存 -> {out_path}")
