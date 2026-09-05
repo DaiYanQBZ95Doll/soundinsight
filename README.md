@@ -40,16 +40,17 @@ README.md：本说明文件。
 快速启动：
 第一步，安装依赖。
 pip install -r requirements.txt
-第二步，启动 Demo。
+第二步，下载模型权重。
+python download_models.py --repo 你的用户名/SoundInsight_models
+第三步，启动 Demo。
 python demo_sound_v2.py
-第三步，一键批量分析。
+第四步，一键批量分析。
 python soundinsight_agent.py --csv 你的评论文件.csv
-第四步，重新训练模型（可选）。
-python train_final.py
-python train_multilabel.py
 
-数据说明：数据来自 McAuley Lab 官方 Amazon Electronics 评论数据集，前五千条用于初赛，扩充至十万条用于复赛升级。标注采用规则初筛加 LLM 全量复核的两阶段方式，规则初筛命中音质关键词且评分两星以下为正例候选，随后由大模型逐条复核去伪，并补充音质相关三星评论中的漏检样本，最终得到正例一千二百五十七条。
+在线 Demo 地址：（部署后填入）
 
-模型性能：弱标注标签上，DistilBERT 五折交叉验证准确率约 0.987，调优阈值 F1 约 0.55，显著高于 TF-IDF 加线性 SVM 的 0.42 与逻辑回归的 0.36。LLM 清洗标签上，小模型与教师答案一致率达 85.9%，F1 0.865。多标签问题归因宏 F1 0.64，其中低音 0.93、清晰度 0.83、杂音 0.77、音量 0.69。清洗标签上的最终交叉验证与模型性能以 results_summary.md 为准。
+数据说明：数据来自 McAuley Lab 官方 Amazon Electronics 评论数据集，前五千条用于初赛，扩充至十万条用于复赛升级。标注采用 RLCA 两阶段方式，规则初筛命中音质关键词且评分两星以下为正例候选，随后由大模型逐条复核去伪，并补充音质相关三星评论中的漏检样本。实验与交叉验证基于 1257 条冻结口径，后续高音补捞扩展至 1288 条，核心结论不受影响。
+
+模型性能：最终二分类模型在固定验证集 20000 条（251 正例）上 F1 为 0.6871（阈值 0.97），召回率 89.6%，精确率 47.9%；5 折交叉验证调优 F1 均值 0.6234 加减 0.0240，波动 3.9%；Welch t 检验 p 等于 0.000932，显著优于 SVM 基线 0.497；PR 曲线 AUC-PR 为 0.7191。多标签归因宏 F1 0.65，其中低音 0.79、清晰度 0.77、杂音 0.84、音量 0.84，高音因样本稀缺为 0。全部数字以 results_summary.md 为准。
 
 注意事项：首次训练需要联网，脚本会先访问 Hugging Face 下载基座模型，失败时自动切换 ModelScope 镜像；若完全无法访问外网，可手动将基座模型文件放入 distilbert-base-uncased 文件夹。仓库默认不附带模型权重，启动 Demo 或 Agent 前需先运行训练脚本生成 sound_model 与 multi_label_model 文件夹，或使用已有的本地权重。Windows 控制台若出现编码报错，请先设置环境变量 PYTHONIOENCODING 为 utf-8。数据获取与扩充脚本需要访问 mcauleylab.ucsd.edu，网络受限时可直接使用仓库内已提交的数据文件。

@@ -1,85 +1,48 @@
-# SoundInsight 项目进度同步说明（供协作 AI 助手阅读）
+# SoundInsight D5 执行进度同步
 
-## 一、项目定位
+## 批次完成状态
 
-项目名称：SoundInsight 蓝牙耳机音质差评智能归因系统。
+### 批次 1：在线部署包 — PASS（产出齐备，部署动作待用户）
 
-参赛赛道：天池 AI 市场洞察赛道，现已进入复赛准备阶段。
+- deployment/ 目录四件套：app.py（路径全相对化、config.json 驱动、启动自动下载权重）、requirements.txt（固定版本）、README_Space.md、config.json（model_repo_id 留空待填）
+- upload_models.py：权重上传脚本，顶部注明用户三步网页操作
+- DEPLOY_GUIDE.md：四步部署指南，用户操作总量约 30 分钟
+- 待用户：ModelScope 注册、建仓、取 token、执行上传命令、创建创空间
+- 验收（deploy_check.md）：待公网地址就绪后执行
 
-一句话说明：基于 DistilBERT 的蓝牙耳机音质差评自动识别与五类问题归因系统，配合一键洞察 Agent，帮助跨境电商卖家把人工翻评变成自动洞察。
+### 批次 2：一致性审计 — PASS（两项用户侧 FAIL 已记录）
 
-项目目录：C:\deepseek-harness-master\soundinsight，已初始化 git 仓库，远程地址 https://github.com/DaiYanQBZ95Doll/soundinsight.git。
+- number_audit.md：三份文档逐项核对，违禁项（1297、正文 83.7）全部 PASS
+- ppt_text_dump.md：PPT 20 页全部提取；数字全部 PASS；页数 20 超出 8-12 要求 → 用户侧 FAIL
+- competition_v3.txt 缺统计验证数字（结构性问题，由 v4 补齐）
+- README 旧数字（0.37）→ 批次 5 已更新为当前口径
+- results_summary.md 混淆矩阵已加 thr=0.5 与 thr=0.9744 双口径标注，生成器同步防回退
 
-## 二、当前阶段结论（先说最重要的）
+### 批次 3：competition_v4.md — PASS
 
-复赛升级全部完成，三个检查点全部通过，最终版提交 PDF 为 SoundInsight_创意方案_v5.pdf。
+十一章全文完成：核心发现三连块、指标口径防御段（原文照录）、统计验证（学习曲线 bootstrap 口径注、PR、t 检验、5 折逐折）、消融四行业务化结论、归因定位说明（原文照录）、局限与展望、在线 Demo 占位符、1257/1288 口径脚注。数字审计 17 项全 PASS，无违禁项。
 
-核心数字：清洗标签 5 折交叉验证平均 F1 0.6234 加减 0.0240，最终模型验证集 F1 0.687（阈值 0.97），较初赛 F1 0.37 提升 85.7%，超越 SVM 基线 38.2%。
+### 批次 4：提交物打包与视频素材 — PASS
 
-唯一待办：由用户在命令行执行 git push 推送远程仓库，其余工作全部完成并提交到本地仓库（最新提交 f501e09）。
+- 更新世界的锋芒_SoundInsight_Demo.zip：50 个文件，0.2MB，无权重，含 download_models.py（下载校验一体）
+- 更新世界的锋芒_SoundInsight_复赛作品.zip：骨架（Demo.zip + README_SUBMISSION.txt），待用户放入 PDF 与视频
+- sample_reviews_100.csv：100 条（12 音质差评 / 62 非音质 / 24 边界 / 2 多语言）
+- video_script.md：八镜头 130 秒分镜 + 口播稿 + 录制检查单
+- feedback_template.md：五节全留空，禁止预填声明
 
-## 三、已完成工作清单
+### 批次 5：收尾同步 — PASS
 
-### 数据与标注
+- README.md：四步快速开始（装依赖→下模型→启 Demo→Agent）、模型性能章节更新为当前口径（0.6871/0.6234/0.7191 等）、在线 Demo 占位符、1257/1288 口径脚注
+- QWEN_HANDOFF.md：补齐精确率 47.9% 与 p 值、学习曲线最终值、D5 状态与待办
+- 全部变更已提交 git
 
-数据源为 McAuley Lab 官方 Amazon Electronics 2023 数据集，通过 HTTP Range 分段拉取 128MB 前缀，解析出十万条真实评论，保存为 electronics_expanded.csv，字段为 text 与 rating。
+## 遗留用户事项（DSH 不可代做）
 
-标注采用两阶段流程，规则初筛加 LLM 全量复核，内部代号 RLCA。规则初筛用音质关键词单词边界匹配，命中且评分两星以下为正例候选，共 1502 条。随后用 DeepSeek 大模型逐条复核，确认率 51.8%。漏检诊断发现规则主要漏掉音质相关三星评论，抽样 200 条中 83 条实为差评，于是对全部 1271 条三星音质相关评论做 LLM 补漏复核，确认 479 条。最终正例 1257 条，占 1.26%，保存为 labeled_llm.csv。
-
-标注质量验证：人工抽查 50 条，39 条正确，通过率 78%，用户已确认通过检查点 A，无需二次清洗。
-
-### 模型与实验
-
-基座模型为 DistilBERT-base-uncased，从 ModelScope 镜像下载，本地目录为 distilbert-base-uncased。
-
-最终二分类模型训练配置：训练集按 1:10 欠采样，约 1006 正例加 10060 负例，学习率 2e-5，batch size 16，epochs 3，GPU 为 RTX 4060，torch 2.7.1 加 cu118。验证集为 20000 条分层抽样，含 251 正例。结果：准确率 0.9865，F1 0.6241，调优阈值 0.9744 后 F1 0.6871，混淆矩阵 TN 19658、FP 91、FN 72、TP 179。模型保存在 sound_model 文件夹。
-
-交叉验证：清洗标签 5 折逐折调优 F1 为 0.6655、0.6151、0.6325、0.6054、0.5983，均值 0.6234 加减 0.0240，波动 3.9%，检查点 B 通过。弱标注标签 10 折调优 F1 均值 0.5487，用于展示标签质量提升。
-
-基线对比：全判正常 0.025，TF-IDF 加逻辑回归 0.410，TF-IDF 加线性 SVM 0.497，模型显著领先。
-
-教师一致性：小模型与 LLM 标签一致率 83.7% 加减 2.1%，仅用于说明蒸馏可行性，不作为性能证据，文档中已明确标注。
-
-多标签归因：独立分类头架构，五类问题为低音、清晰度、杂音、音量、高音，宏 F1 0.6481，各类别为低音 0.79、清晰度 0.77、杂音 0.84、音量 0.84、高音 0，模型保存在 multi_label_model 文件夹。
-
-检查点 C：三条测试用例端到端通过，概率输出 99.0%、0.0%、98.8%，判定全部正确。
-
-### 工程与产品化
-
-soundinsight_agent.py 为一键洞察 Agent，输入评论 CSV 一条命令输出洞察报告。
-
-demo_sound_v2.py 为升级版 Gradio Demo，单条判定与批量 CSV 分析两个页面，端口 7860。
-
-config.json 集中管理模型目录、阈值文件、标签映射，Agent 与 Demo 均已配置化。
-
-产品化三件套已完成：edge_cases.md 边界案例清单六类场景，user_scenarios.md 三个用户场景故事，action_report_template.md 六节行动建议报告模板。
-
-实验归档：exp01 至 exp06 六个目录，分别归档弱标注交叉验证、清洗标签交叉验证、LLM 复核、多标签归因、教师一致性、最终模型的历史产物。
-
-### 文档与提交材料
-
-README.md 为完整项目说明，含快速启动四步与全部脚本说明。
-
-results_summary.md 为全部实验数字的唯一权威来源，任何文档数字必须与它一致。
-
-competition_v2.txt 与 competition_v2.md 为方案全文的纯文本版与标准 Markdown 版。
-
-最终提交 PDF 为 SoundInsight_创意方案_v5.pdf，共 7 页，含方案概述、复赛核心提升、技术方案七小节、核心实验结果表、局限与展望、两张图片预留页与附录。
-
-## 四、给协作 AI 的注意事项
-
-数字一致性红线：所有引用数字必须以 results_summary.md 为准，阈值展示统一写 0.97，实际值为 0.9744，两者不可混用。
-
-模型权重不入库：sound_model、multi_label_model、distilbert-base-uncased 三个目录已被 .gitignore 排除，评委按 README 训练脚本自行生成，不要尝试提交权重文件。
-
-已确诊的坑：PDF 排版曾被认为有乱码与换行问题，经人工确认是另一个 AI 的文本提取工具误判，PDF 本身正常，不要重复修复。错别字清单中的试看、儿乎、每大、可题、儿分钟、实家等错误在原文中均不存在，不要再检索修复。
-
-边界案例已知短板：高音类 F1 为 0，样本仅 84 条；标注精度 78%；委婉表达与多语言未覆盖，这些已在文档局限章节如实说明。
-
-环境事实：Hugging Face 官方在本机被墙，下载基座模型请走 ModelScope 镜像；DeepSeek API 密钥在宿主进程环境中，沙箱内不可见；GPU 任务必须串行，CPU 任务可与 GPU 并行。
-
-## 五、待办清单
-
-第一项，用户在命令行执行 git push origin main，若报 schannel 错误则加参数 git -c http.sslBackend=openssl push origin main。
-
-第二项，可选加分项尚未启动，时序分析、竞品雷达图、持续学习机制，均已在文档未来工作章节声明，如时间充裕可任选其一实现。
+1. git push origin main
+2. human_review_conf30.csv 人工审核（8 条）
+3. ModelScope 账号三步 + 上传权重 + 创建创空间
+4. 演示视频录制（按 video_script.md）
+5. 真实用户反馈收集（feedback_template.md）
+6. competition_v4.md 团队信息填写
+7. PPT 精简（20 页 → 8-12 页）
+8. 最终 PDF 导出并放入复赛作品 zip
