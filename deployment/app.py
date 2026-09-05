@@ -24,14 +24,34 @@ with open(os.path.join(HERE, "config.json"), encoding="utf-8") as f:
 BIN_DIR = os.path.join(HERE, CFG.get("bin_model_dir", "sound_model"))
 ML_DIR = os.path.join(HERE, CFG.get("multi_label_dir", "multi_label_model"))
 MODEL_REPO_ID = CFG.get("model_repo_id", "")  # 用户建仓后填入
-MODELSCOPE_API = ("https://modelscope.cn/api/v1/models/{repo}/repo"
-                  "?FilePath={fname}")
+# 创空间容器内 modelscope.cn 可能被解析到内网网关（404），
+# 因此按 www.modelscope.cn -> modelscope.cn 顺序回退，并显式带 Revision。
+MODELSCOPE_HOSTS = ["www.modelscope.cn", "modelscope.cn"]
 MAX_LEN = int(CFG.get("max_len", 128))
 
 FILES_BIN = ["config.json", "tokenizer.json", "tokenizer_config.json",
              "threshold.json", "model.safetensors"]
 FILES_ML = ["config.json", "tokenizer.json", "tokenizer_config.json",
             "issue_labels.json", "model.safetensors"]
+
+
+def _get_file(repo, path, timeout=600):
+    """按域名/Revision 组合回退下载；全部失败时异常里带 URL 与响应摘要。"""
+    last = ""
+    for host in MODELSCOPE_HOSTS:
+        for rev in ("master", ""):
+            url = (f"https://{host}/api/v1/models/{repo}/repo"
+                   f"?FilePath={path}"
+                   + (f"&Revision={rev}" if rev else ""))
+            try:
+                r = requests.get(url, timeout=timeout, stream=True)
+            except requests.RequestException as e:  # noqa: BLE001 - 记录后回退
+                last = f"{url} -> {type(e).__name__}: {e}"
+                continue
+            if r.status_code == 200:
+                return r
+            last = f"{url} -> HTTP {r.status_code} {r.text[:200]}"
+    raise RuntimeError(f"下载失败 {path}: {last}")
 
 
 def download_models():
@@ -45,11 +65,7 @@ def download_models():
             dst = os.path.join(dname, fname)
             if os.path.exists(dst) and os.path.getsize(dst) > 1000:
                 continue
-            r = requests.get(MODELSCOPE_API.format(
-                repo=MODEL_REPO_ID, fname=f"{dname}/{fname}"),
-                timeout=600, stream=True)
-            if r.status_code != 200:
-                raise RuntimeError(f"下载失败 {fname}: HTTP {r.status_code}")
+            r = _get_file(MODEL_REPO_ID, f"{dname}/{fname}")
             with open(dst, "wb") as fp:
                 for chunk in r.iter_content(1 << 20):
                     fp.write(chunk)
