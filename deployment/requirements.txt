@@ -1,7 +1,11 @@
-torch==2.7.1
+# SoundInsight 创空间依赖（重要：不要钉 torch / numpy / gradio 版本）
+#
+# 创空间基础镜像（ubuntu22.04-py312-torch2.10.0）已预装配套的
+# torch 2.10.0 + torchvision + 平台适配的 gradio 6.17.3。
+# 若在此钉死 torch==2.7.1，会与镜像内 torchvision 产生 C++ ABI 不匹配，
+# 启动时崩溃：RuntimeError: operator torchvision::nms does not exist。
+# 因此本文件只钉业务依赖，深度学习栈沿用镜像自带版本。
 transformers==5.9.0
-gradio==6.24.0
 pandas==2.3.3
-numpy==2.5.1
 scikit-learn==1.8.0
 requests==2.34.2
