@@ -80,14 +80,23 @@ def main() -> None:
         if r.returncode != 0 and c[1] != "init":
             print(r.stderr[-800:])
             raise SystemExit(f"命令失败：{' '.join(c)}")
-    # 远程仓库可能自带 README 提交，先拉取合并再推送
+    # 远程仓库自带 README 提交，用合并式拉取集成后推送
     pull = subprocess.run(
-        ["git", "pull", "--rebase", "--allow-unrelated-histories",
+        ["git", "pull", "--no-rebase", "--allow-unrelated-histories",
          "origin", "master"], cwd=tmp, capture_output=True, text=True)
-    print("> git pull --rebase --allow-unrelated-histories origin master")
+    print("> git pull --no-rebase --allow-unrelated-histories origin master")
     if pull.returncode != 0:
         print(pull.stderr[-400:])
-        print("远程无可合并内容或拉取失败，尝试直接推送")
+        print("合并拉取失败，尝试强制推送（仅覆盖自动生成的 README）")
+        push = subprocess.run(["git", "push", "-f", "-u", "origin",
+                               "master"], cwd=tmp, capture_output=True,
+                              text=True)
+        print("> git push -f -u origin master")
+        if push.returncode != 0:
+            print(push.stderr[-800:])
+            raise SystemExit("强制推送也失败")
+        print(f"上传完成 -> https://modelscope.cn/models/{args.repo}")
+        return
     push = subprocess.run(["git", "push", "-u", "origin", "master"],
                           cwd=tmp, capture_output=True, text=True)
     print("> git push -u origin master")
