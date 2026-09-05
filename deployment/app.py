@@ -61,17 +61,23 @@ def _get_file(repo, path, timeout=600):
 
 
 def download_models():
-    """启动时从 ModelScope 模型仓库下载权重（已存在则跳过）。"""
+    """启动时从 ModelScope 模型仓库下载权重（已存在则跳过）。
+
+    注意：仓库内文件路径是相对目录名（sound_model/config.json），
+    不能把本地绝对路径拼进下载 URL。
+    """
     if not MODEL_REPO_ID:
         raise RuntimeError("config.json 中未填写 model_repo_id，"
                            "请先在 ModelScope 建仓并填入")
-    for dname, files in [(BIN_DIR, FILES_BIN), (ML_DIR, FILES_ML)]:
+    for rel, dname, files in [
+            ("sound_model", BIN_DIR, FILES_BIN),
+            ("multi_label_model", ML_DIR, FILES_ML)]:
         os.makedirs(dname, exist_ok=True)
         for fname in files:
             dst = os.path.join(dname, fname)
             if os.path.exists(dst) and os.path.getsize(dst) > 1000:
                 continue
-            r = _get_file(MODEL_REPO_ID, f"{dname}/{fname}")
+            r = _get_file(MODEL_REPO_ID, f"{rel}/{fname}")
             with open(dst, "wb") as fp:
                 for chunk in r.iter_content(1 << 20):
                     fp.write(chunk)
