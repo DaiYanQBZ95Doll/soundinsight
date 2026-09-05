@@ -49,7 +49,8 @@ def single_predict(text):
     hit = [ISSUE_INFO["names"][k] for k in range(len(issues))
            if issues[k] >= 0.5]
     issue_text = "；".join(hit) if hit else "无明显问题类别"
-    return f"{label}（音质负面概率 {prob:.1%}）\n问题归因：{issue_text}"
+    return (f"{label}（音质负面概率 {prob:.1%}）\n问题归因：{issue_text}\n"
+            f"（概率未经校准，仅供排序参考，见 calibration_eval.md）")
 
 
 def batch_analyze(file_obj):
@@ -95,6 +96,8 @@ def batch_analyze(file_obj):
     lines.append("差评示例：")
     for i in neg_idx[:5]:
         lines.append(f"- （{probs[i]:.0%}）{texts[i][:100]}")
+    lines.append("")
+    lines.append("（概率未经校准，仅供排序参考，见 calibration_eval.md）")
     report_text = "\n".join(lines)
     report_path = os.path.join(HERE, "batch_report.txt")
     with open(report_path, "w", encoding="utf-8") as f:
@@ -146,6 +149,7 @@ def edge_cases_md() -> str:
         lines.append(f"预测：{prob}")
         lines.append(f"模型表现：{note}")
         lines.append("")
+    lines.append("> 上述概率未经校准，仅供排序参考（见 calibration_eval.md）。")
     return "\n".join(lines)
 
 
