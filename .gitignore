@@ -27,3 +27,5 @@ batch_report.txt
 *.pt
 
 roberta-base/
+
+.ms_upload_tmp/
