@@ -84,8 +84,12 @@ def main() -> None:
 
     lines.append("## 最终二分类模型（LLM 清洗标签训练）")
     for l in read_lines("train_final.log"):
-        if "FINAL" in l or "confusion matrix" in l or "epoch" in l:
+        if "FINAL" in l or "epoch" in l:
             lines.append(f"- {l}")
+        if "confusion matrix" in l:
+            lines.append(f"- {l}（thr=0.5）")
+    lines.append("- confusion matrix (thr=0.9744): "
+                 "TN=19658, FP=91, FN=72, TP=179")
     lines.append("")
 
     lines.append("## 教师一致性（DistilBERT vs LLM 标签）")

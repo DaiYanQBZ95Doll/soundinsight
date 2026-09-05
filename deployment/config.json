@@ -1,0 +1,6 @@
+{
+  "bin_model_dir": "sound_model",
+  "multi_label_dir": "multi_label_model",
+  "model_repo_id": "",
+  "max_len": 128
+}
