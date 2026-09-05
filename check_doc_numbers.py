@@ -12,6 +12,7 @@ OUT_MD = os.path.join(HERE, "number_audit.md")
 
 FILES = [
     "competition_v3.txt",
+    "competition_v4.md",
     "README.md",
     "QWEN_HANDOFF.md",
     "ppt_text_dump.md",
