@@ -36,21 +36,27 @@ FILES_ML = ["config.json", "tokenizer.json", "tokenizer_config.json",
 
 
 def _get_file(repo, path, timeout=600):
-    """按域名/Revision 组合回退下载；全部失败时异常里带 URL 与响应摘要。"""
-    last = ""
+    """按 域名×URL风格×Revision 组合回退下载；全部失败时异常里带 URL 与响应摘要。"""
+    candidates = []
     for host in MODELSCOPE_HOSTS:
         for rev in ("master", ""):
             url = (f"https://{host}/api/v1/models/{repo}/repo"
                    f"?FilePath={path}"
                    + (f"&Revision={rev}" if rev else ""))
-            try:
-                r = requests.get(url, timeout=timeout, stream=True)
-            except requests.RequestException as e:  # noqa: BLE001 - 记录后回退
-                last = f"{url} -> {type(e).__name__}: {e}"
-                continue
-            if r.status_code == 200:
-                return r
-            last = f"{url} -> HTTP {r.status_code} {r.text[:200]}"
+            candidates.append(url)
+    for host in MODELSCOPE_HOSTS:
+        candidates.append(
+            f"https://{host}/models/{repo}/resolve/master/{path}")
+    last = ""
+    for url in candidates:
+        try:
+            r = requests.get(url, timeout=timeout, stream=True)
+        except requests.RequestException as e:  # noqa: BLE001 - 记录后回退
+            last = f"{url} -> {type(e).__name__}: {e}"
+            continue
+        if r.status_code == 200:
+            return r
+        last = f"{url} -> HTTP {r.status_code} {r.text[:200]}"
     raise RuntimeError(f"下载失败 {path}: {last}")
 
 
