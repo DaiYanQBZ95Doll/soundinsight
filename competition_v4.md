@@ -235,7 +235,19 @@ PR 曲线：AUC-PR = 0.7191，为随机水平（0.0126）的 57 倍。
 3. 多语言适配：XLM-R 基座替换，覆盖主要跨境电商语种
 4. 持续学习：建立在线模型更新机制，随新评论自动微调
 
-## 十、提交物清单
+## 十、参考文献
+
+[1] Sanh V, Debut L, Chaumond J, et al. DistilBERT, a distilled version of BERT: smaller, faster, cheaper and lighter[J/OL]. arXiv preprint arXiv:1910.01108, 2019.
+
+[2] Hou Y, Li J, He Z, et al. Bridging Language and Items for Retrieval and Recommendation[J/OL]. arXiv preprint arXiv:2203.16852, 2022. （Amazon Reviews 2023 数据集）
+
+[3] Lin T Y, Goyal P, Girshick R, et al. Focal Loss for Dense Object Detection[C]// Proceedings of the IEEE International Conference on Computer Vision (ICCV), 2017: 2980-2988.
+
+[4] Devlin J, Chang M W, Lee K, et al. BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding[C]// Proceedings of NAACL-HLT, 2019: 4171-4186.
+
+[5] Chawla N V, Bowyer K W, Hall L O, et al. SMOTE: Synthetic Minority Over-sampling Technique[J]. Journal of Artificial Intelligence Research, 2002, 16: 321-357.
+
+## 十一、提交物清单
 
 ☑ 本模板（competition_v4.md）
 

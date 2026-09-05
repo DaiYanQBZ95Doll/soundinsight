@@ -46,6 +46,8 @@ python download_models.py --repo 你的用户名/SoundInsight_models
 python demo_sound_v2.py
 第四步，一键批量分析。
 python soundinsight_agent.py --csv 你的评论文件.csv
+如需 Excel 版报告（总体概况/问题分布/典型案例三个 sheet，高优先级标红）：
+python soundinsight_agent.py --csv 你的评论文件.csv --format excel
 
 在线 Demo 地址：（部署后填入）
 
