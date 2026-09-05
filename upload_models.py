@@ -63,6 +63,8 @@ def main() -> None:
     remote = f"https://oauth2:{args.token}@www.modelscope.cn/{args.repo}.git"
     cmds = [
         ["git", "init"],
+        ["git", "lfs", "install", "--local"],
+        ["git", "lfs", "track", "*.safetensors"],
         ["git", "config", "user.name", "SoundInsight"],
         ["git", "config", "user.email",
          "soundinsight@users.noreply.github.com"],
