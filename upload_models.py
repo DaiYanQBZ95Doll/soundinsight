@@ -1,0 +1,63 @@
+# -*- coding: utf-8 -*-
+# 本脚本用于将本地模型权重上传到 ModelScope 模型仓库。
+#
+# 用户需先手动完成 3 步网页操作：
+#   1. 注册并登录 modelscope.cn（约 3 分钟）
+#   2. 新建一个模型仓库（建议命名 SoundInsight_models，约 2 分钟）
+#   3. 在「个人中心-访问令牌」创建 token（约 2 分钟）
+# 完成后运行：
+#   python upload_models.py --repo <你的命名空间>/SoundInsight_models \
+#       --token <你的token>
+# 脚本会把 sound_model/ 与 multi_label_model/ 的文件按目录结构推送到该仓库。
+import argparse
+import os
+import shutil
+import subprocess
+import sys
+import tempfile
+
+sys.stdout.reconfigure(encoding="utf-8", errors="replace")
+
+HERE = os.path.dirname(os.path.abspath(__file__))
+SRC_DIRS = [
+    ("sound_model", "sound_model"),
+    ("multi_label_model", "multi_label_model"),
+]
+
+
+def main() -> None:
+    ap = argparse.ArgumentParser()
+    ap.add_argument("--repo", required=True, help="ModelScope 仓库路径，如 用户名/SoundInsight_models")
+    ap.add_argument("--token", required=True, help="ModelScope 访问令牌")
+    args = ap.parse_args()
+
+    tmp = tempfile.mkdtemp(prefix="ms_upload_")
+    for src, dst in SRC_DIRS:
+        src_path = os.path.join(HERE, "..", src)
+        if not os.path.isdir(src_path):
+            print(f"警告：{src} 不存在，跳过")
+            continue
+        shutil.copytree(src_path, os.path.join(tmp, dst), dirs_exist_ok=True)
+
+    remote = f"https://oauth2:{args.token}@www.modelscope.cn/{args.repo}.git"
+    cmds = [
+        ["git", "init"],
+        ["git", "add", "."],
+        ["git", "commit", "-m", "upload SoundInsight models"],
+        ["git", "branch", "-M", "master"],
+        ["git", "remote", "add", "origin", remote],
+        ["git", "push", "-u", "origin", "master"],
+    ]
+    for c in cmds:
+        r = subprocess.run(c, cwd=tmp, capture_output=True, text=True,
+                           shell=False)
+        print(f"> {' '.join(c)}")
+        if r.returncode != 0 and c[1] != "init":
+            print(r.stderr[-800:])
+            raise SystemExit(f"命令失败：{' '.join(c)}")
+    print(f"上传完成 -> https://modelscope.cn/models/{args.repo}")
+    print(f"请把 {args.repo} 填入 deployment/config.json 的 model_repo_id")
+
+
+if __name__ == "__main__":
+    main()

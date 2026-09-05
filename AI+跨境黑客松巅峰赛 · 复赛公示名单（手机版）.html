@@ -1,0 +1,1454 @@
+<!DOCTYPE html>
+<!-- saved from url=(0096)https://builderx.csdn.net/activity-site/ceshi1/fusaimingdan?spm=5176.28103460.0.0.96a029886XKYs3 -->
+<html lang="zh-CN"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<title>AI+跨境黑客松巅峰赛 · 复赛公示名单（手机版）</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { background: #050010; }
+  body {
+    font-family: -apple-system, "PingFang SC", "Microsoft YaHei", "Helvetica Neue", Arial, sans-serif;
+    color: #fff;
+    width: 750px;
+    margin: 0 auto;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* ============ 顶部 Banner（手机版，精简） ============ */
+  .banner {
+    position: relative;
+    width: 750px;
+    height: 640px;
+    overflow: hidden;
+    background:
+      radial-gradient(ellipse 70% 35% at 50% 20%, rgba(255,138,60,0.45) 0%, transparent 60%),
+      radial-gradient(ellipse 55% 30% at 15% 55%, rgba(80,90,255,0.30) 0%, transparent 60%),
+      radial-gradient(ellipse 55% 30% at 85% 55%, rgba(180,60,255,0.30) 0%, transparent 60%),
+      linear-gradient(180deg, #1a0a3e 0%, #0a0524 60%, #050010 100%);
+  }
+  .banner::before {
+    content: "";
+    position: absolute; inset: 0;
+    background-image:
+      radial-gradient(1px 1px at 12% 18%, #fff 50%, transparent 100%),
+      radial-gradient(1px 1px at 30% 34%, rgba(255,255,255,0.7) 50%, transparent 100%),
+      radial-gradient(1.5px 1.5px at 48% 20%, #fff 50%, transparent 100%),
+      radial-gradient(1px 1px at 66% 12%, rgba(255,200,150,0.8) 50%, transparent 100%),
+      radial-gradient(1px 1px at 84% 24%, rgba(255,255,255,0.6) 50%, transparent 100%),
+      radial-gradient(1px 1px at 20% 75%, #fff 50%, transparent 100%),
+      radial-gradient(1px 1px at 40% 88%, rgba(180,160,255,0.8) 50%, transparent 100%),
+      radial-gradient(1px 1px at 70% 82%, #fff 50%, transparent 100%),
+      radial-gradient(1px 1px at 88% 92%, rgba(255,200,150,0.6) 50%, transparent 100%);
+  }
+
+  .host-tag {
+    position: absolute;
+    top: 36px; left: 44px;
+    font-size: 15px; letter-spacing: 4px;
+    color: rgba(255,255,255,0.85);
+    font-weight: 600;
+    z-index: 5;
+  }
+  .host-tag::before {
+    content: "▎";
+    color: #ff8a3c;
+    margin-right: 6px;
+  }
+  .co-host {
+    position: absolute;
+    top: 40px; right: 44px;
+    font-size: 12px; letter-spacing: 3px;
+    color: rgba(255,255,255,0.55);
+    font-weight: 500;
+    z-index: 5;
+  }
+
+  .event-name {
+    position: absolute;
+    top: 112px; left: 50%;
+    transform: translateX(-50%);
+    font-size: 32px;
+    font-weight: 800;
+    text-align: center;
+    background: linear-gradient(90deg, #ffb27a 0%, #ff8a3c 40%, #ff5fa8 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    letter-spacing: 3px;
+    white-space: nowrap;
+    z-index: 5;
+  }
+  .title-main {
+    position: absolute;
+    top: 175px; left: 50%;
+    transform: translateX(-50%);
+    font-size: 64px;
+    font-weight: 900;
+    color: #fff;
+    letter-spacing: 8px;
+    white-space: nowrap;
+    z-index: 5;
+    text-shadow: 0 0 30px rgba(120,90,255,0.7);
+  }
+  .title-sub {
+    position: absolute;
+    top: 255px; left: 50%;
+    transform: translateX(-50%);
+    font-size: 16px;
+    color: rgba(255,255,255,0.65);
+    letter-spacing: 4px;
+    white-space: nowrap;
+    z-index: 5;
+  }
+
+  /* 小型地球装饰（右侧） */
+  .deco {
+    position: absolute;
+    right: -60px; top: 300px;
+    width: 240px; height: 240px;
+    pointer-events: none;
+    z-index: 2;
+  }
+  .deco .orbit {
+    position: absolute; inset: 0;
+    border-radius: 50%;
+    border: 1px solid rgba(255,255,255,0.10);
+  }
+  .deco .orbit::before {
+    content: "";
+    position: absolute;
+    width: 16px; height: 16px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #ff8a3c, #ff5fa8);
+    top: -8px; left: calc(50% - 8px);
+    box-shadow: 0 0 18px rgba(255,138,60,0.7);
+  }
+  .deco .globe {
+    position: absolute;
+    left: 50%; top: 50%;
+    transform: translate(-50%, -50%);
+    width: 150px; height: 150px;
+    border-radius: 50%;
+    background:
+      radial-gradient(circle at 35% 30%, rgba(255,180,120,0.6) 0%, transparent 35%),
+      radial-gradient(circle at 65% 70%, rgba(120,90,255,0.7) 0%, transparent 40%),
+      linear-gradient(135deg, #3a1d6e 0%, #1a0a3e 50%, #0a0524 100%);
+    box-shadow:
+      inset 0 0 40px rgba(120,90,255,0.6),
+      0 0 50px rgba(120,90,255,0.5);
+    opacity: 0.9;
+  }
+  .deco .globe::after {
+    content: "";
+    position: absolute; inset: 0;
+    border-radius: 50%;
+    background:
+      repeating-linear-gradient(0deg, transparent 0 8px, rgba(255,255,255,0.05) 8px 9px),
+      repeating-linear-gradient(90deg, transparent 0 8px, rgba(255,255,255,0.05) 8px 9px);
+    mix-blend-mode: overlay;
+  }
+
+  .announce-card {
+    position: absolute;
+    left: 50%; bottom: 44px;
+    transform: translateX(-50%);
+    width: 630px;
+    padding: 22px 28px;
+    background: linear-gradient(135deg, rgba(40,20,80,0.88) 0%, rgba(20,10,50,0.88) 100%);
+    border: 1px solid rgba(255,138,60,0.5);
+    border-radius: 14px;
+    text-align: center;
+    backdrop-filter: blur(8px);
+    box-shadow: 0 8px 40px rgba(255,138,60,0.25);
+    z-index: 6;
+  }
+  .announce-card .big {
+    font-size: 40px;
+    font-weight: 900;
+    background: linear-gradient(90deg, #ffb27a, #ff8a3c);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    letter-spacing: 3px;
+  }
+  .announce-card .small {
+    margin-top: 6px;
+    font-size: 14px;
+    color: rgba(255,255,255,0.7);
+    letter-spacing: 2px;
+  }
+
+  /* ============ 名单主体（单列，一行一团队） ============ */
+  .main {
+    position: relative;
+    padding: 44px 36px 20px;
+    background:
+      radial-gradient(ellipse 80% 40% at 50% 0%, rgba(120,90,255,0.15) 0%, transparent 60%),
+      linear-gradient(180deg, #0a0524 0%, #14072e 50%, #0a0524 100%);
+  }
+  .main::before {
+    content: "";
+    position: absolute; top: 0; left: 0; right: 0; height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(255,138,60,0.6), transparent);
+  }
+  .section-title {
+    text-align: center;
+    margin-bottom: 30px;
+  }
+  .section-title .line1 {
+    font-size: 15px;
+    color: #ff8a3c;
+    letter-spacing: 8px;
+    font-weight: 600;
+    margin-bottom: 8px;
+  }
+  .section-title .line2 {
+    font-size: 34px;
+    font-weight: 800;
+    color: #fff;
+    letter-spacing: 5px;
+    margin-bottom: 8px;
+  }
+  .section-title .line3 {
+    font-size: 13px;
+    color: rgba(255,255,255,0.5);
+    letter-spacing: 2px;
+  }
+
+  .list {
+    border: 1px solid rgba(120,90,255,0.22);
+    border-radius: 12px;
+    background: rgba(20,10,50,0.35);
+    overflow: hidden;
+  }
+  .row {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    padding: 16px 18px;
+    border-bottom: 1px solid rgba(120,90,255,0.12);
+  }
+  .row:last-child { border-bottom: none; }
+  .row:nth-child(odd) { background: rgba(255,255,255,0.02); }
+  .row .num {
+    flex: 0 0 52px;
+    height: 34px;
+    line-height: 34px;
+    text-align: center;
+    font-size: 15px;
+    font-weight: 800;
+    color: #050010;
+    background: linear-gradient(135deg, #ffb27a, #ff8a3c);
+    border-radius: 6px;
+    font-family: "SF Mono", Menlo, monospace;
+    margin-top: 2px;
+  }
+  .row .body { flex: 1; min-width: 0; }
+  .row .team {
+    font-size: 19px;
+    font-weight: 700;
+    color: #fff;
+    line-height: 1.35;
+    word-break: break-word;
+  }
+  .row .work {
+    font-size: 14px;
+    color: rgba(255,255,255,0.62);
+    line-height: 1.5;
+    margin-top: 4px;
+    word-break: break-word;
+  }
+  .row .warn {
+    display: inline-block;
+    margin-left: 8px;
+    padding: 1px 8px;
+    font-size: 11px;
+    color: #ffb27a;
+    border: 1px solid rgba(255,138,60,0.45);
+    border-radius: 8px;
+    vertical-align: middle;
+  }
+
+  /* ============ 底部 ============ */
+  .footer {
+    position: relative;
+    padding: 36px 36px 44px;
+    background:
+      radial-gradient(ellipse 80% 50% at 50% 100%, rgba(255,138,60,0.16) 0%, transparent 60%),
+      linear-gradient(180deg, #0a0524 0%, #1a0a3e 60%, #2a1252 100%);
+    text-align: center;
+  }
+  .footer::before {
+    content: "";
+    position: absolute; top: 0; left: 0; right: 0; height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(120,90,255,0.6), transparent);
+  }
+  .finals .label {
+    display: inline-block;
+    padding: 5px 18px;
+    border: 1px solid rgba(255,138,60,0.5);
+    border-radius: 20px;
+    font-size: 13px;
+    color: #ffb27a;
+    letter-spacing: 2px;
+    background: rgba(255,138,60,0.08);
+    margin-bottom: 10px;
+  }
+  .finals .date {
+    font-size: 34px;
+    font-weight: 800;
+    background: linear-gradient(90deg, #ffb27a, #ff8a3c, #ff5fa8);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    letter-spacing: 4px;
+  }
+  .finals .place {
+    margin-top: 6px;
+    font-size: 15px;
+    color: rgba(255,255,255,0.7);
+    letter-spacing: 3px;
+  }
+  .organizers {
+    margin: 20px 0 14px;
+  }
+  .organizers .row1 {
+    font-size: 13px;
+    color: rgba(255,255,255,0.55);
+    margin-bottom: 6px;
+    letter-spacing: 2px;
+  }
+  .organizers .row2 {
+    font-size: 15px;
+    color: #fff;
+    font-weight: 600;
+    letter-spacing: 1px;
+    line-height: 1.7;
+  }
+  .organizers .row2 .hi { color: #ffb27a; }
+  .csdn-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    margin-top: 18px;
+    padding: 8px 18px;
+    border-radius: 8px;
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.1);
+  }
+  .csdn-badge .logo {
+    display: inline-block;
+    padding: 2px 8px;
+    background: #c00;
+    color: #fff;
+    font-weight: 900;
+    font-size: 14px;
+    border-radius: 3px;
+    letter-spacing: 1px;
+  }
+  .csdn-badge .txt {
+    font-size: 13px;
+    color: rgba(255,255,255,0.7);
+  }
+  .footer-note {
+    margin-top: 16px;
+    font-size: 12px;
+    color: rgba(255,255,255,0.4);
+    letter-spacing: 1px;
+    line-height: 1.7;
+  }
+</style>
+</head>
+<body>
+
+<!-- ============ 顶部 Banner ============ -->
+<div class="banner">
+  <div class="host-tag">菜鸟智谷</div>
+  <div class="co-host">CAINIAO SMART PARK × CSDN</div>
+
+  <div class="event-name">AI+跨境黑客松巅峰赛</div>
+  <div class="title-main">复赛公示名单</div>
+  <div class="title-sub">用 AI 解跨境真命题 · 排名不分先后，按战队首字母排序</div>
+
+  <div class="deco">
+    <div class="orbit"></div>
+    <div class="globe"></div>
+  </div>
+
+  <div class="announce-card">
+    <div class="big">恭喜 148 支战队晋级复赛</div>
+    <div class="small">复赛作品提交截止 2026.09.15</div>
+  </div>
+</div>
+
+<!-- ============ 名单主体 ============ -->
+<div class="main">
+  <div class="section-title">
+    <div class="line1">PUBLIC LIST</div>
+    <div class="line2">复 赛 晋 级 名 单</div>
+    <div class="line3">共 148 支战队</div>
+  </div>
+
+  <div class="list">
+
+  <div class="row">
+    <span class="num">001</span>
+    <div class="body">
+      <div class="team">203</div>
+      <div class="work">多 Agent 驱动的跨境电商智能上新全链路解决方案</div>
+    </div>
+  </div>
+  <div class="row">
+    <span class="num">002</span>
+    <div class="body">
+      <div class="team">1AMING</div>
+      <div class="work">图审通AI</div>
+    </div>
+  </div>
+  <div class="row">
+    <span class="num">003</span>
+    <div class="body">
+      <div class="team">阿斗斗斗</div>
+      <div class="work">CrashCart：AI买手反事实碰撞实验室</div>
+    </div>
+  </div>
+  <div class="row">
+    <span class="num">004</span>
+    <div class="body">
+      <div class="team">白海豚</div>
+      <div class="work">白海豚AI合规预警</div>
+    </div>
+  </div>
+  <div class="row">
+    <span class="num">005</span>
+    <div class="body">
+      <div class="team">比奇堡奶龙队</div>
+      <div class="work">知彼-竞品雷达</div>
+    </div>
+  </div>
+  <div class="row">
+    <span class="num">006</span>
+    <div class="body">
+      <div class="team">必胜团队</div>
+      <div class="work">AI Listing 智能上新平台</div>
+    </div>
+  </div>
+  <div class="row">
+    <span class="num">007</span>
+    <div class="body">
+      <div class="team">冰美式</div>
+      <div class="work">跨境评论反馈分析</div>
+    </div>
+  </div>
+  <div class="row">
+    <span class="num">008</span>
+    <div class="body">
+      <div class="team">不吃香菜</div>
+      <div class="work">AI网红素材创作二次引擎</div>
+    </div>
+  </div>
+  <div class="row">
+    <span class="num">009</span>
+    <div class="body">
+      <div class="team">布灵布灵</div>
+      <div class="work">问市 AskMarket —— 跨境卖家的AI市场情报官</div>
+    </div>
+  </div>
+  <div class="row">
+    <span class="num">010</span>
+    <div class="body">
+      <div class="team">菜菜唠唠</div>
+      <div class="work">先机罗盘 · Foresight Compass</div>
+    </div>
+  </div>
+  <div class="row">
+    <span class="num">011</span>
+    <div class="body">
+      <div class="team">测地线</div>
+      <div class="work">美舟 LaunchPilot——面向跨境美妆的多平台智能上新 Agent</div>
+    </div>
+  </div>
+  <div class="row">
+    <span class="num">012</span>
+    <div class="body">
+      <div class="team">超能写</div>
+      <div class="work">超能写AI智能营销平台</div>
+    </div>
+  </div>
+  <div class="row">
+    <span class="num">013</span>
+    <div class="body">
+      <div class="team">朝思夕想</div>
+      <div class="work">环球文造——多平台跨境营销AI内容工厂</div>
+    </div>
+  </div>
+  <div class="row">
+    <span class="num">014</span>
+    <div class="body">
+      <div class="team">沉着冷静</div>
+      <div class="work">跨境商品多平台智能上新编译器</div>
+    </div>
+  </div>
+  <div class="row">
+    <span class="num">015</span>
+    <div class="body">
+      <div class="team">冲冲冲</div>
+      <div class="work">AI 全链路智能选品与自动上架系统</div>
+    </div>
+  </div>
+  <div class="row">
+    <span class="num">016</span>
+    <div class="body">
+      <div class="team">储能小能手</div>
+      <div class="work">LaunchPilotAI｜跨境智能上新平台</div>
+    </div>
+  </div>
+  <div class="row">
+    <span class="num">017</span>
+    <div class="body">
+      <div class="team">从容应对</div>
+      <div class="work">OneLaunch</div>
+    </div>
+  </div>
+  <div class="row">
+    <span class="num">018</span>
+    <div class="body">
+      <div class="team">萃希</div>
+      <div class="work">评海拾金：AI评论深度挖掘与产品改良决策引擎</div>
+    </div>
+  </div>
+  <div class="row">
+    <span class="num">019</span>
+    <div class="body">
+      <div class="team">大爱仙尊</div>
+      <div class="work">多元宇宙引擎：跨境选品的平行世界推演</div>
+    </div>
+  </div>
+  <div class="row">
+    <span class="num">020</span>
+    <div class="body">
+      <div class="team">殆尽</div>
+      <div class="work">AI智能上新全流程助手</div>
+    </div>
+  </div>
+  <div class="row">
+    <span class="num">021</span>
+    <div class="body">
+      <div class="team">当然允许降落</div>
+      <div class="work">智纺通 RussiaReady —— 家纺跨境 AI 智能上新决策引擎</div>
+    </div>
+  </div>
+  <div class="row">
+    <span class="num">022</span>
+    <div class="body">
+      <div class="team">东方白</div>
+      <div class="work">智能上架流水线</div>
+    </div>
+  </div>
+  <div class="row">
+    <span class="num">023</span>
+    <div class="body">
+      <div class="team">冬冬猫之队</div>
+      <div class="work">AI蓝海爆品雷达</div>
+    </div>
+  </div>
+  <div class="row">
+    <span class="num">024</span>
+    <div class="body">
+      <div class="team">对对对</div>
+      <div class="work">千岸（QianAn）— 一稿多岸的跨境上新 Agent</div>
+    </div>
+  </div>
+  <div class="row">
+    <span class="num">025</span>
+    <div class="body">
+      <div class="team">风风小糖丸</div>
+      <div class="work">Momentum涨势</div>
+    </div>
+  </div>
+  <div class="row">
+    <span class="num">026</span>
+    <div class="body">
+      <div class="team">干中学</div>
+      <div class="work">ReviewMine差评掘金·AI微创新选品决策引擎</div>
+    </div>
+  </div>
+  <div class="row">
+    <span class="num">027</span>
+    <div class="body">
+      <div class="team">更新世界的锋芒</div>
+      <div class="work">SoundInsight蓝牙耳机音质差评智能归音系统</div>
+    </div>
+  </div>
+  <div class="row">
+    <span class="num">028</span>
+    <div class="body">
+      <div class="team">古今</div>
+      <div class="work">出海鹰眼 SeaEye —— AI 跨境市场洞察与竞品决策 Agent</div>
+    </div>
+  </div>
+  <div class="row">
+    <span class="num">029</span>
+    <div class="body">
+      <div class="team">光启-漂亮夏</div>
+      <div class="work">Helios</div>
+    </div>
+  </div>
+  <div class="row">
+    <span class="num">030</span>
+    <div class="body">
+      <div class="team">还差twodollars的Token</div>
+      <div class="work">GlobalGuard跨境图文合规智能体</div>
+    </div>
+  </div>
+  <div class="row">
+    <span class="num">031</span>
+    <div class="body">
+      <div class="team">合作台</div>
+      <div class="work">风口雷达提前半年看见下一个爆款</div>
+    </div>
+  </div>
+  <div class="row">
+    <span class="num">032</span>
+    <div class="body">
+      <div class="team">河工大</div>
+      <div class="work">AI产品3D建模展示生成</div>
+    </div>
+  </div>
+  <div class="row">
+    <span class="num">033</span>
+    <div class="body">
+      <div class="team">红目香薰</div>
+      <div class="work">国际站AI智能上新助手</div>
+    </div>
+  </div>
+  <div class="row">
+    <span class="num">034</span>
+    <div class="body">
+      <div class="team">极湃智链</div>
+      <div class="work">极湃智链·潮汐雷达（JIPAITrendPulse）</div>
+    </div>
+  </div>
+  <div class="row">
+    <span class="num">035</span>
+    <div class="body">
+      <div class="team">贾思嘟喂</div>
+      <div class="work">PagePilotAI商品图工坊</div>
+    </div>
+  </div>
+  <div class="row">
+    <span class="num">036</span>
+    <div class="body">
+      <div class="team">今天吃啥</div>
+      <div class="work">VeriList——生成即验证的跨平台智能上新系统</div>
+    </div>
+  </div>
+  <div class="row">
+    <span class="num">037</span>
+    <div class="body">
+      <div class="team">竞策雷达</div>
+      <div class="work">AI竞策雷达</div>
+    </div>
+  </div>
+  <div class="row">
+    <span class="num">038</span>
+    <div class="body">
+      <div class="team">拒做韭菜</div>
+      <div class="work">跨境上架编译器</div>
+    </div>
+  </div>
+  <div class="row">
+    <span class="num">039</span>
+    <div class="body">
+      <div class="team">绝密双子星</div>
+      <div class="work">WaveTrack跨境上新决策Copilot</div>
+    </div>
+  </div>
+  <div class="row">
+    <span class="num">040</span>
+    <div class="body">
+      <div class="team">卡点报名队</div>
+      <div class="work">CrossPen</div>
+    </div>
+  </div>
+  <div class="row">
+    <span class="num">041</span>
+    <div class="body">
+      <div class="team">可销 KEXIAO</div>
+      <div class="work">智上新 · AI Listing Agent · 跨境新品智能上新</div>
+    </div>
+  </div>
+  <div class="row">
+    <span class="num">042</span>
+    <div class="body">
+      <div class="team">莲花池</div>
+      <div class="work">跨境智上Agent（CrossList AI）</div>
+    </div>
+  </div>
+  <div class="row">
+    <span class="num">043</span>
+    <div class="body">
+      <div class="team">两个人也行</div>
+      <div class="work">AI 驱动的跨境电商智能上新平台</div>
+    </div>
+  </div>
+  <div class="row">
+    <span class="num">044</span>
+    <div class="body">
+      <div class="team">灵感小偷</div>
+      <div class="work">VOCRadar评论雷达</div>
+    </div>
+  </div>
+  <div class="row">
+    <span class="num">045</span>
+    <div class="body">
+      <div class="team">灵璃</div>
+      <div class="work">一源千面 · OmniListing</div>
+    </div>
+  </div>
+  <div class="row">
+    <span class="num">046</span>
+    <div class="body">
+      <div class="team">流励达</div>
+      <div class="work">选品罗盘InsightCompass</div>
+    </div>
+  </div>
+  <div class="row">
+    <span class="num">047</span>
+    <div class="body">
+      <div class="team">路边五条</div>
+      <div class="work">出海镜SailMirror：AI双轨跨境合规检测系统</div>
+    </div>
+  </div>
+  <div class="row">
+    <span class="num">048</span>
+    <div class="body">
+      <div class="team">梦想成为大手子</div>
+      <div class="work">InsightX · 全球跨境电商 AI 市场洞察与动态决策系统</div>
+    </div>
+  </div>
+  <div class="row">
+    <span class="num">049</span>
+    <div class="body">
+      <div class="team">木木小分队</div>
+      <div class="work">跨境经营AI决策中枢</div>
+    </div>
+  </div>
+  <div class="row">
+    <span class="num">050</span>
+    <div class="body">
+      <div class="team">慕辞</div>
+      <div class="work">智慧上货</div>
+    </div>
+  </div>
+  <div class="row">
+    <span class="num">051</span>
+    <div class="body">
+      <div class="team">你说的都对</div>
+      <div class="work">跨境智上</div>
+    </div>
+  </div>
+  <div class="row">
+    <span class="num">052</span>
+    <div class="body">
+      <div class="team">皮特</div>
+      <div class="work">潮汐洞察 TideSight — 跨境出海 AI 决策引擎</div>
+    </div>
+  </div>
+  <div class="row">
+    <span class="num">053</span>
+    <div class="body">
+      <div class="team">品因AI</div>
+      <div class="work">品因AI：跨境退货根因诊断智能体</div>
+    </div>
+  </div>
+  <div class="row">
+    <span class="num">054</span>
+    <div class="body">
+      <div class="team">破界AI</div>
+      <div class="work">跨境卖家AI多平台文案智造引擎</div>
+    </div>
+  </div>
+  <div class="row">
+    <span class="num">055</span>
+    <div class="body">
+      <div class="team">千语队</div>
+      <div class="work">出海指挥官 · 跨境电商 AI 营销 Agent</div>
+    </div>
+  </div>
+  <div class="row">
+    <span class="num">056</span>
+    <div class="body">
+      <div class="team">轻灵</div>
+      <div class="work">Qling出海智察</div>
+    </div>
+  </div>
+  <div class="row">
+    <span class="num">057</span>
+    <div class="body">
+      <div class="team">人类</div>
+      <div class="work">CrossSellAI—跨境社媒内容引擎</div>
+    </div>
+  </div>
+  <div class="row">
+    <span class="num">058</span>
+    <div class="body">
+      <div class="team">睿欣达</div>
+      <div class="work">GlobalFitAI：跨境爆品智能移植与跨市场上架引擎</div>
+    </div>
+  </div>
+  <div class="row">
+    <span class="num">059</span>
+    <div class="body">
+      <div class="team">三棱</div>
+      <div class="work">棱镜上新 PrismLaunch</div>
+    </div>
+  </div>
+  <div class="row">
+    <span class="num">060</span>
+    <div class="body">
+      <div class="team">叁玖伍</div>
+      <div class="work">绿能星推官-户外储能出海AI营销引擎</div>
+    </div>
+  </div>
+  <div class="row">
+    <span class="num">061</span>
+    <div class="body">
+      <div class="team">善战者</div>
+      <div class="work">善战 · 上新引擎（ LaunchGenius ） —— 一张实拍图，分钟级解锁全球上新</div>
+    </div>
+  </div>
+  <div class="row">
+    <span class="num">062</span>
+    <div class="body">
+      <div class="team">时空视点ai组</div>
+      <div class="work">LaunchPassport · 可信跨境批量上新智能体</div>
+    </div>
+  </div>
+  <div class="row">
+    <span class="num">063</span>
+    <div class="body">
+      <div class="team">唐扬鸡块</div>
+      <div class="work">FactoryLeap</div>
+    </div>
+  </div>
+  <div class="row">
+    <span class="num">064</span>
+    <div class="body">
+      <div class="team">腾云队</div>
+      <div class="work">ListingCopilot</div>
+    </div>
+  </div>
+  <div class="row">
+    <span class="num">065</span>
+    <div class="body">
+      <div class="team">天道酬勤</div>
+      <div class="work">VideoGrowthAI</div>
+    </div>
+  </div>
+  <div class="row">
+    <span class="num">066</span>
+    <div class="body">
+      <div class="team">天天</div>
+      <div class="work">Orbis</div>
+    </div>
+  </div>
+  <div class="row">
+    <span class="num">067</span>
+    <div class="body">
+      <div class="team">天衍灵泽</div>
+      <div class="work">CrossCast·跨境短视频营销中枢</div>
+    </div>
+  </div>
+  <div class="row">
+    <span class="num">068</span>
+    <div class="body">
+      <div class="team">天宇</div>
+      <div class="work">云货影像——AI商品视觉内容工厂</div>
+    </div>
+  </div>
+  <div class="row">
+    <span class="num">069</span>
+    <div class="body">
+      <div class="team">拖鞋小老弟队</div>
+      <div class="work">TideSense 跨境洞察 · 创意设计文档</div>
+    </div>
+  </div>
+  <div class="row">
+    <span class="num">070</span>
+    <div class="body">
+      <div class="team">陀螺</div>
+      <div class="work">评论掘金(ReviewMiner)</div>
+    </div>
+  </div>
+  <div class="row">
+    <span class="num">071</span>
+    <div class="body">
+      <div class="team">瓦特蒸汽</div>
+      <div class="work">AI 跨境多平台差异化 Listing 智能生成器 —— 面向中小卖家的多语言商品文案解决方案</div>
+    </div>
+  </div>
+  <div class="row">
+    <span class="num">072</span>
+    <div class="body">
+      <div class="team">王家墩拐子姐</div>
+      <div class="work">CartBack百客智能邮件助手</div>
+    </div>
+  </div>
+  <div class="row">
+    <span class="num">073</span>
+    <div class="body">
+      <div class="team">旺旺队</div>
+      <div class="work">上架彩排</div>
+    </div>
+  </div>
+  <div class="row">
+    <span class="num">074</span>
+    <div class="body">
+      <div class="team">未命名</div>
+      <div class="work">避雷针——AI跨境全链路合规审查工具</div>
+    </div>
+  </div>
+  <div class="row">
+    <span class="num">075</span>
+    <div class="body">
+      <div class="team">文艺复兴</div>
+      <div class="work">AI智能广告素材生成器</div>
+    </div>
+  </div>
+  <div class="row">
+    <span class="num">076</span>
+    <div class="body">
+      <div class="team">我叫夯大力组</div>
+      <div class="work">千人千信——AI智能EDM个性化营销生成方案</div>
+    </div>
+  </div>
+  <div class="row">
+    <span class="num">077</span>
+    <div class="body">
+      <div class="team">我就是要出狂战斧</div>
+      <div class="work">AI智能上新工作流</div>
+    </div>
+  </div>
+  <div class="row">
+    <span class="num">078</span>
+    <div class="body">
+      <div class="team">无懈可击队</div>
+      <div class="work">析海 InsightSea —— 多源数据驱动的AI跨境市场洞察与选品决策Agent</div>
+    </div>
+  </div>
+  <div class="row">
+    <span class="num">079</span>
+    <div class="body">
+      <div class="team">小宋1021队</div>
+      <div class="work">ListingReady｜可追溯的AI跨境上新工作台</div>
+    </div>
+  </div>
+  <div class="row">
+    <span class="num">080</span>
+    <div class="body">
+      <div class="team">小天</div>
+      <div class="work">《从评论到改款：亚马逊AI评论深度挖掘与产品迭代决策方案》</div>
+    </div>
+  </div>
+  <div class="row">
+    <span class="num">081</span>
+    <div class="body">
+      <div class="team">芯智未来</div>
+      <div class="work">InsightMate —— 面向跨境电商的可验证市场决策智能体</div>
+    </div>
+  </div>
+  <div class="row">
+    <span class="num">082</span>
+    <div class="body">
+      <div class="team">星夕</div>
+      <div class="work">InsightForge——智能市场研究助手</div>
+    </div>
+  </div>
+  <div class="row">
+    <span class="num">083</span>
+    <div class="body">
+      <div class="team">胸毛</div>
+      <div class="work">CultureNail｜美国文化趋势上新智能体</div>
+    </div>
+  </div>
+  <div class="row">
+    <span class="num">084</span>
+    <div class="body">
+      <div class="team">徐来天下第一</div>
+      <div class="work">AI视觉素材引擎</div>
+    </div>
+  </div>
+  <div class="row">
+    <span class="num">085</span>
+    <div class="body">
+      <div class="team">晏羽</div>
+      <div class="work">OneClickAI——跨境商品图智能上新引擎</div>
+    </div>
+  </div>
+  <div class="row">
+    <span class="num">086</span>
+    <div class="body">
+      <div class="team">杨宝AI工作室</div>
+      <div class="work">AICONN（爱康恩）—— 代表老板身份的 AI 交易代理人系统</div>
+    </div>
+  </div>
+  <div class="row">
+    <span class="num">087</span>
+    <div class="body">
+      <div class="team">一人即一对</div>
+      <div class="work">AI 全域营销智能体平台</div>
+    </div>
+  </div>
+  <div class="row">
+    <span class="num">088</span>
+    <div class="body">
+      <div class="team">易刊智能团队</div>
+      <div class="work">EasyListingAI跨境智能上新助手</div>
+    </div>
+  </div>
+  <div class="row">
+    <span class="num">089</span>
+    <div class="body">
+      <div class="team">萤火虫队</div>
+      <div class="work">AI铺货大师</div>
+    </div>
+  </div>
+  <div class="row">
+    <span class="num">090</span>
+    <div class="body">
+      <div class="team">勇敢牛牛</div>
+      <div class="work">运营竞品异动追踪器</div>
+    </div>
+  </div>
+  <div class="row">
+    <span class="num">091</span>
+    <div class="body">
+      <div class="team">忧郁麦旋风</div>
+      <div class="work">AI跨境物流成本与时效洞察</div>
+    </div>
+  </div>
+  <div class="row">
+    <span class="num">092</span>
+    <div class="body">
+      <div class="team">幽默彭博士</div>
+      <div class="work">Review2Product全球消费者评论驱动的产品进化智能体</div>
+    </div>
+  </div>
+  <div class="row">
+    <span class="num">093</span>
+    <div class="body">
+      <div class="team">与磊同行</div>
+      <div class="work">VOC智策——跨境竞品评论全链路AI洞察与选品决策</div>
+    </div>
+  </div>
+  <div class="row">
+    <span class="num">094</span>
+    <div class="body">
+      <div class="team">阈启科技-Limnov</div>
+      <div class="work">Vantage-跨境信息智能搜索与发布系统</div>
+    </div>
+  </div>
+  <div class="row">
+    <span class="num">095</span>
+    <div class="body">
+      <div class="team">猿渡科技</div>
+      <div class="work">避风港 · 市场洞察引擎</div>
+    </div>
+  </div>
+  <div class="row">
+    <span class="num">096</span>
+    <div class="body">
+      <div class="team">云帆跨境</div>
+      <div class="work">「MultiAdapt」——跨平台电商Listing智能适配生成系统</div>
+    </div>
+  </div>
+  <div class="row">
+    <span class="num">097</span>
+    <div class="body">
+      <div class="team">云上码术</div>
+      <div class="work">AI智绘出海 CrossGlow Agent——面向时尚产业带的多模态跨境内容与合规智能体</div>
+    </div>
+  </div>
+  <div class="row">
+    <span class="num">098</span>
+    <div class="body">
+      <div class="team">征临</div>
+      <div class="work">ListingForge · AI 智能上新引擎</div>
+    </div>
+  </div>
+  <div class="row">
+    <span class="num">099</span>
+    <div class="body">
+      <div class="team">智达海外</div>
+      <div class="work">基于多智能体的跨境电商营销工具</div>
+    </div>
+  </div>
+  <div class="row">
+    <span class="num">100</span>
+    <div class="body">
+      <div class="team">周鹏&amp;王梅</div>
+      <div class="work">见微AI｜跨境市场洞察引擎</div>
+    </div>
+  </div>
+  <div class="row">
+    <span class="num">101</span>
+    <div class="body">
+      <div class="team">最强的战绩铭刻于天池</div>
+      <div class="work">莫莫甄选——智能上新Agent</div>
+    </div>
+  </div>
+  <div class="row">
+    <span class="num">102</span>
+    <div class="body">
+      <div class="team">Agent浏览器</div>
+      <div class="work">Agent浏览器</div>
+    </div>
+  </div>
+  <div class="row">
+    <span class="num">103</span>
+    <div class="body">
+      <div class="team">AgentForge</div>
+      <div class="work">CrossMindAI——AI跨境选品分析助手</div>
+    </div>
+  </div>
+  <div class="row">
+    <span class="num">104</span>
+    <div class="body">
+      <div class="team">AI跨境和谐营商关系开创队</div>
+      <div class="work">Aegis-Agent：基于数字礼学的L5级全自动驾驶电商智能体</div>
+    </div>
+  </div>
+  <div class="row">
+    <span class="num">105</span>
+    <div class="body">
+      <div class="team">ai来</div>
+      <div class="work">证据驱动的跨境新品多智能体决策平台</div>
+    </div>
+  </div>
+  <div class="row">
+    <span class="num">106</span>
+    <div class="body">
+      <div class="team">ai小虎</div>
+      <div class="work">跨境鹰眼CrossHawk—AI竞品评论智能挖掘与产品<span class="warn">（原名待核对）</span></div>
+    </div>
+  </div>
+  <div class="row">
+    <span class="num">107</span>
+    <div class="body">
+      <div class="team">AIPower</div>
+      <div class="work">评析智策（ReviewWiseAI）</div>
+    </div>
+  </div>
+  <div class="row">
+    <span class="num">108</span>
+    <div class="body">
+      <div class="team">AlphaFDE</div>
+      <div class="work">灵感工坊 Atelier：证据驱动的跨境出海自演进营销智能体工作台</div>
+    </div>
+  </div>
+  <div class="row">
+    <span class="num">109</span>
+    <div class="body">
+      <div class="team">AutoCommerce·自驱商流</div>
+      <div class="work">AutoCommerce·自驱商流——证据约束型AI</div>
+    </div>
+  </div>
+  <div class="row">
+    <span class="num">110</span>
+    <div class="body">
+      <div class="team">B-Better</div>
+      <div class="work">跨境先知MarketSeer——能听懂差评</div>
+    </div>
+  </div>
+  <div class="row">
+    <span class="num">111</span>
+    <div class="body">
+      <div class="team">bear_monica</div>
+      <div class="work">珠语·对齐饰界AI驱动的全球流行饰品趋势洞察与柔性智造对齐平台</div>
+    </div>
+  </div>
+  <div class="row">
+    <span class="num">112</span>
+    <div class="body">
+      <div class="team">cc园区</div>
+      <div class="work">GloLaunchAI—AI全链路跨境智能上新引擎</div>
+    </div>
+  </div>
+  <div class="row">
+    <span class="num">113</span>
+    <div class="body">
+      <div class="team">CrossSense Lab</div>
+      <div class="work">跨境新品市场适配与智能选品 Agent</div>
+    </div>
+  </div>
+  <div class="row">
+    <span class="num">114</span>
+    <div class="body">
+      <div class="team">Detached HEAD</div>
+      <div class="work">出海罗盘 · OceanCompass —— AI 跨境电商市场智能洞察平台</div>
+    </div>
+  </div>
+  <div class="row">
+    <span class="num">115</span>
+    <div class="body">
+      <div class="team">fh</div>
+      <div class="work">上新侠·多平台合规智能上线Agent</div>
+    </div>
+  </div>
+  <div class="row">
+    <span class="num">116</span>
+    <div class="body">
+      <div class="team">formula hero</div>
+      <div class="work">GoPass（过审）· AI 出海合规上新副驾</div>
+    </div>
+  </div>
+  <div class="row">
+    <span class="num">117</span>
+    <div class="body">
+      <div class="team">INNOFUN</div>
+      <div class="work">MatrixCut矩阵剪——跨境短视频素材批量生产引擎</div>
+    </div>
+  </div>
+  <div class="row">
+    <span class="num">118</span>
+    <div class="body">
+      <div class="team">LaunchLens Labs</div>
+      <div class="work">LaunchLens AI</div>
+    </div>
+  </div>
+  <div class="row">
+    <span class="num">119</span>
+    <div class="body">
+      <div class="team">Lumio</div>
+      <div class="work">ReturnGuard（退件法医）·跨境退货情报站</div>
+    </div>
+  </div>
+  <div class="row">
+    <span class="num">120</span>
+    <div class="body">
+      <div class="team">MoneyBack</div>
+      <div class="work">AI 跨境一键上新与转化自优化引擎</div>
+    </div>
+  </div>
+  <div class="row">
+    <span class="num">121</span>
+    <div class="body">
+      <div class="team">nick1674270660-47728</div>
+      <div class="work">出海罗盘 · 跨境市场洞察决策单引擎</div>
+    </div>
+  </div>
+  <div class="row">
+    <span class="num">122</span>
+    <div class="body">
+      <div class="team">nick6089971076-38570</div>
+      <div class="work">一键出海 · AI 商品上新助手</div>
+    </div>
+  </div>
+  <div class="row">
+    <span class="num">123</span>
+    <div class="body">
+      <div class="team">Origin</div>
+      <div class="work">CrossShield·跨境AI选品与合规决策平台</div>
+    </div>
+  </div>
+  <div class="row">
+    <span class="num">124</span>
+    <div class="body">
+      <div class="team">PG_0</div>
+      <div class="work">基于AI+数据驱动的新品市场洞察与决策前置引擎</div>
+    </div>
+  </div>
+  <div class="row">
+    <span class="num">125</span>
+    <div class="body">
+      <div class="team">QIAN</div>
+      <div class="work">AI多场景产品图批量生成</div>
+    </div>
+  </div>
+  <div class="row">
+    <span class="num">126</span>
+    <div class="body">
+      <div class="team">qwen7</div>
+      <div class="work">AI视界·真实3D跨境商品体验平台</div>
+    </div>
+  </div>
+  <div class="row">
+    <span class="num">127</span>
+    <div class="body">
+      <div class="team">ReversePick</div>
+      <div class="work">跨境爆品短视频工厂</div>
+    </div>
+  </div>
+  <div class="row">
+    <span class="num">128</span>
+    <div class="body">
+      <div class="team">Saber</div>
+      <div class="work">面向 AI 购物 Agent 的跨境商品安全上新平台</div>
+    </div>
+  </div>
+  <div class="row">
+    <span class="num">129</span>
+    <div class="body">
+      <div class="team">Sandra</div>
+      <div class="work">NovaSKU：洞察驱动的跨境智能上新引擎</div>
+    </div>
+  </div>
+  <div class="row">
+    <span class="num">130</span>
+    <div class="body">
+      <div class="team">SmartHull</div>
+      <div class="work">「一键上新通」—— 跨境卖家分钟级多平台合规上架助手</div>
+    </div>
+  </div>
+  <div class="row">
+    <span class="num">131</span>
+    <div class="body">
+      <div class="team">SN0511</div>
+      <div class="work">选品雷达—AI市场洞察平台</div>
+    </div>
+  </div>
+  <div class="row">
+    <span class="num">132</span>
+    <div class="body">
+      <div class="team">star</div>
+      <div class="work">catchculture</div>
+    </div>
+  </div>
+  <div class="row">
+    <span class="num">133</span>
+    <div class="body">
+      <div class="team">SuperSoldier</div>
+      <div class="work">FurniScope跨境家具超级AI员工</div>
+    </div>
+  </div>
+  <div class="row">
+    <span class="num">134</span>
+    <div class="body">
+      <div class="team">timo和他的大龙虾</div>
+      <div class="work">AI市场洞察-用数据代替直觉做决策</div>
+    </div>
+  </div>
+  <div class="row">
+    <span class="num">135</span>
+    <div class="body">
+      <div class="team">TraceStar</div>
+      <div class="work">TikTokLivePricer·直播价盘管家</div>
+    </div>
+  </div>
+  <div class="row">
+    <span class="num">136</span>
+    <div class="body">
+      <div class="team">TrendForge</div>
+      <div class="work">TrendForge：基于可验证多智能体的跨境新品决策系统</div>
+    </div>
+  </div>
+  <div class="row">
+    <span class="num">137</span>
+    <div class="body">
+      <div class="team">w图文合规合文化队伍</div>
+      <div class="work">AI商品图跨境合规监测——从符合规则，法律到文化适配</div>
+    </div>
+  </div>
+  <div class="row">
+    <span class="num">138</span>
+    <div class="body">
+      <div class="team">wonder</div>
+      <div class="work">从用户的凑合办法中，发现下一件商品</div>
+    </div>
+  </div>
+  <div class="row">
+    <span class="num">139</span>
+    <div class="body">
+      <div class="team">x</div>
+      <div class="work">SocialPilotAI</div>
+    </div>
+  </div>
+  <div class="row">
+    <span class="num">140</span>
+    <div class="body">
+      <div class="team">XTeam</div>
+      <div class="work">AI 市场洞察平台（Global Market Insight Engine）——基于多源实时数据的出海选品与竞争决策系统。</div>
+    </div>
+  </div>
+  <div class="row">
+    <span class="num">141</span>
+    <div class="body">
+      <div class="team">xuxu</div>
+      <div class="work">让商品在生成时就进入合规闭环，而不是上架前再人工救火。</div>
+    </div>
+  </div>
+  <div class="row">
+    <span class="num">142</span>
+    <div class="body">
+      <div class="team">Y Team</div>
+      <div class="work">ListingCraft数据驱动的跨境 AI 上新工作台</div>
+    </div>
+  </div>
+  <div class="row">
+    <span class="num">143</span>
+    <div class="body">
+      <div class="team">YJiu</div>
+      <div class="work">上新无界（CrossLaunchAI）——跨境商品智能上新</div>
+    </div>
+  </div>
+  <div class="row">
+    <span class="num">144</span>
+    <div class="body">
+      <div class="team">YNWA</div>
+      <div class="work">AI短视频批量生产工厂</div>
+    </div>
+  </div>
+  <div class="row">
+    <span class="num">145</span>
+    <div class="body">
+      <div class="team">yqyzq</div>
+      <div class="work">AI 跨境新品决策雷达</div>
+    </div>
+  </div>
+  <div class="row">
+    <span class="num">146</span>
+    <div class="body">
+      <div class="team">yyds</div>
+      <div class="work">竞品差评狙击手</div>
+    </div>
+  </div>
+  <div class="row">
+    <span class="num">147</span>
+    <div class="body">
+      <div class="team">zzk</div>
+      <div class="work">海鉴 LaunchProof——跨境新品决策与合规上新智能体</div>
+    </div>
+  </div>
+  <div class="row">
+    <span class="num">148</span>
+    <div class="body">
+      <div class="team">zzu_hb</div>
+      <div class="work">BorderLaunch AI｜跨境智上新：事实锁定的多语言 Listing 与合规发布工作台</div>
+    </div>
+  </div>
+  </div>
+</div>
+
+<!-- ============ 底部 ============ -->
+<div class="footer">
+  <div class="organizers">
+    <div class="row1">指导单位 · 主办单位 · 承办单位</div>
+    <div class="row2">
+      <span class="hi">菜鸟智谷</span> · 阿里云 · 跨境百人会 · 阿里国际 AITIC<br>
+      承办单位：<span class="hi">CSDN</span>
+    </div>
+  </div>
+
+  <div class="csdn-badge">
+    <span class="logo">CSDN</span>
+    <span class="txt">CSDN 营销运营 · 公示发布</span>
+  </div>
+
+  <div class="footer-note">
+    ※ 公示名单信息以官方最终发布为准。
+  </div>
+</div>
+
+
+</body></html>
