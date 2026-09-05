@@ -39,7 +39,7 @@
 
 ## 四、模型与实验结果（以 results_summary.md 为唯一权威）
 
-最终二分类模型：DistilBERT-base（66M 参数），训练配置为 1:10 欠采样（约 1006 正例 + 10060 负例）、学习率 2e-5、batch 16、epochs 3。验证集 20000 条（251 正例）上准确率 0.9865，F1@0.5 为 0.6241，调优阈值 0.9744（对外口径 0.97）后 F1 0.6871，召回率 89.6%。模型保存在 sound_model，阈值在 sound_model/threshold.json。
+最终二分类模型：DistilBERT-base（66M 参数），训练配置为 1:10 欠采样（约 1006 正例 + 10060 负例）、学习率 2e-5、batch 16、epochs 3。验证集 20000 条（251 正例）上准确率 0.9865，F1@0.5 为 0.6241，调优阈值 0.9744（对外口径 0.97）后 F1 0.6871，召回率 89.6%，精确率 47.9%。模型保存在 sound_model，阈值在 sound_model/threshold.json。
 
 交叉验证：清洗标签 5 折逐折调优 F1 为 0.6655、0.6151、0.6325、0.6054、0.5983，均值 0.6234 ± 0.0240，波动 3.9%。弱标注标签 10 折调优 F1 均值 0.5487。
 
@@ -49,7 +49,7 @@
 
 消融实验（exp07-09）：A 无采样调优 F1 0.6486 但召回率仅 0.53；B class_weight 平衡更差（0.6304）；C Focal Loss 0.6423 未超最终模型。结论：现有 1:10 欠采样 + 交叉熵方案最优。
 
-统计验证：PR 曲线 AUC-PR 0.7191；学习曲线（100/300/500/800/1000/1257 正例）整体上升，当前正在跑无泄漏重跑版本，完成后更新 stats_validation.md。
+统计验证：PR 曲线 AUC-PR 0.7191；学习曲线（100/300/500/800/1000/1257 正例）最终值 0.4067/0.5214/0.5099/0.5256/0.5666/0.6179，1257 档为 bootstrap 口径（1006 条不重复训练正例有放回采样，验证集零重叠）。
 
 RoBERTa 快速验证：仅 2 epoch 探测，调优 F1 0.6169，未充分收敛，仅作基座对比参考，不具选型意义（结论已软化写入 results_summary.md）。
 
@@ -68,16 +68,18 @@ RoBERTa 快速验证：仅 2 epoch 探测，调优 F1 0.6169，未充分收敛�
 
 ## 六、当前进行中与待办
 
-进行中：学习曲线无泄漏重跑（12 次小训练，预计 20 分钟内完成），完成后更新 stats_validation.md 与 learning_curve.png。
+进行中：无 GPU 任务。D5 五个批次均已落地：批次 1 部署包备齐（待用户 ModelScope 账号三步操作）；批次 2 审计完成（PPT 20 页超页数为用户侧 FAIL）；批次 3 competition_v4.md 完成且数字审计全 PASS；批次 4 Demo.zip 与复赛作品 zip 骨架已生成、样例集/视频脚本/反馈模板完成；批次 5 本轮收尾。
 
 待办（按优先级）：
 
 1. 用户在命令行执行 git push（命令：git push origin main，报 schannel 错误时加 -c http.sslBackend=openssl）。
-2. 人工审核 human_review_conf30.csv（8 条中置信样本，判定列填 1 或 0），准确率 70% 以上即通过。
-3. Demo 压缩包打包（更新世界的锋芒_SoundInsight_Demo.zip）。
-4. 演示视频录制（3-5 分钟，更新世界的锋芒_SoundInsight_演示视频.mp4）。
-5. competition_v3.txt 团队信息章节人工填写。
-6. 最终打包 zip（更新世界的锋芒_SoundInsight_复赛作品.zip）。
+2. 人工审核 human_review_conf30.csv（8 条中置信样本，判定列填 1 或 0）。
+3. ModelScope 注册、建仓、取 token，然后执行 upload_models.py 与创空间创建（见 DEPLOY_GUIDE.md）。
+4. 演示视频录制（按 video_script.md，2-3 分钟）。
+5. 真实用户反馈收集（feedback_template.md，禁止预填）。
+6. competition_v4.md 团队信息章节人工填写。
+7. PPT 视觉走查（当前 20 页，超出 8-12 页要求，需决定精简）。
+8. 最终 PDF 导出并放入 更新世界的锋芒_SoundInsight_复赛作品.zip。
 
 ## 七、环境事实
 
