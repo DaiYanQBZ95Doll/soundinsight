@@ -84,7 +84,7 @@ SoundInsight 是一款面向跨境电商耳机卖家的音质差评智能归因�
 
 启动 Agent：python soundinsight_agent.py --csv test.csv
 
-在线 Demo 地址：（部署完成后填入，占位）
+在线 Demo 地址：https://modelscope.cn/studios/DaiYanQBZ95Doll/SoundInsight （应用直链 https://daiyanqbz95doll-soundinsight.ms.show）
 
 截图：单条判定页、批量分析页、Agent 报告页（各 1 张）
 
