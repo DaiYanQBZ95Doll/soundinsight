@@ -76,8 +76,8 @@ RoBERTa 快速验证：仅 2 epoch 探测，调优 F1 0.6169，未充分收敛�
 待办（按优先级）：
 
 1. 用户在命令行执行 git push（命令：git push origin main，报 schannel 错误时加 -c http.sslBackend=openssl）；DSH 亦会尝试用 openssl 参数推送。
-2. 人工审核 human_review_conf30.csv（8 条中置信样本，判定列填 1 或 0）；另新增 human_review_noise16.csv（16 条 LLM 判定为标注噪声的错误样本，含人工判定列），建议用户过一遍以把 9.8% 噪声率从"AI 说"变为"人说"。
-3. 标注噪声终审：error_taxonomy.md 中 LLM 判定约 9.8% 错误样本为标注问题（AI 判定，未人工终审）——人工终审文件 human_review_noise16.csv 已备好，见上一条。
+2. 人工审核 human_review_conf30.csv（8 条中置信样本，判定列填 1 或 0）；human_review_noise16.csv 已完成用户人工终审（2026-09-05）：15/16 确认 → 标注噪声率 9.1%（CI 5.6%-14.5%），判定已写入 CSV。
+3. 标注噪声终审：**已完成**（见上一条），error_taxonomy.md / v4 9.1 / MODEL_CARD 均已更新为人工口径（9.1%，下界估算声明保留）。
 4. 诚信核查（已处理）：v3/v4 5.2 节旧表述已按路线 (a) 改为 deepseek-chat / DeepSeek 官方 API，阿里云百炼栏如实填"未使用"。
    若用户提供 Token Plan Key 并选择路线 (b)，可用 qwen3.7-plus 重跑 Batch B 对照，并把表格改回"已使用"。
 5. ModelScope 创空间：**已部署成功并验收通过（2026-09-05）**。地址 https://modelscope.cn/studios/DaiYanQBZ95Doll/SoundInsight（直链 .ms.show）。deploy_check 结果：页面 200、单条推理 2/2（负面→杂音归因、正面→正常，含校准提示）、批量 100 条 15.1 秒（12 差评，分布与本地一致）。三次修复记录见 DEPLOY_GUIDE.md 顶部。
