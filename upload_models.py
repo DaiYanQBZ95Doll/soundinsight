@@ -60,9 +60,20 @@ def main() -> None:
         print("dry-run 模式：不执行 git 推送")
         return
 
+    # 克隆远程仓库（自带 README/configuration），放入模型文件后正常推送，
+    # 全程快进合并，不需要强制推送，兼容分支保护。
     remote = f"https://oauth2:{args.token}@www.modelscope.cn/{args.repo}.git"
+    clone_dir = os.path.join(tmp, "repo")
+    r = subprocess.run(["git", "clone", remote, clone_dir],
+                       capture_output=True, text=True)
+    print("> git clone <远程仓库>")
+    if r.returncode != 0:
+        print(r.stderr[-800:])
+        raise SystemExit("克隆远程仓库失败")
+    for src, dst in SRC_DIRS:
+        shutil.copytree(os.path.join(HERE, src),
+                        os.path.join(clone_dir, dst), dirs_exist_ok=True)
     cmds = [
-        ["git", "init"],
         ["git", "lfs", "install", "--local"],
         ["git", "lfs", "track", "*.safetensors"],
         ["git", "config", "user.name", "SoundInsight"],
@@ -70,39 +81,15 @@ def main() -> None:
          "soundinsight@users.noreply.github.com"],
         ["git", "add", "."],
         ["git", "commit", "-m", "upload SoundInsight models"],
-        ["git", "branch", "-M", "master"],
-        ["git", "remote", "add", "origin", remote],
+        ["git", "push", "-u", "origin", "master"],
     ]
     for c in cmds:
-        r = subprocess.run(c, cwd=tmp, capture_output=True, text=True,
+        r = subprocess.run(c, cwd=clone_dir, capture_output=True, text=True,
                            shell=False)
         print(f"> {' '.join(c)}")
         if r.returncode != 0 and c[1] != "init":
             print(r.stderr[-800:])
             raise SystemExit(f"命令失败：{' '.join(c)}")
-    # 远程仓库自带 README 提交，用合并式拉取集成后推送
-    pull = subprocess.run(
-        ["git", "pull", "--no-rebase", "--allow-unrelated-histories",
-         "origin", "master"], cwd=tmp, capture_output=True, text=True)
-    print("> git pull --no-rebase --allow-unrelated-histories origin master")
-    if pull.returncode != 0:
-        print(pull.stderr[-400:])
-        print("合并拉取失败，尝试强制推送（仅覆盖自动生成的 README）")
-        push = subprocess.run(["git", "push", "-f", "-u", "origin",
-                               "master"], cwd=tmp, capture_output=True,
-                              text=True)
-        print("> git push -f -u origin master")
-        if push.returncode != 0:
-            print(push.stderr[-800:])
-            raise SystemExit("强制推送也失败")
-        print(f"上传完成 -> https://modelscope.cn/models/{args.repo}")
-        return
-    push = subprocess.run(["git", "push", "-u", "origin", "master"],
-                          cwd=tmp, capture_output=True, text=True)
-    print("> git push -u origin master")
-    if push.returncode != 0:
-        print(push.stderr[-800:])
-        raise SystemExit("推送失败：git push -u origin master")
     print(f"上传完成 -> https://modelscope.cn/models/{args.repo}")
     print(f"请把 {args.repo} 填入 deployment/config.json 的 model_repo_id")
 
