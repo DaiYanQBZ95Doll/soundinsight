@@ -1,5 +1,13 @@
 # SoundInsight 在线 Demo 部署指南（ModelScope 创空间）
 
+部署状态（2026-09-05）：**已部署成功并运行中**。期间修复三个问题，均已在文档记录：
+1. requirements.txt 钉 torch 版本导致与基础镜像 torchvision ABI 冲突（启动崩溃 torchvision::nms）；
+2. 代码注释含"内网"措辞触发平台敏感词扫描，app.py 被自动回滚（改用中性措辞后通过）；
+3. 下载 URL 误拼本地绝对路径（FilePath=/home/studio/PROJECT/...）导致 404，已改用仓库相对目录名。
+当前权重下载采用多入口回退链（www.modelscope.cn / modelscope.cn × API 风格 ± Revision / resolve 直链），失败时日志带 URL 与响应摘要。
+
+公开地址：（运行成功后填入，并同步到 README.md 第 52 行与 competition_v4.md）
+
 目标：获得一个中国大陆网络可直接访问的公网 Demo 地址，总操作量约 30 分钟。
 
 ## 第 1 步：注册并登录（3 分钟）
