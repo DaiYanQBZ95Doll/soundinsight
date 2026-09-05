@@ -61,6 +61,41 @@ QNA_FORBIDDEN = [
     (r"\$50", "已废弃的纯LLM标注$50成本claim"),
 ]
 
+# Batch C/E 新文档数字
+THROUGHPUT_REQUIRED = [
+    (r"1\.763", ["1.763"], "GPU 1000条中位数(秒)"),
+    (r"567\.1", ["567.1"], "GPU 吞吐(条/s)"),
+    (r"28\.443", ["28.443"], "CPU 1000条中位数(秒)"),
+    (r"35\.2", ["35.2", "35.6"], "CPU 吞吐(条/s)"),
+]
+
+CALIB_REQUIRED = [
+    (r"0\.0122", ["0.0122"], "ECE十箱"),
+    (r"0\.229", ["0.229"], "0.8-0.9箱实际正例率"),
+    (r"0\.555", ["0.555"], "0.9-1.0箱实际正例率"),
+]
+
+ERRTAX_REQUIRED = [
+    (r"FP=91", ["FP=91", "FP 91"], "误报数"),
+    (r"FN=73", ["FN=73", "FN 73"], "漏报数"),
+    (r"54\.9%", ["54.9%"], "FP其他问题占比"),
+    (r"58\.9%", ["58.9%"], "FN委婉+双面占比"),
+    (r"9\.8%", ["9.8%"], "标注噪声率(LLM判定)"),
+]
+
+LENBUCKET_REQUIRED = [
+    (r"0\.6667|0\.667", ["0.6667", "0.667"], "<=64字符F1"),
+    (r"0\.7368|0\.737", ["0.7368", "0.737"], "65-128字符F1"),
+    (r"0\.6791|0\.679", ["0.6791", "0.679"], ">128字符F1"),
+]
+
+MODELCARD_REQUIRED = [
+    (r"0\.0122", ["0.0122"], "ECE十箱"),
+    (r"0\.9744", ["0.9744"], "阈值"),
+    (r"9\.8%", ["9.8%"], "标注噪声率"),
+    (r"1280", ["1280"], "当前工作集正例数"),
+]
+
 GROUPS = [
     {"files": ["competition_v3.txt", "competition_v4.md", "README.md",
                "QWEN_HANDOFF.md", "ppt_text_dump.md"],
@@ -69,6 +104,16 @@ GROUPS = [
      "required": LLM_REQUIRED, "forbidden": [], "check_1288": False},
     {"files": ["qna_preparation.md"],
      "required": QNA_REQUIRED, "forbidden": QNA_FORBIDDEN, "check_1288": False},
+    {"files": ["throughput_eval.md"],
+     "required": THROUGHPUT_REQUIRED, "forbidden": [], "check_1288": False},
+    {"files": ["calibration_eval.md"],
+     "required": CALIB_REQUIRED, "forbidden": [], "check_1288": False},
+    {"files": ["error_taxonomy.md"],
+     "required": ERRTAX_REQUIRED, "forbidden": [], "check_1288": False},
+    {"files": ["length_bucket_eval.md"],
+     "required": LENBUCKET_REQUIRED, "forbidden": [], "check_1288": False},
+    {"files": ["MODEL_CARD.md"],
+     "required": MODELCARD_REQUIRED, "forbidden": [], "check_1288": False},
 ]
 
 
