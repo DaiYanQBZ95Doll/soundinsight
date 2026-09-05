@@ -80,7 +80,7 @@ RoBERTa 快速验证：仅 2 epoch 探测，调优 F1 0.6169，未充分收敛�
 3. 标注噪声终审：error_taxonomy.md 中 LLM 判定约 9.8% 错误样本为标注问题（AI 判定，未人工终审）——人工终审文件 human_review_noise16.csv 已备好，见上一条。
 4. 诚信核查（已处理）：v3/v4 5.2 节旧表述已按路线 (a) 改为 deepseek-chat / DeepSeek 官方 API，阿里云百炼栏如实填"未使用"。
    若用户提供 Token Plan Key 并选择路线 (b)，可用 qwen3.7-plus 重跑 Batch B 对照，并把表格改回"已使用"。
-5. ModelScope 注册、建仓、取 token，然后执行 upload_models.py 与创空间创建（见 DEPLOY_GUIDE.md）；Studio 构建完成后把公开 URL 发给 DSH 做 deploy_check。
+5. ModelScope 创空间：**已部署成功并运行中（2026-09-05）**。三次修复记录见 DEPLOY_GUIDE.md 顶部（torch ABI / 平台敏感词自动回滚 / 下载路径 bug）。待用户提供公开 URL 供 DSH 执行 deploy_check 并填入 README 与 v4。
 6. 演示视频录制（按 video_script.md，2-3 分钟）。
 7. 真实用户反馈收集（feedback_template.md，禁止预填）。
 8. PPT 视觉走查与精简（当前 20 页，超出 8-12 页要求）。

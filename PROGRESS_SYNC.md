@@ -53,7 +53,8 @@
 - P1-1（概率展示一致性）：Demo 单条/批量/边界案例三处输出加"概率未经校准，仅供排序参考"提示；Agent 中英文报告附注同步；capture_log.txt 与 exp06/training_output.txt 为历史日志产物（生成于加注前），不再编辑历史日志。
 - P1-2（标注噪声人工终审）：human_review_noise16.csv 已生成（12 FP + 4 FN，含 LLM 理由与人工判定列），待用户复核。
 - P2-1（数据集考古汇总）：docs/dataset_audit.md 已产出（来源/字段清单/行数/时间范围/数据质量问题）；year_split_eval.py 重跑，输出原文存档 docs/year_split_output.txt（2022 桶 F1@0.5=0.8049，覆盖 19,996/20,000，与 Q6 一致）。
-- P2-2（git push）：网络仍不可达，8 个 commit 在本地，用户网络恢复后按 README 命令推送。
+- P2-2（git push）：网络仍不可达，多个 commit 在本地，用户网络恢复后按 README 命令推送。
+- 在线 Demo（ModelScope 创空间）：**部署成功，运行中（2026-09-05）**。三次修复：torch/torchvision ABI 硬钉冲突、平台敏感词扫描自动回滚（"内网"措辞）、下载 URL 误拼绝对路径致 404。权重下载现为多入口回退链。公开 URL 待用户提供后做 deploy_check 并回填 README/v4。
 
 ## 重建产物实测值（最新）
 
