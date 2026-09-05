@@ -14,7 +14,6 @@ import os
 import shutil
 import subprocess
 import sys
-import tempfile
 
 sys.stdout.reconfigure(encoding="utf-8", errors="replace")
 
@@ -29,15 +28,37 @@ def main() -> None:
     ap = argparse.ArgumentParser()
     ap.add_argument("--repo", required=True, help="ModelScope 仓库路径，如 用户名/SoundInsight_models")
     ap.add_argument("--token", required=True, help="ModelScope 访问令牌")
+    ap.add_argument("--dry-run", action="store_true",
+                    help="只打印将上传的文件清单，不执行 git 操作")
     args = ap.parse_args()
 
-    tmp = tempfile.mkdtemp(prefix="ms_upload_")
+    tmp = os.path.join(HERE, ".ms_upload_tmp")
+    if os.path.isdir(tmp):
+        shutil.rmtree(tmp, ignore_errors=True)
+    os.makedirs(tmp, exist_ok=True)
+    total_size = 0
+    total_files = 0
     for src, dst in SRC_DIRS:
-        src_path = os.path.join(HERE, "..", src)
+        src_path = os.path.join(HERE, src)
         if not os.path.isdir(src_path):
-            print(f"警告：{src} 不存在，跳过")
-            continue
-        shutil.copytree(src_path, os.path.join(tmp, dst), dirs_exist_ok=True)
+            raise SystemExit(
+                f"错误：{src} 目录不存在。请在项目根目录运行本脚本，"
+                f"并确认 {src} 权重已存在。")
+        copied = shutil.copytree(src_path, os.path.join(tmp, dst),
+                                 dirs_exist_ok=True)
+        for root, _, files in os.walk(copied):
+            for fn in files:
+                fp = os.path.join(root, fn)
+                total_size += os.path.getsize(fp)
+                total_files += 1
+                rel = os.path.relpath(fp, tmp)
+                print(f"  {rel} ({os.path.getsize(fp) / 1e6:.1f} MB)")
+
+    print(f"文件总数：{total_files}")
+    print(f"总大小：{total_size / 1e6:.0f} MB")
+    if args.dry_run:
+        print("dry-run 模式：不执行 git 推送")
+        return
 
     remote = f"https://oauth2:{args.token}@www.modelscope.cn/{args.repo}.git"
     cmds = [

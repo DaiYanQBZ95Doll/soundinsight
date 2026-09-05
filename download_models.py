@@ -48,7 +48,7 @@ def main() -> None:
         if os.path.exists(dst) and os.path.getsize(dst) >= min_size:
             print(f"跳过（已存在）: {dname}/{fname}")
             continue
-        url = API.format(repo=repo, fname=fname)
+        url = API.format(repo=repo, fname=f"{dname}/{fname}")
         r = requests.get(url, timeout=900, stream=True)
         if r.status_code != 200:
             raise SystemExit(f"下载失败 {fname}: HTTP {r.status_code}")
