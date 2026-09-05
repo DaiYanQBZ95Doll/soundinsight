@@ -65,7 +65,7 @@ def predict_multilabel(model, tok, texts, device):
     return np.vstack(out)
 
 
-def analyze(csv_path: str) -> str:
+def analyze(csv_path: str, export: bool = False) -> str:
     device, tok, bin_model, thr, ml_model, issue_info = load()
     df = pd.read_csv(csv_path, encoding="utf-8")
     text_col = next((c for c in ("text", "reviewText", "review")
@@ -174,14 +174,61 @@ def analyze(csv_path: str) -> str:
     with open(out_path, "w", encoding="utf-8") as f:
         f.write(report)
     print(f"报告已保存 -> {out_path}")
+    if export:
+        export_excel(csv_path, n, rate, avg_rating, verdict, ranked,
+                     priority, neg_idx, probs, texts)
     return report
+
+
+def export_excel(csv_path, n, rate, avg_rating, verdict, ranked, priority,
+                 neg_idx, probs, texts):
+    """导出 Excel 版报告：总体概况 / 问题分布（高优先级标红）/ 典型案例。"""
+    from openpyxl import Workbook
+    from openpyxl.styles import Font, PatternFill
+
+    wb = Workbook()
+    ws1 = wb.active
+    ws1.title = "总体概况"
+    rows1 = [["指标", "数值"],
+             ["分析对象", os.path.basename(csv_path)],
+             ["评论总数", n],
+             ["音质差评数", f"{len(neg_idx)}（{rate:.2%}）"],
+             ["平均评分", f"{avg_rating:.2f}"],
+             ["结论", verdict]]
+    for r in rows1:
+        ws1.append(r)
+
+    ws2 = wb.create_sheet("问题分布")
+    ws2.append(["问题类别", "数量", "占比", "优先级"])
+    total_issue = sum(c for _, c in ranked)
+    red_font = Font(color="FF0000", bold=True)
+    red_fill = PatternFill("solid", fgColor="FFC7CE")
+    for name, cnt in ranked:
+        ws2.append([name, cnt,
+                    f"{cnt / max(total_issue, 1):.1%}", priority[name]])
+        if priority[name] == "高":
+            for cell in ws2[ws2.max_row]:
+                cell.font = red_font
+                cell.fill = red_fill
+
+    ws3 = wb.create_sheet("典型案例")
+    ws3.append(["概率", "类别", "评论原文"])
+    for i in sorted(neg_idx, key=lambda j: -probs[j])[:5]:
+        ws3.append([f"{probs[i]:.1%}", "音质负面", texts[i][:500]])
+
+    xlsx_path = os.path.join(HERE, "insight_report.xlsx")
+    wb.save(xlsx_path)
+    print(f"Excel 报告已保存 -> {xlsx_path}")
+    return xlsx_path
 
 
 def main() -> None:
     ap = argparse.ArgumentParser(description="SoundInsight 一键洞察 Agent")
     ap.add_argument("--csv", required=True, help="待分析评论 CSV 路径")
+    ap.add_argument("--format", choices=["md", "excel"], default="md",
+                    help="报告格式：md 或 excel")
     args = ap.parse_args()
-    report = analyze(args.csv)
+    report = analyze(args.csv, export=(args.format == "excel"))
     print("\n" + report)
 
 
