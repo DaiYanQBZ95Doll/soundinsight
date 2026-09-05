@@ -1,0 +1,164 @@
+{"id":0,"cat":"fp_label_noise","reason":"文本明确提到音频失真且5.1输出未生效，实为音质负面，标注存疑。"}
+{"id":1,"cat":"fp_label_noise","reason":"文本明确说声音沉闷、无高音低音，实为音质负面，标注存疑。"}
+{"id":2,"cat":"fp_label_noise","reason":"文本明确说音质令人失望且分散注意力，实为音质负面，标注存疑。"}
+{"id":3,"cat":"fp_other_issue","reason":"主要抱怨视频画质、对焦和颗粒感，非音质问题。"}
+{"id":4,"cat":"fp_label_noise","reason":"文本明确说不要为声音购买，低音名不副实，实为音质负面，标注存疑。"}
+{"id":5,"cat":"fp_other_issue","reason":"主要抱怨客户服务和煲机流程，非音质差评。"}
+{"id":6,"cat":"fp_other_issue","reason":"主要抱怨设备故障、保修和客服，非音质问题。"}
+{"id":7,"cat":"fp_neutral_compare","reason":"文本说音质还行但不惊艳，属于中性比较，非明确负面。"}
+{"id":8,"cat":"fp_label_noise","reason":"文本明确说音乐听起来沉闷无趣，实为音质负面，标注存疑。"}
+{"id":9,"cat":"fp_short","reason":"短文本表达低音不足，但缺乏上下文，存在歧义。"}
+{"id":10,"cat":"fp_other_issue","reason":"主要抱怨稳定性、材质和设计，非音质问题。"}
+{"id":11,"cat":"fp_other_issue","reason":"主要抱怨连接故障和同步问题，音质仅说还行，非负面。"}
+{"id":12,"cat":"fp_other_issue","reason":"主要抱怨蓝牙连接和延迟问题，非音质本身差评。"}
+{"id":13,"cat":"fp_other","reason":"整体正面评价，无音质负面内容，模型误报。"}
+{"id":14,"cat":"fp_other_issue","reason":"主要抱怨右耳塞音量下降和故障，非音质差评。"}
+{"id":15,"cat":"fp_other_issue","reason":"主要抱怨佩戴舒适度，音质说很好，非负面。"}
+{"id":16,"cat":"fp_other_issue","reason":"主要抱怨蓝牙连接和按钮设计，音质仅说一般，非明确负面。"}
+{"id":17,"cat":"fp_short","reason":"短文本说声音不够响，但缺乏上下文，存在歧义。"}
+{"id":18,"cat":"fp_other","reason":"整体正面评价，称赞音质好，模型误报。"}
+{"id":19,"cat":"fp_other_issue","reason":"主要抱怨音量逐渐降低直至无声，属功能故障，非音质差评。"}
+{"id":20,"cat":"fp_other_issue","reason":"主要抱怨单侧无声和插头断裂，属功能故障，非音质差评。"}
+{"id":21,"cat":"fp_other_issue","reason":"主要抱怨控制按钮问题，音质说很好，非负面。"}
+{"id":22,"cat":"fp_other_issue","reason":"主要抱怨软件和音频静音问题，非音质本身差评。"}
+{"id":23,"cat":"fp_other_issue","reason":"主要抱怨连接不稳定和静电噪音，属功能问题，非音质差评。"}
+{"id":24,"cat":"fp_neutral_compare","reason":"文本说音量不够大但适合用途，属于中性比较，非明确负面。"}
+{"id":25,"cat":"fp_label_noise","reason":"文本明确说声音平庸、低音平淡，实为音质负面，标注存疑。"}
+{"id":26,"cat":"fp_neutral_compare","reason":"文本说最大音量时有点刺耳，但整体正面，属于中性比较。"}
+{"id":27,"cat":"fp_label_noise","reason":"文本明确说音质开始变差、难以听清，实为音质负面，标注存疑。"}
+{"id":28,"cat":"fp_other_issue","reason":"主要抱怨材质脆弱和调整时发出声音，非音质播放问题。"}
+{"id":29,"cat":"fp_other_issue","reason":"主要抱怨AUX输入放大效果差，非音质本身差评。"}
+{"id":30,"cat":"fp_other_issue","reason":"主要问题是左耳塞故障和佩戴不舒适，音质评价为'good but not great'，并非明确负面。"}
+{"id":31,"cat":"fp_neutral_compare","reason":"文本承认音质对淋浴用途足够，虽有细节不足但整体中性偏正面，非音质差评。"}
+{"id":32,"cat":"fp_other_issue","reason":"主要抱怨是使用后出现裂纹和声音变差，属于耐用性问题而非纯粹音质差评。"}
+{"id":33,"cat":"fp_neutral_compare","reason":"比较大小和低音，整体正面，无明确音质负面表达。"}
+{"id":34,"cat":"fp_other","reason":"明确说音量不如广告且声音失真，但标注为正常，可能是标注噪声或语境问题。"}
+{"id":35,"cat":"fp_label_noise","reason":"'Terrible sound'是明确音质负面，标注为正常存疑。"}
+{"id":36,"cat":"fp_other_issue","reason":"主要讨论连接器插拔问题，音频质量描述为清晰响亮，非音质差评。"}
+{"id":37,"cat":"fp_other_issue","reason":"讨论硬盘固件问题，非音频设备音质差评。"}
+{"id":38,"cat":"fp_other","reason":"表达对音质失望（'not great for movies'），但标注为正常，可能因整体语境或期望差异。"}
+{"id":39,"cat":"fp_other_issue","reason":"描述旧麦克风问题，新麦克风正面评价，非音质差评。"}
+{"id":40,"cat":"fp_other_issue","reason":"主要抱怨佩戴舒适度和贴合问题，音质评价为'ok'，非负面。"}
+{"id":41,"cat":"fp_other_issue","reason":"主要抱怨电池寿命、传感器和范围，音质评价为'okay'，非音质差评。"}
+{"id":42,"cat":"fp_other_issue","reason":"主要抱怨耐用性和舒适度，音质评价为'decent'，非负面。"}
+{"id":43,"cat":"fp_other","reason":"抱怨初始音质需EQ调整，但整体正面，可能因表达方式被误判。"}
+{"id":44,"cat":"fp_label_noise","reason":"'The bass isn't enough'是明确音质负面，标注为正常存疑。"}
+{"id":45,"cat":"fp_other_issue","reason":"讨论扬声器接线问题和FM收音机噪音，非主要音质差评。"}
+{"id":46,"cat":"fp_other_issue","reason":"主要抱怨蓝牙延迟，非音质问题，且整体满意。"}
+{"id":47,"cat":"fp_short","reason":"'A little low on volume'是轻微负面，短文本歧义，可能被误判。"}
+{"id":48,"cat":"fp_label_noise","reason":"明确抱怨无低音，但整体正面，标注为正常可能因整体满意度高。"}
+{"id":49,"cat":"fp_other_issue","reason":"主要抱怨设置困难和说明不清晰，音质不确定，非明确差评。"}
+{"id":50,"cat":"fp_other","reason":"整体正面评价，提及非发烧级但改善明显，非音质差评。"}
+{"id":51,"cat":"fp_other_issue","reason":"主要抱怨显示不可读和订单问题，音质评价为'not great'但非主要焦点。"}
+{"id":52,"cat":"fp_other","reason":"整体中性偏正面，音质'better than expected'，非差评。"}
+{"id":53,"cat":"fp_other_issue","reason":"主要抱怨通话功能，音质评价为'decent'且轻低音，非主要差评。"}
+{"id":54,"cat":"fp_other_issue","reason":"抱怨盖子遮挡扬声器，属设计问题而非音质本身差评。"}
+{"id":55,"cat":"fp_other_issue","reason":"抱怨听力问题导致听不清，非设备音质差评。"}
+{"id":56,"cat":"fp_other","reason":"整体正面，仅提及低音不足，可能因整体满意度高被标注正常。"}
+{"id":57,"cat":"fp_other_issue","reason":"主要抱怨接收灵敏度问题，音质评价为'good'，非音质差评。"}
+{"id":58,"cat":"fp_label_noise","reason":"明确抱怨音质闷和低音过多，是音质负面，标注为正常存疑。"}
+{"id":59,"cat":"fp_other_issue","reason":"主要抱怨RGB循环少和控制器难访问，音量评价为'ok'，非音质差评。"}
+{"id":60,"cat":"fp_other","reason":"整体正面评价，'sound is ok'是中性表述，weak指物理脆弱而非音质差。"}
+{"id":61,"cat":"fp_neutral_compare","reason":"承认音质不完美但强调比电视扬声器改善，属于比较性中性评价。"}
+{"id":62,"cat":"fp_other_issue","reason":"主要批评缺少EQ和低音不足，但整体是产品功能描述，非明确音质差评。"}
+{"id":63,"cat":"fp_other_issue","reason":"音质正面，问题在于特定App声音中断，属于连接/软件问题。"}
+{"id":64,"cat":"fp_short","reason":"短文本中'not clear'是模糊表述，整体仍给4星，歧义较大。"}
+{"id":65,"cat":"fp_other","reason":"描述产品解决了低音过多问题，是正面使用场景，非音质差评。"}
+{"id":66,"cat":"fp_other_issue","reason":"主要抱怨是耐用性（坏了），音质只是'ok'，非负面评价。"}
+{"id":67,"cat":"fp_other_issue","reason":"提到tinny speakers但整体正面，主要问题在缓冲，音质非核心抱怨。"}
+{"id":68,"cat":"fp_other_issue","reason":"产品是散热器，风扇噪音和rattling sound是机械问题，非音频设备音质。"}
+{"id":69,"cat":"fp_label_noise","reason":"文本实为强烈正面音质评价，模型误报为负面。"}
+{"id":70,"cat":"fp_neutral_compare","reason":"多设备比较性描述，指出各自特点，非明确负面评价。"}
+{"id":71,"cat":"fp_other","reason":"'Becomes distorted'是音质负面，但整体正面开头，可能标注存疑。"}
+{"id":72,"cat":"fp_short","reason":"'Voice quality is a little muffled'是委婉负面，但短文本且整体正面。"}
+{"id":73,"cat":"fp_other","reason":"音乐音质'tinny'是负面，但产品定位是通信器，非核心音质评价。"}
+{"id":74,"cat":"fp_other_issue","reason":"音质fine，问题在麦克风通话功能，非音质差评。"}
+{"id":75,"cat":"fp_other_issue","reason":"功放无声音是硬件故障，非音质评价。"}
+{"id":76,"cat":"fp_other_issue","reason":"抱怨续航而非音质，'sound is ok'是中性。"}
+{"id":77,"cat":"fp_other_issue","reason":"声音失真由Windows更新引起，是系统问题非产品音质。"}
+{"id":78,"cat":"fp_other","reason":"描述产品低音不过量是正面特性，帮助听障人士，非负面。"}
+{"id":79,"cat":"fp_other_issue","reason":"左耳不工作和静电是功能故障，非音质评价。"}
+{"id":80,"cat":"fp_other","reason":"'speakers are horrible'是明确音质负面，但产品是显示器，可能非核心。"}
+{"id":81,"cat":"fp_other","reason":"'crackles'是音质负面，但整体表述模糊，可能指麦克风或扬声器。"}
+{"id":82,"cat":"fp_other_issue","reason":"回声是使用环境问题，非产品音质差评。"}
+{"id":83,"cat":"fp_other_issue","reason":"音量旋钮损坏是硬件问题，音质仍'good'。"}
+{"id":84,"cat":"fp_other_issue","reason":"镜头AF马达声音是机械问题，非音频设备音质。"}
+{"id":85,"cat":"fp_other_issue","reason":"抱怨闹钟音量不够大，非音频播放音质。"}
+{"id":86,"cat":"fp_other","reason":"整体正面推荐，无音质负面表述。"}
+{"id":87,"cat":"fp_short","reason":"'Bass could be better'是委婉负面，但短文本且遥控问题为主。"}
+{"id":88,"cat":"fp_other_issue","reason":"音质正面，主要抱怨是做工差（断裂），非音质问题。"}
+{"id":89,"cat":"fp_other_issue","reason":"主要抱怨按钮操作和佩戴问题，音质部分未明确负面。"}
+{"id":120,"cat":"fn_soft","reason":"用户描述新耳机麦克风‘muffled’且对工作有影响，但未使用强烈负面词汇，整体语气偏失望而非愤怒。"}
+{"id":121,"cat":"fn_soft","reason":"明确说‘no bass at all’和‘aren't worth half that’，但缺乏激烈措辞，且前半部分有中性描述。"}
+{"id":122,"cat":"fn_soft","reason":"指出降噪效果差，但用测试对比方式表达，语气相对客观，无强烈负面词。"}
+{"id":123,"cat":"fn_mixed","reason":"整体正面（孩子喜欢），但明确提到‘Poor sound’，音质不足被积极因素掩盖。"}
+{"id":124,"cat":"fn_soft","reason":"抱怨走路时耳机有‘thwomping’声，但描述具体且语气克制，无强烈负面词。"}
+{"id":125,"cat":"fn_mixed","reason":"先表扬收音机优点，后抱怨电池寿命和音乐音质‘too noisy’，整体偏正面。"}
+{"id":126,"cat":"fn_other","reason":"主要抱怨录音录像功能故障，非音质问题，但属于产品性能缺陷。"}
+{"id":127,"cat":"fn_other","reason":"主要问题是连接和持续噪音，属于功能故障而非音质评价。"}
+{"id":128,"cat":"fn_other","reason":"抱怨闹钟音量不够和材质廉价，非音质问题。"}
+{"id":129,"cat":"fn_other","reason":"主要抱怨耐用性（18个月损坏），音质是正面的，非音质差评。"}
+{"id":130,"cat":"fn_soft","reason":"说‘not very loud’和听不清，但语气平缓，无强烈负面词。"}
+{"id":131,"cat":"fn_other","reason":"主要抱怨连接困难和语音‘muffled’，但核心是使用问题而非音质。"}
+{"id":132,"cat":"fn_soft","reason":"提到‘significant distortion’，但用比喻和客观描述，语气不激烈。"}
+{"id":133,"cat":"fn_mixed","reason":"整体评价中等偏正面（舒适、线长），但提到‘static’和‘dropped calls’，音质不足被掩盖。"}
+{"id":134,"cat":"fn_short","reason":"文本极短，仅说‘static’和无法连接，缺乏上下文，歧义大。"}
+{"id":135,"cat":"fn_other","reason":"主要抱怨佩戴舒适度，提及‘static’但非核心，属于其他问题。"}
+{"id":136,"cat":"fn_soft","reason":"说‘Voices lack clarity’，但描述具体且无强烈负面词。"}
+{"id":137,"cat":"fn_mixed","reason":"整体正面（电池好），但提到‘staticky’和‘freeze’，音质问题被优点掩盖。"}
+{"id":138,"cat":"fn_soft","reason":"说‘can barley hear’，但整体评价偏正面（易设置、画质好），音质不足表达委婉。"}
+{"id":139,"cat":"fn_soft","reason":"说‘sound low and far away’，但语气抱怨整体购物体验，非直接音质差评。"}
+{"id":140,"cat":"fn_other","reason":"主要问题是产品只工作一天就无声，属于功能故障而非音质。"}
+{"id":141,"cat":"fn_other","reason":"抱怨音量自动调至最大，属于功能问题而非音质差。"}
+{"id":142,"cat":"fn_mixed","reason":"整体正面（易配对、续航好），但提到‘no sound control’和不适，音质不足被优点掩盖。"}
+{"id":143,"cat":"fn_other","reason":"抱怨笔记本外壳的噪音和质感，非音频产品音质问题。"}
+{"id":144,"cat":"fn_soft","reason":"提到‘cuts out’和‘muffles the sound’，但整体评价‘adequate’，语气不强烈。"}
+{"id":145,"cat":"fn_soft","reason":"说‘failure’在音质和隔音，但用对比方式表达，无激烈措辞。"}
+{"id":146,"cat":"fn_soft","reason":"说缺乏‘presence’，但整体评价中性偏正面，音质不足表达委婉。"}
+{"id":147,"cat":"fn_soft","reason":"抱怨接收差和静态，但语气愤怒但针对广告欺骗，音质问题非直接。"}
+{"id":148,"cat":"fn_other","reason":"主要问题是无声音输出，属于功能故障而非音质评价。"}
+{"id":149,"cat":"fn_other","reason":"主要抱怨无遥控器导致使用不便，非音质问题。"}
+{"id":150,"cat":"fn_other","reason":"主要抱怨耳塞尺寸不适配和佩戴疼痛，音质问题（声音被闷住）是次要且间接的，整体更偏向佩戴问题而非直接音质差评。"}
+{"id":151,"cat":"fn_soft","reason":"用比喻（tin cans）表达音质差，但无强负面关键词，模型可能未识别出明确的音质抱怨。"}
+{"id":152,"cat":"fn_other","reason":"主要抱怨包装像二手和无法从PC调节音量，未涉及音质问题，属于其他问题而非音质差评。"}
+{"id":153,"cat":"fn_other","reason":"主要抱怨第一个产品有摩擦噪音（风扇问题），第二个正常，属于产品质量问题而非音质差评。"}
+{"id":154,"cat":"fn_short","reason":"短文本直接说音质差，但可能因过于简短且无上下文，模型未能识别为音质负面。"}
+{"id":155,"cat":"fn_mixed","reason":"整体偏正面（降噪好、可接受），但提到音质一般和需要更多低音，属于委婉的音质不足，模型可能因整体正面而漏报。"}
+{"id":156,"cat":"fn_other","reason":"主要抱怨线缆麦克风有反馈噪音，音质本身被称赞为优秀，不构成音质差评。"}
+{"id":157,"cat":"fn_other","reason":"主要抱怨麦克风有嗡嗡声，但明确说耳机音质好，问题在麦克风而非音质。"}
+{"id":158,"cat":"fn_other","reason":"抱怨电视内置扬声器音量太小、音质差，但这是电视产品而非耳机，且问题更多是音量不足，可能被模型视为非音质语境。"}
+{"id":159,"cat":"fn_mixed","reason":"整体偏正面（比普通电视好、价格好），但提到音量或动态范围不足，属于委婉的音质不足，模型可能因整体正面而漏报。"}
+{"id":160,"cat":"fn_other","reason":"主要抱怨持续的嘶嘶声（hiss），这属于音质问题，但可能被模型归类为连接或固件问题而非直接音质差评。"}
+{"id":161,"cat":"fn_soft","reason":"表达未达预期和广告宣称，但无具体音质负面描述，措辞委婉，模型可能未识别为明确音质差评。"}
+{"id":162,"cat":"fn_mixed","reason":"整体正面（声音不错、听到新细节），但提到不够清晰清脆，属于委婉的音质不足，模型可能因整体正面而漏报。"}
+{"id":163,"cat":"fn_mixed","reason":"整体偏正面（能用、防水），但提到音质有点单薄且不够响，属于委婉的音质不足，模型可能因整体正面而漏报。"}
+{"id":90,"cat":"fp_other_issue","reason":"用户主要解决音量不足问题，音质平庸是次要提及，非核心负面评价。"}
+{"id":91,"cat":"fn_soft","reason":"用‘应该更好’和‘像AM收音机’委婉表达音质差，无直接强负面词。"}
+{"id":92,"cat":"fn_soft","reason":"用‘浑浊’、‘单音低音’等描述音质差，但整体结构为体验记录，负面词不够直接。"}
+{"id":93,"cat":"fn_label_noise","reason":"主要抱怨软件过时和线缆问题，音质非核心，标注为音质负面存疑。"}
+{"id":94,"cat":"fn_mixed","reason":"整体正面，仅一句‘声音需改进’轻描淡写，音质不足被积极评价掩盖。"}
+{"id":95,"cat":"fn_soft","reason":"描述右耳音量极低和音频跳过，但未用‘音质差’等强负面词，问题偏功能。"}
+{"id":96,"cat":"fn_other","reason":"抱怨收音机收不到台和静态噪音，属于接收问题而非音质评价。"}
+{"id":97,"cat":"fn_other","reason":"主要抱怨连接断开和功能故障，音质未明确提及，非音质负面。"}
+{"id":98,"cat":"fn_soft","reason":"用‘缺乏’和‘无比较’表达音质不足，但无强烈负面词汇，语气较克制。"}
+{"id":99,"cat":"fn_other","reason":"描述适合低音量使用，未明确批评音质，整体中性偏正面。"}
+{"id":100,"cat":"fn_soft","reason":"‘CD播放器音质差’直接但简短，缺乏详细负面描述，可能被忽略。"}
+{"id":101,"cat":"fn_mixed","reason":"整体正面，仅提及音质可能不如原设备，但无强烈不满，音质不足被其他优点掩盖。"}
+{"id":102,"cat":"fn_soft","reason":"明确说无低音和高频刺耳，但用‘惊讶’和‘不可能’等委婉表达，无直接强负面词。"}
+{"id":103,"cat":"fn_other","reason":"主要抱怨蓝牙通话问题，音质未直接批评，非音质负面。"}
+{"id":104,"cat":"fn_other","reason":"抱怨收音机收不到好台，属于接收问题而非音质评价。"}
+{"id":105,"cat":"fn_mixed","reason":"整体开头正面但明确描述线材劣化导致静态噪音，属于音质问题夹杂在正面评价中。"}
+{"id":106,"cat":"fn_soft","reason":"用'inconsistent'和'didn't sound good'委婉表达音质差，无强烈负面词。"}
+{"id":107,"cat":"fn_label_noise","reason":"主要问题是麦克风硬件故障导致通话声音像机器人，非音质差评，标注存疑。"}
+{"id":108,"cat":"fn_soft","reason":"用'deal-breaker'和'extra static'描述AM干扰问题，但整体语气较克制且提及优点。"}
+{"id":109,"cat":"fn_soft","reason":"'Volume could be louder'是委婉表达音量不足，无强烈负面词汇。"}
+{"id":110,"cat":"fn_label_noise","reason":"主要抱怨是笔记本电脑多次缺陷和风扇异响，非音频设备音质问题，标注存疑。"}
+{"id":111,"cat":"fn_short","reason":"短文本'Cheap, terrible sound!'虽明确负面但过于简短，可能因缺乏上下文被漏报。"}
+{"id":112,"cat":"fn_soft","reason":"通过与其他便宜音箱对比表达音量和低音不足，语气相对委婉无直接强负面词。"}
+{"id":113,"cat":"fn_mixed","reason":"整体评价混合，先肯定看电影可用但明确说'great sound'达不到且扬声器听不清，音质不足被正面内容掩盖。"}
+{"id":114,"cat":"fn_mixed","reason":"整体正面但提及'contributes to distortion if you try to crank the volume'，音质缺陷被大量正面描述淹没。"}
+{"id":115,"cat":"fn_soft","reason":"'difficulty hearing'和'difficult to get enough volume'委婉描述通话和音量问题，无强负面词。"}
+{"id":116,"cat":"fn_label_noise","reason":"抱怨电脑嗡嗡声和电池问题，非音频播放设备音质评价，标注存疑。"}
+{"id":117,"cat":"fn_mixed","reason":"先说'sound is good'但后文批评无降噪时放大回声，音质问题被正面开头掩盖。"}
+{"id":118,"cat":"fn_soft","reason":"描述音量不足和左右不平衡但用'seem'、'not sure'等不确定委婉表达。"}
+{"id":119,"cat":"fn_mixed","reason":"先提夹子断裂问题，后说'radio is okay'但'hard to hear due to static'，音质缺陷被整体可接受评价中和。"}
