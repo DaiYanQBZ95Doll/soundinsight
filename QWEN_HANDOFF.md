@@ -65,7 +65,7 @@ RoBERTa 快速验证：仅 2 epoch 探测，调优 F1 0.6169，未充分收敛�
 - config.json：模型目录、阈值文件、标签映射集中配置，Agent 与 Demo 均读取它。
 - test_model.py：验证集评估，输出指标、阈值扫描、混淆矩阵，支持 --csv/--label 参数。
 - 数据管线脚本：fetch_electronics.py、extend_data.py、label_v3.py、prep_review_input.py、prep_three_star.py、merge_review.py、merge_three_star.py、prep_refine.py、merge_refine.py、retier_conf.py。
-- 文档：README.md、results_summary.md、competition_v2.txt/md（初赛版全文）、competition_v3.txt（复赛九章模板版）、competition_v4.md（11 章完整版）、stats_validation.md、ablation_summary.md、significance_test.md、confidence_tiered.md、edge_cases.md、user_scenarios.md、action_report_template.md、qna_preparation.md、PROGRESS_SYNC.md、llm_baseline.md（Batch B LLM 对照）、length_bucket_eval.md / edge_case_benchmark.md / calibration_eval.md / error_taxonomy.md（Batch C）、throughput_eval.md（E3）、MODEL_CARD.md、docs/drift_plan.md。
+- 文档：README.md、results_summary.md、competition_v2.txt/md（初赛版全文）、competition_v3.txt（复赛九章模板版）、competition_v4.md（11 章完整版）、stats_validation.md、ablation_summary.md、significance_test.md、confidence_tiered.md、edge_cases.md、user_scenarios.md、action_report_template.md、qna_preparation.md、PROGRESS_SYNC.md、llm_baseline.md（Batch B LLM 对照，口径声明已按 P0-2 修正）、length_bucket_eval.md（tokenizer 口径，P0-4 重做）、edge_case_benchmark.md、calibration_eval.md、error_taxonomy.md（含与冻结矩阵的调和说明）、throughput_eval.md（E3）、MODEL_CARD.md、docs/drift_plan.md、docs/dataset_audit.md、docs/year_split_output.txt（年份分桶脚本输出原文）、human_review_noise16.csv（标注噪声人工终审文件）。
 - 图表：architecture.png、learning_curve.png、pr_curve.png、confusion_matrix.png、demo_output.png、trend_over_time.png、calibration_curve.png。
 - 实验归档：exp01 至 exp06 与 exp07_ablation_A/B/C 目录。
 
@@ -76,9 +76,10 @@ RoBERTa 快速验证：仅 2 epoch 探测，调优 F1 0.6169，未充分收敛�
 待办（按优先级）：
 
 1. 用户在命令行执行 git push（命令：git push origin main，报 schannel 错误时加 -c http.sslBackend=openssl）；DSH 亦会尝试用 openssl 参数推送。
-2. 人工审核 human_review_conf30.csv（8 条中置信样本，判定列填 1 或 0）。
-3. 标注噪声终审：error_taxonomy.md 中 LLM 判定约 9.8% 错误样本为标注问题（AI 判定，未人工终审）——需决定是否人工复核。
-4. 诚信核查遗留：competition_v3/v4 5.2 节写"qwen3.7-plus 用于 LLM 复核"，而 RLCA 实际复核用的是 deepseek-chat（llm_baseline.md 有实测记录）。需用户确认：改回 deepseek-chat，或确有 qwen 复核重跑证据。
+2. 人工审核 human_review_conf30.csv（8 条中置信样本，判定列填 1 或 0）；另新增 human_review_noise16.csv（16 条 LLM 判定为标注噪声的错误样本，含人工判定列），建议用户过一遍以把 9.8% 噪声率从"AI 说"变为"人说"。
+3. 标注噪声终审：error_taxonomy.md 中 LLM 判定约 9.8% 错误样本为标注问题（AI 判定，未人工终审）——人工终审文件 human_review_noise16.csv 已备好，见上一条。
+4. 诚信核查（已处理）：v3/v4 5.2 节旧表述已按路线 (a) 改为 deepseek-chat / DeepSeek 官方 API，阿里云百炼栏如实填"未使用"。
+   若用户提供 Token Plan Key 并选择路线 (b)，可用 qwen3.7-plus 重跑 Batch B 对照，并把表格改回"已使用"。
 5. ModelScope 注册、建仓、取 token，然后执行 upload_models.py 与创空间创建（见 DEPLOY_GUIDE.md）；Studio 构建完成后把公开 URL 发给 DSH 做 deploy_check。
 6. 演示视频录制（按 video_script.md，2-3 分钟）。
 7. 真实用户反馈收集（feedback_template.md，禁止预填）。

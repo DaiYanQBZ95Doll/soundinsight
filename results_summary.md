@@ -49,6 +49,7 @@
 - FINAL acc=0.9865 f1@0.5=0.6241 f1_best=0.6871 @thr=0.9744
 - confusion matrix: [[19504, 245], [26, 225]]（thr=0.5）
 - confusion matrix (thr=0.9744): TN=19658, FP=91, FN=72, TP=179
+- GPU 推理不确定性重跑（val_pred_dump.py，同验证集同阈值）：TN=19658, FP=91, FN=73, TP=178（F1 0.685，±0.002 波动；与上行的差异为 1 个样本在阈值边界的翻转，不动摇任何结论，两套矩阵并存原因已显性记录）
 
 ## 教师一致性（DistilBERT vs LLM 标签）
 - seed=42 一致率(acc)=0.8172 | f1=0.7954

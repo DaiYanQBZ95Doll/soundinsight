@@ -96,7 +96,7 @@ SoundInsight 是一款面向跨境电商耳机卖家的音质差评智能归因�
 
 [Amazon评论数据 10万条] → [RLCA两阶段标注] → [DistilBERT二分类+多标签] → [Agent报告 / Gradio Demo]
 
-标注层细节：规则初筛（关键词匹配） + LLM复核（qwen3.7-plus）
+标注层细节：规则初筛（关键词匹配） + LLM复核（deepseek-chat，DeepSeek 官方 API）
 
 模型层细节：1:10欠采样、阈值扫描、5折CV验证
 
@@ -104,8 +104,10 @@ SoundInsight 是一款面向跨境电商耳机卖家的音质差评智能归因�
 
 | 模型标识 | 用途 | 调用方式 |
 |---------|------|---------|
-| qwen3.7-plus | 两阶段标注中的LLM复核 | 阿里云Token Plan API |
-| deepseek-v4-pro | 基线验证与备选方案测试 | 阿里云Token Plan API |
+| deepseek-chat | RLCA 标注复核 + LLM 对照实验 | DeepSeek 官方 API（开发环境密钥） |
+| 阿里云百炼（qwen3.7-plus 等） | 未使用 | — |
+
+说明：本项目标注与实验管线实际调用的 LLM 为 deepseek-chat（实测记录见 llm_baseline.md）；阿里云百炼在本项目中未产生调用，此栏如实填写"未使用"。
 
 ### 5.3 技术组件说明
 

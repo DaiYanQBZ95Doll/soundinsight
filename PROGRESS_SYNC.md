@@ -44,11 +44,16 @@
 - Batch F（数据许可与 LLM-API 披露写入 README/v4 5.4；docs/drift_plan.md）：完成。标注阶段 ~1502 候选 + 三星补漏经 deepseek-chat API 复核已披露；产品推理零外发。
 - Batch G（审计扩展 120 项全 PASS / Demo.zip 50 文件重建 / PPT"2 分钟 99.6%"改实测口径 / QWEN_HANDOFF 与 PROJECT_BRIEF 更新 / 3 次 commit）：完成。git push 因网络（github.com 连接重置）未能完成，用户按下方命令执行即可。
 
-## 诚信核查遗留（如实上报，待用户决策）
+## 诚信核查与 P0 修复记录（技术质检方审计后，如实执行）
 
-1. competition_v3.txt / competition_v4.md 5.2 节写"qwen3.7-plus 用于 LLM 复核"，但 RLCA 实际复核模型是 deepseek-chat（llm_baseline.md 有实测账单口径）。二选一：改为 deepseek-chat，或提供 qwen 复核重跑证据。
-2. error_taxonomy.md 的标注噪声率 9.8% 为 AI 判定，人工终审未做。
-3. PPT 页数 20 超 8-12 页要求（用户精简）；Speed 表述已由 DSH 修正完毕。
+- P0-1（§5.2 模型调用表述）：已按路线 (a) 落地——v3/v4 5.2 改为 deepseek-chat / DeepSeek 官方 API，阿里云百炼栏如实写"未使用"；路线 (b)（qwen3.7-plus 重跑对照）仍开放，需用户提供 Token Plan Key 并拍板。
+- P0-2（llm_baseline 口径声明）：已修正——子集 = val_v2 正例全集 + 749 负例采样（seed 42，小模型未见，无训练记忆效应）；补充循环性声明（同源标签自我一致性红利 + 公开语料预训练记忆无法排除），结论 1/5 相应重写；Q3/Q5/Q10 同步加注口径警示。
+- P0-3（两套混淆矩阵调和）：results_summary.md 已加 GPU 重跑调和行（TP=178/FN=73，F1 0.685，±0.002）；error_taxonomy.md 与 v4 7.2 加交叉引用；check_doc_numbers.py 新增 results_summary 组与废弃 claim 违禁项。
+- P0-4（长度分桶重做）：按 tokenizer 重算——≤64 token F1 0.708（n=12,471）/ 65-128 token 0.749（n=3,801）/ >128 token 0.565（n=3,728，截断桶，召回 54.4%）；旧字符口径的覆盖性缺陷（11888 条"长评"中仅 31.4% 真正 >128 token）已如实记录；v4 9.1 与 drift_plan §4 同步更新。
+- P1-1（概率展示一致性）：Demo 单条/批量/边界案例三处输出加"概率未经校准，仅供排序参考"提示；Agent 中英文报告附注同步；capture_log.txt 与 exp06/training_output.txt 为历史日志产物（生成于加注前），不再编辑历史日志。
+- P1-2（标注噪声人工终审）：human_review_noise16.csv 已生成（12 FP + 4 FN，含 LLM 理由与人工判定列），待用户复核。
+- P2-1（数据集考古汇总）：docs/dataset_audit.md 已产出（来源/字段清单/行数/时间范围/数据质量问题）；year_split_eval.py 重跑，输出原文存档 docs/year_split_output.txt（2022 桶 F1@0.5=0.8049，覆盖 19,996/20,000，与 Q6 一致）。
+- P2-2（git push）：网络仍不可达，8 个 commit 在本地，用户网络恢复后按 README 命令推送。
 
 ## 重建产物实测值（最新）
 

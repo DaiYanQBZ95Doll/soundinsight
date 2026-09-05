@@ -32,6 +32,8 @@ CORE_REQUIRED = [
 CORE_FORBIDDEN = [
     (r"1297", "错误正例数1297"),
     (r"83\.7", "教师一致性出现在正文（仅允许方法说明/附录）"),
+    (r"qwen3\.7-plus.*复核|复核.*qwen3\.7-plus", "已废弃的qwen复核claim"),
+    (r"阿里云Token Plan", "已废弃的阿里云Token Plan API claim"),
 ]
 
 # Batch B 新数字：llm_baseline.md 必须包含（如实记录口径）
@@ -81,12 +83,15 @@ ERRTAX_REQUIRED = [
     (r"54\.9%", ["54.9%"], "FP其他问题占比"),
     (r"58\.9%", ["58.9%"], "FN委婉+双面占比"),
     (r"9\.8%", ["9.8%"], "标注噪声率(LLM判定)"),
+    (r"TP=179", ["TP=179"], "与冻结矩阵的调和说明"),
 ]
 
 LENBUCKET_REQUIRED = [
-    (r"0\.6667|0\.667", ["0.6667", "0.667"], "<=64字符F1"),
-    (r"0\.7368|0\.737", ["0.7368", "0.737"], "65-128字符F1"),
-    (r"0\.6791|0\.679", ["0.6791", "0.679"], ">128字符F1"),
+    (r"0\.7080|0\.708", ["0.7080", "0.708"], "<=64 token F1"),
+    (r"0\.7485|0\.749", ["0.7485", "0.749"], "65-128 token F1"),
+    (r"0\.5649|0\.565", ["0.5649", "0.565"], ">128 token F1(截断桶)"),
+    (r"3728", ["3728", "3,728"], ">128 token 评论数"),
+    (r"tokenizer", ["tokenizer"], "token 口径声明"),
 ]
 
 MODELCARD_REQUIRED = [
@@ -94,6 +99,13 @@ MODELCARD_REQUIRED = [
     (r"0\.9744", ["0.9744"], "阈值"),
     (r"9\.8%", ["9.8%"], "标注噪声率"),
     (r"1280", ["1280"], "当前工作集正例数"),
+]
+
+RESULTSSUMMARY_REQUIRED = [
+    (r"0\.687", ["0.687", "0.6871"], "最终F1"),
+    (r"TP=178", ["TP=178"], "GPU重跑矩阵调和行"),
+    (r"FN=73", ["FN=73"], "GPU重跑FN"),
+    (r"TP=179", ["TP=179"], "冻结矩阵"),
 ]
 
 GROUPS = [
@@ -114,6 +126,8 @@ GROUPS = [
      "required": LENBUCKET_REQUIRED, "forbidden": [], "check_1288": False},
     {"files": ["MODEL_CARD.md"],
      "required": MODELCARD_REQUIRED, "forbidden": [], "check_1288": False},
+    {"files": ["results_summary.md"],
+     "required": RESULTSSUMMARY_REQUIRED, "forbidden": [], "check_1288": False},
 ]
 
 
