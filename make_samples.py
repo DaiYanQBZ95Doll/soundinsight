@@ -12,6 +12,7 @@ sys.stdout.reconfigure(encoding="utf-8", errors="replace")
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 VAL_CSV = os.path.join(HERE, "val_v2.csv")
+EXPANDED_CSV = os.path.join(HERE, "electronics_expanded.csv")
 OUT_CSV = os.path.join(HERE, "sample_reviews_100.csv")
 
 EDGE_PATTERNS = {
@@ -74,16 +75,32 @@ def main() -> None:
     for label, idx, expected in picks:
         rows.append({
             "text": str(df.loc[idx, "text"]),
-            "rating": 0,  # val_v2 无 rating 列，置空标记
+            "rating": 0,  # 占位，下方回填
             "期望标签": expected,
             "类别": label,
         })
     out = pd.DataFrame(rows)
     out = out.drop_duplicates(subset=["text"]).head(100)
+
+    # 用去除首尾空白后的 text 精确匹配原始数据，回填真实 rating
+    expanded = pd.read_csv(EXPANDED_CSV, encoding="utf-8")
+    expanded["text_stripped"] = expanded["text"].astype(str).str.strip()
+    rating_map = dict(zip(expanded["text_stripped"],
+                          pd.to_numeric(expanded["rating"],
+                                        errors="coerce")))
+    out["rating"] = out["text"].str.strip().map(rating_map)
+    n_miss = int(out["rating"].isna().sum())
+    out = out.dropna(subset=["rating"])
+    out["rating"] = out["rating"].astype(int)
+    if n_miss:
+        print(f"警告：{n_miss} 条未能回填 rating，已丢弃；"
+              f"剩余 {len(out)} 条")
     out.to_csv(OUT_CSV, index=False, encoding="utf-8-sig")
     print(f"生成 {len(out)} 条 -> {OUT_CSV}")
     print(out["类别"].value_counts().to_string())
     print(out["期望标签"].value_counts().to_string())
+    print("rating 分布：")
+    print(out["rating"].value_counts().sort_index().to_string())
 
 
 if __name__ == "__main__":

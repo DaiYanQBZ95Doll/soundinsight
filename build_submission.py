@@ -28,6 +28,14 @@ EXCLUDE_DIRS = {".git", "exp01_弱标注交叉验证", "exp02_清洗标签交叉
                 "sound_model", "multi_label_model", "distilbert-base-uncased",
                 "roberta-base", "deployment"}
 
+# 开发期脚本：不入 Demo 包
+DEV_SCRIPTS = {
+    "audit_ppt.py", "check_doc_numbers.py", "build_pdf.py",
+    "build_pdf_v2.py", "capture_demo_output.py", "archive_exp.py",
+    "make_samples.py", "finalize_curve.py", "retier_conf.py",
+    "prep_human_review.py", "upload_models.py",
+}
+
 README_SUBMISSION = """# SoundInsight 复赛作品提交包
 
 本 zip 包含：
@@ -50,7 +58,7 @@ def collect_files():
         dirs[:] = [d for d in dirs if d not in EXCLUDE_DIRS
                    and not d.startswith("~$")]
         for fn in files:
-            if fn.endswith(".py"):
+            if fn.endswith(".py") and fn not in DEV_SCRIPTS:
                 full = os.path.join(root, fn)
                 rel = os.path.relpath(full, HERE)
                 items[rel] = full

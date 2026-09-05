@@ -1,40 +1,23 @@
-# SoundInsight D5 执行进度同步
+# SoundInsight D5 缺陷修复执行记录
 
-## 批次完成状态
+## 修复结果（A1-C3）
 
-### 批次 1：在线部署包 — PASS（产出齐备，部署动作待用户）
+- A1 下载链路目录前缀：PASS。verify_download_urls.py 输出 11 行 URL 全部含目录前缀；download_models.py 与 deployment/app.py 均已改为 FilePath={dname}/{fname}。
+- A2 上传路径与前置检查：PASS。upload_models.py 路径修正为项目根目录，模型目录缺失时直接报错退出；dry-run 实测列出 10 个文件共 537MB，不执行 git 推送。
+- A3 无出处表述：PASS。README、competition_v2.txt、competition_v2.md、build_pdf.py 四处白皮书 98% 表述全部删除；.py/.md/.txt 全文检索"白皮书"与"98%"命中 0（数据 CSV 内评论原文中的 98% 属真实数据，不在清理范围）。
+- B1 样例集 rating 回填：PASS。sample_reviews_100.csv 共 100 条，rating 分布 1 星 15、2 星 9、3 星 10、4 星 15、5 星 51，无 0 值；Agent 实测平均评分 3.78；类别组成与修复前一致（12/62/24/2）。
+- B2 审计脚本修复与终审：PASS。PPT 审计截断自动核对区消除自匹配；四份目标文件（competition_v4.md、README.md、QWEN_HANDOFF.md、ppt_text_dump.md）FAIL 计数均为 0。competition_v3.txt 的 11 项未出现 FAIL 为结构性记录（v3 已被 v4 取代，不在验收清单内）。
+- B3 PPT 分工对调：PASS（4 处替换）。slide19 原始 XML 复核：产品经理 0、头脑风暴 0、灵感与质检 0，技术质检 4、灵感与叙事 1；原文件备份为 .pptx.bak；PowerPoint 打开确认待用户肉眼验证。
+- B4 高音数字拆解：PASS。实测新增 31 条正例全部携带高音标签（X=31），既有正例补标 9 条（Y=9），X+Y=40；v4 表格已改写并附计算口径。
+- B5 v4 提交物清单：PASS。Demo 压缩包勾选并注明内容。
+- C1 max_len 配置化：PASS。deployment/app.py 三处 max_length 均读 CFG["max_len"]。
+- C2 部署指南 CPU 说明：PASS。常见问题节已追加 extra-index-url 说明。
+- C3 Demo.zip 剔除开发脚本：PASS。11 个开发期脚本已排除。
 
-- deployment/ 目录四件套：app.py（路径全相对化、config.json 驱动、启动自动下载权重）、requirements.txt（固定版本）、README_Space.md、config.json（model_repo_id 留空待填）
-- upload_models.py：权重上传脚本，顶部注明用户三步网页操作
-- DEPLOY_GUIDE.md：四步部署指南，用户操作总量约 30 分钟
-- 待用户：ModelScope 注册、建仓、取 token、执行上传命令、创建创空间
-- 验收（deploy_check.md）：待公网地址就绪后执行
+## 重建产物实测值
 
-### 批次 2：一致性审计 — PASS（两项用户侧 FAIL 已记录）
-
-- number_audit.md：三份文档逐项核对，违禁项（1297、正文 83.7）全部 PASS
-- ppt_text_dump.md：PPT 20 页全部提取；数字全部 PASS；页数 20 超出 8-12 要求 → 用户侧 FAIL
-- competition_v3.txt 缺统计验证数字（结构性问题，由 v4 补齐）
-- README 旧数字（0.37）→ 批次 5 已更新为当前口径
-- results_summary.md 混淆矩阵已加 thr=0.5 与 thr=0.9744 双口径标注，生成器同步防回退
-
-### 批次 3：competition_v4.md — PASS
-
-十一章全文完成：核心发现三连块、指标口径防御段（原文照录）、统计验证（学习曲线 bootstrap 口径注、PR、t 检验、5 折逐折）、消融四行业务化结论、归因定位说明（原文照录）、局限与展望、在线 Demo 占位符、1257/1288 口径脚注。数字审计 17 项全 PASS，无违禁项。
-
-### 批次 4：提交物打包与视频素材 — PASS
-
-- 更新世界的锋芒_SoundInsight_Demo.zip：50 个文件，0.2MB，无权重，含 download_models.py（下载校验一体）
-- 更新世界的锋芒_SoundInsight_复赛作品.zip：骨架（Demo.zip + README_SUBMISSION.txt），待用户放入 PDF 与视频
-- sample_reviews_100.csv：100 条（12 音质差评 / 62 非音质 / 24 边界 / 2 多语言）
-- video_script.md：八镜头 130 秒分镜 + 口播稿 + 录制检查单
-- feedback_template.md：五节全留空，禁止预填声明
-
-### 批次 5：收尾同步 — PASS
-
-- README.md：四步快速开始（装依赖→下模型→启 Demo→Agent）、模型性能章节更新为当前口径（0.6871/0.6234/0.7191 等）、在线 Demo 占位符、1257/1288 口径脚注
-- QWEN_HANDOFF.md：补齐精确率 47.9% 与 p 值、学习曲线最终值、D5 状态与待办
-- 全部变更已提交 git
+- 更新世界的锋芒_SoundInsight_Demo.zip：91,179 字节，41 个文件，无权重、无开发脚本，download_models.py 与运行复现脚本全部在位。
+- 更新世界的锋芒_SoundInsight_复赛作品.zip：90,039 字节，2 个文件（Demo.zip + README_SUBMISSION.txt），待用户放入 PDF 与视频。
 
 ## 遗留用户事项（DSH 不可代做）
 
@@ -44,5 +27,5 @@
 4. 演示视频录制（按 video_script.md）
 5. 真实用户反馈收集（feedback_template.md）
 6. competition_v4.md 团队信息填写
-7. PPT 精简（20 页 → 8-12 页）
+7. PPT 精简（20 页 → 8-12 页）并用 PowerPoint 打开确认 B3 修改未损坏文件
 8. 最终 PDF 导出并放入复赛作品 zip

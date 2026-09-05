@@ -26,6 +26,7 @@ ML_DIR = os.path.join(HERE, CFG.get("multi_label_dir", "multi_label_model"))
 MODEL_REPO_ID = CFG.get("model_repo_id", "")  # 用户建仓后填入
 MODELSCOPE_API = ("https://modelscope.cn/api/v1/models/{repo}/repo"
                   "?FilePath={fname}")
+MAX_LEN = int(CFG.get("max_len", 128))
 
 FILES_BIN = ["config.json", "tokenizer.json", "tokenizer_config.json",
              "threshold.json", "model.safetensors"]
@@ -73,8 +74,8 @@ print(f"模型加载完成 | threshold={THR:.4f}")
 def single_predict(text):
     if not text or not text.strip():
         return "请输入英文评论"
-    enc = tok(text.strip(), padding=True, truncation=True, max_length=128,
-              return_tensors="pt")
+    enc = tok(text.strip(), padding=True, truncation=True,
+              max_length=MAX_LEN, return_tensors="pt")
     with torch.no_grad():
         prob = float(torch.softmax(bin_model(**enc).logits, -1)[0, 1])
         issues = torch.sigmoid(ml_model(**enc).logits)[0].numpy()
@@ -99,7 +100,7 @@ def batch_analyze(file_obj):
     with torch.no_grad():
         for b in range(0, len(texts), 32):
             enc = tok(texts[b:b + 32], padding=True, truncation=True,
-                      max_length=128, return_tensors="pt")
+                      max_length=MAX_LEN, return_tensors="pt")
             probs.append(torch.softmax(bin_model(**enc).logits, -1)
                          [:, 1].numpy())
     probs = np.concatenate(probs)
@@ -111,7 +112,7 @@ def batch_analyze(file_obj):
         with torch.no_grad():
             for b in range(0, len(neg_texts), 32):
                 enc = tok(neg_texts[b:b + 32], padding=True, truncation=True,
-                          max_length=128, return_tensors="pt")
+                          max_length=MAX_LEN, return_tensors="pt")
                 ml_out.append(torch.sigmoid(ml_model(**enc).logits).numpy())
         ml_pred = (np.vstack(ml_out) >= 0.5).astype(int)
         for k, name in enumerate(ISSUE_INFO["names"]):
