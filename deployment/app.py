@@ -45,7 +45,8 @@ def download_models():
             if os.path.exists(dst) and os.path.getsize(dst) > 1000:
                 continue
             r = requests.get(MODELSCOPE_API.format(
-                repo=MODEL_REPO_ID, fname=fname), timeout=600, stream=True)
+                repo=MODEL_REPO_ID, fname=f"{dname}/{fname}"),
+                timeout=600, stream=True)
             if r.status_code != 200:
                 raise RuntimeError(f"下载失败 {fname}: HTTP {r.status_code}")
             with open(dst, "wb") as fp:
