@@ -49,7 +49,7 @@ python soundinsight_agent.py --csv 你的评论文件.csv
 如需 Excel 版报告（总体概况/问题分布/典型案例三个 sheet，高优先级标红）：
 python soundinsight_agent.py --csv 你的评论文件.csv --format excel
 
-在线 Demo 地址：（部署后填入）
+在线 Demo 地址：https://modelscope.cn/studios/DaiYanQBZ95Doll/SoundInsight （应用直链 https://daiyanqbz95doll-soundinsight.ms.show）
 
 数据说明：数据来自 McAuley Lab 官方 Amazon Reviews 2023（AmazonElectronics 类目）数据集，前五千条用于初赛，扩充至十万条用于复赛升级。标注采用 RLCA 两阶段方式，规则初筛命中音质关键词且评分两星以下为正例候选，随后由大模型逐条复核去伪，并补充音质相关三星评论中的漏检样本（三星评论漏检率 41.5%）。实验与交叉验证基于 1257 条冻结口径，后续高音补捞扩展至 1288 条，中期置信区间复核后移除 8 条，当前工作集 1280 条，核心结论不受影响。
 

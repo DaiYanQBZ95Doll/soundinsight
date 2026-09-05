@@ -23,7 +23,8 @@ INCLUDE_FILES = [
     "download_models.py",
 ]
 
-EXCLUDE_DIRS = {".git", "exp01_弱标注交叉验证", "exp02_清洗标签交叉验证",
+EXCLUDE_DIRS = {".git", ".ms_upload_tmp", "exp01_弱标注交叉验证",
+                "exp02_清洗标签交叉验证",
                 "exp03_LLM复核与标签清洗", "exp04_多标签归因",
                 "exp05_教师一致性", "exp06_最终二分类模型",
                 "exp07_ablation_A", "exp08_ablation_B", "exp09_ablation_C",
@@ -39,7 +40,7 @@ DEV_SCRIPTS = {
     "val_pred_dump.py", "prep_err_taxonomy.py", "taxonomy_agg.py",
     "llm_eval_metrics.py", "prep_llm_eval.py", "throughput_bench.py",
     "calibration_eval.py", "length_bucket_eval.py", "edge_case_benchmark.py",
-    "ppt_speed_fix.py",
+    "ppt_speed_fix.py", "deploy_check.py", "batch_check.py",
 }
 
 README_SUBMISSION = """# SoundInsight 复赛作品提交包
