@@ -37,11 +37,13 @@ python upload_models.py --repo 你的用户名/SoundInsight_models --token 你�
 
 ## 常见问题
 
-首次构建超过 15 分钟：多为 torch CUDA 捆绑包（约 2GB）下载缓慢所致。可将 requirements.txt 首行加 --extra-index-url https://download.pytorch.org/whl/cpu，空间将拉取 CPU 版 torch（约 200MB），构建明显加快。
+启动崩溃 `RuntimeError: operator torchvision::nms does not exist`：requirements.txt 钉了 torch 版本，与创空间基础镜像（自带 torch 2.10.0 + 配套 torchvision）产生 ABI 冲突。已修复：deployment/requirements.txt 不再钉 torch/numpy/gradio 版本，深度学习栈沿用镜像自带版本（文件内有注释说明）。此坑不要再踩回。
 
-构建失败：查看空间日志，若提示依赖冲突，删除 requirements.txt 中的版本号后重试。
+首次构建超过 15 分钟：多为 torch 大包下载缓慢所致；修复后已不再重复下载 torch，构建应明显加快。
 
-下载模型失败：确认 model_repo_id 拼写正确、模型仓库为公开可见。
+构建失败：查看空间日志，先看是否是上述 torch/torchvision 冲突；其他依赖冲突可删版本号重试。
+
+下载模型失败：确认 model_repo_id 拼写正确（当前已填 DaiYanQBZ95Doll/SoundInsight_models）、模型仓库为公开可见。
 
 延迟偏高：免费空间为 CPU 环境，单条推理约 2-5 秒属正常。
 
