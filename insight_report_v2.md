@@ -1,27 +1,33 @@
 # SoundInsight 音质洞察报告
 
 ## 一、总体概况
-分析对象：agent_test_input.csv
-分析时间：2026-09-03 10:04
+分析对象：sample_reviews_100.csv
+分析时间：2026-09-05 11:41
 评论总数：100 条
-音质差评数：1 条（占比 1.00%）
-平均评分：4.45
-结论一句话：正常，音质口碑处于健康水平
+音质差评数：12 条（占比 12.00%）
+平均评分：3.78
+结论一句话：严重，音质差评率显著偏高，建议立即排查
 
 ## 二、问题分布
 | 问题类别 | 数量 | 占比 | 优先级 |
 |---------|------|------|--------|
-| 清晰度 | 1 | 100.0% | 高 |
-| 低音 | 0 | 0.0% | 低 |
-| 杂音 | 0 | 0.0% | 低 |
-| 音量 | 0 | 0.0% | 低 |
+| 低音 | 5 | 38.5% | 高 |
+| 杂音 | 4 | 30.8% | 高 |
+| 音量 | 3 | 23.1% | 高 |
+| 清晰度 | 1 | 7.7% | 中 |
 | 高音 | 0 | 0.0% | 低 |
 
 ## 三、典型案例
-1. （98.1%）Ear tips are a totally subjective thing. What I might think are great you might think suck so take this with a grain of 
+1. （99.0%）The sound quality was horrible! Extreme static. I was very disappointed. Won't buy again.
+2. （99.0%）I'm not that impressed with these. The sound is too muted and they get staticy at times. The range for them to work is o
+3. （99.0%）The audio quality on this webcam is horrible. Audio is very distorted and is full of noise and intermittent breaks. Vide
+4. （98.9%）I bought this Nexus 7 32G at the end of January 2013 via online store and have had it since February 2013.  Within about
+5. （98.8%）these work as advertised.  they take crappy sounding, bassless ipod stock earbuds and make them sound at 100% better (ma
 
 ## 四、行动建议
-- 紧急（清晰度）：建议检查 客服/详情页 环节，预期降低该类差评率。
+- 紧急（低音）：建议检查 生产/质检 环节，预期降低该类差评率。
+- 紧急（杂音）：建议检查 生产/质检 环节，预期降低该类差评率。
+- 紧急（音量）：建议检查 客服/详情页 环节，预期降低该类差评率。
 
 ## 五、验证指标
 建议复评周期：2-4 周后重新运行批量分析，追踪同口径差评率变化。

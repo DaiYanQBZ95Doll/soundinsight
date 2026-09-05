@@ -37,6 +37,8 @@ python upload_models.py --repo 你的用户名/SoundInsight_models --token 你�
 
 ## 常见问题
 
+首次构建超过 15 分钟：多为 torch CUDA 捆绑包（约 2GB）下载缓慢所致。可将 requirements.txt 首行加 --extra-index-url https://download.pytorch.org/whl/cpu，空间将拉取 CPU 版 torch（约 200MB），构建明显加快。
+
 构建失败：查看空间日志，若提示依赖冲突，删除 requirements.txt 中的版本号后重试。
 
 下载模型失败：确认 model_repo_id 拼写正确、模型仓库为公开可见。

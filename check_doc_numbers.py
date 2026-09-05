@@ -48,8 +48,13 @@ def read_file(name):
     if not os.path.exists(p):
         return None, None
     with open(p, encoding="utf-8", errors="replace") as f:
-        lines = f.readlines()
-    return lines, p
+        content = f.read()
+    if name == "ppt_text_dump.md":
+        # 只审计正文提取区，截断自动核对小节，避免自匹配假 FAIL
+        marker = "## 自动核对"
+        if marker in content:
+            content = content.split(marker)[0]
+    return content.splitlines(keepends=True), p
 
 
 def main() -> None:
@@ -74,15 +79,18 @@ def main() -> None:
                        f"{'行 ' + ','.join(map(str, hits[:5])) if hits else '未出现'}")
         # 违禁检测
         for pattern, desc in FORBIDDEN:
+            found = False
             for i, line in enumerate(lines, 1):
                 m = re.search(pattern, line)
                 if m:
                     if desc.startswith("教师一致性") and \
                        re.search(r"方法|附录|蒸馏|不作为|可行性", line):
                         continue  # 方法说明语境，允许
-                    out.append(f"- [FAIL] {desc} 出现在行 {i}: {line.strip()[:80]}")
+                    out.append(f"- [FAIL] {desc} 出现在行 {i}: "
+                               f"{line.strip()[:80]}")
+                    found = True
                     break
-            else:
+            if not found:
                 out.append(f"- [PASS] 未发现 {desc}")
         # 正例口径：1288 出现时必须带口径说明
         for i, line in enumerate(lines, 1):
