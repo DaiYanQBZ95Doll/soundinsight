@@ -70,7 +70,6 @@ def main() -> None:
         ["git", "commit", "-m", "upload SoundInsight models"],
         ["git", "branch", "-M", "master"],
         ["git", "remote", "add", "origin", remote],
-        ["git", "push", "-u", "origin", "master"],
     ]
     for c in cmds:
         r = subprocess.run(c, cwd=tmp, capture_output=True, text=True,
@@ -79,6 +78,20 @@ def main() -> None:
         if r.returncode != 0 and c[1] != "init":
             print(r.stderr[-800:])
             raise SystemExit(f"命令失败：{' '.join(c)}")
+    # 远程仓库可能自带 README 提交，先拉取合并再推送
+    pull = subprocess.run(
+        ["git", "pull", "--rebase", "--allow-unrelated-histories",
+         "origin", "master"], cwd=tmp, capture_output=True, text=True)
+    print("> git pull --rebase --allow-unrelated-histories origin master")
+    if pull.returncode != 0:
+        print(pull.stderr[-400:])
+        print("远程无可合并内容或拉取失败，尝试直接推送")
+    push = subprocess.run(["git", "push", "-u", "origin", "master"],
+                          cwd=tmp, capture_output=True, text=True)
+    print("> git push -u origin master")
+    if push.returncode != 0:
+        print(push.stderr[-800:])
+        raise SystemExit("推送失败：git push -u origin master")
     print(f"上传完成 -> https://modelscope.cn/models/{args.repo}")
     print(f"请把 {args.repo} 填入 deployment/config.json 的 model_repo_id")
 
