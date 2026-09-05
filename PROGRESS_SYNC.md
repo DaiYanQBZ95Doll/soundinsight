@@ -51,7 +51,7 @@
 - P0-3（两套混淆矩阵调和）：results_summary.md 已加 GPU 重跑调和行（TP=178/FN=73，F1 0.685，±0.002）；error_taxonomy.md 与 v4 7.2 加交叉引用；check_doc_numbers.py 新增 results_summary 组与废弃 claim 违禁项。
 - P0-4（长度分桶重做）：按 tokenizer 重算——≤64 token F1 0.708（n=12,471）/ 65-128 token 0.749（n=3,801）/ >128 token 0.565（n=3,728，截断桶，召回 54.4%）；旧字符口径的覆盖性缺陷（11888 条"长评"中仅 31.4% 真正 >128 token）已如实记录；v4 9.1 与 drift_plan §4 同步更新。
 - P1-1（概率展示一致性）：Demo 单条/批量/边界案例三处输出加"概率未经校准，仅供排序参考"提示；Agent 中英文报告附注同步；capture_log.txt 与 exp06/training_output.txt 为历史日志产物（生成于加注前），不再编辑历史日志。
-- P1-2（标注噪声人工终审）：human_review_noise16.csv 已生成（12 FP + 4 FN，含 LLM 理由与人工判定列），待用户复核。
+- P1-2（标注噪声人工终审）：**已完成（2026-09-05，用户）**。16 条候选 15/16 确认（93.8%，CI 71.7%-98.9%）→ 标注噪声率修正为 9.1%（CI 5.6%-14.5%），FP 侧 12.1%、FN 侧 5.5%；id69 人工确认为模型误报（标注正确）；id48/id93 两条边界已记录；判定写入 human_review_noise16.csv，error_taxonomy/v4/MODEL_CARD 同步更新。
 - P2-1（数据集考古汇总）：docs/dataset_audit.md 已产出（来源/字段清单/行数/时间范围/数据质量问题）；year_split_eval.py 重跑，输出原文存档 docs/year_split_output.txt（2022 桶 F1@0.5=0.8049，覆盖 19,996/20,000，与 Q6 一致）。
 - P2-2（git push）：网络仍不可达，多个 commit 在本地，用户网络恢复后按 README 命令推送。
 - 在线 Demo（ModelScope 创空间）：**部署成功并通过 deploy_check（2026-09-05）**。地址 https://modelscope.cn/studios/DaiYanQBZ95Doll/SoundInsight（直链 https://daiyanqbz95doll-soundinsight.ms.show）。验收：页面 200；gradio_api/info 暴露 single_predict+batch_analyze；单条推理 2/2（负面→98.9%+杂音、正面→正常，均带校准提示）；批量上传 100 条 15.1 秒（12 差评、五类分布与本地一致）。修复过程三次：torch/torchvision ABI 硬钉冲突、平台敏感词扫描自动回滚（"内网"措辞）、下载 URL 误拼绝对路径致 404。URL 已回填 README 与 v4。
