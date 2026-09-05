@@ -17,6 +17,8 @@ INCLUDE_FILES = [
     "requirements.txt",
     "README.md",
     "edge_cases.md",
+    "MODEL_CARD.md",
+    "install.bat",
     "sample_reviews_100.csv",
     "download_models.py",
 ]
@@ -34,6 +36,10 @@ DEV_SCRIPTS = {
     "build_pdf_v2.py", "capture_demo_output.py", "archive_exp.py",
     "make_samples.py", "finalize_curve.py", "retier_conf.py",
     "prep_human_review.py", "upload_models.py",
+    "val_pred_dump.py", "prep_err_taxonomy.py", "taxonomy_agg.py",
+    "llm_eval_metrics.py", "prep_llm_eval.py", "throughput_bench.py",
+    "calibration_eval.py", "length_bucket_eval.py", "edge_case_benchmark.py",
+    "ppt_speed_fix.py",
 }
 
 README_SUBMISSION = """# SoundInsight 复赛作品提交包

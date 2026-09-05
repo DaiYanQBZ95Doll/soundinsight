@@ -30,7 +30,7 @@
 
 - electronics_expanded.csv：十万条原始评论（text、rating）。
 - labeled_expanded.csv：规则初筛标注（关键词单词边界匹配 + 评分阈值），弱标注正例 1502 条。
-- labeled_llm.csv：LLM 复核后的最终标签集。当前正例数为 1288 条（含高音补捞新增的 31 条）。注意：提交文档中冻结的历史口径为 1257 条，两者差异已记录在案，引用时需注明口径。
+- labeled_llm.csv：LLM 复核后的最终标签集。当前正例数为 1280 条（1257 → 高音补捞 +31 → 中期置信复核移除 8）。注意：提交文档中冻结的历史口径为 1257 条，两者差异已记录在案，引用时需注明口径。
 - labeled_llm_before_treble.csv：高音补捞合并前的备份（1257 条口径）。
 - val_v2.csv：固定验证集，20000 条含 251 正例，所有评估必须用它。
 - train_quick.csv：RoBERTa 快速验证用的小训练集。
@@ -57,29 +57,33 @@ RoBERTa 快速验证：仅 2 epoch 探测，调优 F1 0.6169，未充分收敛�
 
 ## 五、工程组件
 
-- soundinsight_agent.py：一键洞察 Agent，输入 CSV 输出六节结构报告（总体概况/问题分布/典型案例/行动建议/验证指标/附注），优先级自动计算，输出 insight_report_v2.md。
+- soundinsight_agent.py：一键洞察 Agent，输入 CSV 输出六节结构报告（总体概况/问题分布/典型案例/行动建议/验证指标/附注），优先级自动计算，支持 --format md|excel、--lang zh|en，非英文评论跳过并计数，附成本对照行；输出 insight_report_v2.md（/v2_en.md）。
+- predict_core.py：共享推理核心（agent / api_server / benchmark 同路径），E7 非英文显式拒绝（is_unsupported）。
+- api_server.py：FastAPI HTTP API（GET /health、POST /predict），默认 127.0.0.1:7860。
+- install.bat：Windows 一键安装（venv + 依赖 + 模型下载 + 自检）。
 - demo_sound_v2.py：Gradio Demo，三个 Tab，单条评论判定、批量 CSV 分析、边界案例展示（六类场景，概率硬编码）。端口 7860。
 - config.json：模型目录、阈值文件、标签映射集中配置，Agent 与 Demo 均读取它。
 - test_model.py：验证集评估，输出指标、阈值扫描、混淆矩阵，支持 --csv/--label 参数。
 - 数据管线脚本：fetch_electronics.py、extend_data.py、label_v3.py、prep_review_input.py、prep_three_star.py、merge_review.py、merge_three_star.py、prep_refine.py、merge_refine.py、retier_conf.py。
-- 文档：README.md、results_summary.md、competition_v2.txt/md（初赛版全文）、competition_v3.txt（复赛九章模板版）、stats_validation.md、ablation_summary.md、significance_test.md、confidence_tiered.md、edge_cases.md、user_scenarios.md、action_report_template.md、qna_preparation.md、PROGRESS_SYNC.md。
-- 图表：architecture.png、learning_curve.png、pr_curve.png、confusion_matrix.png、demo_output.png。
+- 文档：README.md、results_summary.md、competition_v2.txt/md（初赛版全文）、competition_v3.txt（复赛九章模板版）、competition_v4.md（11 章完整版）、stats_validation.md、ablation_summary.md、significance_test.md、confidence_tiered.md、edge_cases.md、user_scenarios.md、action_report_template.md、qna_preparation.md、PROGRESS_SYNC.md、llm_baseline.md（Batch B LLM 对照）、length_bucket_eval.md / edge_case_benchmark.md / calibration_eval.md / error_taxonomy.md（Batch C）、throughput_eval.md（E3）、MODEL_CARD.md、docs/drift_plan.md。
+- 图表：architecture.png、learning_curve.png、pr_curve.png、confusion_matrix.png、demo_output.png、trend_over_time.png、calibration_curve.png。
 - 实验归档：exp01 至 exp06 与 exp07_ablation_A/B/C 目录。
 
 ## 六、当前进行中与待办
 
-进行中：无 GPU 任务。D5 五个批次均已落地：批次 1 部署包备齐（待用户 ModelScope 账号三步操作）；批次 2 审计完成（PPT 20 页超页数为用户侧 FAIL）；批次 3 competition_v4.md 完成且数字审计全 PASS；批次 4 Demo.zip 与复赛作品 zip 骨架已生成、样例集/视频脚本/反馈模板完成；批次 5 本轮收尾。
+进行中：无 GPU 任务。D5 五个批次均已落地；D6-D8 遗憾消除清单：Batch B（LLM 对照：零样本 F1 0.940 / 5-shot 0.873 / 复核 0.846 vs 小模型子集 0.826，tokens 24.9 万，Q3/Q5/Q10 已改写）、Batch C（长度分桶 / 边界探针 / ECE 0.0122 校准 / 错误分类学 FP=91 FN=73）、Batch E（api_server + predict_core + install.bat + 吞吐实测 GPU 1.76s/1000 条 + MODEL_CARD + --lang en + 成本对照 + 非英文拒绝）、Batch F（数据许可与 LLM-API 披露 + docs/drift_plan.md）均已完成并通过数字审计（120 项 PASS）。PPT"2 分钟/99.6%"已改为实测口径。Batch G 收尾进行中。
 
 待办（按优先级）：
 
-1. 用户在命令行执行 git push（命令：git push origin main，报 schannel 错误时加 -c http.sslBackend=openssl）。
+1. 用户在命令行执行 git push（命令：git push origin main，报 schannel 错误时加 -c http.sslBackend=openssl）；DSH 亦会尝试用 openssl 参数推送。
 2. 人工审核 human_review_conf30.csv（8 条中置信样本，判定列填 1 或 0）。
-3. ModelScope 注册、建仓、取 token，然后执行 upload_models.py 与创空间创建（见 DEPLOY_GUIDE.md）。
-4. 演示视频录制（按 video_script.md，2-3 分钟）。
-5. 真实用户反馈收集（feedback_template.md，禁止预填）。
-6. competition_v4.md 团队信息章节人工填写。
-7. PPT 视觉走查（当前 20 页，超出 8-12 页要求，需决定精简）。
-8. 最终 PDF 导出并放入 更新世界的锋芒_SoundInsight_复赛作品.zip。
+3. 标注噪声终审：error_taxonomy.md 中 LLM 判定约 9.8% 错误样本为标注问题（AI 判定，未人工终审）——需决定是否人工复核。
+4. 诚信核查遗留：competition_v3/v4 5.2 节写"qwen3.7-plus 用于 LLM 复核"，而 RLCA 实际复核用的是 deepseek-chat（llm_baseline.md 有实测记录）。需用户确认：改回 deepseek-chat，或确有 qwen 复核重跑证据。
+5. ModelScope 注册、建仓、取 token，然后执行 upload_models.py 与创空间创建（见 DEPLOY_GUIDE.md）；Studio 构建完成后把公开 URL 发给 DSH 做 deploy_check。
+6. 演示视频录制（按 video_script.md，2-3 分钟）。
+7. 真实用户反馈收集（feedback_template.md，禁止预填）。
+8. PPT 视觉走查与精简（当前 20 页，超出 8-12 页要求）。
+9. 最终 PDF 导出并放入 更新世界的锋芒_SoundInsight_复赛作品.zip。
 
 ## 七、环境事实
 
