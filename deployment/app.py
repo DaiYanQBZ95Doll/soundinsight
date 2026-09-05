@@ -24,8 +24,8 @@ with open(os.path.join(HERE, "config.json"), encoding="utf-8") as f:
 BIN_DIR = os.path.join(HERE, CFG.get("bin_model_dir", "sound_model"))
 ML_DIR = os.path.join(HERE, CFG.get("multi_label_dir", "multi_label_model"))
 MODEL_REPO_ID = CFG.get("model_repo_id", "")  # 用户建仓后填入
-# 创空间容器内 modelscope.cn 可能被解析到内网网关（404），
-# 因此按 www.modelscope.cn -> modelscope.cn 顺序回退，并显式带 Revision。
+# 按多个入口顺序回退下载模型文件，并显式带 Revision 参数，
+# 提高不同运行环境下的可用性。
 MODELSCOPE_HOSTS = ["www.modelscope.cn", "modelscope.cn"]
 MAX_LEN = int(CFG.get("max_len", 128))
 
