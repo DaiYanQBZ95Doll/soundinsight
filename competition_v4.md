@@ -104,10 +104,10 @@ SoundInsight 是一款面向跨境电商耳机卖家的音质差评智能归因�
 
 | 模型标识 | 用途 | 调用方式 |
 |---------|------|---------|
-| deepseek-chat | RLCA 标注复核 + Batch B LLM 对照实验 | DeepSeek 官方 API（开发环境密钥） |
-| 阿里云百炼（qwen3.7-plus 等） | 未使用 | — |
+| qwen3.7-plus | Batch B 跨 LLM 稳健性对照（零样本/5-shot/复核） | 阿里云百炼 Token Plan API（专属基地址） |
+| deepseek-chat | RLCA 标注复核 + Batch B LLM 对照 | DeepSeek 官方 API（开发环境密钥） |
 
-说明：本项目标注与实验管线实际调用的 LLM 为 deepseek-chat（实测记录见 llm_baseline.md）；阿里云百炼在本项目中未产生调用，此栏如实填写"未使用"。
+说明：两个模型均已实际调用，实测记录见 llm_baseline.md（同 1000 条子集、同提示词；qwen 零样本 F1 0.915、deepseek 零样本 F1 0.940，含口径与循环性声明）。
 
 ### 5.3 技术组件说明
 

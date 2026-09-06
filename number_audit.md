@@ -18,8 +18,7 @@
 - [PASS] 弱标注精度 (51\.8%): 行 134
 - [PASS] 未发现 错误正例数1297
 - [PASS] 未发现 教师一致性出现在正文（仅允许方法说明/附录）
-- [PASS] 未发现 已废弃的qwen复核claim
-- [PASS] 未发现 已废弃的阿里云Token Plan API claim
+- [PASS] 未发现 已废弃的qwen标注复核claim
 
 ## competition_v4.md
 - [PASS] 最终模型 F1 (0\.687): 行 53,179,192,222
@@ -39,8 +38,7 @@
 - [PASS] 弱标注精度 (51\.8%): 行 147
 - [PASS] 未发现 错误正例数1297
 - [PASS] 未发现 教师一致性出现在正文（仅允许方法说明/附录）
-- [PASS] 未发现 已废弃的qwen复核claim
-- [PASS] 未发现 已废弃的阿里云Token Plan API claim
+- [PASS] 未发现 已废弃的qwen标注复核claim
 
 ## README.md
 - [PASS] 最终模型 F1 (0\.687): 行 58
@@ -60,8 +58,7 @@
 - [PASS] 弱标注精度 (51\.8%): 行 58
 - [PASS] 未发现 错误正例数1297
 - [PASS] 未发现 教师一致性出现在正文（仅允许方法说明/附录）
-- [PASS] 未发现 已废弃的qwen复核claim
-- [PASS] 未发现 已废弃的阿里云Token Plan API claim
+- [PASS] 未发现 已废弃的qwen标注复核claim
 
 ## QWEN_HANDOFF.md
 - [PASS] 最终模型 F1 (0\.687): 行 21,42
@@ -81,8 +78,7 @@
 - [PASS] 弱标注精度 (51\.8%): 行 38
 - [PASS] 未发现 错误正例数1297
 - [PASS] 未发现 教师一致性出现在正文（仅允许方法说明/附录）
-- [PASS] 未发现 已废弃的qwen复核claim
-- [PASS] 未发现 已废弃的阿里云Token Plan API claim
+- [PASS] 未发现 已废弃的qwen标注复核claim
 
 ## ppt_text_dump.md
 - [PASS] 最终模型 F1 (0\.687): 行 33,36,39
@@ -102,19 +98,20 @@
 - [PASS] 弱标注精度 (51\.8%): 行 21,24
 - [PASS] 未发现 错误正例数1297
 - [PASS] 未发现 教师一致性出现在正文（仅允许方法说明/附录）
-- [PASS] 未发现 已废弃的qwen复核claim
-- [PASS] 未发现 已废弃的阿里云Token Plan API claim
+- [PASS] 未发现 已废弃的qwen标注复核claim
 
 ## llm_baseline.md
-- [PASS] LLM零样本F1 (0\.940): 行 22,32,33
-- [PASS] 小模型子集F1 (0\.826): 行 21,32
-- [PASS] LLM 5示例F1 (0\.873): 行 33
-- [PASS] LLM复核模式F1 (0\.846): 行 24,34
+- [PASS] LLM零样本F1 (0\.940): 行 22,38,41,45,46
+- [PASS] 小模型子集F1 (0\.826): 行 21,41,45,50
+- [PASS] LLM 5示例F1 (0\.873): 行 41,46,50
+- [PASS] LLM复核模式F1 (0\.846): 行 24,41,47
 - [PASS] LLM实验tokens合计 (249,703): 行 26
 - [PASS] LLM零样本召回 (0\.9044): 行 22
 - [PASS] 小模型子集召回 (0\.7092): 行 21
 - [PASS] LLM零样本Acc (0\.971): 行 22
 - [PASS] 单批40条延迟实测 (2,560|2552): 行 28
+- [PASS] qwen零样本F1 (0\.9149): 行 36,50
+- [PASS] qwen实验tokens合计 (490,747): 行 40
 
 ## qna_preparation.md
 - [PASS] Q3/Q5/Q10 LLM零样本F1 (0\.940): 行 10,16,31
