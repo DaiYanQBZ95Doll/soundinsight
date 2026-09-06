@@ -55,7 +55,7 @@
 - P2-1（数据集考古汇总）：docs/dataset_audit.md 已产出（来源/字段清单/行数/时间范围/数据质量问题）；year_split_eval.py 重跑，输出原文存档 docs/year_split_output.txt（2022 桶 F1@0.5=0.8049，覆盖 19,996/20,000，与 Q6 一致）。
 - P2-2（git push）：网络仍不可达，多个 commit 在本地，用户网络恢复后按 README 命令推送。
 - 在线 Demo（ModelScope 创空间）：**部署成功、deploy_check 通过、已由用户发布（2026-09-05）**。地址 https://modelscope.cn/studios/DaiYanQBZ95Doll/SoundInsight（直链 https://daiyanqbz95doll-soundinsight.ms.show）。验收：页面 200；gradio_api/info 暴露 single_predict+batch_analyze；单条推理 2/2（负面→98.9%+杂音、正面→正常，均带校准提示）；批量上传 100 条 15.1 秒（12 差评、五类分布与本地一致）。修复过程三次：torch/torchvision ABI 硬钉冲突、平台敏感词扫描自动回滚（"内网"措辞）、下载 URL 误拼绝对路径致 404。URL 已回填 README 与 v4。
-- P0-1 路线 (b)（qwen3.7-plus 重跑对照）：未执行。用户提供的 key 经探测：百炼端点 invalid_api_key、ModelScope 推理端点 401（非有效 ModelScope token），两处均不可用；需用户提供百炼控制台的 sk- 开头 32 位 API-KEY 后重试。当前表格维持路线 (a) 状态（百炼栏"未使用"，属实）。
+- P0-1 路线 (b)（qwen3.7-plus 重跑对照）：**已完成（2026-09-05）**。Token Plan 专属基地址（token-plan.cn-beijing.maas.aliyuncs.com）+ qwen3.7-plus 三设置：零样本 F1 0.9149 / 5-shot 0.8937 / 复核 0.8661（tokens 合计 490,747，费用走套餐额度）。v3/v4 5.2 表已改为两模型真实调用（qwen3.7-plus 百炼 Token Plan + deepseek-chat 官方 API）；llm_baseline.md 新增 2b 节与结论 6（跨 LLM 稳健性，qwen 无同源红利）。key 未落盘、未进 git，建议用户轮换。
 
 ## 重建产物实测值（最新）
 
