@@ -75,7 +75,7 @@ RoBERTa 快速验证：仅 2 epoch 探测，调优 F1 0.6169，未充分收敛�
 
 待办（按优先级）：
 
-1. 用户在命令行执行 git push（命令：git push origin main，报 schannel 错误时加 -c http.sslBackend=openssl）；DSH 亦会尝试用 openssl 参数推送。
+1. git push：**已完成（2026-09-05，用户执行）**，远程 2c07717..a560734，本地 commit 全部上库。
 2. 人工审核 human_review_conf30.csv（8 条中置信样本，判定列填 1 或 0）；human_review_noise16.csv 已完成用户人工终审（2026-09-05）：15/16 确认 → 标注噪声率 9.1%（CI 5.6%-14.5%），判定已写入 CSV。
 3. 标注噪声终审：**已完成**（见上一条），error_taxonomy.md / v4 9.1 / MODEL_CARD 均已更新为人工口径（9.1%，下界估算声明保留）。
 4. 诚信核查（已处理，路线 b 已落地）：v3/v4 5.2 表现两行均为真实调用——qwen3.7-plus（百炼 Token Plan，跨 LLM 对照：零样本 F1 0.9149 / 5-shot 0.8937 / 复核 0.8661，tokens 49.1 万）与 deepseek-chat（RLCA 复核 + 对照）。Token Plan key 仅在宿主侧工具参数中使用，未写入任何文件；调用后建议用户在平台轮换该 key。
