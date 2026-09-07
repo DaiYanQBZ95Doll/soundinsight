@@ -53,7 +53,7 @@
 - P1-1（概率展示一致性）：Demo 单条/批量/边界案例三处输出加"概率未经校准，仅供排序参考"提示；Agent 中英文报告附注同步；capture_log.txt 与 exp06/training_output.txt 为历史日志产物（生成于加注前），不再编辑历史日志。
 - P1-2（标注噪声人工终审）：**已完成（2026-09-05，用户）**。16 条候选 15/16 确认（93.8%，CI 71.7%-98.9%）→ 标注噪声率修正为 9.1%（CI 5.6%-14.5%），FP 侧 12.1%、FN 侧 5.5%；id69 人工确认为模型误报（标注正确）；id48/id93 两条边界已记录；判定写入 human_review_noise16.csv，error_taxonomy/v4/MODEL_CARD 同步更新。
 - P2-1（数据集考古汇总）：docs/dataset_audit.md 已产出（来源/字段清单/行数/时间范围/数据质量问题）；year_split_eval.py 重跑，输出原文存档 docs/year_split_output.txt（2022 桶 F1@0.5=0.8049，覆盖 19,996/20,000，与 Q6 一致）。
-- P2-2（git push）：网络仍不可达，多个 commit 在本地，用户网络恢复后按 README 命令推送。
+- P2-2（git push）：**已完成（2026-09-05，用户执行）**——2c07717..a560734 推送成功，全部本地 commit 已上 GitHub。
 - 在线 Demo（ModelScope 创空间）：**部署成功、deploy_check 通过、已由用户发布（2026-09-05）**。地址 https://modelscope.cn/studios/DaiYanQBZ95Doll/SoundInsight（直链 https://daiyanqbz95doll-soundinsight.ms.show）。验收：页面 200；gradio_api/info 暴露 single_predict+batch_analyze；单条推理 2/2（负面→98.9%+杂音、正面→正常，均带校准提示）；批量上传 100 条 15.1 秒（12 差评、五类分布与本地一致）。修复过程三次：torch/torchvision ABI 硬钉冲突、平台敏感词扫描自动回滚（"内网"措辞）、下载 URL 误拼绝对路径致 404。URL 已回填 README 与 v4。
 - P0-1 路线 (b)（qwen3.7-plus 重跑对照）：**已完成（2026-09-05）**。Token Plan 专属基地址（token-plan.cn-beijing.maas.aliyuncs.com）+ qwen3.7-plus 三设置：零样本 F1 0.9149 / 5-shot 0.8937 / 复核 0.8661（tokens 合计 490,747，费用走套餐额度）。v3/v4 5.2 表已改为两模型真实调用（qwen3.7-plus 百炼 Token Plan + deepseek-chat 官方 API）；llm_baseline.md 新增 2b 节与结论 6（跨 LLM 稳健性，qwen 无同源红利）。key 未落盘、未进 git，建议用户轮换。
 
