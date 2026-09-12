@@ -29,7 +29,7 @@
 2. human_review_conf30.csv 人工审核（8 条）
 3. ModelScope 账号三步 + 上传权重 + 创建创空间
 4. 演示视频录制（按 video_script.md）
-5. 用户验证：本轮不做真实用户反馈收集（已从清单移除；v4 局限章节已注明"未开展用户验证"）；feedback_template.md 保留为下一阶段工具。
+5. 用户验证：本轮不做真实用户反馈收集（已从清单移除；v4 局限第 7 条已注明"未开展用户验证"）。
 6. competition_v4.md 团队信息填写
 7. PPT 精简（20 页 → 8-12 页）并用 PowerPoint 打开确认 B3 修改未损坏文件
 8. 最终 PDF 导出并放入复赛作品 zip
