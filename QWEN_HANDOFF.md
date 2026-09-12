@@ -81,7 +81,7 @@ RoBERTa 快速验证：仅 2 epoch 探测，调优 F1 0.6169，未充分收敛�
 4. 诚信核查（已处理，路线 b 已落地）：v3/v4 5.2 表现两行均为真实调用——qwen3.7-plus（百炼 Token Plan，跨 LLM 对照：零样本 F1 0.9149 / 5-shot 0.8937 / 复核 0.8661，tokens 49.1 万）与 deepseek-chat（RLCA 复核 + 对照）。Token Plan key 仅在宿主侧工具参数中使用，未写入任何文件；调用后建议用户在平台轮换该 key。
 5. ModelScope 创空间：**已部署成功并验收通过（2026-09-05）**。地址 https://modelscope.cn/studios/DaiYanQBZ95Doll/SoundInsight（直链 .ms.show）。deploy_check 结果：页面 200、单条推理 2/2（负面→杂音归因、正面→正常，含校准提示）、批量 100 条 15.1 秒（12 差评，分布与本地一致）。三次修复记录见 DEPLOY_GUIDE.md 顶部。
 6. 演示视频录制（按 video_script.md，2-3 分钟）。
-7. 真实用户反馈收集（feedback_template.md，禁止预填）。
+7. 用户验证：本轮**不做真实用户反馈收集**（已从任务清单移除；v4 局限章节已如实注明"未开展用户验证"）；`feedback_template.md` 保留为下一阶段工具，不参与提交物。
 8. PPT 视觉走查与精简（当前 20 页，超出 8-12 页要求）。
 9. 最终 PDF 导出并放入 更新世界的锋芒_SoundInsight_复赛作品.zip。
 

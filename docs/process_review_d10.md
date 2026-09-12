@@ -82,6 +82,7 @@
 
 1. PPT 精简 20→8-12 页（数字口径已全部改好）。
 2. 演示视频录制（`video_script.md` 130 秒分镜）。
-3. 真实用户反馈收集（`feedback_template.md` 空白待填，禁止预填）。
-4. 最终 PDF（Typora 导出 v4）放入 `更新世界的锋芒_SoundInsight_复赛作品.zip`。
-5. 可选：`human_review_conf30.csv` 确认、Token Plan key 轮换。
+3. 最终 PDF（Typora 导出 v4）放入 `更新世界的锋芒_SoundInsight_复赛作品.zip`。
+4. 可选：`human_review_conf30.csv` 确认、Token Plan key 轮换。
+
+用户验证：本轮**不做**真实用户反馈收集（已从清单移除），v4 §9.1 第 7 条已如实注明"未开展用户验证"；`feedback_template.md` 仅作下一阶段工具保留。
