@@ -315,7 +315,7 @@ zip命名：更新世界的锋芒_SoundInsight_复赛作品.zip
 
 内含：
 
-1. 更新世界的锋芒_SoundInsight_复赛作品.pdf（主文档，由 competition_v4.md 导出）
+1. 更新世界的锋芒_SoundInsight_复赛作品.pdf（主文档；模板允许 .docx 或 .pdf，本项目同时提供 Word 版备份）
 2. 更新世界的锋芒_SoundInsight_Demo.zip
 3. 更新世界的锋芒_SoundInsight_演示视频.mp4
 4. 更新世界的锋芒_SoundInsight_其他材料.zip（验证报告、审计结果、图表、人工复核原始表）

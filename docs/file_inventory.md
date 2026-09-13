@@ -67,6 +67,9 @@
 | `更新世界的锋芒_SoundInsight_Demo.zip` (105KB, 50 文件) | Demo 源码包（无权重、无开发脚本） | ✅ |
 | `更新世界的锋芒_SoundInsight_复赛作品.zip` (104KB) | 复赛提交包骨架（含 Demo.zip + README_SUBMISSION.txt） | ✅ 待放入 PDF 与视频 |
 | `更新世界的锋芒_SoundInsight_其他材料.zip` (466KB, 46 文件 + 说明) | 补充材料：验证报告 10 份、审计与验收脚本 4 个、人工复核原始表 3 张、图表 7 张、复算脚本 13 个、过程文档 5 份 | ✅ |
+| `更新世界的锋芒_SoundInsight_复赛作品.pdf` (201KB, 9 页) | 主文档（脚本生成，内嵌宋体/黑体，WPS 等任意阅读器可开） | ✅ |
+| `更新世界的锋芒_SoundInsight_复赛作品.docx` (48KB) | 主文档 Word 版（备用，WPS 可直接打开并输出 PDF） | ✅ |
+| `md_to_pdf.py` / `md_to_docx.py` / `verify_docx.py` / `pack_final.py` / `hashes.py` | 主文档生成、校验、最终打包与校验值脚本 | 🔧 |
 | `SoundInsight：跨境电商耳机音质差评智能归因系统.pptx` (18.5MB, 20 页) | 演示 PPT（分工表述与耗时口径已修正） | ⚠️ 用户决定保留 20 页，不精简（与赛事建议的 8-12 页存在偏差，如实记录） |
 | `video_script.md` | 演示视频脚本（130 秒 / 四镜头 / 含台词） | 📄 待录制 |
 | `architecture.png`、`learning_curve.png`、`pr_curve.png`、`confusion_matrix.png`、`trend_over_time.png`、`calibration_curve.png`、`demo_output.png` | 文档与 PPT 用图 | ✅ |
