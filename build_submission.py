@@ -41,7 +41,7 @@ DEV_SCRIPTS = {
     "llm_eval_metrics.py", "prep_llm_eval.py", "throughput_bench.py",
     "calibration_eval.py", "length_bucket_eval.py", "edge_case_benchmark.py",
     "ppt_speed_fix.py", "deploy_check.py", "batch_check.py",
-    "llm_qwen_metrics.py", "extract_template.py",
+    "llm_qwen_metrics.py", "extract_template.py", "pack_final.py",
 }
 
 README_SUBMISSION = """# SoundInsight 复赛作品提交包
