@@ -14,7 +14,7 @@
 
 姓名 / 电话 / 邮箱 / 组织·公司 / 职务 / 角色
 
-黎同竣 / 19195907942 / 2799920054@qq.com / （待补充） / （待补充） / 队长
+黎同竣 / 19195907942 / 2799920054@qq.com / 个人团队 / 个人开发者 / 队长
 
 ## 二、参赛信息
 
@@ -173,7 +173,9 @@ D11-D12：全流程复盘、文件整理与模板格式自检
 
 ☑ 代码仓库地址（可选）：https://github.com/DaiYanQBZ95Doll/soundinsight
 
-☐ 产品演示视频：更新世界的锋芒_SoundInsight_演示视频.mp4（待录制，脚本见 video_script.md）
+☐ 产品演示视频：更新世界的锋芒_SoundInsight_演示视频.mp4（待录制，脚本见 video_script.md，当前为 3 分 20 秒版本）
+
+☑ 其他补充材料：更新世界的锋芒_SoundInsight_其他材料.zip（验证报告、审计结果、图表、人工复核原始表与复算脚本）
 
 ### 在线链接填写表
 
@@ -193,6 +195,7 @@ zip命名：更新世界的锋芒_SoundInsight_复赛作品.zip
 1. 更新世界的锋芒_SoundInsight_复赛作品.pdf
 2. 更新世界的锋芒_SoundInsight_Demo.zip
 3. 更新世界的锋芒_SoundInsight_演示视频.mp4
+4. 更新世界的锋芒_SoundInsight_其他材料.zip
 
 ## 九、注意事项
 
