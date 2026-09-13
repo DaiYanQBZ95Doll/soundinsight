@@ -76,6 +76,7 @@
 | `video_script.md` | 演示视频脚本（200 秒 / 9 镜头 / 含台词，模板建议 3-5 分钟） | 📄 待录制 |
 | `video_script_silent.md` | **无口播版拍摄卡**（9 个镜头的操作步骤 + 画面要点，适合不录音的纯演示） | 📄 |
 | `video_script.srt` | 字幕文件（28 条 / 0:00-3:20，UTF-8，可直接导入剪映或 WPS 演示） | 📄 |
+| `视频素材/`（8 张 1920×1080 PNG + `素材清单.md`） | **剪辑用满屏图**：标题卡、学习曲线、PR 曲线、混淆矩阵、校准曲线、系统架构、时序趋势、结尾卡；清单含时间轴对应表与剪映操作步骤 | 📄 待剪辑 |
 | `architecture.png`、`learning_curve.png`、`pr_curve.png`、`confusion_matrix.png`、`trend_over_time.png`、`calibration_curve.png`、`demo_output.png` | 文档与 PPT 用图 | ✅ |
 | `insight_report_v2.md` / `_en.md` / `insight_report.xlsx` | Agent 输出样例（中文 / 英文 / Excel 三形态） | 📊 |
 | `ppt_text_dump.md` | PPT 文本提取（数字审计用） | 📊 |
