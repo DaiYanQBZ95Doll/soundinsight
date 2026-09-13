@@ -66,6 +66,7 @@
 |---|---|---|
 | `更新世界的锋芒_SoundInsight_Demo.zip` (105KB, 50 文件) | Demo 源码包（无权重、无开发脚本） | ✅ |
 | `更新世界的锋芒_SoundInsight_复赛作品.zip` (104KB) | 复赛提交包骨架（含 Demo.zip + README_SUBMISSION.txt） | ✅ 待放入 PDF 与视频 |
+| `更新世界的锋芒_SoundInsight_其他材料.zip` (466KB, 46 文件 + 说明) | 补充材料：验证报告 10 份、审计与验收脚本 4 个、人工复核原始表 3 张、图表 7 张、复算脚本 13 个、过程文档 5 份 | ✅ |
 | `SoundInsight：跨境电商耳机音质差评智能归因系统.pptx` (18.5MB, 20 页) | 演示 PPT（分工表述与耗时口径已修正） | ⚠️ 用户决定保留 20 页，不精简（与赛事建议的 8-12 页存在偏差，如实记录） |
 | `video_script.md` | 演示视频脚本（130 秒 / 四镜头 / 含台词） | 📄 待录制 |
 | `architecture.png`、`learning_curve.png`、`pr_curve.png`、`confusion_matrix.png`、`trend_over_time.png`、`calibration_curve.png`、`demo_output.png` | 文档与 PPT 用图 | ✅ |
@@ -87,6 +88,8 @@
 | `README.md` / `DEPLOY_GUIDE.md` | 仓库说明 / 部署指南（含三次部署修复记录） |
 | `docs/dataset_audit.md` / `docs/year_split_output.txt` | 数据集字段考古 / 年份分桶脚本输出原文 |
 | `docs/project_full_record.md` | **初赛→复赛全流程记录（最终确认用）** |
+| `docs/D13_seal_declaration.md` | **D13 封包声明（提交 Kimi 最终审核用，含校验值与审核清单）** |
+| `docs/file_inventory.md` | 本文件：全部项目文件分类索引 |
 | `docs/work_summary_d7.md` / `docs/process_review_d10.md` | D7 工作总结 / D10 全流程复盘 |
 | `PROGRESS_SYNC.md` / `QWEN_HANDOFF.md` / `PROJECT_BRIEF_QWEN.md` / `REPO_INTRO.txt` | 过程同步与协作交接 |
 | `AI_INDUCTION_REDLINE.md` | AI 协作红线与反诱导声明 |
