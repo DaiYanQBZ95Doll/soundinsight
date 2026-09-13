@@ -57,5 +57,5 @@
 ## 六、提交物状态
 
 - 已完成：Demo.zip（50 文件，无权重/无开发脚本）、复赛作品 zip 骨架、competition_v3/v4、README、PPT 数字口径、video_script、deploy_check 脚本。
-- 用户侧待办：GitHub push（已完成）、PPT 精简 20→8-12 页、演示视频录制、最终 PDF 放入复赛作品 zip、（可选）Token Plan key 轮换、human_review_conf30 确认。
+- 用户侧待办：GitHub push（已完成）、演示视频录制、最终 PDF 放入复赛作品 zip、（可选）Token Plan key 轮换、human_review_conf30 确认。PPT 已决定保留 20 页不精简（已知偏差，如实记录）。
 - 用户验证：本轮不做真实用户反馈收集（已从清单移除，v4 §9.1 第 7 条如实注明"未开展用户验证"）。
