@@ -110,6 +110,14 @@ RESULTSSUMMARY_REQUIRED = [
     (r"TP=179", ["TP=179"], "冻结矩阵"),
 ]
 
+# 官方复赛模板（hackathon-复赛作品提交模板-天池版.docx）必备章节
+TEMPLATE_SECTIONS = [
+    "团队信息", "参赛信息", "业务价值与市场分析", "产品功能与使用说明",
+    "技术架构及调用模型说明", "项目开发及阶段成果说明", "提交物清单",
+    "附件命名规范", "注意事项",
+]
+TEMPLATE_FILES = ["competition_v4.md", "competition_v3.txt"]
+
 GROUPS = [
     {"files": ["competition_v3.txt", "competition_v4.md", "README.md",
                "QWEN_HANDOFF.md", "ppt_text_dump.md"],
@@ -187,12 +195,40 @@ def audit_file(fname, required, forbidden, check_1288, out):
     out.append("")
 
 
+def check_template_conformance(out) -> None:
+    """对照官方复赛模板（hackathon-复赛作品提交模板-天池版.docx）的九章结构。"""
+    out.append("## 模板格式对照（官方复赛模板九章 + 在线链接表）")
+    for fname in TEMPLATE_FILES:
+        lines, _ = read_file(fname)
+        if lines is None:
+            out.append(f"- [FAIL] {fname} 文件不存在")
+            continue
+        text = "\n".join(lines)
+        heads = re.findall(r"^##\s*([一二三四五六七八九十]+)、(.+)$", text,
+                           flags=re.M)
+        nums = [h[0] for h in heads]
+        titles = " ".join(h[1] for h in heads)
+        missing = [s for s in TEMPLATE_SECTIONS if s not in titles]
+        dup = sorted({n for n in nums if nums.count(n) > 1})
+        out.append(f"- {fname}：正文章节 {len(heads)} 个")
+        out.append(f"  - [{'FAIL' if missing else 'PASS'}] 模板必备章节："
+                   f"{'缺 ' + '、'.join(missing) if missing else '九章齐备'}")
+        out.append(f"  - [{'FAIL' if dup else 'PASS'}] 章节编号重复："
+                   f"{'重复 ' + '、'.join(dup) if dup else '无'}")
+        out.append(f"  - [{'PASS' if '在线链接填写表' in text else 'FAIL'}] "
+                   f"在线链接填写表")
+        out.append(f"  - [{'PASS' if '团队名称：更新世界的锋芒' in text else 'FAIL'}] "
+                   f"团队信息已填写")
+    out.append("")
+
+
 def main() -> None:
     out = ["# 文档数字一致性审计", ""]
     for grp in GROUPS:
         for fname in grp["files"]:
             audit_file(fname, grp["required"], grp["forbidden"],
                        grp["check_1288"], out)
+    check_template_conformance(out)
     text = "\n".join(out)
     with open(OUT_MD, "w", encoding="utf-8") as f:
         f.write(text)
