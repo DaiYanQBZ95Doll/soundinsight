@@ -293,7 +293,7 @@ PR 曲线：AUC-PR = 0.7191，为随机水平（0.0126）的 57 倍。
 
 ☑ 可运行的产品 Demo / 核心功能原型：更新世界的锋芒_SoundInsight_Demo.zip（含源码、配置、样例与模型下载脚本；不含权重，权重从 ModelScope 公开仓库自动下载）
 
-☑ 代码仓库地址（可选）：https://github.com/DaiYanQBZ95Doll/soundinsight
+☑ 代码仓库地址（可选）：GitHub https://github.com/DaiYanQBZ95Doll/soundinsight ｜ GitCode https://gitcode.com/DaiYanQBZ95Doll/soundinsight
 
 ☐ 产品演示视频：更新世界的锋芒_SoundInsight_演示视频.mp4（待录制，脚本见 video_script.md，当前为 3 分 20 秒版本）
 
@@ -303,7 +303,7 @@ PR 曲线：AUC-PR = 0.7191，为随机水平（0.0126）的 57 倍。
 
 | 链接类型 | 链接地址 |
 |---|---|
-| 代码仓库（可选） | https://github.com/DaiYanQBZ95Doll/soundinsight |
+| 代码仓库（可选） | GitCode：https://gitcode.com/DaiYanQBZ95Doll/soundinsight ｜ GitHub：https://github.com/DaiYanQBZ95Doll/soundinsight |
 | 线上 Demo 体验地址（如有） | https://modelscope.cn/studios/DaiYanQBZ95Doll/SoundInsight （应用直链：https://daiyanqbz95doll-soundinsight.ms.show） |
 | 产品演示视频链接（如提供线上版本） | （待上传后填写） |
 | 测试账号 / 体验地址（如适用） | 无需账号，公开可直接访问 |

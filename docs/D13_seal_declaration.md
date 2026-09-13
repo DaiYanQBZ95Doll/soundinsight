@@ -31,6 +31,7 @@
 | 7 | 提交物清单与命名规范同步 | v3/v4 的提交物清单勾选状态、在线链接填写表、附件命名规范（新增第 4 项"其他材料"）全部更新 | `competition_v4.md` §十一/§十二、`competition_v3.txt` §七/§八 |
 | 8 | 全量数字审计 | **0 FAIL / 143 PASS**（含新增模板自检 8 项） | `number_audit.md` |
 | 9 | 项目文件整理（同日完成） | 新增 `docs/file_inventory.md`（全部文件分类索引）；删除冗余 4 项（18.5MB PPT 旧备份、临时测试输出、旧版报告、`__pycache__`）；`.gitignore` 补 `*.bak` | `docs/file_inventory.md` §九 |
+| 10 | **代码仓库补齐为双平台** | 按模板"GitCode 代码仓库（可选）"栏位要求，新增 GitCode 镜像仓库 https://gitcode.com/DaiYanQBZ95Doll/soundinsight （公开可访问，已用 `git ls-remote` 验证）；v3/v4 的提交物清单与在线链接表均改为 **GitCode + GitHub 双链接** | `competition_v4.md` §十一、`competition_v3.txt` §七 |
 
 ---
 
@@ -38,13 +39,13 @@
 
 | 文件 | 大小 | SHA256（前 16 位） | 条目数 |
 |---|---|---|---|
-| `更新世界的锋芒_SoundInsight_复赛作品.zip`（**已含主文档 PDF，仅缺视频**） | 761,992 B | `0c55faa078da78e6` | 4 个条目 |
-| `更新世界的锋芒_SoundInsight_复赛作品.pdf`（主文档，内嵌中文字体） | 201,416 B | `6700d1364ea13543` | 9 页 |
-| `更新世界的锋芒_SoundInsight_复赛作品.docx`（Word 备用主文档，WPS 可直接打开） | 48,138 B | `2df1ee5722f0b16b` | 165 段 / 8 表 |
+| `更新世界的锋芒_SoundInsight_复赛作品.zip`（**已含主文档 PDF，仅缺视频**） | 762,320 B | `cf02d03fa4379af2` | 4 个条目 |
+| `更新世界的锋芒_SoundInsight_复赛作品.pdf`（主文档，内嵌中文字体，含双仓库链接） | 201,773 B | `16a373508c2691bf` | 9 页 |
+| `更新世界的锋芒_SoundInsight_复赛作品.docx`（Word 备用主文档，WPS 可直接打开） | 48,211 B | `4a6a47b3bc814542` | 165 段 / 8 表 |
 | `更新世界的锋芒_SoundInsight_Demo.zip` | 109,557 B | `17a8b4e1c6d03338` | 50 个文件 |
 | `更新世界的锋芒_SoundInsight_其他材料.zip` | 466,255 B | `8315aee0d29f0fa2` | 46 个文件 + 1 说明 |
-| `competition_v4.md`（主文档源） | 18,956 B | `7c937cd2045c5567` | 13 章 |
-| `competition_v3.txt`（模板九章版） | 8,708 B | `f37cc3f91f1700eb` | 9 章 |
+| `competition_v4.md`（主文档源） | 19,134 B | `08c468f2238ade1d` | 13 章 |
+| `competition_v3.txt`（模板九章版） | 8,806 B | — | 9 章 |
 | `video_script.md`（三分钟脚本） | 5,128 B | `699347cbab8826d7` | 9 镜头 |
 | `SoundInsight：跨境电商耳机音质差评智能归因系统.pptx` | 18,935,747 B | `b81a9ca65edb59c2` | 20 页 |
 
