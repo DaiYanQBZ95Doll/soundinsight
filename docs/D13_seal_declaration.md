@@ -25,11 +25,12 @@
 | 1 | 团队信息表补全 | 成员表按模板字段填齐：黎同竣 / 19195907942 / 2799920054@qq.com / **个人团队** / **个人开发者** / 队长 | `competition_v4.md` §一、`competition_v3.txt` §一 |
 | 2 | 演示视频脚本扩至 3 分钟 | 由 130 秒（2 分 10 秒）扩写为 **200 秒（3 分 20 秒）**，新增"验证体系""局限性自述"两个镜头，落入模板建议的 3-5 分钟区间 | `video_script.md`（9 个镜头 + 弹性伸缩说明） |
 | 3 | 其他材料包打包 | 生成 `更新世界的锋芒_SoundInsight_其他材料.zip`：46 个文件 + 说明文件（验证报告 10 份、审计与验收脚本 4 个、人工复核原始表 3 张、图表 7 张、复算脚本 13 个、过程文档 5 份） | 打包脚本 `build_submission.py`（`make_other_zip()`） |
-| 4 | 提交包同步 | `复赛作品.zip` 现含 3 个条目（Demo.zip + 其他材料.zip + README_SUBMISSION.txt），待放入 PDF 与视频 | 同上 |
-| 5 | 模板格式自检写入审计 | `check_doc_numbers.py` 新增"模板格式对照"节：官方模板九章齐备、章节编号唯一、在线链接填写表、团队信息已填 | `number_audit.md` 末节 |
-| 6 | 提交物清单与命名规范同步 | v3/v4 的提交物清单勾选状态、在线链接填写表、附件命名规范（新增第 4 项"其他材料"）全部更新 | `competition_v4.md` §十一/§十二、`competition_v3.txt` §七/§八 |
-| 7 | 全量数字审计 | **0 FAIL / 143 PASS**（含新增模板自检 8 项） | `number_audit.md` |
-| 8 | 项目文件整理（前序同日完成） | 新增 `docs/file_inventory.md`（全部文件分类索引）；删除冗余 4 项（18.5MB PPT 旧备份、临时测试输出、旧版报告、`__pycache__`）；`.gitignore` 补 `*.bak` | `docs/file_inventory.md` §九 |
+| 4 | **主文档生成方式更换**（原 Typora 导出路线失效） | 改为脚本生成，两条路线均可提交：① `python md_to_pdf.py` → PDF（**内嵌宋体/黑体**，不依赖阅读器字体，9 页 201,416 B）；② `python md_to_docx.py` → Word（48,138 B，WPS 可直接打开并一键输出 PDF）。模板明确允许 `.docx 或 .pdf` | `md_to_pdf.py`、`md_to_docx.py`、`verify_docx.py` |
+| 5 | 提交包同步 | `复赛作品.zip` 现含 4 个条目：主文档 PDF + Demo.zip + 其他材料.zip + README_SUBMISSION.txt，**仅缺演示视频** | `pack_final.py`（自动打包 + 自检） |
+| 6 | 模板格式自检写入审计 | `check_doc_numbers.py` 新增"模板格式对照"节：官方模板九章齐备、章节编号唯一、在线链接填写表、团队信息已填 | `number_audit.md` 末节 |
+| 7 | 提交物清单与命名规范同步 | v3/v4 的提交物清单勾选状态、在线链接填写表、附件命名规范（新增第 4 项"其他材料"）全部更新 | `competition_v4.md` §十一/§十二、`competition_v3.txt` §七/§八 |
+| 8 | 全量数字审计 | **0 FAIL / 143 PASS**（含新增模板自检 8 项） | `number_audit.md` |
+| 9 | 项目文件整理（同日完成） | 新增 `docs/file_inventory.md`（全部文件分类索引）；删除冗余 4 项（18.5MB PPT 旧备份、临时测试输出、旧版报告、`__pycache__`）；`.gitignore` 补 `*.bak` | `docs/file_inventory.md` §九 |
 
 ---
 
@@ -37,15 +38,17 @@
 
 | 文件 | 大小 | SHA256（前 16 位） | 条目数 |
 |---|---|---|---|
-| `更新世界的锋芒_SoundInsight_Demo.zip` | 109,531 B | `1eeafc079e84b246` | 50 个文件 |
-| `更新世界的锋芒_SoundInsight_其他材料.zip` | 466,077 B | `ac5f9da17429f65d` | 46 个文件 + 1 说明 |
-| `更新世界的锋芒_SoundInsight_复赛作品.zip` | 572,461 B | `aea32ae4d18670a3` | 3 个条目（待补 PDF 与视频） |
+| `更新世界的锋芒_SoundInsight_复赛作品.zip`（**已含主文档 PDF，仅缺视频**） | 761,992 B | `0c55faa078da78e6` | 4 个条目 |
+| `更新世界的锋芒_SoundInsight_复赛作品.pdf`（主文档，内嵌中文字体） | 201,416 B | `6700d1364ea13543` | 9 页 |
+| `更新世界的锋芒_SoundInsight_复赛作品.docx`（Word 备用主文档，WPS 可直接打开） | 48,138 B | `2df1ee5722f0b16b` | 165 段 / 8 表 |
+| `更新世界的锋芒_SoundInsight_Demo.zip` | 109,557 B | `17a8b4e1c6d03338` | 50 个文件 |
+| `更新世界的锋芒_SoundInsight_其他材料.zip` | 466,255 B | `8315aee0d29f0fa2` | 46 个文件 + 1 说明 |
 | `competition_v4.md`（主文档源） | 18,956 B | `7c937cd2045c5567` | 13 章 |
 | `competition_v3.txt`（模板九章版） | 8,708 B | `f37cc3f91f1700eb` | 9 章 |
 | `video_script.md`（三分钟脚本） | 5,128 B | `699347cbab8826d7` | 9 镜头 |
 | `SoundInsight：跨境电商耳机音质差评智能归因系统.pptx` | 18,935,747 B | `b81a9ca65edb59c2` | 20 页 |
 
-> 说明：SHA256 为封包时刻值；PDF 与视频放入 `复赛作品.zip` 后，该 zip 校验值会变化，需重新计算。
+> 说明：SHA256 为封包时刻值；视频放入 `复赛作品.zip` 后该 zip 校验值会变化，需重新计算（`python hashes.py`）。
 
 ---
 
@@ -89,7 +92,7 @@ python batch_check.py https://daiyanqbz95doll-soundinsight.ms.show
 |---|---|---|
 | 1 | PPT 20 页 | 高于赛事建议的 8-12 页；**用户已决定不精简**，`audit_ppt.py` 仍将其标为 FAIL（事实记录，非隐瞒） |
 | 2 | 真实用户验证 | **未开展**（无真实用户访谈/试用反馈）；已写入 `competition_v4.md` §9.1 第 7 条 |
-| 3 | 主文档 PDF | 待导出（Typora 打开 `competition_v4.md` → 导出 PDF，命名 `更新世界的锋芒_SoundInsight_复赛作品.pdf`） |
+| 3 | 主文档 | **已生成并进包**（PDF 9 页，内嵌中文字体；另有 Word 版备用）。原计划的 Typora 导出路线因产物无法打开已废弃，改用脚本生成 |
 | 4 | 演示视频文件 | 待录制（脚本已就绪，200 秒版） |
 | 5 | 高音归因 F1 = 0 | 样本仅 84 条且与清晰度语义重叠，未解决 |
 | 6 | 长评论截断 | >128 token 桶 F1 0.565（召回 54.4%），已量化未修复 |

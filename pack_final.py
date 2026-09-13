@@ -19,8 +19,10 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 TEAM = "更新世界的锋芒"
 NAME = "SoundInsight"
 FINAL_ZIP = os.path.join(HERE, f"{TEAM}_{NAME}_复赛作品.zip")
+PDF = f"{TEAM}_{NAME}_复赛作品.pdf"
+DOCX = f"{TEAM}_{NAME}_复赛作品.docx"
 REQUIRED = [
-    (f"{TEAM}_{NAME}_复赛作品.pdf", "主文档（competition_v4.md 导出）"),
+    (PDF, "主文档 PDF（python md_to_pdf.py 生成，内嵌中文字体）"),
     (f"{TEAM}_{NAME}_Demo.zip", "可运行 Demo 源码包"),
     (f"{TEAM}_{NAME}_演示视频.mp4", "产品演示视频（3-5 分钟）"),
     (f"{TEAM}_{NAME}_其他材料.zip", "验证报告 / 审计结果 / 图表 / 人工复核原始表"),
@@ -40,27 +42,34 @@ def main() -> int:
     print("SoundInsight 最终提交包自检")
     print("=" * 68)
 
+    # 主文档：PDF 优先；若只有 DOCX（模板允许 .docx 或 .pdf）则用 DOCX 并在提示中说明
+    main_doc = None
+    for cand in (PDF, DOCX):
+        if os.path.isfile(os.path.join(HERE, cand)):
+            main_doc = cand
+            break
+
     missing = []
     for fname, desc in REQUIRED:
         p = os.path.join(HERE, fname)
         ok = os.path.isfile(p)
-        size = f"{os.path.getsize(p):,} B" if ok else "缺失"
+        if not ok and fname == PDF and main_doc == DOCX:
+            ok = True  # 用 DOCX 顶替主文档
+        size = f"{os.path.getsize(p):,} B" if os.path.isfile(p) else "缺失"
         print(f"[{'OK  ' if ok else 'MISS'}] {fname:<52} {size}")
         if not ok:
             missing.append((fname, desc))
+    if main_doc == DOCX:
+        print(f"[INFO] 主文档使用 Word 版：{DOCX}（模板允许 .docx 或 .pdf）")
 
     if missing:
         print("\n还缺以下文件（放进项目根目录后重跑本脚本）：")
         for fname, desc in missing:
             print(f"  - {fname}   （{desc}）")
-        if any(f.endswith(".pdf") for f, _ in missing):
-            print("\nPDF 生成方式：Typora 打开 competition_v4.md → 文件 → 导出 → PDF，"
-                  f"另存为 {TEAM}_{NAME}_复赛作品.pdf")
         if any(f.endswith(".mp4") for f, _ in missing):
             print("\n视频生成方式：按 video_script.md（200 秒 / 9 镜头）录制，"
                   f"命名为 {TEAM}_{NAME}_演示视频.mp4")
-        print("\n当前 复赛作品.zip 保持不变，未做修改。")
-        return 1
+        print("\n其余已就位的文件仍会打进 复赛作品.zip（不阻塞）。")
 
     # 保留已有条目（如 README_SUBMISSION.txt），并以根目录最新文件替换/追加四个提交物
     keep = {}
@@ -73,6 +82,8 @@ def main() -> int:
         src = os.path.join(HERE, fname)
         if os.path.isfile(src):
             keep[fname] = None  # None = 打包时从磁盘读取最新内容
+    if main_doc == DOCX and not os.path.isfile(os.path.join(HERE, PDF)):
+        keep[DOCX] = None  # 无 PDF 时以 Word 版作为主文档
 
     tmp = FINAL_ZIP + ".tmp"
     with zipfile.ZipFile(tmp, "w", zipfile.ZIP_DEFLATED) as z:
@@ -93,11 +104,11 @@ def main() -> int:
     print(f"SHA256: {sha256(FINAL_ZIP)}")
     print("\n提交前最后确认：")
     print("  1. zip 命名是否为 团队名_方案名称_复赛作品.zip（天池只接受一个 zip）")
-    print("  2. 主文档 PDF 是否为最终版（含团队信息、在线链接表、注意事项）")
+    print("  2. 主文档是否为最终版（含团队信息、在线链接表、注意事项）")
     print("  3. 视频时长是否在 3-5 分钟区间")
     print("  4. 包内是否不再含'待放入/占位'类文件")
     print("  5. 校验值变化属预期（放入 PDF/视频后 SHA256 会与 D13 声明不同）")
-    return 0
+    return 1 if missing else 0
 
 
 if __name__ == "__main__":
