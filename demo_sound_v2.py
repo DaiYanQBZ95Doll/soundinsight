@@ -6,6 +6,15 @@ import sys
 
 sys.stdout.reconfigure(encoding="utf-8", errors="replace")
 
+# 本机若开启系统代理（如 127.0.0.1:7890），gradio 启动时对 localhost 的自检请求
+# 会被送进代理并返回 502，导致 launch 抛异常退出。这里强制本地环回不走代理。
+for _k in ("NO_PROXY", "no_proxy"):
+    _hosts = [h for h in os.environ.get(_k, "").split(",") if h]
+    for _h in ("127.0.0.1", "localhost", "0.0.0.0"):
+        if _h not in _hosts:
+            _hosts.append(_h)
+    os.environ[_k] = ",".join(_hosts)
+
 import gradio as gr
 import numpy as np
 import pandas as pd
