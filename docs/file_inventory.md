@@ -71,7 +71,9 @@
 | `更新世界的锋芒_SoundInsight_复赛作品.docx` (48KB) | 主文档 Word 版（备用，WPS 可直接打开并输出 PDF） | ✅ |
 | `md_to_pdf.py` / `md_to_docx.py` / `verify_docx.py` / `pack_final.py` / `hashes.py` | 主文档生成、校验、最终打包与校验值脚本 | 🔧 |
 | `SoundInsight：跨境电商耳机音质差评智能归因系统.pptx` (18.5MB, 20 页) | 演示 PPT（分工表述与耗时口径已修正） | ⚠️ 用户决定保留 20 页，不精简（与赛事建议的 8-12 页存在偏差，如实记录） |
-| `video_script.md` | 演示视频脚本（130 秒 / 四镜头 / 含台词） | 📄 待录制 |
+| `video_script.md` | 演示视频脚本（200 秒 / 9 镜头 / 含台词，模板建议 3-5 分钟） | 📄 待录制 |
+| `video_script_silent.md` | **无口播版拍摄卡**（9 个镜头的操作步骤 + 画面要点，适合不录音的纯演示） | 📄 |
+| `video_script.srt` | 字幕文件（28 条 / 0:00-3:20，UTF-8，可直接导入剪映或 WPS 演示） | 📄 |
 | `architecture.png`、`learning_curve.png`、`pr_curve.png`、`confusion_matrix.png`、`trend_over_time.png`、`calibration_curve.png`、`demo_output.png` | 文档与 PPT 用图 | ✅ |
 | `insight_report_v2.md` / `_en.md` / `insight_report.xlsx` | Agent 输出样例（中文 / 英文 / Excel 三形态） | 📊 |
 | `ppt_text_dump.md` | PPT 文本提取（数字审计用） | 📊 |
