@@ -29,3 +29,6 @@ batch_report.txt
 roberta-base/
 
 .ms_upload_tmp/
+
+*.bak
+*.pptx.bak
