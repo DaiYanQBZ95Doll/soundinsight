@@ -71,12 +71,24 @@ def main() -> int:
                   f"命名为 {TEAM}_{NAME}_演示视频.mp4")
         print("\n其余已就位的文件仍会打进 复赛作品.zip（不阻塞）。")
 
+    # 包内说明每次都按当前状态重写，避免出现"说明与包内容矛盾"
+    try:
+        import build_submission as bs
+        readme = bs.README_SUBMISSION.encode("utf-8")
+    except Exception as e:  # noqa: BLE001 - 说明模块不可用时沿用旧说明
+        readme = None
+        print(f"[WARN] 未能读取最新说明文本（{type(e).__name__}），沿用包内旧说明")
+
     # 保留已有条目（如 README_SUBMISSION.txt），并以根目录最新文件替换/追加四个提交物
     keep = {}
     if os.path.isfile(FINAL_ZIP):
         with zipfile.ZipFile(FINAL_ZIP) as z:
             for info in z.infolist():
+                if info.filename == "hashes.txt":
+                    continue  # 本轮重新生成，避免同名重复条目
                 keep[info.filename] = z.read(info.filename)
+    if readme is not None:
+        keep["README_SUBMISSION.txt"] = readme
 
     for fname, _ in REQUIRED:
         src = os.path.join(HERE, fname)
@@ -96,18 +108,52 @@ def main() -> int:
                 z.writestr(name, data)
     os.replace(tmp, FINAL_ZIP)
 
+    # hashes.txt：只登记"内容稳定、可被复核者解包自验"的条目。
+    # 外层 zip 自身的哈希无法写进自身（自引用），因此包内版本不列它；
+    # 根目录的版本额外带上外层哈希，供提交前留档。
+    inner = []
+    for fname, _ in REQUIRED:
+        src = os.path.join(HERE, fname)
+        if os.path.isfile(src):
+            inner.append(f"{os.path.getsize(src):>12,} B  sha256:{sha256(src)}  {fname}")
+    if main_doc == DOCX and os.path.isfile(os.path.join(HERE, DOCX)):
+        p = os.path.join(HERE, DOCX)
+        inner.append(f"{os.path.getsize(p):>12,} B  sha256:{sha256(p)}  {DOCX}")
+    header = ("# 提交包内四项提交物的打包时刻校验值（完整 SHA256，非截断）。\n"
+              "# 这些文件内容不受重新打包影响，可解包后自行复算核对。\n"
+              "# 外层 zip 自身的哈希无法写入自身（自引用），以天池提交页显示为准。")
+    body = header + "\n" + "\n".join(inner) + "\n"
+
+    # 先把清单放进包里（额外条目，不影响模板要求的四项）——必须先做，
+    # 否则下面报出的包大小与 SHA256 会漏掉这个条目，与磁盘上的实际文件不符。
+    tmp = FINAL_ZIP + ".tmp"
+    with zipfile.ZipFile(FINAL_ZIP) as zin, zipfile.ZipFile(tmp, "w", zipfile.ZIP_DEFLATED) as zout:
+        for info in zin.infolist():
+            zout.writestr(info, zin.read(info.filename))
+        zout.writestr("hashes.txt", body.encode("utf-8"))
+    os.replace(tmp, FINAL_ZIP)
+
+    # 此刻的包已是最终形态，再取大小与哈希
+    final_size = os.path.getsize(FINAL_ZIP)
+    final_hash = sha256(FINAL_ZIP)
+    with open(os.path.join(HERE, "hashes.txt"), "w", encoding="utf-8") as f:
+        f.write(f"{final_size:>12,} B  sha256:{final_hash}  {os.path.basename(FINAL_ZIP)}\n" + body)
+
     print("\n已更新提交包：")
     with zipfile.ZipFile(FINAL_ZIP) as z:
         for info in z.infolist():
             print(f"  {info.file_size:>12,} B  {info.filename}")
-    print(f"\n包大小: {os.path.getsize(FINAL_ZIP):,} B")
-    print(f"SHA256: {sha256(FINAL_ZIP)}")
+    print(f"\n包大小（最终，含包内 hashes.txt）: {final_size:,} B")
+    print(f"SHA256（最终）: {final_hash}")
+    print("已写出 hashes.txt（根目录 + 包内各一份）")
+
     print("\n提交前最后确认：")
     print("  1. zip 命名是否为 团队名_方案名称_复赛作品.zip（天池只接受一个 zip）")
     print("  2. 主文档是否为最终版（含团队信息、在线链接表、注意事项）")
     print("  3. 视频时长是否在 3-5 分钟区间")
     print("  4. 包内是否不再含'待放入/占位'类文件")
     print("  5. 校验值变化属预期（放入 PDF/视频后 SHA256 会与 D13 声明不同）")
+    print("  6. 提交前把 hashes.txt 与 zip 一起留档（容器哈希以它为准）")
     return 1 if missing else 0
 
 
