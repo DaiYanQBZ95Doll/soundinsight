@@ -1,5 +1,5 @@
 {
- "generated": "2026-09-14 17:23",
+ "generated": "2026-09-14 17:25",
  "root": "C:\\deepseek-harness-master\\soundinsight",
  "count": 258,
  "entries": [
@@ -1518,9 +1518,9 @@
   {
    "path": "docs/treble_fix_proposal.md",
    "category": "证据·标注流程",
-   "size_bytes": 6019,
+   "size_bytes": 9872,
    "purpose": "",
-   "sha256_16": "e4f986c39b246e2f532da0f05f87e24ff64d244e64a895339b3dc3e52eb1b69b"
+   "sha256_16": "11caf8cc2b9b3e13f07184de040a4cd51fe558d2e58d57f522dd1fa5937bbcea"
   },
   {
    "path": "docs/work_summary_d7.md",

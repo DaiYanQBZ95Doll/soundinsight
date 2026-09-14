@@ -1,6 +1,6 @@
 # 文件地图（由 make_ai_handoff.py 自动生成，勿手改）
 
-> 生成时间：2026-09-14 17:23；共 258 个条目；体积单位 KB/MB。
+> 生成时间：2026-09-14 17:25；共 258 个条目；体积单位 KB/MB。
 
 ## 提交物（5 项，1.5 MB）
 
@@ -124,10 +124,10 @@
 | `treble_result.jsonl` | 13.3 KB |  |
 | `neg_review_result.jsonl` | 11.7 KB |  |
 | `exp03_LLM复核与标签清洗/neg_review_result.jsonl` | 11.7 KB |  |
+| `docs/treble_fix_proposal.md` | 9.6 KB |  |
 | `human_review_conf30.csv` | 9.4 KB | 中置信 8 条人工复核表（3/8 通过→全剔除） |
 | `human_review_noise16.csv` | 7.1 KB | 标注噪声 16 条人工终审表（15/16 确认） |
 | `docs/treble_failure_analysis.md` | 6.2 KB |  |
-| `docs/treble_fix_proposal.md` | 5.9 KB |  |
 | `prep_review_input.py` | 1.0 KB |  |
 
 ## 证据·对照与错误分析（35 项，8.2 MB）
