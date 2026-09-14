@@ -1,6 +1,6 @@
 # 文件地图（由 make_ai_handoff.py 自动生成，勿手改）
 
-> 生成时间：2026-09-14 21:23；共 278 个条目；体积单位 KB/MB。
+> 生成时间：2026-09-14 21:59；共 279 个条目；体积单位 KB/MB。
 
 ## 提交物（5 项，43.2 MB）
 
@@ -59,19 +59,19 @@
 | 文件 | 大小 | 用途 |
 |---|---|---|
 | `docs/project_full_record.md` | 21.6 KB | 初赛→复赛全流程记录 |
-| `docs/D13_seal_declaration.md` | 19.0 KB | D13 封包声明（提交技术质检终审） |
-| `PROGRESS_SYNC.md` | 13.1 KB |  |
+| `docs/D13_seal_declaration.md` | 19.7 KB | D13 封包声明（提交技术质检终审） |
+| `PROGRESS_SYNC.md` | 13.8 KB |  |
 | `docs/file_inventory.md` | 12.3 KB | 项目文件总索引 |
 | `PROJECT_BRIEF_QWEN.md` | 10.7 KB |  |
 | `QWEN_HANDOFF.md` | 10.7 KB |  |
 | `docs/process_review_d10.md` | 8.5 KB |  |
-| `docs/legacy_materials_notice.md` | 7.3 KB |  |
+| `docs/legacy_materials_notice.md` | 8.3 KB |  |
 | `docs/work_summary_d7.md` | 6.2 KB |  |
 | `docs/dataset_audit.md` | 3.5 KB | 数据集字段考古 |
+| `docs/repo_hygiene_scan.md` | 3.5 KB |  |
 | `docs/D14_resume_checklist.md` | 3.0 KB | 收尾四步清单（录视频/打包/上传/补推送） |
 | `docs/drift_plan.md` | 2.8 KB | 数据漂移监控方案 |
 | `AI_INDUCTION_REDLINE.md` | 2.7 KB |  |
-| `docs/repo_hygiene_scan.md` | 2.6 KB |  |
 | `docs/year_split_output.txt` | 0.8 KB | 年份分桶脚本输出原文 |
 
 ## 演示材料（6 项，18.1 MB）
@@ -192,11 +192,11 @@
 | `sample_reviews_100.csv` | 57.9 KB |  |
 | `agent_test_input.csv` | 27.9 KB |  |
 
-## 代码（87 项，0.3 MB）
+## 代码（88 项，0.3 MB）
 
 | 文件 | 大小 | 用途 |
 |---|---|---|
-| `scan_repo_hygiene.py` | 15.9 KB |  |
+| `scan_repo_hygiene.py` | 17.7 KB |  |
 | `build_pdf_v2.py` | 12.4 KB |  |
 | `check_doc_numbers.py` | 12.2 KB | 数字审计 + 模板格式对照脚本 |
 | `build_pdf.py` | 11.2 KB |  |
@@ -233,6 +233,7 @@
 | `audit_ppt.py` | 3.0 KB |  |
 | `deploy_check.py` | 3.0 KB | 在线 Demo 单条验收脚本 |
 | `svm_ttest.py` | 2.9 KB |  |
+| `_which_zip.py` | 2.9 KB |  |
 | `a4_mid_remove.py` | 2.8 KB |  |
 | `fix_ppt_roles.py` | 2.7 KB |  |
 | `year_split_eval.py` | 2.7 KB |  |
