@@ -98,6 +98,7 @@
 | `docs/project_full_record.md` | **初赛→复赛全流程记录（最终确认用）** |
 | `docs/D13_seal_declaration.md` | **D13 封包声明（提交 Kimi 最终审核用，含校验值与审核清单）** |
 | `docs/file_inventory.md` | 本文件：全部项目文件分类索引 |
+| `AI_HANDOFF/`（9 个文件） | **给 AI 助手的项目导览包**：`README.md`（入口与阅读顺序）、`01_project_overview.md`、`02_repo_map.md`（自动生成的文件地图）、`03_metrics_and_caveats.md`（三套口径与免责边界）、`04_evidence_index.md`（结论→证据→复算）、`05_code_guide.md`（代码导览）、`06_pending_and_redlines.md`（待办/红线/诚信记录）、`07_glossary.md`（术语表）、`manifest.json`（253 条目机器可读索引） |
 | `docs/work_summary_d7.md` / `docs/process_review_d10.md` | D7 工作总结 / D10 全流程复盘 |
 | `PROGRESS_SYNC.md` / `QWEN_HANDOFF.md` / `PROJECT_BRIEF_QWEN.md` / `REPO_INTRO.txt` | 过程同步与协作交接 |
 | `AI_INDUCTION_REDLINE.md` | AI 协作红线与反诱导声明 |
