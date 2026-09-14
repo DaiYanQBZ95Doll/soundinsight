@@ -6,6 +6,7 @@
 |---|---|---|---|
 | 1 | **演示视频文件** | ❌ 待录制 | 脚本 `video_script.md`（200 秒/9 镜头）、无口播拍摄卡 `video_script_silent.md`、字幕 `video_script.srt`、满屏素材 `视频素材/` 均已就绪；导出后命名 `更新世界的锋芒_SoundInsight_演示视频.mp4` 放项目根目录，跑 `python pack_final.py` 自动并包 |
 | 2 | 主文档 PDF/Word 重生成（若改过 v4） | 已完成 | 改 `competition_v4.md` 后需跑 `md_to_pdf.py` + `md_to_docx.py` 再 `pack_final.py`（PDF 内含链接表，不重生成会与源文不一致） |
+| 2b | **创空间重建（新版批量报告生效）** | ⏳ 等待平台构建 | 已推送 `eb01fb2` 到创空间仓库（远端已确认），但线上实例仍是 `a952359b-2026-09-05-16-28-07` 镜像。需在创空间页面点"重新构建/重新部署"触发，或等平台自动构建；触发后用 `python batch_check.py https://daiyanqbz95doll-soundinsight.ms.show` 验证输出是否为新版六节报告 |
 | 3 | GitHub 推送 | 视情况 | GitCode 已最新；GitHub 若落后，`git push origin main`（SSL 报错加 `-c http.sslBackend=openssl`） |
 | 4 | 上传天池 | ❌ 待做 | 只传一个 zip：`更新世界的锋芒_SoundInsight_复赛作品.zip` |
 | 5 | 真实用户验证 | ❌ **不做** | 已从任务清单移除；`competition_v4.md` §9.1 第 7 条如实披露"未开展用户验证" |

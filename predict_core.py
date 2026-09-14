@@ -26,26 +26,11 @@ ISSUE_FILE = os.path.join(HERE, CFG["issue_labels_file"])
 BATCH = int(CFG["batch_size"])
 MAX_LEN = int(CFG["max_len"])
 
-# 非拉丁书写系统字符（西里尔/希腊/中日韩/阿拉伯/希伯来等）
-NON_LATIN_RE = re.compile(
-    r"[\u00c0-\u024f\u0370-\u03ff\u0400-\u04ff\u0590-\u05ff"
-    r"\u0600-\u06ff\u4e00-\u9fff\u3040-\u30ff\uac00-\ud7af]")
-LATIN_RE = re.compile(r"[A-Za-z]")
+# 语种判定（非英文显式拒绝）的实现唯一放在 text_utils.py
+from text_utils import is_unsupported  # noqa: E402,F401
+
 
 _state = None
-
-
-def is_unsupported(text: str) -> bool:
-    """非英文评论显式拒绝：全无拉丁字母，或非拉丁字母占比 > 30%。"""
-    t = text.strip()
-    if not t:
-        return True
-    if LATIN_RE.search(t) is None:
-        return True
-    letters = sum(ch.isalpha() for ch in t)
-    if letters == 0:
-        return False
-    return len(NON_LATIN_RE.findall(t)) / letters > 0.3
 
 
 def load(device: str = None):

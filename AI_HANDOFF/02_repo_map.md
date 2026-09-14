@@ -1,23 +1,23 @@
 # 文件地图（由 make_ai_handoff.py 自动生成，勿手改）
 
-> 生成时间：2026-09-14 17:25；共 258 个条目；体积单位 KB/MB。
+> 生成时间：2026-09-14 17:53；共 264 个条目；体积单位 KB/MB。
 
 ## 提交物（5 项，1.5 MB）
 
 | 文件 | 大小 | 用途 |
 |---|---|---|
-| `更新世界的锋芒_SoundInsight_复赛作品.zip` | 744.5 KB |  |
+| `更新世界的锋芒_SoundInsight_复赛作品.zip` | 750.2 KB |  |
 | `更新世界的锋芒_SoundInsight_其他材料.zip` | 455.3 KB |  |
-| `更新世界的锋芒_SoundInsight_复赛作品.pdf` | 197.0 KB |  |
+| `更新世界的锋芒_SoundInsight_复赛作品.pdf` | 203.6 KB |  |
 | `更新世界的锋芒_SoundInsight_Demo.zip` | 107.0 KB |  |
-| `更新世界的锋芒_SoundInsight_复赛作品.docx` | 47.1 KB |  |
+| `更新世界的锋芒_SoundInsight_复赛作品.docx` | 47.3 KB |  |
 
 ## 主文档与模板（9 项，0.1 MB）
 
 | 文件 | 大小 | 用途 |
 |---|---|---|
 | `hackathon-复赛作品提交模板-天池版.docx` | 35.7 KB | 官方复赛模板原文（格式对照基准） |
-| `competition_v4.md` | 18.7 KB | 主文档（13 章，含模板九章 + 合规披露 + 局限） |
+| `competition_v4.md` | 19.1 KB | 主文档（13 章，含模板九章 + 合规披露 + 局限） |
 | `competition_v3.txt` | 8.6 KB | 官方模板九章版主文档 |
 | `competition_v2.md` | 7.0 KB | 初赛版文档 |
 | `competition_v2.txt` | 7.0 KB |  |
@@ -58,11 +58,11 @@
 | 文件 | 大小 | 用途 |
 |---|---|---|
 | `docs/project_full_record.md` | 21.6 KB | 初赛→复赛全流程记录 |
-| `docs/file_inventory.md` | 12.2 KB | 项目文件总索引 |
+| `docs/file_inventory.md` | 12.3 KB | 项目文件总索引 |
 | `docs/D13_seal_declaration.md` | 11.2 KB | D13 封包声明（提交技术质检终审） |
 | `PROJECT_BRIEF_QWEN.md` | 10.7 KB |  |
 | `QWEN_HANDOFF.md` | 10.5 KB |  |
-| `PROGRESS_SYNC.md` | 8.8 KB |  |
+| `PROGRESS_SYNC.md` | 9.5 KB |  |
 | `docs/process_review_d10.md` | 8.5 KB |  |
 | `docs/work_summary_d7.md` | 6.2 KB |  |
 | `docs/dataset_audit.md` | 3.5 KB | 数据集字段考古 |
@@ -78,7 +78,7 @@
 | `SoundInsight：跨境电商耳机音质差评智能归因系统.pptx` | 18.1 MB |  |
 | `ppt_text_dump.md` | 11.3 KB |  |
 | `video_script.md` | 5.3 KB | 演示视频脚本（200 秒 / 9 镜头） |
-| `video_script_silent.md` | 3.8 KB | 无口播拍摄卡（操作步骤 + 画面要点） |
+| `video_script_silent.md` | 3.9 KB | 无口播拍摄卡（操作步骤 + 画面要点） |
 | `视频素材/素材清单.md` | 2.9 KB |  |
 | `video_script.srt` | 2.8 KB | 字幕文件（28 条 / 0:00-3:20 / UTF-8） |
 
@@ -189,28 +189,29 @@
 | `sample_reviews_100.csv` | 57.9 KB |  |
 | `agent_test_input.csv` | 27.9 KB |  |
 
-## 代码（77 项，0.3 MB）
+## 代码（80 项，0.3 MB）
 
 | 文件 | 大小 | 用途 |
 |---|---|---|
-| `soundinsight_agent.py` | 14.2 KB | 一键洞察 Agent（md/excel、zh/en、非英文跳过） |
 | `build_pdf_v2.py` | 12.4 KB |  |
 | `build_pdf.py` | 11.2 KB |  |
 | `make_ai_handoff.py` | 10.3 KB |  |
 | `check_doc_numbers.py` | 9.6 KB | 数字审计 + 模板格式对照脚本 |
+| `demo_sound_v2.py` | 9.1 KB | 本地 Gradio Demo（三页；已内置代理绕过） |
+| `report_builder.py` | 8.3 KB |  |
 | `ablation_train.py` | 8.2 KB |  |
+| `soundinsight_agent.py` | 8.1 KB | 一键洞察 Agent（md/excel、zh/en、非英文跳过） |
 | `build_submission.py` | 7.9 KB |  |
 | `train_sound_model.py` | 7.8 KB |  |
-| `demo_sound_v2.py` | 7.8 KB | 本地 Gradio Demo（三页；已内置代理绕过） |
 | `md_to_pdf.py` | 7.6 KB | 主文档 Markdown → PDF（内嵌中文字体） |
 | `learning_curve.py` | 6.8 KB |  |
 | `diagnose_treble.py` | 6.6 KB |  |
 | `fetch_electronics.py` | 6.5 KB |  |
-| `predict_core.py` | 5.5 KB | 共享推理核心（含非英文显式拒绝） |
 | `distilbert_cv.py` | 5.4 KB |  |
 | `md_to_docx.py` | 5.4 KB | 主文档 Markdown → Word |
 | `train_final.py` | 5.2 KB |  |
 | `train_roberta_quick.py` | 5.2 KB |  |
+| `predict_core.py` | 5.1 KB | 共享推理核心（含非英文显式拒绝） |
 | `pack_final.py` | 4.6 KB | 提交包打包与四项自检 |
 | `make_video_assets.py` | 4.5 KB |  |
 | `make_samples.py` | 4.4 KB |  |
@@ -255,6 +256,7 @@
 | `prep_quick_split.py` | 1.6 KB |  |
 | `verify_download_urls.py` | 1.5 KB |  |
 | `merge_three_star.py` | 1.4 KB |  |
+| `check_studio_build.py` | 1.3 KB |  |
 | `prep_err_taxonomy.py` | 1.2 KB |  |
 | `verify_docx.py` | 1.2 KB |  |
 | `prep_neg_review.py` | 1.1 KB |  |
@@ -264,6 +266,7 @@
 | `prep_three_star.py` | 0.9 KB |  |
 | `prep_human_review.py` | 0.9 KB |  |
 | `启动Demo.bat` | 0.9 KB | 双击启动本地 Demo |
+| `text_utils.py` | 0.9 KB |  |
 | `exp08_ablation_B/config.json` | 0.5 KB |  |
 | `exp09_ablation_C/config.json` | 0.5 KB |  |
 | `exp07_ablation_A/config.json` | 0.5 KB |  |
@@ -271,12 +274,14 @@
 | `config.json` | 0.3 KB |  |
 | `requirements.txt` | 0.2 KB |  |
 
-## 部署包（5 项，0.0 MB）
+## 部署包（7 项，0.0 MB）
 
 | 文件 | 大小 | 用途 |
 |---|---|---|
-| `deployment/app.py` | 10.1 KB |  |
+| `deployment/app.py` | 11.3 KB |  |
+| `deployment/report_builder.py` | 8.3 KB |  |
 | `deployment/.gitattributes` | 2.1 KB |  |
+| `deployment/text_utils.py` | 0.9 KB |  |
 | `deployment/README_Space.md` | 0.7 KB |  |
 | `deployment/requirements.txt` | 0.5 KB |  |
 | `deployment/config.json` | 0.2 KB |  |
@@ -301,7 +306,7 @@
 |---|---|---|
 | `AI+跨境黑客松巅峰赛 · 复赛公示名单（手机版）.html` | 42.1 KB |  |
 
-## 生成产物·日志（18 项，0.1 MB）
+## 生成产物·日志（19 项，0.1 MB）
 
 | 文件 | 大小 | 用途 |
 |---|---|---|
@@ -312,8 +317,9 @@
 | `exp06_最终二分类模型/train_final.log` | 3.4 KB |  |
 | `exp04_多标签归因/multilabel.log` | 3.2 KB |  |
 | `summary_log.txt` | 3.1 KB |  |
-| `insight_report_v2.md` | 2.1 KB |  |
-| `insight_report_v2_en.md` | 2.0 KB |  |
+| `batch_report.md` | 2.6 KB |  |
+| `insight_report_v2.md` | 2.6 KB |  |
+| `insight_report_v2_en.md` | 2.4 KB |  |
 | `exp07_ablation_A/training_output.txt` | 1.9 KB |  |
 | `training_output.txt` | 0.9 KB |  |
 | `exp06_最终二分类模型/training_output.txt` | 0.9 KB |  |

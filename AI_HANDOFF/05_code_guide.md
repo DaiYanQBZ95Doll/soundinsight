@@ -9,7 +9,9 @@
 |---|---|---|
 | `soundinsight_agent.py` | 一键洞察 Agent：六节报告；`--format md\|excel`；`--lang zh\|en`；非英文评论跳过计数；成本对照行；校准提示 | `python soundinsight_agent.py --csv 评论.csv --format excel --lang zh` |
 | `demo_sound_v2.py` | Gradio 三页 Demo（单条判定 / 批量分析 / 边界案例），端口 7860；**已内置"本地环回绕过系统代理"**（否则 gradio 自检 502 退出） | 双击 `启动Demo.bat`，或 `python demo_sound_v2.py` |
-| `predict_core.py` | 共享推理核心：模型加载缓存 + 批量推理 + 五类归因 + **非英文显式拒绝**（`is_unsupported`） | 被 agent/api/基准脚本 import |
+| `predict_core.py` | 共享推理核心：模型加载缓存 + 批量推理 + 五类归因 + 非英文显式拒绝（`is_unsupported`，实现见 `text_utils.py`） | 被 agent/api/基准脚本 import |
+| `report_builder.py` | **报告生成共享模块**（六节报告 + 优先级规则 + 结论判定 + 成本对照 + 中置信提示），Agent / 本地 Demo / 在线版三方共用同一口径 | 被 agent、demo、deployment/app.py import |
+| `text_utils.py` | 文本层共享工具：非英文显式拒绝判定（唯一实现处） | 被 predict_core / demo / 在线版引用 |
 | `api_server.py` | FastAPI：`GET /health`、`POST /predict`（body `{"texts":[...]}`） | `python api_server.py` → 127.0.0.1:7860 |
 | `config.json` | 集中配置：模型目录、阈值文件、max_len=128、batch_size=64、服务端口 | 被上述脚本读取 |
 | `install.bat` | Windows 一键安装（venv + 依赖 + 模型下载 + 自检） | 双击 |

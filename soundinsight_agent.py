@@ -18,6 +18,7 @@ sys.stdout.reconfigure(encoding="utf-8", errors="replace")
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, HERE)
+import report_builder as rb  # noqa: E402
 from predict_core import is_unsupported  # noqa: E402
 
 with open(os.path.join(HERE, "config.json"), encoding="utf-8") as f:
@@ -92,12 +93,14 @@ def analyze(csv_path: str, export: bool = False, lang: str = "zh") -> str:
     issue_cols = issue_info["columns"]
     issue_names = issue_info["names"]
     issue_counts = {k: 0 for k in issue_names}
+    ml_probs_by_idx = {}
     if neg_idx:
         neg_texts = [texts[i] for i in neg_idx]
         ml_probs = predict_multilabel(ml_model, tok, neg_texts, device)
         ml_pred = (ml_probs >= 0.5).astype(int)
         for k, name in enumerate(issue_names):
             issue_counts[name] = int(ml_pred[:, k].sum())
+        ml_probs_by_idx = {i: ml_probs[k] for k, i in enumerate(neg_idx)}
         df.loc[neg_idx, [c.replace("_llm", "") for c in issue_cols]] = ml_pred
 
     rating_col = next((c for c in ("rating", "overall", "score")
@@ -108,179 +111,35 @@ def analyze(csv_path: str, export: bool = False, lang: str = "zh") -> str:
     else:
         avg_rating = float("nan")
 
-    # 优先级规则：占比前三且数量 >= 总差评数 10% 的类别 -> 高；
-    # 其余有正数的类别 -> 中；数量为 0 的类别 -> 低
-    total_issue = sum(issue_counts.values())
-    ranked = sorted(issue_counts.items(), key=lambda x: -x[1])
-    priority = {}
-    for rank, (name, cnt) in enumerate(ranked):
-        if cnt > 0 and rank < 3 and total_issue > 0 and \
-                cnt >= max(total_issue, 1) * 0.1:
-            priority[name] = "高"
-        elif cnt > 0:
-            priority[name] = "中"
-        else:
-            priority[name] = "低"
+    # 优先级规则与报告生成统一走 report_builder（与 Demo、在线版同一套口径）
+    ranked, priority = rb.rank_issues(issue_counts)
 
-    rate = n_neg / n if n else 0.0
-    if rate >= 0.03:
-        verdict = "严重，音质差评率显著偏高，建议立即排查"
-    elif rate >= 0.015:
-        verdict = "偏高，建议关注并启动整改"
-    else:
-        verdict = "正常，音质口碑处于健康水平"
+    rate = (n_neg / n) if n else 0.0
+    n_mid = int(((probs >= 0.5) & (probs < thr)).sum())
+    examples = []
+    for i in sorted(neg_idx, key=lambda j: -probs[j])[:5]:
+        ip = {}
+        if i in ml_probs_by_idx:
+            ip = {name: float(ml_probs_by_idx[i][k])
+                  for k, name in enumerate(issue_names)}
+        examples.append({"text": texts[i], "prob": float(probs[i]),
+                         "issue_probs": ip})
 
     src_name = os.path.basename(csv_path)
-    if lang == "en":
-        lines = _report_en(src_name, n, n_neg, rate, avg_rating, verdict,
-                           ranked, priority, neg_idx, probs, texts, n_unsup)
-        out_path = os.path.join(HERE, "insight_report_v2_en.md")
-    else:
-        lines = _report_zh(src_name, n, n_neg, rate, avg_rating, verdict,
-                           ranked, priority, neg_idx, probs, texts, n_unsup)
-        out_path = os.path.join(HERE, "insight_report_v2.md")
-    report = "\n".join(lines)
-
+    report = rb.build_report(
+        src_name=src_name, n_total=n + n_unsup, n_unsupported=n_unsup,
+        n_valid=n, n_neg=n_neg, avg_rating=avg_rating,
+        issue_counts=issue_counts, examples=examples, n_mid=n_mid, lang=lang)
+    out_path = os.path.join(
+        HERE,
+        "insight_report_v2_en.md" if lang == "en" else "insight_report_v2.md")
     with open(out_path, "w", encoding="utf-8") as f:
         f.write(report)
     print(f"报告已保存 -> {out_path}")
     if export:
-        export_excel(csv_path, n, rate, avg_rating, verdict, ranked,
+        export_excel(csv_path, n, rate, avg_rating, rb.verdict(rate), ranked,
                      priority, neg_idx, probs, texts)
     return report
-
-
-def _cost_lines(n: int, lang: str):
-    """E6 成本对照行：本地推理 0 API 费用 vs LLM 按实测价估算。"""
-    llm_est = n / 1000 * 0.03
-    if lang == "en":
-        return [
-            f"- Inference cost: local = 0 API fee; same batch via LLM "
-            f"(deepseek-chat, measured ~$0.03/1000) ≈ ${llm_est:.2f} "
-            f"(estimate based on llm_baseline.md)."]
-    return [
-        f"- 成本对照：本地推理 0 API 费用；同等 {n} 条若调用 LLM"
-        f"（deepseek-chat，实测约 $0.03/1000 条，见 llm_baseline.md）"
-        f"约 ${llm_est:.2f}。"]
-
-
-def _report_zh(src_name, n, n_neg, rate, avg_rating, verdict, ranked,
-               priority, neg_idx, probs, texts, n_unsup):
-    lines = []
-    lines.append("# SoundInsight 音质洞察报告")
-    lines.append("")
-    lines.append("## 一、总体概况")
-    lines.append(f"分析对象：{src_name}")
-    lines.append(f"分析时间：{datetime.now():%Y-%m-%d %H:%M}")
-    lines.append(f"评论总数：{n + n_unsup} 条（其中非英文 {n_unsup} 条已跳过）")
-    lines.append(f"有效评论：{n} 条")
-    lines.append(f"音质差评数：{n_neg} 条（占比 {rate:.2%}）")
-    if not np.isnan(avg_rating):
-        lines.append(f"平均评分：{avg_rating:.2f}")
-    lines.append(f"结论一句话：{verdict}")
-    lines.append("")
-    lines.append("## 二、问题分布")
-    lines.append("| 问题类别 | 数量 | 占比 | 优先级 |")
-    lines.append("|---------|------|------|--------|")
-    for name, cnt in ranked:
-        pct = f"{cnt / max(total_issue_of(ranked), 1):.1%}"
-        lines.append(f"| {name} | {cnt} | {pct} | {priority[name]} |")
-    lines.append("")
-    lines.append("## 三、典型案例")
-    shown = 0
-    neg_sorted = sorted(neg_idx, key=lambda i: -probs[i])
-    for i in neg_sorted[:5]:
-        lines.append(f"{shown + 1}. （{probs[i]:.1%}）{texts[i][:120]}")
-        shown += 1
-    if shown == 0:
-        lines.append("未检测到音质负面评论。")
-    lines.append("")
-    lines.append("## 四、行动建议")
-    highs = [name for name, cnt in ranked if priority[name] == "高"]
-    for name in highs:
-        obj = "生产/质检" if name in ("杂音", "低音") else "客服/详情页"
-        lines.append(f"- 紧急（{name}）：建议检查 {obj} 环节，"
-                     f"预期降低该类差评率。")
-    if not highs:
-        lines.append("未检测到集中性音质问题，建议维持当前品控。")
-    lines.append("")
-    lines.append("## 五、验证指标")
-    lines.append("建议复评周期：2-4 周后重新运行批量分析，"
-                 "追踪同口径差评率变化。")
-    lines.append("")
-    lines.append("## 六、附注")
-    lines.append("本报告由 SoundInsight 自动生成，判定基于 DistilBERT "
-                 "微调模型（验证集 F1 0.687，阈值 0.97）与五类多标签归因"
-                 "模型，边界案例存在一定误差，关键决策建议结合人工抽查。")
-    lines.append("模型输出概率未经校准，仅供排序参考（见 calibration_eval.md）。")
-    lines += _cost_lines(n, "zh")
-    return lines
-
-
-def _report_en(src_name, n, n_neg, rate, avg_rating, verdict, ranked,
-               priority, neg_idx, probs, texts, n_unsup):
-    en_verdict = {"严重，音质差评率显著偏高，建议立即排查":
-                  "Severe: sound-quality complaint rate is significantly "
-                  "elevated; investigate immediately",
-                  "偏高，建议关注并启动整改":
-                  "Elevated: monitor closely and start remediation",
-                  "正常，音质口碑处于健康水平":
-                  "Healthy: sound-quality reputation is at a normal level"}
-    lines = []
-    lines.append("# SoundInsight Sound Quality Report")
-    lines.append("")
-    lines.append("## 1. Overview")
-    lines.append(f"Source: {src_name}")
-    lines.append(f"Generated: {datetime.now():%Y-%m-%d %H:%M}")
-    lines.append(f"Total reviews: {n + n_unsup} "
-                 f"({n_unsup} non-English skipped)")
-    lines.append(f"Valid reviews: {n}")
-    lines.append(f"Sound-quality negatives: {n_neg} ({rate:.2%})")
-    if not np.isnan(avg_rating):
-        lines.append(f"Average rating: {avg_rating:.2f}")
-    lines.append(f"Verdict: {en_verdict.get(verdict, verdict)}")
-    lines.append("")
-    lines.append("## 2. Issue Breakdown")
-    lines.append("| Issue | Count | Share | Priority |")
-    lines.append("|-------|-------|-------|----------|")
-    for name, cnt in ranked:
-        pct = f"{cnt / max(total_issue_of(ranked), 1):.1%}"
-        pr = {"高": "High", "中": "Medium", "低": "Low"}[priority[name]]
-        lines.append(f"| {name} | {cnt} | {pct} | {pr} |")
-    lines.append("")
-    lines.append("## 3. Examples")
-    shown = 0
-    neg_sorted = sorted(neg_idx, key=lambda i: -probs[i])
-    for i in neg_sorted[:5]:
-        lines.append(f"{shown + 1}. ({probs[i]:.1%}) {texts[i][:120]}")
-        shown += 1
-    if shown == 0:
-        lines.append("No sound-quality negatives detected.")
-    lines.append("")
-    lines.append("## 4. Actions")
-    highs = [name for name, cnt in ranked if priority[name] == "高"]
-    for name in highs:
-        lines.append(f"- Urgent ({name}): check the related hardware/QC or "
-                     f"listing channels to reduce this complaint type.")
-    if not highs:
-        lines.append("No concentrated issue detected; keep current QC.")
-    lines.append("")
-    lines.append("## 5. Follow-up")
-    lines.append("Re-run this analysis in 2-4 weeks and track the "
-                 "same-scope complaint-rate change.")
-    lines.append("")
-    lines.append("## 6. Notes")
-    lines.append("Auto-generated by SoundInsight (DistilBERT fine-tune, "
-                 "validation F1 0.687, threshold 0.97, 5-class attribution). "
-                 "Edge cases carry error; verify key decisions manually. "
-                 "Probabilities are uncalibrated, for ranking only "
-                 "(see calibration_eval.md).")
-    lines += _cost_lines(n, "en")
-    return lines
-
-
-def total_issue_of(ranked):
-    return sum(c for _, c in ranked)
 
 
 def export_excel(csv_path, n, rate, avg_rating, verdict, ranked, priority,

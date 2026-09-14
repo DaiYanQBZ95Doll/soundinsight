@@ -22,6 +22,8 @@ import torch
 from transformers import (DistilBertForSequenceClassification,
                           DistilBertTokenizer)
 
+import report_builder as rb
+
 HERE = os.path.dirname(os.path.abspath(__file__))
 with open(os.path.join(HERE, "config.json"), encoding="utf-8") as f:
     CFG = json.load(f)
@@ -63,15 +65,26 @@ def single_predict(text):
 
 
 def batch_analyze(file_obj):
+    """批量分析：输出与命令行 Agent 同口径的完整六节报告（含优先级与行动建议）。"""
     if file_obj is None:
         return "请先上传 CSV 文件", None
+    path = getattr(file_obj, "path", None) or getattr(file_obj, "name", None) \
+        or str(file_obj)
     try:
-        df = pd.read_csv(file_obj.name, encoding="utf-8")
+        df = pd.read_csv(path, encoding="utf-8", keep_default_na=False)
     except Exception as e:  # noqa: BLE001 - report to user
         return f"读取失败：{e}", None
     text_col = next((c for c in ("text", "reviewText", "review")
                      if c in df.columns), df.columns[0])
-    texts = df[text_col].astype(str).tolist()
+    all_texts = df[text_col].astype(str).tolist()
+
+    # 非英文评论显式跳过（与 predict_core 同规则）
+    from text_utils import is_unsupported
+    texts = [t for t in all_texts if not is_unsupported(t)]
+    n_unsup = len(all_texts) - len(texts)
+    if not texts:
+        return "未找到可分析的英文评论（非英文评论已跳过）", None
+
     probs = []
     with torch.no_grad():
         for b in range(0, len(texts), 64):
@@ -82,7 +95,9 @@ def batch_analyze(file_obj):
                          [:, 1].cpu().numpy())
     probs = np.concatenate(probs)
     neg_idx = [i for i, p in enumerate(probs) if p >= THR]
-    issue_counts = {name: 0 for name in ISSUE_INFO["names"]}
+    issue_names = ISSUE_INFO["names"]
+    issue_counts = {name: 0 for name in issue_names}
+    ml_by_idx = {}
     if neg_idx:
         neg_texts = [texts[i] for i in neg_idx]
         ml_out = []
@@ -93,22 +108,34 @@ def batch_analyze(file_obj):
                 enc = {k: v.to(device) for k, v in enc.items()}
                 ml_out.append(torch.sigmoid(ml_model(**enc).logits)
                               .cpu().numpy())
-        ml_pred = (np.vstack(ml_out) >= 0.5).astype(int)
-        for k, name in enumerate(ISSUE_INFO["names"]):
+        ml_all = np.vstack(ml_out)
+        ml_pred = (ml_all >= 0.5).astype(int)
+        for k, name in enumerate(issue_names):
             issue_counts[name] = int(ml_pred[:, k].sum())
-    lines = [f"评论总数：{len(texts)}",
-             f"音质差评：{len(neg_idx)}（{len(neg_idx) / len(texts):.2%}）",
-             "音质问题分布："]
-    for name, cnt in sorted(issue_counts.items(), key=lambda x: -x[1]):
-        lines.append(f"  {name}：{cnt}")
-    lines.append("")
-    lines.append("差评示例：")
-    for i in neg_idx[:5]:
-        lines.append(f"- （{probs[i]:.0%}）{texts[i][:100]}")
-    lines.append("")
-    lines.append("（概率未经校准，仅供排序参考，见 calibration_eval.md）")
-    report_text = "\n".join(lines)
-    report_path = os.path.join(HERE, "batch_report.txt")
+        ml_by_idx = {i: ml_all[k] for k, i in enumerate(neg_idx)}
+
+    # 典型案例：按二分类概率排序取前 5，附五类归因概率
+    examples = []
+    for i in sorted(neg_idx, key=lambda j: -probs[j])[:5]:
+        ip = {}
+        if i in ml_by_idx:
+            ip = {name: float(ml_by_idx[i][k])
+                  for k, name in enumerate(issue_names)}
+        examples.append({"text": texts[i], "prob": float(probs[i]),
+                         "issue_probs": ip})
+
+    rating_col = next((c for c in ("rating", "overall", "score")
+                       if c in df.columns), None)
+    avg_rating = (float(pd.to_numeric(df[rating_col], errors="coerce").mean())
+                  if rating_col else float("nan"))
+    n_mid = int(((probs >= 0.5) & (probs < THR)).sum())
+
+    report_text = rb.build_report(
+        src_name=os.path.basename(path), n_total=len(all_texts),
+        n_unsupported=n_unsup, n_valid=len(texts), n_neg=len(neg_idx),
+        avg_rating=avg_rating, issue_counts=issue_counts, examples=examples,
+        n_mid=n_mid, lang="zh")
+    report_path = os.path.join(HERE, "batch_report.md")
     with open(report_path, "w", encoding="utf-8") as f:
         f.write(report_text)
     return report_text, report_path
