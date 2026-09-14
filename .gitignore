@@ -23,6 +23,7 @@ multi_label_model/
 
 insight_report.md
 batch_report.txt
+batch_report.md
 
 *.pt
 

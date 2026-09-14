@@ -2,7 +2,7 @@
 
 ## 一、总体概况
 分析对象：sample_reviews_100.csv
-分析时间：2026-09-05 14:32
+分析时间：2026-09-14 17:48
 评论总数：100 条（其中非英文 0 条已跳过）
 有效评论：100 条
 音质差评数：12 条（占比 12.00%）
@@ -20,10 +20,15 @@
 
 ## 三、典型案例
 1. （99.0%）The sound quality was horrible! Extreme static. I was very disappointed. Won't buy again.
+   归因概率：杂音 0.93、清晰度 0.16、音量 0.08
 2. （99.0%）I'm not that impressed with these. The sound is too muted and they get staticy at times. The range for them to work is o
+   归因概率：杂音 0.94、清晰度 0.12、音量 0.11
 3. （99.0%）The audio quality on this webcam is horrible. Audio is very distorted and is full of noise and intermittent breaks. Vide
+   归因概率：清晰度 0.76、杂音 0.65、音量 0.10
 4. （98.9%）I bought this Nexus 7 32G at the end of January 2013 via online store and have had it since February 2013.  Within about
+   归因概率：音量 0.85、清晰度 0.20、杂音 0.16
 5. （98.8%）these work as advertised.  they take crappy sounding, bassless ipod stock earbuds and make them sound at 100% better (ma
+   归因概率：低音 0.94、清晰度 0.25、高音 0.24
 
 ## 四、行动建议
 - 紧急（低音）：建议检查 生产/质检 环节，预期降低该类差评率。
@@ -32,6 +37,7 @@
 
 ## 五、验证指标
 建议复评周期：2-4 周后重新运行批量分析，追踪同口径差评率变化。
+- 中置信提示：有 4 条评论概率落在 0.5-0.9744 区间，当前判为正常但建议人工抽查（疑似负面）。
 
 ## 六、附注
 本报告由 SoundInsight 自动生成，判定基于 DistilBERT 微调模型（验证集 F1 0.687，阈值 0.97）与五类多标签归因模型，边界案例存在一定误差，关键决策建议结合人工抽查。

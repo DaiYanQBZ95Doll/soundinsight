@@ -70,6 +70,7 @@
 | `更新世界的锋芒_SoundInsight_复赛作品.pdf` (201KB, 9 页) | 主文档（脚本生成，内嵌宋体/黑体，WPS 等任意阅读器可开） | ✅ |
 | `更新世界的锋芒_SoundInsight_复赛作品.docx` (48KB) | 主文档 Word 版（备用，WPS 可直接打开并输出 PDF） | ✅ |
 | `md_to_pdf.py` / `md_to_docx.py` / `verify_docx.py` / `pack_final.py` / `hashes.py` | 主文档生成、校验、最终打包与校验值脚本 | 🔧 |
+| `report_builder.py` / `text_utils.py` | 报告生成共享模块（六节报告/优先级/结论/成本对照/中置信提示）与语种判定唯一实现 | 🔧 产品代码 |
 | `启动Demo.bat` | 双击启动本地 Gradio Demo（含代理绕过设置，纯英文提示避免 cmd 码页问题） | 🔧 |
 | `打包提交包.bat` | 双击执行 `pack_final.py`：检查四项提交物并更新 `复赛作品.zip` | 🔧 |
 | `SoundInsight：跨境电商耳机音质差评智能归因系统.pptx` (18.5MB, 20 页) | 演示 PPT（分工表述与耗时口径已修正） | ⚠️ 用户决定保留 20 页，不精简（与赛事建议的 8-12 页存在偏差，如实记录） |
