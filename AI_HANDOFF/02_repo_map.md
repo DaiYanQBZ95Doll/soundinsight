@@ -1,6 +1,6 @@
 # 文件地图（由 make_ai_handoff.py 自动生成，勿手改）
 
-> 生成时间：2026-09-14 17:53；共 264 个条目；体积单位 KB/MB。
+> 生成时间：2026-09-14 18:03；共 265 个条目；体积单位 KB/MB。
 
 ## 提交物（5 项，1.5 MB）
 
@@ -22,7 +22,7 @@
 | `competition_v2.md` | 7.0 KB | 初赛版文档 |
 | `competition_v2.txt` | 7.0 KB |  |
 | `README.md` | 6.3 KB |  |
-| `DEPLOY_GUIDE.md` | 3.9 KB |  |
+| `DEPLOY_GUIDE.md` | 4.2 KB |  |
 | `deployment/README.md` | 0.6 KB |  |
 | `REPO_INTRO.txt` | 0.6 KB |  |
 
@@ -62,7 +62,7 @@
 | `docs/D13_seal_declaration.md` | 11.2 KB | D13 封包声明（提交技术质检终审） |
 | `PROJECT_BRIEF_QWEN.md` | 10.7 KB |  |
 | `QWEN_HANDOFF.md` | 10.5 KB |  |
-| `PROGRESS_SYNC.md` | 9.5 KB |  |
+| `PROGRESS_SYNC.md` | 9.7 KB |  |
 | `docs/process_review_d10.md` | 8.5 KB |  |
 | `docs/work_summary_d7.md` | 6.2 KB |  |
 | `docs/dataset_audit.md` | 3.5 KB | 数据集字段考古 |
@@ -78,7 +78,7 @@
 | `SoundInsight：跨境电商耳机音质差评智能归因系统.pptx` | 18.1 MB |  |
 | `ppt_text_dump.md` | 11.3 KB |  |
 | `video_script.md` | 5.3 KB | 演示视频脚本（200 秒 / 9 镜头） |
-| `video_script_silent.md` | 3.9 KB | 无口播拍摄卡（操作步骤 + 画面要点） |
+| `video_script_silent.md` | 4.0 KB | 无口播拍摄卡（操作步骤 + 画面要点） |
 | `视频素材/素材清单.md` | 2.9 KB |  |
 | `video_script.srt` | 2.8 KB | 字幕文件（28 条 / 0:00-3:20 / UTF-8） |
 
@@ -189,7 +189,7 @@
 | `sample_reviews_100.csv` | 57.9 KB |  |
 | `agent_test_input.csv` | 27.9 KB |  |
 
-## 代码（80 项，0.3 MB）
+## 代码（81 项，0.3 MB）
 
 | 文件 | 大小 | 用途 |
 |---|---|---|
@@ -244,6 +244,7 @@
 | `ppt_speed_fix.py` | 2.3 KB |  |
 | `restore_timestamps.py` | 2.3 KB |  |
 | `throughput_bench.py` | 2.2 KB |  |
+| `verify_online_report.py` | 2.2 KB |  |
 | `demo_sound.py` | 2.1 KB |  |
 | `batch_check.py` | 2.1 KB | 在线 Demo 批量验收脚本 |
 | `taxonomy_agg.py` | 2.0 KB |  |
