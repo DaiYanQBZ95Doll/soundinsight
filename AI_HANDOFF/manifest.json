@@ -1,7 +1,7 @@
 {
- "generated": "2026-09-14 16:17",
+ "generated": "2026-09-14 17:19",
  "root": "C:\\deepseek-harness-master\\soundinsight",
- "count": 253,
+ "count": 255,
  "entries": [
   {
    "path": ".gitignore",
@@ -34,9 +34,9 @@
   {
    "path": "MODEL_CARD.md",
    "category": "验证报告",
-   "size_bytes": 3005,
+   "size_bytes": 3483,
    "purpose": "模型卡：任务/基座/指标/六条局限",
-   "sha256_16": "f1cbb776bc6463284c36baee0559c95af5e1473fadb6151af47060207286a5f8"
+   "sha256_16": "75fc39c95105a97376fcb4fe0da9cae3944d9a08369da4702531bff93baf6481"
   },
   {
    "path": "PROGRESS_SYNC.md",
@@ -62,9 +62,9 @@
   {
    "path": "README.md",
    "category": "主文档与模板",
-   "size_bytes": 6199,
+   "size_bytes": 6459,
    "purpose": "",
-   "sha256_16": "bd60f058a536f2e7f227bfd981814dece9dd0ebb0b105dbdb72eca8fdd702e77"
+   "sha256_16": "371898deeabf4c1ad94feb65f99c92c26a5053bdbe445849ce792bf995729623"
   },
   {
    "path": "REPO_INTRO.txt",
@@ -373,6 +373,13 @@
    "size_bytes": 3045,
    "purpose": "在线 Demo 单条验收脚本",
    "sha256_16": "0c47b0ba5e5b41fb656ce3b0a8717958a4887e4df228f2345acd1f9bbc9bd6fc"
+  },
+  {
+   "path": "diagnose_treble.py",
+   "category": "代码",
+   "size_bytes": 6723,
+   "purpose": "",
+   "sha256_16": "d43e1945e9599b7daf438d8d177166ca0e8031b42cc8949de05c2a5a5cfde933"
   },
   {
    "path": "distilbert_cv.py",
@@ -953,7 +960,7 @@
    "category": "验证报告",
    "size_bytes": 7019,
    "purpose": "数字一致性审计结果（含官方模板格式对照节）",
-   "sha256_16": "01ab26dd9945cad259f50750c046e174cdb0b49ff982bdd80827db13713085f9"
+   "sha256_16": "49211d7d4b7f4592a6b851b205f4462ef4e174ef0870151d29b2e23c8106edb4"
   },
   {
    "path": "pack_final.py",
@@ -1469,9 +1476,9 @@
   {
    "path": "docs/file_inventory.md",
    "category": "过程与交接文档",
-   "size_bytes": 11954,
+   "size_bytes": 12453,
    "purpose": "项目文件总索引",
-   "sha256_16": "dd5aaedc66391c4c8f8f23de3bc5dccd5455aec18a04fa9a154b3b519b81afef"
+   "sha256_16": "1cea0f69aa5acd0997c39d71e68f4455215c90cebd2c1ea9b8517de3a57b3059"
   },
   {
    "path": "docs/process_review_d10.md",
@@ -1486,6 +1493,13 @@
    "size_bytes": 22123,
    "purpose": "初赛→复赛全流程记录",
    "sha256_16": "22c4830a25be023170ed9b26388b3bf06e52385d608e0189bfebf0a2b4554f38"
+  },
+  {
+   "path": "docs/treble_failure_analysis.md",
+   "category": "证据·标注流程",
+   "size_bytes": 6380,
+   "purpose": "",
+   "sha256_16": "078501a220d9ba9f2661148cc92272fda50dd8b57f96710d2f11f217bdd3fdca"
   },
   {
    "path": "docs/work_summary_d7.md",
