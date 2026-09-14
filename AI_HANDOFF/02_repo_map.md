@@ -1,6 +1,6 @@
 # 文件地图（由 make_ai_handoff.py 自动生成，勿手改）
 
-> 生成时间：2026-09-14 18:03；共 265 个条目；体积单位 KB/MB。
+> 生成时间：2026-09-14 18:17；共 266 个条目；体积单位 KB/MB。
 
 ## 提交物（5 项，1.5 MB）
 
@@ -58,8 +58,8 @@
 | 文件 | 大小 | 用途 |
 |---|---|---|
 | `docs/project_full_record.md` | 21.6 KB | 初赛→复赛全流程记录 |
+| `docs/D13_seal_declaration.md` | 12.7 KB | D13 封包声明（提交技术质检终审） |
 | `docs/file_inventory.md` | 12.3 KB | 项目文件总索引 |
-| `docs/D13_seal_declaration.md` | 11.2 KB | D13 封包声明（提交技术质检终审） |
 | `PROJECT_BRIEF_QWEN.md` | 10.7 KB |  |
 | `QWEN_HANDOFF.md` | 10.5 KB |  |
 | `PROGRESS_SYNC.md` | 9.7 KB |  |
@@ -340,9 +340,10 @@
 | `multi_label_model/` | 256.1 MB | 冻结的多标签归因模型权重（约 256MB），不入 git |
 | `sound_model/` | 256.1 MB | 冻结的二分类模型权重（约 256MB），不入 git |
 
-## 其他（2 项，0.0 MB）
+## 其他（3 项，0.0 MB）
 
 | 文件 | 大小 | 用途 |
 |---|---|---|
+| `视频录制速查.md` | 2.9 KB |  |
 | `per_class_thresholds_probe.json` | 0.4 KB |  |
 | `.gitignore` | 0.3 KB |  |

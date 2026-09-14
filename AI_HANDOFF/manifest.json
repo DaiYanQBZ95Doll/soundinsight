@@ -1,7 +1,7 @@
 {
- "generated": "2026-09-14 18:03",
+ "generated": "2026-09-14 18:17",
  "root": "C:\\deepseek-harness-master\\soundinsight",
- "count": 265,
+ "count": 266,
  "entries": [
   {
    "path": ".gitignore",
@@ -218,7 +218,7 @@
    "category": "生成产物·日志",
    "size_bytes": 2630,
    "purpose": "",
-   "sha256_16": "0ed4de82103294fe935155936975094088a2a8cadca80e5221b5148ed12ce278"
+   "sha256_16": "38c06edc43f54103a8ef722f526c970da9af58fca5baee85550a1d268ee4930b"
   },
   {
    "path": "batch_report.txt",
@@ -1453,6 +1453,13 @@
    "sha256_16": "278e7bad650a4ad16f293f139e3f53cd97e22d83e25bc0519eeb4054cc5efed0"
   },
   {
+   "path": "视频录制速查.md",
+   "category": "其他",
+   "size_bytes": 2987,
+   "purpose": "",
+   "sha256_16": "db7298765a71cc8a5e4b6c38c8f1c9529b5b57ee656c00a4f8cbf80d749a03b6"
+  },
+  {
    "path": "deployment/.gitattributes",
    "category": "部署包",
    "size_bytes": 2121,
@@ -1511,9 +1518,9 @@
   {
    "path": "docs/D13_seal_declaration.md",
    "category": "过程与交接文档",
-   "size_bytes": 11419,
+   "size_bytes": 12981,
    "purpose": "D13 封包声明（提交技术质检终审）",
-   "sha256_16": "27ac5b11d0a93f64a8bab5bcd0b024063a75e90414199264e3bfa0d9943adb57"
+   "sha256_16": "b924a239f97e8795d0b5830186db8329b433c72fe41d25770198973ec63590dd"
   },
   {
    "path": "docs/D14_resume_checklist.md",
