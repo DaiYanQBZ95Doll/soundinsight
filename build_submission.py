@@ -1,4 +1,4 @@
-﻿# -*- coding: utf-8 -*-
+# -*- coding: utf-8 -*-
 # 本脚本用于生成提交物打包：
 #   1. 更新世界的锋芒_SoundInsight_Demo.zip（源码+配置+样例+模型下载脚本，不含权重）
 #   2. 更新世界的锋芒_SoundInsight_复赛作品.zip（骨架：Demo.zip + 提交说明）
@@ -49,7 +49,7 @@ DEV_SCRIPTS = {
     "check_studio_build.py", "diagnose_treble.py",
     "tune_per_class_threshold.py", "make_video_assets.py",
     "make_ai_handoff.py", "hashes.py", "build_submission.py",
-    "fix_ppt_threshold.py", "pack_when_free.py",
+    "fix_ppt_threshold.py", "pack_when_free.py", "scan_repo_hygiene.py",
 }
 
 README_SUBMISSION = """# SoundInsight 复赛作品提交包
@@ -82,6 +82,8 @@ OTHER_FILES = [
     "docs/dataset_audit.md", "docs/year_split_output.txt",
     "docs/drift_plan.md", "docs/project_full_record.md",
     "docs/file_inventory.md",
+    # 公开仓库的口径声明与卫生扫描（说明"哪个算数"+ 密钥/隐私/废弃 claim 实测结论）
+    "docs/legacy_materials_notice.md", "docs/repo_hygiene_scan.md",
     "human_review_50.csv", "human_review_conf30.csv",
     "human_review_noise16.csv",
     "architecture.png", "learning_curve.png", "pr_curve.png",
@@ -111,6 +113,9 @@ results_summary.md（冻结口径）；不同口径（冻结口径 / 1000 条子
   统计验证、消融、显著性检验、置信度分层
 - docs/dataset_audit.md / docs/year_split_output.txt：数据集字段考古与年份分桶脚本输出原文
 - docs/drift_plan.md：数据漂移监控方案
+- docs/legacy_materials_notice.md：公开仓库的版本与口径指引（哪个算数、历史材料清单、
+  已废弃 claim 一览、隐私与凭据说明）
+- docs/repo_hygiene_scan.md：仓库卫生扫描结果（密钥 / 隐私 / 废弃 claim / 生成物一致性）
 
 ## 二、审计与验收
 - number_audit.md：数字一致性审计结果（含官方模板格式对照节）

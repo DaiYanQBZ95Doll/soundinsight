@@ -1,5 +1,22 @@
 项目名称：SoundInsight 蓝牙耳机音质差评智能归因系统
 
+> ## 版本与口径指引（先读这一段）
+>
+> **哪个算数**
+> - 数字权威源：`results_summary.md`（其余文档引用它；冻结数字见 `AI_HANDOFF/03_metrics_and_caveats.md` §二）。
+> - 对外主文档：`competition_v4.md`（提交用的 `更新世界的锋芒_SoundInsight_复赛作品.pdf` / `.docx` 由 `md_to_pdf.py` / `md_to_docx.py` 从它生成）；`competition_v3.txt` 为同源精简版。
+> - 提交物校验值：根目录 `hashes.txt`（外层容器）与提交包内 `hashes.txt`（四项提交物内容哈希）。
+> - 冻结资产（任何人不改）：`sound_model/`、`multi_label_model/`、`val_v2.csv`、训练脚本。
+>
+> **哪些是历史材料（保留当时状态，不作为当前口径）**
+> - 初赛与过程材料：`competition_v2.*`、`SoundInsight_创意方案/`、`docs/work_summary_*`、`PROGRESS_SYNC.md`、`docs/process_review_d10.md`、`training_output.txt`、`ppt_text_dump.md` 等。
+> - 修复脚本本身含"旧表述 → 新表述"的映射（`ppt_speed_fix.py`、`fix_ppt_threshold.py`、`retime_srt.py`），因此正文会出现已废弃字样，属工具输入而非结论。
+> - 已废弃 claim 一览、"哪个算数"的完整规则、隐私与凭据说明：**`docs/legacy_materials_notice.md`**。
+>
+> **三套口径不可混用**：冻结口径（val_v2 20,000 条）／1,000 条子集口径（LLM 对照）／工程口径（吞吐、校准、长度分桶）。同一模型的精确率/召回率还分阈值档（0.9744 与 0.5），必须成对阅读。
+>
+> **卫生自检**：`python scan_repo_hygiene.py` → 报告 `docs/repo_hygiene_scan.md`（密钥 / 隐私 / 废弃 claim / 生成物一致性）。
+
 项目简介：基于轻量预训练模型的蓝牙耳机音质差评自动识别与归因系统，帮助卖家快速定位音质问题。
 
 **给 AI 助手的入口（推荐先读）**：AI_HANDOFF/README.md —— 项目导览包：阅读顺序、三套数字口径、证据链索引、代码导览、红线与待办、术语表，以及机器可读的全项目索引 AI_HANDOFF/manifest.json。

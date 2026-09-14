@@ -69,4 +69,6 @@
 - 数字审计：`python check_doc_numbers.py` → **0 FAIL / 150 PASS**（含模板格式对照 8 项 + 新增"口径配对检查"7 项）。
 - **D14 口径混用修正（用户指出 §7.2）**：v4 §7.2 原写"F1=0.6871（阈值 0.97），召回率 89.6%，精确率 47.9%"，把两个阈值的指标并排（89.6%/47.9% 来自阈值 0.5，0.6871 来自 0.9744）→ 改为按阈值分列的双档表（0.9744：P 66.3%/R 71.3%/F1 0.6871；0.5：P 47.9%/R 89.6%/F1 0.6241）+ 成对阅读说明；§3.3 价值表、§7.6 消融表同样标注阈值档位；v3、README、QWEN_HANDOFF、PROJECT_BRIEF_QWEN、PPT（slide10/12/15）同步修正。审计新增"口径配对检查（阈值并排）"防复发：一行同时出现调优档 F1 与阈值 0.5 档 P/R 时必须显式标出两个阈值，否则 FAIL。PPT 用 `fix_ppt_threshold.py` 整段精确映射改 XML（先备份 `.pptx.bak`），页数仍 20 页。
 - 同步状态：GitCode 已推送（本轮 commit 待推）；GitHub 因本机代理未运行（7890 端口无监听）连接失败，待网络可用后执行 `git push origin main`。
+- **公开仓库声明与卫生扫描（用户要求）**：仓库含初赛与过程材料 → 新增 `docs/legacy_materials_notice.md`（权威来源 / 历史材料清单 / 已废弃 claim 一览 / 隐私与凭据 / 生成顺序），README 顶部加"版本与口径指引"，`AI_HANDOFF/README.md` 挂入口；新增 `scan_repo_hygiene.py`（密钥含 git 历史、隐私、废弃 claim 分类、manifest 记录值一致性）。实扫：**密钥 0、本机路径 0**；隐私 13 处 = 模板要求的竞赛联系信息（v3/v4/D13/项目全记录）+ 3 条误报（sha256 与浮点数数字串）；废弃 claim 全部属历史材料或护栏脚本，当前文档需确认 **0** 处。
+- 生成顺序（改了文档必须按此顺序）：`check_doc_numbers.py` → `scan_repo_hygiene.py` → `md_to_pdf/docx` → `build_submission.py` → `pack_final.py` → **最后** `make_ai_handoff.py`（否则 manifest 记录的大小/哈希过期，扫描第四节会直接报出来）。
 - 注意：`更新世界的锋芒_SoundInsight_复赛作品.zip` 在 Bandizip 打开期间被独占，`pack_final.py` 无法替换（已加等待重试）。**上传天池前必须确认 zip 是修正后的版本**（包内 PDF 应为 215,103 B / `7a92e5cc`）。

@@ -1,16 +1,15 @@
 # 文件地图（由 make_ai_handoff.py 自动生成，勿手改）
 
-> 生成时间：2026-09-14 20:03；共 276 个条目；体积单位 KB/MB。
+> 生成时间：2026-09-14 21:23；共 278 个条目；体积单位 KB/MB。
 
-## 提交物（6 项，85.6 MB）
+## 提交物（5 项，43.2 MB）
 
 | 文件 | 大小 | 用途 |
 |---|---|---|
-| `更新世界的锋芒_SoundInsight_复赛作品.zip.tmp` | 42.4 MB |  |
 | `更新世界的锋芒_SoundInsight_复赛作品.zip` | 42.4 MB |  |
-| `更新世界的锋芒_SoundInsight_其他材料.zip` | 457.5 KB |  |
+| `更新世界的锋芒_SoundInsight_其他材料.zip` | 463.1 KB |  |
 | `更新世界的锋芒_SoundInsight_复赛作品.pdf` | 210.1 KB |  |
-| `更新世界的锋芒_SoundInsight_Demo.zip` | 107.1 KB |  |
+| `更新世界的锋芒_SoundInsight_Demo.zip` | 108.0 KB |  |
 | `更新世界的锋芒_SoundInsight_复赛作品.docx` | 48.0 KB |  |
 
 ## 主文档与模板（9 项，0.1 MB）
@@ -20,9 +19,9 @@
 | `hackathon-复赛作品提交模板-天池版.docx` | 35.7 KB | 官方复赛模板原文（格式对照基准） |
 | `competition_v4.md` | 20.1 KB | 主文档（13 章，含模板九章 + 合规披露 + 局限） |
 | `competition_v3.txt` | 8.8 KB | 官方模板九章版主文档 |
+| `README.md` | 8.2 KB |  |
 | `competition_v2.md` | 7.0 KB | 初赛版文档 |
 | `competition_v2.txt` | 7.0 KB |  |
-| `README.md` | 6.5 KB |  |
 | `DEPLOY_GUIDE.md` | 4.2 KB |  |
 | `deployment/README.md` | 0.6 KB |  |
 | `REPO_INTRO.txt` | 0.6 KB |  |
@@ -55,22 +54,24 @@
 | `confidence_tiered.md` | 0.7 KB | 三星补漏置信度分层与中置信剔除记录 |
 | `significance_test.md` | 0.6 KB | Welch t 检验（p=0.000932） |
 
-## 过程与交接文档（13 项，0.1 MB）
+## 过程与交接文档（15 项，0.1 MB）
 
 | 文件 | 大小 | 用途 |
 |---|---|---|
 | `docs/project_full_record.md` | 21.6 KB | 初赛→复赛全流程记录 |
-| `docs/D13_seal_declaration.md` | 17.8 KB | D13 封包声明（提交技术质检终审） |
+| `docs/D13_seal_declaration.md` | 19.0 KB | D13 封包声明（提交技术质检终审） |
+| `PROGRESS_SYNC.md` | 13.1 KB |  |
 | `docs/file_inventory.md` | 12.3 KB | 项目文件总索引 |
-| `PROGRESS_SYNC.md` | 12.1 KB |  |
 | `PROJECT_BRIEF_QWEN.md` | 10.7 KB |  |
 | `QWEN_HANDOFF.md` | 10.7 KB |  |
 | `docs/process_review_d10.md` | 8.5 KB |  |
+| `docs/legacy_materials_notice.md` | 7.3 KB |  |
 | `docs/work_summary_d7.md` | 6.2 KB |  |
 | `docs/dataset_audit.md` | 3.5 KB | 数据集字段考古 |
 | `docs/D14_resume_checklist.md` | 3.0 KB | 收尾四步清单（录视频/打包/上传/补推送） |
 | `docs/drift_plan.md` | 2.8 KB | 数据漂移监控方案 |
 | `AI_INDUCTION_REDLINE.md` | 2.7 KB |  |
+| `docs/repo_hygiene_scan.md` | 2.6 KB |  |
 | `docs/year_split_output.txt` | 0.8 KB | 年份分桶脚本输出原文 |
 
 ## 演示材料（6 项，18.1 MB）
@@ -191,16 +192,17 @@
 | `sample_reviews_100.csv` | 57.9 KB |  |
 | `agent_test_input.csv` | 27.9 KB |  |
 
-## 代码（86 项，0.3 MB）
+## 代码（87 项，0.3 MB）
 
 | 文件 | 大小 | 用途 |
 |---|---|---|
+| `scan_repo_hygiene.py` | 15.9 KB |  |
 | `build_pdf_v2.py` | 12.4 KB |  |
 | `check_doc_numbers.py` | 12.2 KB | 数字审计 + 模板格式对照脚本 |
 | `build_pdf.py` | 11.2 KB |  |
 | `make_ai_handoff.py` | 10.3 KB |  |
+| `build_submission.py` | 9.3 KB |  |
 | `demo_sound_v2.py` | 9.1 KB | 本地 Gradio Demo（三页；已内置代理绕过） |
-| `build_submission.py` | 8.6 KB |  |
 | `report_builder.py` | 8.3 KB |  |
 | `ablation_train.py` | 8.2 KB |  |
 | `soundinsight_agent.py` | 8.1 KB | 一键洞察 Agent（md/excel、zh/en、非英文跳过） |
@@ -256,8 +258,8 @@
 | `taxonomy_agg.py` | 2.0 KB |  |
 | `prep_refine.py` | 2.0 KB |  |
 | `merge_review.py` | 2.0 KB |  |
+| `pack_when_free.py` | 1.9 KB |  |
 | `archive_exp.py` | 1.9 KB |  |
-| `_pack_when_free.py` | 1.9 KB |  |
 | `api_server.py` | 1.8 KB | FastAPI 服务（/health、/predict） |
 | `miss_rate.py` | 1.7 KB |  |
 | `install.bat` | 1.7 KB |  |
