@@ -7,7 +7,7 @@
 | 1 | **演示视频文件** | ✅ **已完成（9/14）** | 成片 1920×1080 / 30fps / **3 分 23 秒**（46.1 MB），命名合规并已并入提交包；字幕按实拍时间轴重排为 26 条（`video_script.srt`） |
 | 2 | 主文档 PDF/Word 重生成（若改过 v4） | 已完成 | 改 `competition_v4.md` 后需跑 `md_to_pdf.py` + `md_to_docx.py` 再 `pack_final.py`（PDF 内含链接表，不重生成会与源文不一致） |
 | 2b | 创空间重建（新版批量报告生效） | ✅ **已完成（9/14 18:00 部署）** | 用户触发重新部署 → 新镜像 `363008-453f56d8-2026-09-14-17-55-37`。线上实测：批量页返回完整六节报告（1,622 字符，含归因概率、行动建议、中置信提示 4 条、成本对照、校准声明），单条推理 2/2；100 条耗时 20.1 秒 |
-| 3 | 推送双平台 | ✅ **已完成（9/14）** | 本地 / GitHub / GitCode 三处一致：`4735121`。GitHub 推送受本机代理影响易断链，失败时重试或改用 HTTP/1.1（见 `docs/D14_resume_checklist.md`） |
+| 3 | 推送双平台 | ⚠️ GitCode 已推送 `7269c70`；GitHub 待网络 | GitCode 已同步至 `7269c70`。GitHub 本次失败原因是本机代理未运行（`127.0.0.1:7890` 无监听，直连 443 超时），网络可用后执行 `git push origin main`；历史失败多为连接重置，重试或改用 HTTP/1.1（见 `docs/D14_resume_checklist.md`） |
 | 4 | 上传天池 | ❌ 待做 | 只传一个 zip：`更新世界的锋芒_SoundInsight_复赛作品.zip` |
 | 5 | 真实用户验证 | ❌ **不做** | 已从任务清单移除；`competition_v4.md` §9.1 第 7 条如实披露"未开展用户验证" |
 | 6 | GitCode 访问令牌轮换 | 建议 | 该令牌曾在聊天中出现过；提交完成后在 GitCode 设置中删除重建 |
@@ -52,9 +52,24 @@
 
 ```powershell
 cd C:\deepseek-harness-master\soundinsight
-python check_doc_numbers.py     # 必须 0 FAIL
+python check_doc_numbers.py     # 必须 0 FAIL；会重写 number_audit.md
 python md_to_pdf.py competition_v4.md "更新世界的锋芒_SoundInsight_复赛作品.pdf"   # 若改了 v4
 python md_to_docx.py competition_v4.md "更新世界的锋芒_SoundInsight_复赛作品.docx"
 python make_ai_handoff.py       # 若增删文件，刷新索引
-python pack_final.py            # 重新打包提交包
+python build_submission.py      # 重建 Demo.zip 与 其他材料.zip（改了文档必须走这步）
+python pack_final.py            # 组装 复赛作品.zip：重写包内 README + 写 hashes.txt（根目录与包内各一份）
+python hashes.py                # 抽查内容类校验值
 ```
+
+顺序要点：`pack_final.py` 只把根目录已有的四项提交物装进外层 zip，**不会重建内层两个 zip**——改了文档却只跑 `pack_final.py`，包内文档会停留在旧版。`build_submission.py` 会把外层 zip 重写成"骨架"，随后必须再跑 `pack_final.py` 才能把 PDF 与视频装回去。
+
+校验值口径：内容类（PDF / Word / 视频 / Demo.zip / 源文档）哈希与重打无关，可直接核对；容器类（外层 zip、`其他材料.zip`——后者内含本文档）属自引用，哈希每次重打必变，按 `hashes.txt` 与提交页登记，不要写死在文档里。
+
+## 六、本轮封包修正（2026-09-14，用户指出后执行）
+
+| 问题 | 处理 |
+|---|---|
+| 包内 `README_SUBMISSION.txt` 写有"请手动放入最终 PDF / 演示视频"，与包内实际已含这两项矛盾 | 按实际内容重写（五项清单 + 在线 Demo / 双仓库链接）；`pack_final.py` 每次打包自动重写该说明 |
+| Demo.zip 误入 12 个开发脚本（50 → 63 文件） | `build_submission.py` 的 `DEV_SCRIPTS` 归位，回到 51 文件 |
+| `pack_final.py` 报出的大小/哈希漏掉包内 `hashes.txt` 条目 | 改为先把清单写入包内、再取最终大小与哈希；并跳过旧 `hashes.txt`，幂等复跑不产生重复条目 |
+| 容器类哈希写死在声明里，重打必然滞后 | D13 §三 改按内容类/容器类分别登记，容器类指向 `hashes.txt` 与提交页 |

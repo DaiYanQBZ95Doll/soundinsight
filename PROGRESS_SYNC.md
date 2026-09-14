@@ -59,7 +59,12 @@
 
 - **D14 产品改进（提交前）**：批量分析页原先只输出摘要，与命令行 Agent 的六节报告不一致（用户指出 Demo 呈现过薄）。已抽出共享模块 `report_builder.py`（六节报告 + 优先级 + 结论判定 + 成本对照 + 中置信提示），三方统一：`soundinsight_agent.py`、`demo_sound_v2.py`、`deployment/app.py`；语种判定统一到 `text_utils.py`（`predict_core` 仅再导出，避免两份实现）。典型案例新增**五类归因概率**，报告第五节新增**中置信条数提示**（v4 §9.2 对应条目已标注"本轮已实现"）。本地 Demo 与 Agent（zh/en/excel）回归通过；创空间已推送 `eb01fb2`，用户于 9/14 触发重新部署 → 新镜像 `363008-453f56d8-2026-09-14-17-55-37`，**线上实测通过**：批量页返回完整六节报告（1,622 字符；含归因概率、三条紧急建议、"中置信提示 4 条"、成本对照、校准声明），单条推理 2/2，100 条 20.1 秒。
 
-## 重建产物实测值（最新）
+## 重建产物实测值（最新，2026-09-14 封包后）
 
-- 更新世界的锋芒_SoundInsight_Demo.zip：107,294 字节，50 个文件（含 api_server.py、predict_core.py、install.bat、MODEL_CARD.md；无权重、无开发脚本）。
-- 更新世界的锋芒_SoundInsight_复赛作品.zip：105,784 字节，2 个文件（骨架，待用户放入 PDF 与视频）。
+- **包内说明纠错（用户指出）**：`README_SUBMISSION.txt` 原写有"请手动放入最终 PDF / 演示视频"，与包内实际已含这两项矛盾 → 按实际内容重写（五项清单 + 在线 Demo / 双仓库链接）；`pack_final.py` 现每次打包都从 `build_submission.py` 重写它，说明不会再漂移。同时清掉 Demo.zip 中误入的 12 个开发脚本（63 → 51 文件）。
+- **校验清单**：`pack_final.py` 在根目录与包内各写一份 `hashes.txt`（四项提交物的完整 SHA256）。外层 zip 与 `其他材料.zip`（内含文档）属"自引用容器"，哈希每次重打必变，因此 D13 §三 改为按内容类/容器类分别登记。
+- 更新世界的锋芒_SoundInsight_Demo.zip：109,550 字节 `da1f0f514d50ecf1`，51 个文件（含 api_server.py、predict_core.py、report_builder.py、text_utils.py、install.bat、MODEL_CARD.md；无权重、无开发脚本）。
+- 更新世界的锋芒_SoundInsight_其他材料.zip：467,441 字节，46 个文件 + README_其他材料.txt（容器类，哈希见包内 `hashes.txt`）。
+- 更新世界的锋芒_SoundInsight_复赛作品.zip：44,432,904 字节，6 个条目（Demo.zip + 其他材料.zip + README_SUBMISSION.txt + 主文档 PDF + 演示视频.mp4 + hashes.txt）——**已含全部四项，可直接提交**；完整 SHA256 见根目录 `hashes.txt`。
+- 数字审计：`python check_doc_numbers.py` → **0 FAIL / 143 PASS**（含模板格式对照 8 项）。
+- 同步状态：GitCode `7269c70` 已推送；GitHub 因本机代理未运行（7890 端口无监听）连接失败，待网络可用后执行 `git push origin main`。
