@@ -1,6 +1,6 @@
 # 文件地图（由 make_ai_handoff.py 自动生成，勿手改）
 
-> 生成时间：2026-09-14 16:17；共 253 个条目；体积单位 KB/MB。
+> 生成时间：2026-09-14 17:19；共 255 个条目；体积单位 KB/MB。
 
 ## 提交物（5 项，1.5 MB）
 
@@ -21,7 +21,7 @@
 | `competition_v3.txt` | 8.6 KB | 官方模板九章版主文档 |
 | `competition_v2.md` | 7.0 KB | 初赛版文档 |
 | `competition_v2.txt` | 7.0 KB |  |
-| `README.md` | 6.1 KB |  |
+| `README.md` | 6.3 KB |  |
 | `DEPLOY_GUIDE.md` | 3.9 KB |  |
 | `deployment/README.md` | 0.6 KB |  |
 | `REPO_INTRO.txt` | 0.6 KB |  |
@@ -38,9 +38,9 @@
 | `results_summary.py` | 4.8 KB |  |
 | `results_summary.md` | 4.3 KB | 冻结数字唯一权威源（含 ±1 混淆矩阵调和行） |
 | `length_bucket_eval.py` | 3.9 KB |  |
+| `MODEL_CARD.md` | 3.4 KB | 模型卡：任务/基座/指标/六条局限 |
 | `edge_cases.md` | 3.2 KB |  |
 | `calibration_eval.py` | 3.0 KB |  |
-| `MODEL_CARD.md` | 2.9 KB | 模型卡：任务/基座/指标/六条局限 |
 | `edge_case_benchmark.md` | 2.6 KB | 六类边界场景定向探针 |
 | `user_scenarios.md` | 2.6 KB |  |
 | `ablation_summary.py` | 2.2 KB |  |
@@ -58,7 +58,7 @@
 | 文件 | 大小 | 用途 |
 |---|---|---|
 | `docs/project_full_record.md` | 21.6 KB | 初赛→复赛全流程记录 |
-| `docs/file_inventory.md` | 11.7 KB | 项目文件总索引 |
+| `docs/file_inventory.md` | 12.2 KB | 项目文件总索引 |
 | `docs/D13_seal_declaration.md` | 11.2 KB | D13 封包声明（提交技术质检终审） |
 | `PROJECT_BRIEF_QWEN.md` | 10.7 KB |  |
 | `QWEN_HANDOFF.md` | 10.5 KB |  |
@@ -106,7 +106,7 @@
 | `exp08_ablation_B/confusion_matrix.png` | 37.7 KB |  |
 | `pr_curve.png` | 37.7 KB |  |
 
-## 证据·标注流程（17 项，3.4 MB）
+## 证据·标注流程（18 项，3.4 MB）
 
 | 文件 | 大小 | 用途 |
 |---|---|---|
@@ -126,6 +126,7 @@
 | `exp03_LLM复核与标签清洗/neg_review_result.jsonl` | 11.7 KB |  |
 | `human_review_conf30.csv` | 9.4 KB | 中置信 8 条人工复核表（3/8 通过→全剔除） |
 | `human_review_noise16.csv` | 7.1 KB | 标注噪声 16 条人工终审表（15/16 确认） |
+| `docs/treble_failure_analysis.md` | 6.2 KB |  |
 | `prep_review_input.py` | 1.0 KB |  |
 
 ## 证据·对照与错误分析（35 项，8.2 MB）
@@ -187,7 +188,7 @@
 | `sample_reviews_100.csv` | 57.9 KB |  |
 | `agent_test_input.csv` | 27.9 KB |  |
 
-## 代码（75 项，0.3 MB）
+## 代码（76 项，0.3 MB）
 
 | 文件 | 大小 | 用途 |
 |---|---|---|
@@ -202,6 +203,7 @@
 | `demo_sound_v2.py` | 7.8 KB | 本地 Gradio Demo（三页；已内置代理绕过） |
 | `md_to_pdf.py` | 7.6 KB | 主文档 Markdown → PDF（内嵌中文字体） |
 | `learning_curve.py` | 6.8 KB |  |
+| `diagnose_treble.py` | 6.6 KB |  |
 | `fetch_electronics.py` | 6.5 KB |  |
 | `predict_core.py` | 5.5 KB | 共享推理核心（含非英文显式拒绝） |
 | `distilbert_cv.py` | 5.4 KB |  |

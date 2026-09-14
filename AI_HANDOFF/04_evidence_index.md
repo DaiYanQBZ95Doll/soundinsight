@@ -37,6 +37,7 @@
 | 校准 ECE 0.0122 / 过度自信 | `calibration_eval.md`、`calibration_curve.png` | `calibration_eval.py` |
 | 错误分类学（FP/FN 构成） | `error_taxonomy.md`、`llm_err_input.jsonl`、`llm_err_classes.jsonl`、`spot_check_30.jsonl` | `prep_err_taxonomy.py` + `taxonomy_agg.py` |
 | 吞吐（GPU 1.763s / CPU 28.443s） | `throughput_eval.md` | `throughput_bench.py` |
+| **高音归因失效机制**（零触发：最大概率 0.3332 < 阈值 0.5；阈值 0.20 → F1 0.5161；标签重叠 40.5%、关键词漏标 62.6%） | `docs/treble_failure_analysis.md` | `diagnose_treble.py`（只读诊断，复现验证划分） |
 | 时序趋势图 | `trend_over_time.png`、`trend_over_time.py` | 同脚本 |
 
 ## 四、工程与部署
