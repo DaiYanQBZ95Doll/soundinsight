@@ -43,18 +43,29 @@ DEV_SCRIPTS = {
     "ppt_speed_fix.py", "deploy_check.py", "batch_check.py",
     "llm_qwen_metrics.py", "extract_template.py", "pack_final.py",
     "md_to_pdf.py", "md_to_docx.py", "verify_docx.py",
+    # 诊断 / 校验 / 打包 / 文档生成类工具，不属于产品 Demo 包
+    "check_video.py", "check_edge_cases.py", "retime_srt.py",
+    "rebuild_video_timing.py", "verify_online_report.py",
+    "check_studio_build.py", "diagnose_treble.py",
+    "tune_per_class_threshold.py", "make_video_assets.py",
+    "make_ai_handoff.py", "hashes.py", "build_submission.py",
 }
 
 README_SUBMISSION = """# SoundInsight 复赛作品提交包
 
-本 zip 包含：
+本 zip 共 5 个条目，已完整，可直接提交：
 
-1. 更新世界的锋芒_SoundInsight_复赛作品.pdf —— 主文档（【请手动放入最终 PDF】）
-2. 更新世界的锋芒_SoundInsight_Demo.zip —— 可运行 Demo 源码包
-3. 更新世界的锋芒_SoundInsight_演示视频.mp4 —— 【请手动放入演示视频】
+1. 更新世界的锋芒_SoundInsight_复赛作品.pdf —— 主文档（9 页，v4 定稿）
+2. 更新世界的锋芒_SoundInsight_演示视频.mp4 —— 演示视频（3 分 23 秒，H.264）
+3. 更新世界的锋芒_SoundInsight_Demo.zip —— 可运行 Demo 源码包（含一键下载脚本，不含权重）
 4. 更新世界的锋芒_SoundInsight_其他材料.zip —— 验证报告、审计结果、图表与人工复核原始表
+5. README_SUBMISSION.txt —— 本说明
 
-请在最终提交前把 PDF 与视频文件放进本 zip 后提交。
+模型权重（约 536MB）未入包，由 download_models.py 从公开模型仓库自动下载。
+
+在线 Demo：https://modelscope.cn/studios/DaiYanQBZ95Doll/SoundInsight
+代码仓库：https://gitcode.com/DaiYanQBZ95Doll/soundinsight
+（镜像：https://github.com/DaiYanQBZ95Doll/soundinsight）
 """
 
 OTHER_ZIP = os.path.join(HERE, "更新世界的锋芒_SoundInsight_其他材料.zip")
