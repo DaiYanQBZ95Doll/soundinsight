@@ -2,6 +2,8 @@
 
 项目简介：基于轻量预训练模型的蓝牙耳机音质差评自动识别与归因系统，帮助卖家快速定位音质问题。
 
+**给 AI 助手的入口（推荐先读）**：AI_HANDOFF/README.md —— 项目导览包：阅读顺序、三套数字口径、证据链索引、代码导览、红线与待办、术语表，以及机器可读的全项目索引 AI_HANDOFF/manifest.json。
+
 文件总索引（全部文件的分类清单与状态）：docs/file_inventory.md
 全流程记录（初赛→复赛，最终确认用）：docs/project_full_record.md
 
