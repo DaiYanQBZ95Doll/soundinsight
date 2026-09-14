@@ -18,7 +18,7 @@
 2. 不得改动训练脚本 train_final.py、ablation_train.py、train_multilabel.py、distilbert_cv.py、train_roberta_quick.py、learning_curve.py。
 3. 不得改动验证集划分，train/val 以 seed=42 分层划分为准，固定验证集文件为 val_v2.csv（20000 条 / 251 正例）。
 4. 不得重新训练任何模型。
-5. 冻结数字不得改动：F1 0.687、阈值 0.97、5 折 CV 0.6234 ± 0.024、召回率 89.6%、初赛 F1 0.37。所有文档数字必须与 results_summary.md 同源。
+5. 冻结数字不得改动：F1 0.687（阈值 0.9744，对外 0.97；同档召回 71.3%、精确 66.3%）、阈值 0.5 档召回率 89.6%、5 折 CV 0.6234 ± 0.024、初赛 F1 0.37。两档召回率不同源，**引用时不得并排**。所有文档数字必须与 results_summary.md 同源。
 6. 模型权重不入库，.gitignore 已排除 sound_model、multi_label_model、distilbert-base-uncased、roberta-base 等目录。
 7. GPU（RTX 4060 8GB）任务必须串行，CPU 任务可并行。
 
@@ -39,7 +39,7 @@
 
 ## 四、模型与实验结果（以 results_summary.md 为唯一权威）
 
-最终二分类模型：DistilBERT-base（66M 参数），训练配置为 1:10 欠采样（约 1006 正例 + 10060 负例）、学习率 2e-5、batch 16、epochs 3。验证集 20000 条（251 正例）上准确率 0.9865，F1@0.5 为 0.6241，调优阈值 0.9744（对外口径 0.97）后 F1 0.6871，召回率 89.6%，精确率 47.9%。模型保存在 sound_model，阈值在 sound_model/threshold.json。
+最终二分类模型：DistilBERT-base（66M 参数），训练配置为 1:10 欠采样（约 1006 正例 + 10060 负例）、学习率 2e-5、batch 16、epochs 3。验证集 20000 条（251 正例）上：阈值 0.5 时 F1 0.6241、召回率 89.6%、精确率 47.9%；调优阈值 0.9744（对外口径 0.97）时 F1 0.6871、召回率 71.3%、精确率 66.3%。两档须成对引用，不可跨阈值混用。模型保存在 sound_model，阈值在 sound_model/threshold.json。
 
 交叉验证：清洗标签 5 折逐折调优 F1 为 0.6655、0.6151、0.6325、0.6054、0.5983，均值 0.6234 ± 0.0240，波动 3.9%。弱标注标签 10 折调优 F1 均值 0.5487。
 

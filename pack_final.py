@@ -37,6 +37,24 @@ def sha256(path: str, limit: int | None = None) -> str:
     return h.hexdigest()
 
 
+def replace_with_retry(tmp: str, dst: str, attempts: int = 20, delay: float = 3.0) -> None:
+    """替换目标文件，遇 Windows 瞬时占用（杀软/索引器扫描）则等待重试。
+
+    单次 os.replace 在目标被其他进程打开时会抛 PermissionError(WinError 5)；
+    44 MB 的包刚写完常被杀软扫描，等待数秒即可成功。
+    """
+    import time
+    for i in range(1, attempts + 1):
+        try:
+            os.replace(tmp, dst)
+            return
+        except PermissionError as e:
+            if i == attempts:
+                raise
+            print(f"[WAIT] 目标文件被占用，{delay:.0f}s 后重试（{i}/{attempts}）：{e}")
+            time.sleep(delay)
+
+
 def main() -> int:
     print("=" * 68)
     print("SoundInsight 最终提交包自检")
@@ -106,7 +124,7 @@ def main() -> int:
                     z.write(src, name)
             else:
                 z.writestr(name, data)
-    os.replace(tmp, FINAL_ZIP)
+    replace_with_retry(tmp, FINAL_ZIP)
 
     # hashes.txt：只登记"内容稳定、可被复核者解包自验"的条目。
     # 外层 zip 自身的哈希无法写进自身（自引用），因此包内版本不列它；
@@ -131,7 +149,7 @@ def main() -> int:
         for info in zin.infolist():
             zout.writestr(info, zin.read(info.filename))
         zout.writestr("hashes.txt", body.encode("utf-8"))
-    os.replace(tmp, FINAL_ZIP)
+    replace_with_retry(tmp, FINAL_ZIP)
 
     # 此刻的包已是最终形态，再取大小与哈希
     final_size = os.path.getsize(FINAL_ZIP)

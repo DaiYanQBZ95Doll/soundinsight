@@ -66,5 +66,7 @@
 - 更新世界的锋芒_SoundInsight_Demo.zip：109,550 字节 `da1f0f514d50ecf1`，51 个文件（含 api_server.py、predict_core.py、report_builder.py、text_utils.py、install.bat、MODEL_CARD.md；无权重、无开发脚本）。
 - 更新世界的锋芒_SoundInsight_其他材料.zip：467,441 字节，46 个文件 + README_其他材料.txt（容器类，哈希见包内 `hashes.txt`）。
 - 更新世界的锋芒_SoundInsight_复赛作品.zip：44,432,904 字节，6 个条目（Demo.zip + 其他材料.zip + README_SUBMISSION.txt + 主文档 PDF + 演示视频.mp4 + hashes.txt）——**已含全部四项，可直接提交**；完整 SHA256 见根目录 `hashes.txt`。
-- 数字审计：`python check_doc_numbers.py` → **0 FAIL / 143 PASS**（含模板格式对照 8 项）。
-- 同步状态：GitCode `7269c70` 已推送；GitHub 因本机代理未运行（7890 端口无监听）连接失败，待网络可用后执行 `git push origin main`。
+- 数字审计：`python check_doc_numbers.py` → **0 FAIL / 150 PASS**（含模板格式对照 8 项 + 新增"口径配对检查"7 项）。
+- **D14 口径混用修正（用户指出 §7.2）**：v4 §7.2 原写"F1=0.6871（阈值 0.97），召回率 89.6%，精确率 47.9%"，把两个阈值的指标并排（89.6%/47.9% 来自阈值 0.5，0.6871 来自 0.9744）→ 改为按阈值分列的双档表（0.9744：P 66.3%/R 71.3%/F1 0.6871；0.5：P 47.9%/R 89.6%/F1 0.6241）+ 成对阅读说明；§3.3 价值表、§7.6 消融表同样标注阈值档位；v3、README、QWEN_HANDOFF、PROJECT_BRIEF_QWEN、PPT（slide10/12/15）同步修正。审计新增"口径配对检查（阈值并排）"防复发：一行同时出现调优档 F1 与阈值 0.5 档 P/R 时必须显式标出两个阈值，否则 FAIL。PPT 用 `fix_ppt_threshold.py` 整段精确映射改 XML（先备份 `.pptx.bak`），页数仍 20 页。
+- 同步状态：GitCode 已推送（本轮 commit 待推）；GitHub 因本机代理未运行（7890 端口无监听）连接失败，待网络可用后执行 `git push origin main`。
+- 注意：`更新世界的锋芒_SoundInsight_复赛作品.zip` 在 Bandizip 打开期间被独占，`pack_final.py` 无法替换（已加等待重试）。**上传天池前必须确认 zip 是修正后的版本**（包内 PDF 应为 215,103 B / `7a92e5cc`）。

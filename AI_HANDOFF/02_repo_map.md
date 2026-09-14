@@ -1,27 +1,28 @@
 # 文件地图（由 make_ai_handoff.py 自动生成，勿手改）
 
-> 生成时间：2026-09-14 19:28；共 271 个条目；体积单位 KB/MB。
+> 生成时间：2026-09-14 20:03；共 276 个条目；体积单位 KB/MB。
 
-## 提交物（5 项，43.2 MB）
+## 提交物（6 项，85.6 MB）
 
 | 文件 | 大小 | 用途 |
 |---|---|---|
+| `更新世界的锋芒_SoundInsight_复赛作品.zip.tmp` | 42.4 MB |  |
 | `更新世界的锋芒_SoundInsight_复赛作品.zip` | 42.4 MB |  |
-| `更新世界的锋芒_SoundInsight_其他材料.zip` | 455.3 KB |  |
-| `更新世界的锋芒_SoundInsight_复赛作品.pdf` | 203.6 KB |  |
-| `更新世界的锋芒_SoundInsight_Demo.zip` | 107.0 KB |  |
-| `更新世界的锋芒_SoundInsight_复赛作品.docx` | 47.3 KB |  |
+| `更新世界的锋芒_SoundInsight_其他材料.zip` | 457.5 KB |  |
+| `更新世界的锋芒_SoundInsight_复赛作品.pdf` | 210.1 KB |  |
+| `更新世界的锋芒_SoundInsight_Demo.zip` | 107.1 KB |  |
+| `更新世界的锋芒_SoundInsight_复赛作品.docx` | 48.0 KB |  |
 
 ## 主文档与模板（9 项，0.1 MB）
 
 | 文件 | 大小 | 用途 |
 |---|---|---|
 | `hackathon-复赛作品提交模板-天池版.docx` | 35.7 KB | 官方复赛模板原文（格式对照基准） |
-| `competition_v4.md` | 19.1 KB | 主文档（13 章，含模板九章 + 合规披露 + 局限） |
-| `competition_v3.txt` | 8.6 KB | 官方模板九章版主文档 |
+| `competition_v4.md` | 20.1 KB | 主文档（13 章，含模板九章 + 合规披露 + 局限） |
+| `competition_v3.txt` | 8.8 KB | 官方模板九章版主文档 |
 | `competition_v2.md` | 7.0 KB | 初赛版文档 |
 | `competition_v2.txt` | 7.0 KB |  |
-| `README.md` | 6.3 KB |  |
+| `README.md` | 6.5 KB |  |
 | `DEPLOY_GUIDE.md` | 4.2 KB |  |
 | `deployment/README.md` | 0.6 KB |  |
 | `REPO_INTRO.txt` | 0.6 KB |  |
@@ -31,7 +32,7 @@
 | 文件 | 大小 | 用途 |
 |---|---|---|
 | `error_taxonomy.md` | 8.2 KB | 错误分类学：FP/FN 构成 + 标注噪声人工终审 |
-| `number_audit.md` | 6.9 KB | 数字一致性审计结果（含官方模板格式对照节） |
+| `number_audit.md` | 7.9 KB | 数字一致性审计结果（含官方模板格式对照节） |
 | `llm_baseline.md` | 6.4 KB | LLM 对照报告（deepseek + qwen3.7-plus，含循环性红利声明） |
 | `edge_case_benchmark.py` | 5.6 KB |  |
 | `qna_preparation.md` | 5.0 KB | 答辩 Q&A（10 问，含口径警示） |
@@ -59,11 +60,11 @@
 | 文件 | 大小 | 用途 |
 |---|---|---|
 | `docs/project_full_record.md` | 21.6 KB | 初赛→复赛全流程记录 |
-| `docs/D13_seal_declaration.md` | 13.2 KB | D13 封包声明（提交技术质检终审） |
+| `docs/D13_seal_declaration.md` | 17.8 KB | D13 封包声明（提交技术质检终审） |
 | `docs/file_inventory.md` | 12.3 KB | 项目文件总索引 |
+| `PROGRESS_SYNC.md` | 12.1 KB |  |
 | `PROJECT_BRIEF_QWEN.md` | 10.7 KB |  |
-| `QWEN_HANDOFF.md` | 10.5 KB |  |
-| `PROGRESS_SYNC.md` | 9.7 KB |  |
+| `QWEN_HANDOFF.md` | 10.7 KB |  |
 | `docs/process_review_d10.md` | 8.5 KB |  |
 | `docs/work_summary_d7.md` | 6.2 KB |  |
 | `docs/dataset_audit.md` | 3.5 KB | 数据集字段考古 |
@@ -77,7 +78,7 @@
 | 文件 | 大小 | 用途 |
 |---|---|---|
 | `SoundInsight：跨境电商耳机音质差评智能归因系统.pptx` | 18.1 MB |  |
-| `ppt_text_dump.md` | 11.3 KB |  |
+| `ppt_text_dump.md` | 11.4 KB |  |
 | `video_script.md` | 5.7 KB | 演示视频脚本（200 秒 / 9 镜头） |
 | `video_script_silent.md` | 4.4 KB | 无口播拍摄卡（操作步骤 + 画面要点） |
 | `视频素材/素材清单.md` | 2.9 KB |  |
@@ -190,19 +191,20 @@
 | `sample_reviews_100.csv` | 57.9 KB |  |
 | `agent_test_input.csv` | 27.9 KB |  |
 
-## 代码（84 项，0.3 MB）
+## 代码（86 项，0.3 MB）
 
 | 文件 | 大小 | 用途 |
 |---|---|---|
 | `build_pdf_v2.py` | 12.4 KB |  |
+| `check_doc_numbers.py` | 12.2 KB | 数字审计 + 模板格式对照脚本 |
 | `build_pdf.py` | 11.2 KB |  |
 | `make_ai_handoff.py` | 10.3 KB |  |
-| `check_doc_numbers.py` | 9.6 KB | 数字审计 + 模板格式对照脚本 |
 | `demo_sound_v2.py` | 9.1 KB | 本地 Gradio Demo（三页；已内置代理绕过） |
+| `build_submission.py` | 8.6 KB |  |
 | `report_builder.py` | 8.3 KB |  |
 | `ablation_train.py` | 8.2 KB |  |
 | `soundinsight_agent.py` | 8.1 KB | 一键洞察 Agent（md/excel、zh/en、非英文跳过） |
-| `build_submission.py` | 7.9 KB |  |
+| `pack_final.py` | 7.9 KB | 提交包打包与四项自检 |
 | `train_sound_model.py` | 7.8 KB |  |
 | `md_to_pdf.py` | 7.6 KB | 主文档 Markdown → PDF（内嵌中文字体） |
 | `learning_curve.py` | 6.8 KB |  |
@@ -213,7 +215,7 @@
 | `train_final.py` | 5.2 KB |  |
 | `train_roberta_quick.py` | 5.2 KB |  |
 | `predict_core.py` | 5.1 KB | 共享推理核心（含非英文显式拒绝） |
-| `pack_final.py` | 4.6 KB | 提交包打包与四项自检 |
+| `fix_ppt_threshold.py` | 4.8 KB |  |
 | `make_video_assets.py` | 4.5 KB |  |
 | `make_samples.py` | 4.4 KB |  |
 | `retime_srt.py` | 4.2 KB |  |
@@ -255,6 +257,7 @@
 | `prep_refine.py` | 2.0 KB |  |
 | `merge_review.py` | 2.0 KB |  |
 | `archive_exp.py` | 1.9 KB |  |
+| `_pack_when_free.py` | 1.9 KB |  |
 | `api_server.py` | 1.8 KB | FastAPI 服务（/health、/predict） |
 | `miss_rate.py` | 1.7 KB |  |
 | `install.bat` | 1.7 KB |  |
@@ -344,11 +347,13 @@
 | `multi_label_model/` | 256.1 MB | 冻结的多标签归因模型权重（约 256MB），不入 git |
 | `sound_model/` | 256.1 MB | 冻结的二分类模型权重（约 256MB），不入 git |
 
-## 其他（4 项，46.1 MB）
+## 其他（6 项，64.2 MB）
 
 | 文件 | 大小 | 用途 |
 |---|---|---|
 | `更新世界的锋芒_SoundInsight_演示视频.mp4` | 46.1 MB |  |
+| `SoundInsight：跨境电商耳机音质差评智能归因系统.pptx.bak` | 18.1 MB |  |
 | `视频录制速查.md` | 3.1 KB |  |
+| `hashes.txt` | 0.9 KB |  |
 | `per_class_thresholds_probe.json` | 0.4 KB |  |
 | `.gitignore` | 0.3 KB |  |
