@@ -7,7 +7,7 @@
 | 1 | **演示视频文件** | ❌ 待录制 | 脚本 `video_script.md`（200 秒/9 镜头）、无口播拍摄卡 `video_script_silent.md`、字幕 `video_script.srt`、满屏素材 `视频素材/` 均已就绪；导出后命名 `更新世界的锋芒_SoundInsight_演示视频.mp4` 放项目根目录，跑 `python pack_final.py` 自动并包 |
 | 2 | 主文档 PDF/Word 重生成（若改过 v4） | 已完成 | 改 `competition_v4.md` 后需跑 `md_to_pdf.py` + `md_to_docx.py` 再 `pack_final.py`（PDF 内含链接表，不重生成会与源文不一致） |
 | 2b | 创空间重建（新版批量报告生效） | ✅ **已完成（9/14 18:00 部署）** | 用户触发重新部署 → 新镜像 `363008-453f56d8-2026-09-14-17-55-37`。线上实测：批量页返回完整六节报告（1,622 字符，含归因概率、行动建议、中置信提示 4 条、成本对照、校准声明），单条推理 2/2；100 条耗时 20.1 秒 |
-| 3 | GitHub 推送 | 视情况 | GitCode 已最新；GitHub 若落后，`git push origin main`（SSL 报错加 `-c http.sslBackend=openssl`） |
+| 3 | 推送双平台 | ✅ **已完成（9/14）** | 本地 / GitHub / GitCode 三处一致：`4735121`。GitHub 推送受本机代理影响易断链，失败时重试或改用 HTTP/1.1（见 `docs/D14_resume_checklist.md`） |
 | 4 | 上传天池 | ❌ 待做 | 只传一个 zip：`更新世界的锋芒_SoundInsight_复赛作品.zip` |
 | 5 | 真实用户验证 | ❌ **不做** | 已从任务清单移除；`competition_v4.md` §9.1 第 7 条如实披露"未开展用户验证" |
 | 6 | GitCode 访问令牌轮换 | 建议 | 该令牌曾在聊天中出现过；提交完成后在 GitCode 设置中删除重建 |
