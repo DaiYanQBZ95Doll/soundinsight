@@ -34,8 +34,25 @@ SECRET_PATTERNS = [
     (r"(?i)(api[_-]?key|apikey|access[_-]?token|secret[_-]?key|client[_-]?secret)"
      r"\s*[:=]\s*[\"'][A-Za-z0-9_\-]{12,}[\"']", "key/token 赋值字面量"),
     (r"(?i)(password|passwd|pwd)\s*[:=]\s*[\"'][^\"'\s]{6,}[\"']", "口令赋值字面量"),
-    (r"JCahopmr[A-Za-z0-9_\-]*", "此前用过的 GitCode 令牌字样"),
 ]
+
+# 特定令牌复查：不把任何令牌字样写进仓库（写了就等于把检测针本身公开，
+# 且会让扫描器扫到自己）。需要复查某个具体令牌时用环境变量传入：
+#   $env:DSH_SECRET_NEEDLES="abc123,def456"; python scan_repo_hygiene.py
+EXTRA_NEEDLES = [s.strip() for s in os.environ.get("DSH_SECRET_NEEDLES", "").split(",")
+                 if s.strip()]
+SECRET_PATTERNS += [(re.escape(n), f"环境变量指定的令牌字样（{n[:4]}…）")
+                    for n in EXTRA_NEEDLES]
+
+# 自指文件：扫描器自身与扫描报告会引用命中项（令牌前缀、手机号片段等），
+# 排除它们，否则报告永远把自己算成"高危命中"
+SELF_EXEMPT = {"scan_repo_hygiene.py", "docs/repo_hygiene_scan.md"}
+
+# 历史遗留说明（固定在报告里输出，避免"改了检测方式就查不到"的假清白）
+HISTORY_NOTE = ("历史提交 57994c80 中出现过某个 GitCode 令牌的 **8 位前缀**"
+                "（当时作为扫描器的检测针写入脚本，现已移出，改为环境变量传入）。"
+                "完整令牌从未写入任何文件；建议在 GitCode 设置中轮换该令牌，"
+                "轮换后此历史残留即失去意义。")
 
 # 隐私：需人工判断（可能是有意公开的竞赛联系信息）
 # 手机/身份证号要求两侧不是字母数字（避免命中 sha256 十六进制串里的数字段），
@@ -45,8 +62,10 @@ PII_PATTERNS = [
     (r"(?<![0-9A-Za-z])1[3-9]\d{9}(?![0-9A-Za-z])", "中国大陆手机号", HASH_LINE),
     (r"[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}", "邮箱地址", None),
     (r"(?<![\w.])\d{17}[\dXx](?![\w])", "身份证号样式", HASH_LINE),
-    (r"[Cc]:[\\/]Users[\\/][^\\/\s\"']+", "本机用户绝对路径", None),
-    (r"(?i)(真实姓名|身份证|家庭住址|银行卡)", "隐私字段字样", None),
+    # 要求是真实路径（至少两级、且不是省略号占位），避免命中"文档里描述该模式"的句子
+    (r"[Cc]:[\\/]Users[\\/][^\\/\s\"'…]{2,}", "本机用户绝对路径", None),
+    # 要求是"字段名 + 冒号 + 值"的形状，避免命中"扫描类别"这类元描述
+    (r"(?i)(真实姓名|身份证|家庭住址|银行卡)\s*[:：]\s*\S", "隐私字段字样", None),
 ]
 
 # 废弃 claim：已被修正的旧数字 / 旧表述
@@ -209,6 +228,8 @@ def main() -> int:
         ext = os.path.splitext(f)[1].lower()
         if ext not in TEXT_EXT and ext not in DATA_EXT:
             continue
+        if f in SELF_EXEMPT:
+            continue
         is_data = ext in DATA_EXT
         scan_file(f, SECRET_PATTERNS, secret_hits, "secret")
         if is_data:  # 数据集正文里的 "password" 等词不算隐私或 claim
@@ -238,13 +259,21 @@ def main() -> int:
             out.append(f"- [高危] `{h['file']}` 行 {h['line']}：{h['desc']} → "
                        f"`{h['match']}`")
     else:
-        out.append("- [PASS] 跟踪文件内未发现密钥 / 令牌 / 明文口令")
+        out.append("- [PASS] 跟踪文件内未发现密钥 / 令牌 / 明文口令"
+                   "（扫描器自身与扫描报告已排除，避免自指命中）")
+    if EXTRA_NEEDLES:
+        out.append(f"- 本轮附带复查了 {len(EXTRA_NEEDLES)} 个由环境变量 "
+                   f"`DSH_SECRET_NEEDLES` 指定的令牌字样")
+    else:
+        out.append("- 未指定 `DSH_SECRET_NEEDLES`（需要复查某个具体令牌时再传，"
+                   "以免把检测针写进仓库）")
     if hist_hits:
         out.append(f"\n历史提交中的同类命中（{len(hist_hits)} 条，需人工确认）：")
         for h in hist_hits[:20]:
             out.append(f"- [历史 {h['commit']}] {h['desc']} → {h['line']}")
     else:
         out.append("- [PASS] git 历史文本文件中未发现密钥模式")
+    out.append(f"- [记录] {HISTORY_NOTE}")
     out.append("")
     out.append("## 二、隐私信息")
     if pii_hits:

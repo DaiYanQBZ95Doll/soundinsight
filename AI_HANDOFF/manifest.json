@@ -1,7 +1,7 @@
 {
- "generated": "2026-09-14 21:23",
+ "generated": "2026-09-14 21:59",
  "root": "C:\\deepseek-harness-master\\soundinsight",
- "count": 278,
+ "count": 279,
  "entries": [
   {
    "path": ".gitignore",
@@ -41,9 +41,9 @@
   {
    "path": "PROGRESS_SYNC.md",
    "category": "过程与交接文档",
-   "size_bytes": 13420,
+   "size_bytes": 14123,
    "purpose": "",
-   "sha256_16": "fe46e3ef3e3b94d421dba748e77654b5fb6705e7f9a773ba7c222aad3af462a1"
+   "sha256_16": "c23f79dd3dfc807f6804b39e81bd725307d719316d03fcd6db07ab5781c19652"
   },
   {
    "path": "PROJECT_BRIEF_QWEN.md",
@@ -121,6 +121,13 @@
    "size_bytes": 18935747,
    "purpose": "",
    "sha256_16": ""
+  },
+  {
+   "path": "_which_zip.py",
+   "category": "代码",
+   "size_bytes": 2978,
+   "purpose": "",
+   "sha256_16": "bf27ff62424c29223ab387d9cb481c0beeeb5b416d12bedb0391a4f0313433ee"
   },
   {
    "path": "a4_mid_remove.py",
@@ -1210,9 +1217,9 @@
   {
    "path": "scan_repo_hygiene.py",
    "category": "代码",
-   "size_bytes": 16240,
+   "size_bytes": 18174,
    "purpose": "",
-   "sha256_16": "302d9b8805a8e4d26bbc6e6557a15ebc47b7d9b4f4fcce80130484dc03901819"
+   "sha256_16": "506ca10f0b5f36b8817da642646f11dd54592679226d67034b5b5d7bd7405fce"
   },
   {
    "path": "significance_test.md",
@@ -1588,9 +1595,9 @@
   {
    "path": "docs/D13_seal_declaration.md",
    "category": "过程与交接文档",
-   "size_bytes": 19434,
+   "size_bytes": 20147,
    "purpose": "D13 封包声明（提交技术质检终审）",
-   "sha256_16": "3f76d6db66e49b9f44b34dd1722ce3ec09af7b87fa7fea0e7e4072d64de248f7"
+   "sha256_16": "7ba049a9d271afc2a9df7131a34e05c5bf1ae5d5966494a1c7922eb49b906843"
   },
   {
    "path": "docs/D14_resume_checklist.md",
@@ -1623,9 +1630,9 @@
   {
    "path": "docs/legacy_materials_notice.md",
    "category": "过程与交接文档",
-   "size_bytes": 7454,
+   "size_bytes": 8524,
    "purpose": "",
-   "sha256_16": "d671602e27434a217784853a24c0cbd732af3e337de3d1f1924043886c978b6c"
+   "sha256_16": "abb2ee647db3db71087c155bc7beb15c0d201bff700f29a25fc6c82fa6af7561"
   },
   {
    "path": "docs/process_review_d10.md",
@@ -1644,9 +1651,9 @@
   {
    "path": "docs/repo_hygiene_scan.md",
    "category": "过程与交接文档",
-   "size_bytes": 2627,
+   "size_bytes": 3577,
    "purpose": "",
-   "sha256_16": "20f1a165ef2aeabc1176dc14a5c619c380cfb3f9c2bdf43d474a8d9c57d03b97"
+   "sha256_16": "433b9390f485d9953e58e62b522937776469a5caf8c11908859320510e37f059"
   },
   {
    "path": "docs/treble_failure_analysis.md",

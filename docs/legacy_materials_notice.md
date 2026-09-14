@@ -14,7 +14,7 @@
 | 口径与局限说明 | `AI_HANDOFF/03_metrics_and_caveats.md` | 三套口径定义、冻结数字清单、已知局限 |
 | 对外主文档 | `competition_v4.md` | 提交用 PDF / Word 由 `md_to_pdf.py` / `md_to_docx.py` 从它生成；`competition_v3.txt` 为同源精简版 |
 | 模型与验证资产（冻结） | `sound_model/`、`multi_label_model/`、`val_v2.csv`、`train_final.py` 等训练脚本 | 不得重训、不得修改、不得混入训练数据 |
-| 提交物校验值 | 根目录 `hashes.txt`（外层容器）＋ 提交包内 `hashes.txt`（四项提交物内容哈希） | 容器哈希随重打变化，以文件为准 |
+| 提交物校验值 | 根目录 `hashes.txt`（外层容器）＋ 提交包内 `hashes.txt`（四项提交物内容哈希） | **提交后冻结**：`更新世界的锋芒_SoundInsight_复赛作品.zip` 已于 2026-09-14 21:44:28 提交天池（44,446,308 B / `e6cae286515ef1d2`），此后不再重打——仓库内该 zip 即已提交版本；后续文档更新只改仓库与 `hashes.txt` |
 | 卫生自检 | `scan_repo_hygiene.py` → `docs/repo_hygiene_scan.md` | 密钥 / 隐私 / 废弃 claim / 生成物一致性 |
 
 **三套口径不可混用**（详见 `AI_HANDOFF/03_metrics_and_caveats.md`）：
@@ -67,6 +67,7 @@
 扫描范围：`git ls-files` 的 269 个跟踪文件逐行扫 + git 历史文本文件；工具 `scan_repo_hygiene.py`，报告 `docs/repo_hygiene_scan.md`。
 
 - **密钥 / 令牌 / 口令：0 命中**（跟踪文件与历史提交均为 0）。`upload_models.py` 中的 `https://oauth2:{args.token}@…` 是命令行参数占位符，令牌不落盘；ModelScope 与 GitCode 的令牌只在本机命令行使用，未写入任何文件。
+- **历史遗留（如实记录）**：提交 `57994c80` 中出现过某个 GitCode 令牌的 **8 位前缀**——当时被写进 `scan_repo_hygiene.py` 作为"检测针"，这本身就是设计缺陷（等于把针公开，且扫描器会扫到自己），已改为用环境变量 `DSH_SECRET_NEEDLES` 传入。完整令牌从未写入任何文件；**建议在 GitCode 设置中轮换该令牌**，轮换后这段前缀残留即失去意义。
 - **本机绝对路径（`C:\Users\…`）：0 命中**。
 - **竞赛联系信息（有意填写，模板要求）**：`competition_v3.txt` / `competition_v4.md` §一 团队信息表含队长手机号与邮箱；`docs/D13_seal_declaration.md`、`docs/project_full_record.md` 引用同一信息。**公开仓库可见**。如需脱敏：主文档保留邮箱、手机号改为赛事平台可查（会偏离模板"联系电话"要求，建议赛后再处理或改为仅在提交 PDF 中保留）。
 - **数据集正文**：来自公开数据集 Amazon Reviews 2023（McAuley Lab），不含个人身份信息；扫描中出现的"手机号/身份证号"命中均为 **sha256 十六进制串与浮点数中的数字连串**，经逐条核对为误报（`AI_HANDOFF/manifest.json` 两条、`learning_curve_results.json` 一条）。
@@ -87,3 +88,5 @@ python make_ai_handoff.py        # 最后跑：刷新 manifest.json（否则其�
 ```
 
 顺序要点：`make_ai_handoff.py` **必须最后一个跑**——它记录每个文件的大小与哈希，任何后续改动都会让它过期（`scan_repo_hygiene.py` 第四节会直接报出来）。`pack_final.py` 只组装外层 zip，不会重建内层两个包。
+
+**提交后特别条款**：提交包一旦上传天池即冻结。上面这条链路中的 `build_submission.py` / `pack_final.py` **只在尚未提交或明确需要重传时使用**；提交之后改文档，只跑 `check_doc_numbers.py` / `scan_repo_hygiene.py` / `make_ai_handoff.py`，不要重打包，否则仓库内的 zip 会与已提交版本不一致（重打必须显式声明差异）。
