@@ -6,7 +6,9 @@
 3. 下载 URL 误拼本地绝对路径（FilePath=/home/studio/PROJECT/...）导致 404，已改用仓库相对目录名。
 当前权重下载采用多入口回退链（www.modelscope.cn / modelscope.cn × API 风格 ± Revision / resolve 直链），失败时日志带 URL 与响应摘要。
 
-公开地址：https://modelscope.cn/studios/DaiYanQBZ95Doll/SoundInsight （应用直链 https://daiyanqbz95doll-soundinsight.ms.show；deploy_check 已验收：单条推理 2/2 通过，批量 100 条 15.1 秒；空间已于 2026-09-05 由用户发布）
+公开地址：https://modelscope.cn/studios/DaiYanQBZ95Doll/SoundInsight （应用直链 https://daiyanqbz95doll-soundinsight.ms.show；deploy_check 已验收：单条推理 2/2 通过，批量 100 条 15-20 秒；空间已于 2026-09-05 由用户发布）
+
+更新记录：2026-09-14 用户触发重新部署 → 新镜像 `363008-453f56d8-2026-09-14-17-55-37`；批量分析页由"摘要"升级为**完整六节报告**（与命令行 Agent 同口径，含五类归因概率与中置信提示）。线上实测：报告 1,622 字符、单条推理 2/2、100 条 20.1 秒。
 
 目标：获得一个中国大陆网络可直接访问的公网 Demo 地址，总操作量约 30 分钟。
 

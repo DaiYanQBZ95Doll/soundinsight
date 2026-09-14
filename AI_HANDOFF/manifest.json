@@ -1,7 +1,7 @@
 {
- "generated": "2026-09-14 17:53",
+ "generated": "2026-09-14 18:03",
  "root": "C:\\deepseek-harness-master\\soundinsight",
- "count": 264,
+ "count": 265,
  "entries": [
   {
    "path": ".gitignore",
@@ -27,9 +27,9 @@
   {
    "path": "DEPLOY_GUIDE.md",
    "category": "主文档与模板",
-   "size_bytes": 3963,
+   "size_bytes": 4282,
    "purpose": "",
-   "sha256_16": "ac4c82c3c77f449d4d25e2fa26b6a34ae5871f372cd28713c7d2072e32524c9a"
+   "sha256_16": "2cfcf8c948d422d4e350224cbafb1e51bddb1af5f9964b9e5d64a70999efe0e1"
   },
   {
    "path": "MODEL_CARD.md",
@@ -41,9 +41,9 @@
   {
    "path": "PROGRESS_SYNC.md",
    "category": "过程与交接文档",
-   "size_bytes": 9694,
+   "size_bytes": 9978,
    "purpose": "",
-   "sha256_16": "648dbbce02304fbc39c8047e887c334da4129e76e2ef15b6ed2782921e4d4dd1"
+   "sha256_16": "ffd8faa5c826e971dd60ec72d66dd41dcf006e50d619aea12c4336da34de2f44"
   },
   {
    "path": "PROJECT_BRIEF_QWEN.md",
@@ -1369,6 +1369,13 @@
    "sha256_16": "8ce0928bad662acabb40f771c3499b9081ba6d274d75fd759c66f63548e734cb"
   },
   {
+   "path": "verify_online_report.py",
+   "category": "代码",
+   "size_bytes": 2242,
+   "purpose": "",
+   "sha256_16": "ff5079cf928d71094c29581c7a5b3c0848419c04394b05355c3fe5e1da24363a"
+  },
+  {
    "path": "video_script.md",
    "category": "演示材料",
    "size_bytes": 5416,
@@ -1385,9 +1392,9 @@
   {
    "path": "video_script_silent.md",
    "category": "演示材料",
-   "size_bytes": 4016,
+   "size_bytes": 4145,
    "purpose": "无口播拍摄卡（操作步骤 + 画面要点）",
-   "sha256_16": "db7bc4151990b99a8385bd3ad70f370946602d56d7e19fdc21d029515a33260a"
+   "sha256_16": "aaea49e6962ff3f4e5df0abc67d27fbf01e984c6839ae2316be12d33bbda327d"
   },
   {
    "path": "year_split_eval.py",

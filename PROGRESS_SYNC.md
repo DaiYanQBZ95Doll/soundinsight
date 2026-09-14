@@ -57,7 +57,7 @@
 - 在线 Demo（ModelScope 创空间）：**部署成功、deploy_check 通过、已由用户发布（2026-09-05）**。地址 https://modelscope.cn/studios/DaiYanQBZ95Doll/SoundInsight（直链 https://daiyanqbz95doll-soundinsight.ms.show）。验收：页面 200；gradio_api/info 暴露 single_predict+batch_analyze；单条推理 2/2（负面→98.9%+杂音、正面→正常，均带校准提示）；批量上传 100 条 15.1 秒（12 差评、五类分布与本地一致）。修复过程三次：torch/torchvision ABI 硬钉冲突、平台敏感词扫描自动回滚（"内网"措辞）、下载 URL 误拼绝对路径致 404。URL 已回填 README 与 v4。
 - P0-1 路线 (b)（qwen3.7-plus 重跑对照）：**已完成（2026-09-05）**。Token Plan 专属基地址（token-plan.cn-beijing.maas.aliyuncs.com）+ qwen3.7-plus 三设置：零样本 F1 0.9149 / 5-shot 0.8937 / 复核 0.8661（tokens 合计 490,747，费用走套餐额度）。v3/v4 5.2 表已改为两模型真实调用（qwen3.7-plus 百炼 Token Plan + deepseek-chat 官方 API）；llm_baseline.md 新增 2b 节与结论 6（跨 LLM 稳健性，qwen 无同源红利）。key 未落盘、未进 git，建议用户轮换。
 
-- **D14 产品改进（提交前）**：批量分析页原先只输出摘要，与命令行 Agent 的六节报告不一致（用户指出 Demo 呈现过薄）。已抽出共享模块 `report_builder.py`（六节报告 + 优先级 + 结论判定 + 成本对照 + 中置信提示），三方统一：`soundinsight_agent.py`、`demo_sound_v2.py`、`deployment/app.py`；语种判定统一到 `text_utils.py`（`predict_core` 仅再导出，避免两份实现）。典型案例新增**五类归因概率**，报告第五节新增**中置信条数提示**（v4 §9.2 对应条目已标注"本轮已实现"）。本地 Demo 与 Agent（zh/en/excel）回归通过；创空间已推送 `eb01fb2` 并触发重建。
+- **D14 产品改进（提交前）**：批量分析页原先只输出摘要，与命令行 Agent 的六节报告不一致（用户指出 Demo 呈现过薄）。已抽出共享模块 `report_builder.py`（六节报告 + 优先级 + 结论判定 + 成本对照 + 中置信提示），三方统一：`soundinsight_agent.py`、`demo_sound_v2.py`、`deployment/app.py`；语种判定统一到 `text_utils.py`（`predict_core` 仅再导出，避免两份实现）。典型案例新增**五类归因概率**，报告第五节新增**中置信条数提示**（v4 §9.2 对应条目已标注"本轮已实现"）。本地 Demo 与 Agent（zh/en/excel）回归通过；创空间已推送 `eb01fb2`，用户于 9/14 触发重新部署 → 新镜像 `363008-453f56d8-2026-09-14-17-55-37`，**线上实测通过**：批量页返回完整六节报告（1,622 字符；含归因概率、三条紧急建议、"中置信提示 4 条"、成本对照、校准声明），单条推理 2/2，100 条 20.1 秒。
 
 ## 重建产物实测值（最新）
 
