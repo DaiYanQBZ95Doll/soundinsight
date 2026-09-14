@@ -1,4 +1,4 @@
-# -*- coding: utf-8 -*-
+﻿# -*- coding: utf-8 -*-
 # 本脚本用于生成提交物打包：
 #   1. 更新世界的锋芒_SoundInsight_Demo.zip（源码+配置+样例+模型下载脚本，不含权重）
 #   2. 更新世界的锋芒_SoundInsight_复赛作品.zip（骨架：Demo.zip + 提交说明）
@@ -49,6 +49,7 @@ DEV_SCRIPTS = {
     "check_studio_build.py", "diagnose_treble.py",
     "tune_per_class_threshold.py", "make_video_assets.py",
     "make_ai_handoff.py", "hashes.py", "build_submission.py",
+    "fix_ppt_threshold.py", "pack_when_free.py",
 }
 
 README_SUBMISSION = """# SoundInsight 复赛作品提交包

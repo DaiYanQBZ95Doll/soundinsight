@@ -17,7 +17,8 @@ CORE_REQUIRED = [
     (r"0\.024", ["0.024", "0.0240", "±0.024"], "CV标准差"),
     (r"0\.97", ["0.97", "0.9744"], "阈值"),
     (r"89\.6", ["89.6", "0.896"], "召回率"),
-    (r"47\.9", ["47.9", "0.479"], "精确率"),
+    (r"47\.9|66\.3", ["47.9", "66.3"],
+     "精确率（须标阈值档：0.9744 档 66.3% / 0.5 档 47.9%）"),
     (r"0\.497", ["0.497"], "SVM基线"),
     (r"0\.410", ["0.410", "0.41"], "LR基线"),
     (r"0\.025", ["0.025"], "dummy基线"),
@@ -117,6 +118,14 @@ TEMPLATE_SECTIONS = [
     "附件命名规范", "注意事项",
 ]
 TEMPLATE_FILES = ["competition_v4.md", "competition_v3.txt"]
+
+# 口径配对检查覆盖的文档（提交物与对外交接文档）
+PAIR_FILES = [
+    "competition_v4.md", "competition_v3.txt", "README.md",
+    "QWEN_HANDOFF.md", "MODEL_CARD.md",
+    "AI_HANDOFF/01_project_overview.md",
+    "AI_HANDOFF/03_metrics_and_caveats.md",
+]
 
 GROUPS = [
     {"files": ["competition_v3.txt", "competition_v4.md", "README.md",
@@ -222,6 +231,51 @@ def check_template_conformance(out) -> None:
     out.append("")
 
 
+def check_threshold_pairing(out) -> None:
+    """防复发：同一行不得把"阈值 0.9744 的 F1"与"阈值 0.5 的精确率/召回率"并排。
+
+    起因：v4 §7.2 曾写成"F1=0.6871（阈值 0.97），召回率 89.6%，精确率 47.9%"——
+    三个数字并排，读者会当成同一阈值的结果，实际 89.6%/47.9% 来自阈值 0.5。
+    规则：一行同时出现调优档 F1（0.687/0.6871）与低阈值档 P/R（89.6/47.9）时，
+    必须同时显式写出两个阈值标签（0.9744 或 0.97，以及 0.5），否则判 FAIL。
+    """
+    out.append("## 口径配对检查（阈值并排）")
+    tuned_f1 = ("0.6871", "0.687")
+    low_thr_pr = ("89.6", "47.9")
+    tuned_label = ("0.9744", "0.97")
+    low_label = ("0.5",)
+    for fname in PAIR_FILES:
+        lines, _ = read_file(fname)
+        if lines is None:
+            out.append(f"- {fname}：不存在，SKIP")
+            continue
+        bad = []
+        for i, line in enumerate(lines, 1):
+            if not (any(t in line for t in tuned_f1) and
+                    any(t in line for t in low_thr_pr)):
+                continue
+            if not (any(t in line for t in tuned_label) and
+                    any(t in line for t in low_label)):
+                bad.append((i, line.strip()[:90]))
+        if bad:
+            for i, snippet in bad:
+                out.append(f"- [FAIL] {fname} 行 {i} 两档指标并排且未标阈值：{snippet}")
+        else:
+            out.append(f"- [PASS] {fname}：无“调优档 F1 + 阈值 0.5 档 P/R”并排")
+    # PPT 文本：不在提交 zip 内，仅提示不判 FAIL（改与不改由用户决定）
+    lines, _ = read_file("ppt_text_dump.md")
+    if lines:
+        hits = [i for i, line in enumerate(lines, 1)
+                if any(t in line for t in tuned_f1)
+                and any(t in line for t in low_thr_pr)
+                and not (any(t in line for t in tuned_label)
+                         and any(t in line for t in low_label))]
+        out.append(f"- [注意] ppt_text_dump.md：{len(hits)} 行同型并排"
+                   f"（{'行 ' + ','.join(map(str, hits)) if hits else '无'}）"
+                   f"——PPT 不在提交包内，需用户决定是否改")
+    out.append("")
+
+
 def main() -> None:
     out = ["# 文档数字一致性审计", ""]
     for grp in GROUPS:
@@ -229,6 +283,7 @@ def main() -> None:
             audit_file(fname, grp["required"], grp["forbidden"],
                        grp["check_1288"], out)
     check_template_conformance(out)
+    check_threshold_pairing(out)
     text = "\n".join(out)
     with open(OUT_MD, "w", encoding="utf-8") as f:
         f.write(text)
