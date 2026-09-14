@@ -1,6 +1,6 @@
 # 文件地图（由 make_ai_handoff.py 自动生成，勿手改）
 
-> 生成时间：2026-09-14 17:19；共 255 个条目；体积单位 KB/MB。
+> 生成时间：2026-09-14 17:23；共 258 个条目；体积单位 KB/MB。
 
 ## 提交物（5 项，1.5 MB）
 
@@ -106,7 +106,7 @@
 | `exp08_ablation_B/confusion_matrix.png` | 37.7 KB |  |
 | `pr_curve.png` | 37.7 KB |  |
 
-## 证据·标注流程（18 项，3.4 MB）
+## 证据·标注流程（19 项，3.4 MB）
 
 | 文件 | 大小 | 用途 |
 |---|---|---|
@@ -127,6 +127,7 @@
 | `human_review_conf30.csv` | 9.4 KB | 中置信 8 条人工复核表（3/8 通过→全剔除） |
 | `human_review_noise16.csv` | 7.1 KB | 标注噪声 16 条人工终审表（15/16 确认） |
 | `docs/treble_failure_analysis.md` | 6.2 KB |  |
+| `docs/treble_fix_proposal.md` | 5.9 KB |  |
 | `prep_review_input.py` | 1.0 KB |  |
 
 ## 证据·对照与错误分析（35 项，8.2 MB）
@@ -188,7 +189,7 @@
 | `sample_reviews_100.csv` | 57.9 KB |  |
 | `agent_test_input.csv` | 27.9 KB |  |
 
-## 代码（76 项，0.3 MB）
+## 代码（77 项，0.3 MB）
 
 | 文件 | 大小 | 用途 |
 |---|---|---|
@@ -213,6 +214,7 @@
 | `pack_final.py` | 4.6 KB | 提交包打包与四项自检 |
 | `make_video_assets.py` | 4.5 KB |  |
 | `make_samples.py` | 4.4 KB |  |
+| `tune_per_class_threshold.py` | 4.0 KB |  |
 | `upload_models.py` | 3.9 KB |  |
 | `test_model.py` | 3.9 KB |  |
 | `merge_refine.py` | 3.8 KB |  |
@@ -331,8 +333,9 @@
 | `multi_label_model/` | 256.1 MB | 冻结的多标签归因模型权重（约 256MB），不入 git |
 | `sound_model/` | 256.1 MB | 冻结的二分类模型权重（约 256MB），不入 git |
 
-## 其他（1 项，0.0 MB）
+## 其他（2 项，0.0 MB）
 
 | 文件 | 大小 | 用途 |
 |---|---|---|
+| `per_class_thresholds_probe.json` | 0.4 KB |  |
 | `.gitignore` | 0.3 KB |  |

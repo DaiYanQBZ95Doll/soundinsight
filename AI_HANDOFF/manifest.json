@@ -1,7 +1,7 @@
 {
- "generated": "2026-09-14 17:19",
+ "generated": "2026-09-14 17:23",
  "root": "C:\\deepseek-harness-master\\soundinsight",
- "count": 255,
+ "count": 258,
  "entries": [
   {
    "path": ".gitignore",
@@ -970,6 +970,13 @@
    "sha256_16": "25e52323b5f33fcf94eccc1d795733ff8d91c746cb20ebe9cf4496c53c6815d2"
   },
   {
+   "path": "per_class_thresholds_probe.json",
+   "category": "其他",
+   "size_bytes": 441,
+   "purpose": "",
+   "sha256_16": "4c106a0bf6c9da5c371153f2eb2a7a6dd397cd9d794ff6ad8c647840d006c397"
+  },
+  {
    "path": "ppt_speed_fix.py",
    "category": "代码",
    "size_bytes": 2313,
@@ -1278,6 +1285,13 @@
    "sha256_16": "216957ba7d56e57ca8c2772e306559bd7d4cdc356ce676516080a8e86fd420e4"
   },
   {
+   "path": "tune_per_class_threshold.py",
+   "category": "代码",
+   "size_bytes": 4106,
+   "purpose": "",
+   "sha256_16": "fb01ff8a71505273918960d729045e63c69ecdc1aef62836033c304d2687d925"
+  },
+  {
    "path": "upload_models.py",
    "category": "代码",
    "size_bytes": 4017,
@@ -1500,6 +1514,13 @@
    "size_bytes": 6380,
    "purpose": "",
    "sha256_16": "078501a220d9ba9f2661148cc92272fda50dd8b57f96710d2f11f217bdd3fdca"
+  },
+  {
+   "path": "docs/treble_fix_proposal.md",
+   "category": "证据·标注流程",
+   "size_bytes": 6019,
+   "purpose": "",
+   "sha256_16": "e4f986c39b246e2f532da0f05f87e24ff64d244e64a895339b3dc3e52eb1b69b"
   },
   {
    "path": "docs/work_summary_d7.md",
