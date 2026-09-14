@@ -1,7 +1,7 @@
 {
- "generated": "2026-09-14 18:26",
+ "generated": "2026-09-14 19:28",
  "root": "C:\\deepseek-harness-master\\soundinsight",
- "count": 267,
+ "count": 271,
  "entries": [
   {
    "path": ".gitignore",
@@ -291,11 +291,25 @@
    "sha256_16": "7adcfdad16912e4c70fd4fa62a9584c9ba3d6c3b1ce3d5db1d322f507ffd3ef5"
   },
   {
+   "path": "check_edge_cases.py",
+   "category": "验证报告",
+   "size_bytes": 2767,
+   "purpose": "",
+   "sha256_16": "3910898c52872983a24110337acd676950026f922ed68ba4b77f3c3c95a9e5b6"
+  },
+  {
    "path": "check_studio_build.py",
    "category": "代码",
    "size_bytes": 1309,
    "purpose": "",
    "sha256_16": "614f6a650f94c9e8ba855cfa5e40e81fd1820ca4326068eb1737414d1bc4b275"
+  },
+  {
+   "path": "check_video.py",
+   "category": "代码",
+   "size_bytes": 2136,
+   "purpose": "",
+   "sha256_16": "2fa5dd149fbfd9586f311efa326804ffd0b514147a877350d8ee378b3db806bb"
   },
   {
    "path": "competition_v2.md",
@@ -1138,6 +1152,13 @@
    "sha256_16": "d5cb7a676cdc7df4344c86b00636e84c0b0c61a33dadb4c449166227d6763a93"
   },
   {
+   "path": "retime_srt.py",
+   "category": "代码",
+   "size_bytes": 4275,
+   "purpose": "",
+   "sha256_16": "e7e8f47bbe8205ede09afff77d8dd16d49b0eb338d06a8d618b4f1ca3b10f94c"
+  },
+  {
    "path": "review_input.jsonl",
    "category": "证据·标注流程",
    "size_bytes": 1081382,
@@ -1385,23 +1406,23 @@
   {
    "path": "video_script.md",
    "category": "演示材料",
-   "size_bytes": 5498,
+   "size_bytes": 5886,
    "purpose": "演示视频脚本（200 秒 / 9 镜头）",
-   "sha256_16": "a740b1ed2d79c057fa4d3996204da61e129df8b67203b2ef443ff3b45c23d6de"
+   "sha256_16": "02dac8f08e5cc4e0c82f618dae9c75682700700ae7648340c84f75e46bb2b944"
   },
   {
    "path": "video_script.srt",
    "category": "演示材料",
-   "size_bytes": 2935,
+   "size_bytes": 2745,
    "purpose": "字幕文件（28 条 / 0:00-3:20 / UTF-8）",
-   "sha256_16": "2d63b488c2df40fb90ce59c8704e21ecbdecd0574103b2aedfacd4d65ff59cd1"
+   "sha256_16": "2832c6054068d4afea4c867b113381bc5db2c4be08d44443924898a73d9934e7"
   },
   {
    "path": "video_script_silent.md",
    "category": "演示材料",
-   "size_bytes": 4198,
+   "size_bytes": 4504,
    "purpose": "无口播拍摄卡（操作步骤 + 画面要点）",
-   "sha256_16": "a3c3ec3a33cdee08f25501e695296a5f0a8e0c94a6098e91e70049dfa7e582c7"
+   "sha256_16": "7b54357b00b47e7bf1f4252ebc901466b31a15c86b5088613e480db15fda58f7"
   },
   {
    "path": "year_split_eval.py",
@@ -1455,16 +1476,23 @@
   {
    "path": "更新世界的锋芒_SoundInsight_复赛作品.zip",
    "category": "提交物",
-   "size_bytes": 768168,
+   "size_bytes": 44430861,
    "purpose": "",
-   "sha256_16": "278e7bad650a4ad16f293f139e3f53cd97e22d83e25bc0519eeb4054cc5efed0"
+   "sha256_16": ""
+  },
+  {
+   "path": "更新世界的锋芒_SoundInsight_演示视频.mp4",
+   "category": "其他",
+   "size_bytes": 48375526,
+   "purpose": "",
+   "sha256_16": ""
   },
   {
    "path": "视频录制速查.md",
    "category": "其他",
-   "size_bytes": 3158,
+   "size_bytes": 3137,
    "purpose": "",
-   "sha256_16": "2aa6d459c0af76e854404dc648b9986992d8d576a937dc37f1a818528dcade80"
+   "sha256_16": "1e52dd632ca85277e7051bd11206770c8773699b8b2528abf0a3f5264c1e86b0"
   },
   {
    "path": "deployment/.gitattributes",
@@ -1525,9 +1553,9 @@
   {
    "path": "docs/D13_seal_declaration.md",
    "category": "过程与交接文档",
-   "size_bytes": 12981,
+   "size_bytes": 13511,
    "purpose": "D13 封包声明（提交技术质检终审）",
-   "sha256_16": "b924a239f97e8795d0b5830186db8329b433c72fe41d25770198973ec63590dd"
+   "sha256_16": "3e62953c7689f8b29a22afde73c067652308191203af79e88c68b459d8f2c7ab"
   },
   {
    "path": "docs/D14_resume_checklist.md",
