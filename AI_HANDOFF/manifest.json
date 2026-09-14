@@ -1,7 +1,7 @@
 {
- "generated": "2026-09-14 18:17",
+ "generated": "2026-09-14 18:26",
  "root": "C:\\deepseek-harness-master\\soundinsight",
- "count": 266,
+ "count": 267,
  "entries": [
   {
    "path": ".gitignore",
@@ -218,7 +218,7 @@
    "category": "生成产物·日志",
    "size_bytes": 2630,
    "purpose": "",
-   "sha256_16": "38c06edc43f54103a8ef722f526c970da9af58fca5baee85550a1d268ee4930b"
+   "sha256_16": "d2a2b20d840dd231eaa050eed6b7fc0c7795920d2048ffc5a91b884d0aa0855a"
   },
   {
    "path": "batch_report.txt",
@@ -1089,6 +1089,13 @@
    "sha256_16": "0be10da5348576d9e62fd5040b89910e0e9aeb2210b7f2e07cd5c0ce45941253"
   },
   {
+   "path": "rebuild_video_timing.py",
+   "category": "代码",
+   "size_bytes": 2546,
+   "purpose": "",
+   "sha256_16": "d43df72453af0841b87b99d37aaa10d64fc39521612d368d9126a93363cb8c3b"
+  },
+  {
    "path": "report_builder.py",
    "category": "代码",
    "size_bytes": 8539,
@@ -1378,23 +1385,23 @@
   {
    "path": "video_script.md",
    "category": "演示材料",
-   "size_bytes": 5416,
+   "size_bytes": 5498,
    "purpose": "演示视频脚本（200 秒 / 9 镜头）",
-   "sha256_16": "1666118dab11527ad94f66c6026c70d1bb51fff27718c3b11edfa59938013bd1"
+   "sha256_16": "a740b1ed2d79c057fa4d3996204da61e129df8b67203b2ef443ff3b45c23d6de"
   },
   {
    "path": "video_script.srt",
    "category": "演示材料",
-   "size_bytes": 2884,
+   "size_bytes": 2935,
    "purpose": "字幕文件（28 条 / 0:00-3:20 / UTF-8）",
-   "sha256_16": "ae9b5af95c905836da25367ab3a11e511a7b2b68c9408b2cf5a43377b82bdfb6"
+   "sha256_16": "2d63b488c2df40fb90ce59c8704e21ecbdecd0574103b2aedfacd4d65ff59cd1"
   },
   {
    "path": "video_script_silent.md",
    "category": "演示材料",
-   "size_bytes": 4145,
+   "size_bytes": 4198,
    "purpose": "无口播拍摄卡（操作步骤 + 画面要点）",
-   "sha256_16": "aaea49e6962ff3f4e5df0abc67d27fbf01e984c6839ae2316be12d33bbda327d"
+   "sha256_16": "a3c3ec3a33cdee08f25501e695296a5f0a8e0c94a6098e91e70049dfa7e582c7"
   },
   {
    "path": "year_split_eval.py",
@@ -1455,9 +1462,9 @@
   {
    "path": "视频录制速查.md",
    "category": "其他",
-   "size_bytes": 2987,
+   "size_bytes": 3158,
    "purpose": "",
-   "sha256_16": "db7298765a71cc8a5e4b6c38c8f1c9529b5b57ee656c00a4f8cbf80d749a03b6"
+   "sha256_16": "2aa6d459c0af76e854404dc648b9986992d8d576a937dc37f1a818528dcade80"
   },
   {
    "path": "deployment/.gitattributes",
@@ -1833,9 +1840,9 @@
   {
    "path": "视频素材/素材清单.md",
    "category": "演示材料",
-   "size_bytes": 2922,
+   "size_bytes": 2960,
    "purpose": "",
-   "sha256_16": "ddcc64347358f8da93b8286cfb5969b2b025f7c01b08d79511e3aa5af4952da5"
+   "sha256_16": "e4c582905958ea6cc51d964006cbbf54375498ee441914a79add7c661e8909d6"
   },
   {
    "path": "sound_model/",

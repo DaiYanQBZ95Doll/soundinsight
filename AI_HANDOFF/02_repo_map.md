@@ -1,6 +1,6 @@
 # 文件地图（由 make_ai_handoff.py 自动生成，勿手改）
 
-> 生成时间：2026-09-14 18:17；共 266 个条目；体积单位 KB/MB。
+> 生成时间：2026-09-14 18:26；共 267 个条目；体积单位 KB/MB。
 
 ## 提交物（5 项，1.5 MB）
 
@@ -77,10 +77,10 @@
 |---|---|---|
 | `SoundInsight：跨境电商耳机音质差评智能归因系统.pptx` | 18.1 MB |  |
 | `ppt_text_dump.md` | 11.3 KB |  |
-| `video_script.md` | 5.3 KB | 演示视频脚本（200 秒 / 9 镜头） |
-| `video_script_silent.md` | 4.0 KB | 无口播拍摄卡（操作步骤 + 画面要点） |
+| `video_script.md` | 5.4 KB | 演示视频脚本（200 秒 / 9 镜头） |
+| `video_script_silent.md` | 4.1 KB | 无口播拍摄卡（操作步骤 + 画面要点） |
 | `视频素材/素材清单.md` | 2.9 KB |  |
-| `video_script.srt` | 2.8 KB | 字幕文件（28 条 / 0:00-3:20 / UTF-8） |
+| `video_script.srt` | 2.9 KB | 字幕文件（28 条 / 0:00-3:20 / UTF-8） |
 
 ## 图表（19 项，1.6 MB）
 
@@ -189,7 +189,7 @@
 | `sample_reviews_100.csv` | 57.9 KB |  |
 | `agent_test_input.csv` | 27.9 KB |  |
 
-## 代码（81 项，0.3 MB）
+## 代码（82 项，0.3 MB）
 
 | 文件 | 大小 | 用途 |
 |---|---|---|
@@ -233,6 +233,7 @@
 | `prep_llm_eval.py` | 2.7 KB |  |
 | `capture_demo_output.py` | 2.6 KB |  |
 | `apply_mid_demotion.py` | 2.6 KB |  |
+| `rebuild_video_timing.py` | 2.5 KB |  |
 | `download_models.py` | 2.5 KB |  |
 | `retier_conf.py` | 2.4 KB |  |
 | `arch_diagram.py` | 2.3 KB |  |
@@ -344,6 +345,6 @@
 
 | 文件 | 大小 | 用途 |
 |---|---|---|
-| `视频录制速查.md` | 2.9 KB |  |
+| `视频录制速查.md` | 3.1 KB |  |
 | `per_class_thresholds_probe.json` | 0.4 KB |  |
 | `.gitignore` | 0.3 KB |  |
