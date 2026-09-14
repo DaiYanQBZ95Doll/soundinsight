@@ -1,12 +1,12 @@
 # 文件地图（由 make_ai_handoff.py 自动生成，勿手改）
 
-> 生成时间：2026-09-14 18:26；共 267 个条目；体积单位 KB/MB。
+> 生成时间：2026-09-14 19:28；共 271 个条目；体积单位 KB/MB。
 
-## 提交物（5 项，1.5 MB）
+## 提交物（5 项，43.2 MB）
 
 | 文件 | 大小 | 用途 |
 |---|---|---|
-| `更新世界的锋芒_SoundInsight_复赛作品.zip` | 750.2 KB |  |
+| `更新世界的锋芒_SoundInsight_复赛作品.zip` | 42.4 MB |  |
 | `更新世界的锋芒_SoundInsight_其他材料.zip` | 455.3 KB |  |
 | `更新世界的锋芒_SoundInsight_复赛作品.pdf` | 203.6 KB |  |
 | `更新世界的锋芒_SoundInsight_Demo.zip` | 107.0 KB |  |
@@ -26,7 +26,7 @@
 | `deployment/README.md` | 0.6 KB |  |
 | `REPO_INTRO.txt` | 0.6 KB |  |
 
-## 验证报告（22 项，0.1 MB）
+## 验证报告（23 项，0.1 MB）
 
 | 文件 | 大小 | 用途 |
 |---|---|---|
@@ -41,6 +41,7 @@
 | `MODEL_CARD.md` | 3.4 KB | 模型卡：任务/基座/指标/六条局限 |
 | `edge_cases.md` | 3.2 KB |  |
 | `calibration_eval.py` | 3.0 KB |  |
+| `check_edge_cases.py` | 2.7 KB |  |
 | `edge_case_benchmark.md` | 2.6 KB | 六类边界场景定向探针 |
 | `user_scenarios.md` | 2.6 KB |  |
 | `ablation_summary.py` | 2.2 KB |  |
@@ -58,7 +59,7 @@
 | 文件 | 大小 | 用途 |
 |---|---|---|
 | `docs/project_full_record.md` | 21.6 KB | 初赛→复赛全流程记录 |
-| `docs/D13_seal_declaration.md` | 12.7 KB | D13 封包声明（提交技术质检终审） |
+| `docs/D13_seal_declaration.md` | 13.2 KB | D13 封包声明（提交技术质检终审） |
 | `docs/file_inventory.md` | 12.3 KB | 项目文件总索引 |
 | `PROJECT_BRIEF_QWEN.md` | 10.7 KB |  |
 | `QWEN_HANDOFF.md` | 10.5 KB |  |
@@ -77,10 +78,10 @@
 |---|---|---|
 | `SoundInsight：跨境电商耳机音质差评智能归因系统.pptx` | 18.1 MB |  |
 | `ppt_text_dump.md` | 11.3 KB |  |
-| `video_script.md` | 5.4 KB | 演示视频脚本（200 秒 / 9 镜头） |
-| `video_script_silent.md` | 4.1 KB | 无口播拍摄卡（操作步骤 + 画面要点） |
+| `video_script.md` | 5.7 KB | 演示视频脚本（200 秒 / 9 镜头） |
+| `video_script_silent.md` | 4.4 KB | 无口播拍摄卡（操作步骤 + 画面要点） |
 | `视频素材/素材清单.md` | 2.9 KB |  |
-| `video_script.srt` | 2.9 KB | 字幕文件（28 条 / 0:00-3:20 / UTF-8） |
+| `video_script.srt` | 2.7 KB | 字幕文件（28 条 / 0:00-3:20 / UTF-8） |
 
 ## 图表（19 项，1.6 MB）
 
@@ -189,7 +190,7 @@
 | `sample_reviews_100.csv` | 57.9 KB |  |
 | `agent_test_input.csv` | 27.9 KB |  |
 
-## 代码（82 项，0.3 MB）
+## 代码（84 项，0.3 MB）
 
 | 文件 | 大小 | 用途 |
 |---|---|---|
@@ -215,6 +216,7 @@
 | `pack_final.py` | 4.6 KB | 提交包打包与四项自检 |
 | `make_video_assets.py` | 4.5 KB |  |
 | `make_samples.py` | 4.4 KB |  |
+| `retime_srt.py` | 4.2 KB |  |
 | `tune_per_class_threshold.py` | 4.0 KB |  |
 | `upload_models.py` | 3.9 KB |  |
 | `test_model.py` | 3.9 KB |  |
@@ -246,6 +248,7 @@
 | `restore_timestamps.py` | 2.3 KB |  |
 | `throughput_bench.py` | 2.2 KB |  |
 | `verify_online_report.py` | 2.2 KB |  |
+| `check_video.py` | 2.1 KB |  |
 | `demo_sound.py` | 2.1 KB |  |
 | `batch_check.py` | 2.1 KB | 在线 Demo 批量验收脚本 |
 | `taxonomy_agg.py` | 2.0 KB |  |
@@ -341,10 +344,11 @@
 | `multi_label_model/` | 256.1 MB | 冻结的多标签归因模型权重（约 256MB），不入 git |
 | `sound_model/` | 256.1 MB | 冻结的二分类模型权重（约 256MB），不入 git |
 
-## 其他（3 项，0.0 MB）
+## 其他（4 项，46.1 MB）
 
 | 文件 | 大小 | 用途 |
 |---|---|---|
+| `更新世界的锋芒_SoundInsight_演示视频.mp4` | 46.1 MB |  |
 | `视频录制速查.md` | 3.1 KB |  |
 | `per_class_thresholds_probe.json` | 0.4 KB |  |
 | `.gitignore` | 0.3 KB |  |
