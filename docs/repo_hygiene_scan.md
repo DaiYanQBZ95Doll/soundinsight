@@ -37,7 +37,7 @@
 
 ### 3.2 属历史说明 / 诚信记录（有意保留，不修改）
 - `AI_HANDOFF/03_metrics_and_caveats.md`：2 处（行 47, 47）
-- `AI_HANDOFF/06_pending_and_redlines.md`：1 处（行 42）
+- `AI_HANDOFF/06_pending_and_redlines.md`：1 处（行 44）
 - `PROGRESS_SYNC.md`：1 处（行 68）
 - `audit_ppt.py`：2 处（行 65, 69）
 - `check_doc_numbers.py`：2 处（行 34, 63）
