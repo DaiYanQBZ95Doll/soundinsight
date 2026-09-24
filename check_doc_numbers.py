@@ -125,6 +125,8 @@ PAIR_FILES = [
     "QWEN_HANDOFF.md", "MODEL_CARD.md",
     "AI_HANDOFF/01_project_overview.md",
     "AI_HANDOFF/03_metrics_and_caveats.md",
+    # 复盘文档同样对外公开，曾出现"F1 0.6871（阈值 0.9744）、召回 89.6%"式并排
+    "docs/retrospective_and_reflection.md",
 ]
 
 GROUPS = [

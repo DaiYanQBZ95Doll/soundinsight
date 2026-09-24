@@ -1,5 +1,5 @@
 {
- "generated": "2026-09-24 14:24",
+ "generated": "2026-09-24 16:58",
  "root": "C:\\deepseek-harness-master\\soundinsight",
  "count": 280,
  "entries": [
@@ -293,9 +293,9 @@
   {
    "path": "check_doc_numbers.py",
    "category": "代码",
-   "size_bytes": 12480,
+   "size_bytes": 12627,
    "purpose": "数字审计 + 模板格式对照脚本",
-   "sha256_16": "059194b2a64787cb65bb6503209bc35533aa6872dcd00a277a7a1c78263139b9"
+   "sha256_16": "38689047b221ece7dfe854d24c6281f1745e03935070771576968c8ec85ff1d3"
   },
   {
    "path": "check_edge_cases.py",
@@ -1007,9 +1007,9 @@
   {
    "path": "number_audit.md",
    "category": "验证报告",
-   "size_bytes": 8097,
+   "size_bytes": 8195,
    "purpose": "数字一致性审计结果（含官方模板格式对照节）",
-   "sha256_16": "31effd5f9e8bae05ea9c8cf3e70b3fd6b7d6adc2a066f8e72cde60b81994fdea"
+   "sha256_16": "c117951541b9d8bd860e40cee3e35a2a947c7bcaecd614ab16df11dc84d73e4f"
   },
   {
    "path": "pack_final.py",
@@ -1651,16 +1651,16 @@
   {
    "path": "docs/repo_hygiene_scan.md",
    "category": "过程与交接文档",
-   "size_bytes": 3386,
+   "size_bytes": 3492,
    "purpose": "",
-   "sha256_16": "6b18d5ffb07cf8100d6ff73296bb9e48d8c025bd6d194415ecaf6f11beba71e1"
+   "sha256_16": "4e23414cc17d31ac76193298e816514dc8f50831d8bf5c460f9610b5f58f8a9b"
   },
   {
    "path": "docs/retrospective_and_reflection.md",
    "category": "过程与交接文档",
-   "size_bytes": 27471,
+   "size_bytes": 28530,
    "purpose": "",
-   "sha256_16": "8d420558eeb8a14c1a04a6db1b082a896db0c5394318377b59ce97ba76afcfa2"
+   "sha256_16": "583dc410997e0262b7ee6fa0d7d4093e8056a7acc7705ea20a3ae311f8f34794"
   },
   {
    "path": "docs/treble_failure_analysis.md",
