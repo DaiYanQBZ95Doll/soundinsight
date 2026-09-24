@@ -1,7 +1,7 @@
 {
- "generated": "2026-09-24 16:58",
+ "generated": "2026-09-24 17:11",
  "root": "C:\\deepseek-harness-master\\soundinsight",
- "count": 280,
+ "count": 281,
  "entries": [
   {
    "path": ".gitignore",
@@ -41,9 +41,9 @@
   {
    "path": "PROGRESS_SYNC.md",
    "category": "过程与交接文档",
-   "size_bytes": 14830,
+   "size_bytes": 15566,
    "purpose": "",
-   "sha256_16": "b1a67e94f14f9bbf3dc4885ee07c64ef0623189d94620217f152c2c5d1388302"
+   "sha256_16": "1d8d5412986e6f4470eeb0b825165f5b5a19c63b035fd40eab133b82cbbc219f"
   },
   {
    "path": "PROJECT_BRIEF_QWEN.md",
@@ -489,9 +489,9 @@
   {
    "path": "extract_template.py",
    "category": "代码",
-   "size_bytes": 1049,
+   "size_bytes": 1514,
    "purpose": "",
-   "sha256_16": "405a2cef9122c5b0f2a04616f9a4bec0859d7cd32fdfb28bd81f0e39841e6008"
+   "sha256_16": "823cea848d5180813e5db091871b606890e51a87f2c4259a9f8c1e9294502bc2"
   },
   {
    "path": "fetch_electronics.py",
@@ -527,6 +527,13 @@
    "size_bytes": 4944,
    "purpose": "",
    "sha256_16": "94c299e594f627a32796084525f82e0a21af671d72d35491c8d0605bbe334dbb"
+  },
+  {
+   "path": "hackathon-决赛入围定稿作品提交模板-天池版.docx",
+   "category": "主文档与模板",
+   "size_bytes": 36689,
+   "purpose": "",
+   "sha256_16": "6cdfd3cad3d88108f915474a0d53060c0fbac733fa356d4f765ad332fffe4211"
   },
   {
    "path": "hackathon-复赛作品提交模板-天池版.docx",
@@ -1623,9 +1630,9 @@
   {
    "path": "docs/finals_stage.md",
    "category": "过程与交接文档",
-   "size_bytes": 3400,
+   "size_bytes": 7253,
    "purpose": "",
-   "sha256_16": "5fcde59404531bb7cb9af2d14a184b0e29eb6675333974bc52f4a480ec3d6c1c"
+   "sha256_16": "d7a4c04dc78d47df46bf3bd4de706d36b94383a11c989c4bf48e7b98e86df445"
   },
   {
    "path": "docs/legacy_materials_notice.md",
@@ -1651,9 +1658,9 @@
   {
    "path": "docs/repo_hygiene_scan.md",
    "category": "过程与交接文档",
-   "size_bytes": 3492,
+   "size_bytes": 3772,
    "purpose": "",
-   "sha256_16": "4e23414cc17d31ac76193298e816514dc8f50831d8bf5c460f9610b5f58f8a9b"
+   "sha256_16": "7cd4fe38d80bb8a0b663daa85f6e108f95bb05ba9a947d4fd9e9f3ff1e063f58"
   },
   {
    "path": "docs/retrospective_and_reflection.md",

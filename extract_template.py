@@ -1,13 +1,24 @@
 # -*- coding: utf-8 -*-
-# 抽取官方复赛模板 docx 的结构与正文，用于格式对照。
+# 抽取官方模板 docx 的结构与正文，用于格式对照。
+# 用法：python extract_template.py [模板.docx]
+#   不带参数时默认抽复赛模板；决赛模板示例：
+#   python extract_template.py "hackathon-决赛入围定稿作品提交模板-天池版.docx"
+import os
 import re
 import sys
 import zipfile
 
 sys.stdout.reconfigure(encoding="utf-8", errors="replace")
 
-DOCX = (r"C:\deepseek-harness-master\soundinsight"
-        r"\hackathon-复赛作品提交模板-天池版.docx")
+HERE = os.path.dirname(os.path.abspath(__file__))
+DEFAULT = "hackathon-复赛作品提交模板-天池版.docx"
+DOCX = sys.argv[1] if len(sys.argv) > 1 else DEFAULT
+if not os.path.isabs(DOCX):
+    DOCX = os.path.join(HERE, DOCX)
+if not os.path.isfile(DOCX):
+    print(f"找不到模板文件：{DOCX}")
+    sys.exit(2)
+print(f"模板：{os.path.basename(DOCX)}")
 
 z = zipfile.ZipFile(DOCX)
 xml = z.read("word/document.xml").decode("utf-8", errors="replace")
