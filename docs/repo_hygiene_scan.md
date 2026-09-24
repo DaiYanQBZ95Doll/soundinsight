@@ -1,6 +1,6 @@
 # 公开仓库卫生扫描（密钥 / 隐私 / 废弃 claim）
 
-- 扫描范围：git 跟踪文件 272 个（文本与数据类逐行扫；二进制仅按文件名判断）
+- 扫描范围：git 跟踪文件 274 个（文本与数据类逐行扫；二进制仅按文件名判断）
 - 生成方式：`python scan_repo_hygiene.py`（可随时重跑）
 
 ## 一、密钥与凭据
@@ -30,7 +30,7 @@
   - 行 81｜邮箱地址｜`soundinsight@users.noreply.github.com`
 
 ## 三、废弃 claim（已被修正的旧数字 / 旧表述）
-- 命中合计 29 处：其中 **0 处需确认**、29 处属诚信记录 / 历史说明（有意保留）
+- 命中合计 31 处：其中 **0 处需确认**、31 处属诚信记录 / 历史说明（有意保留）
 
 ### 3.1 需确认（不在诚信记录文件内，且无历史标记）
 - 无
@@ -44,14 +44,17 @@
 - `docs/legacy_materials_notice.md`：6 处（行 52, 53, 56, 60, 60, 60）
 - `docs/process_review_d10.md`：2 处（行 60, 60）
 - `docs/project_full_record.md`：3 处（行 174, 174, 225）
+- `docs/retrospective_and_reflection.md`：2 处（行 63, 63）
 - `docs/work_summary_d7.md`：2 处（行 13, 55）
 - `ppt_speed_fix.py`：8 处（行 2, 3, 17, 20, 21, 22, 23, 24）
 
 ## 四、生成物一致性（manifest.json 记录值 vs 实际文件）
-- [PASS] manifest.json 记录的大小与哈希与工作区一致
+- [需修正] 2 处记录值已过期（跑 `python make_ai_handoff.py` 重新生成）：
+  - `docs/retrospective_and_reflection.md` size_bytes：记录 28524 → 实际 28530
+  - `docs/retrospective_and_reflection.md` sha256_16：记录 4eca53e7c97c77ff → 实际 583dc410997e0262
 
 ## 五、结论与建议
 - 密钥：未发现（高危 0 处；历史提交命中 0 处）
 - 隐私：13 处，见第二节；竞赛联系信息为模板要求填写，公开仓库如需脱敏见 `docs/legacy_materials_notice.md` §四
 - 废弃 claim：当前文档需确认 0 处；历史材料的口径指引见 `docs/legacy_materials_notice.md`
-- 生成物一致性：一致
+- 生成物一致性：需重跑生成脚本

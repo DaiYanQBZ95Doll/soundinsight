@@ -181,4 +181,5 @@
 - [PASS] MODEL_CARD.md：无“调优档 F1 + 阈值 0.5 档 P/R”并排
 - [PASS] AI_HANDOFF/01_project_overview.md：无“调优档 F1 + 阈值 0.5 档 P/R”并排
 - [PASS] AI_HANDOFF/03_metrics_and_caveats.md：无“调优档 F1 + 阈值 0.5 档 P/R”并排
+- [PASS] docs/retrospective_and_reflection.md：无“调优档 F1 + 阈值 0.5 档 P/R”并排
 - [注意] ppt_text_dump.md：0 行同型并排（无）——PPT 不在提交包内，需用户决定是否改

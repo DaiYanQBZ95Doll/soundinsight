@@ -1,6 +1,6 @@
 # 文件地图（由 make_ai_handoff.py 自动生成，勿手改）
 
-> 生成时间：2026-09-24 14:24；共 280 个条目；体积单位 KB/MB。
+> 生成时间：2026-09-24 16:58；共 280 个条目；体积单位 KB/MB。
 
 ## 提交物（5 项，43.2 MB）
 
@@ -31,7 +31,7 @@
 | 文件 | 大小 | 用途 |
 |---|---|---|
 | `error_taxonomy.md` | 8.2 KB | 错误分类学：FP/FN 构成 + 标注噪声人工终审 |
-| `number_audit.md` | 7.9 KB | 数字一致性审计结果（含官方模板格式对照节） |
+| `number_audit.md` | 8.0 KB | 数字一致性审计结果（含官方模板格式对照节） |
 | `llm_baseline.md` | 6.4 KB | LLM 对照报告（deepseek + qwen3.7-plus，含循环性红利声明） |
 | `edge_case_benchmark.py` | 5.6 KB |  |
 | `qna_preparation.md` | 5.0 KB | 答辩 Q&A（10 问，含口径警示） |
@@ -58,7 +58,7 @@
 
 | 文件 | 大小 | 用途 |
 |---|---|---|
-| `docs/retrospective_and_reflection.md` | 26.8 KB |  |
+| `docs/retrospective_and_reflection.md` | 27.9 KB |  |
 | `docs/project_full_record.md` | 21.6 KB | 初赛→复赛全流程记录 |
 | `docs/D13_seal_declaration.md` | 19.7 KB | D13 封包声明（提交技术质检终审） |
 | `PROGRESS_SYNC.md` | 14.5 KB |  |
@@ -69,8 +69,8 @@
 | `docs/legacy_materials_notice.md` | 8.3 KB |  |
 | `docs/work_summary_d7.md` | 6.2 KB |  |
 | `docs/dataset_audit.md` | 3.5 KB | 数据集字段考古 |
+| `docs/repo_hygiene_scan.md` | 3.4 KB |  |
 | `docs/finals_stage.md` | 3.3 KB |  |
-| `docs/repo_hygiene_scan.md` | 3.3 KB |  |
 | `docs/D14_resume_checklist.md` | 3.0 KB | 收尾四步清单（录视频/打包/上传/补推送） |
 | `docs/drift_plan.md` | 2.8 KB | 数据漂移监控方案 |
 | `AI_INDUCTION_REDLINE.md` | 2.7 KB |  |
@@ -200,7 +200,7 @@
 |---|---|---|
 | `scan_repo_hygiene.py` | 17.7 KB |  |
 | `build_pdf_v2.py` | 12.4 KB |  |
-| `check_doc_numbers.py` | 12.2 KB | 数字审计 + 模板格式对照脚本 |
+| `check_doc_numbers.py` | 12.3 KB | 数字审计 + 模板格式对照脚本 |
 | `build_pdf.py` | 11.2 KB |  |
 | `make_ai_handoff.py` | 10.3 KB |  |
 | `build_submission.py` | 9.3 KB |  |
