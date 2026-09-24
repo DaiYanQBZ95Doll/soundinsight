@@ -1,6 +1,6 @@
 # 文件地图（由 make_ai_handoff.py 自动生成，勿手改）
 
-> 生成时间：2026-09-14 21:59；共 279 个条目；体积单位 KB/MB。
+> 生成时间：2026-09-24 14:24；共 280 个条目；体积单位 KB/MB。
 
 ## 提交物（5 项，43.2 MB）
 
@@ -54,13 +54,14 @@
 | `confidence_tiered.md` | 0.7 KB | 三星补漏置信度分层与中置信剔除记录 |
 | `significance_test.md` | 0.6 KB | Welch t 检验（p=0.000932） |
 
-## 过程与交接文档（15 项，0.1 MB）
+## 过程与交接文档（17 项，0.2 MB）
 
 | 文件 | 大小 | 用途 |
 |---|---|---|
+| `docs/retrospective_and_reflection.md` | 26.8 KB |  |
 | `docs/project_full_record.md` | 21.6 KB | 初赛→复赛全流程记录 |
 | `docs/D13_seal_declaration.md` | 19.7 KB | D13 封包声明（提交技术质检终审） |
-| `PROGRESS_SYNC.md` | 13.8 KB |  |
+| `PROGRESS_SYNC.md` | 14.5 KB |  |
 | `docs/file_inventory.md` | 12.3 KB | 项目文件总索引 |
 | `PROJECT_BRIEF_QWEN.md` | 10.7 KB |  |
 | `QWEN_HANDOFF.md` | 10.7 KB |  |
@@ -68,7 +69,8 @@
 | `docs/legacy_materials_notice.md` | 8.3 KB |  |
 | `docs/work_summary_d7.md` | 6.2 KB |  |
 | `docs/dataset_audit.md` | 3.5 KB | 数据集字段考古 |
-| `docs/repo_hygiene_scan.md` | 3.5 KB |  |
+| `docs/finals_stage.md` | 3.3 KB |  |
+| `docs/repo_hygiene_scan.md` | 3.3 KB |  |
 | `docs/D14_resume_checklist.md` | 3.0 KB | 收尾四步清单（录视频/打包/上传/补推送） |
 | `docs/drift_plan.md` | 2.8 KB | 数据漂移监控方案 |
 | `AI_INDUCTION_REDLINE.md` | 2.7 KB |  |
@@ -192,7 +194,7 @@
 | `sample_reviews_100.csv` | 57.9 KB |  |
 | `agent_test_input.csv` | 27.9 KB |  |
 
-## 代码（88 项，0.3 MB）
+## 代码（87 项，0.3 MB）
 
 | 文件 | 大小 | 用途 |
 |---|---|---|
@@ -233,7 +235,6 @@
 | `audit_ppt.py` | 3.0 KB |  |
 | `deploy_check.py` | 3.0 KB | 在线 Demo 单条验收脚本 |
 | `svm_ttest.py` | 2.9 KB |  |
-| `_which_zip.py` | 2.9 KB |  |
 | `a4_mid_remove.py` | 2.8 KB |  |
 | `fix_ppt_roles.py` | 2.7 KB |  |
 | `year_split_eval.py` | 2.7 KB |  |

@@ -1,7 +1,7 @@
 {
- "generated": "2026-09-14 21:59",
+ "generated": "2026-09-24 14:24",
  "root": "C:\\deepseek-harness-master\\soundinsight",
- "count": 279,
+ "count": 280,
  "entries": [
   {
    "path": ".gitignore",
@@ -41,9 +41,9 @@
   {
    "path": "PROGRESS_SYNC.md",
    "category": "过程与交接文档",
-   "size_bytes": 14123,
+   "size_bytes": 14830,
    "purpose": "",
-   "sha256_16": "c23f79dd3dfc807f6804b39e81bd725307d719316d03fcd6db07ab5781c19652"
+   "sha256_16": "b1a67e94f14f9bbf3dc4885ee07c64ef0623189d94620217f152c2c5d1388302"
   },
   {
    "path": "PROJECT_BRIEF_QWEN.md",
@@ -121,13 +121,6 @@
    "size_bytes": 18935747,
    "purpose": "",
    "sha256_16": ""
-  },
-  {
-   "path": "_which_zip.py",
-   "category": "代码",
-   "size_bytes": 2978,
-   "purpose": "",
-   "sha256_16": "bf27ff62424c29223ab387d9cb481c0beeeb5b416d12bedb0391a4f0313433ee"
   },
   {
    "path": "a4_mid_remove.py",
@@ -1628,6 +1621,13 @@
    "sha256_16": "c3e2dabadca2f5847b88367c8de3983523f709c7ff5dc607e682818d4da5a2be"
   },
   {
+   "path": "docs/finals_stage.md",
+   "category": "过程与交接文档",
+   "size_bytes": 3400,
+   "purpose": "",
+   "sha256_16": "5fcde59404531bb7cb9af2d14a184b0e29eb6675333974bc52f4a480ec3d6c1c"
+  },
+  {
    "path": "docs/legacy_materials_notice.md",
    "category": "过程与交接文档",
    "size_bytes": 8524,
@@ -1651,9 +1651,16 @@
   {
    "path": "docs/repo_hygiene_scan.md",
    "category": "过程与交接文档",
-   "size_bytes": 3577,
+   "size_bytes": 3386,
    "purpose": "",
-   "sha256_16": "433b9390f485d9953e58e62b522937776469a5caf8c11908859320510e37f059"
+   "sha256_16": "6b18d5ffb07cf8100d6ff73296bb9e48d8c025bd6d194415ecaf6f11beba71e1"
+  },
+  {
+   "path": "docs/retrospective_and_reflection.md",
+   "category": "过程与交接文档",
+   "size_bytes": 27471,
+   "purpose": "",
+   "sha256_16": "8d420558eeb8a14c1a04a6db1b082a896db0c5394318377b59ce97ba76afcfa2"
   },
   {
    "path": "docs/treble_failure_analysis.md",
