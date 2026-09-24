@@ -37,7 +37,7 @@
 
 ### 3.2 属历史说明 / 诚信记录（有意保留，不修改）
 - `AI_HANDOFF/03_metrics_and_caveats.md`：2 处（行 47, 47）
-- `AI_HANDOFF/06_pending_and_redlines.md`：1 处（行 44）
+- `AI_HANDOFF/06_pending_and_redlines.md`：1 处（行 45）
 - `PROGRESS_SYNC.md`：1 处（行 68）
 - `audit_ppt.py`：2 处（行 65, 69）
 - `check_doc_numbers.py`：2 处（行 34, 63）
@@ -49,12 +49,10 @@
 - `ppt_speed_fix.py`：8 处（行 2, 3, 17, 20, 21, 22, 23, 24）
 
 ## 四、生成物一致性（manifest.json 记录值 vs 实际文件）
-- [需修正] 2 处记录值已过期（跑 `python make_ai_handoff.py` 重新生成）：
-  - `docs/retrospective_and_reflection.md` size_bytes：记录 28524 → 实际 28530
-  - `docs/retrospective_and_reflection.md` sha256_16：记录 4eca53e7c97c77ff → 实际 583dc410997e0262
+- [PASS] manifest.json 记录的大小与哈希与工作区一致
 
 ## 五、结论与建议
 - 密钥：未发现（高危 0 处；历史提交命中 0 处）
 - 隐私：13 处，见第二节；竞赛联系信息为模板要求填写，公开仓库如需脱敏见 `docs/legacy_materials_notice.md` §四
 - 废弃 claim：当前文档需确认 0 处；历史材料的口径指引见 `docs/legacy_materials_notice.md`
-- 生成物一致性：需重跑生成脚本
+- 生成物一致性：一致

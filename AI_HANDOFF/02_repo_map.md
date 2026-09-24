@@ -1,6 +1,6 @@
 # 文件地图（由 make_ai_handoff.py 自动生成，勿手改）
 
-> 生成时间：2026-09-24 16:58；共 280 个条目；体积单位 KB/MB。
+> 生成时间：2026-09-24 17:11；共 281 个条目；体积单位 KB/MB。
 
 ## 提交物（5 项，43.2 MB）
 
@@ -12,10 +12,11 @@
 | `更新世界的锋芒_SoundInsight_Demo.zip` | 108.0 KB |  |
 | `更新世界的锋芒_SoundInsight_复赛作品.docx` | 48.0 KB |  |
 
-## 主文档与模板（9 项，0.1 MB）
+## 主文档与模板（10 项，0.1 MB）
 
 | 文件 | 大小 | 用途 |
 |---|---|---|
+| `hackathon-决赛入围定稿作品提交模板-天池版.docx` | 35.8 KB |  |
 | `hackathon-复赛作品提交模板-天池版.docx` | 35.7 KB | 官方复赛模板原文（格式对照基准） |
 | `competition_v4.md` | 20.1 KB | 主文档（13 章，含模板九章 + 合规披露 + 局限） |
 | `competition_v3.txt` | 8.8 KB | 官方模板九章版主文档 |
@@ -61,16 +62,16 @@
 | `docs/retrospective_and_reflection.md` | 27.9 KB |  |
 | `docs/project_full_record.md` | 21.6 KB | 初赛→复赛全流程记录 |
 | `docs/D13_seal_declaration.md` | 19.7 KB | D13 封包声明（提交技术质检终审） |
-| `PROGRESS_SYNC.md` | 14.5 KB |  |
+| `PROGRESS_SYNC.md` | 15.2 KB |  |
 | `docs/file_inventory.md` | 12.3 KB | 项目文件总索引 |
 | `PROJECT_BRIEF_QWEN.md` | 10.7 KB |  |
 | `QWEN_HANDOFF.md` | 10.7 KB |  |
 | `docs/process_review_d10.md` | 8.5 KB |  |
 | `docs/legacy_materials_notice.md` | 8.3 KB |  |
+| `docs/finals_stage.md` | 7.1 KB |  |
 | `docs/work_summary_d7.md` | 6.2 KB |  |
+| `docs/repo_hygiene_scan.md` | 3.7 KB |  |
 | `docs/dataset_audit.md` | 3.5 KB | 数据集字段考古 |
-| `docs/repo_hygiene_scan.md` | 3.4 KB |  |
-| `docs/finals_stage.md` | 3.3 KB |  |
 | `docs/D14_resume_checklist.md` | 3.0 KB | 收尾四步清单（录视频/打包/上传/补推送） |
 | `docs/drift_plan.md` | 2.8 KB | 数据漂移监控方案 |
 | `AI_INDUCTION_REDLINE.md` | 2.7 KB |  |
@@ -267,13 +268,13 @@
 | `install.bat` | 1.7 KB |  |
 | `prep_quick_split.py` | 1.6 KB |  |
 | `verify_download_urls.py` | 1.5 KB |  |
+| `extract_template.py` | 1.5 KB |  |
 | `merge_three_star.py` | 1.4 KB |  |
 | `check_studio_build.py` | 1.3 KB |  |
 | `prep_err_taxonomy.py` | 1.2 KB |  |
 | `verify_docx.py` | 1.2 KB |  |
 | `prep_neg_review.py` | 1.1 KB |  |
 | `final_acceptance.py` | 1.1 KB |  |
-| `extract_template.py` | 1.0 KB |  |
 | `hashes.py` | 1.0 KB |  |
 | `prep_three_star.py` | 0.9 KB |  |
 | `prep_human_review.py` | 0.9 KB |  |
