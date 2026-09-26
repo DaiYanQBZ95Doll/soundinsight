@@ -1,14 +1,14 @@
 {
- "generated": "2026-09-24 17:11",
+ "generated": "2026-09-26 17:27",
  "root": "C:\\deepseek-harness-master\\soundinsight",
- "count": 281,
+ "count": 272,
  "entries": [
   {
    "path": ".gitignore",
    "category": "其他",
-   "size_bytes": 294,
+   "size_bytes": 499,
    "purpose": "",
-   "sha256_16": "a46de0a132294b5aa3d0d6f88919b2a813811aec82677da19540621edd9c86d6"
+   "sha256_16": "e624247be8d6e63fa6a5bbfb5f798b6e30b2c363a3744ffebb866710b65b3955"
   },
   {
    "path": "AI+跨境黑客松巅峰赛 · 复赛公示名单（手机版）.html",
@@ -41,9 +41,9 @@
   {
    "path": "PROGRESS_SYNC.md",
    "category": "过程与交接文档",
-   "size_bytes": 15566,
+   "size_bytes": 17333,
    "purpose": "",
-   "sha256_16": "1d8d5412986e6f4470eeb0b825165f5b5a19c63b035fd40eab133b82cbbc219f"
+   "sha256_16": "ead94f73db953ad5d32bac5e034e553040fb2ed2267c1954834d750a4a1aa5ef"
   },
   {
    "path": "PROJECT_BRIEF_QWEN.md",
@@ -112,13 +112,6 @@
    "path": "SoundInsight：跨境电商耳机音质差评智能归因系统.pptx",
    "category": "演示材料",
    "size_bytes": 18935790,
-   "purpose": "",
-   "sha256_16": ""
-  },
-  {
-   "path": "SoundInsight：跨境电商耳机音质差评智能归因系统.pptx.bak",
-   "category": "其他",
-   "size_bytes": 18935747,
    "purpose": "",
    "sha256_16": ""
   },
@@ -221,20 +214,6 @@
    "sha256_16": "a34a2e59c3c05add6933ca2cc5ed428c421a9cc985eb277b1fa184bb68e69594"
   },
   {
-   "path": "batch_report.md",
-   "category": "生成产物·日志",
-   "size_bytes": 2630,
-   "purpose": "",
-   "sha256_16": "d2a2b20d840dd231eaa050eed6b7fc0c7795920d2048ffc5a91b884d0aa0855a"
-  },
-  {
-   "path": "batch_report.txt",
-   "category": "生成产物·日志",
-   "size_bytes": 793,
-   "purpose": "",
-   "sha256_16": "ac3e8b6a7b00ac50e761b6afc5769336df68cc551c83b1bfe666914b4eb4f3fa"
-  },
-  {
    "path": "build_pdf.py",
    "category": "代码",
    "size_bytes": 11520,
@@ -293,9 +272,9 @@
   {
    "path": "check_doc_numbers.py",
    "category": "代码",
-   "size_bytes": 12627,
+   "size_bytes": 23492,
    "purpose": "数字审计 + 模板格式对照脚本",
-   "sha256_16": "38689047b221ece7dfe854d24c6281f1745e03935070771576968c8ec85ff1d3"
+   "sha256_16": "f5a10a7eb3b1717c0a0260d3faa991ab76b42bd234dc5d294da3d19da229c930"
   },
   {
    "path": "check_edge_cases.py",
@@ -463,13 +442,6 @@
    "category": "数据",
    "size_bytes": 38908481,
    "purpose": "主数据集（10 万条，含 timeStamp 恢复）",
-   "sha256_16": ""
-  },
-  {
-   "path": "electronics_prefix.bin",
-   "category": "数据",
-   "size_bytes": 134217728,
-   "purpose": "",
    "sha256_16": ""
   },
   {
@@ -937,9 +909,9 @@
   {
    "path": "make_ai_handoff.py",
    "category": "代码",
-   "size_bytes": 10575,
+   "size_bytes": 11772,
    "purpose": "",
-   "sha256_16": "58dd25f9538dc315fb8cccf5412d94d6e19cfa3a81633cd52c3d0be250831e9b"
+   "sha256_16": "d2336c049b564f2326b6e7fd33f0b828440c5db72d74055d8f229137bcfd93c4"
   },
   {
    "path": "make_samples.py",
@@ -1014,9 +986,9 @@
   {
    "path": "number_audit.md",
    "category": "验证报告",
-   "size_bytes": 8195,
+   "size_bytes": 9948,
    "purpose": "数字一致性审计结果（含官方模板格式对照节）",
-   "sha256_16": "c117951541b9d8bd860e40cee3e35a2a947c7bcaecd614ab16df11dc84d73e4f"
+   "sha256_16": "d4b98bf63432005bcd35283e7e4cc147d6d204c60071c4bbf931441c0c249afa"
   },
   {
    "path": "pack_final.py",
@@ -1269,6 +1241,13 @@
    "size_bytes": 2081,
    "purpose": "",
    "sha256_16": "b2135cd7faf4f01afb79b5baffdfb56a03a8697574f76092bea2eb941b283795"
+  },
+  {
+   "path": "test_audit_checks.py",
+   "category": "代码",
+   "size_bytes": 6779,
+   "purpose": "",
+   "sha256_16": "deda89e7cb5a0227f231af6adad28f507c9aecc3e9996bdc940a4b1c1ff66d44"
   },
   {
    "path": "test_model.py",
@@ -1630,9 +1609,9 @@
   {
    "path": "docs/finals_stage.md",
    "category": "过程与交接文档",
-   "size_bytes": 7253,
+   "size_bytes": 8102,
    "purpose": "",
-   "sha256_16": "d7a4c04dc78d47df46bf3bd4de706d36b94383a11c989c4bf48e7b98e86df445"
+   "sha256_16": "7a0477ce39e83919853ed797bbb2a47c46cc33ab2a5a2cca1671321b95dbef9f"
   },
   {
    "path": "docs/legacy_materials_notice.md",
@@ -1658,9 +1637,9 @@
   {
    "path": "docs/repo_hygiene_scan.md",
    "category": "过程与交接文档",
-   "size_bytes": 3772,
+   "size_bytes": 3257,
    "purpose": "",
-   "sha256_16": "7cd4fe38d80bb8a0b663daa85f6e108f95bb05ba9a947d4fd9e9f3ff1e063f58"
+   "sha256_16": "6798c9b6574454fb7f7fe891254f20ca602c60cf060e6bba852f7355e5ef9337"
   },
   {
    "path": "docs/retrospective_and_reflection.md",
@@ -1684,6 +1663,13 @@
    "sha256_16": "11caf8cc2b9b3e13f07184de040a4cd51fe558d2e58d57f522dd1fa5937bbcea"
   },
   {
+   "path": "docs/v2_acceptance_benchmark.md",
+   "category": "过程与交接文档",
+   "size_bytes": 20863,
+   "purpose": "",
+   "sha256_16": "6e0d4098f0b50e8a0a99490d04d1a4f29d6d089617bb649e9692e8bf264ad803"
+  },
+  {
    "path": "docs/work_summary_d7.md",
    "category": "过程与交接文档",
    "size_bytes": 6384,
@@ -1696,34 +1682,6 @@
    "size_bytes": 822,
    "purpose": "年份分桶脚本输出原文",
    "sha256_16": "53f64b9728da665af7396112a933fe88c2ef16f78ec728cc675f984242ddc3cf"
-  },
-  {
-   "path": "exp01_弱标注交叉验证/baseline_cv.log",
-   "category": "生成产物·日志",
-   "size_bytes": 602,
-   "purpose": "",
-   "sha256_16": "449d52a76289e4ffac0f802dbb7008342cf3dfd5bc80a056f58317c2332458b6"
-  },
-  {
-   "path": "exp01_弱标注交叉验证/distilbert_cv.log",
-   "category": "生成产物·日志",
-   "size_bytes": 20896,
-   "purpose": "",
-   "sha256_16": "80d6bbd04a5b1fb60ee306b3f971a7d4e005f25dd8baf419f3d4c90302cf5857"
-  },
-  {
-   "path": "exp02_清洗标签交叉验证/baseline_cv_clean.log",
-   "category": "生成产物·日志",
-   "size_bytes": 782,
-   "purpose": "",
-   "sha256_16": "240449edb2b16be39247b81926c9e80f72e9aa8c3b119b9038ab37a8ab1e9c08"
-  },
-  {
-   "path": "exp02_清洗标签交叉验证/distilbert_cv_clean.log",
-   "category": "生成产物·日志",
-   "size_bytes": 11156,
-   "purpose": "",
-   "sha256_16": "ee1aaea60482c39f4dcffb4485b2e5dbdc79e645d49686bd3e91851aa1d6acc6"
   },
   {
    "path": "exp03_LLM复核与标签清洗/labeled_llm.csv",
@@ -1754,32 +1712,11 @@
    "sha256_16": "ae502401b7b334606935819edfdf8c38c6d15537ae096ebac015432217b9ecad"
   },
   {
-   "path": "exp04_多标签归因/multilabel.log",
-   "category": "生成产物·日志",
-   "size_bytes": 3304,
-   "purpose": "",
-   "sha256_16": "111bc4a7554929af86f6efb824fcdf537e9bb620989674b9ddddcda21cc0f6e8"
-  },
-  {
-   "path": "exp05_教师一致性/vs_llm.log",
-   "category": "生成产物·日志",
-   "size_bytes": 6200,
-   "purpose": "",
-   "sha256_16": "2f10834addb734e16f7fb44b27c27f3ef2c407354160adf30c4147ebffe086d7"
-  },
-  {
    "path": "exp06_最终二分类模型/confusion_matrix.png",
    "category": "图表",
    "size_bytes": 39704,
    "purpose": "",
    "sha256_16": "94713431c377f14f022d1c3a61f493b5430ac166bc9213503c1df39ca8bc23f8"
-  },
-  {
-   "path": "exp06_最终二分类模型/train_final.log",
-   "category": "生成产物·日志",
-   "size_bytes": 3528,
-   "purpose": "",
-   "sha256_16": "574e3376fdbf4f14f0f9c2147dbcc99603a443fea75e84735f1f9adcbab9ae16"
   },
   {
    "path": "exp06_最终二分类模型/training_output.txt",

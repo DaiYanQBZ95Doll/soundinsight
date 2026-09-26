@@ -1,6 +1,6 @@
 # 文件地图（由 make_ai_handoff.py 自动生成，勿手改）
 
-> 生成时间：2026-09-24 17:11；共 281 个条目；体积单位 KB/MB。
+> 生成时间：2026-09-26 17:27；共 272 个条目；体积单位 KB/MB。
 
 ## 提交物（5 项，43.2 MB）
 
@@ -31,8 +31,8 @@
 
 | 文件 | 大小 | 用途 |
 |---|---|---|
+| `number_audit.md` | 9.7 KB | 数字一致性审计结果（含官方模板格式对照节） |
 | `error_taxonomy.md` | 8.2 KB | 错误分类学：FP/FN 构成 + 标注噪声人工终审 |
-| `number_audit.md` | 8.0 KB | 数字一致性审计结果（含官方模板格式对照节） |
 | `llm_baseline.md` | 6.4 KB | LLM 对照报告（deepseek + qwen3.7-plus，含循环性红利声明） |
 | `edge_case_benchmark.py` | 5.6 KB |  |
 | `qna_preparation.md` | 5.0 KB | 答辩 Q&A（10 问，含口径警示） |
@@ -55,23 +55,24 @@
 | `confidence_tiered.md` | 0.7 KB | 三星补漏置信度分层与中置信剔除记录 |
 | `significance_test.md` | 0.6 KB | Welch t 检验（p=0.000932） |
 
-## 过程与交接文档（17 项，0.2 MB）
+## 过程与交接文档（18 项，0.2 MB）
 
 | 文件 | 大小 | 用途 |
 |---|---|---|
 | `docs/retrospective_and_reflection.md` | 27.9 KB |  |
 | `docs/project_full_record.md` | 21.6 KB | 初赛→复赛全流程记录 |
+| `docs/v2_acceptance_benchmark.md` | 20.4 KB |  |
 | `docs/D13_seal_declaration.md` | 19.7 KB | D13 封包声明（提交技术质检终审） |
-| `PROGRESS_SYNC.md` | 15.2 KB |  |
+| `PROGRESS_SYNC.md` | 16.9 KB |  |
 | `docs/file_inventory.md` | 12.3 KB | 项目文件总索引 |
 | `PROJECT_BRIEF_QWEN.md` | 10.7 KB |  |
 | `QWEN_HANDOFF.md` | 10.7 KB |  |
 | `docs/process_review_d10.md` | 8.5 KB |  |
 | `docs/legacy_materials_notice.md` | 8.3 KB |  |
-| `docs/finals_stage.md` | 7.1 KB |  |
+| `docs/finals_stage.md` | 7.9 KB |  |
 | `docs/work_summary_d7.md` | 6.2 KB |  |
-| `docs/repo_hygiene_scan.md` | 3.7 KB |  |
 | `docs/dataset_audit.md` | 3.5 KB | 数据集字段考古 |
+| `docs/repo_hygiene_scan.md` | 3.2 KB |  |
 | `docs/D14_resume_checklist.md` | 3.0 KB | 收尾四步清单（录视频/打包/上传/补推送） |
 | `docs/drift_plan.md` | 2.8 KB | 数据漂移监控方案 |
 | `AI_INDUCTION_REDLINE.md` | 2.7 KB |  |
@@ -176,11 +177,10 @@
 | `llm_qwen_metrics.json` | 1.0 KB |  |
 | `learning_curve_results.json` | 0.1 KB |  |
 
-## 数据（14 项，405.9 MB）
+## 数据（13 项，277.9 MB）
 
 | 文件 | 大小 | 用途 |
 |---|---|---|
-| `electronics_prefix.bin` | 128.0 MB |  |
 | `labeled_llm.csv` | 38.3 MB | LLM 复核后标签（当前工作集正例 1280） |
 | `labeled_llm_before_mid_demote.csv` | 38.3 MB |  |
 | `labeled_llm_before_mid_remove.csv` | 38.3 MB |  |
@@ -195,15 +195,15 @@
 | `sample_reviews_100.csv` | 57.9 KB |  |
 | `agent_test_input.csv` | 27.9 KB |  |
 
-## 代码（87 项，0.3 MB）
+## 代码（88 项，0.3 MB）
 
 | 文件 | 大小 | 用途 |
 |---|---|---|
+| `check_doc_numbers.py` | 22.9 KB | 数字审计 + 模板格式对照脚本 |
 | `scan_repo_hygiene.py` | 17.7 KB |  |
 | `build_pdf_v2.py` | 12.4 KB |  |
-| `check_doc_numbers.py` | 12.3 KB | 数字审计 + 模板格式对照脚本 |
+| `make_ai_handoff.py` | 11.5 KB |  |
 | `build_pdf.py` | 11.2 KB |  |
-| `make_ai_handoff.py` | 10.3 KB |  |
 | `build_submission.py` | 9.3 KB |  |
 | `demo_sound_v2.py` | 9.1 KB | 本地 Gradio Demo（三页；已内置代理绕过） |
 | `report_builder.py` | 8.3 KB |  |
@@ -213,6 +213,7 @@
 | `train_sound_model.py` | 7.8 KB |  |
 | `md_to_pdf.py` | 7.6 KB | 主文档 Markdown → PDF（内嵌中文字体） |
 | `learning_curve.py` | 6.8 KB |  |
+| `test_audit_checks.py` | 6.6 KB |  |
 | `diagnose_treble.py` | 6.6 KB |  |
 | `fetch_electronics.py` | 6.5 KB |  |
 | `distilbert_cv.py` | 5.4 KB |  |
@@ -319,26 +320,17 @@
 |---|---|---|
 | `AI+跨境黑客松巅峰赛 · 复赛公示名单（手机版）.html` | 42.1 KB |  |
 
-## 生成产物·日志（19 项，0.1 MB）
+## 生成产物·日志（10 项，0.0 MB）
 
 | 文件 | 大小 | 用途 |
 |---|---|---|
-| `exp01_弱标注交叉验证/distilbert_cv.log` | 20.4 KB |  |
-| `exp02_清洗标签交叉验证/distilbert_cv_clean.log` | 10.9 KB |  |
 | `insight_report.xlsx` | 7.1 KB |  |
-| `exp05_教师一致性/vs_llm.log` | 6.1 KB |  |
-| `exp06_最终二分类模型/train_final.log` | 3.4 KB |  |
-| `exp04_多标签归因/multilabel.log` | 3.2 KB |  |
 | `summary_log.txt` | 3.1 KB |  |
-| `batch_report.md` | 2.6 KB |  |
 | `insight_report_v2.md` | 2.6 KB |  |
 | `insight_report_v2_en.md` | 2.4 KB |  |
 | `exp07_ablation_A/training_output.txt` | 1.9 KB |  |
 | `training_output.txt` | 0.9 KB |  |
 | `exp06_最终二分类模型/training_output.txt` | 0.9 KB |  |
-| `batch_report.txt` | 0.8 KB |  |
-| `exp02_清洗标签交叉验证/baseline_cv_clean.log` | 0.8 KB |  |
-| `exp01_弱标注交叉验证/baseline_cv.log` | 0.6 KB |  |
 | `exp08_ablation_B/training_output.txt` | 0.5 KB |  |
 | `exp09_ablation_C/training_output.txt` | 0.5 KB |  |
 | `capture_log.txt` | 0.5 KB |  |
@@ -352,13 +344,12 @@
 | `multi_label_model/` | 256.1 MB | 冻结的多标签归因模型权重（约 256MB），不入 git |
 | `sound_model/` | 256.1 MB | 冻结的二分类模型权重（约 256MB），不入 git |
 
-## 其他（6 项，64.2 MB）
+## 其他（5 项，46.1 MB）
 
 | 文件 | 大小 | 用途 |
 |---|---|---|
 | `更新世界的锋芒_SoundInsight_演示视频.mp4` | 46.1 MB |  |
-| `SoundInsight：跨境电商耳机音质差评智能归因系统.pptx.bak` | 18.1 MB |  |
 | `视频录制速查.md` | 3.1 KB |  |
 | `hashes.txt` | 0.9 KB |  |
+| `.gitignore` | 0.5 KB |  |
 | `per_class_thresholds_probe.json` | 0.4 KB |  |
-| `.gitignore` | 0.3 KB |  |

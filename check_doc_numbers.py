@@ -1,9 +1,11 @@
 # -*- coding: utf-8 -*-
 # 本脚本用于文档数字一致性审计：扫描指定文档，逐项核对红线数字，
 # 检测口径违规，输出 number_audit.md。
+import hashlib
 import os
 import re
 import sys
+import zipfile
 
 sys.stdout.reconfigure(encoding="utf-8", errors="replace")
 
@@ -127,6 +129,43 @@ PAIR_FILES = [
     "AI_HANDOFF/03_metrics_and_caveats.md",
     # 复盘文档同样对外公开，曾出现"F1 0.6871（阈值 0.9744）、召回 89.6%"式并排
     "docs/retrospective_and_reflection.md",
+    # 决赛阶段的对外文档（质检方 §九.2：配对检查须覆盖全部 F1/召回/精确率）
+    "docs/finals_stage.md", "docs/v2_acceptance_benchmark.md",
+]
+
+# 阈值档表：一行内命中两个及以上档的值时，该行必须为每一档写出标签
+THRESHOLD_TIERS = {
+    "调优(0.9744)": {"labels": ("0.9744", "0.97", "调优"),
+                     "values": ("0.6871", "0.687", "66.3", "71.3")},
+    "0.5": {"labels": ("0.5", "0.50"), "values": ("0.6241", "47.9", "89.6")},
+}
+
+# 代际：v1 = 复赛已提交口径；v2 = 决赛口径（落地后把新指标填进 tokens，检查自动生效）
+GEN_TAGS = ("[v1]", "[v2]")
+GEN_TOKENS = {
+    "v1": ["0.6871", "0.9744", "0.6234", "0.7191", "0.6241", "0.000932"],
+    "v2": [],  # 待填：v2 的 F1 / 阈值 / CV 等
+}
+CURRENT_GEN = os.environ.get("DSH_DOC_GEN", "v1")
+GEN_FILES = PAIR_FILES + ["docs/project_full_record.md", "PROGRESS_SYNC.md"]
+GEN_HISTORY_MARKERS = ("已作废", "已废弃", "历史", "曾", "取代", "旧口径", "勘误",
+                       "修正前", "过时", "v1.1", "路线 (a)")
+
+# 冻结的复赛提交包（红线 9：不得覆盖；2026-09-14 21:44:28 提交）
+FROZEN_ZIP_NAME = "更新世界的锋芒_SoundInsight_复赛作品.zip"
+FROZEN_ZIP_SHA = "e6cae286515ef1d27866a629cf78f695984b74a85c73ed0ad9bc7dc5c6485db2"
+
+# 决赛主文档候选（填好模板后放到项目根目录即可自动检查）
+FINALS_DOC_CANDIDATES = [
+    "更新世界的锋芒_SoundInsight_决赛入围定稿作品.docx",
+    "更新世界的锋芒_SoundInsight_决赛入围定稿作品.pdf",
+]
+
+# 决赛模板九节（据 hackathon-决赛入围定稿作品提交模板-天池版.docx 原文）
+TEMPLATE_SECTIONS_FINALS = [
+    "团队信息", "参赛信息", "业务价值与市场分析", "产品功能与使用说明",
+    "技术架构及调用模型说明", "项目开发及阶段成果说明", "提交物清单",
+    "附件命名规范", "注意事项",
 ]
 
 GROUPS = [
@@ -234,18 +273,14 @@ def check_template_conformance(out) -> None:
 
 
 def check_threshold_pairing(out) -> None:
-    """防复发：同一行不得把"阈值 0.9744 的 F1"与"阈值 0.5 的精确率/召回率"并排。
+    """口径配对检查：同一行出现**不同阈值档**的指标时，必须为每一档显式写出阈值标签。
 
     起因：v4 §7.2 曾写成"F1=0.6871（阈值 0.97），召回率 89.6%，精确率 47.9%"——
     三个数字并排，读者会当成同一阈值的结果，实际 89.6%/47.9% 来自阈值 0.5。
-    规则：一行同时出现调优档 F1（0.687/0.6871）与低阈值档 P/R（89.6/47.9）时，
-    必须同时显式写出两个阈值标签（0.9744 或 0.97，以及 0.5），否则判 FAIL。
+    本函数已按质检方要求从"仅 F1 与 P/R"扩展为**全指标、按阈值档**判定：
+    凡一行内命中两个及以上档的值，该行必须同时出现这些档的标签，否则 FAIL。
     """
-    out.append("## 口径配对检查（阈值并排）")
-    tuned_f1 = ("0.6871", "0.687")
-    low_thr_pr = ("89.6", "47.9")
-    tuned_label = ("0.9744", "0.97")
-    low_label = ("0.5",)
+    out.append("## 口径配对检查（阈值档，全指标）")
     for fname in PAIR_FILES:
         lines, _ = read_file(fname)
         if lines is None:
@@ -253,28 +288,204 @@ def check_threshold_pairing(out) -> None:
             continue
         bad = []
         for i, line in enumerate(lines, 1):
-            if not (any(t in line for t in tuned_f1) and
-                    any(t in line for t in low_thr_pr)):
+            present = [tier for tier, spec in THRESHOLD_TIERS.items()
+                       if any(v in line for v in spec["values"])]
+            if len(present) < 2:
                 continue
-            if not (any(t in line for t in tuned_label) and
-                    any(t in line for t in low_label)):
-                bad.append((i, line.strip()[:90]))
+            missing = [t for t in present
+                       if not any(lb in line for lb in THRESHOLD_TIERS[t]["labels"])]
+            if missing and not any(mk in line for mk in GEN_HISTORY_MARKERS):
+                bad.append((i, missing, line.strip()[:90]))
         if bad:
-            for i, snippet in bad:
-                out.append(f"- [FAIL] {fname} 行 {i} 两档指标并排且未标阈值：{snippet}")
+            for i, missing, snippet in bad:
+                out.append(f"- [FAIL] {fname} 行 {i} 并排了 {'/'.join(missing)} 档却未标该档阈值：{snippet}")
         else:
-            out.append(f"- [PASS] {fname}：无“调优档 F1 + 阈值 0.5 档 P/R”并排")
+            out.append(f"- [PASS] {fname}：跨档指标均已标注阈值档")
     # PPT 文本：不在提交 zip 内，仅提示不判 FAIL（改与不改由用户决定）
     lines, _ = read_file("ppt_text_dump.md")
     if lines:
-        hits = [i for i, line in enumerate(lines, 1)
-                if any(t in line for t in tuned_f1)
-                and any(t in line for t in low_thr_pr)
-                and not (any(t in line for t in tuned_label)
-                         and any(t in line for t in low_label))]
-        out.append(f"- [注意] ppt_text_dump.md：{len(hits)} 行同型并排"
+        hits = []
+        for i, line in enumerate(lines, 1):
+            present = [t for t, spec in THRESHOLD_TIERS.items()
+                       if any(v in line for v in spec["values"])]
+            if len(present) >= 2 and any(
+                    not any(lb in line for lb in THRESHOLD_TIERS[t]["labels"])
+                    for t in present):
+                hits.append(i)
+        out.append(f"- [注意] ppt_text_dump.md：{len(hits)} 行跨档未标"
                    f"（{'行 ' + ','.join(map(str, hits)) if hits else '无'}）"
                    f"——PPT 不在提交包内，需用户决定是否改")
+    out.append("")
+
+
+def check_generation_mixing(out) -> None:
+    """代际混用检查（质检方 §九.1/§九.2）：doc 内两代数字并排而无 [v1]/[v2] 标注即 FAIL。
+
+    代际语法：实验数字后带 `[v1]`（复赛已提交口径）或 `[v2]`（决赛口径），首次出现处附说明。
+    当前 v2 尚未落地，GEN_TOKENS["v2"] 为空 → 本检查只覆盖 v1（机制就绪，v2 数字一产生
+    就自动生效）。当前代由环境变量 DSH_DOC_GEN 指定（默认 v1）。
+    """
+    out.append(f"## 代际检查（当前代：{CURRENT_GEN}）")
+    v2_tokens = GEN_TOKENS.get("v2") or []
+    if not v2_tokens:
+        out.append("- [注意] v2 数字尚未产生（`GEN_TOKENS[\"v2\"]` 为空）："
+                   "混用检查当前仅覆盖 v1；v2 落地时把新指标/tokens 填入即可自动生效")
+    for fname in GEN_FILES:
+        lines, _ = read_file(fname)
+        if lines is None:
+            out.append(f"- {fname}：不存在，SKIP")
+            continue
+        bad = []
+        for i, line in enumerate(lines, 1):
+            gens = [g for g, toks in GEN_TOKENS.items()
+                    if toks and any(t in line for t in toks)]
+            if len(gens) >= 2 and not any(tag in line for tag in GEN_TAGS) \
+                    and not any(mk in line for mk in GEN_HISTORY_MARKERS):
+                bad.append((i, gens, line.strip()[:80]))
+        for i, gens, snippet in bad:
+            out.append(f"- [FAIL] {fname} 行 {i} 含 {'+'.join(gens)} 两代数字但无代际标签：{snippet}")
+        if not bad:
+            out.append(f"- [PASS] {fname}：无未标注的代际混用")
+    out.append("")
+
+
+def check_frozen_package(out) -> None:
+    """冻结包保护（质检方 §九.5）：已提交的复赛包不得被重打覆盖。
+
+    以根目录 hashes.txt 记录值与磁盘实际哈希双向核对；任一不符即 FAIL，
+    因为那意味着"仓库里的包 ≠ 已提交的包"。
+    """
+    out.append("## 提交包冻结校验（红线 9）")
+    p = os.path.join(HERE, "hashes.txt")
+    if not os.path.isfile(p):
+        out.append("- [SKIP] 无 hashes.txt")
+        out.append("")
+        return
+    rec = ""
+    for line in open(p, encoding="utf-8", errors="replace").read().splitlines():
+        if FROZEN_ZIP_NAME in line:
+            m = re.search(r"sha256:([0-9a-f]{16,})", line)
+            rec = m.group(1) if m else ""
+    disk = os.path.join(HERE, FROZEN_ZIP_NAME)
+    if not os.path.isfile(disk):
+        out.append(f"- [SKIP] 磁盘上无 {FROZEN_ZIP_NAME}（仅作记录）")
+        out.append("")
+        return
+    h = hashlib.sha256(open(disk, "rb").read()).hexdigest()
+    ok_rec = rec.startswith(FROZEN_ZIP_SHA[:16])
+    ok_disk = h.startswith(FROZEN_ZIP_SHA[:16])
+    out.append(f"- [{'PASS' if ok_rec else 'FAIL'}] hashes.txt 记录的是已提交版本"
+               f"（{rec[:16] or '未找到'} vs 冻结值 {FROZEN_ZIP_SHA[:16]}）")
+    out.append(f"- [{'PASS' if ok_disk else 'FAIL'}] 磁盘上的包与已提交版本一致"
+               f"（{h[:16]} vs {FROZEN_ZIP_SHA[:16]}）")
+    if not (ok_rec and ok_disk):
+        out.append("- 说明：若确为 v2 换代后的新包，应另建**新文件名**（决赛包），"
+                   "并在此登记新的冻结值，而不是覆盖复赛包")
+    out.append("")
+
+
+def check_finals_template(out) -> None:
+    """决赛模板合规（质检方 §九.3）：九节齐备 + 编号唯一 + 在线链接表 + 团队信息
+    + **5.2 百炼栏按既成事实填写**（真实调用 qwen3.7-plus + 百炼 Token Plan，非"未使用"）。"""
+    out.append("## 决赛模板合规检查（模板九节 + 5.2 百炼栏事实）")
+    target = None
+    for cand in FINALS_DOC_CANDIDATES:
+        fp = os.path.join(HERE, cand)
+        if os.path.isfile(fp):
+            target = (cand, fp)
+            break
+    if target is None:
+        out.append(f"- [SKIP] 决赛主文档尚未生成（候选：{'、'.join(FINALS_DOC_CANDIDATES)}）"
+                   "——检查项已就绪，填好模板后自动生效")
+        out.append("")
+        return
+    name, fp = target
+    if name.lower().endswith(".docx"):
+        try:
+            xml = zipfile.ZipFile(fp).read("word/document.xml").decode("utf-8", "replace")
+            text = "".join(re.findall(r"<w:t[^>]*>(.*?)</w:t>", xml, flags=re.S))
+        except (OSError, KeyError, zipfile.BadZipFile) as e:
+            out.append(f"- [FAIL] {name} 无法读取（{type(e).__name__}）")
+            out.append("")
+            return
+    else:
+        try:
+            import pypdf
+            text = "\n".join((pg.extract_text() or "") for pg in pypdf.PdfReader(fp).pages)
+        except Exception as e:  # noqa: BLE001 - 缺依赖/坏文件都只报告
+            out.append(f"- [FAIL] {name} 无法读取（{type(e).__name__}）")
+            out.append("")
+            return
+
+    missing = [s for s in TEMPLATE_SECTIONS_FINALS if s not in text]
+    nums = re.findall(r"([一二三四五六七八九])、", text)
+    dup = sorted({n for n in nums if nums.count(n) > 1})
+    out.append(f"- 目标文档：{name}（{len(text)} 字符）")
+    out.append(f"  - [{'FAIL' if missing else 'PASS'}] 模板九节："
+               f"{'缺 ' + '、'.join(missing) if missing else '齐备'}")
+    out.append(f"  - [{'FAIL' if dup else 'PASS'}] 章节编号唯一："
+               f"{'重复 ' + '、'.join(dup) if dup else '无'}")
+    out.append(f"  - [{'PASS' if 'http' in text else 'FAIL'}] 在线链接表："
+               f"{'已含链接' if 'http' in text else '未填链接'}")
+    out.append(f"  - [{'PASS' if '更新世界的锋芒' in text else 'FAIL'}] 团队信息已填写")
+    has_qwen = "qwen3.7-plus" in text or "qwen3.7" in text
+    has_bailian = "百炼" in text or "Token Plan" in text
+    false_claim = re.search(r"百炼[^。\n]{0,40}未使用|未使用[^。\n]{0,20}百炼", text)
+    ok_bailian = has_qwen and has_bailian and not false_claim
+    out.append(f"  - [{'PASS' if ok_bailian else 'FAIL'}] 5.2 百炼栏按既成事实填写"
+               f"（qwen3.7-plus={'有' if has_qwen else '无'}、"
+               f"百炼/Token Plan={'有' if has_bailian else '无'}、"
+               f"假称未使用={'有' if false_claim else '无'}）")
+    out.append("")
+
+
+def check_v2_artifacts(out) -> None:
+    """v2 可核验产物（质检方 §七(5)/§九.4）：权重不入库，但须入库
+    模型 SHA256 + threshold.json + 训练命令 + 评估原始输出 + v2 MODEL_CARD 登记。"""
+    out.append("## v2 可核验产物检查")
+    reg = os.path.join(HERE, "v2", "v2_artifacts.json")
+    if not os.path.isfile(reg):
+        out.append("- [SKIP] 无 `v2/v2_artifacts.json`：v2 尚未落地。"
+                   "采纳 v2 时须提供该登记文件，字段：model_sha256{}、threshold_json{}、"
+                   "train_command、eval_outputs[]、model_card")
+        out.append("")
+        return
+    import json
+    try:
+        data = json.load(open(reg, encoding="utf-8"))
+    except ValueError as e:
+        out.append(f"- [FAIL] v2_artifacts.json 解析失败：{e}")
+        out.append("")
+        return
+    problems = []
+    for key in ("model_sha256", "threshold_json", "train_command",
+                "eval_outputs", "model_card"):
+        if key not in data:
+            problems.append(f"缺字段 {key}")
+    def _verify(path: str, expect: str, what: str) -> None:
+        fp = os.path.join(HERE, path)
+        if not os.path.isfile(fp):
+            problems.append(f"{what} 文件不存在：{path}")
+            return
+        h = hashlib.sha256(open(fp, "rb").read()).hexdigest()
+        if not h.startswith(expect):
+            problems.append(f"{what} 哈希不符：{path}（记录 {expect} 实际 {h[:16]}）")
+    for path, sha in (data.get("model_sha256") or {}).items():
+        _verify(path, sha, "模型")
+    tj = data.get("threshold_json") or {}
+    if isinstance(tj, dict) and "path" in tj:
+        _verify(tj["path"], tj.get("sha256", ""), "threshold.json")
+    for path in (data.get("eval_outputs") or []):
+        if not os.path.isfile(os.path.join(HERE, path)):
+            problems.append(f"评估原始输出不存在：{path}")
+    if data.get("model_card") and not os.path.isfile(
+            os.path.join(HERE, data["model_card"])):
+        problems.append(f"v2 MODEL_CARD 不存在：{data['model_card']}")
+    if problems:
+        for p in problems:
+            out.append(f"- [FAIL] {p}")
+    else:
+        out.append("- [PASS] v2 产物登记齐全且哈希一致")
     out.append("")
 
 
@@ -286,6 +497,10 @@ def main() -> None:
                        grp["check_1288"], out)
     check_template_conformance(out)
     check_threshold_pairing(out)
+    check_generation_mixing(out)
+    check_frozen_package(out)
+    check_finals_template(out)
+    check_v2_artifacts(out)
     text = "\n".join(out)
     with open(OUT_MD, "w", encoding="utf-8") as f:
         f.write(text)

@@ -33,3 +33,7 @@ roberta-base/
 
 *.bak
 *.pptx.bak
+
+# 提交包解出目录（把 zip 解开核对时产生，内容与 zip 重复，不入库）
+更新世界的锋芒_SoundInsight_复赛作品/
+更新世界的锋芒_SoundInsight_决赛入围定稿作品/
