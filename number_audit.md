@@ -173,13 +173,40 @@
   - [PASS] 在线链接填写表
   - [PASS] 团队信息已填写
 
-## 口径配对检查（阈值并排）
-- [PASS] competition_v4.md：无“调优档 F1 + 阈值 0.5 档 P/R”并排
-- [PASS] competition_v3.txt：无“调优档 F1 + 阈值 0.5 档 P/R”并排
-- [PASS] README.md：无“调优档 F1 + 阈值 0.5 档 P/R”并排
-- [PASS] QWEN_HANDOFF.md：无“调优档 F1 + 阈值 0.5 档 P/R”并排
-- [PASS] MODEL_CARD.md：无“调优档 F1 + 阈值 0.5 档 P/R”并排
-- [PASS] AI_HANDOFF/01_project_overview.md：无“调优档 F1 + 阈值 0.5 档 P/R”并排
-- [PASS] AI_HANDOFF/03_metrics_and_caveats.md：无“调优档 F1 + 阈值 0.5 档 P/R”并排
-- [PASS] docs/retrospective_and_reflection.md：无“调优档 F1 + 阈值 0.5 档 P/R”并排
-- [注意] ppt_text_dump.md：0 行同型并排（无）——PPT 不在提交包内，需用户决定是否改
+## 口径配对检查（阈值档，全指标）
+- [PASS] competition_v4.md：跨档指标均已标注阈值档
+- [PASS] competition_v3.txt：跨档指标均已标注阈值档
+- [PASS] README.md：跨档指标均已标注阈值档
+- [PASS] QWEN_HANDOFF.md：跨档指标均已标注阈值档
+- [PASS] MODEL_CARD.md：跨档指标均已标注阈值档
+- [PASS] AI_HANDOFF/01_project_overview.md：跨档指标均已标注阈值档
+- [PASS] AI_HANDOFF/03_metrics_and_caveats.md：跨档指标均已标注阈值档
+- [PASS] docs/retrospective_and_reflection.md：跨档指标均已标注阈值档
+- [PASS] docs/finals_stage.md：跨档指标均已标注阈值档
+- [PASS] docs/v2_acceptance_benchmark.md：跨档指标均已标注阈值档
+- [注意] ppt_text_dump.md：0 行跨档未标（无）——PPT 不在提交包内，需用户决定是否改
+
+## 代际检查（当前代：v1）
+- [注意] v2 数字尚未产生（`GEN_TOKENS["v2"]` 为空）：混用检查当前仅覆盖 v1；v2 落地时把新指标/tokens 填入即可自动生效
+- [PASS] competition_v4.md：无未标注的代际混用
+- [PASS] competition_v3.txt：无未标注的代际混用
+- [PASS] README.md：无未标注的代际混用
+- [PASS] QWEN_HANDOFF.md：无未标注的代际混用
+- [PASS] MODEL_CARD.md：无未标注的代际混用
+- [PASS] AI_HANDOFF/01_project_overview.md：无未标注的代际混用
+- [PASS] AI_HANDOFF/03_metrics_and_caveats.md：无未标注的代际混用
+- [PASS] docs/retrospective_and_reflection.md：无未标注的代际混用
+- [PASS] docs/finals_stage.md：无未标注的代际混用
+- [PASS] docs/v2_acceptance_benchmark.md：无未标注的代际混用
+- [PASS] docs/project_full_record.md：无未标注的代际混用
+- [PASS] PROGRESS_SYNC.md：无未标注的代际混用
+
+## 提交包冻结校验（红线 9）
+- [PASS] hashes.txt 记录的是已提交版本（e6cae286515ef1d2 vs 冻结值 e6cae286515ef1d2）
+- [PASS] 磁盘上的包与已提交版本一致（e6cae286515ef1d2 vs e6cae286515ef1d2）
+
+## 决赛模板合规检查（模板九节 + 5.2 百炼栏事实）
+- [SKIP] 决赛主文档尚未生成（候选：更新世界的锋芒_SoundInsight_决赛入围定稿作品.docx、更新世界的锋芒_SoundInsight_决赛入围定稿作品.pdf）——检查项已就绪，填好模板后自动生效
+
+## v2 可核验产物检查
+- [SKIP] 无 `v2/v2_artifacts.json`：v2 尚未落地。采纳 v2 时须提供该登记文件，字段：model_sha256{}、threshold_json{}、train_command、eval_outputs[]、model_card

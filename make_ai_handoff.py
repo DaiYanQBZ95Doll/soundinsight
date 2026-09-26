@@ -134,13 +134,43 @@ def sha256(path: str) -> str:
     return h.hexdigest()
 
 
+def ignored_dirs():
+    """取 .gitignore 命中的目录（含未跟踪），遍历时跳过。
+
+    否则把 zip 解出的核对目录（内容与包内重复、体积可达数十 MB）也算进清单，
+    统计与索引都会失真。
+    """
+    import subprocess
+    try:
+        out = subprocess.run(
+            # core.quotepath=false：否则含中文的路径会被 git 转义成 "\346..." 形式而匹配不上
+            ["git", "-c", "core.quotepath=false", "ls-files", "--others",
+             "--ignored", "--exclude-standard", "--directory"],
+            cwd=HERE, capture_output=True, text=True, encoding="utf-8",
+            errors="replace")
+    except OSError:
+        return set()
+    dirs = set()
+    for line in (out.stdout or "").splitlines():
+        rel = line.strip().rstrip("/").replace("\\", "/")
+        if rel:
+            dirs.add(rel)
+    return dirs
+
+
 def collect():
     entries = []
+    skip = ignored_dirs()
     for root, dirs, files in os.walk(HERE):
         dirs[:] = [d for d in dirs if d not in EXCLUDE_DIRS]
+        rel_root = os.path.relpath(root, HERE).replace("\\", "/")
+        dirs[:] = [d for d in dirs
+                   if (d if rel_root == "." else f"{rel_root}/{d}") not in skip]
         for fn in sorted(files):
             full = os.path.join(root, fn)
             rel = os.path.relpath(full, HERE).replace("\\", "/")
+            if rel in skip or any(rel.startswith(s + "/") for s in skip):
+                continue
             size = os.path.getsize(full)
             item = {
                 "path": rel,
