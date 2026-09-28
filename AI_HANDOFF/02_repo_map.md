@@ -1,6 +1,6 @@
 # 文件地图（由 make_ai_handoff.py 自动生成，勿手改）
 
-> 生成时间：2026-09-28 22:08；共 277 个条目；体积单位 KB/MB。
+> 生成时间：2026-09-28 22:18；共 277 个条目；体积单位 KB/MB。
 
 ## 提交物（5 项，43.2 MB）
 
@@ -60,12 +60,12 @@
 | 文件 | 大小 | 用途 |
 |---|---|---|
 | `docs/gap_and_roadmap_inventory.md` | 36.8 KB |  |
-| `docs/final_project_review_and_execution_plan.md` | 27.9 KB |  |
+| `docs/final_project_review_and_execution_plan.md` | 30.9 KB |  |
 | `docs/retrospective_and_reflection.md` | 27.9 KB |  |
 | `docs/project_full_record.md` | 21.6 KB | 初赛→复赛全流程记录 |
 | `docs/v2_acceptance_benchmark.md` | 20.4 KB |  |
 | `docs/D13_seal_declaration.md` | 19.7 KB | D13 封包声明（提交技术质检终审） |
-| `docs/final_review_and_execution_plan.md` | 18.7 KB |  |
+| `docs/final_review_and_execution_plan.md` | 19.5 KB |  |
 | `PROGRESS_SYNC.md` | 16.9 KB |  |
 | `docs/file_inventory.md` | 12.3 KB | 项目文件总索引 |
 | `PROJECT_BRIEF_QWEN.md` | 10.7 KB |  |
@@ -76,8 +76,8 @@
 | `docs/external_sources_register.md` | 6.5 KB |  |
 | `docs/work_summary_d7.md` | 6.2 KB |  |
 | `docs/SoundInsight决赛备战_现状盘点清单.md` | 4.8 KB |  |
+| `docs/repo_hygiene_scan.md` | 3.7 KB |  |
 | `docs/dataset_audit.md` | 3.5 KB | 数据集字段考古 |
-| `docs/repo_hygiene_scan.md` | 3.3 KB |  |
 | `docs/D14_resume_checklist.md` | 3.0 KB | 收尾四步清单（录视频/打包/上传/补推送） |
 | `docs/drift_plan.md` | 2.8 KB | 数据漂移监控方案 |
 | `AI_INDUCTION_REDLINE.md` | 2.7 KB |  |
