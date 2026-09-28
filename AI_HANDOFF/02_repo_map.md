@@ -1,6 +1,6 @@
 # 文件地图（由 make_ai_handoff.py 自动生成，勿手改）
 
-> 生成时间：2026-09-28 19:48；共 274 个条目；体积单位 KB/MB。
+> 生成时间：2026-09-28 21:45；共 275 个条目；体积单位 KB/MB。
 
 ## 提交物（5 项，43.2 MB）
 
@@ -55,11 +55,11 @@
 | `confidence_tiered.md` | 0.7 KB | 三星补漏置信度分层与中置信剔除记录 |
 | `significance_test.md` | 0.6 KB | Welch t 检验（p=0.000932） |
 
-## 过程与交接文档（20 项，0.2 MB）
+## 过程与交接文档（21 项，0.2 MB）
 
 | 文件 | 大小 | 用途 |
 |---|---|---|
-| `docs/gap_and_roadmap_inventory.md` | 34.7 KB |  |
+| `docs/gap_and_roadmap_inventory.md` | 36.8 KB |  |
 | `docs/retrospective_and_reflection.md` | 27.9 KB |  |
 | `docs/project_full_record.md` | 21.6 KB | 初赛→复赛全流程记录 |
 | `docs/v2_acceptance_benchmark.md` | 20.4 KB |  |
@@ -71,6 +71,7 @@
 | `docs/finals_stage.md` | 9.2 KB |  |
 | `docs/process_review_d10.md` | 8.5 KB |  |
 | `docs/legacy_materials_notice.md` | 8.3 KB |  |
+| `docs/external_sources_register.md` | 6.5 KB |  |
 | `docs/work_summary_d7.md` | 6.2 KB |  |
 | `docs/SoundInsight决赛备战_现状盘点清单.md` | 4.8 KB |  |
 | `docs/repo_hygiene_scan.md` | 3.5 KB |  |
