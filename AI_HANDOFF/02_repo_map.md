@@ -1,6 +1,6 @@
 # 文件地图（由 make_ai_handoff.py 自动生成，勿手改）
 
-> 生成时间：2026-09-28 19:28；共 274 个条目；体积单位 KB/MB。
+> 生成时间：2026-09-28 19:48；共 274 个条目；体积单位 KB/MB。
 
 ## 提交物（5 项，43.2 MB）
 
@@ -59,9 +59,9 @@
 
 | 文件 | 大小 | 用途 |
 |---|---|---|
+| `docs/gap_and_roadmap_inventory.md` | 34.7 KB |  |
 | `docs/retrospective_and_reflection.md` | 27.9 KB |  |
 | `docs/project_full_record.md` | 21.6 KB | 初赛→复赛全流程记录 |
-| `docs/gap_and_roadmap_inventory.md` | 21.1 KB |  |
 | `docs/v2_acceptance_benchmark.md` | 20.4 KB |  |
 | `docs/D13_seal_declaration.md` | 19.7 KB | D13 封包声明（提交技术质检终审） |
 | `PROGRESS_SYNC.md` | 16.9 KB |  |
@@ -73,8 +73,8 @@
 | `docs/legacy_materials_notice.md` | 8.3 KB |  |
 | `docs/work_summary_d7.md` | 6.2 KB |  |
 | `docs/SoundInsight决赛备战_现状盘点清单.md` | 4.8 KB |  |
-| `docs/dataset_audit.md` | 3.5 KB | 数据集字段考古 |
 | `docs/repo_hygiene_scan.md` | 3.5 KB |  |
+| `docs/dataset_audit.md` | 3.5 KB | 数据集字段考古 |
 | `docs/D14_resume_checklist.md` | 3.0 KB | 收尾四步清单（录视频/打包/上传/补推送） |
 | `docs/drift_plan.md` | 2.8 KB | 数据漂移监控方案 |
 | `AI_INDUCTION_REDLINE.md` | 2.7 KB |  |
