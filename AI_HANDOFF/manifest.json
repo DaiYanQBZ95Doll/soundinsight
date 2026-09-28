@@ -1,5 +1,5 @@
 {
- "generated": "2026-09-26 17:27",
+ "generated": "2026-09-28 18:52",
  "root": "C:\\deepseek-harness-master\\soundinsight",
  "count": 272,
  "entries": [
@@ -1189,9 +1189,9 @@
   {
    "path": "scan_repo_hygiene.py",
    "category": "代码",
-   "size_bytes": 18174,
+   "size_bytes": 18522,
    "purpose": "",
-   "sha256_16": "506ca10f0b5f36b8817da642646f11dd54592679226d67034b5b5d7bd7405fce"
+   "sha256_16": "7572c1eee510a406fe29031e9306d68dab969ff26953239c7ae85b3929a87414"
   },
   {
    "path": "significance_test.md",
@@ -1637,9 +1637,9 @@
   {
    "path": "docs/repo_hygiene_scan.md",
    "category": "过程与交接文档",
-   "size_bytes": 3257,
+   "size_bytes": 3495,
    "purpose": "",
-   "sha256_16": "6798c9b6574454fb7f7fe891254f20ca602c60cf060e6bba852f7355e5ef9337"
+   "sha256_16": "c356a3af1a40b0cf33503f4cf77996f6fa11c83e8c63a632e245cf43695ac384"
   },
   {
    "path": "docs/retrospective_and_reflection.md",

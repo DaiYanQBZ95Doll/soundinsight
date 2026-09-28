@@ -26,7 +26,9 @@ DATA_EXT = {".csv", ".jsonl", ".xlsx", ".xls"}
 # ---------------------------------------------------------------- 模式定义
 # 密钥 / 凭据：高危，命中即需处理（f-string 占位符 {args.token} 不算硬编码）
 SECRET_PATTERNS = [
-    (r"sk-[A-Za-z0-9]{16,}", "OpenAI 风格 key"),
+    # 通用 sk- 前缀密钥族：必须允许点/下划线/连字符，否则抓不到
+    # `sk-sp-H.DYRRYR...`（阿里云 Token Plan）这类带分段符的 key
+    (r"sk-[A-Za-z0-9._\-]{24,}", "sk- 前缀密钥（含 sk-sp-/sk-proj- 等分段式）"),
     (r"gh[pousr]_[A-Za-z0-9]{20,}", "GitHub token"),
     (r"hf_[A-Za-z0-9]{20,}", "HuggingFace token"),
     (r"(?i)bearer\s+[A-Za-z0-9._\-]{16,}", "Bearer 令牌"),
@@ -113,6 +115,8 @@ RECORD_FILES = {
     "QWEN_HANDOFF.md", "ppt_text_dump.md", "docs/legacy_materials_notice.md",
     "audit_ppt.py", "ppt_speed_fix.py", "fix_ppt_threshold.py",
     "throughput_bench.py", "throughput_eval.md", "docs/work_summary_d7.md",
+    # 质检方文档：本质是"标准与护栏"，需要引用被降级的数字来规范其用法
+    "docs/v2_acceptance_benchmark.md",
 }
 HISTORY_MARKERS = ("已废弃", "已修正", "曾出现", "曾出现的问题", "不再", "违禁",
                    "旧版", "修正前", "历史", "旧口径", "废弃", "回滚", "已删除",
