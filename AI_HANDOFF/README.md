@@ -3,6 +3,7 @@
 > **给 AI 助手的指令**：先读本文件，再按"阅读顺序"读下面 6 份说明，即可在不读全部源码的前提下掌握本项目；需要细节时用 `manifest.json` 定位文件。
 
 > **版本与口径指引**：仓库含初赛与过程材料，"哪个算数"的完整规则、已废弃 claim 一览、隐私与凭据说明见 **`docs/legacy_materials_notice.md`**；卫生自检 `python scan_repo_hygiene.py` → `docs/repo_hygiene_scan.md`。
+> **决赛阶段总纲（供各角色共同阅读）**：**`docs/final_project_review_and_execution_plan.md`** —— 项目现状、缺憾清单、外部材料核验结论、10/1–10/8 执行计划、工作包验收线、待决策项与风险降级；配套 `docs/gap_and_roadmap_inventory.md`（缺憾与期许全清单）、`docs/v2_acceptance_benchmark.md`（v2 采纳闸门）、`docs/external_sources_register.md`（外部数字三档裁定）。
 > 本目录**只放说明与索引，不复制大文件**（数据 247MB、模型权重 512MB 原地保留，路径见 `02_repo_map.md`）。
 
 ## 一、项目是什么（30 秒）

@@ -1,7 +1,7 @@
 {
- "generated": "2026-09-28 21:45",
+ "generated": "2026-09-28 22:08",
  "root": "C:\\deepseek-harness-master\\soundinsight",
- "count": 275,
+ "count": 277,
  "entries": [
   {
    "path": ".gitignore",
@@ -1621,6 +1621,20 @@
    "sha256_16": "c3e2dabadca2f5847b88367c8de3983523f709c7ff5dc607e682818d4da5a2be"
   },
   {
+   "path": "docs/final_project_review_and_execution_plan.md",
+   "category": "过程与交接文档",
+   "size_bytes": 28536,
+   "purpose": "",
+   "sha256_16": "1d7cf8601638247c2b2ab6b50874dc5ddde88734c6aa148cfa131f9c3ac68b3c"
+  },
+  {
+   "path": "docs/final_review_and_execution_plan.md",
+   "category": "过程与交接文档",
+   "size_bytes": 19143,
+   "purpose": "",
+   "sha256_16": "c39ed56d08b53ea54960e909575c5771769df99dcb5ac679d03bcbc3d4dc002c"
+  },
+  {
    "path": "docs/finals_stage.md",
    "category": "过程与交接文档",
    "size_bytes": 9408,
@@ -1658,9 +1672,9 @@
   {
    "path": "docs/repo_hygiene_scan.md",
    "category": "过程与交接文档",
-   "size_bytes": 3603,
+   "size_bytes": 3374,
    "purpose": "",
-   "sha256_16": "a74c4623d435034773af49f33ef942878bb9508c716932866921465b8987f403"
+   "sha256_16": "95d381a0de32de37ff57ce513ff86d7fa98877029b934b93f1cde90546fc8a29"
   },
   {
    "path": "docs/retrospective_and_reflection.md",
