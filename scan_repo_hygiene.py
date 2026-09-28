@@ -117,6 +117,8 @@ RECORD_FILES = {
     "throughput_bench.py", "throughput_eval.md", "docs/work_summary_d7.md",
     # 质检方文档：本质是"标准与护栏"，需要引用被降级的数字来规范其用法
     "docs/v2_acceptance_benchmark.md",
+    # 缺憾与期许总清单：逐条登记缺陷，必然引用被降级/受限使用的数字并注明其性质
+    "docs/gap_and_roadmap_inventory.md",
 }
 HISTORY_MARKERS = ("已废弃", "已修正", "曾出现", "曾出现的问题", "不再", "违禁",
                    "旧版", "修正前", "历史", "旧口径", "废弃", "回滚", "已删除",

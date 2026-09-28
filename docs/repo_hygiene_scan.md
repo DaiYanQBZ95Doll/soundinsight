@@ -1,6 +1,6 @@
 # 公开仓库卫生扫描（密钥 / 隐私 / 废弃 claim）
 
-- 扫描范围：git 跟踪文件 277 个（文本与数据类逐行扫；二进制仅按文件名判断）
+- 扫描范围：git 跟踪文件 280 个（文本与数据类逐行扫；二进制仅按文件名判断）
 - 生成方式：`python scan_repo_hygiene.py`（可随时重跑）
 
 ## 一、密钥与凭据
@@ -30,7 +30,7 @@
   - 行 81｜邮箱地址｜`soundinsight@users.noreply.github.com`
 
 ## 三、废弃 claim（已被修正的旧数字 / 旧表述）
-- 命中合计 32 处：其中 **0 处需确认**、32 处属诚信记录 / 历史说明（有意保留）
+- 命中合计 33 处：其中 **0 处需确认**、33 处属诚信记录 / 历史说明（有意保留）
 
 ### 3.1 需确认（不在诚信记录文件内，且无历史标记）
 - 无
@@ -41,6 +41,7 @@
 - `PROGRESS_SYNC.md`：1 处（行 68）
 - `audit_ppt.py`：2 处（行 65, 69）
 - `check_doc_numbers.py`：2 处（行 36, 65）
+- `docs/gap_and_roadmap_inventory.md`：1 处（行 42）
 - `docs/legacy_materials_notice.md`：6 处（行 52, 53, 56, 60, 60, 60）
 - `docs/process_review_d10.md`：2 处（行 60, 60）
 - `docs/project_full_record.md`：3 处（行 174, 174, 225）

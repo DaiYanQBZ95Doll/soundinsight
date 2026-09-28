@@ -1,7 +1,7 @@
 {
- "generated": "2026-09-28 19:14",
+ "generated": "2026-09-28 19:28",
  "root": "C:\\deepseek-harness-master\\soundinsight",
- "count": 275,
+ "count": 274,
  "entries": [
   {
    "path": ".gitignore",
@@ -1189,9 +1189,9 @@
   {
    "path": "scan_repo_hygiene.py",
    "category": "代码",
-   "size_bytes": 18522,
+   "size_bytes": 18679,
    "purpose": "",
-   "sha256_16": "7572c1eee510a406fe29031e9306d68dab969ff26953239c7ae85b3929a87414"
+   "sha256_16": "e00d1aecb28a26d5c02380d3f5972099d9ddb5f5c134db337e00ea530023351f"
   },
   {
    "path": "significance_test.md",
@@ -1588,9 +1588,9 @@
   {
    "path": "docs/SoundInsight决赛备战_现状盘点清单.md",
    "category": "过程与交接文档",
-   "size_bytes": 4208,
+   "size_bytes": 4888,
    "purpose": "",
-   "sha256_16": "d4809be06153ab5aec92684e73cb427f54b2871ced1409c206832495d58da93f"
+   "sha256_16": "b5cb5c538a22c350c9ec513f62e6834d647946b62c402335a8c6a546e92b112f"
   },
   {
    "path": "docs/dataset_audit.md",
@@ -1621,18 +1621,11 @@
    "sha256_16": "6e9f048f0a1676a5437809fefaa5c6d82fb755b6430ec7ee9ff765aea140d99b"
   },
   {
-   "path": "docs/gap_and_aspiration_inventory.md",
-   "category": "过程与交接文档",
-   "size_bytes": 13542,
-   "purpose": "",
-   "sha256_16": "7fe8e2a630040c5d2d43137aa7a69913d4d345f4f425e3694f6d4e13494bfb97"
-  },
-  {
    "path": "docs/gap_and_roadmap_inventory.md",
    "category": "过程与交接文档",
-   "size_bytes": 13973,
+   "size_bytes": 21564,
    "purpose": "",
-   "sha256_16": "f3ac2cc8bb9b73b7883a5885662d68fa91f712e8f75a36711c563cd130a93843"
+   "sha256_16": "62d691059bacc10494f086c742608f0993503c0a7c0bce5b73a617c0448c9848"
   },
   {
    "path": "docs/legacy_materials_notice.md",
@@ -1658,9 +1651,9 @@
   {
    "path": "docs/repo_hygiene_scan.md",
    "category": "过程与交接文档",
-   "size_bytes": 3315,
+   "size_bytes": 3577,
    "purpose": "",
-   "sha256_16": "eadda5468f2ebc313660b76fc0ec16c367d8475b695f779459dd98b0c2f8c3e4"
+   "sha256_16": "743dc099af1db71eef3ec1e95aa19fa5371122fc383ff9e9a5afdcd084b8842e"
   },
   {
    "path": "docs/retrospective_and_reflection.md",
