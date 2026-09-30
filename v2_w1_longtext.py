@@ -84,7 +84,8 @@ def predict(model, tok, texts, max_len, mode, seg_len, stride, device, bs=64):
                       padding=True, return_tensors="pt").to(device)
             logits = model(**enc).logits
             out[i:i + len(batch)] = torch.softmax(logits, -1)[:, 1].cpu().numpy()
-        else:  # segment
+        else:  # segment：手工拼 [CLS]+片段+[SEP]（transformers 5.x 无 prepare_for_model）
+            from torch.nn.utils.rnn import pad_sequence
             ids = tok(batch, add_special_tokens=False)["input_ids"]
             chunks, owner = [], []
             for j, seq in enumerate(ids):
@@ -97,19 +98,13 @@ def predict(model, tok, texts, max_len, mode, seg_len, stride, device, bs=64):
                     piece = seq[s:s + seg_len]
                     if not piece:
                         continue
-                    chunks.append(tok.prepare_for_model(
-                        [tok.cls_token_id] + piece + [tok.sep_token_id],
-                        return_tensors="pt")["input_ids"][0])
+                    chunks.append(torch.tensor(
+                        [tok.cls_token_id] + list(piece) + [tok.sep_token_id]))
                     owner.append(j)
             if not chunks:
                 continue
-            pad = torch.nn.utils.rnn.pad_sequence(
-                chunks, batch_first=True, padding_value=tok.pad_token_id).to(device) \
-                if hasattr(torch.nn.utils.rnn, "pad_sequence") else None
-            if pad is None:
-                from torch.nn.utils.rnn import pad_sequence
-                pad = pad_sequence(chunks, batch_first=True,
-                                   padding_value=tok.pad_token_id).to(device)
+            pad = pad_sequence(chunks, batch_first=True,
+                               padding_value=tok.pad_token_id).to(device)
             att = (pad != tok.pad_token_id).long().to(device)
             logits = model(input_ids=pad, attention_mask=att).logits
             probs = torch.softmax(logits, -1)[:, 1].cpu().numpy()
@@ -166,6 +161,8 @@ def main() -> int:
     pe.add_argument("--stride", type=int, default=64)
     pe.add_argument("--out", default=None)
     pe.add_argument("--thresholds", default="0.5")
+    pe.add_argument("--only-test", action="store_true",
+                    help="只评估 val_v3_test（跳过 val_v2，省时）")
 
     pt = sub.add_parser("train")
     pt.add_argument("--max-len", type=int, default=256)
@@ -180,7 +177,11 @@ def main() -> int:
     print(f"device={device}")
 
     if args.cmd == "eval":
-        texts, labels = load_csv_texts(VAL_CSV)
+        if args.only_test:
+            texts, labels = load_csv_texts(TEST_CSV)
+            print("[only-test] 跳过 val_v2 段")
+        else:
+            texts, labels = load_csv_texts(VAL_CSV)
         tok = DistilBertTokenizer.from_pretrained(args.model)
         model = DistilBertForSequenceClassification.from_pretrained(
             args.model).to(device).eval()

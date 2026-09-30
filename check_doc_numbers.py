@@ -554,6 +554,52 @@ def check_status_assertions(out) -> None:
     out.append("")
 
 
+def check_api_wording_consistency(out) -> None:
+    """M0b 跨材料口径一致性：README 与决赛主文档的模型调用表述必须逐字一致。
+
+    背景（红队第三轮）：README 曾只写"大模型 API（deepseek-chat）复核标注"，对百炼只字未提；
+    而决赛模板 5.2 要求填真实调用。若评委同时打开仓库与 PDF，会看到两套表述。
+    处置：定义**三句权威表述**（见 README「模型调用与边界」段），要求两侧逐字出现。
+
+    检查方式（机械）：三句各自的关键短语必须同时出现在 README 与决赛主文档中；
+    任一缺失即 FAIL 并指出缺哪句。决赛主文档尚未生成时 SKIP（与模板检查同口径）。
+    """
+    out.append("## 跨材料口径一致性检查（M0b）")
+    required = [
+        ("产品推理本地化", "100% 本地"),
+        ("标注侧通道", "DeepSeek 官方 API"),
+        ("对照侧通道", "Token Plan"),
+    ]
+    readme, _ = read_file("README.md")
+    if readme is None:
+        out.append("- [FAIL] README.md 不存在，无法核对权威表述")
+        out.append("")
+        return
+    readme_text = "\n".join(readme)
+    missing_readme = [name for name, kw in required if kw not in readme_text]
+    finals = None
+    for cand in FINALS_DOC_CANDIDATES:
+        lines, _ = read_file(cand)
+        if lines is not None:
+            finals = (cand, "\n".join(lines))
+            break
+    if missing_readme:
+        out.append(f"- [FAIL] README 缺少权威表述要素：{'、'.join(missing_readme)}")
+    else:
+        out.append("- [PASS] README 含全部三句权威表述要素")
+    if finals is None:
+        out.append("- [SKIP] 决赛主文档尚未生成：生成后本检查将要求两侧逐字一致")
+    else:
+        name, text = finals
+        missing = [n for n, kw in required if kw not in text]
+        if missing:
+            out.append(f"- [FAIL] {name} 缺少权威表述要素：{'、'.join(missing)}"
+                       "（须与 README「模型调用与边界」段逐字一致）")
+        else:
+            out.append(f"- [PASS] {name} 含全部三句权威表述要素")
+    out.append("")
+
+
 def main() -> None:
     out = ["# 文档数字一致性审计", ""]
     for grp in GROUPS:
@@ -564,6 +610,7 @@ def main() -> None:
     check_threshold_pairing(out)
     check_generation_mixing(out)
     check_status_assertions(out)
+    check_api_wording_consistency(out)
     check_frozen_package(out)
     check_finals_template(out)
     check_v2_artifacts(out)

@@ -1,6 +1,6 @@
 # 公开仓库卫生扫描（密钥 / 隐私 / 废弃 claim）
 
-- 扫描范围：git 跟踪文件 315 个（文本与数据类逐行扫；二进制仅按文件名判断）
+- 扫描范围：git 跟踪文件 316 个（文本与数据类逐行扫；二进制仅按文件名判断）
 - 生成方式：`python scan_repo_hygiene.py`（可随时重跑）
 
 ## 一、密钥与凭据
@@ -30,10 +30,12 @@
   - 行 81｜邮箱地址｜`soundinsight@users.noreply.github.com`
 
 ## 三、废弃 claim（已被修正的旧数字 / 旧表述）
-- 命中合计 36 处：其中 **0 处需确认**、36 处属诚信记录 / 历史说明（有意保留）
+- 命中合计 38 处：其中 **2 处需确认**、36 处属诚信记录 / 历史说明（有意保留）
 
 ### 3.1 需确认（不在诚信记录文件内，且无历史标记）
-- 无
+- `v2_record_incident.py`：2 处
+  - 行 50｜教师一致性数字出现在非方法语境｜| `max_len=128` | 0.7077（P 69.7／R 71.9） | 0.7523／R 83.7% | 0.7792／R 78.9% | **0.5676／R 51.2%** |
+  - 行 51｜教师一致性数字出现在非方法语境｜| `max_len=256` | **0.7206**（P 74.8／R 69.5） | 0.7664／R 83.7% | 0.7826／R 71.1% | **0.5915／R 51.2%** |
 
 ### 3.2 属历史说明 / 诚信记录（有意保留，不修改）
 - `AI_HANDOFF/03_metrics_and_caveats.md`：2 处（行 47, 47）
@@ -52,14 +54,18 @@
 - `ppt_speed_fix.py`：8 处（行 2, 3, 17, 20, 21, 22, 23, 24）
 
 ## 四、生成物一致性（manifest.json 记录值 vs 实际文件）
-- [需修正] 4 处记录值已过期（跑 `python make_ai_handoff.py` 重新生成）：
-  - `PROGRESS_SYNC.md` size_bytes：记录 30572 → 实际 32397
-  - `PROGRESS_SYNC.md` sha256_16：记录 8c87cf4af205eb9d → 实际 120db15654898f52
-  - `docs/frozen_execution_checklist.md` size_bytes：记录 49702 → 实际 51330
-  - `docs/frozen_execution_checklist.md` sha256_16：记录 653392216003f34f → 实际 e9ec3f1fd34727f8
+- [需修正] 8 处记录值已过期（跑 `python make_ai_handoff.py` 重新生成）：
+  - `README.md` size_bytes：记录 8389 → 实际 8781
+  - `README.md` sha256_16：记录 3d93001c0e05e759 → 实际 c5c68f151e12519c
+  - `check_doc_numbers.py` size_bytes：记录 27324 → 实际 30179
+  - `check_doc_numbers.py` sha256_16：记录 324228bf053ebd58 → 实际 8aa8c18641e2ed1a
+  - `v2_w1_longtext.py` size_bytes：记录 12070 → 实际 12382
+  - `v2_w1_longtext.py` sha256_16：记录 77bca4789813b366 → 实际 f7f53e94fa26415f
+  - `docs/frozen_execution_checklist.md` size_bytes：记录 51330 → 实际 51965
+  - `docs/frozen_execution_checklist.md` sha256_16：记录 e9ec3f1fd34727f8 → 实际 e30775d1ba4e1562
 
 ## 五、结论与建议
 - 密钥：未发现（高危 0 处；历史提交命中 0 处）
 - 隐私：13 处，见第二节；竞赛联系信息为模板要求填写，公开仓库如需脱敏见 `docs/legacy_materials_notice.md` §四
-- 废弃 claim：当前文档需确认 0 处；历史材料的口径指引见 `docs/legacy_materials_notice.md`
+- 废弃 claim：当前文档需确认 2 处；历史材料的口径指引见 `docs/legacy_materials_notice.md`
 - 生成物一致性：需重跑生成脚本

@@ -1,6 +1,6 @@
 # 文件地图（由 make_ai_handoff.py 自动生成，勿手改）
 
-> 生成时间：2026-09-30 19:35；共 311 个条目；体积单位 KB/MB。
+> 生成时间：2026-09-30 20:32；共 318 个条目；体积单位 KB/MB。
 
 ## 提交物（5 项，43.2 MB）
 
@@ -20,7 +20,7 @@
 | `hackathon-复赛作品提交模板-天池版.docx` | 35.7 KB | 官方复赛模板原文（格式对照基准） |
 | `competition_v4.md` | 20.1 KB | 主文档（13 章，含模板九章 + 合规披露 + 局限） |
 | `competition_v3.txt` | 8.8 KB | 官方模板九章版主文档 |
-| `README.md` | 8.2 KB |  |
+| `README.md` | 8.6 KB |  |
 | `competition_v2.md` | 7.0 KB | 初赛版文档 |
 | `competition_v2.txt` | 7.0 KB |  |
 | `DEPLOY_GUIDE.md` | 4.2 KB |  |
@@ -32,7 +32,7 @@
 
 | 文件 | 大小 | 用途 |
 |---|---|---|
-| `number_audit.md` | 11.1 KB | 数字一致性审计结果（含官方模板格式对照节） |
+| `number_audit.md` | 11.3 KB | 数字一致性审计结果（含官方模板格式对照节） |
 | `error_taxonomy.md` | 8.2 KB | 错误分类学：FP/FN 构成 + 标注噪声人工终审 |
 | `llm_baseline.md` | 6.4 KB | LLM 对照报告（deepseek + qwen3.7-plus，含循环性红利声明） |
 | `edge_case_benchmark.py` | 5.6 KB |  |
@@ -56,11 +56,11 @@
 | `confidence_tiered.md` | 0.7 KB | 三星补漏置信度分层与中置信剔除记录 |
 | `significance_test.md` | 0.6 KB | Welch t 检验（p=0.000932） |
 
-## 过程与交接文档（29 项，0.4 MB）
+## 过程与交接文档（32 项，0.4 MB）
 
 | 文件 | 大小 | 用途 |
 |---|---|---|
-| `docs/frozen_execution_checklist.md` | 50.1 KB |  |
+| `docs/frozen_execution_checklist.md` | 50.7 KB |  |
 | `docs/gap_and_roadmap_inventory.md` | 36.8 KB |  |
 | `docs/final_project_review_and_execution_plan.md` | 36.0 KB |  |
 | `PROGRESS_SYNC.md` | 31.6 KB |  |
@@ -81,9 +81,12 @@
 | `docs/completeness_audit_round2.md` | 7.8 KB |  |
 | `docs/external_sources_register.md` | 6.5 KB |  |
 | `docs/work_summary_d7.md` | 6.2 KB |  |
+| `docs/N1_narrative_mainline.md` | 6.0 KB |  |
+| `docs/N1b_downgrade_narrative.md` | 5.8 KB |  |
 | `docs/SoundInsight决赛备战_现状盘点清单.md` | 4.8 KB |  |
+| `docs/repo_hygiene_scan.md` | 4.4 KB |  |
 | `docs/evidence_index_exp.md` | 4.4 KB |  |
-| `docs/repo_hygiene_scan.md` | 3.7 KB |  |
+| `docs/w1_longtext_variants.md` | 3.8 KB |  |
 | `docs/dataset_audit.md` | 3.5 KB | 数据集字段考古 |
 | `docs/D14_resume_checklist.md` | 3.0 KB | 收尾四步清单（录视频/打包/上传/补推送） |
 | `docs/drift_plan.md` | 2.8 KB | 数据漂移监控方案 |
@@ -209,15 +212,15 @@
 | `sample_reviews_100.csv` | 57.9 KB |  |
 | `agent_test_input.csv` | 27.9 KB |  |
 
-## 代码（101 项，0.4 MB）
+## 代码（102 项，0.4 MB）
 
 | 文件 | 大小 | 用途 |
 |---|---|---|
-| `check_doc_numbers.py` | 26.7 KB | 数字审计 + 模板格式对照脚本 |
+| `check_doc_numbers.py` | 29.5 KB | 数字审计 + 模板格式对照脚本 |
 | `scan_repo_hygiene.py` | 19.8 KB |  |
 | `v2_meta_analysis.py` | 19.1 KB |  |
 | `build_pdf_v2.py` | 12.4 KB |  |
-| `v2_w1_longtext.py` | 11.8 KB |  |
+| `v2_w1_longtext.py` | 12.1 KB |  |
 | `make_ai_handoff.py` | 11.5 KB |  |
 | `build_pdf.py` | 11.2 KB |  |
 | `build_submission.py` | 9.3 KB |  |
@@ -241,6 +244,7 @@
 | `precommit_guard.py` | 5.4 KB |  |
 | `train_final.py` | 5.2 KB |  |
 | `train_roberta_quick.py` | 5.2 KB |  |
+| `v2_w1_seg_threshold.py` | 5.1 KB |  |
 | `predict_core.py` | 5.1 KB | 共享推理核心（含非英文显式拒绝） |
 | `fix_ppt_threshold.py` | 4.8 KB |  |
 | `make_video_assets.py` | 4.5 KB |  |
@@ -371,7 +375,7 @@
 | `multi_label_model/` | 256.1 MB | 冻结的多标签归因模型权重（约 256MB），不入 git |
 | `sound_model/` | 256.1 MB | 冻结的二分类模型权重（约 256MB），不入 git |
 
-## 其他（17 项，46.2 MB）
+## 其他（20 项，46.2 MB）
 
 | 文件 | 大小 | 用途 |
 |---|---|---|
@@ -382,10 +386,13 @@
 | `视频录制速查.md` | 3.1 KB |  |
 | `LICENSE` | 2.6 KB |  |
 | `v2/w6_split_manifest.json` | 1.8 KB |  |
+| `v2/w1_seg_threshold.json` | 1.1 KB |  |
 | `v2/v2_artifacts.template.json` | 1.1 KB |  |
 | `hashes.txt` | 0.9 KB |  |
+| `v2/w1_eval_model_maxlen128_segment(seg128_stride64)_val_v3_test.json` | 0.9 KB |  |
 | `v2/w1_eval_model_maxlen128_truncate(max128)_val_v3_test.json` | 0.9 KB |  |
 | `v2/w1_eval_model_maxlen256_truncate(max256)_val_v3_test.json` | 0.9 KB |  |
+| `v2/w1_eval_model_maxlen128_segment(seg128_stride64).json` | 0.9 KB |  |
 | `v2/w1_eval_model_maxlen128_truncate(max128).json` | 0.9 KB |  |
 | `v2/w1_eval_model_maxlen256_truncate(max256).json` | 0.9 KB |  |
 | `v2/w1_eval_maxlen128.json` | 0.9 KB |  |
