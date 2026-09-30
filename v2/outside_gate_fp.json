@@ -1,0 +1,31 @@
+{
+  "model": "v2/model_maxlen256",
+  "threshold": 0.6,
+  "gen": "[v2]",
+  "inside": {
+    "n": 1313,
+    "share": 0.1313,
+    "fp": 23,
+    "fp_rate": 0.0194
+  },
+  "outside": {
+    "n": 8687,
+    "share": 0.8687,
+    "flagged": 3,
+    "fp_rate": 0.0003,
+    "wilson95": [
+      0.0001,
+      0.001
+    ]
+  },
+  "gate_removal_estimate": {
+    "new_flags": 30.0,
+    "ci95": [
+      10.0,
+      88.0
+    ],
+    "precision_with_gate_pct": 79.1,
+    "precision_without_gate_pct": 77.0,
+    "note": "新增判正全部为误报（闸门外无正例标签）；召回不变"
+  }
+}

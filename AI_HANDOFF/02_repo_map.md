@@ -1,13 +1,13 @@
 # 文件地图（由 make_ai_handoff.py 自动生成，勿手改）
 
-> 生成时间：2026-10-01 04:36；共 403 个条目；体积单位 KB/MB。
+> 生成时间：2026-10-01 04:44；共 406 个条目；体积单位 KB/MB。
 
 ## 提交物（5 项，43.4 MB）
 
 | 文件 | 大小 | 用途 |
 |---|---|---|
 | `更新世界的锋芒_SoundInsight_复赛作品.zip` | 42.4 MB |  |
-| `更新世界的锋芒_SoundInsight_其他材料.zip` | 715.1 KB |  |
+| `更新世界的锋芒_SoundInsight_其他材料.zip` | 715.6 KB |  |
 | `更新世界的锋芒_SoundInsight_复赛作品.pdf` | 210.1 KB |  |
 | `更新世界的锋芒_SoundInsight_Demo.zip` | 105.8 KB |  |
 | `更新世界的锋芒_SoundInsight_复赛作品.docx` | 48.0 KB |  |
@@ -57,13 +57,13 @@
 | `confidence_tiered.md` | 0.7 KB | 三星补漏置信度分层与中置信剔除记录 |
 | `significance_test.md` | 0.6 KB | Welch t 检验（p=0.000932） |
 
-## 过程与交接文档（51 项，0.5 MB）
+## 过程与交接文档（52 项，0.5 MB）
 
 | 文件 | 大小 | 用途 |
 |---|---|---|
 | `docs/frozen_execution_checklist.md` | 64.3 KB |  |
-| `PROGRESS_SYNC.md` | 45.7 KB |  |
-| `docs/gap_and_roadmap_inventory.md` | 41.7 KB |  |
+| `PROGRESS_SYNC.md` | 46.8 KB |  |
+| `docs/gap_and_roadmap_inventory.md` | 42.2 KB |  |
 | `docs/final_project_review_and_execution_plan.md` | 36.3 KB |  |
 | `docs/retrospective_and_reflection.md` | 27.9 KB |  |
 | `docs/project_full_record.md` | 21.6 KB | 初赛→复赛全流程记录 |
@@ -111,6 +111,7 @@
 | `docs/W5_cv_interpretation.md` | 2.2 KB |  |
 | `docs/w13_keyword_miss_rate.md` | 2.1 KB |  |
 | `docs/w11_data_efficiency.md` | 1.9 KB |  |
+| `docs/outside_gate_fp.md` | 1.8 KB |  |
 | `docs/year_split_output.txt` | 0.8 KB | 年份分桶脚本输出原文 |
 
 ## 演示材料（6 项，18.1 MB）
@@ -240,7 +241,7 @@
 | `sample_reviews_100.csv` | 57.9 KB |  |
 | `agent_test_input.csv` | 27.9 KB |  |
 
-## 代码（138 项，0.6 MB）
+## 代码（139 项，0.6 MB）
 
 | 文件 | 大小 | 用途 |
 |---|---|---|
@@ -251,7 +252,7 @@
 | `v2_w4_mine.py` | 12.4 KB |  |
 | `build_pdf_v2.py` | 12.4 KB |  |
 | `v2_w1_longtext.py` | 12.1 KB |  |
-| `build_finals_appendix.py` | 11.5 KB |  |
+| `build_finals_appendix.py` | 11.8 KB |  |
 | `make_ai_handoff.py` | 11.5 KB |  |
 | `build_pdf.py` | 11.2 KB |  |
 | `build_finals_docx2.py` | 11.2 KB |  |
@@ -259,6 +260,7 @@
 | `build_submission.py` | 9.3 KB |  |
 | `demo_sound_v2.py` | 9.1 KB | 本地 Gradio Demo（三页；已内置代理绕过） |
 | `v2_w2_perclass.py` | 9.1 KB |  |
+| `outside_gate_fp.py` | 8.9 KB |  |
 | `v2_w7_calibration.py` | 8.9 KB |  |
 | `build_finals_content.py` | 8.7 KB |  |
 | `test_audit_checks.py` | 8.7 KB |  |
@@ -439,12 +441,12 @@
 | `multi_label_model/` | 256.1 MB | 冻结的多标签归因模型权重（约 256MB），不入 git |
 | `sound_model/` | 256.1 MB | 冻结的二分类模型权重（约 256MB），不入 git |
 
-## 其他（41 项，46.2 MB）
+## 其他（42 项，46.2 MB）
 
 | 文件 | 大小 | 用途 |
 |---|---|---|
 | `更新世界的锋芒_SoundInsight_演示视频.mp4` | 46.1 MB |  |
-| `更新世界的锋芒_SoundInsight_决赛入围定稿作品.docx` | 34.8 KB |  |
+| `更新世界的锋芒_SoundInsight_决赛入围定稿作品.docx` | 34.9 KB |  |
 | `v2/w14_w15_w16_report.md` | 7.9 KB |  |
 | `v2/w17_failure_stats.json` | 6.5 KB |  |
 | `v2/m0_switch_report.json` | 6.0 KB |  |
@@ -479,6 +481,7 @@
 | `v2/w1_eval_maxlen128.json` | 0.9 KB |  |
 | `v2/w1_eval_maxlen256.json` | 0.9 KB |  |
 | `v2/w1_eval_maxlen512.json` | 0.9 KB |  |
+| `v2/outside_gate_fp.json` | 0.6 KB |  |
 | `difficulty_stratification.json` | 0.5 KB |  |
 | `per_class_thresholds_probe.json` | 0.4 KB |  |
 | `w11_data_efficiency.json` | 0.4 KB |  |
