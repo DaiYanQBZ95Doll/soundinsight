@@ -1,6 +1,6 @@
 # 公开仓库卫生扫描（密钥 / 隐私 / 废弃 claim）
 
-- 扫描范围：git 跟踪文件 325 个（文本与数据类逐行扫；二进制仅按文件名判断）
+- 扫描范围：git 跟踪文件 335 个（文本与数据类逐行扫；二进制仅按文件名判断）
 - 生成方式：`python scan_repo_hygiene.py`（可随时重跑）
 
 ## 一、密钥与凭据
@@ -53,12 +53,12 @@
 
 ## 四、生成物一致性（manifest.json 记录值 vs 实际文件）
 - [需修正] 6 处记录值已过期（跑 `python make_ai_handoff.py` 重新生成）：
-  - `PROGRESS_SYNC.md` size_bytes：记录 32804 → 实际 34000
-  - `PROGRESS_SYNC.md` sha256_16：记录 83aafa30662d53d8 → 实际 4f787a7a3b6ff466
-  - `docs/frozen_execution_checklist.md` size_bytes：记录 52705 → 实际 52917
-  - `docs/frozen_execution_checklist.md` sha256_16：记录 8c0701fd31f6c750 → 实际 beea2b601351649f
-  - `docs/w1_longtext_variants.md` size_bytes：记录 3865 → 实际 4792
-  - `docs/w1_longtext_variants.md` sha256_16：记录 0ca0a2837239178e → 实际 9aa78be140ba9d22
+  - `PROGRESS_SYNC.md` size_bytes：记录 34000 → 实际 35593
+  - `PROGRESS_SYNC.md` sha256_16：记录 4f787a7a3b6ff466 → 实际 b8b5ff4c5fafd850
+  - `v2_w2_perclass.py` size_bytes：记录 8321 → 实际 9326
+  - `v2_w2_perclass.py` sha256_16：记录 56be8b052652456a → 实际 9164bbc810e08582
+  - `docs/frozen_execution_checklist.md` size_bytes：记录 52917 → 实际 54403
+  - `docs/frozen_execution_checklist.md` sha256_16：记录 beea2b601351649f → 实际 c2210a32c0dae1cd
 
 ## 五、结论与建议
 - 密钥：未发现（高危 0 处；历史提交命中 0 处）

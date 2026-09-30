@@ -1,6 +1,6 @@
 # 文件地图（由 make_ai_handoff.py 自动生成，勿手改）
 
-> 生成时间：2026-09-30 21:53；共 330 个条目；体积单位 KB/MB。
+> 生成时间：2026-09-30 22:03；共 336 个条目；体积单位 KB/MB。
 
 ## 提交物（5 项，43.2 MB）
 
@@ -60,10 +60,10 @@
 
 | 文件 | 大小 | 用途 |
 |---|---|---|
-| `docs/frozen_execution_checklist.md` | 51.7 KB |  |
+| `docs/frozen_execution_checklist.md` | 53.1 KB |  |
 | `docs/gap_and_roadmap_inventory.md` | 36.8 KB |  |
 | `docs/final_project_review_and_execution_plan.md` | 36.0 KB |  |
-| `PROGRESS_SYNC.md` | 33.2 KB |  |
+| `PROGRESS_SYNC.md` | 34.8 KB |  |
 | `docs/retrospective_and_reflection.md` | 27.9 KB |  |
 | `docs/project_full_record.md` | 21.6 KB | 初赛→复赛全流程记录 |
 | `docs/v2_acceptance_benchmark.md` | 20.4 KB |  |
@@ -217,7 +217,7 @@
 | `sample_reviews_100.csv` | 57.9 KB |  |
 | `agent_test_input.csv` | 27.9 KB |  |
 
-## 代码（105 项，0.4 MB）
+## 代码（107 项，0.5 MB）
 
 | 文件 | 大小 | 用途 |
 |---|---|---|
@@ -231,10 +231,11 @@
 | `report_builder.py` | 10.3 KB |  |
 | `build_submission.py` | 9.3 KB |  |
 | `demo_sound_v2.py` | 9.1 KB | 本地 Gradio Demo（三页；已内置代理绕过） |
+| `v2_w2_perclass.py` | 9.1 KB |  |
+| `v2_w7_calibration.py` | 8.9 KB |  |
 | `v2_w1_hybrid.py` | 8.4 KB |  |
 | `v2_w17_failure_stats.py` | 8.4 KB |  |
 | `ablation_train.py` | 8.2 KB |  |
-| `v2_w2_perclass.py` | 8.1 KB |  |
 | `soundinsight_agent.py` | 8.1 KB | 一键洞察 Agent（md/excel、zh/en、非英文跳过） |
 | `test_audit_checks.py` | 7.9 KB |  |
 | `pack_final.py` | 7.9 KB | 提交包打包与四项自检 |
@@ -290,6 +291,7 @@
 | `restore_timestamps.py` | 2.3 KB |  |
 | `throughput_bench.py` | 2.2 KB |  |
 | `verify_online_report.py` | 2.2 KB |  |
+| `v2_w2_diag.py` | 2.1 KB |  |
 | `check_video.py` | 2.1 KB |  |
 | `demo_sound.py` | 2.1 KB |  |
 | `batch_check.py` | 2.1 KB | 在线 Demo 批量验收脚本 |
@@ -383,18 +385,22 @@
 | `multi_label_model/` | 256.1 MB | 冻结的多标签归因模型权重（约 256MB），不入 git |
 | `sound_model/` | 256.1 MB | 冻结的二分类模型权重（约 256MB），不入 git |
 
-## 其他（24 项，46.2 MB）
+## 其他（28 项，46.2 MB）
 
 | 文件 | 大小 | 用途 |
 |---|---|---|
 | `更新世界的锋芒_SoundInsight_演示视频.mp4` | 46.1 MB |  |
 | `v2/w14_w15_w16_report.md` | 7.9 KB |  |
 | `v2/w17_failure_stats.json` | 6.5 KB |  |
+| `v2/w7_calibration.json` | 4.4 KB |  |
 | `v2/w14_w15_w16_summary.json` | 3.1 KB |  |
 | `视频录制速查.md` | 3.1 KB |  |
 | `v2/w1_hybrid_result.json` | 2.7 KB |  |
 | `LICENSE` | 2.6 KB |  |
+| `v2/w2_perclass_thresholds.json` | 2.3 KB |  |
 | `v2/w6_split_manifest.json` | 1.8 KB |  |
+| `v2/w7_calibration.md` | 1.5 KB |  |
+| `v2/w2_perclass_thresholds.md` | 1.4 KB |  |
 | `v2/w1_seg_threshold.json` | 1.1 KB |  |
 | `v2/v2_artifacts.template.json` | 1.1 KB |  |
 | `hashes.txt` | 0.9 KB |  |

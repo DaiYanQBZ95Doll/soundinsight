@@ -40,10 +40,17 @@ PROBE_OPTIMISTIC = 0.7834        # [v1] 同集选阈值的乐观值（不可对�
 
 
 def load(path, cols=("issue_bass_llm", "issue_clarity_llm", "issue_noise_llm",
-                     "issue_volume_llm", "issue_treble_llm")):
+                     "issue_volume_llm", "issue_treble_llm"), positives_only=True):
+    """读入评测集。
+
+    positives_only=True（默认，主口径）：只保留 `sound_negative == 1` 的正例——
+    因为五类归因模型只在正例上训练（train_multilabel.py:41），与 v1 的 0.6481 同口径。
+    """
     texts, ys = [], []
     with open(path, encoding="utf-8", errors="replace") as fh:
         for row in csv.DictReader(fh):
+            if positives_only and str(row.get("sound_negative", "")).strip() != "1":
+                continue
             texts.append(str(row["text"]))
             ys.append([int(float(row.get(c) or 0)) for c in cols])
     return texts, np.array(ys, dtype=int)
@@ -69,8 +76,12 @@ def main() -> int:
             print(f"[FAIL] 缺少 {p}（先跑 v2_w6_split.py）")
             return 1
     labels_path = os.path.join(MODEL_DIR, "issue_labels.json")
-    names = json.load(open(labels_path, encoding="utf-8")) if os.path.isfile(labels_path) \
-        else ["低音", "清晰度", "杂音", "音量", "高音"]
+    if os.path.isfile(labels_path):
+        meta = json.load(open(labels_path, encoding="utf-8"))
+        # 该文件是 {"columns": [...], "names": [...]} 结构（不是裸列表）
+        names = meta["names"] if isinstance(meta, dict) else meta
+    else:
+        names = ["低音", "清晰度", "杂音", "音量", "高音"]
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
     tok = DistilBertTokenizer.from_pretrained(MODEL_DIR)
     model = DistilBertForSequenceClassification.from_pretrained(
@@ -78,7 +89,8 @@ def main() -> int:
     print(f"device={device} | 类别 {names}")
 
     res = {}
-    for tag, path in (("tune", TUNE_CSV), ("test", TEST_CSV), ("val_v2", V2_CSV)):
+    # 注意：不再评估 val_v2——它只有 text 与 sound_negative，没有五类标签列
+    for tag, path in (("tune", TUNE_CSV), ("test", TEST_CSV)):
         texts, Y = load(path)
         P = predict(texts, tok, model, device, args.max_len)
         res[tag] = {"texts": texts, "Y": Y, "P": P}
@@ -122,7 +134,8 @@ def main() -> int:
     os.makedirs(OUT_DIR, exist_ok=True)
     payload = {
         "gen": "[v2]",
-        "protocol": "阈值在 val_v3_tune 上选，指标在 val_v3_test 上报（消除 A1-8 同集偏置）",
+        "protocol": "阈值在 val_v3_tune 上选、在 val_v3_test 上报（消除 A1-8 同集偏置）；"
+                    "评估范围＝**音质差评正例**（归因模型只在正例上训练，train_multilabel.py:41）",
         "val_v3_tune": {"n": int(len(res["tune"]["texts"])),
                         "pos_per_class": res["tune"]["Y"].sum(axis=0).tolist()},
         "val_v3_test": {"n": int(len(res["test"]["texts"])),
@@ -139,8 +152,9 @@ def main() -> int:
         json.dump(payload, fh, ensure_ascii=False, indent=2)
 
     lines = ["# W2 多标签逐类阈值（tune 选阈值 / test 报指标）", "",
-             f"> 协议：阈值在 `val_v3_tune`（n={len(res['tune']['texts'])}）上网格搜索，"
-             f"指标在 `val_v3_test`（n={len(res['test']['texts'])}）上报告。"
+             f"> 协议：阈值在 `val_v3_tune` 上网格搜索，"
+             f"指标在 `val_v3_test` 上报告。**评估范围为音质差评正例**"
+             f"（tune n={len(res['tune']['texts'])}／test n={len(res['test']['texts'])}）——"
              f"v1 的 0.7834 是在**同一集合**上选阈值得到的（`per_class_thresholds_probe.json` "
              f"自注偏乐观），本表以 test 列为准，两者不可混用。", "",
              "## 选中的阈值（来自 tune）", "",
