@@ -1,6 +1,6 @@
 # 文件地图（由 make_ai_handoff.py 自动生成，勿手改）
 
-> 生成时间：2026-10-01 03:51；共 396 个条目；体积单位 KB/MB。
+> 生成时间：2026-10-01 03:55；共 395 个条目；体积单位 KB/MB。
 
 ## 提交物（5 项，43.4 MB）
 
@@ -72,6 +72,7 @@
 | `docs/D13_seal_declaration.md` | 19.7 KB | D13 封包声明（提交技术质检终审） |
 | `docs/file_inventory.md` | 12.3 KB | 项目文件总索引 |
 | `PROJECT_BRIEF_QWEN.md` | 11.2 KB |  |
+| `docs/overnight_summary.md` | 10.5 KB |  |
 | `docs/pre_lock_completeness_audit.md` | 10.4 KB |  |
 | `docs/N_line_handoff_protocol.md` | 10.0 KB |  |
 | `docs/finals_stage.md` | 9.2 KB |  |
@@ -80,7 +81,6 @@
 | `docs/legacy_materials_notice.md` | 8.3 KB |  |
 | `docs/w17_failure_cases.md` | 7.9 KB |  |
 | `docs/completeness_audit_round2.md` | 7.8 KB |  |
-| `docs/overnight_summary.md` | 7.1 KB |  |
 | `docs/N1b_downgrade_narrative.md` | 7.0 KB |  |
 | `docs/external_sources_register.md` | 6.5 KB |  |
 | `docs/N1_narrative_mainline.md` | 6.4 KB |  |
@@ -238,7 +238,7 @@
 | `sample_reviews_100.csv` | 57.9 KB |  |
 | `agent_test_input.csv` | 27.9 KB |  |
 
-## 代码（135 项，0.6 MB）
+## 代码（134 项，0.6 MB）
 
 | 文件 | 大小 | 用途 |
 |---|---|---|
@@ -371,7 +371,6 @@
 | `启动Demo.bat` | 0.9 KB | 双击启动本地 Demo |
 | `text_utils.py` | 0.9 KB |  |
 | `v2_w1_compare.py` | 0.8 KB |  |
-| `v2_doc_head.py` | 0.6 KB |  |
 | `exp08_ablation_B/config.json` | 0.5 KB |  |
 | `exp09_ablation_C/config.json` | 0.5 KB |  |
 | `exp07_ablation_A/config.json` | 0.5 KB |  |

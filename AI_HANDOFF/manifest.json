@@ -1,7 +1,7 @@
 {
- "generated": "2026-10-01 03:51",
+ "generated": "2026-10-01 03:55",
  "root": "C:\\deepseek-harness-master\\soundinsight",
- "count": 396,
+ "count": 395,
  "entries": [
   {
    "path": ".gitignore",
@@ -1065,7 +1065,7 @@
    "category": "验证报告",
    "size_bytes": 14280,
    "purpose": "数字一致性审计结果（含官方模板格式对照节）",
-   "sha256_16": "55bc31f34138ae98a1ae9c243ab4e16e94e38a19f04e61bbd3d41e23d6c78408"
+   "sha256_16": "1e2b502cca875c8a4af8af345d78c046677ed8e84e97c2db53e65d1e0c85478d"
   },
   {
    "path": "pack_final.py",
@@ -1521,13 +1521,6 @@
    "size_bytes": 3758,
    "purpose": "",
    "sha256_16": "4357b903db4d770c769786b80c92a753a4b0b951af61a5f1d426789c188106e4"
-  },
-  {
-   "path": "v2_doc_head.py",
-   "category": "代码",
-   "size_bytes": 592,
-   "purpose": "",
-   "sha256_16": "3e8b1a947e0998abc141de83530890be8dca7a9f605c23dcd0b6c55d2ed30a51"
   },
   {
    "path": "v2_hybrid_selftest.py",
@@ -2162,9 +2155,9 @@
   {
    "path": "docs/overnight_summary.md",
    "category": "过程与交接文档",
-   "size_bytes": 7307,
+   "size_bytes": 10766,
    "purpose": "",
-   "sha256_16": "89d64e9aded0704b7500e3f25e9abad9719e9a2b92f840efb5e300fdc561c66f"
+   "sha256_16": "b73e2d1021bb76421beb4fead67777d338ef25151b850bc816b1b2bba68eafd0"
   },
   {
    "path": "docs/pre_lock_completeness_audit.md",
@@ -2192,7 +2185,7 @@
    "category": "过程与交接文档",
    "size_bytes": 3643,
    "purpose": "",
-   "sha256_16": "0d467497666af748f4484942f0b2cbfcea7651bc6b500220731a3857f5cc5b4a"
+   "sha256_16": "829b4d3a2a185d7822657237a8fa8e71d6232abf9f438d18df3f8c1895371a0e"
   },
   {
    "path": "docs/retrospective_and_reflection.md",
