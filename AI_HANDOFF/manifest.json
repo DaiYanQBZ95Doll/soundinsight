@@ -1,14 +1,14 @@
 {
- "generated": "2026-09-30 18:55",
+ "generated": "2026-09-30 19:35",
  "root": "C:\\deepseek-harness-master\\soundinsight",
- "count": 307,
+ "count": 311,
  "entries": [
   {
    "path": ".gitignore",
    "category": "其他",
-   "size_bytes": 621,
+   "size_bytes": 779,
    "purpose": "",
-   "sha256_16": "9a56499c30ab656d24625e229c6762d7397711e46156dc61e6dfded1523e7dcf"
+   "sha256_16": "90b37e01687664afc049e7b419067e60cb7118e24620cd0a5b9a8a62c51df330"
   },
   {
    "path": "AI+跨境黑客松巅峰赛 · 复赛公示名单（手机版）.html",
@@ -48,9 +48,9 @@
   {
    "path": "PROGRESS_SYNC.md",
    "category": "过程与交接文档",
-   "size_bytes": 30572,
+   "size_bytes": 32397,
    "purpose": "",
-   "sha256_16": "8c87cf4af205eb9d8dba6f8da5941a76537427821f212f1eeddb371d3d1b3b2f"
+   "sha256_16": "120db15654898f52f0a2af39d7b3e76cc9c20bfa34cfb747056b721a27174a07"
   },
   {
    "path": "PROJECT_BRIEF_QWEN.md",
@@ -935,6 +935,13 @@
    "sha256_16": "51903409ae5ae8c454fb93ec9c2ed3ab1dbddc85452f19b62f61fa6a9f078565"
   },
   {
+   "path": "mask_history_secrets.py",
+   "category": "代码",
+   "size_bytes": 1665,
+   "purpose": "",
+   "sha256_16": "822ef6f689d43f9a9b85b8d2aa2fe3c9df8af463540ac7adf3f1e47897f69a35"
+  },
+  {
    "path": "md_to_docx.py",
    "category": "代码",
    "size_bytes": 5500,
@@ -1047,6 +1054,13 @@
    "sha256_16": "596f16e35fefee8313d6e57b8425d14fc2f796a1a805f5a4ad535baf60d52c49"
   },
   {
+   "path": "precommit_guard.py",
+   "category": "代码",
+   "size_bytes": 5484,
+   "purpose": "",
+   "sha256_16": "c0ae42c945e266333f3ad0f72b7e571d799ec8ca8cfd4fea18801b60404d4633"
+  },
+  {
    "path": "predict_core.py",
    "category": "代码",
    "size_bytes": 5205,
@@ -1108,6 +1122,13 @@
    "size_bytes": 948,
    "purpose": "",
    "sha256_16": "3c1fcba5cdc5cfe8bf3b051da264eb435640418677420019b01dac7122f4bd6a"
+  },
+  {
+   "path": "purge_leaked_objects.py",
+   "category": "代码",
+   "size_bytes": 3242,
+   "purpose": "",
+   "sha256_16": "bcf63f576ef4a3f7fb9e9c5dae1c2312df3edf144817cfd58c1645c3d7b2042e"
   },
   {
    "path": "qna_preparation.md",
@@ -1203,9 +1224,9 @@
   {
    "path": "scan_repo_hygiene.py",
    "category": "代码",
-   "size_bytes": 18679,
+   "size_bytes": 20320,
    "purpose": "",
-   "sha256_16": "e00d1aecb28a26d5c02380d3f5972099d9ddb5f5c134db337e00ea530023351f"
+   "sha256_16": "2576bc2ee4baa3eac6e4f1f2d6392868ebbe66239483e11accb53ff7ae63285a"
   },
   {
    "path": "significance_test.md",
@@ -1404,11 +1425,25 @@
    "sha256_16": "e60ebdae89ffcae308b44ce190e6e3baa37dcd603e571d413a43989b0ccb819e"
   },
   {
+   "path": "v2_record_incident.py",
+   "category": "代码",
+   "size_bytes": 4617,
+   "purpose": "",
+   "sha256_16": "82e02eea56e892fe1060366a499fa1178b9f3fe66aeb30bebb11bf081ac88a7f"
+  },
+  {
    "path": "v2_w17_failure_stats.py",
    "category": "代码",
    "size_bytes": 8601,
    "purpose": "",
    "sha256_16": "b5419362878028340c8255fb4d6dd2c6874ca99ffffc02cdc73df9b08a0a6e34"
+  },
+  {
+   "path": "v2_w1_compare.py",
+   "category": "代码",
+   "size_bytes": 854,
+   "purpose": "",
+   "sha256_16": "3208527c46a53ee264c29332b44a7808a91f76beb6e64db90b3fe4b864774b69"
   },
   {
    "path": "v2_w1_leak_check.py",
@@ -1423,6 +1458,13 @@
    "size_bytes": 12070,
    "purpose": "",
    "sha256_16": "77bca4789813b366881257248cb3cc9b2e3815997f6d5563c34958d5b852c199"
+  },
+  {
+   "path": "v2_w1_token_len.py",
+   "category": "代码",
+   "size_bytes": 1173,
+   "purpose": "",
+   "sha256_16": "043427cf6b22881e37e53aec1ce37b29243eeafa57aa26a75c6050a42317035a"
   },
   {
    "path": "v2_w2_perclass.py",
@@ -1735,9 +1777,9 @@
   {
    "path": "docs/frozen_execution_checklist.md",
    "category": "过程与交接文档",
-   "size_bytes": 49702,
+   "size_bytes": 51330,
    "purpose": "",
-   "sha256_16": "653392216003f34fcd290ea318a7b277bdfc97f0078d9872341b605dd404305a"
+   "sha256_16": "e9ec3f1fd34727f82b21c69fd1c5494e52750213c1fb0c1d9b0f9172cbfe5f29"
   },
   {
    "path": "docs/gap_and_roadmap_inventory.md",
@@ -1777,9 +1819,9 @@
   {
    "path": "docs/repo_hygiene_scan.md",
    "category": "过程与交接文档",
-   "size_bytes": 5520,
+   "size_bytes": 3822,
    "purpose": "",
-   "sha256_16": "5184608d66980abcfb196df1ba2c7a31b5d5cf2c8c718830f6d17c03477d57e9"
+   "sha256_16": "32d0038f68d205dc46411223ef92e3f6e6bcfc8bc4a36df6f539ad5412ef364e"
   },
   {
    "path": "docs/retrospective_and_reflection.md",
@@ -1829,13 +1871,6 @@
    "size_bytes": 822,
    "purpose": "年份分桶脚本输出原文",
    "sha256_16": "53f64b9728da665af7396112a933fe88c2ef16f78ec728cc675f984242ddc3cf"
-  },
-  {
-   "path": "docs/百炼Token Plan 信件原文.txt",
-   "category": "过程与交接文档",
-   "size_bytes": 2186,
-   "purpose": "",
-   "sha256_16": "a60f37262cadeb5609e42433ccaf4bd36f011630779f27927ad38eb143d3910d"
   },
   {
    "path": "exp03_LLM复核与标签清洗/labeled_llm.csv",
@@ -2006,11 +2041,32 @@
    "sha256_16": "a3c47eed9796f7caa4337c8aeaa6bdea3a96c41ef908987a83e2b948b499c8c4"
   },
   {
+   "path": "v2/w1_eval_maxlen128.json",
+   "category": "其他",
+   "size_bytes": 935,
+   "purpose": "",
+   "sha256_16": "0bb04f45a75641b566f62d6b55bada55e4dabe10d06fdf87d11f192f83262639"
+  },
+  {
    "path": "v2/w1_eval_maxlen256.json",
    "category": "其他",
    "size_bytes": 934,
    "purpose": "",
    "sha256_16": "abf1f8c5860361f8af802fbb7adc9a00186d06919c66cd32430fec1a10cb207a"
+  },
+  {
+   "path": "v2/w1_eval_model_maxlen128_truncate(max128).json",
+   "category": "其他",
+   "size_bytes": 949,
+   "purpose": "",
+   "sha256_16": "3f4cb81c597274de33b629ec499560765b153e2342f1e4efdcccbf1a31828b5a"
+  },
+  {
+   "path": "v2/w1_eval_model_maxlen128_truncate(max128)_val_v3_test.json",
+   "category": "其他",
+   "size_bytes": 958,
+   "purpose": "",
+   "sha256_16": "41b056b50141301c8e6777e896cb5efefc103bd4fa2db7c96804bbc9be3c5137"
   },
   {
    "path": "v2/w1_eval_model_maxlen256_truncate(max256).json",
@@ -2032,34 +2088,6 @@
    "size_bytes": 1812,
    "purpose": "",
    "sha256_16": "55c4241527763451d491c3d7f20972f84676644abb84044b1c058c170ff4f4ac"
-  },
-  {
-   "path": "v2/model_maxlen256/config.json",
-   "category": "代码",
-   "size_bytes": 668,
-   "purpose": "",
-   "sha256_16": "0941959477c9535fe10b9685815ecfaa54855c92598b177adc3a760af8351b94"
-  },
-  {
-   "path": "v2/model_maxlen256/model.safetensors",
-   "category": "其他",
-   "size_bytes": 267832560,
-   "purpose": "",
-   "sha256_16": ""
-  },
-  {
-   "path": "v2/model_maxlen256/tokenizer.json",
-   "category": "其他",
-   "size_bytes": 711649,
-   "purpose": "",
-   "sha256_16": "851ca67100d372ca3ae031a6abd168f53489eebfd7d89523f35c5c9b4d372c3c"
-  },
-  {
-   "path": "v2/model_maxlen256/tokenizer_config.json",
-   "category": "代码",
-   "size_bytes": 597,
-   "purpose": "",
-   "sha256_16": "6e603a842725cd6830455cbb0119c4f9912f99825870c487e3100eda47a2f759"
   },
   {
    "path": "视频素材/00_标题卡.png",

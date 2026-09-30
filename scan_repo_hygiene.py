@@ -105,6 +105,10 @@ GENERATED_FILES = {
     "hashes.txt", "docs/repo_hygiene_scan.md",
 }
 
+# v2 评估输出与权重目录：数值为实测结果（其中某次 recall 83.7 与教师一致性数字巧合相同）
+GENERATED_PREFIXES = ("v2/w1_eval_", "v2/model_", "v2/w2_", "v2/w6_")
+
+
 # 这些文件本身就是"诚信记录 / 校验脚本 / 修复脚本 / 过程日志"，
 # 命中属于有意保留的历史说明或负向护栏（例如 `if "1297" in joined: FAIL`）
 RECORD_FILES = {
@@ -119,6 +123,8 @@ RECORD_FILES = {
     "docs/v2_acceptance_benchmark.md",
     # 缺憾与期许总清单：逐条登记缺陷，必然引用被降级/受限使用的数字并注明其性质
     "docs/gap_and_roadmap_inventory.md",
+    # 实验证据索引（E3）：登记各 exp 目录用途与对外数字对应，属记录性质
+    "docs/evidence_index_exp.md",
 }
 HISTORY_MARKERS = ("已废弃", "已修正", "曾出现", "曾出现的问题", "不再", "违禁",
                    "旧版", "修正前", "历史", "旧口径", "废弃", "回滚", "已删除",
@@ -225,7 +231,8 @@ def check_manifest() -> list[dict]:
     for e in entries:
         if not isinstance(e, dict) or "path" not in e:
             continue
-        if e["path"] in GENERATED_FILES or e["path"] == "AI_HANDOFF/manifest.json":
+        if e["path"] in GENERATED_FILES or e["path"].startswith(GENERATED_PREFIXES) \
+                or e["path"] == "AI_HANDOFF/manifest.json":
             continue  # 生成物：每次重跑都会变，不参与一致性判定
         fp = os.path.join(HERE, e["path"])
         if not os.path.isfile(fp):
@@ -261,7 +268,7 @@ def main() -> int:
         if is_data:  # 数据集正文里的 "password" 等词不算隐私或 claim
             continue
         scan_file(f, PII_PATTERNS, pii_hits, "pii")
-        if f not in GENERATED_FILES:
+        if f not in GENERATED_FILES and not f.startswith(GENERATED_PREFIXES):
             scan_file(f, LEGACY_PATTERNS, legacy_hits, "legacy")
 
     hist_hits = scan_history(SECRET_PATTERNS)
