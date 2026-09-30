@@ -41,3 +41,13 @@ roberta-base/
 # P0-3 字段恢复产物：含 user_id（隐私边界：仅本地用于聚合统计，不入库）
 review_meta_v2.csv
 
+
+# v2 权重与凭证：不入库（权重按 SHA256 登记，凭证绝不入库）
+v2/model_*/
+*.safetensors
+*Token Plan*
+*信件原文*
+*.env
+*.key
+*.pem
+
