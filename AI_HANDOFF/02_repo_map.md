@@ -1,6 +1,6 @@
 # 文件地图（由 make_ai_handoff.py 自动生成，勿手改）
 
-> 生成时间：2026-09-29 22:29；共 279 个条目；体积单位 KB/MB。
+> 生成时间：2026-09-30 16:18；共 279 个条目；体积单位 KB/MB。
 
 ## 提交物（5 项，43.2 MB）
 
@@ -61,9 +61,9 @@
 |---|---|---|
 | `docs/gap_and_roadmap_inventory.md` | 36.8 KB |  |
 | `docs/final_project_review_and_execution_plan.md` | 36.0 KB |  |
+| `docs/frozen_execution_checklist.md` | 31.7 KB |  |
 | `docs/retrospective_and_reflection.md` | 27.9 KB |  |
 | `docs/project_full_record.md` | 21.6 KB | 初赛→复赛全流程记录 |
-| `docs/frozen_execution_checklist.md` | 20.7 KB |  |
 | `docs/v2_acceptance_benchmark.md` | 20.4 KB |  |
 | `docs/D13_seal_declaration.md` | 19.7 KB | D13 封包声明（提交技术质检终审） |
 | `docs/final_review_and_execution_plan.md` | 19.5 KB |  |

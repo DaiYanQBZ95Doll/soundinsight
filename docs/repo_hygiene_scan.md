@@ -52,8 +52,8 @@
 
 ## 四、生成物一致性（manifest.json 记录值 vs 实际文件）
 - [需修正] 2 处记录值已过期（跑 `python make_ai_handoff.py` 重新生成）：
-  - `docs/frozen_execution_checklist.md` size_bytes：记录 15847 → 实际 21155
-  - `docs/frozen_execution_checklist.md` sha256_16：记录 fe483729f6792143 → 实际 037fc4cecdb6b2be
+  - `docs/frozen_execution_checklist.md` size_bytes：记录 21155 → 实际 32510
+  - `docs/frozen_execution_checklist.md` sha256_16：记录 037fc4cecdb6b2be → 实际 5585f31ccd4d5aa3
 
 ## 五、结论与建议
 - 密钥：未发现（高危 0 处；历史提交命中 0 处）
