@@ -1,6 +1,6 @@
 {
   "checked": 38,
-  "pending_non_exempt": 1,
+  "pending_non_exempt": 0,
   "detail": {
     "results_summary.md": {
       "hits": 4,
@@ -17,16 +17,6 @@
         {
           "line": 55,
           "text": "- FINAL acc=0.9865 f1@0.5=0.6241 f1_best=0.6871 @thr=0.9744"
-        }
-      ]
-    },
-    "error_taxonomy.md": {
-      "hits": 1,
-      "exempt": false,
-      "samples": [
-        {
-          "line": 35,
-          "text": "- （双面）\"Poor sound and low battery life but our kids love the minions so it served its purpose\"——prob 0.9744496"
         }
       ]
     },
