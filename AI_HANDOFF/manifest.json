@@ -1,7 +1,7 @@
 {
- "generated": "2026-09-30 16:33",
+ "generated": "2026-09-30 16:56",
  "root": "C:\\deepseek-harness-master\\soundinsight",
- "count": 280,
+ "count": 281,
  "entries": [
   {
    "path": ".gitignore",
@@ -41,9 +41,9 @@
   {
    "path": "PROGRESS_SYNC.md",
    "category": "过程与交接文档",
-   "size_bytes": 17333,
+   "size_bytes": 18315,
    "purpose": "",
-   "sha256_16": "ead94f73db953ad5d32bac5e034e553040fb2ed2267c1954834d750a4a1aa5ef"
+   "sha256_16": "fdae9287adb56e96fc1c35c1a3bc9e2251f9391e0b669c857a325bd0aed18555"
   },
   {
    "path": "PROJECT_BRIEF_QWEN.md",
@@ -1586,6 +1586,13 @@
    "sha256_16": "ba5b9ecfe830412f586127f3980d8fbf08bb2dc4d42fd8319fbb0989110ec853"
   },
   {
+   "path": "docs/N_line_handoff_protocol.md",
+   "category": "过程与交接文档",
+   "size_bytes": 10222,
+   "purpose": "",
+   "sha256_16": "d00d80f6feaca238ed08163a9f578158e585ce0fd7fafcbe11f297ef06e38edd"
+  },
+  {
    "path": "docs/SoundInsight决赛备战_现状盘点清单.md",
    "category": "过程与交接文档",
    "size_bytes": 4888,
@@ -1651,9 +1658,9 @@
   {
    "path": "docs/frozen_execution_checklist.md",
    "category": "过程与交接文档",
-   "size_bytes": 44825,
+   "size_bytes": 45366,
    "purpose": "",
-   "sha256_16": "6a4ffc5e9df5d280b3edf64d36a04defe01939a821297374e9d50b991707cc2f"
+   "sha256_16": "db7e7891507cbd2ce36d20a8cb2224b9d67f6c30defb69c7b318e4177d8415bb"
   },
   {
    "path": "docs/gap_and_roadmap_inventory.md",
@@ -1693,9 +1700,9 @@
   {
    "path": "docs/repo_hygiene_scan.md",
    "category": "过程与交接文档",
-   "size_bytes": 3605,
+   "size_bytes": 3760,
    "purpose": "",
-   "sha256_16": "aeb39287b54a7647359d82a93f75fc7981f2462de4a1c5debc4699969bd2ac35"
+   "sha256_16": "fa98122f508026a661b794369681291304a93553b00de08d9664120b8b5841ee"
   },
   {
    "path": "docs/retrospective_and_reflection.md",
