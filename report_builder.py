@@ -77,10 +77,10 @@ def _example_lines(examples, lang: str = "zh", top_text: int = 120):
 def confidence_action_lines(n_high: int, n_mid: int, n_low: int, lang: str) -> list:
     """W17：置信度三档 → 建议动作（统一口径，报告与主文档共用同一张表）。
 
-    阈值口径：与冻结模型 `sound_model/threshold.json` 的调优档一致（0.9744[v1]）；
+    阈值口径：与冻结模型 `sound_model/threshold.json` 的调优档一致（0.9744，v1 冻结口径）；
     报告正文的中置信提示使用同一区间，改阈值时须同步这三处。
     """
-    tuned_thr = 0.9744[v1]
+    tuned_thr = 0.9744  # [v1] 冻结模型调优档
     if lang == "en":
         return [
             "",
@@ -150,7 +150,7 @@ def build_report(*, src_name: str, n_total: int, n_unsupported: int,
                      "same-scope complaint-rate change.")
         if n_mid:
             lines.append(f"- {n_mid} review(s) fall in the mid-confidence "
-                         f"band (prob 0.5-0.9744[v1]): treated as normal but "
+                         f"band (prob 0.5-0.9744): treated as normal but "
                          f"flagged for manual review.")
         lines += confidence_action_lines(n_neg, n_mid, n_valid - n_neg - n_mid, "en")
         lines += ["", "## 7. Notes",
@@ -191,7 +191,7 @@ def build_report(*, src_name: str, n_total: int, n_unsupported: int,
     lines += ["", "## 五、验证指标",
               "建议复评周期：2-4 周后重新运行批量分析，追踪同口径差评率变化。"]
     if n_mid:
-        lines.append(f"- 中置信提示：有 {n_mid} 条评论概率落在 0.5-0.9744[v1] 区间，"
+        lines.append(f"- 中置信提示：有 {n_mid} 条评论概率落在 0.5-0.9744 区间，"
                      f"当前判为正常但建议人工抽查（疑似负面）。")
     lines += confidence_action_lines(n_neg, n_mid, n_valid - n_neg - n_mid, "zh")
     lines += ["", "## 七、附注",

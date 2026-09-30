@@ -154,6 +154,13 @@ THRESHOLD_TIERS = {
 
 # 代际：v1 = 复赛已提交口径；v2 = 决赛口径（落地后把新指标填进 tokens，检查自动生效）
 GEN_TAGS = ("[v1]", "[v2]")
+# 产品运行时模块：这些文件必须可编译，且代码行内不得出现"数字直贴 [v1]/[v2]"
+# （2026-10-01：M0 的行级文本替换曾把 `tuned_thr = 0.9744` 改成 `0.9744[v1]`，
+#   导致包内 Demo 运行失败而数字审计全绿——本清单与检查即为该事故的机械化防护）
+PRODUCT_MODULES = ["report_builder.py", "deployment/report_builder.py",
+                   "soundinsight_agent.py", "demo_sound_v2.py", "demo_sound.py",
+                   "api_server.py", "text_utils.py"]
+TAG_GLUED = re.compile(r"\d\[v[12]\]")
 GEN_TOKENS = {
     "v1": ["0.6871", "0.9744", "0.6234", "0.7191", "0.6241", "0.000932"],
     "v2": ["0.7220", "0.7206", "0.7811", "0.8273", "0.5333"],  # E5 填入：F1@调优/F1@0.5/PR-AUC/归因宏F1/高音F1
@@ -651,9 +658,50 @@ def check_file_integrity(out) -> None:
     out.append("")
 
 
+def check_product_code_health(out) -> None:
+    """产品代码健康（2026-10-01 事故后新增）。
+
+    背景：M0 的"给 v1 数字加代际标签"脚本是**按行做文本替换**的，结果把产品代码里的
+    `tuned_thr = 0.9744` 改成了 `tuned_thr = 0.9744[v1]` —— 包内 Demo 直接运行失败。
+    数字审计当时全绿，因为没有任何检查看过**代码能不能跑**。
+
+    检查（机械、不依赖 GPU/权重）：
+      ① 产品模块必须能编译（内存 compile，不落盘 .pyc）；
+      ② 代码行内不得出现"数字直贴 [v1]/[v2]"（注释与文档字符串不受限，
+         但正则会命中直贴形态，因此只对 PRODUCT_MODULES 生效）。
+    """
+    out.append("## 产品代码健康检查（编译 + 标签污染）")
+    bad = 0
+    for rel in PRODUCT_MODULES:
+        p = os.path.join(HERE, rel)
+        if not os.path.isfile(p):
+            out.append(f"- [FAIL] {rel}：文件不存在")
+            bad += 1
+            continue
+        src = open(p, encoding="utf-8", errors="replace").read()
+        try:
+            compile(src, rel, "exec")
+        except SyntaxError as e:
+            out.append(f"- [FAIL] {rel}：语法错误 {e}")
+            bad += 1
+            continue
+        hits = [(i, ln.strip()) for i, ln in enumerate(src.splitlines(), 1)
+                if TAG_GLUED.search(ln)]
+        if hits:
+            out.append(f"- [FAIL] {rel}：{len(hits)} 处代码内残留代际标签"
+                       f"（如行 {hits[0][0]}：{hits[0][1][:70]}）")
+            bad += 1
+        else:
+            out.append(f"- [PASS] {rel}：可编译且无标签污染")
+    if bad == 0:
+        out.append("- 结论：产品模块健康（编译通过、无 [v1]/[v2] 直贴数字）")
+    out.append("")
+
+
 def main() -> None:
     out = ["# 文档数字一致性审计", ""]
     check_file_integrity(out)
+    check_product_code_health(out)
     for grp in GROUPS:
         for fname in grp["files"]:
             audit_file(fname, grp["required"], grp["forbidden"],

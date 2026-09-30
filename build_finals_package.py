@@ -31,12 +31,15 @@ FINALS_ZIP = f"{TEAM}_{NAME}_决赛入围定稿作品.zip"
 RECAP_ZIP = f"{TEAM}_{NAME}_复赛作品.zip"
 FROZEN_RECAP_SHA = "e6cae286515ef1d2"
 
-# Demo 包：入口与配置
+# Demo 包：入口与配置（**显式白名单**——产品运行所需的最小完整集合）
 DEMO_INCLUDE = ["demo_sound_v2.py", "demo_sound.py", "soundinsight_agent.py",
-                "report_builder.py", "api_server.py", "config.json",
+                "report_builder.py", "api_server.py", "predict_core.py",
+                "text_utils.py", "config.json",
                 "requirements.txt", "README.md", "MODEL_CARD.md", "edge_cases.md",
                 "install.bat", "sample_reviews_100.csv", "download_models.py",
-                "text_utils.py", "predict_utils.py"]
+                # 样例输出：让评委不必装模型也能看到报告长什么样
+                "insight_report_v2.md", "insight_report_v2_en.md",
+                "demo_output.png"]
 # 开发/评测/打包类脚本：不入 Demo 包
 DEV_SCRIPTS = {
     "check_doc_numbers.py", "scan_repo_hygiene.py", "test_audit_checks.py",
@@ -158,21 +161,19 @@ def sha256(path: str) -> str:
 
 
 def collect_demo() -> dict[str, str]:
-    items = {}
+    """Demo 包内容＝**显式白名单**（不再遍历仓库）。
+
+    2026-10-01 事故：原先"遍历仓库所有 .py 再排除黑名单"的做法把解包临时目录
+    `_tmp_pkgcheck/`（51 个条目）与多个开发脚本扫进了 Demo 包。白名单从根上消除该类泄漏：
+    包内容 = 产品运行必需文件 + 部署目录源码 + 样例输出。
+    """
+    items: dict[str, str] = {}
     for n in DEMO_INCLUDE:
         p = os.path.join(HERE, n)
         if os.path.isfile(p):
             items[n] = p
-    for root, dirs, files in os.walk(HERE):
-        dirs[:] = [d for d in dirs if d not in EXCLUDE_DIRS and not d.startswith("~$")]
-        for fn in files:
-            if not fn.endswith(".py"):
-                continue
-            if fn in DEV_SCRIPTS or fn.startswith(DEV_PREFIXES):
-                continue
-            full = os.path.join(root, fn)
-            items[os.path.relpath(full, HERE)] = full
-    # 部署目录（在线空间源码）
+        else:
+            print(f"  [注意] Demo 白名单文件缺失：{n}")
     dep = os.path.join(HERE, "deployment")
     if os.path.isdir(dep):
         for fn in sorted(os.listdir(dep)):
