@@ -1,6 +1,6 @@
 # 文件地图（由 make_ai_handoff.py 自动生成，勿手改）
 
-> 生成时间：2026-10-01 02:57；共 386 个条目；体积单位 KB/MB。
+> 生成时间：2026-10-01 03:02；共 387 个条目；体积单位 KB/MB。
 
 ## 提交物（5 项，43.4 MB）
 
@@ -235,7 +235,7 @@
 | `sample_reviews_100.csv` | 57.9 KB |  |
 | `agent_test_input.csv` | 27.9 KB |  |
 
-## 代码（130 项，0.6 MB）
+## 代码（131 项，0.6 MB）
 
 | 文件 | 大小 | 用途 |
 |---|---|---|
@@ -250,6 +250,7 @@
 | `build_pdf.py` | 11.2 KB |  |
 | `build_finals_appendix.py` | 10.7 KB |  |
 | `report_builder.py` | 10.2 KB |  |
+| `build_finals_docx2.py` | 9.6 KB |  |
 | `build_submission.py` | 9.3 KB |  |
 | `demo_sound_v2.py` | 9.1 KB | 本地 Gradio Demo（三页；已内置代理绕过） |
 | `v2_w2_perclass.py` | 9.1 KB |  |
@@ -258,7 +259,6 @@
 | `test_audit_checks.py` | 8.7 KB |  |
 | `v2_w1_hybrid.py` | 8.4 KB |  |
 | `v2_w17_failure_stats.py` | 8.4 KB |  |
-| `build_finals_docx2.py` | 8.4 KB |  |
 | `ablation_train.py` | 8.2 KB |  |
 | `soundinsight_agent.py` | 8.1 KB | 一键洞察 Agent（md/excel、zh/en、非英文跳过） |
 | `pack_final.py` | 7.9 KB | 提交包打包与四项自检 |
@@ -348,6 +348,7 @@
 | `v2_hybrid_selftest.py` | 1.5 KB |  |
 | `verify_download_urls.py` | 1.5 KB |  |
 | `extract_template.py` | 1.5 KB |  |
+| `v2_check_placeholders.py` | 1.4 KB |  |
 | `merge_three_star.py` | 1.4 KB |  |
 | `check_studio_build.py` | 1.3 KB |  |
 | `prep_err_taxonomy.py` | 1.2 KB |  |
@@ -431,7 +432,7 @@
 | 文件 | 大小 | 用途 |
 |---|---|---|
 | `更新世界的锋芒_SoundInsight_演示视频.mp4` | 46.1 MB |  |
-| `更新世界的锋芒_SoundInsight_决赛入围定稿作品.docx` | 35.2 KB |  |
+| `更新世界的锋芒_SoundInsight_决赛入围定稿作品.docx` | 34.3 KB |  |
 | `v2/w14_w15_w16_report.md` | 7.9 KB |  |
 | `v2/w17_failure_stats.json` | 6.5 KB |  |
 | `v2/w7_calibration.json` | 4.4 KB |  |

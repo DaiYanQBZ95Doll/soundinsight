@@ -67,6 +67,11 @@ def fill_tables(doc) -> None:
             if not cells or len(cells) < 2:
                 continue
             key = cells[0].text.strip()
+            # 表格里的示例/提示行：清空（如"（请将各链接粘贴到对应行）💡 建议…"）
+            if key.startswith("（") or "请将各链接" in key:
+                for c in cells:
+                    set_cell(c, "")
+                continue
             if key in TEAM and not cells[1].text.strip():
                 set_cell(cells[1], TEAM[key])
             elif key == "参赛场景":
@@ -105,6 +110,31 @@ def split_blocks(lines: list[str]):
         blocks.append(("p", ln))
         i += 1
     return blocks
+
+
+def is_guidance(text: str) -> bool:
+    """判定模板引导语：整段以（ 开头、）结尾，或以"（例：""（请""（如"起。
+
+    这类段落必须在填充后删除——留着会让评委以为文档没填完（2026-10-01 实测残留 10 段）。
+    """
+    t = text.strip()
+    if not t:
+        return False
+    if t.startswith(("（例：", "（请", "（如", "（可列")):
+        return True
+    return t.startswith("（") and t.endswith("）") and len(t) < 240
+
+
+def strip_guidance(doc) -> int:
+    """删除正文层的模板引导语段落 + 4.2 的空编号占位（1. 2. 3. 4.）。"""
+    removed = 0
+    numbered = {"1.", "2.", "3.", "4.", "5."}
+    for p in list(doc.paragraphs):
+        t = p.text.strip()
+        if is_guidance(t) or t in numbered:
+            p._element.getparent().remove(p._element)
+            removed += 1
+    return removed
 
 
 def insert_after(doc, paragraph, lines: list[str]) -> int:
@@ -154,6 +184,8 @@ def main() -> int:
 
     doc = Document(TEMPLATE)
     print(f"模板：段落 {len(doc.paragraphs)}、表格 {len(doc.tables)}")
+    n_guide = strip_guidance(doc)
+    print(f"删除模板引导语/占位段落：{n_guide}")
     inserted, matched = 0, []
     for para in list(doc.paragraphs):
         text = para.text.strip()
