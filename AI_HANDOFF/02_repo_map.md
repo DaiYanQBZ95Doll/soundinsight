@@ -1,6 +1,6 @@
 # 文件地图（由 make_ai_handoff.py 自动生成，勿手改）
 
-> 生成时间：2026-10-01 04:49；共 408 个条目；体积单位 KB/MB。
+> 生成时间：2026-10-01 04:54；共 408 个条目；体积单位 KB/MB。
 
 ## 提交物（5 项，43.5 MB）
 
@@ -70,12 +70,12 @@
 | `docs/v2_acceptance_benchmark.md` | 20.4 KB |  |
 | `docs/D13_seal_declaration.md` | 20.1 KB | D13 封包声明（提交技术质检终审） |
 | `docs/final_review_and_execution_plan.md` | 19.9 KB |  |
+| `docs/overnight_summary.md` | 13.9 KB |  |
 | `docs/file_inventory.md` | 12.8 KB | 项目文件总索引 |
 | `PROJECT_BRIEF_QWEN.md` | 11.2 KB |  |
+| `docs/finals_stage.md` | 11.0 KB |  |
 | `docs/N_line_handoff_protocol.md` | 10.6 KB |  |
-| `docs/overnight_summary.md` | 10.5 KB |  |
 | `docs/pre_lock_completeness_audit.md` | 10.4 KB |  |
-| `docs/finals_stage.md` | 9.7 KB |  |
 | `QWEN_HANDOFF.md` | 9.1 KB |  |
 | `docs/process_review_d10.md` | 8.5 KB |  |
 | `docs/legacy_materials_notice.md` | 8.3 KB |  |

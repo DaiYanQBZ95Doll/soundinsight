@@ -1,5 +1,5 @@
 {
- "generated": "2026-10-01 04:49",
+ "generated": "2026-10-01 04:54",
  "root": "C:\\deepseek-harness-master\\soundinsight",
  "count": 408,
  "entries": [
@@ -594,9 +594,9 @@
   {
    "path": "hashes.txt",
    "category": "其他",
-   "size_bytes": 2031,
+   "size_bytes": 2032,
    "purpose": "",
-   "sha256_16": "3f3a476a7ec4cb84d143d17e0d8cf60d2f649987b8d62bce441d615eb0d62708"
+   "sha256_16": "f07fa2f39c5edc6a90b352e0122078d0e9222a8a4a21fe37978747ab7909f74b"
   },
   {
    "path": "human_review_50.csv",
@@ -1086,7 +1086,7 @@
    "category": "验证报告",
    "size_bytes": 14658,
    "purpose": "数字一致性审计结果（含官方模板格式对照节）",
-   "sha256_16": "86995d530e5a7c555bdd6a0ab909124b64cd3c5c3e30dff61fd289e5212e844c"
+   "sha256_16": "cf4bce969935607febab48898c1d78a354782a8b8f56c1163e2a103e2bc61131"
   },
   {
    "path": "outside_gate_fp.py",
@@ -1896,9 +1896,9 @@
   {
    "path": "更新世界的锋芒_SoundInsight_其他材料.zip",
    "category": "提交物",
-   "size_bytes": 746443,
+   "size_bytes": 746444,
    "purpose": "",
-   "sha256_16": "809b54b5a2ddc3aa44f8a0abf9421e8e41d4cf62f06dfc8f4994d4dc21dd2ae1"
+   "sha256_16": "ef110c43813f98427c40e15add518631c7c382286ee13527353703f288773fc2"
   },
   {
    "path": "更新世界的锋芒_SoundInsight_决赛入围定稿作品.docx",
@@ -2176,9 +2176,9 @@
   {
    "path": "docs/finals_stage.md",
    "category": "过程与交接文档",
-   "size_bytes": 9882,
+   "size_bytes": 11215,
    "purpose": "",
-   "sha256_16": "eb3c1fdb4f49b578a054b187e4efb454a6978f4735eeb96b0b6b434cc1c37ead"
+   "sha256_16": "b1ddef09538a2f7faa084914a56189e01b966b5e90932e44abb094a1d2fc501c"
   },
   {
    "path": "docs/frozen_execution_checklist.md",
@@ -2218,9 +2218,9 @@
   {
    "path": "docs/overnight_summary.md",
    "category": "过程与交接文档",
-   "size_bytes": 10766,
+   "size_bytes": 14240,
    "purpose": "",
-   "sha256_16": "b73e2d1021bb76421beb4fead67777d338ef25151b850bc816b1b2bba68eafd0"
+   "sha256_16": "9404eeb5cb7e131d6dfb15feabce91cd793c42cbf2473c7a32f727613460881e"
   },
   {
    "path": "docs/pre_lock_completeness_audit.md",
@@ -2248,7 +2248,7 @@
    "category": "过程与交接文档",
    "size_bytes": 3643,
    "purpose": "",
-   "sha256_16": "f3bac087a667df7abac76611a402c59217c35a8a4b66e51f111e6f30f32f5537"
+   "sha256_16": "560641229a4ea790533a3fa356cc603d0045d390c8c19c7a9631a1de52bfd757"
   },
   {
    "path": "docs/retrospective_and_reflection.md",

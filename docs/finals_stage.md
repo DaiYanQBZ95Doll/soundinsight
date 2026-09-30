@@ -98,3 +98,22 @@
 | 4 | 答辩题库扩充 | 补"高音 F1=0 怎么解释""真实用户验证为什么没做（**无跨境电商渠道，10/8 前不可执行**）""两档阈值怎么选""百炼调用与产品推理的边界（产品推理仍 100% 本地）"等必被追问项 | `qna_preparation.md`、`docs/v2_acceptance_benchmark.md` §6.11 |
 | 5 | 决赛包打包 | 命名改为 `更新世界的锋芒_SoundInsight_决赛入围定稿作品.zip`；打包脚本需支持决赛命名，且不得覆盖已冻结的复赛包 | §三、红线 9 |
 | 6 | 口径纪律延续 | 决赛材料同样适用三套口径分离、阈值成对阅读、不虚构调用；`check_doc_numbers.py` 与 `scan_repo_hygiene.py` 继续作为发布前门槛 | `docs/legacy_materials_notice.md` §一 |
+
+---
+
+## 六、决赛包当前状态（执行方补记，2026-10-01）
+
+| 项 | 值 |
+|---|---|
+| 决赛包 | `更新世界的锋芒_SoundInsight_决赛入围定稿作品.zip` |
+| 大小 / SHA256 | 44,538,005 B / `309f6bc243e0a3b0…`（完整值见 `hashes.txt` 决赛段） |
+| 条目数 | **5** |
+| 包内清单 | 更新世界的锋芒_SoundInsight_决赛入围定稿作品.docx；更新世界的锋芒_SoundInsight_Demo.zip；更新世界的锋芒_SoundInsight_演示视频.mp4；更新世界的锋芒_SoundInsight_其他材料.zip；README_SUBMISSION.txt |
+| 复赛包 | 全程未改动（构建前后双向核对 `e6cae286515ef1d2`）——红线 9 ✅ |
+| 构建命令 | `python build_finals_package.py`（内含红线 9 核对；随后 `update_finals_hashes.py` 登记哈希） |
+| 校验命令 | `python verify_finals_package.py`（解包 → 内层哈希比对 → **包内 Demo 冒烟**） |
+| 一键门槛链 | `python run_all_checks.py`（10 步：审计/自测/断链/URL/M0/打包/哈希/包内校验/manifest/卫生） |
+
+**提交注意事项**（详见 `docs/M8a_submission_precheck.md`）：天池渠道只收**一个 zip**；
+正式提交前先做**不点提交**的通道演练（确认大小上限、格式、剩余次数、是否有草稿态）；
+提交后 0–30 分钟是唯一具备补救能力的窗口。
