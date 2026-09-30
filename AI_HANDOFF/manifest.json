@@ -1,14 +1,14 @@
 {
- "generated": "2026-09-30 16:56",
+ "generated": "2026-09-30 17:29",
  "root": "C:\\deepseek-harness-master\\soundinsight",
- "count": 281,
+ "count": 284,
  "entries": [
   {
    "path": ".gitignore",
    "category": "其他",
-   "size_bytes": 499,
+   "size_bytes": 621,
    "purpose": "",
-   "sha256_16": "e624247be8d6e63fa6a5bbfb5f798b6e30b2c363a3744ffebb866710b65b3955"
+   "sha256_16": "9a56499c30ab656d24625e229c6762d7397711e46156dc61e6dfded1523e7dcf"
   },
   {
    "path": "AI+跨境黑客松巅峰赛 · 复赛公示名单（手机版）.html",
@@ -41,9 +41,9 @@
   {
    "path": "PROGRESS_SYNC.md",
    "category": "过程与交接文档",
-   "size_bytes": 18315,
+   "size_bytes": 21948,
    "purpose": "",
-   "sha256_16": "fdae9287adb56e96fc1c35c1a3bc9e2251f9391e0b669c857a325bd0aed18555"
+   "sha256_16": "0dd3cfd1b752c8db795d3034feee65a3a7ee364a0dc3e8c1351e3480d204cc6e"
   },
   {
    "path": "PROJECT_BRIEF_QWEN.md",
@@ -272,9 +272,9 @@
   {
    "path": "check_doc_numbers.py",
    "category": "代码",
-   "size_bytes": 23492,
+   "size_bytes": 24023,
    "purpose": "数字审计 + 模板格式对照脚本",
-   "sha256_16": "f5a10a7eb3b1717c0a0260d3faa991ab76b42bd234dc5d294da3d19da229c930"
+   "sha256_16": "8cb81ff4ba8da1959d7e92bbeaae7572653b2d420506df96e5536b9173790004"
   },
   {
    "path": "check_edge_cases.py",
@@ -986,9 +986,9 @@
   {
    "path": "number_audit.md",
    "category": "验证报告",
-   "size_bytes": 9948,
+   "size_bytes": 11222,
    "purpose": "数字一致性审计结果（含官方模板格式对照节）",
-   "sha256_16": "d4b98bf63432005bcd35283e7e4cc147d6d204c60071c4bbf931441c0c249afa"
+   "sha256_16": "ef5c34625425ad25c949b5a202149fc4a35c594c8771f621ec062ff2eb70b565"
   },
   {
    "path": "pack_final.py",
@@ -1117,6 +1117,13 @@
    "sha256_16": "d43df72453af0841b87b99d37aaa10d64fc39521612d368d9126a93363cb8c3b"
   },
   {
+   "path": "recover_meta_fields.py",
+   "category": "代码",
+   "size_bytes": 6140,
+   "purpose": "",
+   "sha256_16": "a29cfaa403c4cdf18f24fcafd0d41b12fde9a64a68c1abe7d35e003bb5985d68"
+  },
+  {
    "path": "report_builder.py",
    "category": "代码",
    "size_bytes": 8539,
@@ -1126,9 +1133,9 @@
   {
    "path": "requirements.txt",
    "category": "代码",
-   "size_bytes": 161,
+   "size_bytes": 939,
    "purpose": "",
-   "sha256_16": "b1461e577537c1c8590abbe0447e8f68c911307eae4cec43cba68bc7318150cb"
+   "sha256_16": "72473a0d7b7c0c9d7870f839edcf660b9583e4faf0ccb96bb0b5ad90c5ff7807"
   },
   {
    "path": "restore_timestamps.py",
@@ -1602,9 +1609,9 @@
   {
    "path": "docs/completeness_audit_round2.md",
    "category": "过程与交接文档",
-   "size_bytes": 7912,
+   "size_bytes": 8020,
    "purpose": "",
-   "sha256_16": "c4238d5009a6884339ad75ffc1fb7421194f03c6d7c3f310debfeb79613ba14d"
+   "sha256_16": "e26afdccf63640471ceb8c7ed34ad345909d0aaa6d634bd7e5cbb1cef8c49b9d"
   },
   {
    "path": "docs/dataset_audit.md",
@@ -1658,9 +1665,9 @@
   {
    "path": "docs/frozen_execution_checklist.md",
    "category": "过程与交接文档",
-   "size_bytes": 45366,
+   "size_bytes": 46858,
    "purpose": "",
-   "sha256_16": "db7e7891507cbd2ce36d20a8cb2224b9d67f6c30defb69c7b318e4177d8415bb"
+   "sha256_16": "68ad0738f5d1842780c29ee7104963c3fc3df350c350ea644a8eeda336ccec08"
   },
   {
    "path": "docs/gap_and_roadmap_inventory.md",
@@ -1700,9 +1707,9 @@
   {
    "path": "docs/repo_hygiene_scan.md",
    "category": "过程与交接文档",
-   "size_bytes": 3760,
+   "size_bytes": 4401,
    "purpose": "",
-   "sha256_16": "fa98122f508026a661b794369681291304a93553b00de08d9664120b8b5841ee"
+   "sha256_16": "e6cd2095f8811255a84223379db82e1a06266c2396b7644ae0cb64bebe09f58e"
   },
   {
    "path": "docs/retrospective_and_reflection.md",
@@ -1878,6 +1885,20 @@
    "size_bytes": 806,
    "purpose": "",
    "sha256_16": "247c9b8088c10b86a00d41990bcc81da698f01dd7ea81ef100c5bae285d4f33c"
+  },
+  {
+   "path": "v2/README.md",
+   "category": "主文档与模板",
+   "size_bytes": 1720,
+   "purpose": "",
+   "sha256_16": "b55bf24964805c888e090a562d1e14fcf8024d4689c8c8703aa910747abf1489"
+  },
+  {
+   "path": "v2/v2_artifacts.template.json",
+   "category": "其他",
+   "size_bytes": 1105,
+   "purpose": "",
+   "sha256_16": "649b0f6a7768f911f48cb9845cf6d9188916f12ce56f7ca6e453de9d6b34a41d"
   },
   {
    "path": "视频素材/00_标题卡.png",

@@ -184,6 +184,14 @@
 - [PASS] docs/retrospective_and_reflection.md：跨档指标均已标注阈值档
 - [PASS] docs/finals_stage.md：跨档指标均已标注阈值档
 - [PASS] docs/v2_acceptance_benchmark.md：跨档指标均已标注阈值档
+- [PASS] docs/final_project_review_and_execution_plan.md：跨档指标均已标注阈值档
+- [PASS] docs/final_review_and_execution_plan.md：跨档指标均已标注阈值档
+- [PASS] docs/gap_and_roadmap_inventory.md：跨档指标均已标注阈值档
+- [PASS] docs/external_sources_register.md：跨档指标均已标注阈值档
+- [PASS] docs/frozen_execution_checklist.md：跨档指标均已标注阈值档
+- [PASS] docs/pre_lock_completeness_audit.md：跨档指标均已标注阈值档
+- [PASS] docs/completeness_audit_round2.md：跨档指标均已标注阈值档
+- [PASS] docs/N_line_handoff_protocol.md：跨档指标均已标注阈值档
 - [注意] ppt_text_dump.md：0 行跨档未标（无）——PPT 不在提交包内，需用户决定是否改
 
 ## 代际检查（当前代：v1）
@@ -198,6 +206,14 @@
 - [PASS] docs/retrospective_and_reflection.md：无未标注的代际混用
 - [PASS] docs/finals_stage.md：无未标注的代际混用
 - [PASS] docs/v2_acceptance_benchmark.md：无未标注的代际混用
+- [PASS] docs/final_project_review_and_execution_plan.md：无未标注的代际混用
+- [PASS] docs/final_review_and_execution_plan.md：无未标注的代际混用
+- [PASS] docs/gap_and_roadmap_inventory.md：无未标注的代际混用
+- [PASS] docs/external_sources_register.md：无未标注的代际混用
+- [PASS] docs/frozen_execution_checklist.md：无未标注的代际混用
+- [PASS] docs/pre_lock_completeness_audit.md：无未标注的代际混用
+- [PASS] docs/completeness_audit_round2.md：无未标注的代际混用
+- [PASS] docs/N_line_handoff_protocol.md：无未标注的代际混用
 - [PASS] docs/project_full_record.md：无未标注的代际混用
 - [PASS] PROGRESS_SYNC.md：无未标注的代际混用
 

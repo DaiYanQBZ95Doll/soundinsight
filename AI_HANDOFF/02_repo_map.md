@@ -1,6 +1,6 @@
 # 文件地图（由 make_ai_handoff.py 自动生成，勿手改）
 
-> 生成时间：2026-09-30 16:56；共 281 个条目；体积单位 KB/MB。
+> 生成时间：2026-09-30 17:29；共 284 个条目；体积单位 KB/MB。
 
 ## 提交物（5 项，43.2 MB）
 
@@ -12,7 +12,7 @@
 | `更新世界的锋芒_SoundInsight_Demo.zip` | 108.0 KB |  |
 | `更新世界的锋芒_SoundInsight_复赛作品.docx` | 48.0 KB |  |
 
-## 主文档与模板（10 项，0.1 MB）
+## 主文档与模板（11 项，0.1 MB）
 
 | 文件 | 大小 | 用途 |
 |---|---|---|
@@ -24,6 +24,7 @@
 | `competition_v2.md` | 7.0 KB | 初赛版文档 |
 | `competition_v2.txt` | 7.0 KB |  |
 | `DEPLOY_GUIDE.md` | 4.2 KB |  |
+| `v2/README.md` | 1.7 KB |  |
 | `deployment/README.md` | 0.6 KB |  |
 | `REPO_INTRO.txt` | 0.6 KB |  |
 
@@ -31,7 +32,7 @@
 
 | 文件 | 大小 | 用途 |
 |---|---|---|
-| `number_audit.md` | 9.7 KB | 数字一致性审计结果（含官方模板格式对照节） |
+| `number_audit.md` | 11.0 KB | 数字一致性审计结果（含官方模板格式对照节） |
 | `error_taxonomy.md` | 8.2 KB | 错误分类学：FP/FN 构成 + 标注噪声人工终审 |
 | `llm_baseline.md` | 6.4 KB | LLM 对照报告（deepseek + qwen3.7-plus，含循环性红利声明） |
 | `edge_case_benchmark.py` | 5.6 KB |  |
@@ -59,15 +60,15 @@
 
 | 文件 | 大小 | 用途 |
 |---|---|---|
-| `docs/frozen_execution_checklist.md` | 44.3 KB |  |
+| `docs/frozen_execution_checklist.md` | 45.8 KB |  |
 | `docs/gap_and_roadmap_inventory.md` | 36.8 KB |  |
 | `docs/final_project_review_and_execution_plan.md` | 36.0 KB |  |
 | `docs/retrospective_and_reflection.md` | 27.9 KB |  |
 | `docs/project_full_record.md` | 21.6 KB | 初赛→复赛全流程记录 |
+| `PROGRESS_SYNC.md` | 21.4 KB |  |
 | `docs/v2_acceptance_benchmark.md` | 20.4 KB |  |
 | `docs/D13_seal_declaration.md` | 19.7 KB | D13 封包声明（提交技术质检终审） |
 | `docs/final_review_and_execution_plan.md` | 19.5 KB |  |
-| `PROGRESS_SYNC.md` | 17.9 KB |  |
 | `docs/file_inventory.md` | 12.3 KB | 项目文件总索引 |
 | `PROJECT_BRIEF_QWEN.md` | 10.7 KB |  |
 | `QWEN_HANDOFF.md` | 10.7 KB |  |
@@ -76,11 +77,11 @@
 | `docs/finals_stage.md` | 9.2 KB |  |
 | `docs/process_review_d10.md` | 8.5 KB |  |
 | `docs/legacy_materials_notice.md` | 8.3 KB |  |
-| `docs/completeness_audit_round2.md` | 7.7 KB |  |
+| `docs/completeness_audit_round2.md` | 7.8 KB |  |
 | `docs/external_sources_register.md` | 6.5 KB |  |
 | `docs/work_summary_d7.md` | 6.2 KB |  |
 | `docs/SoundInsight决赛备战_现状盘点清单.md` | 4.8 KB |  |
-| `docs/repo_hygiene_scan.md` | 3.7 KB |  |
+| `docs/repo_hygiene_scan.md` | 4.3 KB |  |
 | `docs/dataset_audit.md` | 3.5 KB | 数据集字段考古 |
 | `docs/D14_resume_checklist.md` | 3.0 KB | 收尾四步清单（录视频/打包/上传/补推送） |
 | `docs/drift_plan.md` | 2.8 KB | 数据漂移监控方案 |
@@ -204,11 +205,11 @@
 | `sample_reviews_100.csv` | 57.9 KB |  |
 | `agent_test_input.csv` | 27.9 KB |  |
 
-## 代码（88 项，0.3 MB）
+## 代码（89 项，0.3 MB）
 
 | 文件 | 大小 | 用途 |
 |---|---|---|
-| `check_doc_numbers.py` | 22.9 KB | 数字审计 + 模板格式对照脚本 |
+| `check_doc_numbers.py` | 23.5 KB | 数字审计 + 模板格式对照脚本 |
 | `scan_repo_hygiene.py` | 18.2 KB |  |
 | `build_pdf_v2.py` | 12.4 KB |  |
 | `make_ai_handoff.py` | 11.5 KB |  |
@@ -225,6 +226,7 @@
 | `test_audit_checks.py` | 6.6 KB |  |
 | `diagnose_treble.py` | 6.6 KB |  |
 | `fetch_electronics.py` | 6.5 KB |  |
+| `recover_meta_fields.py` | 6.0 KB |  |
 | `distilbert_cv.py` | 5.4 KB |  |
 | `md_to_docx.py` | 5.4 KB | 主文档 Markdown → Word |
 | `train_final.py` | 5.2 KB |  |
@@ -288,6 +290,7 @@
 | `hashes.py` | 1.0 KB |  |
 | `prep_three_star.py` | 0.9 KB |  |
 | `prep_human_review.py` | 0.9 KB |  |
+| `requirements.txt` | 0.9 KB |  |
 | `启动Demo.bat` | 0.9 KB | 双击启动本地 Demo |
 | `text_utils.py` | 0.9 KB |  |
 | `exp08_ablation_B/config.json` | 0.5 KB |  |
@@ -295,7 +298,6 @@
 | `exp07_ablation_A/config.json` | 0.5 KB |  |
 | `打包提交包.bat` | 0.4 KB | 双击执行最终打包与自检 |
 | `config.json` | 0.3 KB |  |
-| `requirements.txt` | 0.2 KB |  |
 
 ## 部署包（7 项，0.0 MB）
 
@@ -353,12 +355,13 @@
 | `multi_label_model/` | 256.1 MB | 冻结的多标签归因模型权重（约 256MB），不入 git |
 | `sound_model/` | 256.1 MB | 冻结的二分类模型权重（约 256MB），不入 git |
 
-## 其他（5 项，46.1 MB）
+## 其他（6 项，46.1 MB）
 
 | 文件 | 大小 | 用途 |
 |---|---|---|
 | `更新世界的锋芒_SoundInsight_演示视频.mp4` | 46.1 MB |  |
 | `视频录制速查.md` | 3.1 KB |  |
+| `v2/v2_artifacts.template.json` | 1.1 KB |  |
 | `hashes.txt` | 0.9 KB |  |
-| `.gitignore` | 0.5 KB |  |
+| `.gitignore` | 0.6 KB |  |
 | `per_class_thresholds_probe.json` | 0.4 KB |  |

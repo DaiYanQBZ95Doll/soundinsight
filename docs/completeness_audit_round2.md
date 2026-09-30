@@ -54,7 +54,7 @@ P0-3（字段恢复） → W4（四五星开采 + 人侧抽检 30–60 min）
 
 ### C. §九 A 类（人工必改清单）与 E4（机械覆盖清单）不一致
 
-E4 声明的纳入对象是 6 份：执行依据、质检方并行版、缺憾清单、外部来源登记、本清单、锁定前审计。而 §九 A 类已列 `gap_and_roadmap_inventory.md`，**未列** `docs/final_project_review_and_execution_plan.md`。实测该总纲含 v1 数字 **9 处**（`0.6871` ×3、`0.9744` ×5、`0.6241` ×1），属必须同步的文件；`docs/pre_lock_completeness_audit.md` 实测含 0 处 v1 数字，无需数字同步。故两份清单对"总纲"的处理存在缺口（E4 执行后由机械检查兜住，但 A 类人工清单本身不完整）。
+E4 声明的纳入对象是 6 份：执行依据、质检方并行版、缺憾清单、外部来源登记、本清单、锁定前审计。而 §九 A 类已列 `gap_and_roadmap_inventory.md`，**未列** `docs/final_project_review_and_execution_plan.md`。实测该总纲含 v1 数字 **9 处**（@调优(0.9744) 档：`0.6871` ×3、`0.9744` ×5；@0.5 档：`0.6241` ×1），属必须同步的文件；`docs/pre_lock_completeness_audit.md` 实测含 0 处 v1 数字，无需数字同步。故两份清单对"总纲"的处理存在缺口（E4 执行后由机械检查兜住，但 A 类人工清单本身不完整）。
 
 ### D. `check_doc_numbers.py` 的覆盖补全（E4）**当前尚未落地**
 

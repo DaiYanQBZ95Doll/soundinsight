@@ -37,3 +37,7 @@ roberta-base/
 # 提交包解出目录（把 zip 解开核对时产生，内容与 zip 重复，不入库）
 更新世界的锋芒_SoundInsight_复赛作品/
 更新世界的锋芒_SoundInsight_决赛入围定稿作品/
+
+# P0-3 字段恢复产物：含 user_id（隐私边界：仅本地用于聚合统计，不入库）
+review_meta_v2.csv
+

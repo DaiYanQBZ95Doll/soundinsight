@@ -131,6 +131,16 @@ PAIR_FILES = [
     "docs/retrospective_and_reflection.md",
     # 决赛阶段的对外文档（质检方 §九.2：配对检查须覆盖全部 F1/召回/精确率）
     "docs/finals_stage.md", "docs/v2_acceptance_benchmark.md",
+    # E4（冻结清单 §二）：锁定期间仍在编辑的流程文档纳入覆盖。
+    # 补全前这些文档的编辑不受代际与配对约束；纳入后实测 0 FAIL。
+    "docs/final_project_review_and_execution_plan.md",
+    "docs/final_review_and_execution_plan.md",
+    "docs/gap_and_roadmap_inventory.md",
+    "docs/external_sources_register.md",
+    "docs/frozen_execution_checklist.md",
+    "docs/pre_lock_completeness_audit.md",
+    "docs/completeness_audit_round2.md",
+    "docs/N_line_handoff_protocol.md",
 ]
 
 # 阈值档表：一行内命中两个及以上档的值时，该行必须为每一档写出标签

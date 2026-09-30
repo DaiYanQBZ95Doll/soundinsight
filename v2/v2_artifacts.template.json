@@ -1,0 +1,24 @@
+{
+  "_说明": "模板：复制为 v2/v2_artifacts.json 后填入真实路径与 SHA256。占位值写入 v2_artifacts.json 会导致审计 FAIL（文件不存在/哈希不符），故本文件仅作模板，不被审计读取。",
+  "_填写时机": "W5（重训 + 阈值扫描 + 5 折 CV）产出后；同时登记权重提供策略",
+  "generation": "v2",
+  "created_at": "YYYY-MM-DD",
+  "model_sha256": {
+    "v2/model/best_model.pt": "<sha256>"
+  },
+  "threshold_json": {
+    "v2/threshold.json": "<sha256>"
+  },
+  "train_command": "python train_v2.py --seed 42 --max_len 256 --epochs 3 --lr 2e-5",
+  "eval_outputs": {
+    "v2/eval/val_v3_test_metrics.json": "<sha256>",
+    "v2/eval/val_v3_test_report.txt": "<sha256>"
+  },
+  "model_card": "v2/MODEL_CARD_v2.md",
+  "weight_availability": {
+    "policy": "public_repo | hash_and_command_only",
+    "url": "<模型仓库地址，若 policy=public_repo>",
+    "note": "第三方核验方式说明"
+  },
+  "generation_note": "v1（复赛已提交口径）数字见 results_summary.md 与 v1 产物；两代数字不可直比，引用须标 [v1]/[v2]"
+}
