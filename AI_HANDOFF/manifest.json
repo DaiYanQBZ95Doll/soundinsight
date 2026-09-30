@@ -1,5 +1,5 @@
 {
- "generated": "2026-09-30 16:26",
+ "generated": "2026-09-30 16:33",
  "root": "C:\\deepseek-harness-master\\soundinsight",
  "count": 280,
  "entries": [
@@ -1651,9 +1651,9 @@
   {
    "path": "docs/frozen_execution_checklist.md",
    "category": "过程与交接文档",
-   "size_bytes": 38101,
+   "size_bytes": 44825,
    "purpose": "",
-   "sha256_16": "d9d03b71e223714015515f3d9454315e23af11a0fc95fa688d024a9266ad7305"
+   "sha256_16": "6a4ffc5e9df5d280b3edf64d36a04defe01939a821297374e9d50b991707cc2f"
   },
   {
    "path": "docs/gap_and_roadmap_inventory.md",
@@ -1695,7 +1695,7 @@
    "category": "过程与交接文档",
    "size_bytes": 3605,
    "purpose": "",
-   "sha256_16": "b49cfb42e7a13f41bda407ff592d33ac94e7ce69e3921d5dbe26fe124bfa009d"
+   "sha256_16": "aeb39287b54a7647359d82a93f75fc7981f2462de4a1c5debc4699969bd2ac35"
   },
   {
    "path": "docs/retrospective_and_reflection.md",
