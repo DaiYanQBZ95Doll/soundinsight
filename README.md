@@ -17,6 +17,27 @@
 >
 > **卫生自检**：`python scan_repo_hygiene.py` → 报告 `docs/repo_hygiene_scan.md`（密钥 / 隐私 / 废弃 claim / 生成物一致性）。
 
+## 快速开始（评委 / 试用者）——三步看到结果
+
+```bash
+pip install -r requirements.txt          # 1) 装依赖（Python 3.10+）
+python download_models.py                # 2) 下载模型权重（约 536 MB，来自 ModelScope 公开仓库；
+                                         #    仓库 id 已写入 config.json；也可显式指定：
+                                         #    python download_models.py --repo DaiYanQBZ95Doll/SoundInsight_models）
+python soundinsight_agent.py --csv sample_reviews_100.csv   # 3) 生成七节洞察报告
+```
+
+- 想要交互界面：`python demo_sound_v2.py`（Gradio，浏览器打开本地地址；含单条判定／批量分析／边界案例三页）。
+- **不想装环境？先看样例输出**（随包提供，即产品真实输出）：
+  `insight_report_v2.md`（中文，含"置信度档位与建议动作"七节）／`insight_report_v2_en.md`（英文）。
+- **不想下载权重？** 在线体验：<https://modelscope.cn/studios/DaiYanQBZ95Doll/SoundInsight>
+  （应用直链 <https://daiyanqbz95doll-soundinsight.ms.show>）；环境受限时见包内演示视频（3 分 23 秒）。
+- 报告怎么读：六节结构 + 置信度三档（高＝直接进整改评审／中＝先抽查／低＝仅趋势观察）；
+  非英文评论会被**显式跳过并计数**，不是静默丢弃。
+
+> 样例输出的口径说明：样例由**产品默认模型（v1 冻结权重）**生成，故其指标为 v1 口径；
+> 决赛主文档中的 v2 指标来自 v2 候选模型，两者样本集不同、**不可直比**。
+
 项目简介：基于轻量预训练模型的蓝牙耳机音质差评自动识别与归因系统，帮助卖家快速定位音质问题。
 
 **给 AI 助手的入口（推荐先读）**：AI_HANDOFF/README.md —— 项目导览包：阅读顺序、三套数字口径、证据链索引、代码导览、红线与待办、术语表，以及机器可读的全项目索引 AI_HANDOFF/manifest.json。

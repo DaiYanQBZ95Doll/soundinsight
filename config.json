@@ -6,5 +6,6 @@
   "max_len": 128,
   "batch_size": 64,
   "server_host": "127.0.0.1",
-  "server_port": 7860
+  "server_port": 7860,
+  "model_repo_id": "DaiYanQBZ95Doll/SoundInsight_models"
 }

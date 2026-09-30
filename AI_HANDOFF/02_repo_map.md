@@ -1,15 +1,15 @@
 # 文件地图（由 make_ai_handoff.py 自动生成，勿手改）
 
-> 生成时间：2026-10-01 05:04；共 408 个条目；体积单位 KB/MB。
+> 生成时间：2026-10-01 05:10；共 409 个条目；体积单位 KB/MB。
 
 ## 提交物（5 项，43.5 MB）
 
 | 文件 | 大小 | 用途 |
 |---|---|---|
 | `更新世界的锋芒_SoundInsight_复赛作品.zip` | 42.4 MB |  |
-| `更新世界的锋芒_SoundInsight_其他材料.zip` | 729.0 KB |  |
+| `更新世界的锋芒_SoundInsight_其他材料.zip` | 728.9 KB |  |
 | `更新世界的锋芒_SoundInsight_复赛作品.pdf` | 210.1 KB |  |
-| `更新世界的锋芒_SoundInsight_Demo.zip` | 105.8 KB |  |
+| `更新世界的锋芒_SoundInsight_Demo.zip` | 106.5 KB |  |
 | `更新世界的锋芒_SoundInsight_复赛作品.docx` | 48.0 KB |  |
 
 ## 主文档与模板（11 项，0.1 MB）
@@ -19,8 +19,8 @@
 | `hackathon-决赛入围定稿作品提交模板-天池版.docx` | 35.8 KB |  |
 | `hackathon-复赛作品提交模板-天池版.docx` | 35.7 KB | 官方复赛模板原文（格式对照基准） |
 | `competition_v4.md` | 20.7 KB | 主文档（13 章，含模板九章 + 合规披露 + 局限） |
+| `README.md` | 10.1 KB |  |
 | `competition_v3.txt` | 8.9 KB | 官方模板九章版主文档 |
-| `README.md` | 8.5 KB |  |
 | `competition_v2.md` | 7.0 KB | 初赛版文档 |
 | `competition_v2.txt` | 7.0 KB |  |
 | `DEPLOY_GUIDE.md` | 4.2 KB |  |
@@ -242,7 +242,7 @@
 | `sample_reviews_100.csv` | 57.9 KB |  |
 | `agent_test_input.csv` | 27.9 KB |  |
 
-## 代码（140 项，0.7 MB）
+## 代码（141 项，0.7 MB）
 
 | 文件 | 大小 | 用途 |
 |---|---|---|
@@ -323,6 +323,7 @@
 | `check_url_consistency.py` | 3.0 KB |  |
 | `deploy_check.py` | 3.0 KB | 在线 Demo 单条验收脚本 |
 | `svm_ttest.py` | 2.9 KB |  |
+| `refresh_samples.py` | 2.9 KB |  |
 | `verify_faststart.py` | 2.9 KB |  |
 | `a4_mid_remove.py` | 2.8 KB |  |
 | `fix_ppt_roles.py` | 2.7 KB |  |

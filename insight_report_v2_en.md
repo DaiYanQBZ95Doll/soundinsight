@@ -5,7 +5,7 @@
 
 ## 1. Overview
 Source: sample_reviews_100.csv
-Generated: 2026-10-01 04:14
+Generated: 2026-10-01 05:10
 Total reviews: 100 (0 non-English skipped)
 Valid reviews: 100
 Sound-quality negatives: 12 (12.00%)
