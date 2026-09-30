@@ -1,6 +1,6 @@
 # 文件地图（由 make_ai_handoff.py 自动生成，勿手改）
 
-> 生成时间：2026-09-30 23:03；共 354 个条目；体积单位 KB/MB。
+> 生成时间：2026-09-30 23:10；共 355 个条目；体积单位 KB/MB。
 
 ## 提交物（5 项，43.2 MB）
 
@@ -57,7 +57,7 @@
 | `confidence_tiered.md` | 0.7 KB | 三星补漏置信度分层与中置信剔除记录 |
 | `significance_test.md` | 0.6 KB | Welch t 检验（p=0.000932） |
 
-## 过程与交接文档（36 项，0.4 MB）
+## 过程与交接文档（37 项，0.4 MB）
 
 | 文件 | 大小 | 用途 |
 |---|---|---|
@@ -89,9 +89,10 @@
 | `docs/evidence_index_exp.md` | 4.4 KB |  |
 | `docs/llm_credential_status.md` | 4.2 KB |  |
 | `docs/e2_erratum.md` | 4.2 KB |  |
-| `docs/repo_hygiene_scan.md` | 4.1 KB |  |
+| `docs/repo_hygiene_scan.md` | 3.7 KB |  |
 | `docs/v2_gate_verdict.md` | 3.6 KB |  |
 | `docs/dataset_audit.md` | 3.5 KB | 数据集字段考古 |
+| `docs/sandbox_operation_notes.md` | 3.1 KB |  |
 | `docs/D14_resume_checklist.md` | 3.0 KB | 收尾四步清单（录视频/打包/上传/补推送） |
 | `docs/drift_plan.md` | 2.8 KB | 数据漂移监控方案 |
 | `docs/w17_confidence_actions.md` | 2.8 KB |  |
@@ -240,11 +241,11 @@
 | `demo_sound_v2.py` | 9.1 KB | 本地 Gradio Demo（三页；已内置代理绕过） |
 | `v2_w2_perclass.py` | 9.1 KB |  |
 | `v2_w7_calibration.py` | 8.9 KB |  |
+| `test_audit_checks.py` | 8.7 KB |  |
 | `v2_w1_hybrid.py` | 8.4 KB |  |
 | `v2_w17_failure_stats.py` | 8.4 KB |  |
 | `ablation_train.py` | 8.2 KB |  |
 | `soundinsight_agent.py` | 8.1 KB | 一键洞察 Agent（md/excel、zh/en、非英文跳过） |
-| `test_audit_checks.py` | 7.9 KB |  |
 | `pack_final.py` | 7.9 KB | 提交包打包与四项自检 |
 | `train_sound_model.py` | 7.8 KB |  |
 | `v2_w5_final.py` | 7.7 KB |  |
@@ -419,6 +420,7 @@
 | `v2/w1_seg_threshold.json` | 1.1 KB |  |
 | `v2/v2_artifacts.template.json` | 1.1 KB |  |
 | `v2/w4_strata.json` | 1.0 KB |  |
+| `.gitignore` | 1.0 KB |  |
 | `hashes.txt` | 0.9 KB |  |
 | `v2/w1_eval_model_maxlen128_segment(seg128_stride64)_val_v3_test.json` | 0.9 KB |  |
 | `v2/w1_eval_model_maxlen128_truncate(max128)_val_v3_test.json` | 0.9 KB |  |
@@ -431,7 +433,6 @@
 | `v2/w1_eval_maxlen128.json` | 0.9 KB |  |
 | `v2/w1_eval_maxlen256.json` | 0.9 KB |  |
 | `v2/w1_eval_maxlen512.json` | 0.9 KB |  |
-| `.gitignore` | 0.9 KB |  |
 | `per_class_thresholds_probe.json` | 0.4 KB |  |
 | `v2/threshold.json` | 0.3 KB |  |
 | `v2/w4_summary.json` | 0.2 KB |  |

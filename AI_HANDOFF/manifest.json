@@ -1,14 +1,14 @@
 {
- "generated": "2026-09-30 23:03",
+ "generated": "2026-09-30 23:10",
  "root": "C:\\deepseek-harness-master\\soundinsight",
- "count": 354,
+ "count": 355,
  "entries": [
   {
    "path": ".gitignore",
    "category": "其他",
-   "size_bytes": 913,
+   "size_bytes": 1001,
    "purpose": "",
-   "sha256_16": "570867c596a54a70fb826890fa52f4888d91bf1ba178264ff1dff5bee2a4b389"
+   "sha256_16": "671473066b92d7cfb6f5f1cc1fa4c71273ab3bfcd39b6da3d4812afff0f171b7"
   },
   {
    "path": "AI+跨境黑客松巅峰赛 · 复赛公示名单（手机版）.html",
@@ -1287,9 +1287,9 @@
   {
    "path": "test_audit_checks.py",
    "category": "代码",
-   "size_bytes": 8092,
+   "size_bytes": 8861,
    "purpose": "",
-   "sha256_16": "82251bda227254ee19a266cdd47f420161b619eeb1d62acd3d8b621b6d293d2f"
+   "sha256_16": "f6728cefcb21351247584a89d725843bd9fde8ddcce8bd8ab492a29723a162f3"
   },
   {
    "path": "test_model.py",
@@ -1924,9 +1924,9 @@
   {
    "path": "docs/repo_hygiene_scan.md",
    "category": "过程与交接文档",
-   "size_bytes": 4247,
+   "size_bytes": 3763,
    "purpose": "",
-   "sha256_16": "01a8e56102adbe04e44b9b1d8a8c8d837eeb86fd63ffb293ff791b8767806ec3"
+   "sha256_16": "8cec6e351ad76c7f275a90cc69deda38d05a0154c2ee35a780117ffd5ef43224"
   },
   {
    "path": "docs/retrospective_and_reflection.md",
@@ -1934,6 +1934,13 @@
    "size_bytes": 28530,
    "purpose": "",
    "sha256_16": "583dc410997e0262b7ee6fa0d7d4093e8056a7acc7705ea20a3ae311f8f34794"
+  },
+  {
+   "path": "docs/sandbox_operation_notes.md",
+   "category": "过程与交接文档",
+   "size_bytes": 3129,
+   "purpose": "",
+   "sha256_16": "2406b2560192c485a3678d50000234b4b9c40035f03872f69cc5300179c8de4c"
   },
   {
    "path": "docs/treble_failure_analysis.md",

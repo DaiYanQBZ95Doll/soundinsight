@@ -1,6 +1,6 @@
 # 公开仓库卫生扫描（密钥 / 隐私 / 废弃 claim）
 
-- 扫描范围：git 跟踪文件 354 个（文本与数据类逐行扫；二进制仅按文件名判断）
+- 扫描范围：git 跟踪文件 359 个（文本与数据类逐行扫；二进制仅按文件名判断）
 - 生成方式：`python scan_repo_hygiene.py`（可随时重跑）
 
 ## 一、密钥与凭据
@@ -52,20 +52,10 @@
 - `ppt_speed_fix.py`：8 处（行 2, 3, 17, 20, 21, 22, 23, 24）
 
 ## 四、生成物一致性（manifest.json 记录值 vs 实际文件）
-- [需修正] 10 处记录值已过期（跑 `python make_ai_handoff.py` 重新生成）：
-  - `.gitignore` size_bytes：记录 779 → 实际 913
-  - `.gitignore` sha256_16：记录 90b37e01687664af → 实际 570867c596a54a70
-  - `PROGRESS_SYNC.md` size_bytes：记录 38056 → 实际 39812
-  - `PROGRESS_SYNC.md` sha256_16：记录 1adb45413bc7270f → 实际 a3e953d4599af9f9
-  - `precommit_guard.py` size_bytes：记录 5484 → 实际 5904
-  - `precommit_guard.py` sha256_16：记录 c0ae42c945e26633 → 实际 17f9ccaaadaee093
-  - `v2_w5_cv.py` size_bytes：记录 6711 → 实际 7069
-  - `v2_w5_cv.py` sha256_16：记录 ba5bdf6456e18b21 → 实际 2dbd4b9bd6f1c08d
-  - `docs/frozen_execution_checklist.md` size_bytes：记录 55506 → 实际 9602
-  - `docs/frozen_execution_checklist.md` sha256_16：记录 6e681bc597617c46 → 实际 69d0d3aeb452c8a0
+- [PASS] manifest.json 记录的大小与哈希与工作区一致
 
 ## 五、结论与建议
 - 密钥：未发现（高危 0 处；历史提交命中 0 处）
 - 隐私：13 处，见第二节；竞赛联系信息为模板要求填写，公开仓库如需脱敏见 `docs/legacy_materials_notice.md` §四
 - 废弃 claim：当前文档需确认 0 处；历史材料的口径指引见 `docs/legacy_materials_notice.md`
-- 生成物一致性：需重跑生成脚本
+- 生成物一致性：一致
