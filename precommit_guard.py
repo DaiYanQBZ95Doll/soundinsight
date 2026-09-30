@@ -45,7 +45,8 @@ SECRET_PATTERNS = (
     (re.compile(r"(?i)\b(?:api[_-]?key|secret|token)\s*[:=]\s*['\"]?[A-Za-z0-9._\-]{16,}"),
      "疑似硬编码密钥赋值"),
 )
-BAD_NAME = re.compile(r"(?i)(token plan|信件|\.env$|\.key$|\.pem$|credential|secret)")
+BAD_NAME = re.compile(r"(?i)(token plan|信件|\.env$|\.key$|\.pem$|credential|secret|"
+                         r"记得删|提醒|便签)")
 SKIP_EXT = (".png", ".jpg", ".jpeg", ".webp", ".gif", ".pdf", ".docx", ".pptx",
             ".mp4", ".zip", ".safetensors", ".bin", ".pt", ".onnx")
 

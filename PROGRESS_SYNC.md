@@ -172,6 +172,20 @@
 - **M0 换代待办（机械清单）**：`v2_m0_switch_check.py` 扫描 38 个 A 类文件，实测 **81 行**仍带 v1 数字且未标 `[v1]`（非豁免文件），即"一次性换代"的具体工作量；M1 完成后重跑应仅剩豁免项。
 - **时间**：2026-09-30 22:32（D17 排期为数字窗口 10/1–10/3、冻结 10/4），**W 线已完成至可判定状态，进度提前**。
 
+## W 线第 10 轮：LLM 凭据排查（回答决策方）+ W4 候选段完成
+
+- **凭据排查结论**（`docs/llm_credential_status.md`）：**当前读不到任何 DeepSeek key**。
+  - 我写的脚本探测顺序：`DEEPSEEK_API_KEY`（DeepSeek 官方）→ `QWEN_TOKEN_PLAN_API_KEY`／`TOKEN_PLAN_API_KEY`（百炼 Token Plan，需 `DSH_ALLOW_TOKEN_PLAN_FOR_W4=1` 显式放行）；
+  - DSH 配置（`~/.dsh/profiles/desktop/cordis.patch.yml`）期望的名称：`QWEN_TOKEN_PLAN_API_KEY`／`MOONSHOTAI_CN_API_KEY`／`MOONSHOTAI_API_KEY`／`OPENAI_API_KEY`；当前所用的 `deepseek-account` 通道由 harness 内部管理，**子进程读不到**；
+  - 实测环境里只有 `DSH_*` 上下文变量，**无任何 LLM/API 变量**；仓库内无 `.env`、无凭据文件，也**从未有 LLM 调用代码**（当时的标注脚本未入库）。
+  - **需要决策方做的一件事**：设 `DEEPSEEK_API_KEY`（推荐）或设 Token Plan 变量 + 放行标记；之后直接 `python v2_w4_mine.py --review --limit 300` 即可续跑。
+- **W4 候选段完成（无需凭证）**：4–5★ 音质相关候选 **12,744 条**（5★ 9,185／4★ 3,559），
+  为预期 ≈300 的 **42 倍** → **W4b 上界规则触发** → 已转**分层抽样**：39 组、每组 ≈10 条、抽出 **293 条**
+  （`v2/w4_sample.csv`），**未复核比例 97.70%**。对外可用的结论：四五星"音质提及"量级极大，
+  时间盒内只能抽样复核 + 外推（含 CI）。
+- **用户提醒文件已处置**：`docs/新提醒文件，记得删.txt`（内容是两条指示）已删除；`.gitignore` 与
+  `precommit_guard.py` 增加 `*记得删*`／`*提醒*`／`*便签*` 规则，避免此类文件再被 `git add -A` 扫入。
+
 ## 待办（触发式，未触发前不执行）
 - [ ] **N 线交接：写 `docs/N_line_brief.md`（触发条件见 `docs/N_line_handoff_protocol.md` §一）**
   - 触发：W15（型号级聚合）/ W16（星级分层）或任一 W 线包产出可用叙事素材

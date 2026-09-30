@@ -1,0 +1,14 @@
+{
+  "stage": "extract_only",
+  "n_candidates": 12744,
+  "by_star": {
+    "4": 3559,
+    "5": 9185
+  },
+  "upper_rule": {
+    "expected": 300,
+    "factor": 3,
+    "triggered": true
+  },
+  "gen": "[v2]"
+}
