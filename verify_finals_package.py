@@ -87,6 +87,9 @@ def main() -> int:
     ok = r.returncode == 0 and "OK sections" in r.stdout and "置信度档位" in r.stdout
     print(f"\n[结论] 决赛包完整性 {'通过' if ok else '需检查'}；"
           f"Demo 包内代码 {'可运行' if r.returncode == 0 else '运行失败'}")
+    # 自清理：临时解包目录不留在工作区（否则会被 git add -A 扫入，且内含 46 MB 视频）
+    shutil.rmtree(TMP, ignore_errors=True)
+    print(f"[清理] 已删除临时目录 {os.path.relpath(TMP, HERE)}")
     return 0 if ok else 1
 
 
