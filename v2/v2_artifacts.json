@@ -1,0 +1,25 @@
+{
+  "_说明": "v2 可核验产物登记；哈希由 gen_v2_artifacts.py 从实际文件计算，审计会逐个校验",
+  "generation": "[v2]",
+  "created_at": "2026-09-30",
+  "model_sha256": {
+    "v2\\model_maxlen256\\model.safetensors": "690d337483f847006411aa05bd57c237048832ac19afae08d0dfdf47e2b0d937"
+  },
+  "threshold_json": {
+    "v2\\threshold.json": "be0ddb945cb18a721e8cfb2efece39076a2dfee6ed0b949a74fe53d9f3e8bec2"
+  },
+  "train_command": "python v2_w1_longtext.py train --max-len 256 --out-dir v2/model_maxlen256  # seed 42, epochs 3, batch 16, lr 2e-5",
+  "eval_outputs": {
+    "v2\\w5_final.json": "f4b51dd3705a74f530714c6d323c88c08837e751c732dd7121182ba93dd6563a",
+    "v2\\w5_final.md": "b3ae05d22df307daaf01be541585609c65f1316e88bb83bb01ceb713d02c7f01",
+    "v2\\w2_perclass_thresholds.json": "649f41ccfae25b1bf1609275f6421a937b7133d177b28f9174347e022c6e9c0c",
+    "v2\\w7_calibration.json": "b8b08ff962f19991949623e59d95a7a0c7976bdbf2133761830952a8f08a9a59"
+  },
+  "model_card": "v2\\MODEL_CARD_v2.md",
+  "weight_availability": {
+    "policy": "hash_and_command_only",
+    "url": null,
+    "note": "仓库不含权重；提供 SHA256 与训练命令供复算。分发权重本体须决策方另行决定。"
+  },
+  "generation_note": "v1（复赛已提交口径）数字见 results_summary.md；v1 与 v2 的标签集与划分不同，指标不可直比"
+}

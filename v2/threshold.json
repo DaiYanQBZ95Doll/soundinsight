@@ -1,0 +1,8 @@
+{
+  "gen": "[v2]",
+  "tuned": 0.6,
+  "high_recall": 0.5,
+  "tuned_selected_on": "val_v3_tune（扫描网格 0.05–0.95）",
+  "reported_on": "val_v3_test",
+  "note": "两档口径与 v1 的 0.9744/0.5 不同，因标签集与训练划分均为 v2 口径；不可跨代混用"
+}

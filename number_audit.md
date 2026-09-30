@@ -232,4 +232,4 @@
 - [SKIP] 决赛主文档尚未生成（候选：更新世界的锋芒_SoundInsight_决赛入围定稿作品.docx、更新世界的锋芒_SoundInsight_决赛入围定稿作品.pdf）——检查项已就绪，填好模板后自动生效
 
 ## v2 可核验产物检查
-- [SKIP] 无 `v2/v2_artifacts.json`：v2 尚未落地。采纳 v2 时须提供该登记文件，字段：model_sha256{}、threshold_json{}、train_command、eval_outputs[]、model_card
+- [PASS] v2 产物登记齐全且哈希一致
