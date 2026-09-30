@@ -170,6 +170,33 @@ def polish_cover_and_checklist(doc) -> tuple[bool, int]:
     return cover_done, ticked
 
 
+def fix_participation_section(doc) -> tuple[int, int]:
+    """清理"二、参赛信息"的重复与占位：
+
+    - 模板结构是「表（参赛场景／方案名称） + 一行『一句话定义（…）：』」；
+      我此前又在表格前插入了三行同内容段落 → **重复**（评委能看到两遍）。
+    - 本函数：① 删除重复的"参赛场景：/方案名称：/一句话定义："段落；
+      ② 把模板那行占位改写成真正的定义行。
+    """
+    removed = rewritten = 0
+    definition = ("为跨境电商耳机卖家提供音质差评自动识别与五类问题归因的一站式洞察工具，"
+                  "把人工数小时的差评梳理压缩到分钟级；产品推理 100% 本地，卖家数据不出境。")
+    for p in list(doc.paragraphs):
+        t = p.text.strip()
+        if t.startswith(("参赛场景：", "方案名称：", "一句话定义：")):
+            p._element.getparent().remove(p._element)
+            removed += 1
+        elif t.startswith("一句话定义（"):
+            for run in p.runs:
+                run.text = ""
+            if p.runs:
+                p.runs[0].text = "一句话定义：" + definition
+            else:
+                p.add_run("一句话定义：" + definition)
+            rewritten += 1
+    return removed, rewritten
+
+
 def insert_after(doc, paragraph, lines: list[str]) -> int:
     """在段落之后依次插入内容（正文段落或 Word 表格），返回插入的块数。"""
     anchor = paragraph._p
@@ -231,6 +258,8 @@ def main() -> int:
                 break
     print(f"已填充小节 {len(matched)}：{'、'.join(matched)}")
     print(f"插入内容块 {inserted}")
+    rm, rw = fix_participation_section(doc)
+    print(f"参赛信息节：删除重复段落 {rm}、改写占位行 {rw}")
     # 附录：同样支持 Markdown 表格 → Word 表格
     app_blocks = split_blocks(APPENDIX)
     n_tbl = 0
