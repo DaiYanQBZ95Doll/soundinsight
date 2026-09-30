@@ -40,6 +40,7 @@ STEPS_FULL = [
     ("登记决赛包哈希", ["update_finals_hashes.py"]),
     ("包内校验 + Demo 冒烟", ["verify_finals_package.py"]),
     ("包内端到端（解包后实跑产品）", ["verify_demo_end_to_end.py"]),
+    ("产品入口（Gradio UI + HTTP API）", ["verify_ui_and_api.py"]),
     ("刷新 AI 交接包 manifest", ["make_ai_handoff.py"]),
     ("仓库卫生扫描", ["scan_repo_hygiene.py"]),
 ]

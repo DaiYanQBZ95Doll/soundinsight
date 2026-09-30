@@ -1,0 +1,15 @@
+{
+  "ui": {
+    "entry": "Gradio UI",
+    "started": true,
+    "http://127.0.0.1:7860/": 200,
+    "exit_code": 1
+  },
+  "api": {
+    "entry": "HTTP API",
+    "started": true,
+    "http://127.0.0.1:7860/health": 200,
+    "exit_code": 1
+  },
+  "api_predict_ok": true
+}

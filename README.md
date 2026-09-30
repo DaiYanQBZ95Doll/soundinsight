@@ -27,6 +27,7 @@ python download_models.py                # 2) 下载模型权重（约 536 MB，
 python soundinsight_agent.py --csv sample_reviews_100.csv   # 3) 生成七节洞察报告
 ```
 
+- 想要 HTTP 接口：`python api_server.py`（默认 127.0.0.1:7860）→ `GET /health`、`POST /predict`，请求体为 `{"texts": ["..."]}`，返回 `{n, n_negative, n_unsupported, results[]}`（每条含 `prob`／`pred`／`issues`）。
 - 想要交互界面：`python demo_sound_v2.py`（Gradio，浏览器打开本地地址；含单条判定／批量分析／边界案例三页）。
 - **不想装环境？先看样例输出**（随包提供，即产品真实输出）：
   `insight_report_v2.md`（中文，含"置信度档位与建议动作"七节）／`insight_report_v2_en.md`（英文）。

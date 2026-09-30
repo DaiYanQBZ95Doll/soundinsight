@@ -103,7 +103,7 @@ CONTENT: dict[str, list[str]] = {
     "4.3 使用说明": [
         "安装：pip install -r requirements.txt；启动 Demo：python demo_sound_v2.py；"
         "启动 Agent：python soundinsight_agent.py --csv test.csv；"
-        "HTTP API：uvicorn api_server:app（GET /health、POST /predict）。",
+        "HTTP API：`uvicorn api_server:app`（默认 127.0.0.1:7860）；`GET /health` 返回状态与阈值，`POST /predict` 请求体为 `{\"texts\": [\"评论1\", \"评论2\"]}`，返回 `n`／`n_negative`／`n_unsupported`／`results[]`（每条含 `prob`、`pred`、`issues`）。",
         "在线 Demo：ModelScope 创空间 https://modelscope.cn/studios/DaiYanQBZ95Doll/SoundInsight"
         "（应用直链 https://daiyanqbz95doll-soundinsight.ms.show）。",
         "截图：单条判定页、批量分析页、Agent 报告页（各 1 张，见附件其他材料）。",

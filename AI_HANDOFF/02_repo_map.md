@@ -1,6 +1,6 @@
 # 文件地图（由 make_ai_handoff.py 自动生成，勿手改）
 
-> 生成时间：2026-10-01 05:25；共 410 个条目；体积单位 KB/MB。
+> 生成时间：2026-10-01 05:33；共 412 个条目；体积单位 KB/MB。
 
 ## 提交物（5 项，43.5 MB）
 
@@ -9,7 +9,7 @@
 | `更新世界的锋芒_SoundInsight_复赛作品.zip` | 42.4 MB |  |
 | `更新世界的锋芒_SoundInsight_其他材料.zip` | 729.4 KB |  |
 | `更新世界的锋芒_SoundInsight_复赛作品.pdf` | 210.1 KB |  |
-| `更新世界的锋芒_SoundInsight_Demo.zip` | 106.5 KB |  |
+| `更新世界的锋芒_SoundInsight_Demo.zip` | 106.7 KB |  |
 | `更新世界的锋芒_SoundInsight_复赛作品.docx` | 48.0 KB |  |
 
 ## 主文档与模板（11 项，0.1 MB）
@@ -19,7 +19,7 @@
 | `hackathon-决赛入围定稿作品提交模板-天池版.docx` | 35.8 KB |  |
 | `hackathon-复赛作品提交模板-天池版.docx` | 35.7 KB | 官方复赛模板原文（格式对照基准） |
 | `competition_v4.md` | 20.7 KB | 主文档（13 章，含模板九章 + 合规披露 + 局限） |
-| `README.md` | 10.1 KB |  |
+| `README.md` | 10.3 KB |  |
 | `competition_v3.txt` | 8.9 KB | 官方模板九章版主文档 |
 | `competition_v2.md` | 7.0 KB | 初赛版文档 |
 | `competition_v2.txt` | 7.0 KB |  |
@@ -242,7 +242,7 @@
 | `sample_reviews_100.csv` | 57.9 KB |  |
 | `agent_test_input.csv` | 27.9 KB |  |
 
-## 代码（142 项，0.7 MB）
+## 代码（143 项，0.7 MB）
 
 | 文件 | 大小 | 用途 |
 |---|---|---|
@@ -261,9 +261,9 @@
 | `build_submission.py` | 9.3 KB |  |
 | `demo_sound_v2.py` | 9.1 KB | 本地 Gradio Demo（三页；已内置代理绕过） |
 | `v2_w2_perclass.py` | 9.1 KB |  |
+| `build_finals_content.py` | 8.9 KB |  |
 | `outside_gate_fp.py` | 8.9 KB |  |
 | `v2_w7_calibration.py` | 8.9 KB |  |
-| `build_finals_content.py` | 8.7 KB |  |
 | `test_audit_checks.py` | 8.7 KB |  |
 | `v2_w1_hybrid.py` | 8.4 KB |  |
 | `v2_w17_failure_stats.py` | 8.4 KB |  |
@@ -298,10 +298,11 @@
 | `make_missing_figures.py` | 5.1 KB |  |
 | `v2_w1_seg_threshold.py` | 5.1 KB |  |
 | `predict_core.py` | 5.1 KB | 共享推理核心（含非英文显式拒绝） |
+| `verify_ui_and_api.py` | 5.0 KB |  |
 | `fix_ppt_threshold.py` | 4.8 KB |  |
 | `make_video_assets.py` | 4.6 KB |  |
-| `v2_record_incident.py` | 4.5 KB |  |
 | `run_all_checks.py` | 4.5 KB |  |
+| `v2_record_incident.py` | 4.5 KB |  |
 | `make_samples.py` | 4.4 KB |  |
 | `verify_finals_package.py` | 4.4 KB |  |
 | `check_refs_and_deps.py` | 4.4 KB |  |
@@ -445,12 +446,12 @@
 | `multi_label_model/` | 256.1 MB | 冻结的多标签归因模型权重（约 256MB），不入 git |
 | `sound_model/` | 256.1 MB | 冻结的二分类模型权重（约 256MB），不入 git |
 
-## 其他（42 项，46.2 MB）
+## 其他（43 项，46.2 MB）
 
 | 文件 | 大小 | 用途 |
 |---|---|---|
 | `更新世界的锋芒_SoundInsight_演示视频.mp4` | 46.1 MB |  |
-| `更新世界的锋芒_SoundInsight_决赛入围定稿作品.docx` | 34.9 KB |  |
+| `更新世界的锋芒_SoundInsight_决赛入围定稿作品.docx` | 35.0 KB |  |
 | `v2/w14_w15_w16_report.md` | 7.9 KB |  |
 | `v2/w17_failure_stats.json` | 6.5 KB |  |
 | `v2/m0_switch_report.json` | 6.0 KB |  |
@@ -490,4 +491,5 @@
 | `per_class_thresholds_probe.json` | 0.4 KB |  |
 | `w11_data_efficiency.json` | 0.4 KB |  |
 | `v2/threshold.json` | 0.3 KB |  |
+| `v2/entrypoints_check.json` | 0.3 KB |  |
 | `v2/w4_summary.json` | 0.2 KB |  |

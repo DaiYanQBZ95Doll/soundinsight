@@ -70,3 +70,6 @@ _tmp_pkgcheck/
 # faststart 重排副本（构建产物，46 MB 级；留磁盘供打包，不入库）
 *_faststart.mp4
 
+
+# 入口验证的临时日志
+_log_*.txt
