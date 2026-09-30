@@ -1,6 +1,6 @@
 # 文件地图（由 make_ai_handoff.py 自动生成，勿手改）
 
-> 生成时间：2026-10-01 02:28；共 382 个条目；体积单位 KB/MB。
+> 生成时间：2026-10-01 02:33；共 383 个条目；体积单位 KB/MB。
 
 ## 提交物（5 项，43.4 MB）
 
@@ -235,7 +235,7 @@
 | `sample_reviews_100.csv` | 57.9 KB |  |
 | `agent_test_input.csv` | 27.9 KB |  |
 
-## 代码（126 项，0.6 MB）
+## 代码（127 项，0.6 MB）
 
 | 文件 | 大小 | 用途 |
 |---|---|---|
@@ -248,8 +248,8 @@
 | `v2_w1_longtext.py` | 12.1 KB |  |
 | `make_ai_handoff.py` | 11.5 KB |  |
 | `build_pdf.py` | 11.2 KB |  |
+| `build_finals_appendix.py` | 10.6 KB |  |
 | `report_builder.py` | 10.2 KB |  |
-| `build_finals_appendix.py` | 10.0 KB |  |
 | `build_submission.py` | 9.3 KB |  |
 | `demo_sound_v2.py` | 9.1 KB | 本地 Gradio Demo（三页；已内置代理绕过） |
 | `v2_w2_perclass.py` | 9.1 KB |  |
@@ -289,9 +289,9 @@
 | `make_samples.py` | 4.4 KB |  |
 | `retime_srt.py` | 4.2 KB |  |
 | `tune_per_class_threshold.py` | 4.0 KB |  |
+| `verify_finals_package.py` | 4.0 KB |  |
 | `upload_models.py` | 3.9 KB |  |
 | `test_model.py` | 3.9 KB |  |
-| `verify_finals_package.py` | 3.8 KB |  |
 | `merge_refine.py` | 3.8 KB |  |
 | `train_multilabel.py` | 3.8 KB |  |
 | `v2_cv_doc.py` | 3.7 KB |  |
@@ -360,6 +360,7 @@
 | `启动Demo.bat` | 0.9 KB | 双击启动本地 Demo |
 | `text_utils.py` | 0.9 KB |  |
 | `v2_w1_compare.py` | 0.8 KB |  |
+| `v2_verify_doc_cv.py` | 0.7 KB |  |
 | `exp08_ablation_B/config.json` | 0.5 KB |  |
 | `exp09_ablation_C/config.json` | 0.5 KB |  |
 | `exp07_ablation_A/config.json` | 0.5 KB |  |
@@ -427,7 +428,7 @@
 | 文件 | 大小 | 用途 |
 |---|---|---|
 | `更新世界的锋芒_SoundInsight_演示视频.mp4` | 46.1 MB |  |
-| `更新世界的锋芒_SoundInsight_决赛入围定稿作品.docx` | 34.5 KB |  |
+| `更新世界的锋芒_SoundInsight_决赛入围定稿作品.docx` | 34.8 KB |  |
 | `v2/w14_w15_w16_report.md` | 7.9 KB |  |
 | `v2/w17_failure_stats.json` | 6.5 KB |  |
 | `v2/w7_calibration.json` | 4.4 KB |  |
@@ -445,8 +446,8 @@
 | `v2/w5_final.md` | 1.5 KB |  |
 | `v2/v2_artifacts.json` | 1.4 KB |  |
 | `v2/w2_perclass_thresholds.md` | 1.4 KB |  |
+| `.gitignore` | 1.2 KB |  |
 | `v2/w1_seg_threshold.json` | 1.1 KB |  |
-| `.gitignore` | 1.1 KB |  |
 | `v2/v2_artifacts.template.json` | 1.1 KB |  |
 | `v2/w4_strata.json` | 1.0 KB |  |
 | `v2/w1_eval_model_maxlen128_segment(seg128_stride64)_val_v3_test.json` | 0.9 KB |  |
