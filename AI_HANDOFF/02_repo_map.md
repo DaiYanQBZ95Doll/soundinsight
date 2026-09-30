@@ -1,13 +1,13 @@
 # 文件地图（由 make_ai_handoff.py 自动生成，勿手改）
 
-> 生成时间：2026-10-01 04:32；共 403 个条目；体积单位 KB/MB。
+> 生成时间：2026-10-01 04:36；共 403 个条目；体积单位 KB/MB。
 
 ## 提交物（5 项，43.4 MB）
 
 | 文件 | 大小 | 用途 |
 |---|---|---|
 | `更新世界的锋芒_SoundInsight_复赛作品.zip` | 42.4 MB |  |
-| `更新世界的锋芒_SoundInsight_其他材料.zip` | 714.8 KB |  |
+| `更新世界的锋芒_SoundInsight_其他材料.zip` | 715.1 KB |  |
 | `更新世界的锋芒_SoundInsight_复赛作品.pdf` | 210.1 KB |  |
 | `更新世界的锋芒_SoundInsight_Demo.zip` | 105.8 KB |  |
 | `更新世界的锋芒_SoundInsight_复赛作品.docx` | 48.0 KB |  |
@@ -32,7 +32,7 @@
 
 | 文件 | 大小 | 用途 |
 |---|---|---|
-| `number_audit.md` | 14.1 KB | 数字一致性审计结果（含官方模板格式对照节） |
+| `number_audit.md` | 14.3 KB | 数字一致性审计结果（含官方模板格式对照节） |
 | `error_taxonomy.md` | 8.2 KB | 错误分类学：FP/FN 构成 + 标注噪声人工终审 |
 | `llm_baseline.md` | 6.4 KB | LLM 对照报告（deepseek + qwen3.7-plus，含循环性红利声明） |
 | `edge_case_benchmark.py` | 5.6 KB |  |
@@ -57,11 +57,11 @@
 | `confidence_tiered.md` | 0.7 KB | 三星补漏置信度分层与中置信剔除记录 |
 | `significance_test.md` | 0.6 KB | Welch t 检验（p=0.000932） |
 
-## 过程与交接文档（51 项，0.6 MB）
+## 过程与交接文档（51 项，0.5 MB）
 
 | 文件 | 大小 | 用途 |
 |---|---|---|
-| `docs/frozen_execution_checklist.md` | 128.2 KB |  |
+| `docs/frozen_execution_checklist.md` | 64.3 KB |  |
 | `PROGRESS_SYNC.md` | 45.7 KB |  |
 | `docs/gap_and_roadmap_inventory.md` | 41.7 KB |  |
 | `docs/final_project_review_and_execution_plan.md` | 36.3 KB |  |
@@ -244,7 +244,7 @@
 
 | 文件 | 大小 | 用途 |
 |---|---|---|
-| `check_doc_numbers.py` | 40.7 KB | 数字审计 + 模板格式对照脚本 |
+| `check_doc_numbers.py` | 41.8 KB | 数字审计 + 模板格式对照脚本 |
 | `scan_repo_hygiene.py` | 20.0 KB |  |
 | `v2_meta_analysis.py` | 19.1 KB |  |
 | `build_finals_package.py` | 14.0 KB |  |

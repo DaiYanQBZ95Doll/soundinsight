@@ -1,14 +1,17 @@
 # 文档数字一致性审计
-> 运行时刻：2026-10-01 04:32:02（用于判别报告新鲜度；脚本异常退出时本文件不会被改写）
+> 运行时刻：2026-10-01 04:36:55（用于判别报告新鲜度；脚本异常退出时本文件不会被改写）
 
-## 关键文件完整性（体积下限，防静默截断）
-- [PASS] docs/frozen_execution_checklist.md：131236 B ≥ 40000 B
-- [PASS] PROGRESS_SYNC.md：46817 B ≥ 20000 B
-- [PASS] docs/final_project_review_and_execution_plan.md：37212 B ≥ 15000 B
-- [PASS] competition_v4.md：21214 B ≥ 20000 B
-- [PASS] results_summary.md：4870 B ≥ 4000 B
-- [PASS] AI_HANDOFF/manifest.json：85570 B ≥ 20000 B
-- 结论：关键文件体积均正常
+## 关键文件完整性（体积上下限 + 章节唯一性）
+- [PASS] docs/frozen_execution_checklist.md：65878 B ∈ [40000, 80000]
+- [PASS] PROGRESS_SYNC.md：46817 B ∈ [20000, 90000]
+- [PASS] docs/final_project_review_and_execution_plan.md：37212 B ∈ [15000, 80000]
+- [PASS] competition_v4.md：21214 B ∈ [20000, 80000]
+- [PASS] results_summary.md：4870 B ∈ [4000, 30000]
+- [PASS] AI_HANDOFF/manifest.json：86216 B ∈ [20000, 400000]
+- [PASS] docs/frozen_execution_checklist.md：13 个章节均唯一
+- [PASS] PROGRESS_SYNC.md：24 个章节均唯一
+- [PASS] competition_v4.md：13 个章节均唯一
+- 结论：关键文件体积与章节结构均正常
 
 ## 产品代码健康检查（编译 + 标签污染）
 - [PASS] report_builder.py：可编译且无标签污染

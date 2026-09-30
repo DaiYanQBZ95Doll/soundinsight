@@ -640,23 +640,24 @@ def check_api_wording_consistency(out) -> None:
 
 
 def check_file_integrity(out) -> None:
-    """关键文件完整性（体积下限）——防"脚本化编辑静默截断"。
+    """关键文件完整性：**体积下限 + 上限 + 章节唯一性**——防脚本化编辑的截断与重复。
 
-    背景（2026-10-01 事故）：一次登记脚本漏拼后半段，把 docs/frozen_execution_checklist.md
-    由 55,149 B 截为 9,553 B，而数字审计当时全绿——被删内容里没有它检查的数字。
-    本检查按体积下限兜底：低于下限即 FAIL（疑似被截断）。
+    两次实测事故（2026-10-01）：
+      ① **截断**：登记脚本漏拼后半段，清单 55,149 B → 9,553 B；
+      ② **重复**：锚点未命中（find 返回 −1）导致表达式重拼大半个文件，65,353 B → 131,236 B（+374 行）。
+    故本检查同时看下限（防截断）、上限（防重复）与章节唯一性（更直接的重复信号）。
     """
-    out.append("## 关键文件完整性（体积下限，防静默截断）")
-    floors = {
-        "docs/frozen_execution_checklist.md": 40000,
-        "PROGRESS_SYNC.md": 20000,
-        "docs/final_project_review_and_execution_plan.md": 15000,
-        "competition_v4.md": 20000,
-        "results_summary.md": 4000,   # 紧凑数字表（79 行、10 节），非长文；实测 4,870 B
-        "AI_HANDOFF/manifest.json": 20000,
+    out.append("## 关键文件完整性（体积上下限 + 章节唯一性）")
+    bounds = {
+        "docs/frozen_execution_checklist.md": (40000, 80000),
+        "PROGRESS_SYNC.md": (20000, 90000),
+        "docs/final_project_review_and_execution_plan.md": (15000, 80000),
+        "competition_v4.md": (20000, 80000),
+        "results_summary.md": (4000, 30000),
+        "AI_HANDOFF/manifest.json": (20000, 400000),
     }
     bad = 0
-    for name, floor in floors.items():
+    for name, (floor, ceil) in bounds.items():
         p = os.path.join(HERE, name)
         if not os.path.isfile(p):
             out.append(f"- [FAIL] {name}：文件不存在")
@@ -665,12 +666,36 @@ def check_file_integrity(out) -> None:
         size = os.path.getsize(p)
         if size < floor:
             out.append(f"- [FAIL] {name}：{size} B < 下限 {floor} B（**疑似被截断**；"
-                       f"可用 `git show <rev>:{name}` 从完好提交恢复）")
+                       f"可用 `git show <rev>:{name}` 恢复）")
+            bad += 1
+            continue
+        if size > ceil:
+            out.append(f"- [FAIL] {name}：{size} B > 上限 {ceil} B（**疑似内容重复/拼接**；"
+                       f"对比 `git diff` 与该文件的历史体积）")
+            bad += 1
+            continue
+        out.append(f"- [PASS] {name}：{size} B ∈ [{floor}, {ceil}]")
+    # 章节唯一性（仅对 Markdown 主文档）
+    for name in ("docs/frozen_execution_checklist.md", "PROGRESS_SYNC.md",
+                 "competition_v4.md"):
+        p = os.path.join(HERE, name)
+        if not os.path.isfile(p):
+            continue
+        heads = re.findall(r"^## .*$", open(p, encoding="utf-8", errors="replace").read(),
+                           re.M)
+        seen, dups = set(), []
+        for h in heads:
+            if h in seen:
+                dups.append(h)
+            seen.add(h)
+        if dups:
+            out.append(f"- [FAIL] {name}：{len(dups)} 个重复章节（如 {dups[0][:40]}）"
+                       f"——**内容可能被重复拼接**")
             bad += 1
         else:
-            out.append(f"- [PASS] {name}：{size} B ≥ {floor} B")
+            out.append(f"- [PASS] {name}：{len(heads)} 个章节均唯一")
     if bad == 0:
-        out.append("- 结论：关键文件体积均正常")
+        out.append("- 结论：关键文件体积与章节结构均正常")
     out.append("")
 
 

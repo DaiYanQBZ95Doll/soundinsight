@@ -1,5 +1,5 @@
 {
- "generated": "2026-10-01 04:32",
+ "generated": "2026-10-01 04:36",
  "root": "C:\\deepseek-harness-master\\soundinsight",
  "count": 403,
  "entries": [
@@ -307,9 +307,9 @@
   {
    "path": "check_doc_numbers.py",
    "category": "代码",
-   "size_bytes": 41653,
+   "size_bytes": 42833,
    "purpose": "数字审计 + 模板格式对照脚本",
-   "sha256_16": "cc543309828668bd923ab6b818aaf852d0a5267ded28f31ce020d8b7a0cb01f1"
+   "sha256_16": "514a326d2c91f5e9883edda057a6234cf05f35dd66d31f4a41001c3639b51d37"
   },
   {
    "path": "check_edge_cases.py",
@@ -594,9 +594,9 @@
   {
    "path": "hashes.txt",
    "category": "其他",
-   "size_bytes": 2028,
+   "size_bytes": 2029,
    "purpose": "",
-   "sha256_16": "1780a0755430baff236ff5d43e463591f73494ab175bffdd59549b52de8f05eb"
+   "sha256_16": "76aa3a4dee1ecd011e3c83fded5a2aaaf3c9fb6ec797c47ed1d65a88330f0720"
   },
   {
    "path": "human_review_50.csv",
@@ -1084,9 +1084,9 @@
   {
    "path": "number_audit.md",
    "category": "验证报告",
-   "size_bytes": 14426,
+   "size_bytes": 14658,
    "purpose": "数字一致性审计结果（含官方模板格式对照节）",
-   "sha256_16": "bbfe7e872cdb9d0886191e852e81415683f37e1251f5c1ef337b45a01fe87cba"
+   "sha256_16": "9e54f94d4900af6a5fcc9f9332f06e974224d8445b8b85decfd2ecee3a805be7"
   },
   {
    "path": "pack_final.py",
@@ -1882,9 +1882,9 @@
   {
    "path": "更新世界的锋芒_SoundInsight_其他材料.zip",
    "category": "提交物",
-   "size_bytes": 731905,
+   "size_bytes": 732283,
    "purpose": "",
-   "sha256_16": "06124c05b0d8e578ad63c28b3b3d85cd563888fa2379db1bb06d86537defa62d"
+   "sha256_16": "5f76c248ee06d746633d61591e42efe576a0fac30b51c9f340a7de9797e7691d"
   },
   {
    "path": "更新世界的锋芒_SoundInsight_决赛入围定稿作品.docx",
@@ -2169,9 +2169,9 @@
   {
    "path": "docs/frozen_execution_checklist.md",
    "category": "过程与交接文档",
-   "size_bytes": 131236,
+   "size_bytes": 65878,
    "purpose": "",
-   "sha256_16": "ef7576b17d606ebdf160420ebfe0b305b792eb02d3d8cd933b1283fb91226be1"
+   "sha256_16": "63875cfa528c83a148aeef4d294847075e0c0e3c0b593864a75d7d309d5c5907"
   },
   {
    "path": "docs/gap_and_roadmap_inventory.md",
@@ -2227,7 +2227,7 @@
    "category": "过程与交接文档",
    "size_bytes": 3643,
    "purpose": "",
-   "sha256_16": "10e4cd31b78974643aaa070e3d76da6a31bb66a5a4e09328882f23c05620374f"
+   "sha256_16": "a45cc8ebc321ac900dc6d174034a5ab6068b1dd52aae47ca48d9bfdb63b87eef"
   },
   {
    "path": "docs/retrospective_and_reflection.md",
@@ -2479,7 +2479,7 @@
    "category": "其他",
    "size_bytes": 6162,
    "purpose": "",
-   "sha256_16": "11cd7cae6d494e8dd53a43dbb6bd28e437a42d551547ec4b6e71bf7ee0c85c32"
+   "sha256_16": "5df7f7b12c3caa1ede51afd8024aa89d7de0304f2b0eecbee7c80c7d590fe8ae"
   },
   {
    "path": "v2/threshold.json",
