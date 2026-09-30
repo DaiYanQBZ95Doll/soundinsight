@@ -115,6 +115,7 @@ def join_val(pred_rows, text_idx, out_lines):
         src = cand[0]
         joined.append({"prob": fnum(p["prob"], 0.0), "pred": int(fnum(p["pred"], 0)),
                        "label": int(fnum(p["sound_negative"], 0)),
+                       "text": t,
                        "star": src["rating"], "verified": src["verified"],
                        "user": src["user"], "asin": src["asin"]})
     out_lines.append(f"- 验证集连接（按文本）：命中 **{len(joined)}**/{len(pred_rows)} 行；"

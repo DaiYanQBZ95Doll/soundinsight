@@ -1,0 +1,218 @@
+{
+  "n": 19996,
+  "n_pos": 251,
+  "n_neg": 19745,
+  "TP": 178,
+  "FP": 91,
+  "FN": 73,
+  "TN": 19654,
+  "placeholder_rows": 12,
+  "modes": [],
+  "exemplars": {
+    "FP_top": [
+      {
+        "text": "The sound is mediocre. I bought a lesser priced one after and it has mass bass and great loud volume. This one is bigger in size, A few bucks more and the sound is mediocre. Flat bass. Sound says 30 but sounds like 15. R",
+        "prob": 0.9901,
+        "star": 4,
+        "verified": true,
+        "asin": "B07MFCTW9N",
+        "len_chars": 334,
+        "bucket": ">128"
+      },
+      {
+        "text": "I've used this Bluetooth for close to three years. It worked very well for a long time, but recently the sound quality is beginning to wane, making it hard to hear. It fades in and out from moderately good sound to reall",
+        "prob": 0.9896,
+        "star": 4,
+        "verified": false,
+        "asin": "B00YCBLR5U",
+        "len_chars": 233,
+        "bucket": ">128"
+      },
+      {
+        "text": "We originally purchased a first generation Alexa when they came out. It is a great device that we still use in another part of the house now that we have this newer generation version. Aside from it being a little shorte",
+        "prob": 0.9895,
+        "star": 4,
+        "verified": true,
+        "asin": "B07W36WN5X",
+        "len_chars": 662,
+        "bucket": ">128"
+      },
+      {
+        "text": "Broke after only a few weeks. Sound quality was ok.",
+        "prob": 0.9889,
+        "star": 1,
+        "verified": true,
+        "asin": "B00ODC9FSO",
+        "len_chars": 51,
+        "bucket": "≤64"
+      },
+      {
+        "text": "I wanted this for an unusual application.  I am using it in-line between my android phone and my aux in in a 08 Tundra with no other connectivity.  I use the Roav Viva device to enable me to use Alexa and streaming music",
+        "prob": 0.9887,
+        "star": 5,
+        "verified": true,
+        "asin": "B07JNT5XLX",
+        "len_chars": 752,
+        "bucket": ">128"
+      }
+    ],
+    "FN_low": [
+      {
+        "text": "Maybe theses sound good to some people. Did not meet expectations nor advertised claims.",
+        "prob": 0.0004,
+        "star": 1,
+        "verified": false,
+        "asin": "B09BJJTKLK",
+        "len_chars": 88,
+        "bucket": "65–128"
+      },
+      {
+        "text": "Recording my listening experience with the Sennheiser HD 598 which I bought after breaking my pair of HE-400 headphones. I own Grado Labs SR80, BModed Fostex T50, Sennheiser HD-600, Hifiman HE-500.<br /><br />Hour 1:<br ",
+        "prob": 0.0006,
+        "star": 2,
+        "verified": true,
+        "asin": "B016MAOS5E",
+        "len_chars": 1036,
+        "bucket": ">128"
+      },
+      {
+        "text": "I've chatted with tech support and I'm supposed to leave my buds connected to my phone, in the case and open, and it'll update the firmware to get rid of this terrible hiss, but it's been hours and nothing... no update. ",
+        "prob": 0.0018,
+        "star": 1,
+        "verified": true,
+        "asin": "B081JCY2H4",
+        "len_chars": 411,
+        "bucket": ">128"
+      },
+      {
+        "text": "[[VIDEOID:5648796b5bc00b4a9bcfab2b277af725]] This camera/video works well.  There is a slight delay when snapping a picture and in starting the video.  The picture and video quality was very good.  The sound could use so",
+        "prob": 0.002,
+        "star": 3,
+        "verified": false,
+        "asin": "B08ZN3PS6L",
+        "len_chars": 382,
+        "bucket": ">128"
+      },
+      {
+        "text": "This will give you better sound than the typical flat screen TV, but don't expect much in the way of volume or dynamic range.  The remote provide is infrared which is awkward unless the bar will be at eye level. I got a ",
+        "prob": 0.0021,
+        "star": 3,
+        "verified": true,
+        "asin": "B01NCUP9F3",
+        "len_chars": 280,
+        "bucket": ">128"
+      }
+    ]
+  },
+  "by_star": {
+    "1": {
+      "n": 1600,
+      "pos": 96,
+      "neg": 1504,
+      "FP": 10,
+      "FN": 28,
+      "FP_rate_neg": 0.66,
+      "FN_rate_pos": 29.17
+    },
+    "2": {
+      "n": 844,
+      "pos": 67,
+      "neg": 777,
+      "FP": 12,
+      "FN": 16,
+      "FP_rate_neg": 1.54,
+      "FN_rate_pos": 23.88
+    },
+    "3": {
+      "n": 1414,
+      "pos": 88,
+      "neg": 1326,
+      "FP": 11,
+      "FN": 29,
+      "FP_rate_neg": 0.83,
+      "FN_rate_pos": 32.95
+    },
+    "4": {
+      "n": 3040,
+      "pos": 0,
+      "neg": 3040,
+      "FP": 38,
+      "FN": 0,
+      "FP_rate_neg": 1.25,
+      "FN_rate_pos": null
+    },
+    "5": {
+      "n": 13098,
+      "pos": 0,
+      "neg": 13098,
+      "FP": 20,
+      "FN": 0,
+      "FP_rate_neg": 0.15,
+      "FN_rate_pos": null
+    }
+  },
+  "by_bucket": {
+    "≤64": {
+      "n": 4807,
+      "pos": 14,
+      "FP": 8,
+      "FN": 3,
+      "FP_rate_neg": 0.17,
+      "FN_rate_pos": 21.43
+    },
+    "65–128": {
+      "n": 3301,
+      "pos": 26,
+      "FP": 10,
+      "FN": 5,
+      "FP_rate_neg": 0.31,
+      "FN_rate_pos": 19.23
+    },
+    ">128": {
+      "n": 11888,
+      "pos": 211,
+      "FP": 73,
+      "FN": 65,
+      "FP_rate_neg": 0.63,
+      "FN_rate_pos": 30.81
+    }
+  },
+  "by_verified": {
+    "verified_true": {
+      "n": 15771,
+      "neg": 15591,
+      "FP": 67,
+      "FP_rate_neg": 0.43
+    },
+    "verified_false": {
+      "n": 4225,
+      "neg": 4154,
+      "FP": 24,
+      "FP_rate_neg": 0.58
+    }
+  },
+  "fn_issue_dist": {
+    "杂音": 29,
+    "清晰度": 24,
+    "音量": 23,
+    "低音": 6,
+    "高音": 2
+  },
+  "fn_issue_note": "口径：对每条漏报取同一文本在当前标签集中的五类标签；可多标签并存；命中率低说明该漏报文本在当前标签集中未被标为任何类别。",
+  "label_drift": {
+    "FN": {
+      "total": 73,
+      "found": 73,
+      "current_label_1": 72,
+      "current_label_0": 1
+    },
+    "FP": {
+      "total": 91,
+      "found": 91,
+      "current_label_1": 0,
+      "current_label_0": 91
+    },
+    "FP_examples_current_positive": [],
+    "note": "found=能在现行标签集中定位到的条数；current_label_1/0=现行标签为正例/负例的条数。current_label_1 的 FP 表示：现行标签已认同模型的判正，该差异属代际口径漂移而非模型误报；current_label_0 的 FN 反之（现行标签已认同模型的判负）。"
+  }
+}

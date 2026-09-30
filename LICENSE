@@ -1,0 +1,48 @@
+MIT License
+
+Copyright (c) 2026 更新世界的锋芒（SoundInsight 项目）
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
+================================================================================
+适用范围与例外（重要）
+================================================================================
+
+1. 本许可（MIT）**仅覆盖本项目自行编写的源代码与文档**（例如 `*.py`、`*.md`、
+   配置文件与脚本）。
+
+2. **不覆盖以下内容**，它们各自受原始权利方条款约束：
+
+   a. **数据集**：`electronics_prefix.bin`、`electronics_expanded.csv`、
+      `labeled_*.csv` 等派生文件来源于 Amazon Reviews 2023（McAuley Lab），
+      版权归原发布方与原始评论作者所有。本项目仅在**学术研究与竞赛用途**下使用，
+      **商用前须自行确认授权**。原发布方页面：https://amazon-reviews-2023.github.io/
+      （派生文件中的评论原文同样受此约束。）
+
+   b. **预训练模型**：`distilbert-base-uncased` 等基座权重受其原始许可约束
+      （Hugging Face 模型页所列条款）。
+
+   c. **训练产物**：`sound_model/`、`multi_label_model/` 等在本项目数据上训练得到的
+      权重，随其训练数据一同受 2.a 的用途限制；仅供研究/竞赛/评审核验使用。
+
+3. **隐私**：数据中的 `user_id` 等标识字段仅用于聚合统计，本仓库不含此类原始标识
+   （见 `.gitignore` 与 `docs/legacy_materials_notice.md`）。
+
+4. 本文件为**默认选择**（决策方未指定许可类型时的保守默认），可由决策方随时替换；
+   替换时须同步更新本段与 `README.md` 的许可说明。

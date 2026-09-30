@@ -1,25 +1,61 @@
 {
   "purpose": "W6：阈值选择与指标报告分离（消除 A1-8 同集选阈值的乐观偏置）",
-  "source": "val_v2.csv",
-  "source_n": 20000,
-  "source_pos": 251,
+  "label_generation": "[v2]（现行 labeled_llm 的 sound_negative_llm 与 issue_*_llm）",
+  "sample_source": "val_v2.csv 的 20,000 条文本（与 v1 评测集同批样本）",
+  "label_join": {
+    "method": "按 text 精确连接（含 strip 兜底）",
+    "matched": 19996,
+    "missing_dropped": 4
+  },
+  "drift_vs_v1": {
+    "rows_with_different_label": 6,
+    "pct": 0.03,
+    "v1_pos": 251,
+    "v2_pos": 255
+  },
   "seed": 42,
   "test_size": 0.5,
-  "stratify": "sound_negative",
+  "stratify": "sound_negative（现行标签）",
   "roles": {
     "val_v3_tune": "只用于选阈值/校准/早停等一切调参",
     "val_v3_test": "只用于报告最终指标；不得用于任何选择"
   },
+  "columns": [
+    "text",
+    "sound_negative",
+    "v1_label",
+    "issue_bass_llm",
+    "issue_clarity_llm",
+    "issue_noise_llm",
+    "issue_volume_llm",
+    "issue_treble_llm"
+  ],
   "tune": {
     "file": "val_v3_tune.csv",
-    "n": 10000,
-    "pos": 126
+    "n": 9998,
+    "pos": 128,
+    "pos_per_class": [
+      17,
+      44,
+      44,
+      46,
+      5
+    ],
+    "v1_pos_same_rows": 129
   },
   "test": {
     "file": "val_v3_test.csv",
-    "n": 10000,
-    "pos": 125
+    "n": 9998,
+    "pos": 127,
+    "pos_per_class": [
+      18,
+      58,
+      33,
+      39,
+      10
+    ],
+    "v1_pos_same_rows": 122
   },
-  "caveat": "对半切后每侧正例约 125 条，单点指标噪声更大（A2-14）；结论须报双侧与样本量，不得只报更优侧。",
-  "gen": "[v2]"
+  "caveat": "对半切后每侧正例约 120 条，单点指标噪声更大（A2-14）；结论须报双侧与样本量，不得只报更优侧。v1_label 列仅供对照，不参与调参。",
+  "v1_reference": "v1 的历史指标须在 val_v2.csv（冻结 v1 标签）上计算，不与本文件混比"
 }
