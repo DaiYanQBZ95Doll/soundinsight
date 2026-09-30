@@ -1,6 +1,6 @@
 # 文件地图（由 make_ai_handoff.py 自动生成，勿手改）
 
-> 生成时间：2026-09-30 20:32；共 318 个条目；体积单位 KB/MB。
+> 生成时间：2026-09-30 20:41；共 318 个条目；体积单位 KB/MB。
 
 ## 提交物（5 项，43.2 MB）
 
@@ -84,9 +84,9 @@
 | `docs/N1_narrative_mainline.md` | 6.0 KB |  |
 | `docs/N1b_downgrade_narrative.md` | 5.8 KB |  |
 | `docs/SoundInsight决赛备战_现状盘点清单.md` | 4.8 KB |  |
-| `docs/repo_hygiene_scan.md` | 4.4 KB |  |
 | `docs/evidence_index_exp.md` | 4.4 KB |  |
 | `docs/w1_longtext_variants.md` | 3.8 KB |  |
+| `docs/repo_hygiene_scan.md` | 3.7 KB |  |
 | `docs/dataset_audit.md` | 3.5 KB | 数据集字段考古 |
 | `docs/D14_resume_checklist.md` | 3.0 KB | 收尾四步清单（录视频/打包/上传/补推送） |
 | `docs/drift_plan.md` | 2.8 KB | 数据漂移监控方案 |
@@ -216,8 +216,8 @@
 
 | 文件 | 大小 | 用途 |
 |---|---|---|
-| `check_doc_numbers.py` | 29.5 KB | 数字审计 + 模板格式对照脚本 |
-| `scan_repo_hygiene.py` | 19.8 KB |  |
+| `check_doc_numbers.py` | 29.6 KB | 数字审计 + 模板格式对照脚本 |
+| `scan_repo_hygiene.py` | 20.0 KB |  |
 | `v2_meta_analysis.py` | 19.1 KB |  |
 | `build_pdf_v2.py` | 12.4 KB |  |
 | `v2_w1_longtext.py` | 12.1 KB |  |
