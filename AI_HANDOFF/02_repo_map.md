@@ -1,15 +1,15 @@
 # 文件地图（由 make_ai_handoff.py 自动生成，勿手改）
 
-> 生成时间：2026-10-01 03:20；共 387 个条目；体积单位 KB/MB。
+> 生成时间：2026-10-01 03:25；共 387 个条目；体积单位 KB/MB。
 
 ## 提交物（5 项，43.4 MB）
 
 | 文件 | 大小 | 用途 |
 |---|---|---|
 | `更新世界的锋芒_SoundInsight_复赛作品.zip` | 42.4 MB |  |
-| `更新世界的锋芒_SoundInsight_其他材料.zip` | 678.8 KB |  |
+| `更新世界的锋芒_SoundInsight_其他材料.zip` | 679.4 KB |  |
 | `更新世界的锋芒_SoundInsight_复赛作品.pdf` | 210.1 KB |  |
-| `更新世界的锋芒_SoundInsight_Demo.zip` | 105.0 KB |  |
+| `更新世界的锋芒_SoundInsight_Demo.zip` | 105.6 KB |  |
 | `更新世界的锋芒_SoundInsight_复赛作品.docx` | 48.0 KB |  |
 
 ## 主文档与模板（11 项，0.1 MB）
@@ -408,9 +408,9 @@
 | 文件 | 大小 | 用途 |
 |---|---|---|
 | `insight_report.xlsx` | 7.1 KB |  |
+| `insight_report_v2.md` | 3.3 KB |  |
 | `summary_log.txt` | 3.1 KB |  |
-| `insight_report_v2.md` | 2.5 KB |  |
-| `insight_report_v2_en.md` | 2.4 KB |  |
+| `insight_report_v2_en.md` | 2.8 KB |  |
 | `exp07_ablation_A/training_output.txt` | 1.9 KB |  |
 | `training_output.txt` | 0.9 KB |  |
 | `exp06_最终二分类模型/training_output.txt` | 0.9 KB |  |
@@ -443,8 +443,8 @@
 | `v2/w1_hybrid_result.json` | 2.7 KB |  |
 | `LICENSE` | 2.6 KB |  |
 | `v2/w2_perclass_thresholds.json` | 2.3 KB |  |
-| `v2/w5_cv.json` | 2.0 KB |  |
 | `hashes.txt` | 2.0 KB |  |
+| `v2/w5_cv.json` | 2.0 KB |  |
 | `v2/w6_split_manifest.json` | 1.8 KB |  |
 | `v2/w7_calibration.md` | 1.5 KB |  |
 | `v2/w5_final.md` | 1.5 KB |  |

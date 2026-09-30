@@ -1,5 +1,8 @@
 # SoundInsight Sound Quality Report
 
+> **Sample note**: this sample was produced by the **shipped default model (frozen v1 weights)**, so the metrics shown are v1-generation (validation F1 0.687, threshold 0.9744). The v2 metrics in the finals main document (F1@tuned(0.6) = 0.7220 on `val_v3_test`) come from the **v2 candidate model**; the two use different sample sets and are **not directly comparable**.
+
+
 ## 1. Overview
 Source: sample_reviews_100.csv
 Generated: 2026-09-14 17:48

@@ -1,5 +1,5 @@
 {
- "generated": "2026-10-01 03:20",
+ "generated": "2026-10-01 03:25",
  "root": "C:\\deepseek-harness-master\\soundinsight",
  "count": 387,
  "entries": [
@@ -573,9 +573,9 @@
   {
    "path": "hashes.txt",
    "category": "其他",
-   "size_bytes": 2017,
+   "size_bytes": 2018,
    "purpose": "",
-   "sha256_16": "9e54f9f36118b929597a638f19cf86daf88167c063d2eb95f391abf76d00830e"
+   "sha256_16": "bacfe7b713dc32b5047648faf0e6ac241ae05d3aad1541f8a77ef0bb0adf4660"
   },
   {
    "path": "human_review_50.csv",
@@ -608,16 +608,16 @@
   {
    "path": "insight_report_v2.md",
    "category": "生成产物·日志",
-   "size_bytes": 2591,
+   "size_bytes": 3418,
    "purpose": "",
-   "sha256_16": "49fad0639dbe1d258f761e65d3d30fa64008c8397d2826e698752ab21a28a5fc"
+   "sha256_16": "a9ffa02116c3674e707ed9ecfe5059d818035c94f4b727a6abf58660ebc8ca28"
   },
   {
    "path": "insight_report_v2_en.md",
    "category": "生成产物·日志",
-   "size_bytes": 2449,
+   "size_bytes": 2823,
    "purpose": "",
-   "sha256_16": "45c157e6554316eb0242905d3f8e9e130994010dbb850bd029835b30630656fe"
+   "sha256_16": "901c6dfabc5c3203a812f15e7ffcd879f16807bcf505ccdce7644e5beeaa70f3"
   },
   {
    "path": "install.bat",
@@ -1065,7 +1065,7 @@
    "category": "验证报告",
    "size_bytes": 13022,
    "purpose": "数字一致性审计结果（含官方模板格式对照节）",
-   "sha256_16": "392524323b7d9be41a9d0979c11dbc84e448cb8b2c01ee3b06ceaa9ecd6fef96"
+   "sha256_16": "68752c5b03324a7ff8e11be6e937b367e047646dfe149a8c07b577ddbfacd3ac"
   },
   {
    "path": "pack_final.py",
@@ -1805,16 +1805,16 @@
   {
    "path": "更新世界的锋芒_SoundInsight_Demo.zip",
    "category": "提交物",
-   "size_bytes": 107553,
+   "size_bytes": 108185,
    "purpose": "",
-   "sha256_16": "44ec0dde587f11e91137e65e1f2a079607ba677827fc493837345eb158ced7e7"
+   "sha256_16": "f26b27f51b40755e2407b9dcb87dcb0764260f98380ace75fffe1238245174c2"
   },
   {
    "path": "更新世界的锋芒_SoundInsight_其他材料.zip",
    "category": "提交物",
-   "size_bytes": 695077,
+   "size_bytes": 695709,
    "purpose": "",
-   "sha256_16": "586cc28057f0d43706a48e0f197e9eda22723e1c2fd3d89cf039cbe29e0849db"
+   "sha256_16": "6118c2ef07fa3a0c45ed78f07094792fbdb491091f71c40647f3454f15093345"
   },
   {
    "path": "更新世界的锋芒_SoundInsight_决赛入围定稿作品.docx",
