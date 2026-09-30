@@ -1,13 +1,13 @@
 # 文件地图（由 make_ai_handoff.py 自动生成，勿手改）
 
-> 生成时间：2026-10-01 03:25；共 387 个条目；体积单位 KB/MB。
+> 生成时间：2026-10-01 03:36；共 394 个条目；体积单位 KB/MB。
 
 ## 提交物（5 项，43.4 MB）
 
 | 文件 | 大小 | 用途 |
 |---|---|---|
 | `更新世界的锋芒_SoundInsight_复赛作品.zip` | 42.4 MB |  |
-| `更新世界的锋芒_SoundInsight_其他材料.zip` | 679.4 KB |  |
+| `更新世界的锋芒_SoundInsight_其他材料.zip` | 691.6 KB |  |
 | `更新世界的锋芒_SoundInsight_复赛作品.pdf` | 210.1 KB |  |
 | `更新世界的锋芒_SoundInsight_Demo.zip` | 105.6 KB |  |
 | `更新世界的锋芒_SoundInsight_复赛作品.docx` | 48.0 KB |  |
@@ -57,14 +57,14 @@
 | `confidence_tiered.md` | 0.7 KB | 三星补漏置信度分层与中置信剔除记录 |
 | `significance_test.md` | 0.6 KB | Welch t 检验（p=0.000932） |
 
-## 过程与交接文档（46 项，0.5 MB）
+## 过程与交接文档（49 项，0.5 MB）
 
 | 文件 | 大小 | 用途 |
 |---|---|---|
-| `docs/frozen_execution_checklist.md` | 60.5 KB |  |
+| `docs/frozen_execution_checklist.md` | 62.7 KB |  |
 | `PROGRESS_SYNC.md` | 42.6 KB |  |
-| `docs/gap_and_roadmap_inventory.md` | 40.7 KB |  |
-| `docs/final_project_review_and_execution_plan.md` | 36.0 KB |  |
+| `docs/gap_and_roadmap_inventory.md` | 40.9 KB |  |
+| `docs/final_project_review_and_execution_plan.md` | 36.3 KB |  |
 | `docs/retrospective_and_reflection.md` | 27.9 KB |  |
 | `docs/project_full_record.md` | 21.6 KB | 初赛→复赛全流程记录 |
 | `docs/v2_acceptance_benchmark.md` | 20.4 KB |  |
@@ -81,11 +81,12 @@
 | `docs/w17_failure_cases.md` | 7.9 KB |  |
 | `docs/completeness_audit_round2.md` | 7.8 KB |  |
 | `docs/overnight_summary.md` | 7.1 KB |  |
-| `docs/N1b_downgrade_narrative.md` | 6.9 KB |  |
+| `docs/N1b_downgrade_narrative.md` | 7.0 KB |  |
 | `docs/external_sources_register.md` | 6.5 KB |  |
 | `docs/N1_narrative_mainline.md` | 6.4 KB |  |
 | `docs/work_summary_d7.md` | 6.2 KB |  |
 | `docs/N2_narrative_final.md` | 6.2 KB |  |
+| `docs/N6_review_risk_list.md` | 5.6 KB |  |
 | `docs/N5_qna_factbase.md` | 5.6 KB |  |
 | `docs/SoundInsight决赛备战_现状盘点清单.md` | 4.8 KB |  |
 | `docs/w1_longtext_variants.md` | 4.7 KB |  |
@@ -106,6 +107,8 @@
 | `docs/w17_confidence_actions.md` | 2.8 KB |  |
 | `AI_INDUCTION_REDLINE.md` | 2.7 KB |  |
 | `docs/W5_cv_interpretation.md` | 2.2 KB |  |
+| `docs/w13_keyword_miss_rate.md` | 2.1 KB |  |
+| `docs/w11_data_efficiency.md` | 1.9 KB |  |
 | `docs/year_split_output.txt` | 0.8 KB | 年份分桶脚本输出原文 |
 
 ## 演示材料（6 项，18.1 MB）
@@ -235,14 +238,14 @@
 | `sample_reviews_100.csv` | 57.9 KB |  |
 | `agent_test_input.csv` | 27.9 KB |  |
 
-## 代码（131 项，0.6 MB）
+## 代码（133 项，0.6 MB）
 
 | 文件 | 大小 | 用途 |
 |---|---|---|
 | `check_doc_numbers.py` | 37.3 KB | 数字审计 + 模板格式对照脚本 |
 | `scan_repo_hygiene.py` | 20.0 KB |  |
 | `v2_meta_analysis.py` | 19.1 KB |  |
-| `build_finals_package.py` | 13.7 KB |  |
+| `build_finals_package.py` | 13.8 KB |  |
 | `v2_w4_mine.py` | 12.4 KB |  |
 | `build_pdf_v2.py` | 12.4 KB |  |
 | `v2_w1_longtext.py` | 12.1 KB |  |
@@ -266,6 +269,7 @@
 | `v2_w5_final.py` | 7.7 KB |  |
 | `make_faststart.py` | 7.6 KB |  |
 | `md_to_pdf.py` | 7.6 KB | 主文档 Markdown → PDF（内嵌中文字体） |
+| `w13_keyword_miss_rate.py` | 7.4 KB |  |
 | `v2_w5_cv.py` | 7.4 KB |  |
 | `v2_w6_split.py` | 7.0 KB |  |
 | `learning_curve.py` | 6.8 KB |  |
@@ -275,6 +279,7 @@
 | `v2_w1_hybrid_select.py` | 6.0 KB |  |
 | `gen_v2_artifacts.py` | 5.8 KB |  |
 | `precommit_guard.py` | 5.8 KB |  |
+| `w11_data_efficiency.py` | 5.5 KB |  |
 | `distilbert_cv.py` | 5.4 KB |  |
 | `md_to_docx.py` | 5.4 KB | 主文档 Markdown → Word |
 | `v2_m0_switch.py` | 5.3 KB |  |
@@ -427,7 +432,7 @@
 | `multi_label_model/` | 256.1 MB | 冻结的多标签归因模型权重（约 256MB），不入 git |
 | `sound_model/` | 256.1 MB | 冻结的二分类模型权重（约 256MB），不入 git |
 
-## 其他（37 项，46.2 MB）
+## 其他（39 项，46.2 MB）
 
 | 文件 | 大小 | 用途 |
 |---|---|---|
@@ -446,6 +451,7 @@
 | `hashes.txt` | 2.0 KB |  |
 | `v2/w5_cv.json` | 2.0 KB |  |
 | `v2/w6_split_manifest.json` | 1.8 KB |  |
+| `w13_keyword_miss_rate.json` | 1.8 KB |  |
 | `v2/w7_calibration.md` | 1.5 KB |  |
 | `v2/w5_final.md` | 1.5 KB |  |
 | `v2/v2_artifacts.json` | 1.4 KB |  |
@@ -466,5 +472,6 @@
 | `v2/w1_eval_maxlen256.json` | 0.9 KB |  |
 | `v2/w1_eval_maxlen512.json` | 0.9 KB |  |
 | `per_class_thresholds_probe.json` | 0.4 KB |  |
+| `w11_data_efficiency.json` | 0.4 KB |  |
 | `v2/threshold.json` | 0.3 KB |  |
 | `v2/w4_summary.json` | 0.2 KB |  |

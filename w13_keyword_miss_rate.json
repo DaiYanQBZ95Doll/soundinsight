@@ -1,0 +1,91 @@
+{
+  "definition_A_gate": {
+    "current": 0.0,
+    "expanded": 0.0,
+    "n_positives": 1653
+  },
+  "definition_B_per_class": [
+    {
+      "类别": "低音",
+      "正例数": 212,
+      "现行漏检率": 12.7,
+      "扩充后漏检率": 12.7,
+      "改善百分点": 0.0,
+      "达标(≤40%)": true
+    },
+    {
+      "类别": "清晰度",
+      "正例数": 569,
+      "现行漏检率": 76.8,
+      "扩充后漏检率": 69.4,
+      "改善百分点": 7.4,
+      "达标(≤40%)": false
+    },
+    {
+      "类别": "杂音",
+      "正例数": 368,
+      "现行漏检率": 53.0,
+      "扩充后漏检率": 53.0,
+      "改善百分点": 0.0,
+      "达标(≤40%)": false
+    },
+    {
+      "类别": "音量",
+      "正例数": 380,
+      "现行漏检率": 45.8,
+      "扩充后漏检率": 45.8,
+      "改善百分点": 0.0,
+      "达标(≤40%)": false
+    },
+    {
+      "类别": "高音",
+      "正例数": 124,
+      "现行漏检率": 72.6,
+      "扩充后漏检率": 54.0,
+      "改善百分点": 18.5,
+      "达标(≤40%)": false
+    }
+  ],
+  "sound_keywords_expanded": [
+    "highs",
+    "high end",
+    "high-end",
+    "sibilant",
+    "harsh",
+    "shrill",
+    "piercing",
+    "sharp",
+    "bright",
+    "fatiguing",
+    "ear-piercing",
+    "vocals",
+    "voice",
+    "detail",
+    "low end",
+    "low-end",
+    "sub-bass",
+    "subbass",
+    "midrange",
+    "mids",
+    "tone",
+    "equalizer",
+    "eq",
+    "soundstage",
+    "imaging"
+  ],
+  "treble_expanded": [
+    "highs",
+    "high end",
+    "high-end",
+    "sibilant",
+    "harsh",
+    "shrill",
+    "piercing",
+    "sharp",
+    "bright",
+    "fatiguing",
+    "ear-piercing",
+    "treble-heavy"
+  ],
+  "gen": "measure_only"
+}
