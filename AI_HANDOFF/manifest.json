@@ -1,5 +1,5 @@
 {
- "generated": "2026-10-01 02:43",
+ "generated": "2026-10-01 02:47",
  "root": "C:\\deepseek-harness-master\\soundinsight",
  "count": 386,
  "entries": [
@@ -573,9 +573,9 @@
   {
    "path": "hashes.txt",
    "category": "其他",
-   "size_bytes": 2011,
+   "size_bytes": 2012,
    "purpose": "",
-   "sha256_16": "de597c53a985f9f6c454dd862e0003d300576cb799da15035a2021a639b0564f"
+   "sha256_16": "742ad5dea447c0687611161406ae533901e1f588d7152f89f2987c3075c452a1"
   },
   {
    "path": "human_review_50.csv",
@@ -1805,9 +1805,9 @@
   {
    "path": "更新世界的锋芒_SoundInsight_其他材料.zip",
    "category": "提交物",
-   "size_bytes": 692192,
+   "size_bytes": 692992,
    "purpose": "",
-   "sha256_16": "4e76b4f8078649e4890364e13a80cccaec72e3aea5f6f8c7c46c4005c2388c22"
+   "sha256_16": "525b6bcee7baba7ef1a228dd6b93bb6f20180f04cb9d9d274252d2ab2a89813d"
   },
   {
    "path": "更新世界的锋芒_SoundInsight_决赛入围定稿作品.docx",
@@ -2136,7 +2136,7 @@
    "category": "过程与交接文档",
    "size_bytes": 3643,
    "purpose": "",
-   "sha256_16": "2cc4541bc0191cc5ffaf4611afe32667c9a79693ef7c2c917a59ab59654cf077"
+   "sha256_16": "d8f1f8805ed3d8ec52f91c8ea470907d1d7608327fc01a3e995225d81772ca7e"
   },
   {
    "path": "docs/retrospective_and_reflection.md",
