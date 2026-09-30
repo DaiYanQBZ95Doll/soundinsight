@@ -69,21 +69,17 @@ RoBERTa 快速验证：仅 2 epoch 探测，调优 F1 0.6169，未充分收敛�
 - 图表：architecture.png、learning_curve.png、pr_curve.png、confusion_matrix.png、demo_output.png、trend_over_time.png、calibration_curve.png。
 - 实验归档：exp01 至 exp06 与 exp07_ablation_A/B/C 目录。
 
-## 六、当前进行中与待办
+## 六、当前状态与待办（2026-10-01 更新）
 
-进行中：无 GPU 任务。D5 五个批次均已落地；D6-D8 遗憾消除清单：Batch B（LLM 对照：零样本 F1 0.940 / 5-shot 0.873 / 复核 0.846 vs 小模型子集 0.826，tokens 24.9 万，Q3/Q5/Q10 已改写）、Batch C（长度分桶 / 边界探针 / ECE 0.0122 校准 / 错误分类学 FP=91 FN=73）、Batch E（api_server + predict_core + install.bat + 吞吐实测 GPU 1.76s/1000 条 + MODEL_CARD + --lang en + 成本对照 + 非英文拒绝）、Batch F（数据许可与 LLM-API 披露 + docs/drift_plan.md）均已完成并通过数字审计（120 项 PASS）。PPT"2 分钟/99.6%"已改为实测口径。Batch G 收尾进行中。
+本项目此前的 P0/P1 问题清单**已全部处理完毕**，并已进入决赛阶段收尾：
 
-待办（按优先级）：
+- ✅ 已修复/已完成：阈值选择偏差披露、评测划分重建（tune/test 分离）、多标签逐类阈值、
+  概率校准、字段恢复（型号级与对抗性分析）、失败案例附录、一次性换代（M0）、决赛主文档与决赛包。
+- ⛔ 唯一阻塞：W4 四五星开采的**复核段**缺 LLM 凭证（候选 12,744 条与 293 条分层样本已就绪）。
+- ⏳ 人侧待办：视频是否重录（D5）、主文档人工复核、线上部署复测、上传演练与正式提交（10/8 截止）。
 
-1. git push：**已完成（2026-09-05，用户执行）**，远程 2c07717..a560734，本地 commit 全部上库。
-2. 人工审核 human_review_conf30.csv（8 条中置信样本，判定列填 1 或 0）；human_review_noise16.csv 已完成用户人工终审（2026-09-05）：15/16 确认 → 标注噪声率 9.1%（CI 5.6%-14.5%），判定已写入 CSV。
-3. 标注噪声终审：**已完成**（见上一条），error_taxonomy.md / v4 9.1 / MODEL_CARD 均已更新为人工口径（9.1%，下界估算声明保留）。
-4. 诚信核查（已处理，路线 b 已落地）：v3/v4 5.2 表现两行均为真实调用——qwen3.7-plus（百炼 Token Plan，跨 LLM 对照：零样本 F1 0.9149 / 5-shot 0.8937 / 复核 0.8661，tokens 49.1 万）与 deepseek-chat（RLCA 复核 + 对照）。Token Plan key 仅在宿主侧工具参数中使用，未写入任何文件；调用后建议用户在平台轮换该 key。
-5. ModelScope 创空间：**已部署成功并验收通过（2026-09-05）**。地址 https://modelscope.cn/studios/DaiYanQBZ95Doll/SoundInsight（直链 .ms.show）。deploy_check 结果：页面 200、单条推理 2/2（负面→杂音归因、正面→正常，含校准提示）、批量 100 条 15.1 秒（12 差评，分布与本地一致）。三次修复记录见 DEPLOY_GUIDE.md 顶部。
-6. 演示视频录制（按 video_script.md，2-3 分钟）。
-7. 用户验证：本轮**不做真实用户反馈收集**（已从任务清单移除；v4 局限第 7 条已如实注明"未开展用户验证"）。
-8. PPT：**用户已决定保留 20 页、不精简**（与赛事建议的 8-12 页存在偏差，作为已知偏差记录在案）；页内数字与耗时口径已修正完毕。
-9. 最终 PDF 导出并放入 更新世界的锋芒_SoundInsight_复赛作品.zip。
+> 原「当前进行中」清单已过时，替换为本节；历史条目见 `PROGRESS_SYNC.md`。
+
 
 ## 七、环境事实
 

@@ -1,13 +1,13 @@
 # 文件地图（由 make_ai_handoff.py 自动生成，勿手改）
 
-> 生成时间：2026-10-01 03:15；共 386 个条目；体积单位 KB/MB。
+> 生成时间：2026-10-01 03:20；共 387 个条目；体积单位 KB/MB。
 
 ## 提交物（5 项，43.4 MB）
 
 | 文件 | 大小 | 用途 |
 |---|---|---|
 | `更新世界的锋芒_SoundInsight_复赛作品.zip` | 42.4 MB |  |
-| `更新世界的锋芒_SoundInsight_其他材料.zip` | 678.4 KB |  |
+| `更新世界的锋芒_SoundInsight_其他材料.zip` | 678.8 KB |  |
 | `更新世界的锋芒_SoundInsight_复赛作品.pdf` | 210.1 KB |  |
 | `更新世界的锋芒_SoundInsight_Demo.zip` | 105.0 KB |  |
 | `更新世界的锋芒_SoundInsight_复赛作品.docx` | 48.0 KB |  |
@@ -71,20 +71,20 @@
 | `docs/final_review_and_execution_plan.md` | 19.9 KB |  |
 | `docs/D13_seal_declaration.md` | 19.7 KB | D13 封包声明（提交技术质检终审） |
 | `docs/file_inventory.md` | 12.3 KB | 项目文件总索引 |
-| `PROJECT_BRIEF_QWEN.md` | 10.8 KB |  |
-| `QWEN_HANDOFF.md` | 10.7 KB |  |
+| `PROJECT_BRIEF_QWEN.md` | 11.2 KB |  |
 | `docs/pre_lock_completeness_audit.md` | 10.4 KB |  |
 | `docs/N_line_handoff_protocol.md` | 10.0 KB |  |
 | `docs/finals_stage.md` | 9.2 KB |  |
+| `QWEN_HANDOFF.md` | 9.1 KB |  |
 | `docs/process_review_d10.md` | 8.5 KB |  |
 | `docs/legacy_materials_notice.md` | 8.3 KB |  |
 | `docs/w17_failure_cases.md` | 7.9 KB |  |
 | `docs/completeness_audit_round2.md` | 7.8 KB |  |
 | `docs/overnight_summary.md` | 7.1 KB |  |
+| `docs/N1b_downgrade_narrative.md` | 6.9 KB |  |
 | `docs/external_sources_register.md` | 6.5 KB |  |
 | `docs/N1_narrative_mainline.md` | 6.4 KB |  |
 | `docs/work_summary_d7.md` | 6.2 KB |  |
-| `docs/N1b_downgrade_narrative.md` | 6.2 KB |  |
 | `docs/N2_narrative_final.md` | 6.2 KB |  |
 | `docs/N5_qna_factbase.md` | 5.6 KB |  |
 | `docs/SoundInsight决赛备战_现状盘点清单.md` | 4.8 KB |  |
@@ -93,7 +93,7 @@
 | `docs/DoD_completion_table.md` | 4.2 KB |  |
 | `docs/llm_credential_status.md` | 4.2 KB |  |
 | `docs/e2_erratum.md` | 4.2 KB |  |
-| `docs/v2_gate_verdict.md` | 3.6 KB |  |
+| `docs/v2_gate_verdict.md` | 3.7 KB |  |
 | `docs/repo_hygiene_scan.md` | 3.6 KB |  |
 | `docs/dataset_audit.md` | 3.5 KB | 数据集字段考古 |
 | `docs/M8a_submission_precheck.md` | 3.5 KB |  |
@@ -235,7 +235,7 @@
 | `sample_reviews_100.csv` | 57.9 KB |  |
 | `agent_test_input.csv` | 27.9 KB |  |
 
-## 代码（130 项，0.6 MB）
+## 代码（131 项，0.6 MB）
 
 | 文件 | 大小 | 用途 |
 |---|---|---|
@@ -312,6 +312,7 @@
 | `fix_ppt_roles.py` | 2.7 KB |  |
 | `year_split_eval.py` | 2.7 KB |  |
 | `prep_llm_eval.py` | 2.7 KB |  |
+| `v2_stale_sweep.py` | 2.6 KB |  |
 | `update_finals_hashes.py` | 2.6 KB |  |
 | `capture_demo_output.py` | 2.6 KB |  |
 | `apply_mid_demotion.py` | 2.6 KB |  |

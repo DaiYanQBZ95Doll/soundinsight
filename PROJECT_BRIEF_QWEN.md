@@ -20,7 +20,7 @@
 |------|---------|------|
 | D1 (9.1) | 数据扩充到 10 万条，两阶段标注产出 1257 正例，训练最终模型 F1 0.687，Agent/Demo/文档草稿完成，技术底座冻结 | ✅ 完成 |
 | D2 (9.2) | 消融实验 3 组、统计验证（PR 曲线/t-test/学习曲线）、数据提纯（置信度分层/高音补捞）、文档 v3 初稿 | ⚠️ 产出完成，但有 P0 问题待修复 |
-| D3 (9.3) | **正在进行**：DSH 按修复指令修 7 个 P0 问题 + 4 个 P1 问题（见第六节） | 🔄 进行中 |
+| D3 (9.3) | ~~DSH 按修复指令修 7 个 P0 问题 + 4 个 P1 问题~~ → **已完成，并已进入决赛阶段**（v2 换代：tune/test 分离、逐类阈值、概率校准、字段恢复、失败案例、决赛包构建） | ✅ 已完成 |
 
 ---
 
@@ -133,11 +133,11 @@ action_report_template.md # Agent 报告六节模板（实心内容，待集成�
 PROGRESS_SYNC.md          # 项目进度同步文件
 ```
 
-### 5.5 待生成文件（DSH 正在执行）
+### 5.5 文件状态（**2026-10-01 核实：全部已生成**；原表按历史保留）
 ```
-qna_preparation.md        # 10 个刁钻问题标准答案（待生成）
-insight_report_v2.md      # Agent 六节报告输出样例（待生成）
-confidence_tiered.md      # 置信度分层（待修正 0.80 归类错误）
+qna_preparation.md        # 10 个刁钻问题标准答案（**已生成**）
+insight_report_v2.md      # Agent 报告输出样例（**已生成**；现为七节，新增置信度档位与建议动作）
+confidence_tiered.md      # 置信度分层（**已修正**；v2 另完成温度缩放校准）
 learning_curve.png        # 学习曲线（待重跑，修复泄漏）
 ```
 
@@ -151,8 +151,8 @@ learning_curve.png        # 学习曲线（待重跑，修复泄漏）
 3. `soundinsight_agent.py`：输出仍为旧版四段式，需升级为六节结构 + 优先级自动计算
 4. `demo_sound_v2.py`：缺"边界案例"Tab，需新增并硬编码 6 条样例概率
 5. `user_scenarios.md`：场景三缺【规划功能】风险标注
-6. `qna_preparation.md`：10 个刁钻问题标准答案文档未生成
-7. `results_summary.md`：RoBERTa 结论过于仓促，需软化表述
+6. ~~`qna_preparation.md`：10 个刁钻问题标准答案文档未生成~~ → **已生成**（2026-10-01 核实）
+7. ~~`results_summary.md`：RoBERTa 结论过于仓促，需软化表述~~ → **已软化**（保留「仅 2 epoch 探测、未充分收敛」的限定语）
 
 ### P1 建议修复（今天尽量）
 8. `competition_v3.txt` 高音数字：treble_result.jsonl 含 treble 66 条，文档写净增 40 条，需核实说明
