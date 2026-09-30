@@ -1,6 +1,6 @@
 # 文件地图（由 make_ai_handoff.py 自动生成，勿手改）
 
-> 生成时间：2026-09-30 20:41；共 318 个条目；体积单位 KB/MB。
+> 生成时间：2026-09-30 21:06；共 322 个条目；体积单位 KB/MB。
 
 ## 提交物（5 项，43.2 MB）
 
@@ -56,11 +56,11 @@
 | `confidence_tiered.md` | 0.7 KB | 三星补漏置信度分层与中置信剔除记录 |
 | `significance_test.md` | 0.6 KB | Welch t 检验（p=0.000932） |
 
-## 过程与交接文档（32 项，0.4 MB）
+## 过程与交接文档（35 项，0.4 MB）
 
 | 文件 | 大小 | 用途 |
 |---|---|---|
-| `docs/frozen_execution_checklist.md` | 50.7 KB |  |
+| `docs/frozen_execution_checklist.md` | 51.3 KB |  |
 | `docs/gap_and_roadmap_inventory.md` | 36.8 KB |  |
 | `docs/final_project_review_and_execution_plan.md` | 36.0 KB |  |
 | `PROGRESS_SYNC.md` | 31.6 KB |  |
@@ -85,13 +85,16 @@
 | `docs/N1b_downgrade_narrative.md` | 5.8 KB |  |
 | `docs/SoundInsight决赛备战_现状盘点清单.md` | 4.8 KB |  |
 | `docs/evidence_index_exp.md` | 4.4 KB |  |
+| `docs/e2_erratum.md` | 4.2 KB |  |
+| `docs/repo_hygiene_scan.md` | 3.9 KB |  |
 | `docs/w1_longtext_variants.md` | 3.8 KB |  |
-| `docs/repo_hygiene_scan.md` | 3.7 KB |  |
 | `docs/dataset_audit.md` | 3.5 KB | 数据集字段考古 |
 | `docs/D14_resume_checklist.md` | 3.0 KB | 收尾四步清单（录视频/打包/上传/补推送） |
 | `docs/drift_plan.md` | 2.8 KB | 数据漂移监控方案 |
+| `docs/w17_confidence_actions.md` | 2.8 KB |  |
 | `AI_INDUCTION_REDLINE.md` | 2.7 KB |  |
 | `docs/year_split_output.txt` | 0.8 KB | 年份分桶脚本输出原文 |
+| `docs/新建 文本文档.txt` | 0.0 KB |  |
 
 ## 演示材料（6 项，18.1 MB）
 
@@ -212,7 +215,7 @@
 | `sample_reviews_100.csv` | 57.9 KB |  |
 | `agent_test_input.csv` | 27.9 KB |  |
 
-## 代码（102 项，0.4 MB）
+## 代码（103 项，0.4 MB）
 
 | 文件 | 大小 | 用途 |
 |---|---|---|
@@ -223,10 +226,10 @@
 | `v2_w1_longtext.py` | 12.1 KB |  |
 | `make_ai_handoff.py` | 11.5 KB |  |
 | `build_pdf.py` | 11.2 KB |  |
+| `report_builder.py` | 10.3 KB |  |
 | `build_submission.py` | 9.3 KB |  |
 | `demo_sound_v2.py` | 9.1 KB | 本地 Gradio Demo（三页；已内置代理绕过） |
 | `v2_w17_failure_stats.py` | 8.4 KB |  |
-| `report_builder.py` | 8.3 KB |  |
 | `ablation_train.py` | 8.2 KB |  |
 | `v2_w2_perclass.py` | 8.1 KB |  |
 | `soundinsight_agent.py` | 8.1 KB | 一键洞察 Agent（md/excel、zh/en、非英文跳过） |
@@ -301,6 +304,7 @@
 | `extract_template.py` | 1.5 KB |  |
 | `merge_three_star.py` | 1.4 KB |  |
 | `check_studio_build.py` | 1.3 KB |  |
+| `v2_verify_tiers2.py` | 1.3 KB |  |
 | `prep_err_taxonomy.py` | 1.2 KB |  |
 | `verify_docx.py` | 1.2 KB |  |
 | `v2_w1_token_len.py` | 1.1 KB |  |
@@ -324,7 +328,7 @@
 | 文件 | 大小 | 用途 |
 |---|---|---|
 | `deployment/app.py` | 11.3 KB |  |
-| `deployment/report_builder.py` | 8.3 KB |  |
+| `deployment/report_builder.py` | 10.3 KB |  |
 | `deployment/.gitattributes` | 2.1 KB |  |
 | `deployment/text_utils.py` | 0.9 KB |  |
 | `deployment/README_Space.md` | 0.7 KB |  |

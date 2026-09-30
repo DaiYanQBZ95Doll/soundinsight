@@ -1,7 +1,7 @@
 {
- "generated": "2026-09-30 20:41",
+ "generated": "2026-09-30 21:06",
  "root": "C:\\deepseek-harness-master\\soundinsight",
- "count": 318,
+ "count": 322,
  "entries": [
   {
    "path": ".gitignore",
@@ -1154,9 +1154,9 @@
   {
    "path": "report_builder.py",
    "category": "代码",
-   "size_bytes": 8539,
+   "size_bytes": 10577,
    "purpose": "",
-   "sha256_16": "8a07bed574d1e5d35ab35824ebc26859a6bd7f6defd63c88974361f963a7760a"
+   "sha256_16": "418c605885fb02653e225d039052a1f3a6004d45c321d5667bdcc3eb15546fe4"
   },
   {
    "path": "requirements.txt",
@@ -1432,6 +1432,13 @@
    "sha256_16": "82e02eea56e892fe1060366a499fa1178b9f3fe66aeb30bebb11bf081ac88a7f"
   },
   {
+   "path": "v2_verify_tiers2.py",
+   "category": "代码",
+   "size_bytes": 1296,
+   "purpose": "",
+   "sha256_16": "a5f4d4602acdcc1326c0b0823727ba7173eeadde4926dcd0fb8b027b4976fcb6"
+  },
+  {
    "path": "v2_w17_failure_stats.py",
    "category": "代码",
    "size_bytes": 8601,
@@ -1672,9 +1679,9 @@
   {
    "path": "deployment/report_builder.py",
    "category": "部署包",
-   "size_bytes": 8539,
+   "size_bytes": 10577,
    "purpose": "",
-   "sha256_16": "8a07bed574d1e5d35ab35824ebc26859a6bd7f6defd63c88974361f963a7760a"
+   "sha256_16": "418c605885fb02653e225d039052a1f3a6004d45c321d5667bdcc3eb15546fe4"
   },
   {
    "path": "deployment/requirements.txt",
@@ -1754,6 +1761,13 @@
    "sha256_16": "0b59e1487fec8cbf98ac4f876ed85ae265eac6c33d80ac6d5670e2673853e839"
   },
   {
+   "path": "docs/e2_erratum.md",
+   "category": "过程与交接文档",
+   "size_bytes": 4268,
+   "purpose": "",
+   "sha256_16": "674bc020e5b9e243e3af2f4c0d5ad5c9430a1d29b2bfe0e083fe98422648debf"
+  },
+  {
    "path": "docs/evidence_index_exp.md",
    "category": "过程与交接文档",
    "size_bytes": 4475,
@@ -1798,9 +1812,9 @@
   {
    "path": "docs/frozen_execution_checklist.md",
    "category": "过程与交接文档",
-   "size_bytes": 51965,
+   "size_bytes": 52525,
    "purpose": "",
-   "sha256_16": "e30775d1ba4e156256d2cacf1b5adca86199bc61bb594ca591451f5e5c6994c1"
+   "sha256_16": "c9e5f1fcea7da0cebf8774f19d368516a755414a47d22cb43c5b223fd3a54076"
   },
   {
    "path": "docs/gap_and_roadmap_inventory.md",
@@ -1840,9 +1854,9 @@
   {
    "path": "docs/repo_hygiene_scan.md",
    "category": "过程与交接文档",
-   "size_bytes": 3788,
+   "size_bytes": 3987,
    "purpose": "",
-   "sha256_16": "422519ad396461f90397620deefa12f17ac60435a5ff26f0eba693a9bd52cf88"
+   "sha256_16": "8b15613712033790936f8dacec39be81a0d0a3c51d665d7cb7ddbf54c487e7b5"
   },
   {
    "path": "docs/retrospective_and_reflection.md",
@@ -1873,6 +1887,13 @@
    "sha256_16": "6e0d4098f0b50e8a0a99490d04d1a4f29d6d089617bb649e9692e8bf264ad803"
   },
   {
+   "path": "docs/w17_confidence_actions.md",
+   "category": "过程与交接文档",
+   "size_bytes": 2830,
+   "purpose": "",
+   "sha256_16": "e5e1d42a50bb9c668cddbf73368623248eae87ac5fd3e8b6f95ffc4415815b88"
+  },
+  {
    "path": "docs/w17_failure_cases.md",
    "category": "过程与交接文档",
    "size_bytes": 8064,
@@ -1899,6 +1920,13 @@
    "size_bytes": 822,
    "purpose": "年份分桶脚本输出原文",
    "sha256_16": "53f64b9728da665af7396112a933fe88c2ef16f78ec728cc675f984242ddc3cf"
+  },
+  {
+   "path": "docs/新建 文本文档.txt",
+   "category": "过程与交接文档",
+   "size_bytes": 0,
+   "purpose": "",
+   "sha256_16": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
   },
   {
    "path": "exp03_LLM复核与标签清洗/labeled_llm.csv",

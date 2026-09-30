@@ -52,10 +52,16 @@
 - `ppt_speed_fix.py`：8 处（行 2, 3, 17, 20, 21, 22, 23, 24）
 
 ## 四、生成物一致性（manifest.json 记录值 vs 实际文件）
-- [PASS] manifest.json 记录的大小与哈希与工作区一致
+- [需修正] 6 处记录值已过期（跑 `python make_ai_handoff.py` 重新生成）：
+  - `report_builder.py` size_bytes：记录 8539 → 实际 10577
+  - `report_builder.py` sha256_16：记录 8a07bed574d1e5d3 → 实际 418c605885fb0265
+  - `deployment/report_builder.py` size_bytes：记录 8539 → 实际 10577
+  - `deployment/report_builder.py` sha256_16：记录 8a07bed574d1e5d3 → 实际 418c605885fb0265
+  - `docs/frozen_execution_checklist.md` size_bytes：记录 51965 → 实际 52525
+  - `docs/frozen_execution_checklist.md` sha256_16：记录 e30775d1ba4e1562 → 实际 c9e5f1fcea7da0ce
 
 ## 五、结论与建议
 - 密钥：未发现（高危 0 处；历史提交命中 0 处）
 - 隐私：13 处，见第二节；竞赛联系信息为模板要求填写，公开仓库如需脱敏见 `docs/legacy_materials_notice.md` §四
 - 废弃 claim：当前文档需确认 0 处；历史材料的口径指引见 `docs/legacy_materials_notice.md`
-- 生成物一致性：一致
+- 生成物一致性：需重跑生成脚本
