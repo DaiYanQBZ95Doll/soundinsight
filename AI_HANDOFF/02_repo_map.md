@@ -1,13 +1,13 @@
 # 文件地图（由 make_ai_handoff.py 自动生成，勿手改）
 
-> 生成时间：2026-10-01 04:05；共 396 个条目；体积单位 KB/MB。
+> 生成时间：2026-10-01 04:15；共 397 个条目；体积单位 KB/MB。
 
 ## 提交物（5 项，43.4 MB）
 
 | 文件 | 大小 | 用途 |
 |---|---|---|
 | `更新世界的锋芒_SoundInsight_复赛作品.zip` | 42.4 MB |  |
-| `更新世界的锋芒_SoundInsight_其他材料.zip` | 704.7 KB |  |
+| `更新世界的锋芒_SoundInsight_其他材料.zip` | 706.5 KB |  |
 | `更新世界的锋芒_SoundInsight_复赛作品.pdf` | 210.1 KB |  |
 | `更新世界的锋芒_SoundInsight_Demo.zip` | 105.6 KB |  |
 | `更新世界的锋芒_SoundInsight_复赛作品.docx` | 48.0 KB |  |
@@ -32,7 +32,7 @@
 
 | 文件 | 大小 | 用途 |
 |---|---|---|
-| `number_audit.md` | 13.9 KB | 数字一致性审计结果（含官方模板格式对照节） |
+| `number_audit.md` | 14.1 KB | 数字一致性审计结果（含官方模板格式对照节） |
 | `error_taxonomy.md` | 8.2 KB | 错误分类学：FP/FN 构成 + 标注噪声人工终审 |
 | `llm_baseline.md` | 6.4 KB | LLM 对照报告（deepseek + qwen3.7-plus，含循环性红利声明） |
 | `edge_case_benchmark.py` | 5.6 KB |  |
@@ -238,11 +238,11 @@
 | `sample_reviews_100.csv` | 57.9 KB |  |
 | `agent_test_input.csv` | 27.9 KB |  |
 
-## 代码（135 项，0.6 MB）
+## 代码（136 项，0.6 MB）
 
 | 文件 | 大小 | 用途 |
 |---|---|---|
-| `check_doc_numbers.py` | 38.0 KB | 数字审计 + 模板格式对照脚本 |
+| `check_doc_numbers.py` | 40.7 KB | 数字审计 + 模板格式对照脚本 |
 | `scan_repo_hygiene.py` | 20.0 KB |  |
 | `v2_meta_analysis.py` | 19.1 KB |  |
 | `build_finals_package.py` | 13.9 KB |  |
@@ -278,6 +278,7 @@
 | `v2_w4_estimate.py` | 6.3 KB |  |
 | `recover_meta_fields.py` | 6.0 KB |  |
 | `v2_w1_hybrid_select.py` | 6.0 KB |  |
+| `v2_m0_switch_check.py` | 6.0 KB |  |
 | `gen_v2_artifacts.py` | 5.8 KB |  |
 | `precommit_guard.py` | 5.8 KB |  |
 | `w11_data_efficiency.py` | 5.5 KB |  |
@@ -286,7 +287,6 @@
 | `v2_m0_switch.py` | 5.3 KB |  |
 | `train_final.py` | 5.2 KB |  |
 | `train_roberta_quick.py` | 5.2 KB |  |
-| `v2_m0_switch_check.py` | 5.2 KB |  |
 | `make_missing_figures.py` | 5.1 KB |  |
 | `v2_w1_seg_threshold.py` | 5.1 KB |  |
 | `predict_core.py` | 5.1 KB | 共享推理核心（含非英文显式拒绝） |
@@ -296,6 +296,7 @@
 | `make_samples.py` | 4.4 KB |  |
 | `verify_finals_package.py` | 4.4 KB |  |
 | `check_refs_and_deps.py` | 4.4 KB |  |
+| `run_all_checks.py` | 4.3 KB |  |
 | `retime_srt.py` | 4.2 KB |  |
 | `tune_per_class_threshold.py` | 4.0 KB |  |
 | `upload_models.py` | 3.9 KB |  |
@@ -416,8 +417,8 @@
 |---|---|---|
 | `insight_report.xlsx` | 7.1 KB |  |
 | `insight_report_v2.md` | 3.3 KB |  |
+| `insight_report_v2_en.md` | 3.2 KB |  |
 | `summary_log.txt` | 3.1 KB |  |
-| `insight_report_v2_en.md` | 2.8 KB |  |
 | `exp07_ablation_A/training_output.txt` | 1.9 KB |  |
 | `training_output.txt` | 0.9 KB |  |
 | `exp06_最终二分类模型/training_output.txt` | 0.9 KB |  |
@@ -442,11 +443,11 @@
 | `更新世界的锋芒_SoundInsight_决赛入围定稿作品.docx` | 34.4 KB |  |
 | `v2/w14_w15_w16_report.md` | 7.9 KB |  |
 | `v2/w17_failure_stats.json` | 6.5 KB |  |
+| `v2/m0_switch_report.json` | 6.0 KB |  |
 | `v2/w7_calibration.json` | 4.4 KB |  |
 | `v2/w5_final.json` | 3.9 KB |  |
 | `v2/w14_w15_w16_summary.json` | 3.1 KB |  |
 | `视频录制速查.md` | 3.0 KB |  |
-| `v2/m0_switch_report.json` | 2.8 KB |  |
 | `v2/w1_hybrid_result.json` | 2.7 KB |  |
 | `LICENSE` | 2.6 KB |  |
 | `v2/w2_perclass_thresholds.json` | 2.3 KB |  |

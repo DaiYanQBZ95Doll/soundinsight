@@ -83,6 +83,96 @@
           "text": "| 0.5（默认，高召回档） | 47.9% | 89.6% | 0.6241 |"
         }
       ]
+    },
+    "docs/frozen_execution_checklist.md": {
+      "hits": 4,
+      "exempt": true,
+      "samples": [
+        {
+          "line": 54,
+          "text": "| **W6b** ✅ 2026-09-30 | **评测泄漏发现与修正**（方法论留痕，影响 W1/W5/W6） | `val_v2.csv` 由早期 `labeled_llm.csv`（seed 42、20% 分层）"
+        },
+        {
+          "line": 77,
+          "text": "| **N5** | 答辩口径统一卡 | 一页：三套口径 / 两档阈值 / 代际标签 / 已知局限标准答法（含高音为何 0、为何无用户验证、阈值 0.9744 是否极端、百炼与产品推理边界） | **质检方起草** → "
+        },
+        {
+          "line": 206,
+          "text": "| D8 | 采纳闸门第 (1) 条取值 | **默认 0.72**（`@调优(0.9744)` 口径），并按降级分支执行 | 采纳标准 |"
+        }
+      ]
+    },
+    "report_builder.py": {
+      "hits": 3,
+      "exempt": true,
+      "samples": [
+        {
+          "line": 80,
+          "text": "阈值口径：与冻结模型 `sound_model/threshold.json` 的调优档一致（0.9744，v1 冻结口径）；"
+        },
+        {
+          "line": 153,
+          "text": "f\"band (prob 0.5-0.9744): treated as normal but \""
+        },
+        {
+          "line": 194,
+          "text": "lines.append(f\"- 中置信提示：有 {n_mid} 条评论概率落在 0.5-0.9744 区间，\""
+        }
+      ]
+    },
+    "deployment/report_builder.py": {
+      "hits": 3,
+      "exempt": true,
+      "samples": [
+        {
+          "line": 80,
+          "text": "阈值口径：与冻结模型 `sound_model/threshold.json` 的调优档一致（0.9744，v1 冻结口径）；"
+        },
+        {
+          "line": 153,
+          "text": "f\"band (prob 0.5-0.9744): treated as normal but \""
+        },
+        {
+          "line": 194,
+          "text": "lines.append(f\"- 中置信提示：有 {n_mid} 条评论概率落在 0.5-0.9744 区间，\""
+        }
+      ]
+    },
+    "insight_report_v2.md": {
+      "hits": 3,
+      "exempt": true,
+      "samples": [
+        {
+          "line": 43,
+          "text": "- 中置信提示：有 4 条评论概率落在 0.5-0.9744 区间，当前判为正常但建议人工抽查（疑似负面）。"
+        },
+        {
+          "line": 48,
+          "text": "| 高 | ≥ 0.9744（调优档） | 高置信音质差评 | 直接进入整改/研发评审（12 条） |"
+        },
+        {
+          "line": 49,
+          "text": "| 中 | 0.5 – 0.9744 | 疑似负面，证据不足 | 先做小规模人工抽查（4 条） |"
+        }
+      ]
+    },
+    "insight_report_v2_en.md": {
+      "hits": 4,
+      "exempt": true,
+      "samples": [
+        {
+          "line": 3,
+          "text": "> **Sample note**: this sample was produced by the **shipped default model (frozen v1 weights)**, so the metri"
+        },
+        {
+          "line": 43,
+          "text": "- 4 review(s) fall in the mid-confidence band (prob 0.5-0.9744): treated as normal but flagged for manual revi"
+        },
+        {
+          "line": 48,
+          "text": "| High | >= 0.9744 (tuned) | High-confidence sound-quality complaint | Send to engineering/QC review (12 revie"
+        }
+      ]
     }
   }
 }

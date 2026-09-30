@@ -60,7 +60,15 @@ EXEMPT = {
     "docs/final_project_review_and_execution_plan.md",
     "docs/external_sources_register.md",
     "qna_preparation.md",
-    "video_script.md", "video_script.srt", "make_video_assets.py",
+    # 2026-10-01 追加豁免（**这些不是"待修项"，不可注入标签**）：
+    # · 产品运行时模块里的 0.9744 是**产品当前实际使用的阈值**，不是待标注的历史数字；
+    # · 生成物（样例报告、视频素材文字）是产品输出，其数字来自产品配置；
+    # · 更关键：若因本核对器提示而去给代码打标签，会**重现 2026-10-01 的事故**
+    #   （行级替换把 `tuned_thr = 0.9744` 改成 `0.9744[v1]`，导致包内 Demo 运行失败）。
+    #   代际标注只适用于**文档**；代码与生成物的代际由 `v2/threshold.json` 与产物登记承担。
+    "report_builder.py", "deployment/report_builder.py",
+    "make_video_assets.py", "video_script.md", "video_script.srt",
+    "insight_report_v2.md", "insight_report_v2_en.md",
 }
 SKIP_DIRS = (".git", "node_modules", "__pycache__")
 

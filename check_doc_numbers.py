@@ -799,6 +799,61 @@ def check_finals_numbers(out) -> None:
     out.append("")
 
 
+def check_dependency_declaration(out) -> None:
+    """依赖声明一致性（2026-10-01 新增）。
+
+    动机：评委/接手者按 `requirements.txt` 安装后应当能直接跑 Demo。此前没有任何机械检查
+    确认"代码 import 的第三方包"都在声明清单里；漏一个就会在别人机器上 ImportError。
+
+    口径：解析 PRODUCT_MODULES 的 import，排除标准库与仓库内本地模块，
+    其余必须在 requirements.txt 中出现（支持 scikit-learn↔sklearn 等常见别名）。
+    """
+    out.append("## 依赖声明一致性（requirements.txt vs 产品 import）")
+    import ast
+    stdlib = set(sys.stdlib_module_names)
+    local = {os.path.splitext(f)[0] for f in os.listdir(HERE) if f.endswith(".py")}
+    local |= {"report_builder", "text_utils", "predict_core", "config", "deployment"}
+    req = os.path.join(HERE, "requirements.txt")
+    declared = set()
+    if os.path.isfile(req):
+        for line in open(req, encoding="utf-8", errors="replace"):
+            line = line.split("#")[0].strip()
+            if line:
+                declared.add(re.split(r"[<>=!\[]", line)[0].strip().lower())
+    alias = {"sklearn": "scikit-learn", "pil": "pillow", "dotenv": "python-dotenv",
+             "yaml": "pyyaml", "cv2": "opencv-python"}
+    imports = {}
+    for rel in PRODUCT_MODULES:
+        p = os.path.join(HERE, rel)
+        if not os.path.isfile(p):
+            continue
+        try:
+            tree = ast.parse(open(p, encoding="utf-8", errors="replace").read())
+        except SyntaxError:
+            continue
+        for node in ast.walk(tree):
+            if isinstance(node, ast.Import):
+                for a in node.names:
+                    imports.setdefault(a.name.split(".")[0], set()).add(rel)
+            elif isinstance(node, ast.ImportFrom) and node.module:
+                imports.setdefault(node.module.split(".")[0], set()).add(rel)
+    undeclared = []
+    for mod, where in sorted(imports.items()):
+        if mod in stdlib or mod in local or mod.startswith("_"):
+            continue
+        norm = mod.lower().replace("_", "-")
+        if norm in declared or mod.lower() in declared or alias.get(norm) in declared:
+            continue
+        undeclared.append((mod, sorted(where)))
+    if undeclared:
+        for mod, where in undeclared:
+            out.append(f"- [FAIL] 未在 requirements.txt 声明：{mod}（被 {', '.join(where)} 引用）")
+    else:
+        out.append(f"- [PASS] 产品模块的 {len(imports)} 个 import 全部已声明"
+                   f"（第三方 {sum(1 for m in imports if m not in stdlib and m not in local)} 个）")
+    out.append("")
+
+
 def main() -> None:
     out = ["# 文档数字一致性审计",
            f"> 运行时刻：{datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')}"
@@ -806,6 +861,7 @@ def main() -> None:
     check_file_integrity(out)
     check_product_code_health(out)
     check_finals_numbers(out)
+    check_dependency_declaration(out)
     for grp in GROUPS:
         for fname in grp["files"]:
             audit_file(fname, grp["required"], grp["forbidden"],
