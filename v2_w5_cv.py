@@ -17,6 +17,7 @@
 from __future__ import annotations
 
 import argparse
+import gc
 import json
 import os
 import sys
@@ -62,7 +63,7 @@ def main() -> int:
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
     texts, labels = load_csv_texts(INPUT_CSV)
     print(f"device={device} | 样本 {len(texts)}，正例 {sum(labels)} | "
-          f"max_len={MAX_LEN} epochs={EPOCHS} folds={args.folds}")
+          f"max_len={max_len} epochs={EPOCHS} folds={args.folds}", flush=True)
     tok = DistilBertTokenizer.from_pretrained(BASE_MODEL)
     skf = StratifiedKFold(n_splits=args.folds, shuffle=True, random_state=SEED)
     folds = []
@@ -109,7 +110,17 @@ def main() -> int:
                       "P_best": best[2], "R_best": best[3]})
         print(f"[fold {k}] n_val={len(va)} pos={int(y_va.sum())} | "
               f"固定阈值{FIXED_THR}: F1 {f1_fixed} (P{pr_f}/R{rc_f}) | "
-              f"折内最优 {best[0]}: F1 {best[1]}")
+              f"折内最优 {best[0]}: F1 {best[1]}", flush=True)
+        # 折间释放显存：每折新建模型，不释放则第 2 折起易 CUDA OOM（2026-10-01 实测崩溃点）
+        try:
+            del model, opt, dl, ds, enc
+        except NameError:
+            pass
+        gc.collect()
+        if torch.cuda.is_available():
+            torch.cuda.empty_cache()
+            print(f"  [显存] 已释放，当前分配 "
+                  f"{torch.cuda.memory_allocated()/1024**3:.2f} GB", flush=True)
 
     fixed = [f["f1_fixed@%.2f" % FIXED_THR] for f in folds]
     bestf = [f["f1_best_infold"] for f in folds]
@@ -130,7 +141,7 @@ def main() -> int:
     verdict = summary["f1_fixed_fluctuation_pct"] <= 5.0
     print(f"[DoD] CV 波动 ≤5% → {'通过' if verdict else '未通过'}")
     payload = {"gen": "[v2]", "protocol": "5 折分层 CV；同时报无偏（固定阈值）与折内选阈值两种口径",
-               "max_len": MAX_LEN, "epochs": EPOCHS, "seed": SEED, "folds": folds,
+               "max_len": max_len, "epochs": EPOCHS, "seed": SEED, "folds": folds,
                "summary": summary, "cv_stability_pass": verdict,
                "elapsed_min": round((time.time() - t0) / 60, 1)}
     with open(os.path.join(OUT, "w5_cv.json"), "w", encoding="utf-8") as fh:

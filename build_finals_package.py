@@ -88,6 +88,13 @@ OTHER_FILES = [
     "docs/external_sources_register.md", "docs/drift_plan.md",
     "docs/legacy_materials_notice.md", "docs/D13_seal_declaration.md",
     "docs/dataset_audit.md", "docs/year_split_output.txt",
+    # 决赛叙事与提交准备（N 线 + 人侧清单）
+    "docs/N1_narrative_mainline.md", "docs/N1b_downgrade_narrative.md",
+    "docs/N2_narrative_final.md", "docs/N3_calibration_evidence.md",
+    "docs/N4_target_argument.md", "docs/N5_qna_factbase.md",
+    "docs/M8a_submission_precheck.md", "docs/M3b_judge_access_guide.md",
+    "docs/sandbox_operation_notes.md", "docs/llm_credential_status.md",
+    "v2/w5_cv.json", "v2/m0_switch_report.json",
     # 审计与卫生
     "number_audit.md", "docs/repo_hygiene_scan.md",
     "docs/pre_lock_completeness_audit.md", "docs/completeness_audit_round2.md",
@@ -198,11 +205,10 @@ def build_zips() -> tuple[list[str], list[str]]:
                 added += 1
             else:
                 missing.append(rel)
-        # 附上决赛期新增的说明类文档
-        for rel in ("docs/llm_credential_status.md", "docs/sandbox_operation_notes.md",
-                    "PROGRESS_SYNC.md"):
+        # 附上过程说明类文档（与上面清单去重，避免 zip 内重复条目）
+        for rel in ("PROGRESS_SYNC.md",):
             p = os.path.join(HERE, rel)
-            if os.path.isfile(p):
+            if os.path.isfile(p) and rel not in OTHER_FILES:
                 z.write(p, rel)
                 added += 1
     print(f"[其他材料] {added} 个条目 → {OTHER_ZIP}"
