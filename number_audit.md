@@ -6,7 +6,7 @@
 - [PASS] docs/final_project_review_and_execution_plan.md：36884 B ≥ 15000 B
 - [PASS] competition_v4.md：21214 B ≥ 20000 B
 - [PASS] results_summary.md：4870 B ≥ 4000 B
-- [PASS] AI_HANDOFF/manifest.json：82648 B ≥ 20000 B
+- [PASS] AI_HANDOFF/manifest.json：82671 B ≥ 20000 B
 - 结论：关键文件体积均正常
 
 ## 产品代码健康检查（编译 + 标签污染）
@@ -247,7 +247,7 @@
 - [PASS] 磁盘上的包与已提交版本一致（e6cae286515ef1d2 vs e6cae286515ef1d2）
 
 ## 决赛模板合规检查（模板九节 + 5.2 百炼栏事实）
-- 目标文档：更新世界的锋芒_SoundInsight_决赛入围定稿作品.docx（27162 字符）
+- 目标文档：更新世界的锋芒_SoundInsight_决赛入围定稿作品.docx（35194 字符）
   - [PASS] 模板九节：齐备
   - [PASS] 章节编号唯一：无
   - [PASS] 在线链接表：已含链接

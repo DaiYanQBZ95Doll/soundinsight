@@ -1,5 +1,5 @@
 {
- "generated": "2026-10-01 02:47",
+ "generated": "2026-10-01 02:52",
  "root": "C:\\deepseek-harness-master\\soundinsight",
  "count": 386,
  "entries": [
@@ -237,9 +237,9 @@
   {
    "path": "build_finals_docx2.py",
    "category": "代码",
-   "size_bytes": 5231,
+   "size_bytes": 8585,
    "purpose": "",
-   "sha256_16": "39f11def0b3dd05b3e8de86a5d5b8b709143928166e11e2ab30edf8ffd8fa318"
+   "sha256_16": "9a786ef90b00bad8c1ac06223b22d5f8ec45eee16152ee9ac42123560c7c6ee8"
   },
   {
    "path": "build_finals_package.py",
@@ -573,9 +573,9 @@
   {
    "path": "hashes.txt",
    "category": "其他",
-   "size_bytes": 2012,
+   "size_bytes": 2013,
    "purpose": "",
-   "sha256_16": "742ad5dea447c0687611161406ae533901e1f588d7152f89f2987c3075c452a1"
+   "sha256_16": "d8a245b785753af0ed7d5bfebb840e987bd5f031535d76736cf713dadf26188d"
   },
   {
    "path": "human_review_50.csv",
@@ -1065,7 +1065,7 @@
    "category": "验证报告",
    "size_bytes": 12405,
    "purpose": "数字一致性审计结果（含官方模板格式对照节）",
-   "sha256_16": "45f330de1a253d36e54fb7b6431420e848980405f28dce6fac0bee088abfdc1c"
+   "sha256_16": "62b131460172a7f623d6f2f19485b9e6762bac3ef2b647775e3298fbcd532336"
   },
   {
    "path": "pack_final.py",
@@ -1805,16 +1805,16 @@
   {
    "path": "更新世界的锋芒_SoundInsight_其他材料.zip",
    "category": "提交物",
-   "size_bytes": 692992,
+   "size_bytes": 692993,
    "purpose": "",
-   "sha256_16": "525b6bcee7baba7ef1a228dd6b93bb6f20180f04cb9d9d274252d2ab2a89813d"
+   "sha256_16": "13464ba9b9cfeca9e00478b04accc234e3eb62065b47d0580c7a7e408a804eb7"
   },
   {
    "path": "更新世界的锋芒_SoundInsight_决赛入围定稿作品.docx",
    "category": "其他",
-   "size_bytes": 35606,
+   "size_bytes": 36078,
    "purpose": "",
-   "sha256_16": "3a91de43d2368f265d952980b3fb7baa89d9786710b9c2fe033ee78ee2b1a991"
+   "sha256_16": "4bcb2b6aeca2fb4c66f8178205bf92277cfdc57f82752fbd76b692e20cc3ab64"
   },
   {
    "path": "更新世界的锋芒_SoundInsight_复赛作品.docx",
@@ -2136,7 +2136,7 @@
    "category": "过程与交接文档",
    "size_bytes": 3643,
    "purpose": "",
-   "sha256_16": "d8f1f8805ed3d8ec52f91c8ea470907d1d7608327fc01a3e995225d81772ca7e"
+   "sha256_16": "f689bf4d203de6de097ac320163822492eb339acb695758f91286e8ab63daebf"
   },
   {
    "path": "docs/retrospective_and_reflection.md",

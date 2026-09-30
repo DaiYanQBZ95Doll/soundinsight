@@ -14,6 +14,7 @@ import os
 import sys
 
 from docx import Document
+from docx.shared import Pt
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from build_finals_appendix import APPENDIX, SECTION6  # noqa: E402
@@ -82,14 +83,63 @@ def fill_tables(doc) -> None:
                         set_cell(cells[1], v)
 
 
-def insert_after(paragraph, lines: list[str]) -> int:
+def split_blocks(lines: list[str]):
+    """把内容行切成块：[("p", 文本)] 与 [("table", 行列表)]。
+
+    Markdown 管道表格（连续的 `| ... |` 行，第二行为分隔行）转成真正的 Word 表格——
+    否则在 docx 里就是一串带竖线的纯文本，观感与可读性都很差。
+    """
+    blocks, i = [], 0
+    while i < len(lines):
+        ln = lines[i]
+        if ln.strip().startswith("|") and ln.count("|") >= 2:
+            rows = []
+            while i < len(lines) and lines[i].strip().startswith("|"):
+                cells = [c.strip() for c in lines[i].strip().strip("|").split("|")]
+                if not all(set(c) <= set("-: ") and c for c in cells):
+                    rows.append(cells)
+                i += 1
+            if rows:
+                blocks.append(("table", rows))
+            continue
+        blocks.append(("p", ln))
+        i += 1
+    return blocks
+
+
+def insert_after(doc, paragraph, lines: list[str]) -> int:
+    """在段落之后依次插入内容（正文段落或 Word 表格），返回插入的块数。"""
     anchor = paragraph._p
     n = 0
-    for line in lines:
-        new_p = paragraph.insert_paragraph_before("")
-        anchor.addnext(new_p._p)
-        new_p.text = line
-        anchor = new_p._p
+    for kind, payload in split_blocks(lines):
+        if kind == "p":
+            new_p = paragraph.insert_paragraph_before("")
+            anchor.addnext(new_p._p)
+            new_p.text = payload
+            # 附录标题加粗放大，便于评委跳读
+            if payload.startswith("附录 ") or payload.startswith("模型调用与边界"):
+                for run in new_p.runs:
+                    run.bold = True
+                    run.font.size = Pt(13)
+            anchor = new_p._p
+        else:
+            rows, cols = len(payload), max(len(r) for r in payload)
+            tbl = doc.add_table(rows=rows, cols=cols)
+            try:
+                tbl.style = "Table Grid"
+            except KeyError:
+                pass
+            for ri, row in enumerate(payload):
+                for ci in range(cols):
+                    text = row[ci] if ci < len(row) else ""
+                    cell = tbl.cell(ri, ci)
+                    cell.text = ""
+                    run = cell.paragraphs[0].add_run(text)
+                    if ri == 0:
+                        run.bold = True
+                    run.font.size = Pt(9)
+            anchor.addnext(tbl._tbl)      # 表格移到锚点之后
+            anchor = tbl._tbl
         n += 1
     return n
 
@@ -109,20 +159,48 @@ def main() -> int:
         text = para.text.strip()
         for key, lines in PLAN.items():
             if text == key or text.startswith(key):
-                inserted += insert_after(para, lines)
+                inserted += insert_after(doc, para, lines)
                 matched.append(key)
                 break
     print(f"已填充小节 {len(matched)}：{'、'.join(matched)}")
-    print(f"插入正文段落 {inserted}")
-    for line in APPENDIX:
-        doc.add_paragraph(line)
-    print(f"追加附录段落 {len(APPENDIX)}")
+    print(f"插入内容块 {inserted}")
+    # 附录：同样支持 Markdown 表格 → Word 表格
+    app_blocks = split_blocks(APPENDIX)
+    n_tbl = 0
+    for kind, payload in app_blocks:
+        if kind == "p":
+            p = doc.add_paragraph(payload)
+            if payload.startswith("附录 ") or payload.startswith("模型调用与边界"):
+                for run in p.runs:
+                    run.bold = True
+                    run.font.size = Pt(13)
+        else:
+            rows, cols = len(payload), max(len(r) for r in payload)
+            tbl = doc.add_table(rows=rows, cols=cols)
+            try:
+                tbl.style = "Table Grid"
+            except KeyError:
+                pass
+            for ri, row in enumerate(payload):
+                for ci in range(cols):
+                    cell = tbl.cell(ri, ci)
+                    cell.text = ""
+                    run = cell.paragraphs[0].add_run(row[ci] if ci < len(row) else "")
+                    if ri == 0:
+                        run.bold = True
+                    run.font.size = Pt(9)
+            n_tbl += 1
+    print(f"追加附录：{len(app_blocks)} 块（含 {n_tbl} 个表格）")
     fill_tables(doc)
     doc.save(args.out)
     print(f"[写出] {os.path.basename(args.out)}（{os.path.getsize(args.out)/1024:.0f} KB）")
 
     check = Document(args.out)
-    all_text = "\n".join(p.text for p in check.paragraphs)
+    parts = [p.text for p in check.paragraphs]
+    for t in check.tables:                       # 关键数字现在可能在表格里
+        for row in t.rows:
+            parts.extend(c.text for c in row.cells)
+    all_text = "\n".join(parts)
     must = ["0.7220", "0.7811", "0.8273", "已知表述勘误与口径演进",
             "置信度档位与建议动作", "qwen3.7-plus", "deepseek-chat", "0.5333", "68.3%"]
     for m in must:

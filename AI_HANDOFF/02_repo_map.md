@@ -1,6 +1,6 @@
 # 文件地图（由 make_ai_handoff.py 自动生成，勿手改）
 
-> 生成时间：2026-10-01 02:47；共 386 个条目；体积单位 KB/MB。
+> 生成时间：2026-10-01 02:52；共 386 个条目；体积单位 KB/MB。
 
 ## 提交物（5 项，43.4 MB）
 
@@ -258,6 +258,7 @@
 | `test_audit_checks.py` | 8.7 KB |  |
 | `v2_w1_hybrid.py` | 8.4 KB |  |
 | `v2_w17_failure_stats.py` | 8.4 KB |  |
+| `build_finals_docx2.py` | 8.4 KB |  |
 | `ablation_train.py` | 8.2 KB |  |
 | `soundinsight_agent.py` | 8.1 KB | 一键洞察 Agent（md/excel、zh/en、非英文跳过） |
 | `pack_final.py` | 7.9 KB | 提交包打包与四项自检 |
@@ -281,7 +282,6 @@
 | `train_roberta_quick.py` | 5.2 KB |  |
 | `v2_m0_switch_check.py` | 5.2 KB |  |
 | `make_missing_figures.py` | 5.1 KB |  |
-| `build_finals_docx2.py` | 5.1 KB |  |
 | `v2_w1_seg_threshold.py` | 5.1 KB |  |
 | `predict_core.py` | 5.1 KB | 共享推理核心（含非英文显式拒绝） |
 | `fix_ppt_threshold.py` | 4.8 KB |  |
@@ -431,7 +431,7 @@
 | 文件 | 大小 | 用途 |
 |---|---|---|
 | `更新世界的锋芒_SoundInsight_演示视频.mp4` | 46.1 MB |  |
-| `更新世界的锋芒_SoundInsight_决赛入围定稿作品.docx` | 34.8 KB |  |
+| `更新世界的锋芒_SoundInsight_决赛入围定稿作品.docx` | 35.2 KB |  |
 | `v2/w14_w15_w16_report.md` | 7.9 KB |  |
 | `v2/w17_failure_stats.json` | 6.5 KB |  |
 | `v2/w7_calibration.json` | 4.4 KB |  |
