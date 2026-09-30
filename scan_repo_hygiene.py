@@ -27,7 +27,7 @@ DATA_EXT = {".csv", ".jsonl", ".xlsx", ".xls"}
 # 密钥 / 凭据：高危，命中即需处理（f-string 占位符 {args.token} 不算硬编码）
 SECRET_PATTERNS = [
     # 通用 sk- 前缀密钥族：必须允许点/下划线/连字符，否则抓不到
-    # `sk-sp-H.DYRRYR...`（阿里云 Token Plan）这类带分段符的 key
+    # 例如阿里云 Token Plan 的 sk-sp-* 分段式 key
     (r"sk-[A-Za-z0-9._\-]{24,}", "sk- 前缀密钥（含 sk-sp-/sk-proj- 等分段式）"),
     (r"gh[pousr]_[A-Za-z0-9]{20,}", "GitHub token"),
     (r"hf_[A-Za-z0-9]{20,}", "HuggingFace token"),
@@ -158,9 +158,29 @@ def scan_file(path: str, patterns, hits: list, category: str) -> None:
             m = re.search(pat, line)
             if m:
                 hits.append({
-                    "file": path, "line": i, "desc": desc, "match": m.group(0),
-                    "snippet": line.strip()[:110], "category": category,
+                    "file": path, "line": i, "desc": desc,
+                    "match": mask_secret(m.group(0)),
+                    "snippet": mask_secret(line.strip()[:110]), "category": category,
                 })
+
+
+def mask_secret(text: str) -> str:
+    """掩码化：报告中只保留前 8 位与长度，避免"扫描报告本身成为泄露源"。
+
+    事故背景（2026-09-30）：`docs/repo_hygiene_scan.md` 曾**完整打印**一个真实
+    Token Plan 密钥（`sk-sp-…`），使卫生报告自身成为仓库内的凭据泄露点。
+    凡在报告中输出命中内容处，一律经本函数处理。
+    """
+    def _m(m: re.Match) -> str:
+        s = m.group(0)
+        if len(s) <= 12:
+            return s[:4] + "***"
+        return f"{s[:8]}…（已掩码，共 {len(s)} 字符）"
+    out = text
+    for pat, _ in SECRET_PATTERNS:
+        # SECRET_PATTERNS 中存的是字符串模式（供 re.search 用），此处按需编译
+        out = re.sub(pat, _m, out)
+    return out
 
 
 def scan_history(patterns) -> list[dict]:
