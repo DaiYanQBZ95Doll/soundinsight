@@ -1,5 +1,5 @@
 {
- "generated": "2026-10-01 02:52",
+ "generated": "2026-10-01 02:57",
  "root": "C:\\deepseek-harness-master\\soundinsight",
  "count": 386,
  "entries": [
@@ -223,9 +223,9 @@
   {
    "path": "build_finals_appendix.py",
    "category": "代码",
-   "size_bytes": 10860,
+   "size_bytes": 10912,
    "purpose": "",
-   "sha256_16": "9f81586d895932a2b75d5dcfd16d63114db43944921bc47cc8cb716ce893b4c5"
+   "sha256_16": "5b412a02f9f95d715045ac6773f604069259ffad83418d3cdb5f9115cc9b0393"
   },
   {
    "path": "build_finals_content.py",
@@ -307,9 +307,9 @@
   {
    "path": "check_doc_numbers.py",
    "category": "代码",
-   "size_bytes": 34516,
+   "size_bytes": 38141,
    "purpose": "数字审计 + 模板格式对照脚本",
-   "sha256_16": "d81e69b5656594e3a720eb62fe42a432fd3113f254599e68a858c241bd33cf0c"
+   "sha256_16": "a6aa0a0ae8676722151d190dce7d71cec0a27fd2bb6177112a8ae234d9e20b2a"
   },
   {
    "path": "check_edge_cases.py",
@@ -573,9 +573,9 @@
   {
    "path": "hashes.txt",
    "category": "其他",
-   "size_bytes": 2013,
+   "size_bytes": 2014,
    "purpose": "",
-   "sha256_16": "d8a245b785753af0ed7d5bfebb840e987bd5f031535d76736cf713dadf26188d"
+   "sha256_16": "9bac4f650306524afe5c3f1ab39e9572c6d619f1bd5376fbee5578008d65a0f7"
   },
   {
    "path": "human_review_50.csv",
@@ -1063,9 +1063,9 @@
   {
    "path": "number_audit.md",
    "category": "验证报告",
-   "size_bytes": 12405,
+   "size_bytes": 12995,
    "purpose": "数字一致性审计结果（含官方模板格式对照节）",
-   "sha256_16": "62b131460172a7f623d6f2f19485b9e6762bac3ef2b647775e3298fbcd532336"
+   "sha256_16": "57745638f25f4e214053bdc2e9e42ea42369a339e45845285885376181344b74"
   },
   {
    "path": "pack_final.py",
@@ -1805,16 +1805,16 @@
   {
    "path": "更新世界的锋芒_SoundInsight_其他材料.zip",
    "category": "提交物",
-   "size_bytes": 692993,
+   "size_bytes": 694198,
    "purpose": "",
-   "sha256_16": "13464ba9b9cfeca9e00478b04accc234e3eb62065b47d0580c7a7e408a804eb7"
+   "sha256_16": "0bf77029a5df8b4ad7d5ef0842d85a2973bedea6939048c1de6fac94985558e9"
   },
   {
    "path": "更新世界的锋芒_SoundInsight_决赛入围定稿作品.docx",
    "category": "其他",
-   "size_bytes": 36078,
+   "size_bytes": 36089,
    "purpose": "",
-   "sha256_16": "4bcb2b6aeca2fb4c66f8178205bf92277cfdc57f82752fbd76b692e20cc3ab64"
+   "sha256_16": "ecf0a7f737ebba946acb59bb45c107f83408aaa2ce8f853cbf5cec63089efe2b"
   },
   {
    "path": "更新世界的锋芒_SoundInsight_复赛作品.docx",

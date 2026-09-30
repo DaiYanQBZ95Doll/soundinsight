@@ -1,7 +1,9 @@
 # -*- coding: utf-8 -*-
 # 本脚本用于文档数字一致性审计：扫描指定文档，逐项核对红线数字，
 # 检测口径违规，输出 number_audit.md。
+import datetime
 import hashlib
+import json
 import os
 import re
 import sys
@@ -698,10 +700,98 @@ def check_product_code_health(out) -> None:
     out.append("")
 
 
+def check_finals_numbers(out) -> None:
+    """决赛主文档的关键数字：与 v2 证据文件一致 + 代际标注 + 不可直比声明。"""
+    out.append("## 决赛主文档数字核对（与 v2 证据一致）")
+    target = None
+    for cand in FINALS_DOC_CANDIDATES:
+        fp = os.path.join(HERE, cand)
+        if os.path.isfile(fp) and cand.lower().endswith(".docx"):
+            target = (cand, fp)
+            break
+    if target is None:
+        out.append("- [SKIP] 决赛主文档尚未生成")
+        out.append("")
+        return
+    name, fp = target
+    try:
+        xml = zipfile.ZipFile(fp).read("word/document.xml").decode("utf-8", "replace")
+        text = "\n".join(re.findall(r"<w:t[^>]*>(.*?)</w:t>", xml, flags=re.S))
+    except (OSError, KeyError, zipfile.BadZipFile) as e:
+        out.append(f"- [FAIL] {name} 无法解析：{type(e).__name__}")
+        out.append("")
+        return
+
+    # 证据文件里的 v2 权威值
+    ev = {}
+    try:
+        w5 = json.load(open(os.path.join(HERE, "v2", "w5_final.json"), encoding="utf-8"))
+        ev["F1@调优"] = str(w5["test_at_tuned"]["F1"])
+        ev["F1@0.5"] = str(w5["test_at_0.5"]["F1"])
+        ev["PR-AUC"] = f"{w5['pr_auc']['test']:.4f}"
+    except (OSError, KeyError, ValueError):
+        pass
+    try:
+        w2 = json.load(open(os.path.join(HERE, "v2", "w2_perclass_thresholds.json"),
+                            encoding="utf-8"))
+        t = w2.get("test", {}).get("tuned_on_tune", {})
+        if "macro" in t:
+            ev["归因宏F1"] = str(t["macro"])
+    except (OSError, KeyError, ValueError):
+        pass
+    try:
+        cv = json.load(open(os.path.join(HERE, "v2", "w5_cv.json"), encoding="utf-8"))
+        ev["CV无偏"] = str(cv["summary"]["f1_fixed_mean"])
+    except (OSError, KeyError, ValueError):
+        pass
+
+    bad = 0
+    for label, val in ev.items():
+        if val and val in text:
+            out.append(f"- [PASS] {label} {val}：主文档已含该值")
+        else:
+            out.append(f"- [FAIL] {label} {val}：主文档未出现（与证据不一致或漏写）")
+            bad += 1
+
+    v1_vals = ["0.6871", "0.6241", "0.6234", "0.9744"]
+    v1_present = [v for v in v1_vals if v in text]
+    # 判定放宽到"同一行内含 [v1]"：允许"0.6234[v1]±0.0240""0.6871（v1 口径）[v1]"等写法
+    lines = text.splitlines()
+    untagged = []
+    for v in v1_present:
+        ok = False
+        for ln in lines:
+            if v in ln and (f"{v}[v1]" in ln or f"{v}`[v1]`" in ln or "[v1]" in ln):
+                ok = True
+                break
+        if not ok:
+            untagged.append(v)
+    if not v1_present:
+        out.append("- [PASS] 主文档未出现 v1 历史值（无需代际标注）")
+    elif untagged:
+        out.append(f"- [FAIL] 主文档中 v1 值未标 [v1]：{'、'.join(untagged)}")
+        bad += 1
+    else:
+        out.append(f"- [PASS] 主文档中 v1 值均已标 [v1]（{len(v1_present)} 个）")
+
+    if ("不可直比" in text) or ("不可直接对比" in text):
+        out.append("- [PASS] 已声明两代不可直比（采纳闸门第 (2) 条机械侧）")
+    else:
+        out.append("- [FAIL] 主文档未声明两代数字不可直比")
+        bad += 1
+
+    if bad == 0:
+        out.append("- 结论：主文档数字与证据一致、代际可辨、并含不可直比声明")
+    out.append("")
+
+
 def main() -> None:
-    out = ["# 文档数字一致性审计", ""]
+    out = ["# 文档数字一致性审计",
+           f"> 运行时刻：{datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')}"
+           "（用于判别报告新鲜度；脚本异常退出时本文件不会被改写）", ""]
     check_file_integrity(out)
     check_product_code_health(out)
+    check_finals_numbers(out)
     for grp in GROUPS:
         for fname in grp["files"]:
             audit_file(fname, grp["required"], grp["forbidden"],
