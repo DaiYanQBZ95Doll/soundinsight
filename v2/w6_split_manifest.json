@@ -1,0 +1,25 @@
+{
+  "purpose": "W6：阈值选择与指标报告分离（消除 A1-8 同集选阈值的乐观偏置）",
+  "source": "val_v2.csv",
+  "source_n": 20000,
+  "source_pos": 251,
+  "seed": 42,
+  "test_size": 0.5,
+  "stratify": "sound_negative",
+  "roles": {
+    "val_v3_tune": "只用于选阈值/校准/早停等一切调参",
+    "val_v3_test": "只用于报告最终指标；不得用于任何选择"
+  },
+  "tune": {
+    "file": "val_v3_tune.csv",
+    "n": 10000,
+    "pos": 126
+  },
+  "test": {
+    "file": "val_v3_test.csv",
+    "n": 10000,
+    "pos": 125
+  },
+  "caveat": "对半切后每侧正例约 125 条，单点指标噪声更大（A2-14）；结论须报双侧与样本量，不得只报更优侧。",
+  "gen": "[v2]"
+}

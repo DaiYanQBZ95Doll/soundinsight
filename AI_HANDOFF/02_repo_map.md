@@ -1,6 +1,6 @@
 # 文件地图（由 make_ai_handoff.py 自动生成，勿手改）
 
-> 生成时间：2026-09-30 17:29；共 284 个条目；体积单位 KB/MB。
+> 生成时间：2026-09-30 17:45；共 293 个条目；体积单位 KB/MB。
 
 ## 提交物（5 项，43.2 MB）
 
@@ -60,12 +60,12 @@
 
 | 文件 | 大小 | 用途 |
 |---|---|---|
-| `docs/frozen_execution_checklist.md` | 45.8 KB |  |
+| `docs/frozen_execution_checklist.md` | 47.0 KB |  |
 | `docs/gap_and_roadmap_inventory.md` | 36.8 KB |  |
 | `docs/final_project_review_and_execution_plan.md` | 36.0 KB |  |
 | `docs/retrospective_and_reflection.md` | 27.9 KB |  |
+| `PROGRESS_SYNC.md` | 24.5 KB |  |
 | `docs/project_full_record.md` | 21.6 KB | 初赛→复赛全流程记录 |
-| `PROGRESS_SYNC.md` | 21.4 KB |  |
 | `docs/v2_acceptance_benchmark.md` | 20.4 KB |  |
 | `docs/D13_seal_declaration.md` | 19.7 KB | D13 封包声明（提交技术质检终审） |
 | `docs/final_review_and_execution_plan.md` | 19.5 KB |  |
@@ -81,7 +81,7 @@
 | `docs/external_sources_register.md` | 6.5 KB |  |
 | `docs/work_summary_d7.md` | 6.2 KB |  |
 | `docs/SoundInsight决赛备战_现状盘点清单.md` | 4.8 KB |  |
-| `docs/repo_hygiene_scan.md` | 4.3 KB |  |
+| `docs/repo_hygiene_scan.md` | 3.7 KB |  |
 | `docs/dataset_audit.md` | 3.5 KB | 数据集字段考古 |
 | `docs/D14_resume_checklist.md` | 3.0 KB | 收尾四步清单（录视频/打包/上传/补推送） |
 | `docs/drift_plan.md` | 2.8 KB | 数据漂移监控方案 |
@@ -187,7 +187,7 @@
 | `llm_qwen_metrics.json` | 1.0 KB |  |
 | `learning_curve_results.json` | 0.1 KB |  |
 
-## 数据（13 项，277.9 MB）
+## 数据（15 项，285.0 MB）
 
 | 文件 | 大小 | 用途 |
 |---|---|---|
@@ -199,25 +199,30 @@
 | `labeled_expanded.csv` | 37.1 MB |  |
 | `electronics_expanded.csv` | 37.1 MB | 主数据集（10 万条，含 timeStamp 恢复） |
 | `val_v2.csv` | 7.1 MB | 固定验证集（20000 条 / 251 正例），红线冻结 |
+| `val_v3_tune.csv` | 3.6 MB |  |
+| `val_v3_test.csv` | 3.5 MB |  |
 | `labeled_data_final.csv` | 2.1 MB |  |
 | `local_data.csv` | 2.1 MB |  |
 | `train_quick.csv` | 1.2 MB |  |
 | `sample_reviews_100.csv` | 57.9 KB |  |
 | `agent_test_input.csv` | 27.9 KB |  |
 
-## 代码（89 项，0.3 MB）
+## 代码（93 项，0.4 MB）
 
 | 文件 | 大小 | 用途 |
 |---|---|---|
 | `check_doc_numbers.py` | 23.5 KB | 数字审计 + 模板格式对照脚本 |
+| `v2_meta_analysis.py` | 19.0 KB |  |
 | `scan_repo_hygiene.py` | 18.2 KB |  |
 | `build_pdf_v2.py` | 12.4 KB |  |
+| `v2_w1_longtext.py` | 11.8 KB |  |
 | `make_ai_handoff.py` | 11.5 KB |  |
 | `build_pdf.py` | 11.2 KB |  |
 | `build_submission.py` | 9.3 KB |  |
 | `demo_sound_v2.py` | 9.1 KB | 本地 Gradio Demo（三页；已内置代理绕过） |
 | `report_builder.py` | 8.3 KB |  |
 | `ablation_train.py` | 8.2 KB |  |
+| `v2_w2_perclass.py` | 8.1 KB |  |
 | `soundinsight_agent.py` | 8.1 KB | 一键洞察 Agent（md/excel、zh/en、非英文跳过） |
 | `pack_final.py` | 7.9 KB | 提交包打包与四项自检 |
 | `train_sound_model.py` | 7.8 KB |  |
@@ -241,6 +246,7 @@
 | `test_model.py` | 3.9 KB |  |
 | `merge_refine.py` | 3.8 KB |  |
 | `train_multilabel.py` | 3.8 KB |  |
+| `v2_w6_split.py` | 3.6 KB |  |
 | `distilbert_vs_llm.py` | 3.6 KB |  |
 | `extend_data.py` | 3.6 KB |  |
 | `baseline_cv.py` | 3.5 KB |  |
@@ -355,13 +361,16 @@
 | `multi_label_model/` | 256.1 MB | 冻结的多标签归因模型权重（约 256MB），不入 git |
 | `sound_model/` | 256.1 MB | 冻结的二分类模型权重（约 256MB），不入 git |
 
-## 其他（6 项，46.1 MB）
+## 其他（9 项，46.2 MB）
 
 | 文件 | 大小 | 用途 |
 |---|---|---|
 | `更新世界的锋芒_SoundInsight_演示视频.mp4` | 46.1 MB |  |
+| `v2/w14_w15_w16_report.md` | 7.9 KB |  |
+| `v2/w14_w15_w16_summary.json` | 3.1 KB |  |
 | `视频录制速查.md` | 3.1 KB |  |
 | `v2/v2_artifacts.template.json` | 1.1 KB |  |
 | `hashes.txt` | 0.9 KB |  |
+| `v2/w6_split_manifest.json` | 0.7 KB |  |
 | `.gitignore` | 0.6 KB |  |
 | `per_class_thresholds_probe.json` | 0.4 KB |  |
