@@ -1,15 +1,15 @@
 # 文件地图（由 make_ai_handoff.py 自动生成，勿手改）
 
-> 生成时间：2026-10-01 04:15；共 397 个条目；体积单位 KB/MB。
+> 生成时间：2026-10-01 04:26；共 400 个条目；体积单位 KB/MB。
 
 ## 提交物（5 项，43.4 MB）
 
 | 文件 | 大小 | 用途 |
 |---|---|---|
 | `更新世界的锋芒_SoundInsight_复赛作品.zip` | 42.4 MB |  |
-| `更新世界的锋芒_SoundInsight_其他材料.zip` | 706.5 KB |  |
+| `更新世界的锋芒_SoundInsight_其他材料.zip` | 714.2 KB |  |
 | `更新世界的锋芒_SoundInsight_复赛作品.pdf` | 210.1 KB |  |
-| `更新世界的锋芒_SoundInsight_Demo.zip` | 105.6 KB |  |
+| `更新世界的锋芒_SoundInsight_Demo.zip` | 105.8 KB |  |
 | `更新世界的锋芒_SoundInsight_复赛作品.docx` | 48.0 KB |  |
 
 ## 主文档与模板（11 项，0.1 MB）
@@ -57,13 +57,13 @@
 | `confidence_tiered.md` | 0.7 KB | 三星补漏置信度分层与中置信剔除记录 |
 | `significance_test.md` | 0.6 KB | Welch t 检验（p=0.000932） |
 
-## 过程与交接文档（49 项，0.5 MB）
+## 过程与交接文档（50 项，0.5 MB）
 
 | 文件 | 大小 | 用途 |
 |---|---|---|
-| `docs/frozen_execution_checklist.md` | 63.1 KB |  |
-| `PROGRESS_SYNC.md` | 43.5 KB |  |
-| `docs/gap_and_roadmap_inventory.md` | 40.9 KB |  |
+| `docs/frozen_execution_checklist.md` | 63.8 KB |  |
+| `PROGRESS_SYNC.md` | 44.5 KB |  |
+| `docs/gap_and_roadmap_inventory.md` | 41.2 KB |  |
 | `docs/final_project_review_and_execution_plan.md` | 36.3 KB |  |
 | `docs/retrospective_and_reflection.md` | 27.9 KB |  |
 | `docs/project_full_record.md` | 21.6 KB | 初赛→复赛全流程记录 |
@@ -88,6 +88,7 @@
 | `docs/N2_narrative_final.md` | 6.2 KB |  |
 | `docs/N6_review_risk_list.md` | 5.6 KB |  |
 | `docs/N5_qna_factbase.md` | 5.6 KB |  |
+| `docs/w4_prescreen_estimate.md` | 4.8 KB |  |
 | `docs/SoundInsight决赛备战_现状盘点清单.md` | 4.8 KB |  |
 | `docs/w1_longtext_variants.md` | 4.7 KB |  |
 | `docs/evidence_index_exp.md` | 4.4 KB |  |
@@ -238,14 +239,14 @@
 | `sample_reviews_100.csv` | 57.9 KB |  |
 | `agent_test_input.csv` | 27.9 KB |  |
 
-## 代码（136 项，0.6 MB）
+## 代码（137 项，0.6 MB）
 
 | 文件 | 大小 | 用途 |
 |---|---|---|
 | `check_doc_numbers.py` | 40.7 KB | 数字审计 + 模板格式对照脚本 |
 | `scan_repo_hygiene.py` | 20.0 KB |  |
 | `v2_meta_analysis.py` | 19.1 KB |  |
-| `build_finals_package.py` | 13.9 KB |  |
+| `build_finals_package.py` | 14.0 KB |  |
 | `v2_w4_mine.py` | 12.4 KB |  |
 | `build_pdf_v2.py` | 12.4 KB |  |
 | `v2_w1_longtext.py` | 12.1 KB |  |
@@ -271,6 +272,7 @@
 | `md_to_pdf.py` | 7.6 KB | 主文档 Markdown → PDF（内嵌中文字体） |
 | `w13_keyword_miss_rate.py` | 7.4 KB |  |
 | `v2_w5_cv.py` | 7.4 KB |  |
+| `v2_w4_prescreen.py` | 7.3 KB |  |
 | `v2_w6_split.py` | 7.0 KB |  |
 | `learning_curve.py` | 6.8 KB |  |
 | `diagnose_treble.py` | 6.6 KB |  |
@@ -435,7 +437,7 @@
 | `multi_label_model/` | 256.1 MB | 冻结的多标签归因模型权重（约 256MB），不入 git |
 | `sound_model/` | 256.1 MB | 冻结的二分类模型权重（约 256MB），不入 git |
 
-## 其他（39 项，46.2 MB）
+## 其他（40 项，46.2 MB）
 
 | 文件 | 大小 | 用途 |
 |---|---|---|
@@ -444,6 +446,7 @@
 | `v2/w14_w15_w16_report.md` | 7.9 KB |  |
 | `v2/w17_failure_stats.json` | 6.5 KB |  |
 | `v2/m0_switch_report.json` | 6.0 KB |  |
+| `v2/w4_prescreen.json` | 6.0 KB |  |
 | `v2/w7_calibration.json` | 4.4 KB |  |
 | `v2/w5_final.json` | 3.9 KB |  |
 | `v2/w14_w15_w16_summary.json` | 3.1 KB |  |
