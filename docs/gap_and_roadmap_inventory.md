@@ -330,3 +330,35 @@
 ## 附：本清点的证据来源
 
 `results_summary.md`、`llm_baseline.md`、`length_bucket_eval.md`、`calibration_eval.md`、`error_taxonomy.md`、`stats_validation.md`、`throughput_eval.md`、`ablation_summary.md`、`significance_test.md`、`MODEL_CARD.md`、`competition_v4.md`、`README.md`、`PROGRESS_SYNC.md`、`number_audit.md`、`distilbert_cv.py`、`check_doc_numbers.py`、`docs/treble_fix_proposal.md`、`docs/treble_failure_analysis.md`、`docs/finals_stage.md`、`docs/v2_acceptance_benchmark.md`、`docs/D13_seal_declaration.md`、`docs/retrospective_and_reflection.md`、`docs/drift_plan.md`、`docs/project_full_record.md`、`per_class_thresholds_probe.json`、`human_review_noise16.csv`。
+
+---
+
+## 三、决赛阶段处置状态（执行方补记，2026-10-01）
+
+> 本节按 `docs/frozen_execution_checklist.md` §四 4.2 第 4 项要求补记：**逐条给出"已修复／已披露／不可修"**。
+> 原文条目不做改动；状态以此节为准。证据指针均指向仓库文件。
+
+| 条目 | 状态 | 证据 / 说明 |
+|---|---|---|
+| **A1 长文本截断** | **已测未达标（如实记录）** | 窗口 128→256→512 截断桶召回**始终 51.2%**（推翻"截断是主因"）；切窗 82.9% 但整体 F1 降至 0.60；约束式分档阈值 **68.3%**（验收线 70%）。`docs/w1_longtext_variants.md` |
+| **A1 高音类零触发** | **部分修复** | 逐类阈值后高音 F1 **0.5333`[v2]`**（v1 为 0）；仍为最弱类，关键词漏检 62.6%。`v2/w2_perclass_thresholds.md` |
+| **A1 逐类阈值同集偏置** | **已修复（方法学）** | v2 起阈值只在 `val_v3_tune` 选、指标只在 `val_v3_test` 报；审计有机械检查。 |
+| **A1 阈值选择偏差（v1）** | **已披露** | 首次披露于 `docs/e2_erratum.md` §3；v1 数字不改，改的是解读。 |
+| **A1 概率校准形态** | **已修复** | 温度缩放 T=1.59（只在 tune 拟合）；决策区间 ≥0.9 偏差 −0.172 → **−0.060`[v2]`**；抗稀释 ECE 0.222 → 0.117。`v2/w7_calibration.md` |
+| **A2 标注噪声 9.1%** | **不可修（已披露）** | 无第二标注者 → 无法算 κ/α；Wilson CI 5.6–14.5%，人工终审 15/16。 |
+| **A2 共享教师偏差** | **已披露** | 训练与验证标签同源；无全人工金标准。 |
+| **A2 正例口径演进** | **已披露** | 1,257`[v1]` → 1,288 → **1,280**；引用须写明阶段（`docs/e2_erratum.md` §5）。 |
+| **A2 四五星开采** | **候选段完成 / 复核段阻塞** | 候选 **12,744 条**（超预期 42 倍）→ W4b 触发 → 分层抽样 293 条（未复核 97.70%）；缺 LLM 凭证。`v2/w4_summary.json` |
+| **A2 评测泄漏（本轮新发现）** | **已修复** | val_v2 与当前训练划分重叠 79.5% → v2 一律用当前留出划分；误用 val_v2 所得 0.9126 已作废。 |
+| **A3 无真实用户验证** | **不可修（客观）** | 无跨境电商渠道；已写入主文档附录 B。 |
+| **A3 型号级/对抗性能力缺失** | **已修复（字段恢复解锁）** | 711 个 ASIN 达 ≥10 条门槛，Top-20 差评率 14.3%–30.0%；对抗性三项（verified 过滤／用户去重／helpful 加权）已完成。 |
+| **A3 失败案例附录** | **已完成** | 13 条带发生率：长文本桶 FN 30.8%、跨品类 FP 0.62%、5★ FP 0.15% 等。`docs/w17_failure_cases.md` |
+| **A4 代际混用风险** | **已修复（一次性换代）** | M0：143 处 v1 数字加 `[v1]`、5 文件插入 v2 现状块；核对器待处理 **0 行**。 |
+| **A4 跨材料口径** | **已修复** | M0b 机械检查（README ↔ 决赛主文档逐字一致）PASS；修掉了 docx 文本抽取的假 FAIL。 |
+| **A5 叙事线零工作包** | **已修复** | N1/N1b 草案 + **N2 定稿草案／N3 校准证据组／N4 靶点论证与迁移协议／N5 答辩口径底稿** 全部成稿。 |
+| **A6 验收线未达（长文本 70%）** | **如实记录** | 采纳闸门第 (3) 条判定"部分未达"，处置为"如实记录 + 写入局限章节"。 |
+| **A6 权重分发策略** | **已定（hash_and_command_only）** | `v2/v2_artifacts.json` 登记 SHA256 + 训练命令；权重不入库。 |
+| **A6 无一页纸代码地图/复现手册** | **部分完成** | `AI_HANDOFF/02_repo_map.md`（17.4 K 字符）已随 M 线刷新。 |
+| **B1 闸门内技术增量** | **已完成主干** | W1（长文本，未达标）、W2（逐类阈值 ✅）、W3（高音，记录型）、W5（重训+CV）、W6（划分）、W7（校准 ✅）、W14–W17 ✅ |
+| **B7 叙事与定位** | **已完成** | 见"叙事线零工作包"一行 |
+| **新增：数字审计工具链** | **已增强** | 198 项检查 / 0 FAIL；新增"关键文件完整性（体积下限）"防截断、`safe_commit.py` 守卫前置 |

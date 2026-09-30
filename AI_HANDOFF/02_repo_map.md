@@ -1,15 +1,15 @@
 # 文件地图（由 make_ai_handoff.py 自动生成，勿手改）
 
-> 生成时间：2026-09-30 23:35；共 372 个条目；体积单位 KB/MB。
+> 生成时间：2026-10-01 01:12；共 377 个条目；体积单位 KB/MB。
 
 ## 提交物（5 项，43.4 MB）
 
 | 文件 | 大小 | 用途 |
 |---|---|---|
 | `更新世界的锋芒_SoundInsight_复赛作品.zip` | 42.4 MB |  |
-| `更新世界的锋芒_SoundInsight_其他材料.zip` | 647.5 KB |  |
+| `更新世界的锋芒_SoundInsight_其他材料.zip` | 672.7 KB |  |
 | `更新世界的锋芒_SoundInsight_复赛作品.pdf` | 210.1 KB |  |
-| `更新世界的锋芒_SoundInsight_Demo.zip` | 127.0 KB |  |
+| `更新世界的锋芒_SoundInsight_Demo.zip` | 134.0 KB |  |
 | `更新世界的锋芒_SoundInsight_复赛作品.docx` | 48.0 KB |  |
 
 ## 主文档与模板（11 项，0.1 MB）
@@ -57,13 +57,13 @@
 | `confidence_tiered.md` | 0.7 KB | 三星补漏置信度分层与中置信剔除记录 |
 | `significance_test.md` | 0.6 KB | Welch t 检验（p=0.000932） |
 
-## 过程与交接文档（43 项，0.5 MB）
+## 过程与交接文档（45 项，0.5 MB）
 
 | 文件 | 大小 | 用途 |
 |---|---|---|
 | `docs/frozen_execution_checklist.md` | 57.4 KB |  |
+| `docs/gap_and_roadmap_inventory.md` | 40.7 KB |  |
 | `PROGRESS_SYNC.md` | 40.4 KB |  |
-| `docs/gap_and_roadmap_inventory.md` | 36.8 KB |  |
 | `docs/final_project_review_and_execution_plan.md` | 36.0 KB |  |
 | `docs/retrospective_and_reflection.md` | 27.9 KB |  |
 | `docs/project_full_record.md` | 21.6 KB | 初赛→复赛全流程记录 |
@@ -86,12 +86,14 @@
 | `docs/N1_narrative_mainline.md` | 6.0 KB |  |
 | `docs/N1b_downgrade_narrative.md` | 5.8 KB |  |
 | `docs/N5_qna_factbase.md` | 5.6 KB |  |
-| `docs/repo_hygiene_scan.md` | 5.0 KB |  |
+| `docs/overnight_summary.md` | 5.0 KB |  |
 | `docs/SoundInsight决赛备战_现状盘点清单.md` | 4.8 KB |  |
 | `docs/w1_longtext_variants.md` | 4.7 KB |  |
 | `docs/evidence_index_exp.md` | 4.4 KB |  |
 | `docs/llm_credential_status.md` | 4.2 KB |  |
 | `docs/e2_erratum.md` | 4.2 KB |  |
+| `docs/repo_hygiene_scan.md` | 3.7 KB |  |
+| `docs/DoD_completion_table.md` | 3.6 KB |  |
 | `docs/v2_gate_verdict.md` | 3.6 KB |  |
 | `docs/dataset_audit.md` | 3.5 KB | 数据集字段考古 |
 | `docs/M8a_submission_precheck.md` | 3.5 KB |  |
@@ -232,14 +234,14 @@
 | `sample_reviews_100.csv` | 57.9 KB |  |
 | `agent_test_input.csv` | 27.9 KB |  |
 
-## 代码（120 项，0.5 MB）
+## 代码（123 项，0.6 MB）
 
 | 文件 | 大小 | 用途 |
 |---|---|---|
 | `check_doc_numbers.py` | 32.0 KB | 数字审计 + 模板格式对照脚本 |
 | `scan_repo_hygiene.py` | 20.0 KB |  |
 | `v2_meta_analysis.py` | 19.1 KB |  |
-| `build_finals_package.py` | 12.5 KB |  |
+| `build_finals_package.py` | 12.9 KB |  |
 | `v2_w4_mine.py` | 12.4 KB |  |
 | `build_pdf_v2.py` | 12.4 KB |  |
 | `v2_w1_longtext.py` | 12.1 KB |  |
@@ -261,8 +263,8 @@
 | `train_sound_model.py` | 7.8 KB |  |
 | `v2_w5_final.py` | 7.7 KB |  |
 | `md_to_pdf.py` | 7.6 KB | 主文档 Markdown → PDF（内嵌中文字体） |
+| `v2_w5_cv.py` | 7.4 KB |  |
 | `v2_w6_split.py` | 7.0 KB |  |
-| `v2_w5_cv.py` | 6.9 KB |  |
 | `learning_curve.py` | 6.8 KB |  |
 | `diagnose_treble.py` | 6.6 KB |  |
 | `fetch_electronics.py` | 6.5 KB |  |
@@ -277,13 +279,13 @@
 | `train_roberta_quick.py` | 5.2 KB |  |
 | `v2_m0_switch_check.py` | 5.2 KB |  |
 | `make_missing_figures.py` | 5.1 KB |  |
+| `build_finals_docx2.py` | 5.1 KB |  |
 | `v2_w1_seg_threshold.py` | 5.1 KB |  |
 | `predict_core.py` | 5.1 KB | 共享推理核心（含非英文显式拒绝） |
 | `fix_ppt_threshold.py` | 4.8 KB |  |
 | `make_video_assets.py` | 4.6 KB |  |
 | `v2_record_incident.py` | 4.5 KB |  |
 | `make_samples.py` | 4.4 KB |  |
-| `build_finals_docx2.py` | 4.4 KB |  |
 | `retime_srt.py` | 4.2 KB |  |
 | `tune_per_class_threshold.py` | 4.0 KB |  |
 | `upload_models.py` | 3.9 KB |  |
@@ -293,6 +295,7 @@
 | `distilbert_vs_llm.py` | 3.6 KB |  |
 | `extend_data.py` | 3.6 KB |  |
 | `baseline_cv.py` | 3.5 KB |  |
+| `v2_register_cv.py` | 3.3 KB |  |
 | `finalize_curve.py` | 3.3 KB |  |
 | `purge_leaked_objects.py` | 3.2 KB |  |
 | `v2_repair_checklist.py` | 3.1 KB |  |
@@ -317,6 +320,7 @@
 | `ppt_speed_fix.py` | 2.3 KB |  |
 | `restore_timestamps.py` | 2.3 KB |  |
 | `throughput_bench.py` | 2.2 KB |  |
+| `update_finals_hashes.py` | 2.2 KB |  |
 | `verify_online_report.py` | 2.2 KB |  |
 | `v2_w2_diag.py` | 2.1 KB |  |
 | `check_video.py` | 2.1 KB |  |
@@ -341,6 +345,7 @@
 | `check_studio_build.py` | 1.3 KB |  |
 | `prep_err_taxonomy.py` | 1.2 KB |  |
 | `verify_docx.py` | 1.2 KB |  |
+| `v2_check_docx.py` | 1.1 KB |  |
 | `v2_w1_token_len.py` | 1.1 KB |  |
 | `prep_neg_review.py` | 1.1 KB |  |
 | `final_acceptance.py` | 1.1 KB |  |
@@ -429,6 +434,7 @@
 | `v2/w1_hybrid_result.json` | 2.7 KB |  |
 | `LICENSE` | 2.6 KB |  |
 | `v2/w2_perclass_thresholds.json` | 2.3 KB |  |
+| `hashes.txt` | 1.9 KB |  |
 | `v2/w6_split_manifest.json` | 1.8 KB |  |
 | `v2/w7_calibration.md` | 1.5 KB |  |
 | `v2/w5_final.md` | 1.5 KB |  |
@@ -438,7 +444,6 @@
 | `.gitignore` | 1.1 KB |  |
 | `v2/v2_artifacts.template.json` | 1.1 KB |  |
 | `v2/w4_strata.json` | 1.0 KB |  |
-| `hashes.txt` | 0.9 KB |  |
 | `v2/w1_eval_model_maxlen128_segment(seg128_stride64)_val_v3_test.json` | 0.9 KB |  |
 | `v2/w1_eval_model_maxlen128_truncate(max128)_val_v3_test.json` | 0.9 KB |  |
 | `v2/w1_eval_model_maxlen256_truncate(max256)_val_v3_test.json` | 0.9 KB |  |

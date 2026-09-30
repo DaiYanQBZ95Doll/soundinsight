@@ -48,6 +48,19 @@ def fill_tables(doc) -> None:
                     set_cell(row.cells[2], link)
                 idx += 1
             continue
+        # 全体成员表：表头下一行填队长信息（数据行首格为空，故按"表头行号 + 1"定位）
+        for ri, row in enumerate(t.rows):
+            cells = row.cells
+            if len(cells) >= 6 and cells[0].text.strip() == "姓名" and ri + 1 < len(t.rows):
+                drow = t.rows[ri + 1].cells
+                if len(drow) >= 6 and not drow[0].text.strip():
+                    set_cell(drow[0], TEAM["队长姓名"])
+                    set_cell(drow[1], TEAM["联系电话"])
+                    set_cell(drow[2], TEAM["联系邮箱"])
+                    set_cell(drow[3], "个人团队")
+                    set_cell(drow[4], "个人开发者")
+                    set_cell(drow[5], "队长")
+                break
         for row in t.rows:
             cells = row.cells
             if not cells or len(cells) < 2:
