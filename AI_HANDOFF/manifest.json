@@ -1,7 +1,7 @@
 {
- "generated": "2026-09-30 22:10",
+ "generated": "2026-09-30 22:36",
  "root": "C:\\deepseek-harness-master\\soundinsight",
- "count": 346,
+ "count": 349,
  "entries": [
   {
    "path": ".gitignore",
@@ -48,9 +48,9 @@
   {
    "path": "PROGRESS_SYNC.md",
    "category": "过程与交接文档",
-   "size_bytes": 36765,
+   "size_bytes": 38056,
    "purpose": "",
-   "sha256_16": "7296f8e55747ee6340159034e34b7387823c06874dc2198fcd3c3c3abd64e55e"
+   "sha256_16": "1adb45413bc7270ff4ae0103df8496cce15b6383a1b6186f397594b03efd4ece"
   },
   {
    "path": "PROJECT_BRIEF_QWEN.md",
@@ -1432,6 +1432,13 @@
    "sha256_16": "cb2c1a83fb189fd372b23e774fa6e3445b98d031d84fa181847088094b2e91a1"
   },
   {
+   "path": "v2_m0_switch_check.py",
+   "category": "代码",
+   "size_bytes": 5018,
+   "purpose": "",
+   "sha256_16": "7eac13cc2766007f247f3633a70950384079e4bfc624d79df34965c66e06f927"
+  },
+  {
    "path": "v2_meta_analysis.py",
    "category": "代码",
    "size_bytes": 19525,
@@ -1861,9 +1868,9 @@
   {
    "path": "docs/frozen_execution_checklist.md",
    "category": "过程与交接文档",
-   "size_bytes": 55144,
+   "size_bytes": 55506,
    "purpose": "",
-   "sha256_16": "c683fd3507c3d32ce522dca14cbc45709ef0e03a2da2914749a43489b87cc4c6"
+   "sha256_16": "6e681bc597617c46916ef6b44fa8e3ac3ba397d7b81d0750dd512d778e3c6b90"
   },
   {
    "path": "docs/gap_and_roadmap_inventory.md",
@@ -1905,7 +1912,7 @@
    "category": "过程与交接文档",
    "size_bytes": 3808,
    "purpose": "",
-   "sha256_16": "22fcfd2dd6337d8a1e67b0ce84ec7ec06d9447eeb943410509b4c2a68a56b2f5"
+   "sha256_16": "db67ae4651e84e56b0a6a158b9cc74bffb544919339bc453013d529731725bb6"
   },
   {
    "path": "docs/retrospective_and_reflection.md",
@@ -1934,6 +1941,13 @@
    "size_bytes": 20863,
    "purpose": "",
    "sha256_16": "6e0d4098f0b50e8a0a99490d04d1a4f29d6d089617bb649e9692e8bf264ad803"
+  },
+  {
+   "path": "docs/v2_gate_verdict.md",
+   "category": "过程与交接文档",
+   "size_bytes": 3686,
+   "purpose": "",
+   "sha256_16": "746ef64b51455abe032ba27f3f4d74ada7e3cb050ea311ff62ae256a92ff9a24"
   },
   {
    "path": "docs/w17_confidence_actions.md",
@@ -2123,6 +2137,13 @@
    "size_bytes": 1720,
    "purpose": "",
    "sha256_16": "b55bf24964805c888e090a562d1e14fcf8024d4689c8c8703aa910747abf1489"
+  },
+  {
+   "path": "v2/m0_switch_report.json",
+   "category": "其他",
+   "size_bytes": 17631,
+   "purpose": "",
+   "sha256_16": "ed3226ad39e33b7127bb932f33156588589c81268fd5d81df6ce34c743bff690"
   },
   {
    "path": "v2/threshold.json",

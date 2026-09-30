@@ -1,0 +1,498 @@
+{
+  "checked": 38,
+  "pending_non_exempt": 81,
+  "detail": {
+    "results_summary.md": {
+      "hits": 4,
+      "exempt": true,
+      "samples": [
+        {
+          "line": 46,
+          "text": "- [epoch 1] loss=0.1193 acc=0.9867 f1@0.5=0.6234 f1_best=0.6551 @thr=0.6862 | 122s"
+        },
+        {
+          "line": 47,
+          "text": "- [epoch 2] loss=0.0570 acc=0.9865 f1@0.5=0.6241 f1_best=0.6871 @thr=0.9744 | 125s"
+        },
+        {
+          "line": 49,
+          "text": "- FINAL acc=0.9865 f1@0.5=0.6241 f1_best=0.6871 @thr=0.9744"
+        }
+      ]
+    },
+    "competition_v4.md": {
+      "hits": 14,
+      "exempt": false,
+      "samples": [
+        {
+          "line": 58,
+          "text": "| 音质差评召回率 | 依赖经验，易遗漏 | 89.6%（阈值 0.5 高召回档） | 量化可追溯 |"
+        },
+        {
+          "line": 59,
+          "text": "| 综合 F1 分数 | — | 0.687（阈值 0.9744，同档召回 71.3% / 精确 66.3%） | 业内可用水平 |"
+        },
+        {
+          "line": 159,
+          "text": "- **音质差评识别**：DistilBERT 二分类，val_v2 F1 0.687（阈值 0.9744），支持单条与批量。"
+        }
+      ]
+    },
+    "competition_v3.txt": {
+      "hits": 3,
+      "exempt": false,
+      "samples": [
+        {
+          "line": 56,
+          "text": "| 音质差评召回率 | 依赖经验，易遗漏 | 89.6%（阈值 0.5 高召回档） | 量化可追溯 |"
+        },
+        {
+          "line": 57,
+          "text": "| 综合 F1 分数 | — | 0.687（阈值 0.9744，同档召回 71.3% / 精确 66.3%） | 业内可用水平 |"
+        },
+        {
+          "line": 144,
+          "text": "核心统计口径（冻结，详见 competition_v4.md）：5折CV平均F1 0.6234±0.024；val_v2 两档分列——阈值 0.9744：F1 0.687、精确率 66.3%、召回率 71.3%；阈值 0"
+        }
+      ]
+    },
+    "README.md": {
+      "hits": 2,
+      "exempt": false,
+      "samples": [
+        {
+          "line": 16,
+          "text": "> **三套口径不可混用**：冻结口径（val_v2 20,000 条）／1,000 条子集口径（LLM 对照）／工程口径（吞吐、校准、长度分桶）。同一模型的精确率/召回率还分阈值档（0.9744 与 0.5），必须成对"
+        },
+        {
+          "line": 85,
+          "text": "模型性能：最终二分类模型在固定验证集 20000 条（251 正例）上，按两个决策阈值分列——**阈值 0.9744（对外显示 0.97，验证集上 F1 最优）**：精确率 66.3%、召回率 71.3%、F1 0.68"
+        }
+      ]
+    },
+    "MODEL_CARD.md": {
+      "hits": 3,
+      "exempt": false,
+      "samples": [
+        {
+          "line": 8,
+          "text": "- **训练方式**：1:10 欠采样、5 折交叉验证、阈值扫描（最优阈值 0.9744）、Focal Loss（ICCV 2017）。"
+        },
+        {
+          "line": 13,
+          "text": "- 二分类：val_v2（20,000 条，251 正例）F1 0.687；5 折 CV 平均 F1 0.6234±0.024；AUC-PR 0.7191；对比 SVM 0.497 / LR 0.410 / dummy "
+        },
+        {
+          "line": 14,
+          "text": "- 阈值 0.5 时召回 89.6%、F1 0.62；阈值 0.9744 时 Precision≈66.2%、Recall≈70.9%（本次重算 TP=178/FP=91/FN=73）。"
+        }
+      ]
+    },
+    "llm_baseline.md": {
+      "hits": 3,
+      "exempt": false,
+      "samples": [
+        {
+          "line": 4,
+          "text": "> 实验目的：D6-D8 遗憾消除清单 Batch B —— 在固定 1000 条评估子集上，对比小模型（DistilBERT, thr=0.9744）与 LLM（deepseek-chat, temperature=0"
+        },
+        {
+          "line": 9,
+          "text": "- 小模型预测：`llm_eval_small_preds.jsonl`，阈值 0.9744，同子集。"
+        },
+        {
+          "line": 21,
+          "text": "| 小模型 (thr 0.9744) | 0.9250 | 0.9889 | 0.7092 | 0.8260 | 178 | 2 | 73 | 747 | 0 | — |"
+        }
+      ]
+    },
+    "length_bucket_eval.md": {
+      "hits": 1,
+      "exempt": false,
+      "samples": [
+        {
+          "line": 3,
+          "text": "口径：冻结模型 + val_v2（20,000 条），阈值 0.9744，按 **tokenizer token 数**分桶（不含特殊 token）。模型输入含 [CLS]/[SEP] 且 max_len=128，故 >"
+        }
+      ]
+    },
+    "edge_case_benchmark.md": {
+      "hits": 1,
+      "exempt": false,
+      "samples": [
+        {
+          "line": 3,
+          "text": "口径：样本取自 `edge_cases.md` 收录的真实评论（n=12，定向探针，非大规模基准）；期望标签按该文档判据由 DSH 标注并在此如实披露。多语言类标记为\"未支持\"，不参与命中率统计。阈值 0.9744。"
+        }
+      ]
+    },
+    "error_taxonomy.md": {
+      "hits": 3,
+      "exempt": false,
+      "samples": [
+        {
+          "line": 3,
+          "text": "> 口径：冻结模型 + val_v2（20,000 条），阈值 0.9744。本次重算：TP=178，**FP=91，FN=73**，TN=19,658。"
+        },
+        {
+          "line": 35,
+          "text": "- （双面）\"Poor sound and low battery life but our kids love the minions so it served its purpose\"——prob 0.9744496"
+        },
+        {
+          "line": 80,
+          "text": "2. **漏报主因是委婉表达与双面评价**（58.9%）：\"should be better\"\"isn't too bad\"\"kids love it but poor sound\"——单靠关键词/强负面词无法覆盖，与三"
+        }
+      ]
+    },
+    "stats_validation.md": {
+      "hits": 3,
+      "exempt": false,
+      "samples": [
+        {
+          "line": 22,
+          "text": "最终模型（阈值 0.97）在 val_v2 上输出概率，AUC-PR = 0.7191。"
+        },
+        {
+          "line": 30,
+          "text": "DistilBERT 五折：[0.6655, 0.6151, 0.6325, 0.6054, 0.5983]，均值 0.6234 ± 0.0240"
+        },
+        {
+          "line": 34,
+          "text": "Welch t 检验：t = 5.0982，p = 0.000932"
+        }
+      ]
+    },
+    "ablation_summary.md": {
+      "hits": 2,
+      "exempt": false,
+      "samples": [
+        {
+          "line": 8,
+          "text": "| 最终模型（1:10欠采样） | 0.6241 | 0.6871 | 0.4787 | 0.8964 | 0.9865 |"
+        },
+        {
+          "line": 10,
+          "text": "结论：最终模型（1:10欠采样 + 交叉熵）调优 F1 0.6871 仍为最优。A 无采样训练可用但召回率降至 0.53 且训练耗时约三倍；B class_weight 平衡反而使精确率劣化至 0.36；C Focal "
+        }
+      ]
+    },
+    "significance_test.md": {
+      "hits": 2,
+      "exempt": false,
+      "samples": [
+        {
+          "line": 4,
+          "text": "均值 0.6234 ± 0.0240"
+        },
+        {
+          "line": 9,
+          "text": "Welch t 检验: t = 5.0982, p = 0.000932"
+        }
+      ]
+    },
+    "AI_HANDOFF/01_project_overview.md": {
+      "hits": 3,
+      "exempt": false,
+      "samples": [
+        {
+          "line": 27,
+          "text": "- 二分类：F1 **0.6871** @ 阈值 **0.9744**；F1@0.5 = 0.6241；5 折 CV **0.6234 ± 0.0240**"
+        },
+        {
+          "line": 28,
+          "text": "- AUC-PR **0.7191**；Welch t 检验 **p = 0.000932**（vs SVM 0.497 ± 0.017、LR 0.410 ± 0.022、dummy 0.025）"
+        },
+        {
+          "line": 29,
+          "text": "- 混淆矩阵（0.9744）：TP 179 / FP 91 / FN 72 / TN 19,658（GPU 重跑 TP 178 / FN 73，已调和）"
+        }
+      ]
+    },
+    "AI_HANDOFF/03_metrics_and_caveats.md": {
+      "hits": 6,
+      "exempt": false,
+      "samples": [
+        {
+          "line": 17,
+          "text": "- F1 **0.6871**（阈值 0.9744，显示口径 0.97）；F1@0.5 = 0.6241"
+        },
+        {
+          "line": 18,
+          "text": "- 5 折 CV **0.6234 ± 0.0240**（波动 3.9%）"
+        },
+        {
+          "line": 19,
+          "text": "- AUC-PR **0.7191**"
+        }
+      ]
+    },
+    "AI_HANDOFF/04_evidence_index.md": {
+      "hits": 2,
+      "exempt": false,
+      "samples": [
+        {
+          "line": 22,
+          "text": "| F1 0.6871 / CV 0.6234±0.024 / 基线 / p 值 | `results_summary.md`、`exp06_最终二分类模型/training_output.txt` | `test_mo"
+        },
+        {
+          "line": 27,
+          "text": "| PR 曲线 AUC-PR 0.7191 | `pr_curve.png` | `pr_curve.py` |"
+        }
+      ]
+    },
+    "AI_HANDOFF/06_pending_and_redlines.md": {
+      "hits": 2,
+      "exempt": false,
+      "samples": [
+        {
+          "line": 80,
+          "text": "| **v4 §7.2 阈值口径混用（用户指出）** | \"F1=0.6871（阈值 0.97），召回率 89.6%，精确率 47.9%\"把两档并排 → 改为双档分列表（0.9744：66.3%/71.3%/0.6871"
+        },
+        {
+          "line": 81,
+          "text": "| 同型问题再次出现 | `check_doc_numbers.py` 新增**口径配对检查（阈值并排）**：一行同时含调优档 F1（0.687/0.6871）与阈值 0.5 档 P/R（89.6/47.9）时必须显式写"
+        }
+      ]
+    },
+    "AI_HANDOFF/07_glossary.md": {
+      "hits": 2,
+      "exempt": false,
+      "samples": [
+        {
+          "line": 14,
+          "text": "| **阈值 0.9744** | 验证集上 F1 最优的二分类决策阈值（对外显示口径 0.97） |"
+        },
+        {
+          "line": 16,
+          "text": "| **AUC-PR** | PR 曲线下面积，本项目 0.7191 |"
+        }
+      ]
+    },
+    "QWEN_HANDOFF.md": {
+      "hits": 5,
+      "exempt": false,
+      "samples": [
+        {
+          "line": 21,
+          "text": "5. 冻结数字不得改动：F1 0.687（阈值 0.9744，对外 0.97；同档召回 71.3%、精确 66.3%）、阈值 0.5 档召回率 89.6%、5 折 CV 0.6234 ± 0.024、初赛 F1 0.37"
+        },
+        {
+          "line": 42,
+          "text": "最终二分类模型：DistilBERT-base（66M 参数），训练配置为 1:10 欠采样（约 1006 正例 + 10060 负例）、学习率 2e-5、batch 16、epochs 3。验证集 20000 条（25"
+        },
+        {
+          "line": 44,
+          "text": "交叉验证：清洗标签 5 折逐折调优 F1 为 0.6655、0.6151、0.6325、0.6054、0.5983，均值 0.6234 ± 0.0240，波动 3.9%。弱标注标签 10 折调优 F1 均值 0.5487"
+        }
+      ]
+    },
+    "PROJECT_BRIEF_QWEN.md": {
+      "hits": 8,
+      "exempt": false,
+      "samples": [
+        {
+          "line": 41,
+          "text": "- **最终 F1@0.5 = 0.6241，调优后 F1 = 0.6871（阈值 0.97）**"
+        },
+        {
+          "line": 42,
+          "text": "- **5 折 CV：0.6234 ± 0.024（波动 3.9%）**"
+        },
+        {
+          "line": 44,
+          "text": "- 阈值 0.5 档：Precision = 47.9%，Recall = 89.6%（与上面的调优 F1 不同档，引用时须成对）"
+        }
+      ]
+    },
+    "qna_preparation.md": {
+      "hits": 1,
+      "exempt": true,
+      "samples": [
+        {
+          "line": 22,
+          "text": "0.97 是验证集上 F1 最优的阈值，此时 Precision 66.3%、Recall 71.3%。如果卖家希望\"宁可错杀不可放过\"，可在 config.json 中调低阈值至 0.5，Recall 升至 89.6%"
+        }
+      ]
+    },
+    "docs/v2_acceptance_benchmark.md": {
+      "hits": 10,
+      "exempt": true,
+      "samples": [
+        {
+          "line": 52,
+          "text": "| v1 主指标 | **F1@调优(0.9744) = 0.6871**；P 66.3% / R 71.3% | 相对平凡上界 **27.7×**，相对 SVM **+38.3%** |"
+        },
+        {
+          "line": 53,
+          "text": "| v1 的 0.5 档 | **F1@0.5 = 0.6241**；P 47.9% / R 89.6% | 高召回档 |"
+        },
+        {
+          "line": 54,
+          "text": "| v1 的 PR-AUC | **0.7191** | 相对随机水平 0.0126 为 **57×** |"
+        }
+      ]
+    },
+    "docs/final_project_review_and_execution_plan.md": {
+      "hits": 10,
+      "exempt": true,
+      "samples": [
+        {
+          "line": 23,
+          "text": "**3. 阈值档**：本项目 F1/精确率/召回率**必须带阈值档**——`@调优(0.9744)` 或 `@0.5`。两档数值不同，混读即错（审计已含全指标配对检查，覆盖 10 份文档）。"
+        },
+        {
+          "line": 49,
+          "text": "| 二分类主指标 | **F1@调优(0.9744) = 0.6871**（同档 P 66.3% / R 71.3%） | `results_summary.md`:46–51 |"
+        },
+        {
+          "line": 50,
+          "text": "| 高召回档 | **F1@0.5 = 0.6241**（同档 P 47.9% / R 89.6%） | 同上 |"
+        }
+      ]
+    },
+    "docs/legacy_materials_notice.md": {
+      "hits": 4,
+      "exempt": true,
+      "samples": [
+        {
+          "line": 22,
+          "text": "1. **冻结口径**：固定验证集 `val_v2.csv`（20,000 条 / 251 正例），阈值 0.9744（对外 0.97）；"
+        },
+        {
+          "line": 30,
+          "text": "| 0.9744（F1 最优，对外 0.97） | 66.3% | 71.3% | **0.6871** |"
+        },
+        {
+          "line": 31,
+          "text": "| 0.5（默认，高召回档） | 47.9% | 89.6% | 0.6241 |"
+        }
+      ]
+    },
+    "docs/frozen_execution_checklist.md": {
+      "hits": 4,
+      "exempt": true,
+      "samples": [
+        {
+          "line": 53,
+          "text": "| **W6b** ✅ 2026-09-30 | **评测泄漏发现与修正**（方法论留痕，影响 W1/W5/W6） | `val_v2.csv` 由早期 `labeled_llm.csv`（seed 42、20% 分层）"
+        },
+        {
+          "line": 72,
+          "text": "| **N5** | 答辩口径统一卡 | 一页：三套口径 / 两档阈值 / 代际标签 / 已知局限标准答法（含高音为何 0、为何无用户验证、阈值 0.9744 是否极端、百炼与产品推理边界） | **质检方起草** → "
+        },
+        {
+          "line": 196,
+          "text": "| D8 | 采纳闸门第 (1) 条取值 | **默认 0.72**（`@调优(0.9744)` 口径），并按降级分支执行 | 采纳标准 |"
+        }
+      ]
+    },
+    "report_builder.py": {
+      "hits": 4,
+      "exempt": false,
+      "samples": [
+        {
+          "line": 80,
+          "text": "阈值口径：与冻结模型 `sound_model/threshold.json` 的调优档一致（0.9744）；"
+        },
+        {
+          "line": 83,
+          "text": "tuned_thr = 0.9744"
+        },
+        {
+          "line": 153,
+          "text": "f\"band (prob 0.5-0.9744): treated as normal but \""
+        }
+      ]
+    },
+    "deployment/report_builder.py": {
+      "hits": 4,
+      "exempt": false,
+      "samples": [
+        {
+          "line": 80,
+          "text": "阈值口径：与冻结模型 `sound_model/threshold.json` 的调优档一致（0.9744）；"
+        },
+        {
+          "line": 83,
+          "text": "tuned_thr = 0.9744"
+        },
+        {
+          "line": 153,
+          "text": "f\"band (prob 0.5-0.9744): treated as normal but \""
+        }
+      ]
+    },
+    "ppt_text_dump.md": {
+      "hits": 6,
+      "exempt": false,
+      "samples": [
+        {
+          "line": 33,
+          "text": "Model Evaluation 核心性能指标 DistilBERT模型在固定验证集（20,000条）上取得F1=0.6871、召回率71.3%，5折交叉验证波动率仅3.9%。阈值0.97在 F1上取得最优平衡，同时支持"
+        },
+        {
+          "line": 36,
+          "text": "Model Evaluation 基线对比与统计显著性检验 DistilBERT（F1=0.687）相较SVM基线（F1=0.497）提升38.2%，Welch t检验p=0.000932远小于0.05，证明优势具有统 "
+        },
+        {
+          "line": 39,
+          "text": "Ablation Study 消融实验：排除三条错误路径 四组消融排除三条错误路径，锁定1:10欠采样+交叉熵为帕累托最优——简单精准的采样胜过复杂损失改造。 实验组 策略 调优 F1 核心结论 A 无采样（全量10万负"
+        }
+      ]
+    },
+    "video_script.md": {
+      "hits": 1,
+      "exempt": true,
+      "samples": [
+        {
+          "line": 56,
+          "text": "口播稿：\"这套系统不是只跑了个模型。固定验证集两万条、五折交叉验证、三个消融实验、Welch t 检验 p 值 0.0009，显著优于 SVM 基线；PR 曲线 AUC 0.7191。我们还做了跨模型对照——同样的子集，"
+        }
+      ]
+    },
+    "video_script.srt": {
+      "hits": 1,
+      "exempt": true,
+      "samples": [
+        {
+          "line": 71,
+          "text": "PR 曲线 AUC 0.7191；多标签五类归因宏 F1 0.65"
+        }
+      ]
+    },
+    "make_video_assets.py": {
+      "hits": 2,
+      "exempt": true,
+      "samples": [
+        {
+          "line": 89,
+          "text": "\"验证 ②  PR 曲线\", \"AUC-PR = 0.7191\","
+        },
+        {
+          "line": 92,
+          "text": "\"验证 ③  混淆矩阵\", \"阈值 0.9744：TP 179 / FP 91 / FN 72 / TN 19658\","
+        }
+      ]
+    },
+    "insight_report_v2.md": {
+      "hits": 1,
+      "exempt": false,
+      "samples": [
+        {
+          "line": 40,
+          "text": "- 中置信提示：有 4 条评论概率落在 0.5-0.9744 区间，当前判为正常但建议人工抽查（疑似负面）。"
+        }
+      ]
+    },
+    "insight_report_v2_en.md": {
+      "hits": 1,
+      "exempt": false,
+      "samples": [
+        {
+          "line": 40,
+          "text": "- 4 review(s) fall in the mid-confidence band (prob 0.5-0.9744): treated as normal but flagged for manual revi"
+        }
+      ]
+    }
+  }
+}

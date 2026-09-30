@@ -1,6 +1,6 @@
 # 文件地图（由 make_ai_handoff.py 自动生成，勿手改）
 
-> 生成时间：2026-09-30 22:10；共 346 个条目；体积单位 KB/MB。
+> 生成时间：2026-09-30 22:36；共 349 个条目；体积单位 KB/MB。
 
 ## 提交物（5 项，43.2 MB）
 
@@ -57,14 +57,14 @@
 | `confidence_tiered.md` | 0.7 KB | 三星补漏置信度分层与中置信剔除记录 |
 | `significance_test.md` | 0.6 KB | Welch t 检验（p=0.000932） |
 
-## 过程与交接文档（35 项，0.4 MB）
+## 过程与交接文档（36 项，0.4 MB）
 
 | 文件 | 大小 | 用途 |
 |---|---|---|
-| `docs/frozen_execution_checklist.md` | 53.9 KB |  |
+| `docs/frozen_execution_checklist.md` | 54.2 KB |  |
+| `PROGRESS_SYNC.md` | 37.2 KB |  |
 | `docs/gap_and_roadmap_inventory.md` | 36.8 KB |  |
 | `docs/final_project_review_and_execution_plan.md` | 36.0 KB |  |
-| `PROGRESS_SYNC.md` | 35.9 KB |  |
 | `docs/retrospective_and_reflection.md` | 27.9 KB |  |
 | `docs/project_full_record.md` | 21.6 KB | 初赛→复赛全流程记录 |
 | `docs/v2_acceptance_benchmark.md` | 20.4 KB |  |
@@ -89,6 +89,7 @@
 | `docs/evidence_index_exp.md` | 4.4 KB |  |
 | `docs/e2_erratum.md` | 4.2 KB |  |
 | `docs/repo_hygiene_scan.md` | 3.7 KB |  |
+| `docs/v2_gate_verdict.md` | 3.6 KB |  |
 | `docs/dataset_audit.md` | 3.5 KB | 数据集字段考古 |
 | `docs/D14_resume_checklist.md` | 3.0 KB | 收尾四步清单（录视频/打包/上传/补推送） |
 | `docs/drift_plan.md` | 2.8 KB | 数据漂移监控方案 |
@@ -220,7 +221,7 @@
 | `sample_reviews_100.csv` | 57.9 KB |  |
 | `agent_test_input.csv` | 27.9 KB |  |
 
-## 代码（110 项，0.5 MB）
+## 代码（111 项，0.5 MB）
 
 | 文件 | 大小 | 用途 |
 |---|---|---|
@@ -260,6 +261,7 @@
 | `train_roberta_quick.py` | 5.2 KB |  |
 | `v2_w1_seg_threshold.py` | 5.1 KB |  |
 | `predict_core.py` | 5.1 KB | 共享推理核心（含非英文显式拒绝） |
+| `v2_m0_switch_check.py` | 4.9 KB |  |
 | `fix_ppt_threshold.py` | 4.8 KB |  |
 | `make_video_assets.py` | 4.5 KB |  |
 | `v2_record_incident.py` | 4.5 KB |  |
@@ -391,11 +393,12 @@
 | `multi_label_model/` | 256.1 MB | 冻结的多标签归因模型权重（约 256MB），不入 git |
 | `sound_model/` | 256.1 MB | 冻结的二分类模型权重（约 256MB），不入 git |
 
-## 其他（32 项，46.2 MB）
+## 其他（33 项，46.2 MB）
 
 | 文件 | 大小 | 用途 |
 |---|---|---|
 | `更新世界的锋芒_SoundInsight_演示视频.mp4` | 46.1 MB |  |
+| `v2/m0_switch_report.json` | 17.2 KB |  |
 | `v2/w14_w15_w16_report.md` | 7.9 KB |  |
 | `v2/w17_failure_stats.json` | 6.5 KB |  |
 | `v2/w7_calibration.json` | 4.4 KB |  |
