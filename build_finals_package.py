@@ -100,6 +100,7 @@ OTHER_FILES = [
     "v2/w5_cv.json", "v2/m0_switch_report.json", "docs/W5_cv_interpretation.md",
     "docs/w11_data_efficiency.md", "docs/w13_keyword_miss_rate.md",
     "docs/N6_review_risk_list.md", "w11_data_efficiency.py", "w13_keyword_miss_rate.py",
+    "v2_w4_mine.py", "v2_w4_estimate.py", "check_url_consistency.py",
     # 审计与卫生
     "number_audit.md", "docs/repo_hygiene_scan.md",
     "docs/pre_lock_completeness_audit.md", "docs/completeness_audit_round2.md",

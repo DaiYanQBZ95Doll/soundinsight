@@ -1,13 +1,13 @@
 # 文档数字一致性审计
-> 运行时刻：2026-10-01 03:32:14（用于判别报告新鲜度；脚本异常退出时本文件不会被改写）
+> 运行时刻：2026-10-01 03:42:04（用于判别报告新鲜度；脚本异常退出时本文件不会被改写）
 
 ## 关键文件完整性（体积下限，防静默截断）
-- [PASS] docs/frozen_execution_checklist.md：64180 B ≥ 40000 B
-- [PASS] PROGRESS_SYNC.md：43614 B ≥ 20000 B
+- [PASS] docs/frozen_execution_checklist.md：64571 B ≥ 40000 B
+- [PASS] PROGRESS_SYNC.md：44524 B ≥ 20000 B
 - [PASS] docs/final_project_review_and_execution_plan.md：37212 B ≥ 15000 B
 - [PASS] competition_v4.md：21214 B ≥ 20000 B
 - [PASS] results_summary.md：4870 B ≥ 4000 B
-- [PASS] AI_HANDOFF/manifest.json：82867 B ≥ 20000 B
+- [PASS] AI_HANDOFF/manifest.json：84350 B ≥ 20000 B
 - 结论：关键文件体积均正常
 
 ## 产品代码健康检查（编译 + 标签污染）
@@ -18,6 +18,9 @@
 - [PASS] demo_sound.py：可编译且无标签污染
 - [PASS] api_server.py：可编译且无标签污染
 - [PASS] text_utils.py：可编译且无标签污染
+- [PASS] predict_core.py：可编译且无标签污染
+- [PASS] deployment/app.py：可编译且无标签污染
+- [PASS] download_models.py：可编译且无标签污染
 - 结论：产品模块健康（编译通过、无 [v1]/[v2] 直贴数字）
 
 ## 决赛主文档数字核对（与 v2 证据一致）
@@ -244,9 +247,25 @@
 - [PASS] docs/N_line_handoff_protocol.md：无未标注的代际混用
 - [PASS] docs/project_full_record.md：无未标注的代际混用
 - [PASS] PROGRESS_SYNC.md：无未标注的代际混用
+- [PASS] docs/v2_gate_verdict.md：无未标注的代际混用
+- [PASS] docs/DoD_completion_table.md：无未标注的代际混用
+- [PASS] docs/w1_longtext_variants.md：无未标注的代际混用
+- [PASS] docs/w17_failure_cases.md：无未标注的代际混用
+- [PASS] docs/e2_erratum.md：无未标注的代际混用
+- [PASS] docs/w17_confidence_actions.md：无未标注的代际混用
+- [PASS] docs/W5_cv_interpretation.md：无未标注的代际混用
+- [PASS] docs/w11_data_efficiency.md：无未标注的代际混用
+- [PASS] docs/w13_keyword_miss_rate.md：无未标注的代际混用
+- [PASS] docs/N1_narrative_mainline.md：无未标注的代际混用
+- [PASS] docs/N1b_downgrade_narrative.md：无未标注的代际混用
+- [PASS] docs/N2_narrative_final.md：无未标注的代际混用
+- [PASS] docs/N3_calibration_evidence.md：无未标注的代际混用
+- [PASS] docs/N4_target_argument.md：无未标注的代际混用
+- [PASS] docs/N5_qna_factbase.md：无未标注的代际混用
+- [PASS] docs/N6_review_risk_list.md：无未标注的代际混用
 
 ## 否定性状态断言检查（D7）
-- [PASS] 20 份当前态文档中，否定性状态断言均带日期/来源指针或属豁免语境
+- [PASS] 36 份当前态文档中，否定性状态断言均带日期/来源指针或属豁免语境
 
 ## 跨材料口径一致性检查（M0b）
 - [PASS] README 含全部三句权威表述要素

@@ -161,14 +161,27 @@ GEN_TAGS = ("[v1]", "[v2]")
 #   导致包内 Demo 运行失败而数字审计全绿——本清单与检查即为该事故的机械化防护）
 PRODUCT_MODULES = ["report_builder.py", "deployment/report_builder.py",
                    "soundinsight_agent.py", "demo_sound_v2.py", "demo_sound.py",
-                   "api_server.py", "text_utils.py"]
+                   "api_server.py", "text_utils.py", "predict_core.py",
+                   "deployment/app.py", "download_models.py"]
 TAG_GLUED = re.compile(r"\d\[v[12]\]")
 GEN_TOKENS = {
     "v1": ["0.6871", "0.9744", "0.6234", "0.7191", "0.6241", "0.000932"],
     "v2": ["0.7220", "0.7206", "0.7811", "0.8273", "0.5333"],  # E5 填入：F1@调优/F1@0.5/PR-AUC/归因宏F1/高音F1
 }
 CURRENT_GEN = os.environ.get("DSH_DOC_GEN", "v1")
-GEN_FILES = PAIR_FILES + ["docs/project_full_record.md", "PROGRESS_SYNC.md"]
+GEN_FILES = PAIR_FILES + [
+    "docs/project_full_record.md", "PROGRESS_SYNC.md",
+    # 2026-10-01 扩充：决赛阶段新增的、含两代数字的证据与叙事文档
+    "docs/v2_gate_verdict.md", "docs/DoD_completion_table.md",
+    "docs/w1_longtext_variants.md", "docs/w17_failure_cases.md",
+    "docs/e2_erratum.md", "docs/w17_confidence_actions.md",
+    "docs/W5_cv_interpretation.md", "docs/w11_data_efficiency.md",
+    "docs/w13_keyword_miss_rate.md",
+    "docs/N1_narrative_mainline.md", "docs/N1b_downgrade_narrative.md",
+    "docs/N2_narrative_final.md", "docs/N3_calibration_evidence.md",
+    "docs/N4_target_argument.md", "docs/N5_qna_factbase.md",
+    "docs/N6_review_risk_list.md",
+]
 
 # D7：否定性状态断言的触发词 / 豁免语境 / 豁免指针 / 检查范围（当前态文档）
 STATUS_TRIGGERS = ("未使用", "无出处", "查无", "不存在", "未调用", "从未调用",

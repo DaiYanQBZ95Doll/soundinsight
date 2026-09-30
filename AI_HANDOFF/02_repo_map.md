@@ -1,13 +1,13 @@
 # 文件地图（由 make_ai_handoff.py 自动生成，勿手改）
 
-> 生成时间：2026-10-01 03:36；共 394 个条目；体积单位 KB/MB。
+> 生成时间：2026-10-01 03:46；共 395 个条目；体积单位 KB/MB。
 
 ## 提交物（5 项，43.4 MB）
 
 | 文件 | 大小 | 用途 |
 |---|---|---|
 | `更新世界的锋芒_SoundInsight_复赛作品.zip` | 42.4 MB |  |
-| `更新世界的锋芒_SoundInsight_其他材料.zip` | 691.6 KB |  |
+| `更新世界的锋芒_SoundInsight_其他材料.zip` | 702.3 KB |  |
 | `更新世界的锋芒_SoundInsight_复赛作品.pdf` | 210.1 KB |  |
 | `更新世界的锋芒_SoundInsight_Demo.zip` | 105.6 KB |  |
 | `更新世界的锋芒_SoundInsight_复赛作品.docx` | 48.0 KB |  |
@@ -32,7 +32,7 @@
 
 | 文件 | 大小 | 用途 |
 |---|---|---|
-| `number_audit.md` | 12.7 KB | 数字一致性审计结果（含官方模板格式对照节） |
+| `number_audit.md` | 13.9 KB | 数字一致性审计结果（含官方模板格式对照节） |
 | `error_taxonomy.md` | 8.2 KB | 错误分类学：FP/FN 构成 + 标注噪声人工终审 |
 | `llm_baseline.md` | 6.4 KB | LLM 对照报告（deepseek + qwen3.7-plus，含循环性红利声明） |
 | `edge_case_benchmark.py` | 5.6 KB |  |
@@ -61,8 +61,8 @@
 
 | 文件 | 大小 | 用途 |
 |---|---|---|
-| `docs/frozen_execution_checklist.md` | 62.7 KB |  |
-| `PROGRESS_SYNC.md` | 42.6 KB |  |
+| `docs/frozen_execution_checklist.md` | 63.1 KB |  |
+| `PROGRESS_SYNC.md` | 43.5 KB |  |
 | `docs/gap_and_roadmap_inventory.md` | 40.9 KB |  |
 | `docs/final_project_review_and_execution_plan.md` | 36.3 KB |  |
 | `docs/retrospective_and_reflection.md` | 27.9 KB |  |
@@ -238,14 +238,14 @@
 | `sample_reviews_100.csv` | 57.9 KB |  |
 | `agent_test_input.csv` | 27.9 KB |  |
 
-## 代码（133 项，0.6 MB）
+## 代码（134 项，0.6 MB）
 
 | 文件 | 大小 | 用途 |
 |---|---|---|
-| `check_doc_numbers.py` | 37.3 KB | 数字审计 + 模板格式对照脚本 |
+| `check_doc_numbers.py` | 38.0 KB | 数字审计 + 模板格式对照脚本 |
 | `scan_repo_hygiene.py` | 20.0 KB |  |
 | `v2_meta_analysis.py` | 19.1 KB |  |
-| `build_finals_package.py` | 13.8 KB |  |
+| `build_finals_package.py` | 13.9 KB |  |
 | `v2_w4_mine.py` | 12.4 KB |  |
 | `build_pdf_v2.py` | 12.4 KB |  |
 | `v2_w1_longtext.py` | 12.1 KB |  |
@@ -275,6 +275,7 @@
 | `learning_curve.py` | 6.8 KB |  |
 | `diagnose_treble.py` | 6.6 KB |  |
 | `fetch_electronics.py` | 6.5 KB |  |
+| `v2_w4_estimate.py` | 6.3 KB |  |
 | `recover_meta_fields.py` | 6.0 KB |  |
 | `v2_w1_hybrid_select.py` | 6.0 KB |  |
 | `gen_v2_artifacts.py` | 5.8 KB |  |
