@@ -1,13 +1,13 @@
 # 文件地图（由 make_ai_handoff.py 自动生成，勿手改）
 
-> 生成时间：2026-10-01 05:21；共 410 个条目；体积单位 KB/MB。
+> 生成时间：2026-10-01 05:25；共 410 个条目；体积单位 KB/MB。
 
 ## 提交物（5 项，43.5 MB）
 
 | 文件 | 大小 | 用途 |
 |---|---|---|
 | `更新世界的锋芒_SoundInsight_复赛作品.zip` | 42.4 MB |  |
-| `更新世界的锋芒_SoundInsight_其他材料.zip` | 728.9 KB |  |
+| `更新世界的锋芒_SoundInsight_其他材料.zip` | 729.4 KB |  |
 | `更新世界的锋芒_SoundInsight_复赛作品.pdf` | 210.1 KB |  |
 | `更新世界的锋芒_SoundInsight_Demo.zip` | 106.5 KB |  |
 | `更新世界的锋芒_SoundInsight_复赛作品.docx` | 48.0 KB |  |
@@ -61,8 +61,8 @@
 
 | 文件 | 大小 | 用途 |
 |---|---|---|
-| `docs/frozen_execution_checklist.md` | 64.8 KB |  |
-| `PROGRESS_SYNC.md` | 47.7 KB |  |
+| `docs/frozen_execution_checklist.md` | 65.2 KB |  |
+| `PROGRESS_SYNC.md` | 48.6 KB |  |
 | `docs/gap_and_roadmap_inventory.md` | 42.6 KB |  |
 | `docs/final_project_review_and_execution_plan.md` | 36.3 KB |  |
 | `docs/retrospective_and_reflection.md` | 27.9 KB |  |
