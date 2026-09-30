@@ -1,13 +1,13 @@
 # 文件地图（由 make_ai_handoff.py 自动生成，勿手改）
 
-> 生成时间：2026-10-01 04:44；共 406 个条目；体积单位 KB/MB。
+> 生成时间：2026-10-01 04:49；共 408 个条目；体积单位 KB/MB。
 
-## 提交物（5 项，43.4 MB）
+## 提交物（5 项，43.5 MB）
 
 | 文件 | 大小 | 用途 |
 |---|---|---|
 | `更新世界的锋芒_SoundInsight_复赛作品.zip` | 42.4 MB |  |
-| `更新世界的锋芒_SoundInsight_其他材料.zip` | 715.6 KB |  |
+| `更新世界的锋芒_SoundInsight_其他材料.zip` | 728.9 KB |  |
 | `更新世界的锋芒_SoundInsight_复赛作品.pdf` | 210.1 KB |  |
 | `更新世界的锋芒_SoundInsight_Demo.zip` | 105.8 KB |  |
 | `更新世界的锋芒_SoundInsight_复赛作品.docx` | 48.0 KB |  |
@@ -62,8 +62,8 @@
 | 文件 | 大小 | 用途 |
 |---|---|---|
 | `docs/frozen_execution_checklist.md` | 64.3 KB |  |
-| `PROGRESS_SYNC.md` | 46.8 KB |  |
-| `docs/gap_and_roadmap_inventory.md` | 42.2 KB |  |
+| `PROGRESS_SYNC.md` | 47.7 KB |  |
+| `docs/gap_and_roadmap_inventory.md` | 42.6 KB |  |
 | `docs/final_project_review_and_execution_plan.md` | 36.3 KB |  |
 | `docs/retrospective_and_reflection.md` | 27.9 KB |  |
 | `docs/project_full_record.md` | 21.6 KB | 初赛→复赛全流程记录 |
@@ -215,7 +215,7 @@
 | `llm_qwen_metrics.json` | 1.0 KB |  |
 | `learning_curve_results.json` | 0.1 KB |  |
 
-## 数据（21 项，310.6 MB）
+## 数据（22 项，310.7 MB）
 
 | 文件 | 大小 | 用途 |
 |---|---|---|
@@ -238,17 +238,18 @@
 | `local_data.csv` | 2.1 MB |  |
 | `train_quick.csv` | 1.2 MB |  |
 | `v2/w4_sample.csv` | 257.1 KB |  |
+| `v2/gate_outside_sample.csv` | 108.6 KB |  |
 | `sample_reviews_100.csv` | 57.9 KB |  |
 | `agent_test_input.csv` | 27.9 KB |  |
 
-## 代码（139 项，0.6 MB）
+## 代码（140 项，0.7 MB）
 
 | 文件 | 大小 | 用途 |
 |---|---|---|
 | `check_doc_numbers.py` | 41.8 KB | 数字审计 + 模板格式对照脚本 |
 | `scan_repo_hygiene.py` | 20.0 KB |  |
 | `v2_meta_analysis.py` | 19.1 KB |  |
-| `build_finals_package.py` | 14.0 KB |  |
+| `build_finals_package.py` | 14.2 KB |  |
 | `v2_w4_mine.py` | 12.4 KB |  |
 | `build_pdf_v2.py` | 12.4 KB |  |
 | `v2_w1_longtext.py` | 12.1 KB |  |
@@ -275,6 +276,7 @@
 | `md_to_pdf.py` | 7.6 KB | 主文档 Markdown → PDF（内嵌中文字体） |
 | `w13_keyword_miss_rate.py` | 7.4 KB |  |
 | `v2_w5_cv.py` | 7.4 KB |  |
+| `v2_gate_outside_probe.py` | 7.4 KB |  |
 | `v2_w4_prescreen.py` | 7.3 KB |  |
 | `v2_w6_split.py` | 7.0 KB |  |
 | `learning_curve.py` | 6.8 KB |  |

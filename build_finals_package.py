@@ -101,7 +101,10 @@ OTHER_FILES = [
     "docs/w11_data_efficiency.md", "docs/w13_keyword_miss_rate.md",
     "docs/N6_review_risk_list.md", "w11_data_efficiency.py", "w13_keyword_miss_rate.py",
     "v2_w4_mine.py", "v2_w4_estimate.py", "v2_w4_prescreen.py",
-    "docs/w4_prescreen_estimate.md", "v2/w4_prescreen.json", "check_url_consistency.py",
+    "docs/w4_prescreen_estimate.md", "v2/w4_prescreen.json",
+    "v2_gate_outside_probe.py", "docs/outside_gate_fp.md",
+    "docs/difficulty_stratification.md", "outside_gate_fp.py",
+    "difficulty_stratification.py", "check_url_consistency.py",
     "check_refs_and_deps.py",
     # 审计与卫生
     "number_audit.md", "docs/repo_hygiene_scan.md",
