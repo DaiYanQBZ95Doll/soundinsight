@@ -1,0 +1,80 @@
+{
+  "gen": "[v2]",
+  "protocol": "5 折分层 CV；同时报无偏（固定阈值）与折内选阈值两种口径",
+  "max_len": 256,
+  "epochs": 3,
+  "seed": 42,
+  "folds": [
+    {
+      "fold": 1,
+      "n_val": 20000,
+      "pos_val": 256,
+      "f1_fixed@0.60": 0.6694,
+      "P_fixed": 71.6,
+      "R_fixed": 62.9,
+      "best_thr_infold": 0.25,
+      "f1_best_infold": 0.6855,
+      "P_best": 66.2,
+      "R_best": 71.1
+    },
+    {
+      "fold": 2,
+      "n_val": 20000,
+      "pos_val": 256,
+      "f1_fixed@0.60": 0.5947,
+      "P_fixed": 77.0,
+      "R_fixed": 48.4,
+      "best_thr_infold": 0.25,
+      "f1_best_infold": 0.686,
+      "P_best": 68.1,
+      "R_best": 69.1
+    },
+    {
+      "fold": 3,
+      "n_val": 20000,
+      "pos_val": 256,
+      "f1_fixed@0.60": 0.6829,
+      "P_fixed": 79.0,
+      "R_fixed": 60.2,
+      "best_thr_infold": 0.2,
+      "f1_best_infold": 0.76,
+      "P_best": 71.1,
+      "R_best": 81.6
+    },
+    {
+      "fold": 4,
+      "n_val": 20000,
+      "pos_val": 256,
+      "f1_fixed@0.60": 0.6559,
+      "P_fixed": 80.2,
+      "R_fixed": 55.5,
+      "best_thr_infold": 0.25,
+      "f1_best_infold": 0.7059,
+      "P_best": 70.9,
+      "R_best": 70.3
+    },
+    {
+      "fold": 5,
+      "n_val": 20000,
+      "pos_val": 256,
+      "f1_fixed@0.60": 0.689,
+      "P_fixed": 69.4,
+      "R_fixed": 68.4,
+      "best_thr_infold": 0.15,
+      "f1_best_infold": 0.7057,
+      "P_best": 60.4,
+      "R_best": 84.8
+    }
+  ],
+  "summary": {
+    "fixed_threshold": 0.6,
+    "f1_fixed_mean": 0.6584,
+    "f1_fixed_std": 0.0378,
+    "f1_fixed_fluctuation_pct": 5.7,
+    "f1_best_infold_mean": 0.7086,
+    "f1_best_infold_std": 0.0304,
+    "note": "`f1_fixed` 不在折内做任何选择，**无偏**；`f1_best_infold` 与 v1 口径可比但**偏乐观**（v1 即 0.6234±0.0240，波动 3.9%）。验收线：波动 ≤5%（看无偏口径）。"
+  },
+  "cv_stability_pass": false,
+  "elapsed_min": 156.4
+}

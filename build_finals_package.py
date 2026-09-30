@@ -97,7 +97,7 @@ OTHER_FILES = [
     "docs/N4_target_argument.md", "docs/N5_qna_factbase.md",
     "docs/M8a_submission_precheck.md", "docs/M3b_judge_access_guide.md",
     "docs/sandbox_operation_notes.md", "docs/llm_credential_status.md",
-    "v2/w5_cv.json", "v2/m0_switch_report.json",
+    "v2/w5_cv.json", "v2/m0_switch_report.json", "docs/W5_cv_interpretation.md",
     # 审计与卫生
     "number_audit.md", "docs/repo_hygiene_scan.md",
     "docs/pre_lock_completeness_audit.md", "docs/completeness_audit_round2.md",

@@ -1,13 +1,13 @@
 # 文件地图（由 make_ai_handoff.py 自动生成，勿手改）
 
-> 生成时间：2026-10-01 01:29；共 379 个条目；体积单位 KB/MB。
+> 生成时间：2026-10-01 02:16；共 382 个条目；体积单位 KB/MB。
 
 ## 提交物（5 项，43.4 MB）
 
 | 文件 | 大小 | 用途 |
 |---|---|---|
 | `更新世界的锋芒_SoundInsight_复赛作品.zip` | 42.4 MB |  |
-| `更新世界的锋芒_SoundInsight_其他材料.zip` | 673.5 KB |  |
+| `更新世界的锋芒_SoundInsight_其他材料.zip` | 676.0 KB |  |
 | `更新世界的锋芒_SoundInsight_复赛作品.pdf` | 210.1 KB |  |
 | `更新世界的锋芒_SoundInsight_Demo.zip` | 105.0 KB |  |
 | `更新世界的锋芒_SoundInsight_复赛作品.docx` | 48.0 KB |  |
@@ -57,13 +57,13 @@
 | `confidence_tiered.md` | 0.7 KB | 三星补漏置信度分层与中置信剔除记录 |
 | `significance_test.md` | 0.6 KB | Welch t 检验（p=0.000932） |
 
-## 过程与交接文档（45 项，0.5 MB）
+## 过程与交接文档（46 项，0.5 MB）
 
 | 文件 | 大小 | 用途 |
 |---|---|---|
-| `docs/frozen_execution_checklist.md` | 57.4 KB |  |
+| `docs/frozen_execution_checklist.md` | 58.0 KB |  |
+| `PROGRESS_SYNC.md` | 41.2 KB |  |
 | `docs/gap_and_roadmap_inventory.md` | 40.7 KB |  |
-| `PROGRESS_SYNC.md` | 40.4 KB |  |
 | `docs/final_project_review_and_execution_plan.md` | 36.0 KB |  |
 | `docs/retrospective_and_reflection.md` | 27.9 KB |  |
 | `docs/project_full_record.md` | 21.6 KB | 初赛→复赛全流程记录 |
@@ -83,10 +83,10 @@
 | `docs/external_sources_register.md` | 6.5 KB |  |
 | `docs/work_summary_d7.md` | 6.2 KB |  |
 | `docs/N2_narrative_final.md` | 6.2 KB |  |
+| `docs/overnight_summary.md` | 6.2 KB |  |
 | `docs/N1_narrative_mainline.md` | 6.0 KB |  |
 | `docs/N1b_downgrade_narrative.md` | 5.8 KB |  |
 | `docs/N5_qna_factbase.md` | 5.6 KB |  |
-| `docs/overnight_summary.md` | 5.0 KB |  |
 | `docs/SoundInsight决赛备战_现状盘点清单.md` | 4.8 KB |  |
 | `docs/w1_longtext_variants.md` | 4.7 KB |  |
 | `docs/evidence_index_exp.md` | 4.4 KB |  |
@@ -94,9 +94,9 @@
 | `docs/e2_erratum.md` | 4.2 KB |  |
 | `docs/DoD_completion_table.md` | 3.6 KB |  |
 | `docs/v2_gate_verdict.md` | 3.6 KB |  |
+| `docs/repo_hygiene_scan.md` | 3.6 KB |  |
 | `docs/dataset_audit.md` | 3.5 KB | 数据集字段考古 |
 | `docs/M8a_submission_precheck.md` | 3.5 KB |  |
-| `docs/repo_hygiene_scan.md` | 3.5 KB |  |
 | `docs/N4_target_argument.md` | 3.5 KB |  |
 | `docs/N3_calibration_evidence.md` | 3.1 KB |  |
 | `docs/M3b_judge_access_guide.md` | 3.1 KB |  |
@@ -105,6 +105,7 @@
 | `docs/drift_plan.md` | 2.8 KB | 数据漂移监控方案 |
 | `docs/w17_confidence_actions.md` | 2.8 KB |  |
 | `AI_INDUCTION_REDLINE.md` | 2.7 KB |  |
+| `docs/W5_cv_interpretation.md` | 2.2 KB |  |
 | `docs/year_split_output.txt` | 0.8 KB | 年份分桶脚本输出原文 |
 
 ## 演示材料（6 项，18.1 MB）
@@ -234,7 +235,7 @@
 | `sample_reviews_100.csv` | 57.9 KB |  |
 | `agent_test_input.csv` | 27.9 KB |  |
 
-## 代码（125 项，0.6 MB）
+## 代码（126 项，0.6 MB）
 
 | 文件 | 大小 | 用途 |
 |---|---|---|
@@ -293,6 +294,7 @@
 | `verify_finals_package.py` | 3.8 KB |  |
 | `merge_refine.py` | 3.8 KB |  |
 | `train_multilabel.py` | 3.8 KB |  |
+| `v2_cv_doc.py` | 3.7 KB |  |
 | `distilbert_vs_llm.py` | 3.6 KB |  |
 | `extend_data.py` | 3.6 KB |  |
 | `baseline_cv.py` | 3.5 KB |  |
@@ -420,7 +422,7 @@
 | `multi_label_model/` | 256.1 MB | 冻结的多标签归因模型权重（约 256MB），不入 git |
 | `sound_model/` | 256.1 MB | 冻结的二分类模型权重（约 256MB），不入 git |
 
-## 其他（36 项，46.2 MB）
+## 其他（37 项，46.2 MB）
 
 | 文件 | 大小 | 用途 |
 |---|---|---|
@@ -436,6 +438,7 @@
 | `v2/w1_hybrid_result.json` | 2.7 KB |  |
 | `LICENSE` | 2.6 KB |  |
 | `v2/w2_perclass_thresholds.json` | 2.3 KB |  |
+| `v2/w5_cv.json` | 2.0 KB |  |
 | `hashes.txt` | 1.9 KB |  |
 | `v2/w6_split_manifest.json` | 1.8 KB |  |
 | `v2/w7_calibration.md` | 1.5 KB |  |
