@@ -137,6 +137,39 @@ def strip_guidance(doc) -> int:
     return removed
 
 
+def polish_cover_and_checklist(doc) -> tuple[bool, int]:
+    """封面换成"定稿作品"并加方案行；勾选第七节提交物清单（我们四件齐备）。
+
+    返回 (是否改了封面, 勾选数)。模板原文"提交模板"字样若留在提交物里，会显得没定稿。
+    """
+    cover_done, ticked = False, 0
+    for p in doc.paragraphs:
+        t = p.text.strip()
+        if t.startswith("AI+跨境黑客松巅峰赛") and "模板" in t:
+            for run in p.runs:
+                run.text = ""
+            if p.runs:
+                p.runs[0].text = "AI+跨境黑客松巅峰赛 · 决赛入围定稿作品"
+            else:
+                p.add_run("AI+跨境黑客松巅峰赛 · 决赛入围定稿作品")
+            # 在其后插入方案信息行
+            new_p = p.insert_paragraph_before("")
+            p._p.addnext(new_p._p)
+            new_p.text = ("SoundInsight —— 蓝牙耳机音质差评智能归因系统　｜　"
+                          "团队：更新世界的锋芒　｜　参赛场景：AI 市场洞察")
+            for run in new_p.runs:
+                run.bold = True
+                run.font.size = Pt(12)
+            cover_done = True
+        elif t.startswith("☐"):
+            for run in p.runs:
+                run.text = run.text.replace("☐", "☑")
+            if "☑" not in p.text:      # 无 run 的情况下直接改段首
+                p.text = "☑" + t[1:]
+            ticked += 1
+    return cover_done, ticked
+
+
 def insert_after(doc, paragraph, lines: list[str]) -> int:
     """在段落之后依次插入内容（正文段落或 Word 表格），返回插入的块数。"""
     anchor = paragraph._p
@@ -186,6 +219,8 @@ def main() -> int:
     print(f"模板：段落 {len(doc.paragraphs)}、表格 {len(doc.tables)}")
     n_guide = strip_guidance(doc)
     print(f"删除模板引导语/占位段落：{n_guide}")
+    cover, ticked = polish_cover_and_checklist(doc)
+    print(f"封面改为定稿作品：{'是' if cover else '否'}｜提交物清单勾选：{ticked} 项")
     inserted, matched = 0, []
     for para in list(doc.paragraphs):
         text = para.text.strip()
