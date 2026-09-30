@@ -1,13 +1,13 @@
 # 文件地图（由 make_ai_handoff.py 自动生成，勿手改）
 
-> 生成时间：2026-10-01 03:55；共 395 个条目；体积单位 KB/MB。
+> 生成时间：2026-10-01 04:05；共 396 个条目；体积单位 KB/MB。
 
 ## 提交物（5 项，43.4 MB）
 
 | 文件 | 大小 | 用途 |
 |---|---|---|
 | `更新世界的锋芒_SoundInsight_复赛作品.zip` | 42.4 MB |  |
-| `更新世界的锋芒_SoundInsight_其他材料.zip` | 702.3 KB |  |
+| `更新世界的锋芒_SoundInsight_其他材料.zip` | 704.7 KB |  |
 | `更新世界的锋芒_SoundInsight_复赛作品.pdf` | 210.1 KB |  |
 | `更新世界的锋芒_SoundInsight_Demo.zip` | 105.6 KB |  |
 | `更新世界的锋芒_SoundInsight_复赛作品.docx` | 48.0 KB |  |
@@ -68,14 +68,14 @@
 | `docs/retrospective_and_reflection.md` | 27.9 KB |  |
 | `docs/project_full_record.md` | 21.6 KB | 初赛→复赛全流程记录 |
 | `docs/v2_acceptance_benchmark.md` | 20.4 KB |  |
+| `docs/D13_seal_declaration.md` | 20.1 KB | D13 封包声明（提交技术质检终审） |
 | `docs/final_review_and_execution_plan.md` | 19.9 KB |  |
-| `docs/D13_seal_declaration.md` | 19.7 KB | D13 封包声明（提交技术质检终审） |
-| `docs/file_inventory.md` | 12.3 KB | 项目文件总索引 |
+| `docs/file_inventory.md` | 12.8 KB | 项目文件总索引 |
 | `PROJECT_BRIEF_QWEN.md` | 11.2 KB |  |
+| `docs/N_line_handoff_protocol.md` | 10.6 KB |  |
 | `docs/overnight_summary.md` | 10.5 KB |  |
 | `docs/pre_lock_completeness_audit.md` | 10.4 KB |  |
-| `docs/N_line_handoff_protocol.md` | 10.0 KB |  |
-| `docs/finals_stage.md` | 9.2 KB |  |
+| `docs/finals_stage.md` | 9.7 KB |  |
 | `QWEN_HANDOFF.md` | 9.1 KB |  |
 | `docs/process_review_d10.md` | 8.5 KB |  |
 | `docs/legacy_materials_notice.md` | 8.3 KB |  |
@@ -238,7 +238,7 @@
 | `sample_reviews_100.csv` | 57.9 KB |  |
 | `agent_test_input.csv` | 27.9 KB |  |
 
-## 代码（134 项，0.6 MB）
+## 代码（135 项，0.6 MB）
 
 | 文件 | 大小 | 用途 |
 |---|---|---|
@@ -295,6 +295,7 @@
 | `v2_record_incident.py` | 4.5 KB |  |
 | `make_samples.py` | 4.4 KB |  |
 | `verify_finals_package.py` | 4.4 KB |  |
+| `check_refs_and_deps.py` | 4.4 KB |  |
 | `retime_srt.py` | 4.2 KB |  |
 | `tune_per_class_threshold.py` | 4.0 KB |  |
 | `upload_models.py` | 3.9 KB |  |
@@ -444,7 +445,7 @@
 | `v2/w7_calibration.json` | 4.4 KB |  |
 | `v2/w5_final.json` | 3.9 KB |  |
 | `v2/w14_w15_w16_summary.json` | 3.1 KB |  |
-| `视频录制速查.md` | 3.1 KB |  |
+| `视频录制速查.md` | 3.0 KB |  |
 | `v2/m0_switch_report.json` | 2.8 KB |  |
 | `v2/w1_hybrid_result.json` | 2.7 KB |  |
 | `LICENSE` | 2.6 KB |  |

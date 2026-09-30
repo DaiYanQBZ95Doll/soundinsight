@@ -99,7 +99,7 @@
 
 ## 五、落库与验收
 
-1. 执行方把顾问产出合并进仓库（N1 → `docs/N1_narrative_mainline.md`；N4 → `docs/N4_target_choice.md`；如含 N1b → 同文件附录）；
+1. 执行方把顾问产出合并进仓库（N1 → `docs/N1_narrative_mainline.md`；N4 → `docs/N4_target_argument.md`；如含 N1b → 同文件附录）；
 2. 跑 **M0b 跨材料口径审计**（唯一权威表述逐字一致 + `grep` 旧表述零残留）；
 3. 标注来源与状态：**"外部顾问（桌面端）起草 / 决策方定稿"**；未定稿前文件头部标"待决策方定稿"；
 4. 更新 `docs/frozen_execution_checklist.md` 对应项勾选与 `PROGRESS_SYNC.md`；
@@ -129,3 +129,16 @@
 | `docs/external_sources_register.md` | 外部数字三档裁定（含 S1/S2/S3 与使用规则） |
 | `docs/completeness_audit_round2.md` + `docs/pre_lock_completeness_audit.md` | 两轮完整性审计原文（红队自身产出的对照基线） |
 | 本文件 | N 线交接协议与预填指针 |
+
+---
+
+## 附：`N_line_brief.md` 的实际情况（2026-10-01 补记）
+
+本协议 §二 规定：**人侧触发**（决策方决定引入外部顾问 / 使用聊天总线）后，执行方写入
+`docs/N_line_brief.md` 并标记"待总线取件"。**该触发在本轮决赛中始终未发生**——
+决策方未引入外部顾问，N 线（N1–N6）由执行方直接产出：
+
+- N1/N1b：`docs/N1_narrative_mainline.md`、`docs/N1b_downgrade_narrative.md`
+- N2–N6：`docs/N2_narrative_final.md` … `docs/N6_review_risk_list.md`
+
+因此 `docs/N_line_brief.md` **按设计不需要存在**；若后续确要交给外部角色，可按 §三 格式即时生成。

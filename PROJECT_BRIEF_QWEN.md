@@ -177,7 +177,7 @@ learning_curve.png        # 学习曲线（待重跑，修复泄漏）
 - 注意：不要改动任何实验数字，只改叙事和结构
 
 ### 选项 B：信息图/可视化脚本
-- 用 matplotlib 生成 `infographic_progress.png`：
+- （计划项，**未创建**）用 matplotlib 生成 `infographic_progress.png`：
   - 左侧初赛（63 条、F1 0.37、CPU 500s/epoch）
   - 右侧复赛（1257 条、F1 0.69、GPU 35s/epoch）
   - 底部大字：+85.7% F1 提升 | 20× 数据扩充

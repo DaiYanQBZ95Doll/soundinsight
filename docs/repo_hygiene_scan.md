@@ -24,8 +24,8 @@
   - 行 23｜中国大陆手机号｜`19195907942`
   - 行 23｜邮箱地址｜`2799920054@qq.com`
 - `docs/D13_seal_declaration.md`：2 处
-  - 行 25｜中国大陆手机号｜`19195907942`
-  - 行 25｜邮箱地址｜`2799920054@qq.com`
+  - 行 30｜中国大陆手机号｜`19195907942`
+  - 行 30｜邮箱地址｜`2799920054@qq.com`
 - `docs/project_full_record.md`：2 处
   - 行 5｜中国大陆手机号｜`19195907942`
   - 行 5｜邮箱地址｜`2799920054@qq.com`
@@ -42,7 +42,7 @@
 
 ### 3.2 属历史说明 / 诚信记录（有意保留，不修改）
 - `AI_HANDOFF/03_metrics_and_caveats.md`：1 处（行 53）
-- `AI_HANDOFF/06_pending_and_redlines.md`：1 处（行 45）
+- `AI_HANDOFF/06_pending_and_redlines.md`：1 处（行 50）
 - `PROGRESS_SYNC.md`：1 处（行 68）
 - `audit_ppt.py`：1 处（行 69）
 - `check_doc_numbers.py`：3 处（行 38, 39, 69）

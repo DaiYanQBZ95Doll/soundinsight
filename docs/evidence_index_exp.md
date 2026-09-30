@@ -17,7 +17,7 @@
 | `exp01_弱标注交叉验证/` | 弱标注标签下的基线对照与 DistilBERT 5 折 CV | `baseline_cv.log`、`distilbert_cv.log` | 21 KB | **未入库**（可入库：纯文本日志） |
 | `exp02_清洗标签交叉验证/` | LLM 清洗标签下的同一对照（最终口径） | `baseline_cv_clean.log`、`distilbert_cv_clean.log` | 12 KB | **未入库**（可入库） |
 | `exp03_LLM复核与标签清洗/` | RLCA 两阶段标注的原始输入输出（候选 → 复核结果） | `review_result.jsonl`、`neg_review_result.jsonl`、`labeled_llm.csv`、`three_star_result.jsonl` | 39.3 MB | **未入库**（含评论原文与派生标签；`labeled_llm.csv` 已在仓库根目录另有副本） |
-| `exp04_多标签归因/` | 五类多标签模型的训练与产物 | `multilabel.log`、`config.json`、`issue_labels.json`、权重（`model.safetensors`） | 262 MB | **不入库**（权重类，与 `multi_label_model/` 同源） |
+| `exp04_多标签归因/` | 五类多标签模型的训练与产物 | `multilabel.log`、`config.json`、`multi_label_model/issue_labels.json`、权重（`model.safetensors`） | 262 MB | **不入库**（权重类，与 `multi_label_model/` 同源） |
 | `exp05_教师一致性/` | DistilBERT 与 LLM 教师标签的一致性（83.7%±2.1%） | `vs_llm.log` | 6 KB | **未入库**（可入库） |
 | `exp06_最终二分类模型/` | 冻结模型（v1）的训练日志、混淆矩阵、产物 | `training_output.txt`、`train_final.log`、`confusion_matrix.png`、权重 | 262 MB | **部分入库**（`training_output.txt` 已在仓库根目录同名副本；权重与图不入库） |
 | `exp07_ablation_A/`、`exp08_ablation_B/`、`exp09_ablation_C/` | 三组消融（**已入库**，各 3 个跟踪文件） | `config.json`、`training_output.txt`、`confusion_matrix.png` | 各约 40 KB | **已入库** |
