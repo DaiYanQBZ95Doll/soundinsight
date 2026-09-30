@@ -1,21 +1,26 @@
 {
   "purpose": "W6：阈值选择与指标报告分离（消除 A1-8 同集选阈值的乐观偏置）",
-  "label_generation": "[v2]（现行 labeled_llm 的 sound_negative_llm 与 issue_*_llm）",
-  "sample_source": "val_v2.csv 的 20,000 条文本（与 v1 评测集同批样本）",
-  "label_join": {
-    "method": "按 text 精确连接（含 strip 兜底）",
-    "matched": 19996,
-    "missing_dropped": 4
-  },
-  "drift_vs_v1": {
-    "rows_with_different_label": 6,
-    "pct": 0.03,
-    "v1_pos": 251,
-    "v2_pos": 255
-  },
+  "v1_1_correction": "初版从 val_v2 文本取样；实测发现 val_v2 与当前训练划分重叠 79.5%（正例 78.9%），会造成记忆虚高，故改为从**当前标签集的留出划分**取样。",
+  "label_generation": "[v2]（当前 labeled_llm.csv）",
+  "source": "labeled_llm.csv",
+  "source_n": 100000,
+  "source_pos": 1280,
+  "holdout_n": 20000,
+  "holdout_pos": 256,
+  "train_n": 80000,
+  "train_pos": 1024,
   "seed": 42,
-  "test_size": 0.5,
-  "stratify": "sound_negative（现行标签）",
+  "holdout_fraction": 0.2,
+  "split_within_holdout": 0.5,
+  "leak_check_vs_val_v2": {
+    "val_v2_n": 20000,
+    "in_current_train": 15891,
+    "in_current_train_pct": 79.5,
+    "pos_in_current_train": 198,
+    "pos_in_current_train_pct": 78.9,
+    "in_current_holdout": 5112,
+    "conclusion": "val_v2 不再是当前标签集的有效留出集；v1 数字只在 val_v2 上有效，两代不可直比"
+  },
   "roles": {
     "val_v3_tune": "只用于选阈值/校准/早停等一切调参",
     "val_v3_test": "只用于报告最终指标；不得用于任何选择"
@@ -23,7 +28,6 @@
   "columns": [
     "text",
     "sound_negative",
-    "v1_label",
     "issue_bass_llm",
     "issue_clarity_llm",
     "issue_noise_llm",
@@ -32,30 +36,27 @@
   ],
   "tune": {
     "file": "val_v3_tune.csv",
-    "n": 9998,
+    "n": 10000,
     "pos": 128,
     "pos_per_class": [
-      17,
-      44,
-      44,
-      46,
-      5
-    ],
-    "v1_pos_same_rows": 129
+      22,
+      60,
+      41,
+      33,
+      13
+    ]
   },
   "test": {
     "file": "val_v3_test.csv",
-    "n": 9998,
-    "pos": 127,
+    "n": 10000,
+    "pos": 128,
     "pos_per_class": [
-      18,
-      58,
-      33,
-      39,
+      20,
+      55,
+      38,
+      37,
       10
-    ],
-    "v1_pos_same_rows": 122
+    ]
   },
-  "caveat": "对半切后每侧正例约 120 条，单点指标噪声更大（A2-14）；结论须报双侧与样本量，不得只报更优侧。v1_label 列仅供对照，不参与调参。",
-  "v1_reference": "v1 的历史指标须在 val_v2.csv（冻结 v1 标签）上计算，不与本文件混比"
+  "caveat": "留出集正例约 256 条，对半切后每侧约 128 条，单点指标噪声大（A2-14）；结论须报双侧与样本量。"
 }

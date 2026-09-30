@@ -147,6 +147,28 @@ with tempfile.TemporaryDirectory() as td:
     check("登记齐全 → PASS", "[PASS]" in "\n".join(out))
     m.HERE = old_here
 
+print("\n== 6. 否定性状态断言检查（D7）==")
+# 6a：高危否定断言且无日期/来源 → FAIL
+txt = run_with_lines(m.check_status_assertions,
+                     ["- 百炼模型未使用，因此 5.2 栏可留空\n"],
+                     STATUS_FILES=["fake.md"])
+check("否定断言无日期/来源 → FAIL", "[FAIL]" in txt, txt.splitlines()[-1][:70])
+# 6b：同一断言带核验日期 → PASS
+txt = run_with_lines(m.check_status_assertions,
+                     ["- 百炼模型未使用（2026-09-30 实测，见 PROGRESS_SYNC.md）\n"],
+                     STATUS_FILES=["fake.md"])
+check("否定断言带日期/来源 → PASS", "[FAIL]" not in txt and "[PASS]" in txt)
+# 6c：历史/勘误语境豁免 → PASS
+txt = run_with_lines(m.check_status_assertions,
+                     ["- 曾写\"百炼未使用\"，该表述属过时状态，已更正\n"],
+                     STATUS_FILES=["fake.md"])
+check("历史/勘误语境 → 豁免 PASS", "[FAIL]" not in txt)
+# 6d：如实披露"未开展"不触发（不属状态断言范围）
+txt = run_with_lines(m.check_status_assertions,
+                     ["- 未开展用户验证（无渠道，详见 v4 §9.1）\n"],
+                     STATUS_FILES=["fake.md"])
+check("诚实披露未开展 → 不触发", "[FAIL]" not in txt)
+
 print(f"\n结果：{len(PASSED)} 项通过，{len(FAILED)} 项失败")
 if FAILED:
     print("失败项：" + "、".join(FAILED))

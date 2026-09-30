@@ -217,6 +217,9 @@
 - [PASS] docs/project_full_record.md：无未标注的代际混用
 - [PASS] PROGRESS_SYNC.md：无未标注的代际混用
 
+## 否定性状态断言检查（D7）
+- [PASS] 20 份当前态文档中，否定性状态断言均带日期/来源指针或属豁免语境
+
 ## 提交包冻结校验（红线 9）
 - [PASS] hashes.txt 记录的是已提交版本（e6cae286515ef1d2 vs 冻结值 e6cae286515ef1d2）
 - [PASS] 磁盘上的包与已提交版本一致（e6cae286515ef1d2 vs e6cae286515ef1d2）

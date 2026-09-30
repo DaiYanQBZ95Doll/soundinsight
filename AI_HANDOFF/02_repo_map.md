@@ -1,6 +1,6 @@
 # 文件地图（由 make_ai_handoff.py 自动生成，勿手改）
 
-> 生成时间：2026-09-30 18:03；共 299 个条目；体积单位 KB/MB。
+> 生成时间：2026-09-30 18:55；共 307 个条目；体积单位 KB/MB。
 
 ## 提交物（5 项，43.2 MB）
 
@@ -32,7 +32,7 @@
 
 | 文件 | 大小 | 用途 |
 |---|---|---|
-| `number_audit.md` | 11.0 KB | 数字一致性审计结果（含官方模板格式对照节） |
+| `number_audit.md` | 11.1 KB | 数字一致性审计结果（含官方模板格式对照节） |
 | `error_taxonomy.md` | 8.2 KB | 错误分类学：FP/FN 构成 + 标注噪声人工终审 |
 | `llm_baseline.md` | 6.4 KB | LLM 对照报告（deepseek + qwen3.7-plus，含循环性红利声明） |
 | `edge_case_benchmark.py` | 5.6 KB |  |
@@ -60,15 +60,15 @@
 
 | 文件 | 大小 | 用途 |
 |---|---|---|
-| `docs/frozen_execution_checklist.md` | 47.4 KB |  |
+| `docs/frozen_execution_checklist.md` | 48.5 KB |  |
 | `docs/gap_and_roadmap_inventory.md` | 36.8 KB |  |
 | `docs/final_project_review_and_execution_plan.md` | 36.0 KB |  |
+| `PROGRESS_SYNC.md` | 29.9 KB |  |
 | `docs/retrospective_and_reflection.md` | 27.9 KB |  |
-| `PROGRESS_SYNC.md` | 27.3 KB |  |
 | `docs/project_full_record.md` | 21.6 KB | 初赛→复赛全流程记录 |
 | `docs/v2_acceptance_benchmark.md` | 20.4 KB |  |
+| `docs/final_review_and_execution_plan.md` | 19.9 KB |  |
 | `docs/D13_seal_declaration.md` | 19.7 KB | D13 封包声明（提交技术质检终审） |
-| `docs/final_review_and_execution_plan.md` | 19.5 KB |  |
 | `docs/file_inventory.md` | 12.3 KB | 项目文件总索引 |
 | `PROJECT_BRIEF_QWEN.md` | 10.7 KB |  |
 | `QWEN_HANDOFF.md` | 10.7 KB |  |
@@ -81,8 +81,8 @@
 | `docs/completeness_audit_round2.md` | 7.8 KB |  |
 | `docs/external_sources_register.md` | 6.5 KB |  |
 | `docs/work_summary_d7.md` | 6.2 KB |  |
+| `docs/repo_hygiene_scan.md` | 5.4 KB |  |
 | `docs/SoundInsight决赛备战_现状盘点清单.md` | 4.8 KB |  |
-| `docs/repo_hygiene_scan.md` | 4.4 KB |  |
 | `docs/evidence_index_exp.md` | 4.4 KB |  |
 | `docs/dataset_audit.md` | 3.5 KB | 数据集字段考古 |
 | `docs/D14_resume_checklist.md` | 3.0 KB | 收尾四步清单（录视频/打包/上传/补推送） |
@@ -210,11 +210,11 @@
 | `sample_reviews_100.csv` | 57.9 KB |  |
 | `agent_test_input.csv` | 27.9 KB |  |
 
-## 代码（94 项，0.4 MB）
+## 代码（97 项，0.4 MB）
 
 | 文件 | 大小 | 用途 |
 |---|---|---|
-| `check_doc_numbers.py` | 23.5 KB | 数字审计 + 模板格式对照脚本 |
+| `check_doc_numbers.py` | 26.7 KB | 数字审计 + 模板格式对照脚本 |
 | `v2_meta_analysis.py` | 19.1 KB |  |
 | `scan_repo_hygiene.py` | 18.2 KB |  |
 | `build_pdf_v2.py` | 12.4 KB |  |
@@ -228,14 +228,14 @@
 | `ablation_train.py` | 8.2 KB |  |
 | `v2_w2_perclass.py` | 8.1 KB |  |
 | `soundinsight_agent.py` | 8.1 KB | 一键洞察 Agent（md/excel、zh/en、非英文跳过） |
+| `test_audit_checks.py` | 7.9 KB |  |
 | `pack_final.py` | 7.9 KB | 提交包打包与四项自检 |
 | `train_sound_model.py` | 7.8 KB |  |
 | `md_to_pdf.py` | 7.6 KB | 主文档 Markdown → PDF（内嵌中文字体） |
+| `v2_w6_split.py` | 7.0 KB |  |
 | `learning_curve.py` | 6.8 KB |  |
-| `test_audit_checks.py` | 6.6 KB |  |
 | `diagnose_treble.py` | 6.6 KB |  |
 | `fetch_electronics.py` | 6.5 KB |  |
-| `v2_w6_split.py` | 6.3 KB |  |
 | `recover_meta_fields.py` | 6.0 KB |  |
 | `distilbert_cv.py` | 5.4 KB |  |
 | `md_to_docx.py` | 5.4 KB | 主文档 Markdown → Word |
@@ -287,6 +287,7 @@
 | `archive_exp.py` | 1.9 KB |  |
 | `api_server.py` | 1.8 KB | FastAPI 服务（/health、/predict） |
 | `miss_rate.py` | 1.7 KB |  |
+| `v2_w1_leak_check.py` | 1.7 KB |  |
 | `install.bat` | 1.7 KB |  |
 | `prep_quick_split.py` | 1.6 KB |  |
 | `verify_download_urls.py` | 1.5 KB |  |
@@ -303,6 +304,8 @@
 | `requirements.txt` | 0.9 KB |  |
 | `启动Demo.bat` | 0.9 KB | 双击启动本地 Demo |
 | `text_utils.py` | 0.9 KB |  |
+| `v2/model_maxlen256/config.json` | 0.7 KB |  |
+| `v2/model_maxlen256/tokenizer_config.json` | 0.6 KB |  |
 | `exp08_ablation_B/config.json` | 0.5 KB |  |
 | `exp09_ablation_C/config.json` | 0.5 KB |  |
 | `exp07_ablation_A/config.json` | 0.5 KB |  |
@@ -365,18 +368,23 @@
 | `multi_label_model/` | 256.1 MB | 冻结的多标签归因模型权重（约 256MB），不入 git |
 | `sound_model/` | 256.1 MB | 冻结的二分类模型权重（约 256MB），不入 git |
 
-## 其他（11 项，46.2 MB）
+## 其他（16 项，302.3 MB）
 
 | 文件 | 大小 | 用途 |
 |---|---|---|
+| `v2/model_maxlen256/model.safetensors` | 255.4 MB |  |
 | `更新世界的锋芒_SoundInsight_演示视频.mp4` | 46.1 MB |  |
+| `v2/model_maxlen256/tokenizer.json` | 695.0 KB |  |
 | `v2/w14_w15_w16_report.md` | 7.9 KB |  |
 | `v2/w17_failure_stats.json` | 6.5 KB |  |
 | `v2/w14_w15_w16_summary.json` | 3.1 KB |  |
 | `视频录制速查.md` | 3.1 KB |  |
 | `LICENSE` | 2.6 KB |  |
-| `v2/w6_split_manifest.json` | 1.7 KB |  |
+| `v2/w6_split_manifest.json` | 1.8 KB |  |
 | `v2/v2_artifacts.template.json` | 1.1 KB |  |
 | `hashes.txt` | 0.9 KB |  |
+| `v2/w1_eval_model_maxlen256_truncate(max256)_val_v3_test.json` | 0.9 KB |  |
+| `v2/w1_eval_model_maxlen256_truncate(max256).json` | 0.9 KB |  |
+| `v2/w1_eval_maxlen256.json` | 0.9 KB |  |
 | `.gitignore` | 0.6 KB |  |
 | `per_class_thresholds_probe.json` | 0.4 KB |  |

@@ -158,6 +158,18 @@ GEN_TOKENS = {
 }
 CURRENT_GEN = os.environ.get("DSH_DOC_GEN", "v1")
 GEN_FILES = PAIR_FILES + ["docs/project_full_record.md", "PROGRESS_SYNC.md"]
+
+# D7：否定性状态断言的触发词 / 豁免语境 / 豁免指针 / 检查范围（当前态文档）
+STATUS_TRIGGERS = ("未使用", "无出处", "查无", "不存在", "未调用", "从未调用",
+                   "没有出处", "无任何出处", "未提供")
+STATUS_EXEMPT_CTX = ("曾", "历史", "原写", "原表", "原判", "旧", "过时", "勘误",
+                     "更正", "订正", "不得", "错误", "误用", "不准确", "路线",
+                     "取代", "已作废", "已删除", "确认", "检索", "同上", "禁止",
+                     "清理", "任务", "计划", "要求", "应填", "结论", "披露")
+STATUS_OK = re.compile(r"(\d{4}-\d{2}-\d{2}|\d{4}\s*年\s*\d{1,2}\s*月|"
+                       r"\.md|\.py|\.json|\.csv|\.txt|\.docx|docs/|#L\d|§|"
+                       r"核验|实测|状态源|见\s*`|待人工|待补|本轮|当日)")
+STATUS_FILES = GEN_FILES  # 历史材料与转储（B 类）不在其中
 GEN_HISTORY_MARKERS = ("已作废", "已废弃", "历史", "曾", "取代", "旧口径", "勘误",
                        "修正前", "过时", "v1.1", "路线 (a)")
 
@@ -499,6 +511,49 @@ def check_v2_artifacts(out) -> None:
     out.append("")
 
 
+def check_status_assertions(out) -> None:
+    """D7 否定性状态断言检查：对"当前状态/外部来源"的否定断言必须带日期或来源指针。
+
+    背景：同类错误在本项目出现过三次（"百炼栏 = 未使用"两次、"激动线外部数字全部无出处"
+    一次），根因都是**断言状态而未核对**。本检查把"记得核对"变成机械可拦。
+
+    规则：
+    - 触发词（高危否定断言）：未使用 / 无出处 / 查无 / 不存在 / 未调用 / 从未调用 /
+      没有出处 / 无任何出处 / 未提供；
+    - 豁免语境（历史、引用、勘误、任务、结论等）：曾 / 历史 / 原写 / 原判 / 旧 / 过时 /
+      勘误 / 更正 / 订正 / 不得 / 错误 / 误用 / 不准确 / 路线 / 取代 / 已作废 / 已删除 /
+      确认 / 检索 / 同上 / 禁止 / 清理 / 任务 / 计划 / 要求 / 应填 / 结论；
+    - 豁免指针：日期（YYYY-MM-DD 或 YYYY年M月）/ 文件名 / docs/ / #LNN / 核验 / 实测 /
+      状态源 / 待人工 / 待补 / 本轮 / 当日 / §；
+    - 豁免文件：历史材料与转储（B 类）不检查。
+
+    诚实披露"未开展/未做/未完成"不属本检查范围（那是如实记录局限，不是状态断言）。
+    """
+    out.append("## 否定性状态断言检查（D7）")
+    bad = []
+    for fname in STATUS_FILES:
+        lines, _ = read_file(fname)
+        if lines is None:
+            continue
+        for i, line in enumerate(lines, 1):
+            if not any(t in line for t in STATUS_TRIGGERS):
+                continue
+            if STATUS_OK.search(line):
+                continue
+            if any(c in line for c in STATUS_EXEMPT_CTX):
+                continue
+            bad.append((fname, i, line.strip()[:100]))
+    if not bad:
+        out.append(f"- [PASS] {len(STATUS_FILES)} 份当前态文档中，"
+                   "否定性状态断言均带日期/来源指针或属豁免语境")
+    else:
+        out.append(f"- [FAIL] {len(bad)} 处否定性状态断言未带日期或来源指针"
+                   "（须补核验日期或指向状态源；若属历史/引用语境请加相应标记）：")
+        for fname, i, snippet in bad[:20]:
+            out.append(f"    - {fname}:{i}｜{snippet}")
+    out.append("")
+
+
 def main() -> None:
     out = ["# 文档数字一致性审计", ""]
     for grp in GROUPS:
@@ -508,6 +563,7 @@ def main() -> None:
     check_template_conformance(out)
     check_threshold_pairing(out)
     check_generation_mixing(out)
+    check_status_assertions(out)
     check_frozen_package(out)
     check_finals_template(out)
     check_v2_artifacts(out)
