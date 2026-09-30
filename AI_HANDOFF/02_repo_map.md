@@ -1,6 +1,6 @@
 # 文件地图（由 make_ai_handoff.py 自动生成，勿手改）
 
-> 生成时间：2026-10-01 02:33；共 383 个条目；体积单位 KB/MB。
+> 生成时间：2026-10-01 02:39；共 386 个条目；体积单位 KB/MB。
 
 ## 提交物（5 项，43.4 MB）
 
@@ -61,7 +61,7 @@
 
 | 文件 | 大小 | 用途 |
 |---|---|---|
-| `docs/frozen_execution_checklist.md` | 58.0 KB |  |
+| `docs/frozen_execution_checklist.md` | 59.8 KB |  |
 | `PROGRESS_SYNC.md` | 41.2 KB |  |
 | `docs/gap_and_roadmap_inventory.md` | 40.7 KB |  |
 | `docs/final_project_review_and_execution_plan.md` | 36.0 KB |  |
@@ -235,14 +235,14 @@
 | `sample_reviews_100.csv` | 57.9 KB |  |
 | `agent_test_input.csv` | 27.9 KB |  |
 
-## 代码（127 项，0.6 MB）
+## 代码（129 项，0.6 MB）
 
 | 文件 | 大小 | 用途 |
 |---|---|---|
 | `check_doc_numbers.py` | 33.7 KB | 数字审计 + 模板格式对照脚本 |
 | `scan_repo_hygiene.py` | 20.0 KB |  |
 | `v2_meta_analysis.py` | 19.1 KB |  |
-| `build_finals_package.py` | 13.2 KB |  |
+| `build_finals_package.py` | 13.7 KB |  |
 | `v2_w4_mine.py` | 12.4 KB |  |
 | `build_pdf_v2.py` | 12.4 KB |  |
 | `v2_w1_longtext.py` | 12.1 KB |  |
@@ -263,6 +263,7 @@
 | `pack_final.py` | 7.9 KB | 提交包打包与四项自检 |
 | `train_sound_model.py` | 7.8 KB |  |
 | `v2_w5_final.py` | 7.7 KB |  |
+| `make_faststart.py` | 7.6 KB |  |
 | `md_to_pdf.py` | 7.6 KB | 主文档 Markdown → PDF（内嵌中文字体） |
 | `v2_w5_cv.py` | 7.4 KB |  |
 | `v2_w6_split.py` | 7.0 KB |  |
@@ -287,9 +288,9 @@
 | `make_video_assets.py` | 4.6 KB |  |
 | `v2_record_incident.py` | 4.5 KB |  |
 | `make_samples.py` | 4.4 KB |  |
+| `verify_finals_package.py` | 4.4 KB |  |
 | `retime_srt.py` | 4.2 KB |  |
 | `tune_per_class_threshold.py` | 4.0 KB |  |
-| `verify_finals_package.py` | 4.0 KB |  |
 | `upload_models.py` | 3.9 KB |  |
 | `test_model.py` | 3.9 KB |  |
 | `merge_refine.py` | 3.8 KB |  |
@@ -305,10 +306,12 @@
 | `audit_ppt.py` | 3.0 KB |  |
 | `deploy_check.py` | 3.0 KB | 在线 Demo 单条验收脚本 |
 | `svm_ttest.py` | 2.9 KB |  |
+| `verify_faststart.py` | 2.9 KB |  |
 | `a4_mid_remove.py` | 2.8 KB |  |
 | `fix_ppt_roles.py` | 2.7 KB |  |
 | `year_split_eval.py` | 2.7 KB |  |
 | `prep_llm_eval.py` | 2.7 KB |  |
+| `update_finals_hashes.py` | 2.6 KB |  |
 | `capture_demo_output.py` | 2.6 KB |  |
 | `apply_mid_demotion.py` | 2.6 KB |  |
 | `rebuild_video_timing.py` | 2.5 KB |  |
@@ -323,7 +326,6 @@
 | `ppt_speed_fix.py` | 2.3 KB |  |
 | `restore_timestamps.py` | 2.3 KB |  |
 | `throughput_bench.py` | 2.2 KB |  |
-| `update_finals_hashes.py` | 2.2 KB |  |
 | `verify_online_report.py` | 2.2 KB |  |
 | `v2_w2_diag.py` | 2.1 KB |  |
 | `check_video.py` | 2.1 KB |  |
@@ -353,6 +355,7 @@
 | `v2_w1_token_len.py` | 1.1 KB |  |
 | `prep_neg_review.py` | 1.1 KB |  |
 | `final_acceptance.py` | 1.1 KB |  |
+| `v2_list_items.py` | 1.0 KB |  |
 | `hashes.py` | 1.0 KB |  |
 | `prep_three_star.py` | 0.9 KB |  |
 | `prep_human_review.py` | 0.9 KB |  |
@@ -360,7 +363,6 @@
 | `启动Demo.bat` | 0.9 KB | 双击启动本地 Demo |
 | `text_utils.py` | 0.9 KB |  |
 | `v2_w1_compare.py` | 0.8 KB |  |
-| `v2_verify_doc_cv.py` | 0.7 KB |  |
 | `exp08_ablation_B/config.json` | 0.5 KB |  |
 | `exp09_ablation_C/config.json` | 0.5 KB |  |
 | `exp07_ablation_A/config.json` | 0.5 KB |  |
@@ -423,11 +425,12 @@
 | `multi_label_model/` | 256.1 MB | 冻结的多标签归因模型权重（约 256MB），不入 git |
 | `sound_model/` | 256.1 MB | 冻结的二分类模型权重（约 256MB），不入 git |
 
-## 其他（37 项，46.2 MB）
+## 其他（38 项，92.4 MB）
 
 | 文件 | 大小 | 用途 |
 |---|---|---|
 | `更新世界的锋芒_SoundInsight_演示视频.mp4` | 46.1 MB |  |
+| `更新世界的锋芒_SoundInsight_演示视频_faststart.mp4` | 46.1 MB |  |
 | `更新世界的锋芒_SoundInsight_决赛入围定稿作品.docx` | 34.8 KB |  |
 | `v2/w14_w15_w16_report.md` | 7.9 KB |  |
 | `v2/w17_failure_stats.json` | 6.5 KB |  |
@@ -440,7 +443,7 @@
 | `LICENSE` | 2.6 KB |  |
 | `v2/w2_perclass_thresholds.json` | 2.3 KB |  |
 | `v2/w5_cv.json` | 2.0 KB |  |
-| `hashes.txt` | 1.9 KB |  |
+| `hashes.txt` | 2.0 KB |  |
 | `v2/w6_split_manifest.json` | 1.8 KB |  |
 | `v2/w7_calibration.md` | 1.5 KB |  |
 | `v2/w5_final.md` | 1.5 KB |  |

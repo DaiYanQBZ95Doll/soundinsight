@@ -66,3 +66,7 @@ _tmp_selftest/
 
 # 决赛包验证的临时解包目录（含大文件，绝不入库）
 _tmp_pkgcheck/
+
+# faststart 重排副本（构建产物，46 MB 级；留磁盘供打包，不入库）
+*_faststart.mp4
+

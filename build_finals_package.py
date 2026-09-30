@@ -232,9 +232,13 @@ def main() -> int:
         print(f"[其他材料] 缺失 {len(missing)} 项：{'、'.join(missing[:8])}"
               f"{' …' if len(missing) > 8 else ''}")
 
-    # 主文档与视频
+    # 主文档与视频（视频优先用 faststart 版本：moov 前置，网页/流式播放不卡顿；
+    # 由 make_faststart.py 纯 Python 重排，verify_faststart.py 逐块验证数据零改动）
     doc = os.path.join(HERE, MAIN_DOC)
-    video = os.path.join(HERE, VIDEO)
+    video_fs = os.path.join(HERE, VIDEO.replace(".mp4", "_faststart.mp4"))
+    video = video_fs if os.path.isfile(video_fs) else os.path.join(HERE, VIDEO)
+    print(f"[视频] 入包版本：{os.path.basename(video)}"
+          f"{'（faststart，moov 前置）' if video is video_fs else '（原版，moov 在尾）'}")
     for p, label in ((doc, "主文档"), (video, "视频")):
         if not os.path.isfile(p):
             print(f"[FAIL] 缺少{label}：{os.path.basename(p)}")

@@ -52,6 +52,12 @@ def main() -> int:
         block.append(f"# （{FINALS} 尚未生成）")
     for name in ENTRIES:
         p = os.path.join(HERE, name)
+        # 视频入包版本为 faststart 重排版（moov 前置）；哈希须按**实际入包内容**登记
+        if name.endswith("演示视频.mp4"):
+            fs = os.path.join(HERE, name.replace(".mp4", "_faststart.mp4"))
+            if os.path.isfile(fs):
+                p = fs
+                block.append(f"# 视频入包版本为 faststart 重排版（数据逐块验证零改动，见 verify_faststart.py）")
         if os.path.isfile(p):
             block.append(f"{os.path.getsize(p):>12,} B  sha256:{sha(p)}  {name}")
     out += block

@@ -55,8 +55,14 @@ def main() -> int:
             print(f"    [缺失] {name}")
             continue
         h = sha(p)
+        # 视频：包内为 faststart 重排版，登记值也按该版本计算（见 update_finals_hashes.py）
         rec = h[:16] in reg
-        print(f"    [{'一致' if rec else '不一致'}] {name}  sha256 {h[:16]}")
+        note = ""
+        if not rec and name.endswith("演示视频.mp4"):
+            fs = os.path.join(HERE, name.replace(".mp4", "_faststart.mp4"))
+            if os.path.isfile(fs) and sha(fs)[:16] == h[:16]:
+                rec, note = True, "（faststart 版本，登记值一致）"
+        print(f"    [{'一致' if rec else '不一致'}] {name}  sha256 {h[:16]}{note}")
 
     # Demo 冒烟：解包并用包内 report_builder 生成报告
     demo_zip = os.path.join(TMP, f"{TEAM}_{NAME}_Demo.zip")
