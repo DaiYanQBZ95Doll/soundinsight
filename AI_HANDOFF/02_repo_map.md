@@ -1,6 +1,6 @@
 # 文件地图（由 make_ai_handoff.py 自动生成，勿手改）
 
-> 生成时间：2026-10-01 04:54；共 408 个条目；体积单位 KB/MB。
+> 生成时间：2026-10-01 04:59；共 408 个条目；体积单位 KB/MB。
 
 ## 提交物（5 项，43.5 MB）
 
@@ -61,7 +61,7 @@
 
 | 文件 | 大小 | 用途 |
 |---|---|---|
-| `docs/frozen_execution_checklist.md` | 64.3 KB |  |
+| `docs/frozen_execution_checklist.md` | 64.8 KB |  |
 | `PROGRESS_SYNC.md` | 47.7 KB |  |
 | `docs/gap_and_roadmap_inventory.md` | 42.6 KB |  |
 | `docs/final_project_review_and_execution_plan.md` | 36.3 KB |  |
