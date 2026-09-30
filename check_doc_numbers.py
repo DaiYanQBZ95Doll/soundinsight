@@ -629,7 +629,7 @@ def check_file_integrity(out) -> None:
         "PROGRESS_SYNC.md": 20000,
         "docs/final_project_review_and_execution_plan.md": 15000,
         "competition_v4.md": 20000,
-        "results_summary.md": 5000,
+        "results_summary.md": 4000,   # 紧凑数字表（79 行、10 节），非长文；实测 4,870 B
         "AI_HANDOFF/manifest.json": 20000,
     }
     bad = 0

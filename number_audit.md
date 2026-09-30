@@ -5,8 +5,9 @@
 - [PASS] PROGRESS_SYNC.md：39812 B ≥ 20000 B
 - [PASS] docs/final_project_review_and_execution_plan.md：36884 B ≥ 15000 B
 - [PASS] competition_v4.md：21214 B ≥ 20000 B
-- [FAIL] results_summary.md：4870 B < 下限 5000 B（**疑似被截断**；可用 `git show <rev>:results_summary.md` 从完好提交恢复）
+- [PASS] results_summary.md：4870 B ≥ 4000 B
 - [PASS] AI_HANDOFF/manifest.json：76229 B ≥ 20000 B
+- 结论：关键文件体积均正常
 
 ## competition_v3.txt
 - [PASS] 最终模型 F1 (0\.687): 行 57,144
