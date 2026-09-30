@@ -1,6 +1,6 @@
 # 文件地图（由 make_ai_handoff.py 自动生成，勿手改）
 
-> 生成时间：2026-10-01 05:33；共 412 个条目；体积单位 KB/MB。
+> 生成时间：2026-10-01 05:38；共 412 个条目；体积单位 KB/MB。
 
 ## 提交物（5 项，43.5 MB）
 
@@ -70,7 +70,7 @@
 | `docs/v2_acceptance_benchmark.md` | 20.4 KB |  |
 | `docs/D13_seal_declaration.md` | 20.1 KB | D13 封包声明（提交技术质检终审） |
 | `docs/final_review_and_execution_plan.md` | 19.9 KB |  |
-| `docs/overnight_summary.md` | 13.9 KB |  |
+| `docs/overnight_summary.md` | 17.1 KB |  |
 | `docs/file_inventory.md` | 12.8 KB | 项目文件总索引 |
 | `PROJECT_BRIEF_QWEN.md` | 11.2 KB |  |
 | `docs/finals_stage.md` | 11.0 KB |  |
