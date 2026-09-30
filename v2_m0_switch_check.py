@@ -27,6 +27,8 @@ GIT = r"C:\Program Files\Git\cmd\git.exe"
 
 V1_TOKENS = ("0.6871", "0.9744", "0.6241", "0.6234", "0.7191",
              "0.000932", "89.6", "47.9")
+# 数字边界：避免把 `prob 0.9744496` 里的子串当成阈值 0.9744（误报）
+V1_PATTERNS = [re.compile(r"(?<![\d.])" + re.escape(t) + r"(?![\d])") for t in V1_TOKENS]
 OUT_DIR = os.path.join(HERE, "v2")
 
 # A 类（必改）：对外材料与当前态文档——来自冻结清单 §九
@@ -82,7 +84,7 @@ def main() -> int:
             continue
         hits = []
         for i, line in enumerate(lines, 1):
-            if not any(t in line for t in V1_TOKENS):
+            if not any(p.search(line) for p in V1_PATTERNS):
                 continue
             if "[v1]" in line or "（v1" in line or "`v1`" in line:
                 continue

@@ -19,12 +19,12 @@
 
 | 结论 | 证据文件 | 复算方式 |
 |---|---|---|
-| F1 0.6871 / CV 0.6234±0.024 / 基线 / p 值 | `results_summary.md`、`exp06_最终二分类模型/training_output.txt` | `test_model.py`、`distilbert_cv.py`、`baseline_cv.py`、`svm_ttest.py` |
+| F1 0.6871[v1] / CV 0.6234[v1]±0.024 / 基线 / p 值 | `results_summary.md`、`exp06_最终二分类模型/training_output.txt` | `test_model.py`、`distilbert_cv.py`、`baseline_cv.py`、`svm_ttest.py` |
 | 混淆矩阵双口径（179/72 与 178/73） | `results_summary.md`（调和行）、`val_preds_dump.csv` | `val_pred_dump.py` 重跑推理 |
 | 多标签宏 F1 0.6481 与逐类 F1 | `exp04_多标签归因/`、`results_summary.md` | `train_multilabel.py` 输出的评估段 |
 | 消融 3 组 | `exp07_ablation_A/B/C`、`ablation_summary.md` | `ablation_train.py` |
 | 学习曲线（无泄漏） | `learning_curve.png`、`learning_curve_results.json` | `learning_curve.py`（1257 点为 bootstrap 口径） |
-| PR 曲线 AUC-PR 0.7191 | `pr_curve.png` | `pr_curve.py` |
+| PR 曲线 AUC-PR 0.7191[v1] | `pr_curve.png` | `pr_curve.py` |
 | 年份分桶无衰减（2022 桶 0.80） | `docs/year_split_output.txt`（脚本输出原文） | `year_split_eval.py` |
 
 ## 三、验证深化（D6-D8）

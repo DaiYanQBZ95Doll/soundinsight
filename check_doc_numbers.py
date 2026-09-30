@@ -156,7 +156,7 @@ THRESHOLD_TIERS = {
 GEN_TAGS = ("[v1]", "[v2]")
 GEN_TOKENS = {
     "v1": ["0.6871", "0.9744", "0.6234", "0.7191", "0.6241", "0.000932"],
-    "v2": [],  # 待填：v2 的 F1 / 阈值 / CV 等
+    "v2": ["0.7220", "0.7206", "0.7811", "0.8273", "0.5333"],  # E5 填入：F1@调优/F1@0.5/PR-AUC/归因宏F1/高音F1
 }
 CURRENT_GEN = os.environ.get("DSH_DOC_GEN", "v1")
 GEN_FILES = PAIR_FILES + ["docs/project_full_record.md", "PROGRESS_SYNC.md"]
@@ -581,10 +581,24 @@ def check_api_wording_consistency(out) -> None:
     missing_readme = [name for name, kw in required if kw not in readme_text]
     finals = None
     for cand in FINALS_DOC_CANDIDATES:
-        lines, _ = read_file(cand)
-        if lines is not None:
-            finals = (cand, "\n".join(lines))
-            break
+        fp = os.path.join(HERE, cand)
+        if not os.path.isfile(fp):
+            continue
+        if cand.lower().endswith(".docx"):
+            # .docx 必须走 XML 文本抽取：read_file 按 UTF-8 读会得到二进制垃圾，
+            # 关键词永远匹配不到（2026-10-01 修复的假 FAIL）。
+            try:
+                xml = zipfile.ZipFile(fp).read("word/document.xml").decode("utf-8", "replace")
+                text = "\n".join(re.findall(r"<w:t[^>]*>(.*?)</w:t>", xml, flags=re.S))
+            except (OSError, KeyError, zipfile.BadZipFile) as e:
+                out.append(f"- [FAIL] {cand} 无法解析：{type(e).__name__}")
+                break
+            finals = (cand, text)
+        else:
+            lines, _ = read_file(cand)
+            if lines is not None:
+                finals = (cand, "\n".join(lines))
+        break
     if missing_readme:
         out.append(f"- [FAIL] README 缺少权威表述要素：{'、'.join(missing_readme)}")
     else:

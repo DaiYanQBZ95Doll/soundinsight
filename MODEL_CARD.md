@@ -1,17 +1,23 @@
 # MODEL_CARD.md — SoundInsight 模型卡
 
+> **代际说明（2026-10-01）**：本文档主体为 **v1（复赛已提交口径）**，其中 v1 数字均已标注 `[v1]`；
+> **当前代际为 v2**：`val_v3_test`（n=10,000／正例 128，阈值取自 `val_v3_tune`）上
+> **F1@调优(0.6) = 0.7220`[v2]`、F1@0.5 = 0.7206`[v2]`、PR-AUC = 0.7811`[v2]`、归因宏 F1 = 0.8273`[v2]`、高音 F1 = 0.5333`[v2]`**；
+> 两代**样本集不同、不可直比**；v2 完整证据见 `v2/w5_final.md`、`v2/w2_perclass_thresholds.md`、`v2/w7_calibration.md`、`docs/v2_gate_verdict.md`。
+
+
 ## 模型概述
 
 - **任务**：英文耳机类评论二分类（是否为音质负面）+ 五类多标签归因（低音/清晰度/杂音/音量/高音）。
 - **基座**：DistilBERT-base-uncased（66M 参数，Sanh et al. 2019），从 ModelScope 镜像下载（Hugging Face 官方源在本机网络不可达）。
 - **训练数据**：McAuleyLab Amazon Reviews 2023（AmazonElectronics 类目）10 万条评论；正例来自 RLCA 两阶段标注（关键词规则初筛 + LLM 全量复核 + 三星评论召回补漏），1257 条冻结实验口径（当前工作集 1280 条）。
-- **训练方式**：1:10 欠采样、5 折交叉验证、阈值扫描（最优阈值 0.9744）、Focal Loss（ICCV 2017）。
+- **训练方式**：1:10 欠采样、5 折交叉验证、阈值扫描（最优阈值 0.9744[v1]）、Focal Loss（ICCV 2017）。
 - **硬件**：RTX 4060 Laptop 8GB，batch_size=64，max_len=128。
 
 ## 性能（冻结口径，以 results_summary.md 为准）
 
-- 二分类：val_v2（20,000 条，251 正例）F1 0.687；5 折 CV 平均 F1 0.6234±0.024；AUC-PR 0.7191；对比 SVM 0.497 / LR 0.410 / dummy 0.025（Welch t 检验 p=0.000932）。
-- 阈值 0.5 时召回 89.6%、F1 0.62；阈值 0.9744 时 Precision≈66.2%、Recall≈70.9%（本次重算 TP=178/FP=91/FN=73）。
+- 二分类：val_v2（20,000 条，251 正例）F1 0.687；5 折 CV 平均 F1 0.6234[v1]±0.024；AUC-PR 0.7191[v1]；对比 SVM 0.497 / LR 0.410 / dummy 0.025（Welch t 检验 p=0.000932[v1]）。
+- 阈值 0.5 时召回 89.6[v1]%、F1 0.62；阈值 0.9744[v1] 时 Precision≈66.2%、Recall≈70.9%（本次重算 TP=178/FP=91/FN=73）。
 - 多标签：高音 F1=0（84 条样本与清晰度语义重叠），其余类别见 results_summary.md。
 
 ## 已知局限（如实披露）

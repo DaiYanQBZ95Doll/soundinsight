@@ -86,10 +86,10 @@ def main():
             "验证 ①  学习曲线", "正例 100 → 1257，F1 0.4067 → 0.6179（无泄漏 bootstrap）",
             "01_学习曲线.png")
     compose(os.path.join(HERE, "pr_curve.png"),
-            "验证 ②  PR 曲线", "AUC-PR = 0.7191",
+            "验证 ②  PR 曲线", "AUC-PR = 0.7191[v1]",
             "02_PR曲线.png")
     compose(os.path.join(HERE, "confusion_matrix.png"),
-            "验证 ③  混淆矩阵", "阈值 0.9744：TP 179 / FP 91 / FN 72 / TN 19658",
+            "验证 ③  混淆矩阵", "阈值 0.9744[v1]：TP 179 / FP 91 / FN 72 / TN 19658",
             "03_混淆矩阵.png")
     compose(os.path.join(HERE, "calibration_curve.png"),
             "验证 ④  可靠性曲线（校准）",
