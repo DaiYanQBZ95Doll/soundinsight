@@ -1,7 +1,7 @@
 {
- "generated": "2026-09-30 16:18",
+ "generated": "2026-09-30 16:26",
  "root": "C:\\deepseek-harness-master\\soundinsight",
- "count": 279,
+ "count": 280,
  "entries": [
   {
    "path": ".gitignore",
@@ -1593,6 +1593,13 @@
    "sha256_16": "b5cb5c538a22c350c9ec513f62e6834d647946b62c402335a8c6a546e92b112f"
   },
   {
+   "path": "docs/completeness_audit_round2.md",
+   "category": "过程与交接文档",
+   "size_bytes": 7912,
+   "purpose": "",
+   "sha256_16": "c4238d5009a6884339ad75ffc1fb7421194f03c6d7c3f310debfeb79613ba14d"
+  },
+  {
    "path": "docs/dataset_audit.md",
    "category": "过程与交接文档",
    "size_bytes": 3585,
@@ -1644,9 +1651,9 @@
   {
    "path": "docs/frozen_execution_checklist.md",
    "category": "过程与交接文档",
-   "size_bytes": 32510,
+   "size_bytes": 38101,
    "purpose": "",
-   "sha256_16": "5585f31ccd4d5aa3c43956bc51219b5a7bc524dfcc84349818817025fe1203ed"
+   "sha256_16": "d9d03b71e223714015515f3d9454315e23af11a0fc95fa688d024a9266ad7305"
   },
   {
    "path": "docs/gap_and_roadmap_inventory.md",
@@ -1688,7 +1695,7 @@
    "category": "过程与交接文档",
    "size_bytes": 3605,
    "purpose": "",
-   "sha256_16": "4945e48b942768128eb97cdff2f5c5ab15bd2760e587593f6a1d77dfc6d78a4c"
+   "sha256_16": "b49cfb42e7a13f41bda407ff592d33ac94e7ce69e3921d5dbe26fe124bfa009d"
   },
   {
    "path": "docs/retrospective_and_reflection.md",
