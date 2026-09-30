@@ -1,14 +1,14 @@
 {
- "generated": "2026-09-30 22:36",
+ "generated": "2026-09-30 23:03",
  "root": "C:\\deepseek-harness-master\\soundinsight",
- "count": 349,
+ "count": 354,
  "entries": [
   {
    "path": ".gitignore",
    "category": "其他",
-   "size_bytes": 779,
+   "size_bytes": 913,
    "purpose": "",
-   "sha256_16": "90b37e01687664afc049e7b419067e60cb7118e24620cd0a5b9a8a62c51df330"
+   "sha256_16": "570867c596a54a70fb826890fa52f4888d91bf1ba178264ff1dff5bee2a4b389"
   },
   {
    "path": "AI+跨境黑客松巅峰赛 · 复赛公示名单（手机版）.html",
@@ -48,9 +48,9 @@
   {
    "path": "PROGRESS_SYNC.md",
    "category": "过程与交接文档",
-   "size_bytes": 38056,
+   "size_bytes": 39812,
    "purpose": "",
-   "sha256_16": "1adb45413bc7270ff4ae0103df8496cce15b6383a1b6186f397594b03efd4ece"
+   "sha256_16": "a3e953d4599af9f948a0b6dc3db79b0c545a65120cfe62f6cfda02d797567465"
   },
   {
    "path": "PROJECT_BRIEF_QWEN.md",
@@ -1063,9 +1063,9 @@
   {
    "path": "precommit_guard.py",
    "category": "代码",
-   "size_bytes": 5484,
+   "size_bytes": 5904,
    "purpose": "",
-   "sha256_16": "c0ae42c945e266333f3ad0f72b7e571d799ec8ca8cfd4fea18801b60404d4633"
+   "sha256_16": "17f9ccaaadaee09317908d330102882001e519b9aa1805af6399ef3a5a59a52e"
   },
   {
    "path": "predict_core.py",
@@ -1523,11 +1523,18 @@
    "sha256_16": "9164bbc810e08582a652bd24477b6b5adf41650bd18e2afb1dd3bc64e97c61cc"
   },
   {
+   "path": "v2_w4_mine.py",
+   "category": "代码",
+   "size_bytes": 12712,
+   "purpose": "",
+   "sha256_16": "260dbd6c835732d5d95b3a9f6dfe6f0d77201a9ae406c8a31a539f0c1bf5ddd5"
+  },
+  {
    "path": "v2_w5_cv.py",
    "category": "代码",
-   "size_bytes": 6711,
+   "size_bytes": 7069,
    "purpose": "",
-   "sha256_16": "ba5bdf6456e18b218c6e6308c9b5756aee32c2c3bc0b1a2f092c972d56981cf1"
+   "sha256_16": "2dbd4b9bd6f1c08d495506a96b628e7c05a6037cefb36a11dd08850408f72188"
   },
   {
    "path": "v2_w5_final.py",
@@ -1868,9 +1875,9 @@
   {
    "path": "docs/frozen_execution_checklist.md",
    "category": "过程与交接文档",
-   "size_bytes": 55506,
+   "size_bytes": 9602,
    "purpose": "",
-   "sha256_16": "6e681bc597617c46916ef6b44fa8e3ac3ba397d7b81d0750dd512d778e3c6b90"
+   "sha256_16": "69d0d3aeb452c8a0a25177e2da5a128f84655ec36aa37e930f76c1e106eeb60c"
   },
   {
    "path": "docs/gap_and_roadmap_inventory.md",
@@ -1885,6 +1892,13 @@
    "size_bytes": 8524,
    "purpose": "",
    "sha256_16": "abb2ee647db3db71087c155bc7beb15c0d201bff700f29a25fc6c82fa6af7561"
+  },
+  {
+   "path": "docs/llm_credential_status.md",
+   "category": "过程与交接文档",
+   "size_bytes": 4285,
+   "purpose": "",
+   "sha256_16": "547854c435375d5ba11a40db9ed8b12c8663bd15bbf2c16caec06f1f0dc4d990"
   },
   {
    "path": "docs/pre_lock_completeness_audit.md",
@@ -1910,9 +1924,9 @@
   {
    "path": "docs/repo_hygiene_scan.md",
    "category": "过程与交接文档",
-   "size_bytes": 3808,
+   "size_bytes": 4247,
    "purpose": "",
-   "sha256_16": "db67ae4651e84e56b0a6a158b9cc74bffb544919339bc453013d529731725bb6"
+   "sha256_16": "01a8e56102adbe04e44b9b1d8a8c8d837eeb86fd63ffb293ff791b8767806ec3"
   },
   {
    "path": "docs/retrospective_and_reflection.md",
@@ -1983,13 +1997,6 @@
    "size_bytes": 822,
    "purpose": "年份分桶脚本输出原文",
    "sha256_16": "53f64b9728da665af7396112a933fe88c2ef16f78ec728cc675f984242ddc3cf"
-  },
-  {
-   "path": "docs/新提醒文件，记得删.txt",
-   "category": "过程与交接文档",
-   "size_bytes": 379,
-   "purpose": "",
-   "sha256_16": "5f67480d5bb8014a07fa383460444f7ee2d85b814f7794685093e513c9f818af"
   },
   {
    "path": "exp03_LLM复核与标签清洗/labeled_llm.csv",
@@ -2305,6 +2312,34 @@
    "size_bytes": 1385,
    "purpose": "",
    "sha256_16": "b7fc7a282dd2d52da70bc3051418f9e7fba472720af667e1a5a44f1417b758d5"
+  },
+  {
+   "path": "v2/w4_candidates.csv",
+   "category": "数据",
+   "size_bytes": 10821282,
+   "purpose": "",
+   "sha256_16": ""
+  },
+  {
+   "path": "v2/w4_sample.csv",
+   "category": "数据",
+   "size_bytes": 263236,
+   "purpose": "",
+   "sha256_16": "f6defd2fa333575976e2078e24e1f28ed8446cc4b5e3c2e2a0091fdfa9f69808"
+  },
+  {
+   "path": "v2/w4_strata.json",
+   "category": "其他",
+   "size_bytes": 1067,
+   "purpose": "",
+   "sha256_16": "93efe778a65f306ac2e05d95b03e510eb720bd28dd86539af5f8ea304f62412a"
+  },
+  {
+   "path": "v2/w4_summary.json",
+   "category": "其他",
+   "size_bytes": 216,
+   "purpose": "",
+   "sha256_16": "864eff19c9e7b51d6b081863882545f89477fcfc1943e49ed61955216bcdfa92"
   },
   {
    "path": "v2/w5_final.json",

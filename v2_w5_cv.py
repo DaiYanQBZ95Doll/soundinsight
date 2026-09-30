@@ -54,7 +54,10 @@ def metrics(y, p, thr):
 def main() -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("--folds", type=int, default=5)
+    ap.add_argument("--max-len", type=int, default=MAX_LEN,
+                    help="窗口长度；默认 256（与 v2 候选一致）。用 128 可与 v1 的 CV（同为 128）可比")
     args = ap.parse_args()
+    max_len = args.max_len
 
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
     texts, labels = load_csv_texts(INPUT_CSV)
@@ -68,7 +71,7 @@ def main() -> int:
         tr_texts = [texts[i] for i in tr]
         va_texts = [texts[i] for i in va]
         y_va = np.array([labels[i] for i in va])
-        enc = tok(tr_texts, truncation=True, max_length=MAX_LEN, padding=True,
+        enc = tok(tr_texts, truncation=True, max_length=max_len, padding=True,
                   return_tensors="pt")
         ds = TensorDataset(enc["input_ids"], enc["attention_mask"],
                            torch.tensor([labels[i] for i in tr]))
@@ -91,7 +94,7 @@ def main() -> int:
         probs = []
         with torch.no_grad():
             for i in range(0, len(va_texts), 64):
-                e = tok(va_texts[i:i + 64], truncation=True, max_length=MAX_LEN,
+                e = tok(va_texts[i:i + 64], truncation=True, max_length=max_len,
                         padding=True, return_tensors="pt").to(device)
                 probs.append(torch.softmax(model(**e).logits, -1)[:, 1].cpu().numpy())
         p_va = np.concatenate(probs) if probs else np.zeros(0)

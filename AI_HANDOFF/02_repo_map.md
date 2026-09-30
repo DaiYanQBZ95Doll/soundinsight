@@ -1,6 +1,6 @@
 # 文件地图（由 make_ai_handoff.py 自动生成，勿手改）
 
-> 生成时间：2026-09-30 22:36；共 349 个条目；体积单位 KB/MB。
+> 生成时间：2026-09-30 23:03；共 354 个条目；体积单位 KB/MB。
 
 ## 提交物（5 项，43.2 MB）
 
@@ -61,8 +61,7 @@
 
 | 文件 | 大小 | 用途 |
 |---|---|---|
-| `docs/frozen_execution_checklist.md` | 54.2 KB |  |
-| `PROGRESS_SYNC.md` | 37.2 KB |  |
+| `PROGRESS_SYNC.md` | 38.9 KB |  |
 | `docs/gap_and_roadmap_inventory.md` | 36.8 KB |  |
 | `docs/final_project_review_and_execution_plan.md` | 36.0 KB |  |
 | `docs/retrospective_and_reflection.md` | 27.9 KB |  |
@@ -75,6 +74,7 @@
 | `QWEN_HANDOFF.md` | 10.7 KB |  |
 | `docs/pre_lock_completeness_audit.md` | 10.4 KB |  |
 | `docs/N_line_handoff_protocol.md` | 10.0 KB |  |
+| `docs/frozen_execution_checklist.md` | 9.4 KB |  |
 | `docs/finals_stage.md` | 9.2 KB |  |
 | `docs/process_review_d10.md` | 8.5 KB |  |
 | `docs/legacy_materials_notice.md` | 8.3 KB |  |
@@ -87,8 +87,9 @@
 | `docs/SoundInsight决赛备战_现状盘点清单.md` | 4.8 KB |  |
 | `docs/w1_longtext_variants.md` | 4.7 KB |  |
 | `docs/evidence_index_exp.md` | 4.4 KB |  |
+| `docs/llm_credential_status.md` | 4.2 KB |  |
 | `docs/e2_erratum.md` | 4.2 KB |  |
-| `docs/repo_hygiene_scan.md` | 3.7 KB |  |
+| `docs/repo_hygiene_scan.md` | 4.1 KB |  |
 | `docs/v2_gate_verdict.md` | 3.6 KB |  |
 | `docs/dataset_audit.md` | 3.5 KB | 数据集字段考古 |
 | `docs/D14_resume_checklist.md` | 3.0 KB | 收尾四步清单（录视频/打包/上传/补推送） |
@@ -96,7 +97,6 @@
 | `docs/w17_confidence_actions.md` | 2.8 KB |  |
 | `AI_INDUCTION_REDLINE.md` | 2.7 KB |  |
 | `docs/year_split_output.txt` | 0.8 KB | 年份分桶脚本输出原文 |
-| `docs/新提醒文件，记得删.txt` | 0.4 KB |  |
 
 ## 演示材料（6 项，18.1 MB）
 
@@ -197,7 +197,7 @@
 | `llm_qwen_metrics.json` | 1.0 KB |  |
 | `learning_curve_results.json` | 0.1 KB |  |
 
-## 数据（19 项，300.0 MB）
+## 数据（21 项，310.6 MB）
 
 | 文件 | 大小 | 用途 |
 |---|---|---|
@@ -208,6 +208,7 @@
 | `exp03_LLM复核与标签清洗/labeled_llm.csv` | 38.3 MB |  |
 | `labeled_expanded.csv` | 37.1 MB |  |
 | `electronics_expanded.csv` | 37.1 MB | 主数据集（10 万条，含 timeStamp 恢复） |
+| `v2/w4_candidates.csv` | 10.3 MB |  |
 | `val_v2.csv` | 7.1 MB | 固定验证集（20000 条 / 251 正例），红线冻结 |
 | `v2/w1_probs_test.csv` | 3.8 MB |  |
 | `v2/w1_probs_tune.csv` | 3.7 MB |  |
@@ -218,16 +219,18 @@
 | `labeled_data_final.csv` | 2.1 MB |  |
 | `local_data.csv` | 2.1 MB |  |
 | `train_quick.csv` | 1.2 MB |  |
+| `v2/w4_sample.csv` | 257.1 KB |  |
 | `sample_reviews_100.csv` | 57.9 KB |  |
 | `agent_test_input.csv` | 27.9 KB |  |
 
-## 代码（111 项，0.5 MB）
+## 代码（112 项，0.5 MB）
 
 | 文件 | 大小 | 用途 |
 |---|---|---|
 | `check_doc_numbers.py` | 29.6 KB | 数字审计 + 模板格式对照脚本 |
 | `scan_repo_hygiene.py` | 20.0 KB |  |
 | `v2_meta_analysis.py` | 19.1 KB |  |
+| `v2_w4_mine.py` | 12.4 KB |  |
 | `build_pdf_v2.py` | 12.4 KB |  |
 | `v2_w1_longtext.py` | 12.1 KB |  |
 | `make_ai_handoff.py` | 11.5 KB |  |
@@ -247,16 +250,16 @@
 | `v2_w5_final.py` | 7.7 KB |  |
 | `md_to_pdf.py` | 7.6 KB | 主文档 Markdown → PDF（内嵌中文字体） |
 | `v2_w6_split.py` | 7.0 KB |  |
+| `v2_w5_cv.py` | 6.9 KB |  |
 | `learning_curve.py` | 6.8 KB |  |
 | `diagnose_treble.py` | 6.6 KB |  |
-| `v2_w5_cv.py` | 6.6 KB |  |
 | `fetch_electronics.py` | 6.5 KB |  |
 | `recover_meta_fields.py` | 6.0 KB |  |
 | `v2_w1_hybrid_select.py` | 6.0 KB |  |
 | `gen_v2_artifacts.py` | 5.8 KB |  |
+| `precommit_guard.py` | 5.8 KB |  |
 | `distilbert_cv.py` | 5.4 KB |  |
 | `md_to_docx.py` | 5.4 KB | 主文档 Markdown → Word |
-| `precommit_guard.py` | 5.4 KB |  |
 | `train_final.py` | 5.2 KB |  |
 | `train_roberta_quick.py` | 5.2 KB |  |
 | `v2_w1_seg_threshold.py` | 5.1 KB |  |
@@ -393,7 +396,7 @@
 | `multi_label_model/` | 256.1 MB | 冻结的多标签归因模型权重（约 256MB），不入 git |
 | `sound_model/` | 256.1 MB | 冻结的二分类模型权重（约 256MB），不入 git |
 
-## 其他（33 项，46.2 MB）
+## 其他（35 项，46.2 MB）
 
 | 文件 | 大小 | 用途 |
 |---|---|---|
@@ -415,6 +418,7 @@
 | `v2/w2_perclass_thresholds.md` | 1.4 KB |  |
 | `v2/w1_seg_threshold.json` | 1.1 KB |  |
 | `v2/v2_artifacts.template.json` | 1.1 KB |  |
+| `v2/w4_strata.json` | 1.0 KB |  |
 | `hashes.txt` | 0.9 KB |  |
 | `v2/w1_eval_model_maxlen128_segment(seg128_stride64)_val_v3_test.json` | 0.9 KB |  |
 | `v2/w1_eval_model_maxlen128_truncate(max128)_val_v3_test.json` | 0.9 KB |  |
@@ -427,6 +431,7 @@
 | `v2/w1_eval_maxlen128.json` | 0.9 KB |  |
 | `v2/w1_eval_maxlen256.json` | 0.9 KB |  |
 | `v2/w1_eval_maxlen512.json` | 0.9 KB |  |
-| `.gitignore` | 0.8 KB |  |
+| `.gitignore` | 0.9 KB |  |
 | `per_class_thresholds_probe.json` | 0.4 KB |  |
 | `v2/threshold.json` | 0.3 KB |  |
+| `v2/w4_summary.json` | 0.2 KB |  |

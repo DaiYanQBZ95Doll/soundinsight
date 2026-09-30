@@ -5,12 +5,31 @@
 # 覆盖：口径配对（跨阈值档）、代际混用、提交包冻结、决赛模板 5.2 百炼栏事实、v2 产物登记。
 import os
 import sys
+import shutil
 import tempfile
 import zipfile
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 sys.stdout.reconfigure(encoding="utf-8", errors="replace")
 import check_doc_numbers as m  # noqa: E402
+
+
+class local_tempdir:
+    """工作区内临时目录：只 makedirs/rmtree，**不调用 chmod**（沙箱禁止 chmod，
+    否则 tempfile.TemporaryDirectory 会抛 WinError 5）。"""
+
+    def __init__(self):
+        self.path = os.path.join(os.path.dirname(os.path.abspath(__file__)),
+                                 "_tmp_selftest", "run")
+
+    def __enter__(self):
+        shutil.rmtree(self.path, ignore_errors=True)
+        os.makedirs(self.path, exist_ok=True)
+        return self.path
+
+    def __exit__(self, *exc):
+        shutil.rmtree(self.path, ignore_errors=True)
+        return False
 
 PASSED, FAILED = [], []
 
@@ -67,7 +86,7 @@ finally:
     m.GEN_TOKENS["v2"] = saved_v2
 
 print("\n== 3. 提交包冻结校验 ==")
-with tempfile.TemporaryDirectory() as td:
+with local_tempdir() as td:
     name = "包.zip"
     zp = os.path.join(td, name)
     with zipfile.ZipFile(zp, "w") as z:
@@ -102,7 +121,7 @@ def make_docx(path: str, text: str) -> None:
 
 sections = "\n".join(f"{n}、{s}" for n, s in zip(
     "一二三四五六七八九", m.TEMPLATE_SECTIONS_FINALS))
-with tempfile.TemporaryDirectory() as td:
+with local_tempdir() as td:
     old_here, old_cands = m.HERE, m.FINALS_DOC_CANDIDATES
     m.HERE = td
     doc = "更新世界的锋芒_SoundInsight_决赛入围定稿作品.docx"
@@ -122,7 +141,7 @@ with tempfile.TemporaryDirectory() as td:
     m.HERE, m.FINALS_DOC_CANDIDATES = old_here, old_cands
 
 print("\n== 5. v2 可核验产物 ==")
-with tempfile.TemporaryDirectory() as td:
+with local_tempdir() as td:
     old_here = m.HERE
     m.HERE = td
     os.makedirs(os.path.join(td, "v2"))
