@@ -1,5 +1,5 @@
 {
- "generated": "2026-10-01 02:21",
+ "generated": "2026-10-01 02:25",
  "root": "C:\\deepseek-harness-master\\soundinsight",
  "count": 382,
  "entries": [
@@ -1896,9 +1896,9 @@
   {
    "path": "docs/DoD_completion_table.md",
    "category": "过程与交接文档",
-   "size_bytes": 3708,
+   "size_bytes": 4313,
    "purpose": "",
-   "sha256_16": "d4107868886cbd4f3590a086bbeeb97f6ed4135438a1d56ac312e948c79f0f74"
+   "sha256_16": "38b21ccb6e374728156757a1fed7e05b201568cc42a02535a32982e130a1d4b9"
   },
   {
    "path": "docs/M3b_judge_access_guide.md",
@@ -2078,9 +2078,9 @@
   {
    "path": "docs/overnight_summary.md",
    "category": "过程与交接文档",
-   "size_bytes": 6325,
+   "size_bytes": 7307,
    "purpose": "",
-   "sha256_16": "f02523c01ce6d8cb2cc0d5336abc1070abc9c8578efa3c8034c683345e7989b7"
+   "sha256_16": "89d64e9aded0704b7500e3f25e9abad9719e9a2b92f840efb5e300fdc561c66f"
   },
   {
    "path": "docs/pre_lock_completeness_audit.md",
@@ -2108,7 +2108,7 @@
    "category": "过程与交接文档",
    "size_bytes": 3643,
    "purpose": "",
-   "sha256_16": "3c86d8a34b62a07d1c6570438767ca43ed9fcb4ee7245c8bbcef9f564215f8ad"
+   "sha256_16": "2cc4541bc0191cc5ffaf4611afe32667c9a79693ef7c2c917a59ab59654cf077"
   },
   {
    "path": "docs/retrospective_and_reflection.md",

@@ -1,6 +1,6 @@
 # 文件地图（由 make_ai_handoff.py 自动生成，勿手改）
 
-> 生成时间：2026-10-01 02:21；共 382 个条目；体积单位 KB/MB。
+> 生成时间：2026-10-01 02:25；共 382 个条目；体积单位 KB/MB。
 
 ## 提交物（5 项，43.4 MB）
 
@@ -80,19 +80,19 @@
 | `docs/legacy_materials_notice.md` | 8.3 KB |  |
 | `docs/w17_failure_cases.md` | 7.9 KB |  |
 | `docs/completeness_audit_round2.md` | 7.8 KB |  |
+| `docs/overnight_summary.md` | 7.1 KB |  |
 | `docs/external_sources_register.md` | 6.5 KB |  |
 | `docs/work_summary_d7.md` | 6.2 KB |  |
 | `docs/N2_narrative_final.md` | 6.2 KB |  |
-| `docs/overnight_summary.md` | 6.2 KB |  |
 | `docs/N1_narrative_mainline.md` | 6.0 KB |  |
 | `docs/N1b_downgrade_narrative.md` | 5.8 KB |  |
 | `docs/N5_qna_factbase.md` | 5.6 KB |  |
 | `docs/SoundInsight决赛备战_现状盘点清单.md` | 4.8 KB |  |
 | `docs/w1_longtext_variants.md` | 4.7 KB |  |
 | `docs/evidence_index_exp.md` | 4.4 KB |  |
+| `docs/DoD_completion_table.md` | 4.2 KB |  |
 | `docs/llm_credential_status.md` | 4.2 KB |  |
 | `docs/e2_erratum.md` | 4.2 KB |  |
-| `docs/DoD_completion_table.md` | 3.6 KB |  |
 | `docs/v2_gate_verdict.md` | 3.6 KB |  |
 | `docs/repo_hygiene_scan.md` | 3.6 KB |  |
 | `docs/dataset_audit.md` | 3.5 KB | 数据集字段考古 |
