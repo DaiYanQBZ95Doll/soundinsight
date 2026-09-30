@@ -1,6 +1,6 @@
 # 文件地图（由 make_ai_handoff.py 自动生成，勿手改）
 
-> 生成时间：2026-10-01 02:39；共 386 个条目；体积单位 KB/MB。
+> 生成时间：2026-10-01 02:43；共 386 个条目；体积单位 KB/MB。
 
 ## 提交物（5 项，43.4 MB）
 
@@ -61,8 +61,8 @@
 
 | 文件 | 大小 | 用途 |
 |---|---|---|
-| `docs/frozen_execution_checklist.md` | 59.8 KB |  |
-| `PROGRESS_SYNC.md` | 41.2 KB |  |
+| `docs/frozen_execution_checklist.md` | 60.5 KB |  |
+| `PROGRESS_SYNC.md` | 42.6 KB |  |
 | `docs/gap_and_roadmap_inventory.md` | 40.7 KB |  |
 | `docs/final_project_review_and_execution_plan.md` | 36.0 KB |  |
 | `docs/retrospective_and_reflection.md` | 27.9 KB |  |
@@ -98,8 +98,8 @@
 | `docs/dataset_audit.md` | 3.5 KB | 数据集字段考古 |
 | `docs/M8a_submission_precheck.md` | 3.5 KB |  |
 | `docs/N4_target_argument.md` | 3.5 KB |  |
+| `docs/M3b_judge_access_guide.md` | 3.3 KB |  |
 | `docs/N3_calibration_evidence.md` | 3.1 KB |  |
-| `docs/M3b_judge_access_guide.md` | 3.1 KB |  |
 | `docs/sandbox_operation_notes.md` | 3.1 KB |  |
 | `docs/D14_resume_checklist.md` | 3.0 KB | 收尾四步清单（录视频/打包/上传/补推送） |
 | `docs/drift_plan.md` | 2.8 KB | 数据漂移监控方案 |
@@ -235,7 +235,7 @@
 | `sample_reviews_100.csv` | 57.9 KB |  |
 | `agent_test_input.csv` | 27.9 KB |  |
 
-## 代码（129 项，0.6 MB）
+## 代码（130 项，0.6 MB）
 
 | 文件 | 大小 | 用途 |
 |---|---|---|
@@ -304,6 +304,7 @@
 | `purge_leaked_objects.py` | 3.2 KB |  |
 | `v2_repair_checklist.py` | 3.1 KB |  |
 | `audit_ppt.py` | 3.0 KB |  |
+| `check_url_consistency.py` | 3.0 KB |  |
 | `deploy_check.py` | 3.0 KB | 在线 Demo 单条验收脚本 |
 | `svm_ttest.py` | 2.9 KB |  |
 | `verify_faststart.py` | 2.9 KB |  |
@@ -425,12 +426,11 @@
 | `multi_label_model/` | 256.1 MB | 冻结的多标签归因模型权重（约 256MB），不入 git |
 | `sound_model/` | 256.1 MB | 冻结的二分类模型权重（约 256MB），不入 git |
 
-## 其他（38 项，92.4 MB）
+## 其他（37 项，46.2 MB）
 
 | 文件 | 大小 | 用途 |
 |---|---|---|
 | `更新世界的锋芒_SoundInsight_演示视频.mp4` | 46.1 MB |  |
-| `更新世界的锋芒_SoundInsight_演示视频_faststart.mp4` | 46.1 MB |  |
 | `更新世界的锋芒_SoundInsight_决赛入围定稿作品.docx` | 34.8 KB |  |
 | `v2/w14_w15_w16_report.md` | 7.9 KB |  |
 | `v2/w17_failure_stats.json` | 6.5 KB |  |
@@ -449,7 +449,7 @@
 | `v2/w5_final.md` | 1.5 KB |  |
 | `v2/v2_artifacts.json` | 1.4 KB |  |
 | `v2/w2_perclass_thresholds.md` | 1.4 KB |  |
-| `.gitignore` | 1.2 KB |  |
+| `.gitignore` | 1.3 KB |  |
 | `v2/w1_seg_threshold.json` | 1.1 KB |  |
 | `v2/v2_artifacts.template.json` | 1.1 KB |  |
 | `v2/w4_strata.json` | 1.0 KB |  |

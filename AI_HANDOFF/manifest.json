@@ -1,14 +1,14 @@
 {
- "generated": "2026-10-01 02:39",
+ "generated": "2026-10-01 02:43",
  "root": "C:\\deepseek-harness-master\\soundinsight",
  "count": 386,
  "entries": [
   {
    "path": ".gitignore",
    "category": "其他",
-   "size_bytes": 1214,
+   "size_bytes": 1321,
    "purpose": "",
-   "sha256_16": "a1fb4c9665dfd0ee60d992bc24eadbbcbb980d1cb2d0fb5af960921b0c5adc1a"
+   "sha256_16": "a250f0636271f45f9da2f9769b2003ef2b2f24a7e75465307ebbc3080138209d"
   },
   {
    "path": "AI+跨境黑客松巅峰赛 · 复赛公示名单（手机版）.html",
@@ -48,9 +48,9 @@
   {
    "path": "PROGRESS_SYNC.md",
    "category": "过程与交接文档",
-   "size_bytes": 42187,
+   "size_bytes": 43614,
    "purpose": "",
-   "sha256_16": "b6769e9865523038a9adc7ded1004af268b4d4fdd5361e980a8b1b9a32d7d2b6"
+   "sha256_16": "1f978d736aec8196ca4dbfd69d9cb892ce2fb234c6bd89391ad27c1ce8ee0496"
   },
   {
    "path": "PROJECT_BRIEF_QWEN.md",
@@ -324,6 +324,13 @@
    "size_bytes": 1309,
    "purpose": "",
    "sha256_16": "614f6a650f94c9e8ba855cfa5e40e81fd1820ca4326068eb1737414d1bc4b275"
+  },
+  {
+   "path": "check_url_consistency.py",
+   "category": "代码",
+   "size_bytes": 3074,
+   "purpose": "",
+   "sha256_16": "79ca686dfa770796f25bb3d451a9505bed0e6b8ba8e7d0980f66f9b4975866ff"
   },
   {
    "path": "check_video.py",
@@ -1058,7 +1065,7 @@
    "category": "验证报告",
    "size_bytes": 12405,
    "purpose": "数字一致性审计结果（含官方模板格式对照节）",
-   "sha256_16": "19e65d08570499fbbc821a63ec3a3bd7dfcd10ef4e76a545f41fd2cdc3338328"
+   "sha256_16": "45f330de1a253d36e54fb7b6431420e848980405f28dce6fac0bee088abfdc1c"
   },
   {
    "path": "pack_final.py",
@@ -1838,13 +1845,6 @@
    "sha256_16": ""
   },
   {
-   "path": "更新世界的锋芒_SoundInsight_演示视频_faststart.mp4",
-   "category": "其他",
-   "size_bytes": 48375526,
-   "purpose": "",
-   "sha256_16": ""
-  },
-  {
    "path": "视频录制速查.md",
    "category": "其他",
    "size_bytes": 3137,
@@ -1931,9 +1931,9 @@
   {
    "path": "docs/M3b_judge_access_guide.md",
    "category": "过程与交接文档",
-   "size_bytes": 3142,
+   "size_bytes": 3387,
    "purpose": "",
-   "sha256_16": "046a284b96d987c8b5258d661f48853f93ab4e4c710d8d7132085b63aeffd7e7"
+   "sha256_16": "53329e021f29fb7e40ff58d6ecb025495b4e2e0cf146a53c92521458c6623d13"
   },
   {
    "path": "docs/M8a_submission_precheck.md",
@@ -2078,9 +2078,9 @@
   {
    "path": "docs/frozen_execution_checklist.md",
    "category": "过程与交接文档",
-   "size_bytes": 61265,
+   "size_bytes": 61968,
    "purpose": "",
-   "sha256_16": "102fef0795cd6ee0064544435da34de5e12460cb3bb1d0c34cf12cfeafa1be4d"
+   "sha256_16": "f23c9516eb41937962488c2af2cc046cb45d90cdfc34769422734bfca70ff074"
   },
   {
    "path": "docs/gap_and_roadmap_inventory.md",
