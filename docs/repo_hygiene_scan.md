@@ -1,6 +1,6 @@
 # 公开仓库卫生扫描（密钥 / 隐私 / 废弃 claim）
 
-- 扫描范围：git 跟踪文件 327 个（文本与数据类逐行扫；二进制仅按文件名判断）
+- 扫描范围：git 跟踪文件 325 个（文本与数据类逐行扫；二进制仅按文件名判断）
 - 生成方式：`python scan_repo_hygiene.py`（可随时重跑）
 
 ## 一、密钥与凭据
@@ -52,10 +52,16 @@
 - `ppt_speed_fix.py`：8 处（行 2, 3, 17, 20, 21, 22, 23, 24）
 
 ## 四、生成物一致性（manifest.json 记录值 vs 实际文件）
-- [PASS] manifest.json 记录的大小与哈希与工作区一致
+- [需修正] 6 处记录值已过期（跑 `python make_ai_handoff.py` 重新生成）：
+  - `PROGRESS_SYNC.md` size_bytes：记录 32804 → 实际 34000
+  - `PROGRESS_SYNC.md` sha256_16：记录 83aafa30662d53d8 → 实际 4f787a7a3b6ff466
+  - `docs/frozen_execution_checklist.md` size_bytes：记录 52705 → 实际 52917
+  - `docs/frozen_execution_checklist.md` sha256_16：记录 8c0701fd31f6c750 → 实际 beea2b601351649f
+  - `docs/w1_longtext_variants.md` size_bytes：记录 3865 → 实际 4792
+  - `docs/w1_longtext_variants.md` sha256_16：记录 0ca0a2837239178e → 实际 9aa78be140ba9d22
 
 ## 五、结论与建议
 - 密钥：未发现（高危 0 处；历史提交命中 0 处）
 - 隐私：13 处，见第二节；竞赛联系信息为模板要求填写，公开仓库如需脱敏见 `docs/legacy_materials_notice.md` §四
 - 废弃 claim：当前文档需确认 0 处；历史材料的口径指引见 `docs/legacy_materials_notice.md`
-- 生成物一致性：一致
+- 生成物一致性：需重跑生成脚本

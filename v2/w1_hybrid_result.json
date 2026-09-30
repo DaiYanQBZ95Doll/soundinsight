@@ -1,0 +1,149 @@
+{
+  "protocol": "短档(≤128 token)截断 + 长档(>128 token)切窗；**约束式**阈值选择：先约束长档 tune 召回 ≥70%，再最大化整体 F1；只在 tune 上选、只在 test 上报",
+  "model": "v2/model_maxlen128",
+  "gen": "[v2]",
+  "chosen": {
+    "thr_short": 0.2,
+    "thr_long": 0.8,
+    "tune_overall": {
+      "P": 48.2,
+      "R": 83.6,
+      "F1": 0.6114,
+      "TP": 107,
+      "FP": 115,
+      "FN": 21
+    },
+    "tune_long_recall": 71.8
+  },
+  "tune_pareto": [
+    {
+      "thr_long": 0.1,
+      "long_recall": 89.7
+    },
+    {
+      "thr_long": 0.15,
+      "long_recall": 89.7
+    },
+    {
+      "thr_long": 0.2,
+      "long_recall": 89.7
+    },
+    {
+      "thr_long": 0.25,
+      "long_recall": 89.7
+    },
+    {
+      "thr_long": 0.3,
+      "long_recall": 87.2
+    },
+    {
+      "thr_long": 0.35,
+      "long_recall": 84.6
+    },
+    {
+      "thr_long": 0.4,
+      "long_recall": 82.1
+    },
+    {
+      "thr_long": 0.45,
+      "long_recall": 79.5
+    },
+    {
+      "thr_long": 0.5,
+      "long_recall": 76.9
+    },
+    {
+      "thr_long": 0.55,
+      "long_recall": 76.9
+    },
+    {
+      "thr_long": 0.6,
+      "long_recall": 76.9
+    },
+    {
+      "thr_long": 0.65,
+      "long_recall": 76.9
+    },
+    {
+      "thr_long": 0.7,
+      "long_recall": 74.4
+    },
+    {
+      "thr_long": 0.75,
+      "long_recall": 74.4
+    },
+    {
+      "thr_long": 0.8,
+      "long_recall": 71.8
+    },
+    {
+      "thr_long": 0.85,
+      "long_recall": 64.1
+    },
+    {
+      "thr_long": 0.9,
+      "long_recall": 59.0
+    },
+    {
+      "thr_long": 0.95,
+      "long_recall": 48.7
+    }
+  ],
+  "test_overall": {
+    "P": 51.0,
+    "R": 78.9,
+    "F1": 0.6196,
+    "TP": 101,
+    "FP": 97,
+    "FN": 27
+  },
+  "test_buckets": {
+    "≤128 token": {
+      "n": 8066,
+      "pos": 87,
+      "P": 67.0,
+      "R": 83.9,
+      "F1": 0.7449,
+      "TP": 73,
+      "FP": 36,
+      "FN": 14
+    },
+    ">128 token": {
+      "n": 1934,
+      "pos": 41,
+      "P": 31.5,
+      "R": 68.3,
+      "F1": 0.4308,
+      "TP": 28,
+      "FP": 61,
+      "FN": 13
+    }
+  },
+  "dod": {
+    "truncated_bucket_recall_test": 68.3,
+    "threshold": 70.0,
+    "pass": false
+  },
+  "reference": {
+    "A_truncate128": {
+      "overall_F1": 0.7077,
+      "long_R": 51.2
+    },
+    "B_truncate256": {
+      "overall_F1": 0.7206,
+      "long_R": 51.2
+    },
+    "D_truncate512": {
+      "overall_F1": 0.71,
+      "long_R": 51.2
+    },
+    "C_segment@0.5": {
+      "overall_F1": 0.6034,
+      "long_R": 82.9
+    },
+    "C_segment@0.8(tuned)": {
+      "overall_F1": 0.6061,
+      "long_R": 68.3
+    }
+  }
+}
