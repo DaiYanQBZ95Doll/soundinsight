@@ -616,8 +616,44 @@ def check_api_wording_consistency(out) -> None:
     out.append("")
 
 
+def check_file_integrity(out) -> None:
+    """关键文件完整性（体积下限）——防"脚本化编辑静默截断"。
+
+    背景（2026-10-01 事故）：一次登记脚本漏拼后半段，把 docs/frozen_execution_checklist.md
+    由 55,149 B 截为 9,553 B，而数字审计当时全绿——被删内容里没有它检查的数字。
+    本检查按体积下限兜底：低于下限即 FAIL（疑似被截断）。
+    """
+    out.append("## 关键文件完整性（体积下限，防静默截断）")
+    floors = {
+        "docs/frozen_execution_checklist.md": 40000,
+        "PROGRESS_SYNC.md": 20000,
+        "docs/final_project_review_and_execution_plan.md": 15000,
+        "competition_v4.md": 20000,
+        "results_summary.md": 5000,
+        "AI_HANDOFF/manifest.json": 20000,
+    }
+    bad = 0
+    for name, floor in floors.items():
+        p = os.path.join(HERE, name)
+        if not os.path.isfile(p):
+            out.append(f"- [FAIL] {name}：文件不存在")
+            bad += 1
+            continue
+        size = os.path.getsize(p)
+        if size < floor:
+            out.append(f"- [FAIL] {name}：{size} B < 下限 {floor} B（**疑似被截断**；"
+                       f"可用 `git show <rev>:{name}` 从完好提交恢复）")
+            bad += 1
+        else:
+            out.append(f"- [PASS] {name}：{size} B ≥ {floor} B")
+    if bad == 0:
+        out.append("- 结论：关键文件体积均正常")
+    out.append("")
+
+
 def main() -> None:
     out = ["# 文档数字一致性审计", ""]
+    check_file_integrity(out)
     for grp in GROUPS:
         for fname in grp["files"]:
             audit_file(fname, grp["required"], grp["forbidden"],
