@@ -1,7 +1,7 @@
 {
- "generated": "2026-09-30 21:06",
+ "generated": "2026-09-30 21:17",
  "root": "C:\\deepseek-harness-master\\soundinsight",
- "count": 322,
+ "count": 320,
  "entries": [
   {
    "path": ".gitignore",
@@ -48,9 +48,9 @@
   {
    "path": "PROGRESS_SYNC.md",
    "category": "过程与交接文档",
-   "size_bytes": 32397,
+   "size_bytes": 32804,
    "purpose": "",
-   "sha256_16": "120db15654898f52f0a2af39d7b3e76cc9c20bfa34cfb747056b721a27174a07"
+   "sha256_16": "83aafa30662d53d8c30385af19a76978f780db16ed4330227feb53bdd4ece034"
   },
   {
    "path": "PROJECT_BRIEF_QWEN.md",
@@ -1432,13 +1432,6 @@
    "sha256_16": "82e02eea56e892fe1060366a499fa1178b9f3fe66aeb30bebb11bf081ac88a7f"
   },
   {
-   "path": "v2_verify_tiers2.py",
-   "category": "代码",
-   "size_bytes": 1296,
-   "purpose": "",
-   "sha256_16": "a5f4d4602acdcc1326c0b0823727ba7173eeadde4926dcd0fb8b027b4976fcb6"
-  },
-  {
    "path": "v2_w17_failure_stats.py",
    "category": "代码",
    "size_bytes": 8601,
@@ -1812,9 +1805,9 @@
   {
    "path": "docs/frozen_execution_checklist.md",
    "category": "过程与交接文档",
-   "size_bytes": 52525,
+   "size_bytes": 52705,
    "purpose": "",
-   "sha256_16": "c9e5f1fcea7da0cebf8774f19d368516a755414a47d22cb43c5b223fd3a54076"
+   "sha256_16": "8c0701fd31f6c7502f0121d0246529ec99caab634b8c52c647bea9f2c16f8a43"
   },
   {
    "path": "docs/gap_and_roadmap_inventory.md",
@@ -1854,9 +1847,9 @@
   {
    "path": "docs/repo_hygiene_scan.md",
    "category": "过程与交接文档",
-   "size_bytes": 3987,
+   "size_bytes": 3808,
    "purpose": "",
-   "sha256_16": "8b15613712033790936f8dacec39be81a0d0a3c51d665d7cb7ddbf54c487e7b5"
+   "sha256_16": "f3bd0bf175081d1b6480bfd15976099533df769e6722448f3641287dfc98e371"
   },
   {
    "path": "docs/retrospective_and_reflection.md",
@@ -1920,13 +1913,6 @@
    "size_bytes": 822,
    "purpose": "年份分桶脚本输出原文",
    "sha256_16": "53f64b9728da665af7396112a933fe88c2ef16f78ec728cc675f984242ddc3cf"
-  },
-  {
-   "path": "docs/新建 文本文档.txt",
-   "category": "过程与交接文档",
-   "size_bytes": 0,
-   "purpose": "",
-   "sha256_16": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
   },
   {
    "path": "exp03_LLM复核与标签清洗/labeled_llm.csv",
