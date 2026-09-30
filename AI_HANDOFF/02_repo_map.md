@@ -1,13 +1,13 @@
 # 文件地图（由 make_ai_handoff.py 自动生成，勿手改）
 
-> 生成时间：2026-10-01 03:02；共 387 个条目；体积单位 KB/MB。
+> 生成时间：2026-10-01 03:15；共 386 个条目；体积单位 KB/MB。
 
 ## 提交物（5 项，43.4 MB）
 
 | 文件 | 大小 | 用途 |
 |---|---|---|
 | `更新世界的锋芒_SoundInsight_复赛作品.zip` | 42.4 MB |  |
-| `更新世界的锋芒_SoundInsight_其他材料.zip` | 677.9 KB |  |
+| `更新世界的锋芒_SoundInsight_其他材料.zip` | 678.4 KB |  |
 | `更新世界的锋芒_SoundInsight_复赛作品.pdf` | 210.1 KB |  |
 | `更新世界的锋芒_SoundInsight_Demo.zip` | 105.0 KB |  |
 | `更新世界的锋芒_SoundInsight_复赛作品.docx` | 48.0 KB |  |
@@ -82,10 +82,10 @@
 | `docs/completeness_audit_round2.md` | 7.8 KB |  |
 | `docs/overnight_summary.md` | 7.1 KB |  |
 | `docs/external_sources_register.md` | 6.5 KB |  |
+| `docs/N1_narrative_mainline.md` | 6.4 KB |  |
 | `docs/work_summary_d7.md` | 6.2 KB |  |
+| `docs/N1b_downgrade_narrative.md` | 6.2 KB |  |
 | `docs/N2_narrative_final.md` | 6.2 KB |  |
-| `docs/N1_narrative_mainline.md` | 6.0 KB |  |
-| `docs/N1b_downgrade_narrative.md` | 5.8 KB |  |
 | `docs/N5_qna_factbase.md` | 5.6 KB |  |
 | `docs/SoundInsight决赛备战_现状盘点清单.md` | 4.8 KB |  |
 | `docs/w1_longtext_variants.md` | 4.7 KB |  |
@@ -235,11 +235,11 @@
 | `sample_reviews_100.csv` | 57.9 KB |  |
 | `agent_test_input.csv` | 27.9 KB |  |
 
-## 代码（131 项，0.6 MB）
+## 代码（130 项，0.6 MB）
 
 | 文件 | 大小 | 用途 |
 |---|---|---|
-| `check_doc_numbers.py` | 37.2 KB | 数字审计 + 模板格式对照脚本 |
+| `check_doc_numbers.py` | 37.3 KB | 数字审计 + 模板格式对照脚本 |
 | `scan_repo_hygiene.py` | 20.0 KB |  |
 | `v2_meta_analysis.py` | 19.1 KB |  |
 | `build_finals_package.py` | 13.7 KB |  |
@@ -348,7 +348,6 @@
 | `v2_hybrid_selftest.py` | 1.5 KB |  |
 | `verify_download_urls.py` | 1.5 KB |  |
 | `extract_template.py` | 1.5 KB |  |
-| `v2_check_placeholders.py` | 1.4 KB |  |
 | `merge_three_star.py` | 1.4 KB |  |
 | `check_studio_build.py` | 1.3 KB |  |
 | `prep_err_taxonomy.py` | 1.2 KB |  |

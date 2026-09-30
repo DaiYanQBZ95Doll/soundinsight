@@ -355,11 +355,12 @@ def check_generation_mixing(out) -> None:
     """代际混用检查（质检方 §九.1/§九.2）：doc 内两代数字并排而无 [v1]/[v2] 标注即 FAIL。
 
     代际语法：实验数字后带 `[v1]`（复赛已提交口径）或 `[v2]`（决赛口径），首次出现处附说明。
-    当前 v2 尚未落地，GEN_TOKENS["v2"] 为空 → 本检查只覆盖 v1（机制就绪，v2 数字一产生
-    就自动生效）。当前代由环境变量 DSH_DOC_GEN 指定（默认 v1）。
+    **当前代**：若 `GEN_TOKENS["v2"]` 已有值（E5 已填），当前代即 v2；否则沿用环境变量
+    `DSH_DOC_GEN`（默认 v1）。2026-10-01 修正：此前标注恒为 v1，与换代事实不符。
     """
-    out.append(f"## 代际检查（当前代：{CURRENT_GEN}）")
     v2_tokens = GEN_TOKENS.get("v2") or []
+    current = "v2" if v2_tokens else CURRENT_GEN
+    out.append(f"## 代际检查（当前代：{current}；v2 token 已登记 {len(v2_tokens)} 个）")
     if not v2_tokens:
         out.append("- [注意] v2 数字尚未产生（`GEN_TOKENS[\"v2\"]` 为空）："
                    "混用检查当前仅覆盖 v1；v2 落地时把新指标/tokens 填入即可自动生效")
