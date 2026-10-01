@@ -4,6 +4,7 @@
 import datetime
 import hashlib
 import json
+import ast
 import os
 import subprocess
 import re
@@ -942,6 +943,56 @@ def check_file_integrity(out) -> None:
     out.append("")
 
 
+def check_language_filter_coverage(out) -> None:
+    """语种过滤覆盖检查：直接推理的入口必须显式处理非英文（防"单条路径绕过过滤"回归）。
+
+    规则：对产品模块做 AST 解析，凡函数体内引用 `bin_model` 或 `ml_model`（直接推理），
+    必须同时引用 `is_unsupported`，或委托 `predict_batch`/`predict_core`（已过滤的共享核心）。
+    """
+    out.append("## 语种过滤覆盖（产品入口一致性）")
+    MODELS = {"bin_model", "ml_model"}
+    FILTERS = {"is_unsupported"}
+    DELEGATE = {"predict_batch", "predict_core"}
+    bad, checked = [], 0
+    for rel in PRODUCT_MODULES:
+        p = os.path.join(HERE, rel)
+        if not os.path.isfile(p):
+            continue
+        src = open(p, encoding="utf-8", errors="replace").read()
+        try:
+            tree = ast.parse(src)
+        except SyntaxError:
+            continue
+        for node in ast.walk(tree):
+            if not isinstance(node, (ast.FunctionDef, ast.AsyncFunctionDef)):
+                continue
+            # 只认"把模型当函数调用"的情形（bin_model(...) / ml_model(...)），
+            # 不认赋值/加载引用（如 load() 里的 bin_model = from_pretrained(...)）
+            called = set()
+            for c in ast.walk(node):
+                if not isinstance(c, ast.Call):
+                    continue
+                f = c.func
+                if isinstance(f, ast.Name):
+                    called.add(f.id)
+                elif isinstance(f, ast.Attribute):
+                    called.add(f.attr)
+            names = {n.id for n in ast.walk(node) if isinstance(n, ast.Name)}
+            names |= {n.attr for n in ast.walk(node) if isinstance(n, ast.Attribute)}
+            if not (called & MODELS):
+                continue
+            checked += 1
+            if names & FILTERS or names & DELEGATE:
+                continue
+            bad.append(f"{rel}::{node.name}（行 {node.lineno}）")
+    if bad:
+        for b in bad:
+            out.append(f"- [FAIL] 直接推理但未做语种过滤：{b}")
+    else:
+        out.append(f"- [PASS] 全部直接推理入口均已过滤或委托共享核心（检查 {checked} 个函数）")
+    out.append("")
+
+
 def check_product_code_health(out) -> None:
     """产品代码健康（2026-10-01 事故后新增）。
 
@@ -1131,6 +1182,7 @@ def main() -> None:
     check_paired_totals(out)
     check_checklist_version(out)
     check_file_integrity(out)
+    check_language_filter_coverage(out)
     check_product_code_health(out)
     check_finals_numbers(out)
     check_dependency_declaration(out)

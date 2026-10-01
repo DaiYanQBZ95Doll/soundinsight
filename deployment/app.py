@@ -106,6 +106,11 @@ print(f"模型加载完成 | threshold={THR:.4f}")
 def single_predict(text):
     if not text or not text.strip():
         return "请输入英文评论"
+    # 非英文显式拒绝（与 predict_core / 批量路径同规则；此前本路径缺失，红队指出后补）
+    if is_unsupported(text):
+        return ("**不支持的语种（非拉丁字母文本）**：本系统按英文训练，对中文/日文/韩文/西里尔等显式拒绝。\n"
+                "该条未给出音质判定——批量路径会将其跳过并计数。"
+                "（注：德文/法文/西文等**拉丁字母**语言不在检测范围内，其表现未经测试，见主文档附录 B 第 6 条）")
     enc = tok(text.strip(), padding=True, truncation=True,
               max_length=MAX_LEN, return_tensors="pt")
     with torch.no_grad():
