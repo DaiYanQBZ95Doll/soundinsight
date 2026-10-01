@@ -1,13 +1,13 @@
 # 文件地图（由 make_ai_handoff.py 自动生成，勿手改）
 
-> 生成时间：2026-10-01 19:28；共 465 个条目；体积单位 KB/MB。
+> 生成时间：2026-10-01 19:44；共 466 个条目；体积单位 KB/MB。
 
 ## 提交物（5 项，43.5 MB）
 
 | 文件 | 大小 | 用途 |
 |---|---|---|
 | `更新世界的锋芒_SoundInsight_复赛作品.zip` | 42.4 MB |  |
-| `更新世界的锋芒_SoundInsight_其他材料.zip` | 811.8 KB |  |
+| `更新世界的锋芒_SoundInsight_其他材料.zip` | 817.4 KB |  |
 | `更新世界的锋芒_SoundInsight_复赛作品.pdf` | 210.1 KB |  |
 | `更新世界的锋芒_SoundInsight_Demo.zip` | 107.5 KB |  |
 | `更新世界的锋芒_SoundInsight_复赛作品.docx` | 48.0 KB |  |
@@ -35,8 +35,8 @@
 | `number_audit.md` | 15.1 KB | 数字一致性审计结果（含官方模板格式对照节） |
 | `error_taxonomy.md` | 8.2 KB | 错误分类学：FP/FN 构成 + 标注噪声人工终审 |
 | `llm_baseline.md` | 6.4 KB | LLM 对照报告（deepseek + qwen3.7-plus，含循环性红利声明） |
+| `qna_preparation.md` | 5.7 KB | 答辩 Q&A（10 问，含口径警示） |
 | `edge_case_benchmark.py` | 5.6 KB |  |
-| `qna_preparation.md` | 5.0 KB | 答辩 Q&A（10 问，含口径警示） |
 | `results_summary.py` | 4.8 KB |  |
 | `results_summary.md` | 4.8 KB | 冻结数字唯一权威源（含 ±1 混淆矩阵调和行） |
 | `MODEL_CARD.md` | 4.0 KB | 模型卡：任务/基座/指标/六条局限 |
@@ -57,7 +57,7 @@
 | `confidence_tiered.md` | 0.7 KB | 三星补漏置信度分层与中置信剔除记录 |
 | `significance_test.md` | 0.6 KB | Welch t 检验（p=0.000932） |
 
-## 过程与交接文档（71 项，0.9 MB）
+## 过程与交接文档（72 项，0.9 MB）
 
 | 文件 | 大小 | 用途 |
 |---|---|---|
@@ -83,6 +83,7 @@
 | `docs/decision_request_v15_and_nline.md` | 10.4 KB |  |
 | `docs/pre_lock_completeness_audit.md` | 10.4 KB |  |
 | `docs/progress_report_current.md` | 10.4 KB |  |
+| `docs/opinion_dsh_joint_review.md` | 9.5 KB |  |
 | `docs/completeness_audit_round2.md` | 9.3 KB |  |
 | `docs/completion_statement_for_redteam.md` | 9.3 KB |  |
 | `QWEN_HANDOFF.md` | 9.1 KB |  |
@@ -97,9 +98,9 @@
 | `docs/N1_narrative_mainline.md` | 6.5 KB |  |
 | `docs/work_summary_d7.md` | 6.2 KB |  |
 | `docs/how_to_expand_gains.md` | 6.1 KB |  |
+| `docs/demo_uptime_log.md` | 6.0 KB |  |
 | `docs/scoped_findings.md` | 5.9 KB |  |
 | `docs/N5_qna_factbase.md` | 5.9 KB |  |
-| `docs/demo_uptime_log.md` | 5.7 KB |  |
 | `docs/N6_review_risk_list.md` | 5.7 KB |  |
 | `docs/llm_credential_status.md` | 5.0 KB |  |
 | `docs/b_measure_results.md` | 5.0 KB |  |
@@ -138,7 +139,7 @@
 | 文件 | 大小 | 用途 |
 |---|---|---|
 | `SoundInsight：跨境电商耳机音质差评智能归因系统.pptx` | 18.1 MB |  |
-| `ppt_text_dump.md` | 12.0 KB |  |
+| `ppt_text_dump.md` | 13.2 KB |  |
 | `video_script.md` | 5.7 KB | 演示视频脚本（200 秒 / 9 镜头） |
 | `video_script_silent.md` | 4.4 KB | 无口播拍摄卡（操作步骤 + 画面要点） |
 | `视频素材/素材清单.md` | 2.9 KB |  |

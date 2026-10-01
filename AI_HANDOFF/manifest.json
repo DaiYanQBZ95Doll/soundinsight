@@ -1,7 +1,7 @@
 {
- "generated": "2026-10-01 19:28",
+ "generated": "2026-10-01 19:44",
  "root": "C:\\deepseek-harness-master\\soundinsight",
- "count": 465,
+ "count": 466,
  "entries": [
   {
    "path": ".gitignore",
@@ -251,9 +251,9 @@
   {
    "path": "build_finals_package.py",
    "category": "代码",
-   "size_bytes": 15049,
+   "size_bytes": 15089,
    "purpose": "",
-   "sha256_16": "a7f7d3ee10bdd5dbae5e0db0bea61c86a686e7296188d3afebfc32159458051b"
+   "sha256_16": "d23965e2de392a589e3674a153e3f909711b2a44e7507096ed4fcb78014ebe20"
   },
   {
    "path": "build_pdf.py",
@@ -608,9 +608,9 @@
   {
    "path": "hashes.txt",
    "category": "其他",
-   "size_bytes": 2066,
+   "size_bytes": 2067,
    "purpose": "",
-   "sha256_16": "7acdea76b8193341421aaae21fdca1634ced4e03ae817b763b252f8df4a1af96"
+   "sha256_16": "c5c822346c133b76579c57b903946b15b29c6337d2f42665484f145b3dd49c2c"
   },
   {
    "path": "human_review_50.csv",
@@ -1128,7 +1128,7 @@
    "category": "验证报告",
    "size_bytes": 15506,
    "purpose": "数字一致性审计结果（含官方模板格式对照节）",
-   "sha256_16": "2d5aef5ce4f93aa389ff8c7fd9ae79576028854250c3b6cd71dd09272870ba8d"
+   "sha256_16": "79ae9c593b7fcf7430eb4f8e50c4e357bcaf75b1bd76a897ae2743bfd70b0949"
   },
   {
    "path": "outside_gate_fp.py",
@@ -1168,9 +1168,9 @@
   {
    "path": "ppt_text_dump.md",
    "category": "演示材料",
-   "size_bytes": 12294,
+   "size_bytes": 13467,
    "purpose": "",
-   "sha256_16": "345efbc278013e387bc4fec0f74b82ea55a0d7fc097dc17315976ebadc93216e"
+   "sha256_16": "9fa68b816b88889675adf78491ef055810ae0dff0cde9497ed7e36b40244783e"
   },
   {
    "path": "pr_curve.png",
@@ -1266,9 +1266,9 @@
   {
    "path": "qna_preparation.md",
    "category": "验证报告",
-   "size_bytes": 5124,
+   "size_bytes": 5884,
    "purpose": "答辩 Q&A（10 问，含口径警示）",
-   "sha256_16": "0be10da5348576d9e62fd5040b89910e0e9aeb2210b7f2e07cd5c0ce45941253"
+   "sha256_16": "404c592d21e5aaf534aacd9d8fe3d78dfdeb2a840f2bdac0ad098f3ba4b11aff"
   },
   {
    "path": "rebuild_video_timing.py",
@@ -2015,9 +2015,9 @@
   {
    "path": "更新世界的锋芒_SoundInsight_其他材料.zip",
    "category": "提交物",
-   "size_bytes": 831242,
+   "size_bytes": 836967,
    "purpose": "",
-   "sha256_16": "e4520da8a05ba51b65c5a3ea215b59ecde6487574db6fa1b10fe750d75034c1d"
+   "sha256_16": "c529af6d88d727b69803eb70d1479cb57c1849eb7306080198c8740af3cc6d22"
   },
   {
    "path": "更新世界的锋芒_SoundInsight_决赛入围定稿作品.docx",
@@ -2213,14 +2213,14 @@
    "category": "过程与交接文档",
    "size_bytes": 3005,
    "purpose": "",
-   "sha256_16": "d961a554b34cb39261932f30a28992c73ada36a98a72b5d928e70742cfbb8ab5"
+   "sha256_16": "92ec0336342950b32a9357baae11fab2710ad20051f1671fe84df84f833c58cf"
   },
   {
    "path": "docs/REVIEWER_BRIEF.md",
    "category": "过程与交接文档",
    "size_bytes": 14902,
    "purpose": "",
-   "sha256_16": "fdd7fe60899378ee3d2dc110917f95fe6c3183027c07ec03ca171b436cfd63c6"
+   "sha256_16": "330eccc81862bac179719a7bbce3794ef5d62f77041159ccf4c9828756113377"
   },
   {
    "path": "docs/SoundInsight决赛备战_现状盘点清单.md",
@@ -2288,9 +2288,9 @@
   {
    "path": "docs/demo_uptime_log.md",
    "category": "过程与交接文档",
-   "size_bytes": 5808,
+   "size_bytes": 6138,
    "purpose": "",
-   "sha256_16": "3dcd07096898168a72ff5896e7b2df5d7c7efb07469acf0f6d16707ea270b66b"
+   "sha256_16": "11795073ada5f825f9da3ef67967eba0b888d1c6addc00f627d198144cb5d691"
   },
   {
    "path": "docs/difficulty_stratification.md",
@@ -2405,6 +2405,13 @@
    "sha256_16": "c45402a295ea3c1bc20f625e52fa0c6168fbf0a9d66b09ac50d82beef18c7a3e"
   },
   {
+   "path": "docs/opinion_dsh_joint_review.md",
+   "category": "过程与交接文档",
+   "size_bytes": 9757,
+   "purpose": "",
+   "sha256_16": "8eaf2c23dfd0e3d8cf86e080fcc461579537242a6dbbefcf4f913d121ee17c4b"
+  },
+  {
    "path": "docs/outside_gate_fp.md",
    "category": "过程与交接文档",
    "size_bytes": 2009,
@@ -2458,7 +2465,7 @@
    "category": "过程与交接文档",
    "size_bytes": 3620,
    "purpose": "",
-   "sha256_16": "1a5eeb6a8215018e9b52811dfde5de7877738821d9ddc4d8b068796bdffc5717"
+   "sha256_16": "1f646242919423d24bbadabbb292dc8836dd8b7a9c94a2e5fffcae40a62e1ad5"
   },
   {
    "path": "docs/retrospective_and_reflection.md",
