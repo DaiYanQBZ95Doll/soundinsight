@@ -1,13 +1,13 @@
 # 文件地图（由 make_ai_handoff.py 自动生成，勿手改）
 
-> 生成时间：2026-10-01 12:06；共 437 个条目；体积单位 KB/MB。
+> 生成时间：2026-10-01 12:17；共 437 个条目；体积单位 KB/MB。
 
 ## 提交物（5 项，43.5 MB）
 
 | 文件 | 大小 | 用途 |
 |---|---|---|
 | `更新世界的锋芒_SoundInsight_复赛作品.zip` | 42.4 MB |  |
-| `更新世界的锋芒_SoundInsight_其他材料.zip` | 771.0 KB |  |
+| `更新世界的锋芒_SoundInsight_其他材料.zip` | 776.7 KB |  |
 | `更新世界的锋芒_SoundInsight_复赛作品.pdf` | 210.1 KB |  |
 | `更新世界的锋芒_SoundInsight_Demo.zip` | 106.7 KB |  |
 | `更新世界的锋芒_SoundInsight_复赛作品.docx` | 48.0 KB |  |
@@ -121,7 +121,7 @@
 | `docs/w13_keyword_miss_rate.md` | 2.1 KB |  |
 | `docs/outside_gate_fp.md` | 2.0 KB |  |
 | `docs/w11_data_efficiency.md` | 1.9 KB |  |
-| `docs/demo_uptime_log.md` | 1.6 KB |  |
+| `docs/demo_uptime_log.md` | 1.9 KB |  |
 | `docs/checklist_version.json` | 0.8 KB |  |
 | `docs/year_split_output.txt` | 0.8 KB | 年份分桶脚本输出原文 |
 
