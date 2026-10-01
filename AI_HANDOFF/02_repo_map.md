@@ -1,13 +1,13 @@
 # 文件地图（由 make_ai_handoff.py 自动生成，勿手改）
 
-> 生成时间：2026-10-01 13:03；共 453 个条目；体积单位 KB/MB。
+> 生成时间：2026-10-01 13:36；共 457 个条目；体积单位 KB/MB。
 
 ## 提交物（5 项，43.5 MB）
 
 | 文件 | 大小 | 用途 |
 |---|---|---|
 | `更新世界的锋芒_SoundInsight_复赛作品.zip` | 42.4 MB |  |
-| `更新世界的锋芒_SoundInsight_其他材料.zip` | 781.4 KB |  |
+| `更新世界的锋芒_SoundInsight_其他材料.zip` | 789.6 KB |  |
 | `更新世界的锋芒_SoundInsight_复赛作品.pdf` | 210.1 KB |  |
 | `更新世界的锋芒_SoundInsight_Demo.zip` | 106.7 KB |  |
 | `更新世界的锋芒_SoundInsight_复赛作品.docx` | 48.0 KB |  |
@@ -57,7 +57,7 @@
 | `confidence_tiered.md` | 0.7 KB | 三星补漏置信度分层与中置信剔除记录 |
 | `significance_test.md` | 0.6 KB | Welch t 检验（p=0.000932） |
 
-## 过程与交接文档（65 项，0.8 MB）
+## 过程与交接文档（68 项，0.9 MB）
 
 | 文件 | 大小 | 用途 |
 |---|---|---|
@@ -73,6 +73,7 @@
 | `docs/D13_seal_declaration.md` | 20.1 KB | D13 封包声明（提交技术质检终审） |
 | `docs/final_review_and_execution_plan.md` | 19.9 KB |  |
 | `docs/overnight_summary.md` | 17.2 KB |  |
+| `docs/three_stage_comparison.md` | 16.3 KB |  |
 | `docs/reassessment_after_credential.md` | 12.9 KB |  |
 | `docs/file_inventory.md` | 12.8 KB | 项目文件总索引 |
 | `docs/N_line_handoff_protocol.md` | 11.2 KB |  |
@@ -93,6 +94,7 @@
 | `docs/N2_narrative_final.md` | 6.5 KB |  |
 | `docs/N1_narrative_mainline.md` | 6.4 KB |  |
 | `docs/work_summary_d7.md` | 6.2 KB |  |
+| `docs/how_to_expand_gains.md` | 6.1 KB |  |
 | `docs/scoped_findings.md` | 5.9 KB |  |
 | `docs/N5_qna_factbase.md` | 5.8 KB |  |
 | `docs/N6_review_risk_list.md` | 5.6 KB |  |
@@ -112,6 +114,7 @@
 | `docs/N4_target_argument.md` | 3.5 KB |  |
 | `docs/w4_mining_estimate.md` | 3.4 KB |  |
 | `docs/M3b_judge_access_guide.md` | 3.3 KB |  |
+| `docs/demo_uptime_log.md` | 3.2 KB |  |
 | `docs/N3_calibration_evidence.md` | 3.1 KB |  |
 | `docs/sandbox_operation_notes.md` | 3.1 KB |  |
 | `docs/D14_resume_checklist.md` | 3.0 KB | 收尾四步清单（录视频/打包/上传/补推送） |
@@ -119,7 +122,7 @@
 | `docs/drift_plan.md` | 2.8 KB | 数据漂移监控方案 |
 | `docs/w17_confidence_actions.md` | 2.8 KB |  |
 | `AI_INDUCTION_REDLINE.md` | 2.7 KB |  |
-| `docs/demo_uptime_log.md` | 2.6 KB |  |
+| `docs/PAUSE_SNAPSHOT.md` | 2.5 KB |  |
 | `docs/W5_cv_interpretation.md` | 2.2 KB |  |
 | `docs/w13_keyword_miss_rate.md` | 2.1 KB |  |
 | `docs/outside_gate_fp.md` | 2.0 KB |  |
@@ -261,7 +264,7 @@
 | `sample_reviews_100.csv` | 57.9 KB |  |
 | `agent_test_input.csv` | 27.9 KB |  |
 
-## 代码（150 项，0.7 MB）
+## 代码（151 项，0.7 MB）
 
 | 文件 | 大小 | 用途 |
 |---|---|---|
@@ -345,6 +348,7 @@
 | `purge_leaked_objects.py` | 3.2 KB |  |
 | `analyze_b_measure.py` | 3.1 KB |  |
 | `v2_repair_checklist.py` | 3.1 KB |  |
+| `v2_collect_history.py` | 3.1 KB |  |
 | `check_demo_alive.py` | 3.0 KB |  |
 | `audit_ppt.py` | 3.0 KB |  |
 | `check_url_consistency.py` | 3.0 KB |  |
