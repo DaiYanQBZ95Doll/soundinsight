@@ -1,0 +1,83 @@
+{
+  "manual_classification": {
+    "criteria": "in_scope=耳机/耳塞的音质或声音缺陷抱怨；cross_category=非耳机产品（电视/收音机/显示器/便携音箱/唱片机/金属探测器/MP3/保护壳等）；unclear=无法判断产品",
+    "w4": {
+      "in_scope": [
+        136,
+        441,
+        819,
+        1016,
+        1439,
+        1600,
+        1663,
+        1972,
+        2171,
+        2257,
+        2319,
+        2326,
+        2332,
+        2368
+      ],
+      "cross_category": [
+        198,
+        463,
+        536,
+        1065,
+        1076,
+        1100,
+        1134,
+        1142,
+        1447,
+        1586
+      ],
+      "unclear": [
+        907,
+        1257,
+        2361
+      ]
+    },
+    "gate_outside": {
+      "in_scope": [
+        10227,
+        32933,
+        67220,
+        39165
+      ],
+      "cross_category": [
+        35964
+      ],
+      "unclear": [
+        96614
+      ]
+    }
+  },
+  "w4": {
+    "sampled": 299,
+    "llm_positive": 27,
+    "in_scope_positive": 14,
+    "estimate_raw": 901.4,
+    "estimate_in_scope": 456.4,
+    "estimate_in_scope_ci95": [
+      212.3,
+      700.6
+    ]
+  },
+  "gate_outside": {
+    "sampled": 300,
+    "llm_positive": 6,
+    "in_scope_positive": 4,
+    "rate_raw": 0.02,
+    "rate_in_scope": 0.0133,
+    "rate_in_scope_ci95": [
+      0.0052,
+      0.0338
+    ],
+    "estimate_raw": 1741.0,
+    "estimate_in_scope": 1161.0,
+    "estimate_in_scope_ci95": [
+      452.0,
+      2941.0
+    ]
+  },
+  "caveat": "分类为人工逐条判定（依据见 docs/scoped_findings.md §一），可复核；未做双人独立标注，故存在主观性"
+}

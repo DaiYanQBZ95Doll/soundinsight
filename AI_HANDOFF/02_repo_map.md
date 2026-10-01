@@ -1,13 +1,13 @@
 # 文件地图（由 make_ai_handoff.py 自动生成，勿手改）
 
-> 生成时间：2026-10-01 05:44；共 412 个条目；体积单位 KB/MB。
+> 生成时间：2026-10-01 09:54；共 422 个条目；体积单位 KB/MB。
 
 ## 提交物（5 项，43.5 MB）
 
 | 文件 | 大小 | 用途 |
 |---|---|---|
 | `更新世界的锋芒_SoundInsight_复赛作品.zip` | 42.4 MB |  |
-| `更新世界的锋芒_SoundInsight_其他材料.zip` | 729.4 KB |  |
+| `更新世界的锋芒_SoundInsight_其他材料.zip` | 736.1 KB |  |
 | `更新世界的锋芒_SoundInsight_复赛作品.pdf` | 210.1 KB |  |
 | `更新世界的锋芒_SoundInsight_Demo.zip` | 106.7 KB |  |
 | `更新世界的锋芒_SoundInsight_复赛作品.docx` | 48.0 KB |  |
@@ -57,13 +57,13 @@
 | `confidence_tiered.md` | 0.7 KB | 三星补漏置信度分层与中置信剔除记录 |
 | `significance_test.md` | 0.6 KB | Welch t 检验（p=0.000932） |
 
-## 过程与交接文档（52 项，0.5 MB）
+## 过程与交接文档（54 项，0.5 MB）
 
 | 文件 | 大小 | 用途 |
 |---|---|---|
-| `docs/frozen_execution_checklist.md` | 65.2 KB |  |
-| `PROGRESS_SYNC.md` | 48.6 KB |  |
-| `docs/gap_and_roadmap_inventory.md` | 42.6 KB |  |
+| `docs/frozen_execution_checklist.md` | 65.8 KB |  |
+| `PROGRESS_SYNC.md` | 50.1 KB |  |
+| `docs/gap_and_roadmap_inventory.md` | 43.3 KB |  |
 | `docs/final_project_review_and_execution_plan.md` | 36.3 KB |  |
 | `docs/retrospective_and_reflection.md` | 27.9 KB |  |
 | `docs/project_full_record.md` | 21.6 KB | 初赛→复赛全流程记录 |
@@ -89,13 +89,14 @@
 | `docs/N6_review_risk_list.md` | 5.6 KB |  |
 | `docs/N5_qna_factbase.md` | 5.6 KB |  |
 | `docs/w4_prescreen_estimate.md` | 4.8 KB |  |
+| `docs/scoped_findings.md` | 4.8 KB |  |
 | `docs/SoundInsight决赛备战_现状盘点清单.md` | 4.8 KB |  |
 | `docs/w1_longtext_variants.md` | 4.7 KB |  |
+| `docs/v2_gate_verdict.md` | 4.6 KB |  |
 | `docs/evidence_index_exp.md` | 4.4 KB |  |
 | `docs/DoD_completion_table.md` | 4.2 KB |  |
 | `docs/llm_credential_status.md` | 4.2 KB |  |
 | `docs/e2_erratum.md` | 4.2 KB |  |
-| `docs/v2_gate_verdict.md` | 3.7 KB |  |
 | `docs/repo_hygiene_scan.md` | 3.6 KB |  |
 | `docs/dataset_audit.md` | 3.5 KB | 数据集字段考古 |
 | `docs/M8a_submission_precheck.md` | 3.5 KB |  |
@@ -112,6 +113,7 @@
 | `docs/w13_keyword_miss_rate.md` | 2.1 KB |  |
 | `docs/w11_data_efficiency.md` | 1.9 KB |  |
 | `docs/outside_gate_fp.md` | 1.8 KB |  |
+| `docs/w4_mining_estimate.md` | 1.6 KB |  |
 | `docs/year_split_output.txt` | 0.8 KB | 年份分桶脚本输出原文 |
 
 ## 演示材料（6 项，18.1 MB）
@@ -242,19 +244,19 @@
 | `sample_reviews_100.csv` | 57.9 KB |  |
 | `agent_test_input.csv` | 27.9 KB |  |
 
-## 代码（143 项，0.7 MB）
+## 代码（144 项，0.7 MB）
 
 | 文件 | 大小 | 用途 |
 |---|---|---|
 | `check_doc_numbers.py` | 41.8 KB | 数字审计 + 模板格式对照脚本 |
 | `scan_repo_hygiene.py` | 20.0 KB |  |
 | `v2_meta_analysis.py` | 19.1 KB |  |
-| `build_finals_package.py` | 14.2 KB |  |
+| `build_finals_package.py` | 14.3 KB |  |
 | `build_finals_docx2.py` | 12.7 KB |  |
+| `build_finals_appendix.py` | 12.5 KB |  |
 | `v2_w4_mine.py` | 12.4 KB |  |
 | `build_pdf_v2.py` | 12.4 KB |  |
 | `v2_w1_longtext.py` | 12.1 KB |  |
-| `build_finals_appendix.py` | 11.8 KB |  |
 | `make_ai_handoff.py` | 11.5 KB |  |
 | `build_pdf.py` | 11.2 KB |  |
 | `report_builder.py` | 10.2 KB |  |
@@ -323,6 +325,7 @@
 | `v2_repair_checklist.py` | 3.1 KB |  |
 | `audit_ppt.py` | 3.0 KB |  |
 | `check_url_consistency.py` | 3.0 KB |  |
+| `w4_model_vs_llm.py` | 3.0 KB |  |
 | `deploy_check.py` | 3.0 KB | 在线 Demo 单条验收脚本 |
 | `svm_ttest.py` | 2.9 KB |  |
 | `refresh_samples.py` | 2.9 KB |  |
@@ -446,16 +449,19 @@
 | `multi_label_model/` | 256.1 MB | 冻结的多标签归因模型权重（约 256MB），不入 git |
 | `sound_model/` | 256.1 MB | 冻结的二分类模型权重（约 256MB），不入 git |
 
-## 其他（43 项，46.2 MB）
+## 其他（50 项，46.4 MB）
 
 | 文件 | 大小 | 用途 |
 |---|---|---|
 | `更新世界的锋芒_SoundInsight_演示视频.mp4` | 46.1 MB |  |
-| `更新世界的锋芒_SoundInsight_决赛入围定稿作品.docx` | 35.0 KB |  |
+| `v2/w4_review.jsonl` | 98.0 KB |  |
+| `v2/gate_outside_review.jsonl` | 86.8 KB |  |
+| `更新世界的锋芒_SoundInsight_决赛入围定稿作品.docx` | 35.3 KB |  |
 | `v2/w14_w15_w16_report.md` | 7.9 KB |  |
 | `v2/w17_failure_stats.json` | 6.5 KB |  |
 | `v2/m0_switch_report.json` | 6.0 KB |  |
 | `v2/w4_prescreen.json` | 6.0 KB |  |
+| `v2/w4_estimate.json` | 5.4 KB |  |
 | `v2/w7_calibration.json` | 4.4 KB |  |
 | `v2/w5_final.json` | 3.9 KB |  |
 | `v2/w14_w15_w16_summary.json` | 3.1 KB |  |
@@ -467,6 +473,7 @@
 | `v2/w5_cv.json` | 2.0 KB |  |
 | `v2/w6_split_manifest.json` | 1.8 KB |  |
 | `w13_keyword_miss_rate.json` | 1.8 KB |  |
+| `v2/scoped_estimates.json` | 1.7 KB |  |
 | `v2/w7_calibration.md` | 1.5 KB |  |
 | `v2/w5_final.md` | 1.5 KB |  |
 | `v2/v2_artifacts.json` | 1.4 KB |  |
@@ -486,10 +493,13 @@
 | `v2/w1_eval_maxlen128.json` | 0.9 KB |  |
 | `v2/w1_eval_maxlen256.json` | 0.9 KB |  |
 | `v2/w1_eval_maxlen512.json` | 0.9 KB |  |
+| `v2/manual_scope_classification.json` | 0.8 KB |  |
 | `v2/outside_gate_fp.json` | 0.6 KB |  |
 | `difficulty_stratification.json` | 0.5 KB |  |
 | `per_class_thresholds_probe.json` | 0.4 KB |  |
 | `w11_data_efficiency.json` | 0.4 KB |  |
 | `v2/threshold.json` | 0.3 KB |  |
 | `v2/entrypoints_check.json` | 0.3 KB |  |
+| `v2/gate_outside_estimate.json` | 0.2 KB |  |
+| `v2/model_vs_llm_on_w4_sample.json` | 0.2 KB |  |
 | `v2/w4_summary.json` | 0.2 KB |  |

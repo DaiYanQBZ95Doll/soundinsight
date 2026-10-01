@@ -103,6 +103,8 @@ OTHER_FILES = [
     "v2_w4_mine.py", "v2_w4_estimate.py", "v2_w4_prescreen.py",
     "docs/w4_prescreen_estimate.md", "v2/w4_prescreen.json",
     "v2_gate_outside_probe.py", "docs/outside_gate_fp.md",
+    "docs/scoped_findings.md", "v2/scoped_estimates.json",
+    "v2/manual_scope_classification.json", "w4_model_vs_llm.py",
     "docs/difficulty_stratification.md", "outside_gate_fp.py",
     "difficulty_stratification.py", "check_url_consistency.py",
     "check_refs_and_deps.py",

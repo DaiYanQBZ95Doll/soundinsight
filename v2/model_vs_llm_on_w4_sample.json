@@ -1,0 +1,14 @@
+{
+  "n": 299,
+  "threshold": 0.6,
+  "model_vs_llm": {
+    "TP": 0,
+    "FP": 0,
+    "FN": 27,
+    "TN": 272,
+    "llm_positives": 27,
+    "model_positives": 0,
+    "model_recall_on_llm_positives_pct": 0.0,
+    "model_precision_pct": 0
+  }
+}

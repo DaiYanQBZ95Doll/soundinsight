@@ -1,0 +1,17 @@
+{
+  "n": 300,
+  "positives": 6,
+  "rate": 0.02,
+  "wilson95": [
+    0.0092,
+    0.0429
+  ],
+  "outside_rows": 87071,
+  "estimate": 1741.4,
+  "estimate_ci95": [
+    800.8,
+    3738.8
+  ],
+  "gate_inside_positives": 1280,
+  "gen": "[v2]"
+}
