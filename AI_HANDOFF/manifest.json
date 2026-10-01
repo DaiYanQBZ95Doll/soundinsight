@@ -1,5 +1,5 @@
 {
- "generated": "2026-10-01 11:51",
+ "generated": "2026-10-01 11:57",
  "root": "C:\\deepseek-harness-master\\soundinsight",
  "count": 436,
  "entries": [
@@ -244,9 +244,9 @@
   {
    "path": "build_finals_package.py",
    "category": "代码",
-   "size_bytes": 14767,
+   "size_bytes": 14847,
    "purpose": "",
-   "sha256_16": "1fe7f323603f81924b02f3a5d3d4cd322137a4f505df19b44bea0410e51e534f"
+   "sha256_16": "4cf304655c413962dee3d8828f425e454424ebbb768b32688071aa383d5eeab3"
   },
   {
    "path": "build_pdf.py",
@@ -601,9 +601,9 @@
   {
    "path": "hashes.txt",
    "category": "其他",
-   "size_bytes": 2049,
+   "size_bytes": 2050,
    "purpose": "",
-   "sha256_16": "ba2e41713627d026dc9cc6d83773a62e420b643121f4409c1aa9032a48b5ee50"
+   "sha256_16": "87cd5f68b6f01eca4a2b9e05e9a7160219cabafed1a8d347bae2891bc56464a3"
   },
   {
    "path": "human_review_50.csv",
@@ -1100,7 +1100,7 @@
    "category": "验证报告",
    "size_bytes": 15161,
    "purpose": "数字一致性审计结果（含官方模板格式对照节）",
-   "sha256_16": "5f87b6e92db6776f8228f1ed80c148f1a2aa203baacdeea25f9cca1abd4d683e"
+   "sha256_16": "967e4ffd855f3b77ae4e359646e11219602e93f0fb2687ade075115eabe5cc2e"
   },
   {
    "path": "outside_gate_fp.py",
@@ -1945,9 +1945,9 @@
   {
    "path": "更新世界的锋芒_SoundInsight_其他材料.zip",
    "category": "提交物",
-   "size_bytes": 780333,
+   "size_bytes": 789382,
    "purpose": "",
-   "sha256_16": "fb24751df1e9be11bc2168d597403298ff5b0ac0965539476a035b9f702ddb4f"
+   "sha256_16": "8ab4481dbf9f248e452f66ff556d01fe9cff40dd70edb038e39b1f97d86b40db"
   },
   {
    "path": "更新世界的锋芒_SoundInsight_决赛入围定稿作品.docx",
@@ -2190,9 +2190,9 @@
   {
    "path": "docs/demo_uptime_log.md",
    "category": "过程与交接文档",
-   "size_bytes": 1139,
+   "size_bytes": 1394,
    "purpose": "",
-   "sha256_16": "38bdfa2436c3b62e33a3c06dc58a688abc7e9eb1e2b979d6356aa1b0d69f52cc"
+   "sha256_16": "43125716dce6df94f371e63da4446ac81114b37ed174ed25a4fe7d59eccd6396"
   },
   {
    "path": "docs/difficulty_stratification.md",
@@ -2339,7 +2339,7 @@
    "category": "过程与交接文档",
    "size_bytes": 3643,
    "purpose": "",
-   "sha256_16": "bb1dc50ea7ae2443e3adb37ef1b73a2b45b54993884b5915d4b6d4cfd2cdee1e"
+   "sha256_16": "8bc7e3419aa49848e4d95abf9ebf28441e5d362588c832cb98bf9372b5d83aac"
   },
   {
    "path": "docs/retrospective_and_reflection.md",

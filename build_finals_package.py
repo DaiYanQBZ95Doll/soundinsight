@@ -106,6 +106,7 @@ OTHER_FILES = [
     "docs/scoped_findings.md", "v2/scoped_estimates.json",
     "docs/decision_request_v15_and_nline.md",
     "docs/reassessment_after_credential.md",
+    "docs/human_gold_set_protocol.md", "make_gold_set.py", "score_gold_set.py",
     "v2/ai_scope_classification.json", "v2/w4_review_POOL_invalid.jsonl", "w4_model_vs_llm.py",
     "docs/difficulty_stratification.md", "outside_gate_fp.py",
     "difficulty_stratification.py", "check_url_consistency.py",
