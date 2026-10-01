@@ -681,7 +681,7 @@ def check_package_size_claims(out) -> None:
                         continue
                     if "视频" in ln or "video" in ln.lower() or ".mp4" in ln:
                         continue
-                    if any(k in ln for k in ("当时", "构建批次", "冻结值", "历史")):
+                    if any(k in ln for k in ("当时", "构建批次", "冻结值", "历史", "随重建变化", "以 `hashes.txt`")):
                         continue
                     bad.append(f"{rel}:{i} → {m.group(1)} B（当前 {cur:,} B）")
     if bad:

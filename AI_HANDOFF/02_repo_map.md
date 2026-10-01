@@ -1,13 +1,13 @@
 # 文件地图（由 make_ai_handoff.py 自动生成，勿手改）
 
-> 生成时间：2026-10-01 17:45；共 460 个条目；体积单位 KB/MB。
+> 生成时间：2026-10-01 18:03；共 462 个条目；体积单位 KB/MB。
 
 ## 提交物（5 项，43.5 MB）
 
 | 文件 | 大小 | 用途 |
 |---|---|---|
 | `更新世界的锋芒_SoundInsight_复赛作品.zip` | 42.4 MB |  |
-| `更新世界的锋芒_SoundInsight_其他材料.zip` | 794.0 KB |  |
+| `更新世界的锋芒_SoundInsight_其他材料.zip` | 804.2 KB |  |
 | `更新世界的锋芒_SoundInsight_复赛作品.pdf` | 210.1 KB |  |
 | `更新世界的锋芒_SoundInsight_Demo.zip` | 106.7 KB |  |
 | `更新世界的锋芒_SoundInsight_复赛作品.docx` | 48.0 KB |  |
@@ -57,7 +57,7 @@
 | `confidence_tiered.md` | 0.7 KB | 三星补漏置信度分层与中置信剔除记录 |
 | `significance_test.md` | 0.6 KB | Welch t 检验（p=0.000932） |
 
-## 过程与交接文档（68 项，0.9 MB）
+## 过程与交接文档（69 项，0.9 MB）
 
 | 文件 | 大小 | 用途 |
 |---|---|---|
@@ -74,6 +74,7 @@
 | `docs/D13_seal_declaration.md` | 20.1 KB | D13 封包声明（提交技术质检终审） |
 | `docs/final_review_and_execution_plan.md` | 19.9 KB |  |
 | `docs/overnight_summary.md` | 17.3 KB |  |
+| `docs/REVIEWER_BRIEF.md` | 14.2 KB |  |
 | `docs/reassessment_after_credential.md` | 13.2 KB |  |
 | `docs/file_inventory.md` | 12.8 KB | 项目文件总索引 |
 | `docs/N_line_handoff_protocol.md` | 11.2 KB |  |
@@ -108,8 +109,8 @@
 | `docs/evidence_index_exp.md` | 4.4 KB |  |
 | `docs/human_gold_set_protocol.md` | 4.2 KB |  |
 | `docs/e2_erratum.md` | 4.2 KB |  |
+| `docs/demo_uptime_log.md` | 3.9 KB |  |
 | `docs/repo_hygiene_scan.md` | 3.9 KB |  |
-| `docs/demo_uptime_log.md` | 3.7 KB |  |
 | `docs/dataset_audit.md` | 3.5 KB | 数据集字段考古 |
 | `docs/M8a_submission_precheck.md` | 3.5 KB |  |
 | `docs/N4_target_argument.md` | 3.5 KB |  |
@@ -264,7 +265,7 @@
 | `sample_reviews_100.csv` | 57.9 KB |  |
 | `agent_test_input.csv` | 27.9 KB |  |
 
-## 代码（152 项，0.7 MB）
+## 代码（153 项，0.7 MB）
 
 | 文件 | 大小 | 用途 |
 |---|---|---|
@@ -272,7 +273,7 @@
 | `scan_repo_hygiene.py` | 20.0 KB |  |
 | `v2_meta_analysis.py` | 19.1 KB |  |
 | `build_finals_appendix.py` | 15.1 KB |  |
-| `build_finals_package.py` | 14.6 KB |  |
+| `build_finals_package.py` | 14.7 KB |  |
 | `v2_w4_mine.py` | 13.2 KB |  |
 | `test_audit_checks.py` | 13.2 KB |  |
 | `build_finals_docx2.py` | 12.7 KB |  |
@@ -328,6 +329,7 @@
 | `predict_core.py` | 5.1 KB | 共享推理核心（含非英文显式拒绝） |
 | `verify_ui_and_api.py` | 5.0 KB |  |
 | `fix_ppt_threshold.py` | 4.8 KB |  |
+| `make_reviewer_brief.py` | 4.6 KB |  |
 | `make_video_assets.py` | 4.6 KB |  |
 | `v2_record_incident.py` | 4.5 KB |  |
 | `make_samples.py` | 4.4 KB |  |
