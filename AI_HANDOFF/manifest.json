@@ -1,5 +1,5 @@
 {
- "generated": "2026-10-01 12:57",
+ "generated": "2026-10-01 13:03",
  "root": "C:\\deepseek-harness-master\\soundinsight",
  "count": 453,
  "entries": [
@@ -251,9 +251,9 @@
   {
    "path": "build_finals_package.py",
    "category": "代码",
-   "size_bytes": 14886,
+   "size_bytes": 14916,
    "purpose": "",
-   "sha256_16": "68d4ad22405b9fd834bd2f948d56a4f3e8e5ff861482d0ba4cc132f511e842b0"
+   "sha256_16": "a05fbe3686690f20b44b97c949da46b131df2213f30dc421209a2720c4de95e8"
   },
   {
    "path": "build_pdf.py",
@@ -608,9 +608,9 @@
   {
    "path": "hashes.txt",
    "category": "其他",
-   "size_bytes": 2054,
+   "size_bytes": 2055,
    "purpose": "",
-   "sha256_16": "13cecaf582be535f5cb0d47b0c9e4ccda7331b42d790e69adcfa43128172e728"
+   "sha256_16": "a8c7e3aacc11bc04059fbf35023e9423865f157ab448e1ccff2a8ffb20a9debf"
   },
   {
    "path": "human_review_50.csv",
@@ -1114,7 +1114,7 @@
    "category": "验证报告",
    "size_bytes": 15161,
    "purpose": "数字一致性审计结果（含官方模板格式对照节）",
-   "sha256_16": "74b7cf856146b38627b58f03777b0ed4b2f219d769408b41a33b2b19976585fc"
+   "sha256_16": "c085204f6c1ce57fa1de21a2051f93e173b75ce8f211310b6832b858825eb11d"
   },
   {
    "path": "outside_gate_fp.py",
@@ -1980,9 +1980,9 @@
   {
    "path": "更新世界的锋芒_SoundInsight_其他材料.zip",
    "category": "提交物",
-   "size_bytes": 796162,
+   "size_bytes": 800120,
    "purpose": "",
-   "sha256_16": "cc88fa90fe3fb16efd45a87c1dbf7b577a912ab4754617df9f238e15126c7c9a"
+   "sha256_16": "e7c7e74bd6c540ed9f99d4f2e793422aaf8dadc88cebdf345c7ad3e18a6303e6"
   },
   {
    "path": "更新世界的锋芒_SoundInsight_决赛入围定稿作品.docx",
@@ -2239,9 +2239,9 @@
   {
    "path": "docs/demo_uptime_log.md",
    "category": "过程与交接文档",
-   "size_bytes": 2414,
+   "size_bytes": 2669,
    "purpose": "",
-   "sha256_16": "778df4c56b55a2cb0e6d57bd2e61115c67445d0e5101f8101aeb6853d485b0c9"
+   "sha256_16": "ed7279494a081da201fb40e49530edbf1c6d12cf2ecf7d8f50ec0922e52b5a53"
   },
   {
    "path": "docs/difficulty_stratification.md",
@@ -2393,9 +2393,9 @@
   {
    "path": "docs/repo_hygiene_scan.md",
    "category": "过程与交接文档",
-   "size_bytes": 3757,
+   "size_bytes": 3966,
    "purpose": "",
-   "sha256_16": "5cd8aac1dafd453eb5f5c6e98514d22e1c51b409de4f3e460224b869f91f2880"
+   "sha256_16": "fa74cad3f482388ac6958ab4090fe706ace621b749a2e2dc22db9fdace46a4c0"
   },
   {
    "path": "docs/retrospective_and_reflection.md",

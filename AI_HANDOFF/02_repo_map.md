@@ -1,13 +1,13 @@
 # 文件地图（由 make_ai_handoff.py 自动生成，勿手改）
 
-> 生成时间：2026-10-01 12:57；共 453 个条目；体积单位 KB/MB。
+> 生成时间：2026-10-01 13:03；共 453 个条目；体积单位 KB/MB。
 
 ## 提交物（5 项，43.5 MB）
 
 | 文件 | 大小 | 用途 |
 |---|---|---|
 | `更新世界的锋芒_SoundInsight_复赛作品.zip` | 42.4 MB |  |
-| `更新世界的锋芒_SoundInsight_其他材料.zip` | 777.5 KB |  |
+| `更新世界的锋芒_SoundInsight_其他材料.zip` | 781.4 KB |  |
 | `更新世界的锋芒_SoundInsight_复赛作品.pdf` | 210.1 KB |  |
 | `更新世界的锋芒_SoundInsight_Demo.zip` | 106.7 KB |  |
 | `更新世界的锋芒_SoundInsight_复赛作品.docx` | 48.0 KB |  |
@@ -106,7 +106,7 @@
 | `docs/evidence_index_exp.md` | 4.4 KB |  |
 | `docs/human_gold_set_protocol.md` | 4.2 KB |  |
 | `docs/e2_erratum.md` | 4.2 KB |  |
-| `docs/repo_hygiene_scan.md` | 3.7 KB |  |
+| `docs/repo_hygiene_scan.md` | 3.9 KB |  |
 | `docs/dataset_audit.md` | 3.5 KB | 数据集字段考古 |
 | `docs/M8a_submission_precheck.md` | 3.5 KB |  |
 | `docs/N4_target_argument.md` | 3.5 KB |  |
@@ -119,7 +119,7 @@
 | `docs/drift_plan.md` | 2.8 KB | 数据漂移监控方案 |
 | `docs/w17_confidence_actions.md` | 2.8 KB |  |
 | `AI_INDUCTION_REDLINE.md` | 2.7 KB |  |
-| `docs/demo_uptime_log.md` | 2.4 KB |  |
+| `docs/demo_uptime_log.md` | 2.6 KB |  |
 | `docs/W5_cv_interpretation.md` | 2.2 KB |  |
 | `docs/w13_keyword_miss_rate.md` | 2.1 KB |  |
 | `docs/outside_gate_fp.md` | 2.0 KB |  |
@@ -268,7 +268,7 @@
 | `check_doc_numbers.py` | 48.5 KB | 数字审计 + 模板格式对照脚本 |
 | `scan_repo_hygiene.py` | 20.0 KB |  |
 | `v2_meta_analysis.py` | 19.1 KB |  |
-| `build_finals_package.py` | 14.5 KB |  |
+| `build_finals_package.py` | 14.6 KB |  |
 | `v2_w4_mine.py` | 13.2 KB |  |
 | `build_finals_appendix.py` | 13.2 KB |  |
 | `build_finals_docx2.py` | 12.7 KB |  |
