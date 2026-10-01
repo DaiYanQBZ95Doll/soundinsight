@@ -1,13 +1,13 @@
 # 文件地图（由 make_ai_handoff.py 自动生成，勿手改）
 
-> 生成时间：2026-10-01 20:07；共 475 个条目；体积单位 KB/MB。
+> 生成时间：2026-10-01 20:38；共 479 个条目；体积单位 KB/MB。
 
 ## 提交物（5 项，43.6 MB）
 
 | 文件 | 大小 | 用途 |
 |---|---|---|
 | `更新世界的锋芒_SoundInsight_复赛作品.zip` | 42.4 MB |  |
-| `更新世界的锋芒_SoundInsight_其他材料.zip` | 831.8 KB |  |
+| `更新世界的锋芒_SoundInsight_其他材料.zip` | 845.3 KB |  |
 | `更新世界的锋芒_SoundInsight_复赛作品.pdf` | 210.1 KB |  |
 | `更新世界的锋芒_SoundInsight_Demo.zip` | 107.5 KB |  |
 | `更新世界的锋芒_SoundInsight_复赛作品.docx` | 48.0 KB |  |
@@ -24,7 +24,7 @@
 | `competition_v2.md` | 7.0 KB | 初赛版文档 |
 | `competition_v2.txt` | 7.0 KB |  |
 | `DEPLOY_GUIDE.md` | 4.2 KB |  |
-| `docs/bus/README.md` | 3.4 KB |  |
+| `docs/bus/README.md` | 3.6 KB |  |
 | `v2/README.md` | 1.7 KB |  |
 | `deployment/README.md` | 0.6 KB |  |
 | `REPO_INTRO.txt` | 0.6 KB |  |
@@ -58,12 +58,12 @@
 | `confidence_tiered.md` | 0.7 KB | 三星补漏置信度分层与中置信剔除记录 |
 | `significance_test.md` | 0.6 KB | Welch t 检验（p=0.000932） |
 
-## 过程与交接文档（79 项，0.9 MB）
+## 过程与交接文档（80 项，1.0 MB）
 
 | 文件 | 大小 | 用途 |
 |---|---|---|
 | `docs/gold_set/worksheet.csv` | 177.2 KB |  |
-| `docs/frozen_execution_checklist.md` | 70.2 KB |  |
+| `docs/frozen_execution_checklist.md` | 70.8 KB |  |
 | `PROGRESS_SYNC.md` | 57.0 KB |  |
 | `docs/gold_set/worksheet.md` | 45.6 KB |  |
 | `docs/gap_and_roadmap_inventory.md` | 44.1 KB |  |
@@ -96,10 +96,11 @@
 | `docs/w17_failure_cases.md` | 7.9 KB |  |
 | `docs/joint_review_agenda.md` | 7.8 KB |  |
 | `docs/N1b_downgrade_narrative.md` | 7.0 KB |  |
+| `docs/demo_uptime_log.md` | 7.0 KB |  |
 | `docs/decision_queue.md` | 6.8 KB |  |
 | `docs/N2_narrative_final.md` | 6.6 KB |  |
+| `docs/taxonomy_three_paths.md` | 6.6 KB |  |
 | `docs/external_sources_register.md` | 6.5 KB |  |
-| `docs/demo_uptime_log.md` | 6.5 KB |  |
 | `docs/N1_narrative_mainline.md` | 6.5 KB |  |
 | `docs/work_summary_d7.md` | 6.2 KB |  |
 | `docs/how_to_expand_gains.md` | 6.1 KB |  |
@@ -116,8 +117,8 @@
 | `docs/evidence_index_exp.md` | 4.4 KB |  |
 | `docs/human_gold_set_protocol.md` | 4.2 KB |  |
 | `docs/e2_erratum.md` | 4.2 KB |  |
-| `docs/repo_hygiene_scan.md` | 3.7 KB |  |
 | `docs/bus/INDEX.md` | 3.6 KB |  |
+| `docs/repo_hygiene_scan.md` | 3.5 KB |  |
 | `docs/dataset_audit.md` | 3.5 KB | 数据集字段考古 |
 | `docs/M8a_submission_precheck.md` | 3.5 KB |  |
 | `docs/N4_target_argument.md` | 3.5 KB |  |
@@ -135,9 +136,9 @@
 | `docs/ppt_claims_erratum.md` | 2.6 KB |  |
 | `docs/W5_cv_interpretation.md` | 2.2 KB |  |
 | `docs/w13_keyword_miss_rate.md` | 2.1 KB |  |
+| `docs/bus/rulings.md` | 2.0 KB |  |
 | `docs/outside_gate_fp.md` | 2.0 KB |  |
 | `docs/w11_data_efficiency.md` | 1.9 KB |  |
-| `docs/bus/rulings.md` | 1.6 KB |  |
 | `docs/bus/TEMPLATE.md` | 1.2 KB |  |
 | `docs/checklist_version.json` | 0.8 KB |  |
 | `docs/year_split_output.txt` | 0.8 KB | 年份分桶脚本输出原文 |
@@ -276,7 +277,7 @@
 | `sample_reviews_100.csv` | 57.9 KB |  |
 | `agent_test_input.csv` | 27.9 KB |  |
 
-## 代码（156 项，0.8 MB）
+## 代码（159 项，0.8 MB）
 
 | 文件 | 大小 | 用途 |
 |---|---|---|
@@ -285,7 +286,7 @@
 | `v2_meta_analysis.py` | 19.1 KB |  |
 | `build_finals_appendix.py` | 16.1 KB |  |
 | `test_audit_checks.py` | 15.5 KB |  |
-| `build_finals_package.py` | 14.9 KB |  |
+| `build_finals_package.py` | 15.0 KB |  |
 | `v2_w4_mine.py` | 13.2 KB |  |
 | `build_finals_docx2.py` | 12.7 KB |  |
 | `build_pdf_v2.py` | 12.4 KB |  |
@@ -321,14 +322,15 @@
 | `diagnose_treble.py` | 6.6 KB |  |
 | `fetch_electronics.py` | 6.5 KB |  |
 | `v2_w4_estimate.py` | 6.3 KB |  |
+| `cross_model_review.py` | 6.3 KB |  |
 | `difficulty_stratification.py` | 6.1 KB |  |
 | `recover_meta_fields.py` | 6.0 KB |  |
 | `v2_w1_hybrid_select.py` | 6.0 KB |  |
 | `v2_m0_switch_check.py` | 6.0 KB |  |
 | `gen_v2_artifacts.py` | 5.8 KB |  |
 | `precommit_guard.py` | 5.8 KB |  |
+| `run_all_checks.py` | 5.6 KB |  |
 | `w11_data_efficiency.py` | 5.5 KB |  |
-| `run_all_checks.py` | 5.5 KB |  |
 | `make_pause_snapshot.py` | 5.4 KB |  |
 | `distilbert_cv.py` | 5.4 KB |  |
 | `undersample_experiment.py` | 5.4 KB |  |
@@ -348,6 +350,7 @@
 | `verify_finals_package.py` | 4.4 KB |  |
 | `check_refs_and_deps.py` | 4.4 KB |  |
 | `retime_srt.py` | 4.2 KB |  |
+| `check_external_deps.py` | 4.1 KB |  |
 | `tune_per_class_threshold.py` | 4.0 KB |  |
 | `upload_models.py` | 3.9 KB |  |
 | `test_model.py` | 3.9 KB |  |
@@ -355,6 +358,7 @@
 | `make_bus_index.py` | 3.8 KB |  |
 | `merge_refine.py` | 3.8 KB |  |
 | `train_multilabel.py` | 3.8 KB |  |
+| `gold_set_helper.py` | 3.7 KB |  |
 | `v2_cv_doc.py` | 3.7 KB |  |
 | `distilbert_vs_llm.py` | 3.6 KB |  |
 | `extend_data.py` | 3.6 KB |  |

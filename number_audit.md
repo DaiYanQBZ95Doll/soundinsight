@@ -1,11 +1,11 @@
 # 文档数字一致性审计
-> 运行时刻：2026-10-01 20:06:49（用于判别报告新鲜度；脚本异常退出时本文件不会被改写）
+> 运行时刻：2026-10-01 20:37:22（用于判别报告新鲜度；脚本异常退出时本文件不会被改写）
 
 ## 审计项数声明一致性
 - [PASS] 未发现审计项数不一致（当前 242 项）
 
 ## 决赛包体积声明一致性
-- [PASS] 未发现陈旧的包体积声明（当前 44,641,768 B）
+- [PASS] 未发现陈旧的包体积声明（当前 44,647,242 B）
 
 ## 覆盖总量口径一致性（成对口径，防混用）
 - [PASS] 未发现混用口径的总量区间（权威成对值 ['2461', '2826']，覆盖率 ['45.3%', '52.0%']）
@@ -17,12 +17,12 @@
 - [PASS] 锁定基线与 cf51cb0 快照一致（36 个条目）
 
 ## 关键文件完整性（体积上下限 + 章节唯一性）
-- [PASS] docs/frozen_execution_checklist.md：71891 B ∈ [40000, 80000]
+- [PASS] docs/frozen_execution_checklist.md：72454 B ∈ [40000, 80000]
 - [PASS] PROGRESS_SYNC.md：58324 B ∈ [20000, 90000]
 - [PASS] docs/final_project_review_and_execution_plan.md：37212 B ∈ [15000, 80000]
 - [PASS] competition_v4.md：21256 B ∈ [20000, 80000]
 - [PASS] results_summary.md：4870 B ∈ [4000, 30000]
-- [PASS] AI_HANDOFF/manifest.json：100782 B ∈ [20000, 400000]
+- [PASS] AI_HANDOFF/manifest.json：102269 B ∈ [20000, 400000]
 - [PASS] docs/frozen_execution_checklist.md：13 个章节均唯一
 - [PASS] PROGRESS_SYNC.md：32 个章节均唯一
 - [PASS] competition_v4.md：13 个章节均唯一

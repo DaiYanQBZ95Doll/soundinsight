@@ -112,6 +112,8 @@ OTHER_FILES = [
     "docs/REVIEWER_BRIEF.md",
     "docs/joint_review_agenda.md",
     "docs/opinion_dsh_joint_review.md",
+    "docs/taxonomy_three_paths.md", "docs/ppt_claims_erratum.md",
+    "check_external_deps.py", "gold_set_helper.py", "cross_model_review.py",
     "docs/bus/README.md",
     "docs/bus/INDEX.md",
     "docs/bus/TEMPLATE.md",
