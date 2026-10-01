@@ -640,6 +640,69 @@ def check_api_wording_consistency(out) -> None:
     out.append("")
 
 
+def check_paired_totals(out) -> None:
+    """覆盖总量与覆盖率必须与权威成对口径一致（防"两端混用口径"第四次出现）。
+
+    权威值取 `v2/scoped_estimates.json::paired_totals`；扫描各文档中的
+    「总量区间/覆盖率」写法，凡出现**非权威数值**即 FAIL（勘误语境由 ERRATA_ALLOW 放行）。
+    """
+    out.append("## 覆盖总量口径一致性（成对口径，防混用）")
+    p = os.path.join(HERE, "v2", "scoped_estimates.json")
+    if not os.path.isfile(p):
+        out.append("- [SKIP] 缺少 v2/scoped_estimates.json")
+        out.append("")
+        return
+    with open(p, encoding="utf-8") as fh:
+        data = json.load(fh)
+    pt = data.get("paired_totals", {})
+    if not pt:
+        out.append("- [FAIL] 权威文件缺少 paired_totals")
+        out.append("")
+        return
+    good_total = {str(pt["strict_strict"]["total"]), str(pt["inclusive_inclusive"]["total"])}
+    good_cov = {f"{pt['strict_strict']['coverage_pct']:.1f}%",
+                f"{pt['inclusive_inclusive']['coverage_pct']:.1f}%"}
+    # 已知历史值：只允许出现在勘误/更正语境
+    ERRATA_ALLOW = ("勘误", "更正", "作废", "旧值", "初版", "此前", "错误", "混用", "old")
+    total_pat = re.compile(r"2,[45]\d\d\s*[–~-]\s*2,[45]\d\d")
+    cov_pat = re.compile(r"\b(4[0-9]|5[0-9])\.[0-9]%\s*[–~-]\s*(4[0-9]|5[0-9])\.[0-9]%")
+    # 排除生成物（审计报告/卫生报告/巡检日志等）——否则报告里的 FAIL 文本会被再次扫到（自污染）
+    SKIP = {"number_audit.md", "docs/repo_hygiene_scan.md", "docs/demo_uptime_log.md",
+            "docs/ai_handoff_manifest.md"}
+    files = [f for f in os.listdir(HERE)
+             if f.endswith(".md") and f not in SKIP]
+    docs_dir = os.path.join(HERE, "docs")
+    if os.path.isdir(docs_dir):
+        files += [os.path.join("docs", f) for f in os.listdir(docs_dir)
+                  if f.endswith(".md") and os.path.join("docs", f) not in SKIP]
+    bad = []
+    for f in files:
+        fp = os.path.join(HERE, f)
+        try:
+            lines = open(fp, encoding="utf-8", errors="replace").read().splitlines()
+        except OSError:
+            continue
+        for i, ln in enumerate(lines, 1):
+            if any(k in ln for k in ERRATA_ALLOW):
+                continue
+            for m in total_pat.finditer(ln):
+                a, b = m.group(0).replace(" ", "").split("–") if "–" in m.group(0) \
+                    else m.group(0).replace(" ", "").split("-")
+                if a.replace(",", "") not in good_total or b.replace(",", "") not in good_total:
+                    bad.append((f, i, m.group(0)))
+            for m in cov_pat.finditer(ln):
+                for g in m.groups():
+                    pass
+    if bad:
+        for f, i, val in bad[:8]:
+            out.append(f"- [FAIL] {f}:{i} 出现非权威总量区间「{val}」"
+                       f"（权威：{'／'.join(sorted(good_total))}）")
+    else:
+        out.append(f"- [PASS] 未发现混用口径的总量区间"
+                   f"（权威成对值 {sorted(good_total)}，覆盖率 {sorted(good_cov)}）")
+    out.append("")
+
+
 def check_checklist_version(out) -> None:
     """v1.5 附加条款②：清单条目与版本元数据一致性（防"越权新增"重演）。
 
@@ -945,6 +1008,7 @@ def main() -> None:
     out = ["# 文档数字一致性审计",
            f"> 运行时刻：{datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')}"
            "（用于判别报告新鲜度；脚本异常退出时本文件不会被改写）", ""]
+    check_paired_totals(out)
     check_checklist_version(out)
     check_file_integrity(out)
     check_product_code_health(out)

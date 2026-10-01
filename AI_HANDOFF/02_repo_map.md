@@ -1,13 +1,13 @@
 # 文件地图（由 make_ai_handoff.py 自动生成，勿手改）
 
-> 生成时间：2026-10-01 11:28；共 428 个条目；体积单位 KB/MB。
+> 生成时间：2026-10-01 11:42；共 430 个条目；体积单位 KB/MB。
 
 ## 提交物（5 项，43.5 MB）
 
 | 文件 | 大小 | 用途 |
 |---|---|---|
 | `更新世界的锋芒_SoundInsight_复赛作品.zip` | 42.4 MB |  |
-| `更新世界的锋芒_SoundInsight_其他材料.zip` | 758.2 KB |  |
+| `更新世界的锋芒_SoundInsight_其他材料.zip` | 759.7 KB |  |
 | `更新世界的锋芒_SoundInsight_复赛作品.pdf` | 210.1 KB |  |
 | `更新世界的锋芒_SoundInsight_Demo.zip` | 106.7 KB |  |
 | `更新世界的锋芒_SoundInsight_复赛作品.docx` | 48.0 KB |  |
@@ -32,7 +32,7 @@
 
 | 文件 | 大小 | 用途 |
 |---|---|---|
-| `number_audit.md` | 14.6 KB | 数字一致性审计结果（含官方模板格式对照节） |
+| `number_audit.md` | 14.8 KB | 数字一致性审计结果（含官方模板格式对照节） |
 | `error_taxonomy.md` | 8.2 KB | 错误分类学：FP/FN 构成 + 标注噪声人工终审 |
 | `llm_baseline.md` | 6.4 KB | LLM 对照报告（deepseek + qwen3.7-plus，含循环性红利声明） |
 | `edge_case_benchmark.py` | 5.6 KB |  |
@@ -57,11 +57,11 @@
 | `confidence_tiered.md` | 0.7 KB | 三星补漏置信度分层与中置信剔除记录 |
 | `significance_test.md` | 0.6 KB | Welch t 检验（p=0.000932） |
 
-## 过程与交接文档（58 项，0.6 MB）
+## 过程与交接文档（59 项，0.6 MB）
 
 | 文件 | 大小 | 用途 |
 |---|---|---|
-| `docs/frozen_execution_checklist.md` | 67.6 KB |  |
+| `docs/frozen_execution_checklist.md` | 67.9 KB |  |
 | `PROGRESS_SYNC.md` | 52.2 KB |  |
 | `docs/gap_and_roadmap_inventory.md` | 43.4 KB |  |
 | `docs/final_project_review_and_execution_plan.md` | 36.3 KB |  |
@@ -81,9 +81,9 @@
 | `QWEN_HANDOFF.md` | 9.1 KB |  |
 | `docs/process_review_d10.md` | 8.5 KB |  |
 | `docs/legacy_materials_notice.md` | 8.3 KB |  |
+| `docs/reassessment_after_credential.md` | 8.0 KB |  |
 | `docs/w17_failure_cases.md` | 7.9 KB |  |
 | `docs/completeness_audit_round2.md` | 7.8 KB |  |
-| `docs/reassessment_after_credential.md` | 7.3 KB |  |
 | `docs/N1b_downgrade_narrative.md` | 7.0 KB |  |
 | `docs/external_sources_register.md` | 6.5 KB |  |
 | `docs/N2_narrative_final.md` | 6.5 KB |  |
@@ -119,6 +119,7 @@
 | `docs/outside_gate_fp.md` | 1.8 KB |  |
 | `docs/checklist_version.json` | 0.8 KB |  |
 | `docs/year_split_output.txt` | 0.8 KB | 年份分桶脚本输出原文 |
+| `docs/demo_uptime_log.md` | 0.8 KB |  |
 
 ## 演示材料（6 项，18.1 MB）
 
@@ -248,22 +249,22 @@
 | `sample_reviews_100.csv` | 57.9 KB |  |
 | `agent_test_input.csv` | 27.9 KB |  |
 
-## 代码（144 项，0.7 MB）
+## 代码（145 项，0.7 MB）
 
 | 文件 | 大小 | 用途 |
 |---|---|---|
-| `check_doc_numbers.py` | 45.4 KB | 数字审计 + 模板格式对照脚本 |
+| `check_doc_numbers.py` | 48.5 KB | 数字审计 + 模板格式对照脚本 |
 | `scan_repo_hygiene.py` | 20.0 KB |  |
 | `v2_meta_analysis.py` | 19.1 KB |  |
 | `build_finals_package.py` | 14.4 KB |  |
 | `v2_w4_mine.py` | 13.2 KB |  |
+| `build_finals_appendix.py` | 13.2 KB |  |
 | `build_finals_docx2.py` | 12.7 KB |  |
-| `build_finals_appendix.py` | 12.6 KB |  |
 | `build_pdf_v2.py` | 12.4 KB |  |
 | `v2_w1_longtext.py` | 12.1 KB |  |
+| `test_audit_checks.py` | 11.7 KB |  |
 | `make_ai_handoff.py` | 11.5 KB |  |
 | `build_pdf.py` | 11.2 KB |  |
-| `test_audit_checks.py` | 10.3 KB |  |
 | `report_builder.py` | 10.2 KB |  |
 | `build_submission.py` | 9.3 KB |  |
 | `demo_sound_v2.py` | 9.1 KB | 本地 Gradio Demo（三页；已内置代理绕过） |
@@ -301,10 +302,10 @@
 | `v2_m0_switch.py` | 5.3 KB |  |
 | `train_final.py` | 5.2 KB |  |
 | `train_roberta_quick.py` | 5.2 KB |  |
+| `run_all_checks.py` | 5.2 KB |  |
 | `make_missing_figures.py` | 5.1 KB |  |
 | `v2_w1_seg_threshold.py` | 5.1 KB |  |
 | `predict_core.py` | 5.1 KB | 共享推理核心（含非英文显式拒绝） |
-| `run_all_checks.py` | 5.1 KB |  |
 | `verify_ui_and_api.py` | 5.0 KB |  |
 | `fix_ppt_threshold.py` | 4.8 KB |  |
 | `make_video_assets.py` | 4.6 KB |  |
@@ -327,6 +328,7 @@
 | `finalize_curve.py` | 3.3 KB |  |
 | `purge_leaked_objects.py` | 3.2 KB |  |
 | `v2_repair_checklist.py` | 3.1 KB |  |
+| `check_demo_alive.py` | 3.0 KB |  |
 | `audit_ppt.py` | 3.0 KB |  |
 | `check_url_consistency.py` | 3.0 KB |  |
 | `w4_model_vs_llm.py` | 3.0 KB |  |

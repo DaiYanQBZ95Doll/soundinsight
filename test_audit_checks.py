@@ -233,6 +233,41 @@ META2 = dict(META, ratified_additions=["B2", "C9"])
 txt = run_version_check(["版本 **v9.9** 为基准\n", "| **A1** | x |\n"], META2)
 check("追认新增未落地 → FAIL", "[FAIL]" in txt and "C9" in txt)
 
+print("\n== O. 覆盖总量口径一致性（成对口径）==")
+import json as _json
+
+
+def run_paired_totals(doc_lines):
+    """在临时工作区放一个含指定内容的 md，调用 check_paired_totals。"""
+    root = os.path.join(os.path.dirname(os.path.abspath(__file__)), "_tmp_selftest", "pair")
+    shutil.rmtree(root, ignore_errors=True)
+    os.makedirs(os.path.join(root, "v2"), exist_ok=True)
+    os.makedirs(os.path.join(root, "docs"), exist_ok=True)
+    shutil.copy2(os.path.join(os.path.dirname(os.path.abspath(__file__)),
+                              "v2", "scoped_estimates.json"),
+                 os.path.join(root, "v2", "scoped_estimates.json"))
+    with open(os.path.join(root, "probe.md"), "w", encoding="utf-8") as fh:
+        fh.write("\n".join(doc_lines) + "\n")
+    old_here = m.HERE
+    m.HERE = root
+    out = []
+    try:
+        m.check_paired_totals(out)
+    finally:
+        m.HERE = old_here
+        shutil.rmtree(root, ignore_errors=True)
+    return "\n".join(out)
+
+
+txt = run_paired_totals(["预期正例 1,280 条，全语料总量 2,460–2,540 条。"])
+check("混用口径区间 → FAIL", "[FAIL]" in txt, txt.split("FAIL")[-1][:60])
+
+txt = run_paired_totals(["总量 2,461 条（严格）～2,826 条（宽松）。"])
+check("成对口径区间 → 不 FAIL", "[FAIL]" not in txt)
+
+txt = run_paired_totals(["此前写作 2,460–2,730，属混用口径，现已更正。"])
+check("勘误语境 → 豁免", "[FAIL]" not in txt)
+
 print(f"\n结果：{len(PASSED)} 项通过，{len(FAILED)} 项失败")
 if FAILED:
     print("失败项：" + "、".join(FAILED))

@@ -41,6 +41,7 @@ STEPS_FULL = [
     ("包内校验 + Demo 冒烟", ["verify_finals_package.py"]),
     ("包内端到端（解包后实跑产品）", ["verify_demo_end_to_end.py"]),
     ("产品入口（Gradio UI + HTTP API）", ["verify_ui_and_api.py"]),
+    ("在线 Demo 存活巡检（M3c④）", ["check_demo_alive.py"]),
     ("刷新 AI 交接包 manifest", ["make_ai_handoff.py"]),
     ("仓库卫生扫描", ["scan_repo_hygiene.py"]),
 ]
@@ -48,7 +49,7 @@ STEPS_NO_PKG = [(n, c) for n, c in STEPS_FULL
                 if n not in ("构建决赛包（含红线 9 核对）", "登记决赛包哈希",
                              "包内校验 + Demo 冒烟", "包内端到端（解包后实跑产品）")]
 # 这些步骤的退出码非 0 不视为失败（其输出为"信息性"，如断链检查会列出合理的历史引用）
-NON_FATAL = {"断链 + 依赖声明"}
+NON_FATAL = {"断链 + 依赖声明", "在线 Demo 存活巡检（M3c④）"}
 
 
 def main() -> int:
