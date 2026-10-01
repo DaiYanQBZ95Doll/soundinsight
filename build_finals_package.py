@@ -110,6 +110,7 @@ OTHER_FILES = [
     "docs/decision_queue.md",
     "docs/three_stage_comparison.md",
     "docs/REVIEWER_BRIEF.md",
+    "docs/joint_review_agenda.md",
     "make_reviewer_brief.py",
     "docs/human_gold_set_protocol.md", "make_gold_set.py", "score_gold_set.py",
     "v2/ai_scope_classification.json", "v2/w4_review_POOL_invalid.jsonl", "w4_model_vs_llm.py",

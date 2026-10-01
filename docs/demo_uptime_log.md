@@ -82,3 +82,7 @@
 | 2026-10-01 19:20:29 | 应用直链 | 200 | 0.5s | 可达 |
 | 2026-10-01 19:20:29 | GitCode 仓库 | 200 | 0.7s | 可达 |
 | 2026-10-01 19:20:29 | GitHub 仓库 | — | 20.1s | 不可达（RemoteDisconnected: Remote end closed connection without response） |
+| 2026-10-01 19:28:22 | ModelScope 空间页 | 200 | 0.6s | 可达 |
+| 2026-10-01 19:28:22 | 应用直链 | 200 | 0.5s | 可达 |
+| 2026-10-01 19:28:22 | GitCode 仓库 | 200 | 1.2s | 可达 |
+| 2026-10-01 19:28:22 | GitHub 仓库 | — | 20.1s | 不可达（URLError: <urlopen error timed out>） |

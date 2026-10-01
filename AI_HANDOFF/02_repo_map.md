@@ -1,13 +1,13 @@
 # 文件地图（由 make_ai_handoff.py 自动生成，勿手改）
 
-> 生成时间：2026-10-01 19:20；共 465 个条目；体积单位 KB/MB。
+> 生成时间：2026-10-01 19:28；共 465 个条目；体积单位 KB/MB。
 
 ## 提交物（5 项，43.5 MB）
 
 | 文件 | 大小 | 用途 |
 |---|---|---|
 | `更新世界的锋芒_SoundInsight_复赛作品.zip` | 42.4 MB |  |
-| `更新世界的锋芒_SoundInsight_其他材料.zip` | 807.4 KB |  |
+| `更新世界的锋芒_SoundInsight_其他材料.zip` | 811.8 KB |  |
 | `更新世界的锋芒_SoundInsight_复赛作品.pdf` | 210.1 KB |  |
 | `更新世界的锋芒_SoundInsight_Demo.zip` | 107.5 KB |  |
 | `更新世界的锋芒_SoundInsight_复赛作品.docx` | 48.0 KB |  |
@@ -99,8 +99,8 @@
 | `docs/how_to_expand_gains.md` | 6.1 KB |  |
 | `docs/scoped_findings.md` | 5.9 KB |  |
 | `docs/N5_qna_factbase.md` | 5.9 KB |  |
+| `docs/demo_uptime_log.md` | 5.7 KB |  |
 | `docs/N6_review_risk_list.md` | 5.7 KB |  |
-| `docs/demo_uptime_log.md` | 5.4 KB |  |
 | `docs/llm_credential_status.md` | 5.0 KB |  |
 | `docs/b_measure_results.md` | 5.0 KB |  |
 | `docs/DoD_completion_table.md` | 4.9 KB |  |
