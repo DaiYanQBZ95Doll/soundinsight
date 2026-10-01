@@ -31,7 +31,7 @@ sys.stdout.reconfigure(encoding="utf-8", errors="replace")
 HERE = os.path.dirname(os.path.abspath(__file__))
 
 STEPS_FULL = [
-    ("数字审计（238 项检查）", ["check_doc_numbers.py"]),
+    ("数字审计（项数见报告头部）", ["check_doc_numbers.py"]),
     ("审计负向自测", ["test_audit_checks.py"]),
     ("断链 + 依赖声明", ["check_refs_and_deps.py"]),
     ("URL 一致性（M3c③）", ["check_url_consistency.py"]),

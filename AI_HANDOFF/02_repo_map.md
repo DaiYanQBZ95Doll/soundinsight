@@ -1,13 +1,13 @@
 # 文件地图（由 make_ai_handoff.py 自动生成，勿手改）
 
-> 生成时间：2026-10-01 18:52；共 462 个条目；体积单位 KB/MB。
+> 生成时间：2026-10-01 19:01；共 463 个条目；体积单位 KB/MB。
 
 ## 提交物（5 项，43.5 MB）
 
 | 文件 | 大小 | 用途 |
 |---|---|---|
 | `更新世界的锋芒_SoundInsight_复赛作品.zip` | 42.4 MB |  |
-| `更新世界的锋芒_SoundInsight_其他材料.zip` | 805.4 KB |  |
+| `更新世界的锋芒_SoundInsight_其他材料.zip` | 805.9 KB |  |
 | `更新世界的锋芒_SoundInsight_复赛作品.pdf` | 210.1 KB |  |
 | `更新世界的锋芒_SoundInsight_Demo.zip` | 106.7 KB |  |
 | `更新世界的锋芒_SoundInsight_复赛作品.docx` | 48.0 KB |  |
@@ -18,7 +18,7 @@
 |---|---|---|
 | `hackathon-决赛入围定稿作品提交模板-天池版.docx` | 35.8 KB |  |
 | `hackathon-复赛作品提交模板-天池版.docx` | 35.7 KB | 官方复赛模板原文（格式对照基准） |
-| `competition_v4.md` | 20.7 KB | 主文档（13 章，含模板九章 + 合规披露 + 局限） |
+| `competition_v4.md` | 20.8 KB | 主文档（13 章，含模板九章 + 合规披露 + 局限） |
 | `README.md` | 10.3 KB |  |
 | `competition_v3.txt` | 8.9 KB | 官方模板九章版主文档 |
 | `competition_v2.md` | 7.0 KB | 初赛版文档 |
@@ -57,12 +57,12 @@
 | `confidence_tiered.md` | 0.7 KB | 三星补漏置信度分层与中置信剔除记录 |
 | `significance_test.md` | 0.6 KB | Welch t 检验（p=0.000932） |
 
-## 过程与交接文档（69 项，0.9 MB）
+## 过程与交接文档（70 项，0.9 MB）
 
 | 文件 | 大小 | 用途 |
 |---|---|---|
 | `docs/gold_set/worksheet.csv` | 177.2 KB |  |
-| `docs/frozen_execution_checklist.md` | 69.7 KB |  |
+| `docs/frozen_execution_checklist.md` | 69.9 KB |  |
 | `PROGRESS_SYNC.md` | 55.4 KB |  |
 | `docs/gold_set/worksheet.md` | 45.6 KB |  |
 | `docs/gap_and_roadmap_inventory.md` | 43.4 KB |  |
@@ -83,12 +83,12 @@
 | `docs/decision_request_v15_and_nline.md` | 10.4 KB |  |
 | `docs/pre_lock_completeness_audit.md` | 10.4 KB |  |
 | `docs/progress_report_current.md` | 10.4 KB |  |
+| `docs/completeness_audit_round2.md` | 9.3 KB |  |
 | `docs/completion_statement_for_redteam.md` | 9.3 KB |  |
 | `QWEN_HANDOFF.md` | 9.1 KB |  |
 | `docs/process_review_d10.md` | 8.5 KB |  |
 | `docs/legacy_materials_notice.md` | 8.3 KB |  |
 | `docs/w17_failure_cases.md` | 7.9 KB |  |
-| `docs/completeness_audit_round2.md` | 7.8 KB |  |
 | `docs/N1b_downgrade_narrative.md` | 7.0 KB |  |
 | `docs/decision_queue.md` | 6.8 KB |  |
 | `docs/N2_narrative_final.md` | 6.6 KB |  |
@@ -103,19 +103,20 @@
 | `docs/b_measure_results.md` | 5.0 KB |  |
 | `docs/DoD_completion_table.md` | 4.9 KB |  |
 | `docs/w4_prescreen_estimate.md` | 4.8 KB |  |
+| `docs/demo_uptime_log.md` | 4.8 KB |  |
 | `docs/SoundInsight决赛备战_现状盘点清单.md` | 4.8 KB |  |
 | `docs/v2_gate_verdict.md` | 4.7 KB |  |
 | `docs/w1_longtext_variants.md` | 4.7 KB |  |
-| `docs/demo_uptime_log.md` | 4.4 KB |  |
 | `docs/evidence_index_exp.md` | 4.4 KB |  |
 | `docs/human_gold_set_protocol.md` | 4.2 KB |  |
 | `docs/e2_erratum.md` | 4.2 KB |  |
-| `docs/repo_hygiene_scan.md` | 3.9 KB |  |
+| `docs/repo_hygiene_scan.md` | 3.5 KB |  |
 | `docs/dataset_audit.md` | 3.5 KB | 数据集字段考古 |
 | `docs/M8a_submission_precheck.md` | 3.5 KB |  |
 | `docs/N4_target_argument.md` | 3.5 KB |  |
 | `docs/w4_mining_estimate.md` | 3.4 KB |  |
 | `docs/M3b_judge_access_guide.md` | 3.3 KB |  |
+| `docs/token_and_cost_budget.md` | 3.2 KB |  |
 | `docs/N3_calibration_evidence.md` | 3.1 KB |  |
 | `docs/sandbox_operation_notes.md` | 3.1 KB |  |
 | `docs/D14_resume_checklist.md` | 3.0 KB | 收尾四步清单（录视频/打包/上传/补推送） |
@@ -136,7 +137,7 @@
 | 文件 | 大小 | 用途 |
 |---|---|---|
 | `SoundInsight：跨境电商耳机音质差评智能归因系统.pptx` | 18.1 MB |  |
-| `ppt_text_dump.md` | 11.9 KB |  |
+| `ppt_text_dump.md` | 12.0 KB |  |
 | `video_script.md` | 5.7 KB | 演示视频脚本（200 秒 / 9 镜头） |
 | `video_script_silent.md` | 4.4 KB | 无口播拍摄卡（操作步骤 + 画面要点） |
 | `视频素材/素材清单.md` | 2.9 KB |  |
@@ -351,9 +352,9 @@
 | `v2_register_cv.py` | 3.3 KB |  |
 | `finalize_curve.py` | 3.3 KB |  |
 | `purge_leaked_objects.py` | 3.2 KB |  |
+| `check_demo_alive.py` | 3.1 KB |  |
 | `analyze_b_measure.py` | 3.1 KB |  |
 | `v2_repair_checklist.py` | 3.1 KB |  |
-| `check_demo_alive.py` | 3.0 KB |  |
 | `audit_ppt.py` | 3.0 KB |  |
 | `check_url_consistency.py` | 3.0 KB |  |
 | `w4_model_vs_llm.py` | 3.0 KB |  |

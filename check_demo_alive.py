@@ -62,6 +62,7 @@ def main() -> int:
         for name, status, dt, ok, err in rows:
             fh.write(f"| {ts} | {name} | {status if status else '—'} | {dt:.1f}s | "
                      f"{'可达' if ok else '不可达（' + err + '）'} |\n")
+    print("  提示：契约要求 10/7（提交前 24 h）与 10/8（提交当天）各巡检一次")
     print(f"\n[巡检 {ts}] {'全部可达 ✓' if all_ok else '**有目标不可达**'}"
           f"｜日志 -> docs/demo_uptime_log.md")
     return 0 if all_ok else 1
