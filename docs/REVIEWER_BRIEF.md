@@ -29,13 +29,13 @@
 <!-- STATE-CARD:BEGIN -->
 | 项 | 值 |
 |---|---|
-| 生成时刻 | 2026-10-01 19:58:54 |
-| 本地 HEAD | `483422d`（218 个提交；工作区有 8 项改动；待推送 0） |
+| 生成时刻 | 2026-10-01 20:07:39 |
+| 本地 HEAD | `01af328`（219 个提交；工作区有 17 项改动；待推送 0） |
 | 清单版本 | **v1.5**（`docs/checklist_version.json`） |
-| 数字审计 | FAIL 0／PASS 242／SKIP 0（运行时刻：2026-10-01 19:58:01（用于判） |
+| 数字审计 | FAIL 0／PASS 242／SKIP 0（运行时刻：2026-10-01 20:06:49（用于判） |
 | 负向自测 | 结果：31 项通过，0 项失败 |
 | 卫生扫描 | [PASS] 跟踪文件内未发现密钥 / 令牌 / 明文口令（扫描器自身与扫描报告已排除，避免自指命中） |
-| 决赛包 | 5 条目｜体积 44,641,768 B（**随重建变化，以 `hashes.txt` 决赛段为准**） |
+| 决赛包 | 5 条目｜体积 44,646,252 B（**随重建变化，以 `hashes.txt` 决赛段为准**） |
 | 复赛包（红线 9） | sha256 `e6cae286515ef1d2…`（应与冻结值 `e6cae286515ef1d2` 一致） |
 | 一键复跑 | `python run_all_checks.py`（13 步门槛链，约 6 分钟） |
 
@@ -49,7 +49,7 @@ https://raw.githubusercontent.com/DaiYanQBZ95Doll/soundinsight/main/docs/REVIEWE
 https://raw.githubusercontent.com/DaiYanQBZ95Doll/soundinsight/<SHA>/docs/REVIEWER_BRIEF.md
 ```
 
-> **注意**：本卡生成于提交 `483422d` **之前**（本文件自身的提交），因此 `483422d3cc48e2b5432e108dddbec74c03b6949c` 形态的链接
+> **注意**：本卡生成于提交 `01af328` **之前**（本文件自身的提交），因此 `01af328eac89af9aaf82c9ce0a146d5eea22ca44` 形态的链接
 > 要在该提交推送后才生效；**要立刻可用，请用上面的 ①**。
 > 其他关键文件的 SHA 链接：`python make_reviewer_brief.py --links`
 <!-- STATE-CARD:END -->
@@ -177,6 +177,7 @@ https://raw.githubusercontent.com/DaiYanQBZ95Doll/soundinsight/<SHA>/docs/REVIEW
 
 1. `sound_model/`、`multi_label_model/`、`val_v2.csv`、v1 训练脚本——**冻结资产，不得改动**；
 2. **`更新世界的锋芒_SoundInsight_复赛作品.zip`（sha `e6cae286515ef1d2`）不得覆盖**（红线 9，构建前后双向哈希核对）；
+   **v2 资产同样受保护**：`v2/model_maxlen256/`（权重哈希）、`v2/threshold.json`、**`val_v3_test.csv`／`val_v3_tune.csv`（数据集哈希）**——由 `v2/v2_artifacts.json` 登记、审计逐项校验（红队 QWEN-6 指出测试集此前无机械保护，已补）；
 3. 权重不入 git（`v2/model_*/` 已忽略）——提供 SHA256 + 训练命令供复算；
 4. 提交包只走 `python build_finals_package.py`（内含红线 9 核对）；
 5. 任何新数字**必须当场配机械检查或标注"未校准"**（否则即为"验证债"）。

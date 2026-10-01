@@ -530,6 +530,16 @@ def check_v2_artifacts(out) -> None:
     if data.get("model_card") and not os.path.isfile(
             os.path.join(HERE, data["model_card"])):
         problems.append(f"v2 MODEL_CARD 不存在：{data['model_card']}")
+    # 数据集哈希（红队 QWEN-6：对外数字依赖测试集，测试集此前无机械保护）
+    for path, meta in (data.get("datasets") or {}).items():
+        expect = (meta or {}).get("sha256_16", "") if isinstance(meta, dict) else ""
+        fp = os.path.join(HERE, path)
+        if not os.path.isfile(fp):
+            problems.append(f"v2 数据集不存在：{path}")
+            continue
+        h = hashlib.sha256(open(fp, "rb").read()).hexdigest()[:16]
+        if expect and h != expect:
+            problems.append(f"v2 数据集哈希不符：{path}（记录 {expect} 实际 {h}）")
     if problems:
         for p in problems:
             out.append(f"- [FAIL] {p}")

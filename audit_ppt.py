@@ -85,5 +85,12 @@ def main() -> None:
     print(text)
 
 
+# —— 生成物末尾总是追加勘误指针（红队 QWEN-2：本文件是导出物，手工注会丢失）——
+POINTER = ("\n---\n\n> **勘误指针（自动追加，勿手改本文件）**：本 dump 是 pptx 的导出物，"
+           "任何**对 PPT 主张的更正**都写在 `docs/ppt_claims_erratum.md`（竞品表述、吞吐口径、人力成本口径）。\n")
+
+
 if __name__ == "__main__":
     main()
+    with open(OUT_MD, "a", encoding="utf-8") as f:
+        f.write(POINTER)

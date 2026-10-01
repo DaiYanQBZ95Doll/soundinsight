@@ -44,6 +44,7 @@ STEPS_FULL = [
     ("在线 Demo 存活巡检（M3c④）", ["check_demo_alive.py"]),
     ("刷新对外状态卡（REVIEWER_BRIEF）", ["make_reviewer_brief.py"]),
     ("刷新停工快照（生成式）", ["make_pause_snapshot.py"]),
+    ("PPT 导出与口径核对（含勘误指针）", ["audit_ppt.py"]),
     ("刷新三方总线总览（INDEX）", ["make_bus_index.py"]),
     ("刷新 AI 交接包 manifest", ["make_ai_handoff.py"]),
     ("仓库卫生扫描", ["scan_repo_hygiene.py"]),

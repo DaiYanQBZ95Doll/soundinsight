@@ -21,5 +21,16 @@
     "url": null,
     "note": "仓库不含权重；提供 SHA256 与训练命令供复算。分发权重本体须决策方另行决定。"
   },
-  "generation_note": "v1（复赛已提交口径）数字见 results_summary.md；v1 与 v2 的标签集与划分不同，指标不可直比"
+  "generation_note": "v1（复赛已提交口径）数字见 results_summary.md；v1 与 v2 的标签集与划分不同，指标不可直比",
+  "datasets": {
+    "val_v3_test.csv": {
+      "sha256_16": "9d8b979cd98507de",
+      "rows": 10000
+    },
+    "val_v3_tune.csv": {
+      "sha256_16": "4b44837aa5a75a35",
+      "rows": 10000
+    }
+  },
+  "datasets_note": "v2 对外数字所依赖的数据集（红队 QWEN-6 指出：此前只保护模型与阈值，未保护测试集）。SHA256 取前 16 位；行数一并登记以便快速核对。"
 }

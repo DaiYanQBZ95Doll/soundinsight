@@ -1,6 +1,6 @@
 # 公开仓库卫生扫描（密钥 / 隐私 / 废弃 claim）
 
-- 扫描范围：git 跟踪文件 471 个（文本与数据类逐行扫；二进制仅按文件名判断）
+- 扫描范围：git 跟踪文件 479 个（文本与数据类逐行扫；二进制仅按文件名判断）
 - 生成方式：`python scan_repo_hygiene.py`（可随时重跑）
 
 ## 一、密钥与凭据
@@ -57,12 +57,10 @@
 - `ppt_speed_fix.py`：3 处（行 22, 23, 24）
 
 ## 四、生成物一致性（manifest.json 记录值 vs 实际文件）
-- [需修正] 2 处记录值已过期（跑 `python make_ai_handoff.py` 重新生成）：
-  - `docs/bus/INDEX.md` size_bytes：记录 1167 → 实际 2235
-  - `docs/bus/INDEX.md` sha256_16：记录 60be2939df4c2c69 → 实际 c1de83a439d786bc
+- [PASS] manifest.json 记录的大小与哈希与工作区一致
 
 ## 五、结论与建议
 - 密钥：未发现（高危 0 处；历史提交命中 0 处）
 - 隐私：16 处，见第二节；竞赛联系信息为模板要求填写，公开仓库如需脱敏见 `docs/legacy_materials_notice.md` §四
 - 废弃 claim：当前文档需确认 0 处；历史材料的口径指引见 `docs/legacy_materials_notice.md`
-- 生成物一致性：需重跑生成脚本
+- 生成物一致性：一致
