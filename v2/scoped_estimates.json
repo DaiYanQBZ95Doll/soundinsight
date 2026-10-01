@@ -1,83 +1,55 @@
 {
-  "manual_classification": {
-    "criteria": "in_scope=耳机/耳塞的音质或声音缺陷抱怨；cross_category=非耳机产品（电视/收音机/显示器/便携音箱/唱片机/金属探测器/MP3/保护壳等）；unclear=无法判断产品",
-    "w4": {
-      "in_scope": [
-        136,
-        441,
-        819,
-        1016,
-        1439,
-        1600,
-        1663,
-        1972,
-        2171,
-        2257,
-        2319,
-        2326,
-        2332,
-        2368
-      ],
-      "cross_category": [
-        198,
-        463,
-        536,
-        1065,
-        1076,
-        1100,
-        1134,
-        1142,
-        1447,
-        1586
-      ],
-      "unclear": [
-        907,
-        1257,
-        2361
+  "correction": {
+    "date": "2026-10-01",
+    "what_was_wrong": "复核对象误取候选表前 300 条（便利样本），而外推按分层设计处理 → 旧值 456 作废",
+    "invalid_artifact": "v2/w4_review_POOL_invalid.jsonl（299 条，禁止用于设计推断）",
+    "fix": "v2_w4_mine.py 的 --review 默认读 w4_sample.csv；旧行为保留为 --from-pool 并标注禁止推断"
+  },
+  "estimator": {
+    "design": "分层等量抽样（星级×主关键词，39 层，seed 42，293 条）",
+    "point": "N̂ = Σ_h N_h · (k_h / n_h)",
+    "variance": "Var = Σ_h N_h² · p_h(1−p_h) / (n_h − 1)；CI = N̂ ± 1.96·√Var"
+  },
+  "classification": {
+    "subject": "执行方（AI）逐条判定，**未经人工复核**；判定依据＝原文是否在说耳机/耳塞/头戴的音质或声音缺陷",
+    "in_scope": [
+      136,
+      56231,
+      12348
+    ],
+    "unclear": [
+      83675,
+      59396,
+      27719,
+      52337,
+      86508,
+      92793
+    ],
+    "cross_category_count": 22
+  },
+  "result": {
+    "reviewed": 293,
+    "llm_positive": 31,
+    "strict": {
+      "k": 3,
+      "estimate": 19.9,
+      "ci95": [
+        0,
+        49.5
       ]
     },
-    "gate_outside": {
-      "in_scope": [
-        10227,
-        32933,
-        67220,
-        39165
-      ],
-      "cross_category": [
-        35964
-      ],
-      "unclear": [
-        96614
+    "inclusive": {
+      "k": 9,
+      "estimate": 94.7,
+      "ci95": [
+        18.6,
+        170.8
       ]
-    }
+    },
+    "crude_strict": 130.5
   },
-  "w4": {
-    "sampled": 299,
-    "llm_positive": 27,
-    "in_scope_positive": 14,
-    "estimate_raw": 901.4,
-    "estimate_in_scope": 456.4,
-    "estimate_in_scope_ci95": [
-      212.3,
-      700.6
-    ]
-  },
-  "gate_outside": {
-    "sampled": 300,
-    "llm_positive": 6,
-    "in_scope_positive": 4,
-    "rate_raw": 0.02,
-    "rate_in_scope": 0.0133,
-    "rate_in_scope_ci95": [
-      0.0052,
-      0.0338
-    ],
-    "estimate_raw": 1741.0,
-    "estimate_in_scope": 1161.0,
-    "estimate_in_scope_ci95": [
-      452.0,
-      2941.0
-    ]
-  },
-  "caveat": "分类为人工逐条判定（依据见 docs/scoped_findings.md §一），可复核；未做双人独立标注，故存在主观性"
+  "superseded": {
+    "old_value": 456,
+    "reason": "取样错误（便利样本按设计样本处理）"
+  }
 }

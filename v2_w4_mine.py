@@ -38,6 +38,7 @@ OUT = os.path.join(HERE, "v2")
 SOURCE = os.path.join(HERE, "review_meta_v2.csv")       # P0-3 产物（含 rating/asin）
 LLM_CSV = os.path.join(HERE, "labeled_llm.csv")
 CAND = os.path.join(OUT, "w4_candidates.csv")
+SAMPLE = os.path.join(OUT, "w4_sample.csv")   # 分层样本（--stratify 产出；`--review` 的对象）
 REVIEW = os.path.join(OUT, "w4_review.jsonl")
 SUMMARY = os.path.join(OUT, "w4_summary.json")
 SEED = 42
@@ -162,6 +163,8 @@ def main() -> int:
     ap.add_argument("--extract-only", action="store_true")
     ap.add_argument("--review", action="store_true")
     ap.add_argument("--limit", type=int, default=0, help="复核条数上限（0＝全部）")
+    ap.add_argument("--from-pool", action="store_true",
+                    help="复核候选池前 N 条（**便利样本**，仅用于探索，禁止用于设计推断）")
     ap.add_argument("--stratify", type=int, default=0,
                     help="按（星级×主关键词）分层抽样 N 条写入 w4_sample.csv（W4b）")
     args = ap.parse_args()
@@ -231,7 +234,16 @@ def main() -> int:
     if not os.path.isfile(CAND):
         print("[FAIL] 缺少候选文件，请先跑 --extract-only")
         return 1
-    rows = list(csv.DictReader(open(CAND, encoding="utf-8", errors="replace")))
+    # 复核对象＝**分层样本**（不是候选池）；旧行为见 --from-pool
+    from_pool = bool(getattr(args, "from_pool", False))
+    src = CAND if from_pool else SAMPLE
+    if not os.path.isfile(src):
+        print(f"[FAIL] 缺少复核对象文件：{os.path.relpath(src, HERE)}"
+              f"（先跑 --extract-only --stratify N）")
+        return 1
+    rows = list(csv.DictReader(open(src, encoding="utf-8", errors="replace")))
+    print(f"[复核对象] {os.path.relpath(src, HERE)}：{len(rows)} 条"
+          f"{'（**便利样本，禁止用于设计推断**）' if from_pool else '（分层样本）'}")
     done = set()
     if os.path.isfile(REVIEW):
         for line in open(REVIEW, encoding="utf-8", errors="replace"):

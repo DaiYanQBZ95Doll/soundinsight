@@ -1,0 +1,43 @@
+{
+  "subject": "执行方（AI）逐条判定，**未经人工复核**",
+  "renamed_from": "manual_scope_classification.json（原文件名中的 manual 是错误表述，2026-10-01 更正）",
+  "criteria": "in_scope=耳机/耳塞/头戴的音质或声音缺陷抱怨；unclear=无法从原文判断产品；cross_category=其它产品（便携音箱/收音机/显示器/风扇/报警器/对讲机/车载/CB/磁带机/门铃/气吹/视频卡/保护壳等）",
+  "w4_correct_sample": {
+    "sample_file": "v2/w4_sample.csv（293 条分层样本，seed 42）",
+    "review_file": "v2/w4_review.jsonl",
+    "in_scope": [
+      136,
+      56231,
+      12348
+    ],
+    "unclear": [
+      83675,
+      59396,
+      27719,
+      52337,
+      86508,
+      92793
+    ],
+    "note": "其余 22 条为跨品类；LLM 共判正 31/293"
+  },
+  "w4_invalid_convenience_sample": {
+    "review_file": "v2/w4_review_POOL_invalid.jsonl（禁止用于设计推断）",
+    "note": "299 条，实为候选表前 300 条（便利样本），旧值 456 由此产生并已作废"
+  },
+  "gate_outside": {
+    "sample_file": "v2/gate_outside_sample.csv（300 条随机样本，seed 42）",
+    "review_file": "v2/gate_outside_review.jsonl",
+    "in_scope": [
+      10227,
+      32933,
+      67220,
+      39165
+    ],
+    "unclear": [
+      96614
+    ],
+    "cross_category": [
+      35964
+    ]
+  }
+}
