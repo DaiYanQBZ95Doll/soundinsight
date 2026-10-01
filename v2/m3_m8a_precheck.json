@@ -1,0 +1,62 @@
+{
+  "m3": {
+    "ModelScope 空间页": {
+      "url": "https://modelscope.cn/studios/DaiYanQBZ95Doll/SoundInsight",
+      "runs": [
+        {
+          "status": 200,
+          "sec": 0.56,
+          "bytes": 9124,
+          "ok": true
+        },
+        {
+          "status": 200,
+          "sec": 0.47,
+          "bytes": 9124,
+          "ok": true
+        },
+        {
+          "status": 200,
+          "sec": 0.46,
+          "bytes": 9124,
+          "ok": true
+        }
+      ],
+      "median_sec": 0.47,
+      "status": 200
+    },
+    "应用直链": {
+      "url": "https://daiyanqbz95doll-soundinsight.ms.show",
+      "runs": [
+        {
+          "status": 200,
+          "sec": 0.42,
+          "bytes": 5169,
+          "ok": true
+        },
+        {
+          "status": 200,
+          "sec": 0.38,
+          "bytes": 5169,
+          "ok": true
+        },
+        {
+          "status": 200,
+          "sec": 0.36,
+          "bytes": 5169,
+          "ok": true
+        }
+      ],
+      "median_sec": 0.38,
+      "status": 200
+    }
+  },
+  "rules": {
+    "决赛入围名单公示": [
+      "复赛评审结束 · 决赛冲刺阶段开启 PUBLIC LIST 决 赛 入 围 名 单 共 50 支战队 · 决赛作品提交截止 10月8日 01 1AMING 图审通AI 02 203 多 Agent 驱动的跨境电商智能上新全链路解决方案 03 阿斗斗斗 CrashCart：AI买",
+      "AI 49 YNWA AI 短视频批量生产工厂 50 yyds 竞品差评狙击手 决赛冲刺 · 后续流程 决赛入围作品提交截止： 10月8日 组委会将线上评审出 6 支战队 晋级线下路演决赛 晋级决赛的团队需准备 10-15 分钟 PPT 分享 指导单位 · 主办单位 · 承办单位",
+      "评审结束 · 决赛冲刺阶段开启 PUBLIC LIST 决 赛 入 围 名 单 共 50 支战队 · 决赛作品提交截止 10月8日 01 1AMING 图审通AI 02 203 多 Agent 驱动的跨境电商智能上新全链路解决方案 03 阿斗斗斗 CrashCart：AI买手反事",
+      "9 YNWA AI 短视频批量生产工厂 50 yyds 竞品差评狙击手 决赛冲刺 · 后续流程 决赛入围作品提交截止： 10月8日 组委会将线上评审出 6 支战队 晋级线下路演决赛 晋级决赛的团队需准备 10-15 分钟 PPT 分享 指导单位 · 主办单位 · 承办单位 菜鸟智"
+    ]
+  }
+}

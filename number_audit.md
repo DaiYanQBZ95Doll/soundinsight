@@ -1,5 +1,5 @@
 # 文档数字一致性审计
-> 运行时刻：2026-10-01 12:16:30（用于判别报告新鲜度；脚本异常退出时本文件不会被改写）
+> 运行时刻：2026-10-01 12:43:54（用于判别报告新鲜度；脚本异常退出时本文件不会被改写）
 
 ## 覆盖总量口径一致性（成对口径，防混用）
 - [PASS] 未发现混用口径的总量区间（权威成对值 ['2461', '2826']，覆盖率 ['45.3%', '52.0%']）
@@ -11,14 +11,14 @@
 - [PASS] 锁定基线与 cf51cb0 快照一致（36 个条目）
 
 ## 关键文件完整性（体积上下限 + 章节唯一性）
-- [PASS] docs/frozen_execution_checklist.md：69976 B ∈ [40000, 80000]
-- [PASS] PROGRESS_SYNC.md：53486 B ∈ [20000, 90000]
+- [PASS] docs/frozen_execution_checklist.md：70652 B ∈ [40000, 80000]
+- [PASS] PROGRESS_SYNC.md：54902 B ∈ [20000, 90000]
 - [PASS] docs/final_project_review_and_execution_plan.md：37212 B ∈ [15000, 80000]
 - [PASS] competition_v4.md：21214 B ∈ [20000, 80000]
 - [PASS] results_summary.md：4870 B ∈ [4000, 30000]
 - [PASS] AI_HANDOFF/manifest.json：93380 B ∈ [20000, 400000]
 - [PASS] docs/frozen_execution_checklist.md：13 个章节均唯一
-- [PASS] PROGRESS_SYNC.md：29 个章节均唯一
+- [PASS] PROGRESS_SYNC.md：30 个章节均唯一
 - [PASS] competition_v4.md：13 个章节均唯一
 - 结论：关键文件体积与章节结构均正常
 

@@ -1,0 +1,34 @@
+{
+  "longtext": {
+    "reviewed": 9308,
+    "positives": 52,
+    "rate": 0.0056,
+    "class_dist": {
+      "volume": 20,
+      "clarity": 14,
+      "noise": 26,
+      "treble": 1
+    },
+    "median_words": 196
+  },
+  "treble": {
+    "reviewed": 920,
+    "positives": 355,
+    "rate": 0.3859,
+    "class_dist": {
+      "bass": 183,
+      "noise": 38,
+      "volume": 90,
+      "clarity": 233,
+      "treble": 151
+    },
+    "median_words": 192
+  },
+  "note": "LLM 口径，未经人工校准；分类主体为执行方（AI）",
+  "cost": {
+    "treble_usd": 0.1365,
+    "longtext_usd": 1.2731,
+    "total_usd": 1.4096,
+    "unit_usd_per_1k": 0.14
+  }
+}

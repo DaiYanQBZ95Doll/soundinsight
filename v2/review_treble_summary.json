@@ -1,0 +1,11 @@
+{
+  "layer": "treble",
+  "pool": 925,
+  "done": 925,
+  "ok": 925,
+  "fail": 0,
+  "prompt_tokens": 393793,
+  "completion_tokens": 27405,
+  "elapsed_sec": 57.7,
+  "cost_usd_est": 0.1365
+}

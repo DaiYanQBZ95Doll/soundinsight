@@ -1,0 +1,11 @@
+{
+  "layer": "longtext",
+  "pool": 9309,
+  "done": 9109,
+  "ok": 9109,
+  "fail": 0,
+  "prompt_tokens": 3745111,
+  "completion_tokens": 238107,
+  "elapsed_sec": 429.2,
+  "cost_usd_est": 1.2731
+}
