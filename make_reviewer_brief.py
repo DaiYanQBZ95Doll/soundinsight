@@ -72,13 +72,19 @@ def main() -> int:
 | 复赛包（红线 9） | sha256 `{rsha}…`（应与冻结值 `e6cae286515ef1d2` 一致） |
 | 一键复跑 | `python run_all_checks.py`（13 步门槛链，约 6 分钟） |
 
-**不可变链接（把 `<SHA>` 换成上面的 40 位完整 SHA，即可让外部直读任意版本）**：
+**直读链接（GitCode raw 需鉴权返回 403，故统一用 GitHub）**：
 
 ```
+# ① 始终指向最新 main（拿去就能用）
+https://raw.githubusercontent.com/DaiYanQBZ95Doll/soundinsight/main/docs/REVIEWER_BRIEF.md
+
+# ② 钉死版本（把 <SHA> 换成任意提交号，用于"我审的是哪一版"）
 https://raw.githubusercontent.com/DaiYanQBZ95Doll/soundinsight/<SHA>/docs/REVIEWER_BRIEF.md
 ```
 
-（完整 SHA：`{sha}`；GitCode 的 raw 通道需鉴权，返回 403，故链接统一用 GitHub。）
+> **注意**：本卡生成于提交 `{short}` **之前**（本文件自身的提交），因此 `{sha}` 形态的链接
+> 要在该提交推送后才生效；**要立刻可用，请用上面的 ①**。
+> 其他关键文件的 SHA 链接：`python make_reviewer_brief.py --links`
 """
     t = open(P, encoding="utf-8").read()
     i, j = t.find(BEGIN), t.find(END)
