@@ -1,5 +1,5 @@
 {
- "generated": "2026-10-01 18:03",
+ "generated": "2026-10-01 18:52",
  "root": "C:\\deepseek-harness-master\\soundinsight",
  "count": 462,
  "entries": [
@@ -55,9 +55,9 @@
   {
    "path": "PROJECT_BRIEF_QWEN.md",
    "category": "过程与交接文档",
-   "size_bytes": 11453,
+   "size_bytes": 11888,
    "purpose": "",
-   "sha256_16": "ad4988fb69b81fecbe2187467837bd8c9775725aa271454ca08db0548a150b16"
+   "sha256_16": "ae8531e5d46da06aa2a7eaae9338e6a5c4e14990b99ab95f92807a96d7614aa2"
   },
   {
    "path": "QWEN_HANDOFF.md",
@@ -230,16 +230,16 @@
   {
    "path": "build_finals_appendix.py",
    "category": "代码",
-   "size_bytes": 15465,
+   "size_bytes": 15513,
    "purpose": "",
-   "sha256_16": "76ee6a5e85bd429a1d99f7b2c6fd77ea75965d41d4cfcd10f7a01f37b67137d1"
+   "sha256_16": "c180db19aea3fbdb8642d738cc0d5ee013f160ee468e2905ce2935b9817d05dc"
   },
   {
    "path": "build_finals_content.py",
    "category": "代码",
-   "size_bytes": 9160,
+   "size_bytes": 9208,
    "purpose": "",
-   "sha256_16": "0b58bf4ea6c699f8b600d00fd2b7cb41885d77d172aa6d365a446c91f8a07698"
+   "sha256_16": "6534670471f5797452ec30669ce26611f9e2874fd2727284d9ad8003e8b71b49"
   },
   {
    "path": "build_finals_docx2.py",
@@ -321,9 +321,9 @@
   {
    "path": "check_doc_numbers.py",
    "category": "代码",
-   "size_bytes": 52558,
+   "size_bytes": 55994,
    "purpose": "数字审计 + 模板格式对照脚本",
-   "sha256_16": "91ccea15a0a7d28cb25d3ffbb28afc625e212d6595bd7ac82457628feec7ac66"
+   "sha256_16": "0cd5a0a307640f95d347408b4e1c87a79ecbe4a81e8e81762117b645c1eca554"
   },
   {
    "path": "check_edge_cases.py",
@@ -608,9 +608,9 @@
   {
    "path": "hashes.txt",
    "category": "其他",
-   "size_bytes": 2060,
+   "size_bytes": 2062,
    "purpose": "",
-   "sha256_16": "7ea309ad68d0d28aa308c9961d7911f0e78df05b73183207f11604df31dad6e0"
+   "sha256_16": "b320accd2bd23c336f49ffe96f9b5ca0231a58ac9e529557160fe97279ef94e1"
   },
   {
    "path": "human_review_50.csv",
@@ -1026,11 +1026,18 @@
    "sha256_16": "8643f340c43f8db6227edf72c694c5eab92f3aa926b026fdb59dc8902eaf0c73"
   },
   {
+   "path": "make_pause_snapshot.py",
+   "category": "代码",
+   "size_bytes": 5210,
+   "purpose": "",
+   "sha256_16": "7b1f0822150763a93ee92735d6396f2c28a76cc64535aa3cdecb8fed3c62eea9"
+  },
+  {
    "path": "make_reviewer_brief.py",
    "category": "代码",
-   "size_bytes": 4699,
+   "size_bytes": 5076,
    "purpose": "",
-   "sha256_16": "6f3ca17455c3eddb13ef78160c12a5a04ce144b571960960410e8b9f01fa9c77"
+   "sha256_16": "b07342fa42aad041382cc4fb95b5de659d43ef6469ba252e4be7f86675a7edf1"
   },
   {
    "path": "make_samples.py",
@@ -1119,9 +1126,9 @@
   {
    "path": "number_audit.md",
    "category": "验证报告",
-   "size_bytes": 15267,
+   "size_bytes": 15362,
    "purpose": "数字一致性审计结果（含官方模板格式对照节）",
-   "sha256_16": "7631e708618044017604f7ee160216b2000bb3f1cb7c1a23c7377e3b4acd25dd"
+   "sha256_16": "7dd3d5ea3e7d15d2baaabd65eda915472b45362517350f77853e8af1c4cadb0f"
   },
   {
    "path": "outside_gate_fp.py",
@@ -1161,9 +1168,9 @@
   {
    "path": "ppt_text_dump.md",
    "category": "演示材料",
-   "size_bytes": 11660,
+   "size_bytes": 12208,
    "purpose": "",
-   "sha256_16": "5262fcca543d7836a9c3c73ac7dc9fdd7ed8452090bbf05eb4bb15035f0c4c34"
+   "sha256_16": "2f5d3b97b9330b5142326740106f0df4d0a12740e7e3e301835f840e20114fe1"
   },
   {
    "path": "pr_curve.png",
@@ -1364,9 +1371,9 @@
   {
    "path": "run_all_checks.py",
    "category": "代码",
-   "size_bytes": 5285,
+   "size_bytes": 5443,
    "purpose": "",
-   "sha256_16": "3952044ad7a93cd53301177c513e9a76e7f35a7f872c0ba5362a74248bf970ea"
+   "sha256_16": "e81a5cd97762dc7f9ab87396584cf69ad82fe6fce1e081a31e998a5ddc872b50"
   },
   {
    "path": "safe_commit.py",
@@ -1392,9 +1399,9 @@
   {
    "path": "scan_repo_hygiene.py",
    "category": "代码",
-   "size_bytes": 20498,
+   "size_bytes": 20136,
    "purpose": "",
-   "sha256_16": "81b240031c3bbc240d713b173e60a6e063918801a79fe2611a8796ab36496186"
+   "sha256_16": "844062ab4b575d7722f8b880bc5a92a15e477afb0f8074a2730da0a2f1ab5489"
   },
   {
    "path": "score_gold_set.py",
@@ -1455,9 +1462,9 @@
   {
    "path": "test_audit_checks.py",
    "category": "代码",
-   "size_bytes": 13527,
+   "size_bytes": 15892,
    "purpose": "",
-   "sha256_16": "f473b420ec34e8dae3a65a5856573fdc7f2dc38b12e0705fa624045bd5659026"
+   "sha256_16": "63db580c95711d2132522b13252bcf6dde4ffca9d22532ccf37620d39aa78b1f"
   },
   {
    "path": "test_model.py",
@@ -2001,9 +2008,9 @@
   {
    "path": "更新世界的锋芒_SoundInsight_其他材料.zip",
    "category": "提交物",
-   "size_bytes": 823496,
+   "size_bytes": 824760,
    "purpose": "",
-   "sha256_16": "efd615fed15d40ec037e77b5229112806e0173f9dca71929444420d63351c807"
+   "sha256_16": "842f6690853008630e42a03f6528978077b124b5c5b68418a88f4e996e5b6c02"
   },
   {
    "path": "更新世界的锋芒_SoundInsight_决赛入围定稿作品.docx",
@@ -2141,9 +2148,9 @@
   {
    "path": "docs/N1_narrative_mainline.md",
    "category": "过程与交接文档",
-   "size_bytes": 6554,
+   "size_bytes": 6613,
    "purpose": "",
-   "sha256_16": "4c6f5f4b4cf26b43d0353f13f08f6a065ce82c0ab487a011c1da886dc49556e9"
+   "sha256_16": "f8fc27d3620d0b5a72fae2e8aa37f3ae56864b26c949823a3cc75ac8331f7659"
   },
   {
    "path": "docs/N1b_downgrade_narrative.md",
@@ -2155,9 +2162,9 @@
   {
    "path": "docs/N2_narrative_final.md",
    "category": "过程与交接文档",
-   "size_bytes": 6679,
+   "size_bytes": 6738,
    "purpose": "",
-   "sha256_16": "b7b738881fc57b8c8da0ab316ef64784954aa49bd4c3b9147592fa1f1f20cdcc"
+   "sha256_16": "43bf57f08c578abc568d73f62488fae3375e89d6069f238e9ecaf663e611a969"
   },
   {
    "path": "docs/N3_calibration_evidence.md",
@@ -2176,16 +2183,16 @@
   {
    "path": "docs/N5_qna_factbase.md",
    "category": "过程与交接文档",
-   "size_bytes": 5940,
+   "size_bytes": 5999,
    "purpose": "",
-   "sha256_16": "8912560748ef9e15b6dcca29963fe7ab1fbdaac9c543f3a84a6758133c71da68"
+   "sha256_16": "9442ab871c5a3e7c028c84e99ea2893121ae89701d2ec344a006bb16a37ce249"
   },
   {
    "path": "docs/N6_review_risk_list.md",
    "category": "过程与交接文档",
-   "size_bytes": 5745,
+   "size_bytes": 5804,
    "purpose": "",
-   "sha256_16": "9edbb3b982c906b8f09d5a89a0b4d5f9f27aa20a189263eb83bf4278e17efe4c"
+   "sha256_16": "bb3d02bd64690b1cd09c66704029462e623028a6755ef5ecc0179f59aef21556"
   },
   {
    "path": "docs/N_line_handoff_protocol.md",
@@ -2197,16 +2204,16 @@
   {
    "path": "docs/PAUSE_SNAPSHOT.md",
    "category": "过程与交接文档",
-   "size_bytes": 2604,
+   "size_bytes": 3006,
    "purpose": "",
-   "sha256_16": "005ef3b5686d941484ba48a4759e1c13fe23e1058999456cd75a6c7a520e3215"
+   "sha256_16": "e8654eb7f339833ab1fef2449c77bdcffcdcb173af310c36bf80296b7a9f8bab"
   },
   {
    "path": "docs/REVIEWER_BRIEF.md",
    "category": "过程与交接文档",
-   "size_bytes": 14525,
+   "size_bytes": 14903,
    "purpose": "",
-   "sha256_16": "6998999740ff08aa19d7b74a15fde8dc8c7fa96c6e4c3dbc19bc509b6abff931"
+   "sha256_16": "dae1a26d9b23623b50380187ba4e393ba018cbed3d57487277f8e4e0f70c7f81"
   },
   {
    "path": "docs/SoundInsight决赛备战_现状盘点清单.md",
@@ -2225,9 +2232,9 @@
   {
    "path": "docs/b_measure_results.md",
    "category": "过程与交接文档",
-   "size_bytes": 5068,
+   "size_bytes": 5100,
    "purpose": "",
-   "sha256_16": "c840f21eda6e5a36ca1c7aae2a898da4045f033ecdf97e34296e61685888e941"
+   "sha256_16": "780e8309ee5fe91eb479610d208ba93b46983d8931a42b7ab1c231a4cd8c73ea"
   },
   {
    "path": "docs/checklist_version.json",
@@ -2274,9 +2281,9 @@
   {
    "path": "docs/demo_uptime_log.md",
    "category": "过程与交接文档",
-   "size_bytes": 3996,
+   "size_bytes": 4506,
    "purpose": "",
-   "sha256_16": "5223f50106baf1da7d602b2c56ae0303ece79001b932de1a3a68d14344dfbc3d"
+   "sha256_16": "b6f77c984fb7cd0cc2a689c1947fabe3ea5409a2898453d832c956c10be19c66"
   },
   {
    "path": "docs/difficulty_stratification.md",
@@ -2351,9 +2358,9 @@
   {
    "path": "docs/gap_and_roadmap_inventory.md",
    "category": "过程与交接文档",
-   "size_bytes": 44433,
+   "size_bytes": 44492,
    "purpose": "",
-   "sha256_16": "351e5dc47f3ae17462fced1845d5805a3cbbbc73a8919c76b7b8460b74139d94"
+   "sha256_16": "27283258a0a6463c87b2a088c34c3dc63673625c1985324095be475ebd048fb8"
   },
   {
    "path": "docs/how_to_expand_gains.md",
@@ -2435,9 +2442,9 @@
   {
    "path": "docs/repo_hygiene_scan.md",
    "category": "过程与交接文档",
-   "size_bytes": 3966,
+   "size_bytes": 3994,
    "purpose": "",
-   "sha256_16": "0eca93c3a5d41cadd5de6c1bfc3f61c4b7786463ac66664823c9e11c999afc33"
+   "sha256_16": "9a88aa4be7f9bbbf924bedaaab4fec0f41012724a9b4aab93e4d99f729662aaa"
   },
   {
    "path": "docs/retrospective_and_reflection.md",
@@ -2463,9 +2470,9 @@
   {
    "path": "docs/three_stage_comparison.md",
    "category": "过程与交接文档",
-   "size_bytes": 22357,
+   "size_bytes": 22447,
    "purpose": "",
-   "sha256_16": "e0339095d595294fbce3f476127d1f58587d49ae188c9502999a855e57f9c4c5"
+   "sha256_16": "fb18044a7fc31392a4cc4954beb102a60ce40910e065da0bcf1fabcec2aaa798"
   },
   {
    "path": "docs/treble_failure_analysis.md",
@@ -2816,13 +2823,6 @@
    "size_bytes": 605,
    "purpose": "",
    "sha256_16": "064a068b77473d21b9564a0ab24270347f6efdc0de2319ea748121206108fcf1"
-  },
-  {
-   "path": "v2/paired_totals.json",
-   "category": "其他",
-   "size_bytes": 717,
-   "purpose": "",
-   "sha256_16": "f3b1b7b45205a4727909d41d1935ef4d717239bc9ac92d5d93a8d45d872e24d0"
   },
   {
    "path": "v2/review_longtext.jsonl",

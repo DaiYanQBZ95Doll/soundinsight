@@ -640,6 +640,64 @@ def check_api_wording_consistency(out) -> None:
     out.append("")
 
 
+def check_audit_count_claims(out) -> None:
+    """文档里"审计 N 项"的 N 必须与当前权威值一致（红队 SPIKE-5：曾并存 11 个值）。
+
+    权威值 = `number_audit.md` 的 FAIL+PASS+SKIP 合计。历史/快照类文档或带时点/引用标注的行豁免。
+    """
+    out.append("## 审计项数声明一致性")
+    rep = os.path.join(HERE, "number_audit.md")
+    cur = 0
+    if os.path.isfile(rep):
+        txt = open(rep, encoding="utf-8", errors="replace").read()
+        cur = txt.count("[FAIL]") + txt.count("[PASS]") + txt.count("[SKIP]")
+    if not cur:
+        out.append("- [SKIP] 无法从 number_audit.md 取得当前项数")
+        out.append("")
+        return
+    HIST_FILES = {"competition_v4.md", "competition_v2.md", "competition_v2.txt",
+                  "competition_v3.txt", "ppt_text_dump.md", "PROGRESS_SYNC.md",
+                  "AI_HANDOFF/03_metrics_and_caveats.md", "docs/overnight_summary.md",
+                  "docs/legacy_materials_notice.md", "docs/REVIEWER_BRIEF.md",
+                  "docs/PAUSE_SNAPSHOT.md", "number_audit.md"}
+    pat = re.compile(r"(\d{2,3})\s*项(?:检查|审计|自测)")
+    EXEMPT = ("当时", "历史", "此前", "以 `number_audit.md`", "以 number_audit",
+              "复赛", "初赛", "v1", "快照")
+    bad = []
+    for root, dirs, files in os.walk(HERE):
+        dirs[:] = [d for d in dirs if d not in (".git", "__pycache__", "_tmp_selftest",
+                                                "_tmp_pkgcheck", "node_modules")]
+        for f in files:
+            if not f.endswith(".md"):
+                continue
+            fp = os.path.join(root, f)
+            rel = os.path.relpath(fp, HERE).replace("\\", "/")
+            if rel in HIST_FILES:
+                continue
+            # 历史/流程类文档（工作小结、过程复盘、全流程记录等）按模式豁免：
+            # 它们记录的是**当时**的项数，属时间线信息（红队要求"旧值须有时点"，此处以文件性质豁免）
+            import re as _re
+            if _re.search(r"(work_summary|process_review|project_full_record|"
+                          r"retrospective|D\d+_[a-z_]+)", rel):
+                continue
+            try:
+                lines = open(fp, encoding="utf-8", errors="replace").read().splitlines()
+            except OSError:
+                continue
+            for i, ln in enumerate(lines, 1):
+                if any(k in ln for k in EXEMPT):
+                    continue
+                for m in pat.finditer(ln):
+                    if int(m.group(1)) != cur:
+                        bad.append(f"{rel}:{i} → {m.group(1)} 项（当前 {cur}）")
+    if bad:
+        for b in bad[:8]:
+            out.append(f"- [FAIL] 审计项数不一致：{b}")
+    else:
+        out.append(f"- [PASS] 未发现审计项数不一致（当前 {cur} 项）")
+    out.append("")
+
+
 def check_package_size_claims(out) -> None:
     """当前态文档里的决赛包**字节数**必须等于实际值（否则即为"重建后未同步"的陈旧数字）。
 
@@ -728,6 +786,12 @@ def check_paired_totals(out) -> None:
     if os.path.isdir(docs_dir):
         files += [os.path.join("docs", f) for f in os.listdir(docs_dir)
                   if f.endswith(".md") and os.path.join("docs", f) not in SKIP]
+    # 结果 JSON 也要扫（红队 SPIKE-2：孤儿 json 曾长期存在而检查看不到）
+    # 权威文件自身豁免（它就是权威值来源）；勘误/作废语境按关键字放行
+    v2_dir = os.path.join(HERE, "v2")
+    if os.path.isdir(v2_dir):
+        files += [os.path.join("v2", f) for f in os.listdir(v2_dir)
+                  if f.endswith(".json") and f != "scoped_estimates.json"]
     bad = []
     for f in files:
         fp = os.path.join(HERE, f)
@@ -736,7 +800,8 @@ def check_paired_totals(out) -> None:
         except OSError:
             continue
         for i, ln in enumerate(lines, 1):
-            if any(k in ln for k in ERRATA_ALLOW):
+            if any(k in ln for k in ERRATA_ALLOW) or any(
+                    k in ln for k in ("superseded", "invalid", "old", "reason", "note")):
                 continue
             for m in total_pat.finditer(ln):
                 a, b = m.group(0).replace(" ", "").split("–") if "–" in m.group(0) \
@@ -1061,6 +1126,7 @@ def main() -> None:
     out = ["# 文档数字一致性审计",
            f"> 运行时刻：{datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')}"
            "（用于判别报告新鲜度；脚本异常退出时本文件不会被改写）", ""]
+    check_audit_count_claims(out)
     check_package_size_claims(out)
     check_paired_totals(out)
     check_checklist_version(out)

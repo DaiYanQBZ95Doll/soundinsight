@@ -49,6 +49,6 @@
 ```powershell
 python check_doc_numbers.py    # 生成 number_audit.md
 ```
-- 覆盖 12+ 文件、**143 项检查**（必含数字 + 违禁 claim + 口径一致性 + 官方模板九章格式）
+- 覆盖 12+ 文件、**全部检查项（项数以 `number_audit.md` 头部为准）检查**（必含数字 + 违禁 claim + 口径一致性 + 官方模板九章格式）
 - 违禁项举例：`83.7` 出现在正文、`1297`、`qwen3.7-plus × 标注复核`、已废弃的成本/耗时 claim
 - 任何文档改动后重跑，**0 FAIL** 才算通过（当前状态：0 FAIL / 143 PASS）

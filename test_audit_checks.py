@@ -304,6 +304,66 @@ check("复赛包体积 → 不 FAIL", "[FAIL]" not in txt)
 txt = run_size_check(["决赛包体积随构建变化（当时构建批次）"])
 check("标注历史批次 → 不 FAIL", "[FAIL]" not in txt)
 
+print("\n== Q. 审计项数与结果文件扫描（红队 SPIKE-2/5）==")
+
+
+def run_audit_count(doc_lines):
+    root = os.path.join(os.path.dirname(os.path.abspath(__file__)), "_tmp_selftest", "cnt")
+    shutil.rmtree(root, ignore_errors=True)
+    os.makedirs(root, exist_ok=True)
+    # 造一份权威报告（3 项）供检查读取
+    with open(os.path.join(root, "number_audit.md"), "w", encoding="utf-8") as fh:
+        fh.write("- [PASS] a\n- [PASS] b\n- [FAIL] c\n")
+    with open(os.path.join(root, "probe.md"), "w", encoding="utf-8") as fh:
+        fh.write("\n".join(doc_lines) + "\n")
+    old_here = m.HERE
+    m.HERE = root
+    out = []
+    try:
+        m.check_audit_count_claims(out)
+    finally:
+        m.HERE = old_here
+        shutil.rmtree(root, ignore_errors=True)
+    return "\n".join(out)
+
+
+txt = run_audit_count(["审计 240 项检查（与权威 3 项不符）"])
+check("项数不符 → FAIL", "[FAIL]" in txt, txt.split("FAIL")[-1][:60])
+
+txt = run_audit_count(["全部检查项（项数以 `number_audit.md` 为准）"])
+check("引用式表述 → 不 FAIL", "[FAIL]" not in txt)
+
+txt = run_audit_count(["复赛期审计 135 项检查（历史值）"])
+check("带历史语境的旧值 → 不 FAIL", "[FAIL]" not in txt)
+
+
+def run_paired_json(json_text):
+    """把 v2/*.json 放进临时目录，验证扫描面已覆盖 json。"""
+    root = os.path.join(os.path.dirname(os.path.abspath(__file__)), "_tmp_selftest", "pjson")
+    shutil.rmtree(root, ignore_errors=True)
+    os.makedirs(os.path.join(root, "v2"), exist_ok=True)
+    shutil.copy2(os.path.join(os.path.dirname(os.path.abspath(__file__)),
+                              "v2", "scoped_estimates.json"),
+                 os.path.join(root, "v2", "scoped_estimates.json"))
+    with open(os.path.join(root, "v2", "orphan.json"), "w", encoding="utf-8") as fh:
+        fh.write(json_text)
+    old_here = m.HERE
+    m.HERE = root
+    out = []
+    try:
+        m.check_paired_totals(out)
+    finally:
+        m.HERE = old_here
+        shutil.rmtree(root, ignore_errors=True)
+    return "\n".join(out)
+
+
+txt = run_paired_json('{"total": "2,460\u20132,540"}')
+check("json 里的混用区间 → FAIL", "[FAIL]" in txt, txt.split("FAIL")[-1][:60])
+
+txt = run_paired_json('{"superseded": "2,460\u20132,730 已作废"}')
+check("json 里的勘误语境 → 豁免", "[FAIL]" not in txt)
+
 print(f"\n结果：{len(PASSED)} 项通过，{len(FAILED)} 项失败")
 if FAILED:
     print("失败项：" + "、".join(FAILED))

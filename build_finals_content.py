@@ -122,7 +122,7 @@ CONTENT: dict[str, list[str]] = {
         "数据：McAuley Lab Amazon Reviews 2023（AmazonElectronics 类目，10 万条评论）；",
         "标注：RLCA 两阶段流水线（规则初筛 + LLM 全量复核）；",
         "部署：本地 GPU 推理（RTX 4060）与在线 CPU 空间双形态，一键启动；",
-        "评测与审计：check_doc_numbers.py 数字审计（186 项检查／0 FAIL）、scan_repo_hygiene.py "
+        "评测与审计：check_doc_numbers.py 数字审计（全部检查项（项数以 `number_audit.md` 为准）检查／0 FAIL）、scan_repo_hygiene.py "
         "仓库卫生扫描（密钥 0）、test_audit_checks.py 负向自测（15 项）。",
     ],
 }

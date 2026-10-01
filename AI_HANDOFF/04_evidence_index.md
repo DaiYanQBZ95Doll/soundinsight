@@ -53,7 +53,7 @@
 
 | 结论 | 证据文件 | 复算方式 |
 |---|---|---|
-| 文档数字同源、无违禁 claim | `number_audit.md` | `python check_doc_numbers.py`（143 项） |
+| 文档数字同源、无违禁 claim | `number_audit.md` | `python check_doc_numbers.py`（全部检查项（项数以 `number_audit.md` 为准）） |
 | 主文档符合官方模板九章 | `number_audit.md` 末节"模板格式对照" | 同上（自动解析 `## 一、`…`## 九、` 结构） |
 | 模板原文（对照基准） | `hackathon-复赛作品提交模板-天池版.docx` | `extract_template.py` 可重新抽取 |
 

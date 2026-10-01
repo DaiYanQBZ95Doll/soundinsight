@@ -64,7 +64,7 @@
 
 | 文件 | 用途 |
 |---|---|
-| `check_doc_numbers.py` | 数字审计（143 项）+ 官方模板九章格式对照 → `number_audit.md` |
+| `check_doc_numbers.py` | 数字审计（全部检查项（项数以 `number_audit.md` 为准））+ 官方模板九章格式对照 → `number_audit.md` |
 | `audit_ppt.py` | 抽取 PPT 文本（`ppt_text_dump.md`）并核对页数/数字 |
 | `deploy_check.py` / `batch_check.py` | 在线 Demo 单条 / 批量自动验收（需公网 URL） |
 | `md_to_pdf.py` / `md_to_docx.py` / `verify_docx.py` | 主文档 Markdown → PDF（内嵌宋体/黑体）/ Word / 完整性校验 |

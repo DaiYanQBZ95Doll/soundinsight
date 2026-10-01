@@ -1,13 +1,13 @@
 # 文件地图（由 make_ai_handoff.py 自动生成，勿手改）
 
-> 生成时间：2026-10-01 18:03；共 462 个条目；体积单位 KB/MB。
+> 生成时间：2026-10-01 18:52；共 462 个条目；体积单位 KB/MB。
 
 ## 提交物（5 项，43.5 MB）
 
 | 文件 | 大小 | 用途 |
 |---|---|---|
 | `更新世界的锋芒_SoundInsight_复赛作品.zip` | 42.4 MB |  |
-| `更新世界的锋芒_SoundInsight_其他材料.zip` | 804.2 KB |  |
+| `更新世界的锋芒_SoundInsight_其他材料.zip` | 805.4 KB |  |
 | `更新世界的锋芒_SoundInsight_复赛作品.pdf` | 210.1 KB |  |
 | `更新世界的锋芒_SoundInsight_Demo.zip` | 106.7 KB |  |
 | `更新世界的锋芒_SoundInsight_复赛作品.docx` | 48.0 KB |  |
@@ -32,7 +32,7 @@
 
 | 文件 | 大小 | 用途 |
 |---|---|---|
-| `number_audit.md` | 14.9 KB | 数字一致性审计结果（含官方模板格式对照节） |
+| `number_audit.md` | 15.0 KB | 数字一致性审计结果（含官方模板格式对照节） |
 | `error_taxonomy.md` | 8.2 KB | 错误分类学：FP/FN 构成 + 标注噪声人工终审 |
 | `llm_baseline.md` | 6.4 KB | LLM 对照报告（deepseek + qwen3.7-plus，含循环性红利声明） |
 | `edge_case_benchmark.py` | 5.6 KB |  |
@@ -68,17 +68,17 @@
 | `docs/gap_and_roadmap_inventory.md` | 43.4 KB |  |
 | `docs/final_project_review_and_execution_plan.md` | 36.3 KB |  |
 | `docs/retrospective_and_reflection.md` | 27.9 KB |  |
-| `docs/three_stage_comparison.md` | 21.8 KB |  |
+| `docs/three_stage_comparison.md` | 21.9 KB |  |
 | `docs/project_full_record.md` | 21.6 KB | 初赛→复赛全流程记录 |
 | `docs/v2_acceptance_benchmark.md` | 20.4 KB |  |
 | `docs/D13_seal_declaration.md` | 20.1 KB | D13 封包声明（提交技术质检终审） |
 | `docs/final_review_and_execution_plan.md` | 19.9 KB |  |
 | `docs/overnight_summary.md` | 17.3 KB |  |
-| `docs/REVIEWER_BRIEF.md` | 14.2 KB |  |
+| `docs/REVIEWER_BRIEF.md` | 14.6 KB |  |
 | `docs/reassessment_after_credential.md` | 13.2 KB |  |
 | `docs/file_inventory.md` | 12.8 KB | 项目文件总索引 |
+| `PROJECT_BRIEF_QWEN.md` | 11.6 KB |  |
 | `docs/N_line_handoff_protocol.md` | 11.2 KB |  |
-| `PROJECT_BRIEF_QWEN.md` | 11.2 KB |  |
 | `docs/finals_stage.md` | 11.0 KB |  |
 | `docs/decision_request_v15_and_nline.md` | 10.4 KB |  |
 | `docs/pre_lock_completeness_audit.md` | 10.4 KB |  |
@@ -91,25 +91,25 @@
 | `docs/completeness_audit_round2.md` | 7.8 KB |  |
 | `docs/N1b_downgrade_narrative.md` | 7.0 KB |  |
 | `docs/decision_queue.md` | 6.8 KB |  |
+| `docs/N2_narrative_final.md` | 6.6 KB |  |
 | `docs/external_sources_register.md` | 6.5 KB |  |
-| `docs/N2_narrative_final.md` | 6.5 KB |  |
-| `docs/N1_narrative_mainline.md` | 6.4 KB |  |
+| `docs/N1_narrative_mainline.md` | 6.5 KB |  |
 | `docs/work_summary_d7.md` | 6.2 KB |  |
 | `docs/how_to_expand_gains.md` | 6.1 KB |  |
 | `docs/scoped_findings.md` | 5.9 KB |  |
-| `docs/N5_qna_factbase.md` | 5.8 KB |  |
-| `docs/N6_review_risk_list.md` | 5.6 KB |  |
+| `docs/N5_qna_factbase.md` | 5.9 KB |  |
+| `docs/N6_review_risk_list.md` | 5.7 KB |  |
 | `docs/llm_credential_status.md` | 5.0 KB |  |
-| `docs/b_measure_results.md` | 4.9 KB |  |
+| `docs/b_measure_results.md` | 5.0 KB |  |
 | `docs/DoD_completion_table.md` | 4.9 KB |  |
 | `docs/w4_prescreen_estimate.md` | 4.8 KB |  |
 | `docs/SoundInsight决赛备战_现状盘点清单.md` | 4.8 KB |  |
 | `docs/v2_gate_verdict.md` | 4.7 KB |  |
 | `docs/w1_longtext_variants.md` | 4.7 KB |  |
+| `docs/demo_uptime_log.md` | 4.4 KB |  |
 | `docs/evidence_index_exp.md` | 4.4 KB |  |
 | `docs/human_gold_set_protocol.md` | 4.2 KB |  |
 | `docs/e2_erratum.md` | 4.2 KB |  |
-| `docs/demo_uptime_log.md` | 3.9 KB |  |
 | `docs/repo_hygiene_scan.md` | 3.9 KB |  |
 | `docs/dataset_audit.md` | 3.5 KB | 数据集字段考古 |
 | `docs/M8a_submission_precheck.md` | 3.5 KB |  |
@@ -119,11 +119,11 @@
 | `docs/N3_calibration_evidence.md` | 3.1 KB |  |
 | `docs/sandbox_operation_notes.md` | 3.1 KB |  |
 | `docs/D14_resume_checklist.md` | 3.0 KB | 收尾四步清单（录视频/打包/上传/补推送） |
+| `docs/PAUSE_SNAPSHOT.md` | 2.9 KB |  |
 | `docs/difficulty_stratification.md` | 2.9 KB |  |
 | `docs/drift_plan.md` | 2.8 KB | 数据漂移监控方案 |
 | `docs/w17_confidence_actions.md` | 2.8 KB |  |
 | `AI_INDUCTION_REDLINE.md` | 2.7 KB |  |
-| `docs/PAUSE_SNAPSHOT.md` | 2.5 KB |  |
 | `docs/W5_cv_interpretation.md` | 2.2 KB |  |
 | `docs/w13_keyword_miss_rate.md` | 2.1 KB |  |
 | `docs/outside_gate_fp.md` | 2.0 KB |  |
@@ -136,7 +136,7 @@
 | 文件 | 大小 | 用途 |
 |---|---|---|
 | `SoundInsight：跨境电商耳机音质差评智能归因系统.pptx` | 18.1 MB |  |
-| `ppt_text_dump.md` | 11.4 KB |  |
+| `ppt_text_dump.md` | 11.9 KB |  |
 | `video_script.md` | 5.7 KB | 演示视频脚本（200 秒 / 9 镜头） |
 | `video_script_silent.md` | 4.4 KB | 无口播拍摄卡（操作步骤 + 画面要点） |
 | `视频素材/素材清单.md` | 2.9 KB |  |
@@ -265,17 +265,17 @@
 | `sample_reviews_100.csv` | 57.9 KB |  |
 | `agent_test_input.csv` | 27.9 KB |  |
 
-## 代码（153 项，0.7 MB）
+## 代码（154 项，0.8 MB）
 
 | 文件 | 大小 | 用途 |
 |---|---|---|
-| `check_doc_numbers.py` | 51.3 KB | 数字审计 + 模板格式对照脚本 |
-| `scan_repo_hygiene.py` | 20.0 KB |  |
+| `check_doc_numbers.py` | 54.7 KB | 数字审计 + 模板格式对照脚本 |
+| `scan_repo_hygiene.py` | 19.7 KB |  |
 | `v2_meta_analysis.py` | 19.1 KB |  |
+| `test_audit_checks.py` | 15.5 KB |  |
 | `build_finals_appendix.py` | 15.1 KB |  |
 | `build_finals_package.py` | 14.7 KB |  |
 | `v2_w4_mine.py` | 13.2 KB |  |
-| `test_audit_checks.py` | 13.2 KB |  |
 | `build_finals_docx2.py` | 12.7 KB |  |
 | `build_pdf_v2.py` | 12.4 KB |  |
 | `v2_w1_longtext.py` | 12.1 KB |  |
@@ -285,7 +285,7 @@
 | `build_submission.py` | 9.3 KB |  |
 | `demo_sound_v2.py` | 9.1 KB | 本地 Gradio Demo（三页；已内置代理绕过） |
 | `v2_w2_perclass.py` | 9.1 KB |  |
-| `build_finals_content.py` | 8.9 KB |  |
+| `build_finals_content.py` | 9.0 KB |  |
 | `outside_gate_fp.py` | 8.9 KB |  |
 | `v2_w7_calibration.py` | 8.9 KB |  |
 | `v2_w1_hybrid.py` | 8.4 KB |  |
@@ -320,16 +320,17 @@
 | `distilbert_cv.py` | 5.4 KB |  |
 | `undersample_experiment.py` | 5.4 KB |  |
 | `md_to_docx.py` | 5.4 KB | 主文档 Markdown → Word |
+| `run_all_checks.py` | 5.3 KB |  |
 | `v2_m0_switch.py` | 5.3 KB |  |
 | `train_final.py` | 5.2 KB |  |
 | `train_roberta_quick.py` | 5.2 KB |  |
-| `run_all_checks.py` | 5.2 KB |  |
 | `make_missing_figures.py` | 5.1 KB |  |
+| `make_pause_snapshot.py` | 5.1 KB |  |
 | `v2_w1_seg_threshold.py` | 5.1 KB |  |
 | `predict_core.py` | 5.1 KB | 共享推理核心（含非英文显式拒绝） |
 | `verify_ui_and_api.py` | 5.0 KB |  |
+| `make_reviewer_brief.py` | 5.0 KB |  |
 | `fix_ppt_threshold.py` | 4.8 KB |  |
-| `make_reviewer_brief.py` | 4.6 KB |  |
 | `make_video_assets.py` | 4.6 KB |  |
 | `v2_record_incident.py` | 4.5 KB |  |
 | `make_samples.py` | 4.4 KB |  |
@@ -479,7 +480,7 @@
 | `multi_label_model/` | 256.1 MB | 冻结的多标签归因模型权重（约 256MB），不入 git |
 | `sound_model/` | 256.1 MB | 冻结的二分类模型权重（约 256MB），不入 git |
 
-## 其他（60 项，49.7 MB）
+## 其他（59 项，49.7 MB）
 
 | 文件 | 大小 | 用途 |
 |---|---|---|
@@ -530,7 +531,6 @@
 | `v2/w1_eval_maxlen128.json` | 0.9 KB |  |
 | `v2/w1_eval_maxlen256.json` | 0.9 KB |  |
 | `v2/w1_eval_maxlen512.json` | 0.9 KB |  |
-| `v2/paired_totals.json` | 0.7 KB |  |
 | `v2/b_measure_results.json` | 0.7 KB |  |
 | `v2/outside_gate_fp.json` | 0.6 KB |  |
 | `difficulty_stratification.json` | 0.5 KB |  |

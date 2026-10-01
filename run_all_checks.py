@@ -5,7 +5,7 @@
 否则"清单过期"不为 0；包内验证必须在打包之后）。手工按序执行容易漏步——本脚本把顺序固化。
 
 顺序：
-  1. `check_doc_numbers.py`        —— 数字审计（含 231 项检查）
+  1. `check_doc_numbers.py`        —— 数字审计（含 全部检查项检查）
   2. `test_audit_checks.py`        —— 审计负向自测（证明检查会拒绝坏输入）
   3. `check_refs_and_deps.py`      —— 断链 + 依赖声明（信息性，附在输出里）
   4. `check_url_consistency.py`    —— URL 一致性（M3c③）
@@ -42,6 +42,8 @@ STEPS_FULL = [
     ("包内端到端（解包后实跑产品）", ["verify_demo_end_to_end.py"]),
     ("产品入口（Gradio UI + HTTP API）", ["verify_ui_and_api.py"]),
     ("在线 Demo 存活巡检（M3c④）", ["check_demo_alive.py"]),
+    ("刷新对外状态卡（REVIEWER_BRIEF）", ["make_reviewer_brief.py"]),
+    ("刷新停工快照（生成式）", ["make_pause_snapshot.py"]),
     ("刷新 AI 交接包 manifest", ["make_ai_handoff.py"]),
     ("仓库卫生扫描", ["scan_repo_hygiene.py"]),
 ]

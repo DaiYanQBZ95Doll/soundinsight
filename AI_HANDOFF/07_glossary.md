@@ -21,4 +21,4 @@
 | **PSI** | Population Stability Index，漂移监控指标（方案阈值 0.2，见 `docs/drift_plan.md`） |
 | **其他材料包** | `更新世界的锋芒_SoundInsight_其他材料.zip`：46 份验证报告/审计/图表/人工复核原始表/复算脚本 |
 | **封包声明** | `docs/D13_seal_declaration.md`：封包时点的完成事项、校验值、偏差清单与审核清单 |
-| **审计** | `check_doc_numbers.py` 生成的 143 项检查（数字同源 + 违禁 claim + 三口径一致性 + 模板九章格式） |
+| **审计** | `check_doc_numbers.py` 生成的 全部检查项（项数以 `number_audit.md` 为准）检查（数字同源 + 违禁 claim + 三口径一致性 + 模板九章格式） |

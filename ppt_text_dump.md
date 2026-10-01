@@ -74,3 +74,4 @@ COLLABORATION METHODOLOGY 超级个体：一个人 + 四个 AI 的协作方法�
 - 正例 1257: PASS
 - [PASS] 83.7 未出现
 - [PASS] 1297 未出现
+\n\n> **吞吐口径注（2026-10-01，红队 SPIKE-7）**：本 dump 含两个未标运行环境的吞吐说法——\n> 「30 秒/千条」接近 **CPU 实测（35.2 条/s ＝ 28.4 秒/千条）**但未标 CPU；\n> 「约 2 秒(GPU 实测)」＝ **GPU 567.1 条/s ＝ 1.76 秒/千条** ✓ 与 `throughput_eval.md` 一致。\n> 权威表述：**GPU 1.76 秒/千条、CPU 28.4 秒/千条**（`throughput_eval.md`，RTX 4060 Laptop 8GB）。\n> 该页数字属**复赛期 PPT 快照**，决赛材料以 `results_summary.md` 与附录 B 为准。\n

@@ -1,6 +1,6 @@
 # 公开仓库卫生扫描（密钥 / 隐私 / 废弃 claim）
 
-- 扫描范围：git 跟踪文件 465 个（文本与数据类逐行扫；二进制仅按文件名判断）
+- 扫描范围：git 跟踪文件 467 个（文本与数据类逐行扫；二进制仅按文件名判断）
 - 生成方式：`python scan_repo_hygiene.py`（可随时重跑）
 
 ## 一、密钥与凭据
@@ -35,13 +35,10 @@
   - 行 25｜中国大陆手机号｜`19195907942`
 
 ## 三、废弃 claim（已被修正的旧数字 / 旧表述）
-- 命中合计 35 处：其中 **2 处需确认**、33 处属诚信记录 / 历史说明（有意保留）
+- 命中合计 27 处：其中 **0 处需确认**、27 处属诚信记录 / 历史说明（有意保留）
 
 ### 3.1 需确认（不在诚信记录文件内，且无历史标记）
-- `docs/b_measure_results.md`：1 处
-  - 行 23｜旧耗时口径（应为 GPU 约 2 秒）｜| 墙钟 | 39.8 小时（串行） | 5–8 小时（16 并发） | **7.2 分钟**（16 并发，21 条/秒） |
-- `v2/gold_set_key.json`：1 处
-  - 行 470｜错误正例数（应为 1257/1280/1288 口径）｜"row_index": 81297,
+- 无
 
 ### 3.2 属历史说明 / 诚信记录（有意保留，不修改）
 - `AI_HANDOFF/03_metrics_and_caveats.md`：1 处（行 53）
@@ -53,11 +50,11 @@
 - `docs/gap_and_roadmap_inventory.md`：1 处（行 43）
 - `docs/legacy_materials_notice.md`：6 处（行 52, 53, 56, 60, 60, 60）
 - `docs/process_review_d10.md`：2 处（行 60, 60）
-- `docs/project_full_record.md`：3 处（行 174, 174, 225）
+- `docs/project_full_record.md`：2 处（行 174, 225）
 - `docs/retrospective_and_reflection.md`：2 处（行 63, 63）
 - `docs/v2_acceptance_benchmark.md`：1 处（行 157）
 - `docs/work_summary_d7.md`：2 处（行 13, 55）
-- `ppt_speed_fix.py`：8 处（行 2, 3, 17, 20, 21, 22, 23, 24）
+- `ppt_speed_fix.py`：3 处（行 22, 23, 24）
 
 ## 四、生成物一致性（manifest.json 记录值 vs 实际文件）
 - [PASS] manifest.json 记录的大小与哈希与工作区一致
@@ -65,5 +62,5 @@
 ## 五、结论与建议
 - 密钥：未发现（高危 0 处；历史提交命中 0 处）
 - 隐私：16 处，见第二节；竞赛联系信息为模板要求填写，公开仓库如需脱敏见 `docs/legacy_materials_notice.md` §四
-- 废弃 claim：当前文档需确认 2 处；历史材料的口径指引见 `docs/legacy_materials_notice.md`
+- 废弃 claim：当前文档需确认 0 处；历史材料的口径指引见 `docs/legacy_materials_notice.md`
 - 生成物一致性：一致
