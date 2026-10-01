@@ -1,13 +1,13 @@
 # 文件地图（由 make_ai_handoff.py 自动生成，勿手改）
 
-> 生成时间：2026-10-01 10:19；共 424 个条目；体积单位 KB/MB。
+> 生成时间：2026-10-01 10:41；共 425 个条目；体积单位 KB/MB。
 
 ## 提交物（5 项，43.5 MB）
 
 | 文件 | 大小 | 用途 |
 |---|---|---|
 | `更新世界的锋芒_SoundInsight_复赛作品.zip` | 42.4 MB |  |
-| `更新世界的锋芒_SoundInsight_其他材料.zip` | 746.2 KB |  |
+| `更新世界的锋芒_SoundInsight_其他材料.zip` | 751.1 KB |  |
 | `更新世界的锋芒_SoundInsight_复赛作品.pdf` | 210.1 KB |  |
 | `更新世界的锋芒_SoundInsight_Demo.zip` | 106.7 KB |  |
 | `更新世界的锋芒_SoundInsight_复赛作品.docx` | 48.0 KB |  |
@@ -57,7 +57,7 @@
 | `confidence_tiered.md` | 0.7 KB | 三星补漏置信度分层与中置信剔除记录 |
 | `significance_test.md` | 0.6 KB | Welch t 检验（p=0.000932） |
 
-## 过程与交接文档（55 项，0.6 MB）
+## 过程与交接文档（56 项，0.6 MB）
 
 | 文件 | 大小 | 用途 |
 |---|---|---|
@@ -76,6 +76,7 @@
 | `docs/N_line_handoff_protocol.md` | 11.1 KB |  |
 | `docs/finals_stage.md` | 11.0 KB |  |
 | `docs/pre_lock_completeness_audit.md` | 10.4 KB |  |
+| `docs/decision_request_v15_and_nline.md` | 9.6 KB |  |
 | `docs/completion_statement_for_redteam.md` | 9.3 KB |  |
 | `QWEN_HANDOFF.md` | 9.1 KB |  |
 | `docs/process_review_d10.md` | 8.5 KB |  |
@@ -252,7 +253,7 @@
 | `check_doc_numbers.py` | 41.8 KB | 数字审计 + 模板格式对照脚本 |
 | `scan_repo_hygiene.py` | 20.0 KB |  |
 | `v2_meta_analysis.py` | 19.1 KB |  |
-| `build_finals_package.py` | 14.3 KB |  |
+| `build_finals_package.py` | 14.4 KB |  |
 | `v2_w4_mine.py` | 13.2 KB |  |
 | `build_finals_docx2.py` | 12.7 KB |  |
 | `build_finals_appendix.py` | 12.5 KB |  |
