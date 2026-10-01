@@ -1,13 +1,13 @@
 # 文件地图（由 make_ai_handoff.py 自动生成，勿手改）
 
-> 生成时间：2026-10-01 13:36；共 457 个条目；体积单位 KB/MB。
+> 生成时间：2026-10-01 17:36；共 460 个条目；体积单位 KB/MB。
 
 ## 提交物（5 项，43.5 MB）
 
 | 文件 | 大小 | 用途 |
 |---|---|---|
 | `更新世界的锋芒_SoundInsight_复赛作品.zip` | 42.4 MB |  |
-| `更新世界的锋芒_SoundInsight_其他材料.zip` | 789.6 KB |  |
+| `更新世界的锋芒_SoundInsight_其他材料.zip` | 792.8 KB |  |
 | `更新世界的锋芒_SoundInsight_复赛作品.pdf` | 210.1 KB |  |
 | `更新世界的锋芒_SoundInsight_Demo.zip` | 106.7 KB |  |
 | `更新世界的锋芒_SoundInsight_复赛作品.docx` | 48.0 KB |  |
@@ -62,19 +62,19 @@
 | 文件 | 大小 | 用途 |
 |---|---|---|
 | `docs/gold_set/worksheet.csv` | 177.2 KB |  |
-| `docs/frozen_execution_checklist.md` | 69.0 KB |  |
-| `PROGRESS_SYNC.md` | 53.6 KB |  |
+| `docs/frozen_execution_checklist.md` | 69.7 KB |  |
+| `PROGRESS_SYNC.md` | 55.4 KB |  |
 | `docs/gold_set/worksheet.md` | 45.6 KB |  |
 | `docs/gap_and_roadmap_inventory.md` | 43.4 KB |  |
 | `docs/final_project_review_and_execution_plan.md` | 36.3 KB |  |
 | `docs/retrospective_and_reflection.md` | 27.9 KB |  |
 | `docs/project_full_record.md` | 21.6 KB | 初赛→复赛全流程记录 |
+| `docs/three_stage_comparison.md` | 21.2 KB |  |
 | `docs/v2_acceptance_benchmark.md` | 20.4 KB |  |
 | `docs/D13_seal_declaration.md` | 20.1 KB | D13 封包声明（提交技术质检终审） |
 | `docs/final_review_and_execution_plan.md` | 19.9 KB |  |
 | `docs/overnight_summary.md` | 17.2 KB |  |
-| `docs/three_stage_comparison.md` | 16.3 KB |  |
-| `docs/reassessment_after_credential.md` | 12.9 KB |  |
+| `docs/reassessment_after_credential.md` | 13.2 KB |  |
 | `docs/file_inventory.md` | 12.8 KB | 项目文件总索引 |
 | `docs/N_line_handoff_protocol.md` | 11.2 KB |  |
 | `PROJECT_BRIEF_QWEN.md` | 11.2 KB |  |
@@ -112,9 +112,9 @@
 | `docs/dataset_audit.md` | 3.5 KB | 数据集字段考古 |
 | `docs/M8a_submission_precheck.md` | 3.5 KB |  |
 | `docs/N4_target_argument.md` | 3.5 KB |  |
+| `docs/demo_uptime_log.md` | 3.4 KB |  |
 | `docs/w4_mining_estimate.md` | 3.4 KB |  |
 | `docs/M3b_judge_access_guide.md` | 3.3 KB |  |
-| `docs/demo_uptime_log.md` | 3.2 KB |  |
 | `docs/N3_calibration_evidence.md` | 3.1 KB |  |
 | `docs/sandbox_operation_notes.md` | 3.1 KB |  |
 | `docs/D14_resume_checklist.md` | 3.0 KB | 收尾四步清单（录视频/打包/上传/补推送） |
@@ -264,16 +264,16 @@
 | `sample_reviews_100.csv` | 57.9 KB |  |
 | `agent_test_input.csv` | 27.9 KB |  |
 
-## 代码（151 项，0.7 MB）
+## 代码（152 项，0.7 MB）
 
 | 文件 | 大小 | 用途 |
 |---|---|---|
 | `check_doc_numbers.py` | 48.5 KB | 数字审计 + 模板格式对照脚本 |
 | `scan_repo_hygiene.py` | 20.0 KB |  |
 | `v2_meta_analysis.py` | 19.1 KB |  |
+| `build_finals_appendix.py` | 15.1 KB |  |
 | `build_finals_package.py` | 14.6 KB |  |
 | `v2_w4_mine.py` | 13.2 KB |  |
-| `build_finals_appendix.py` | 13.2 KB |  |
 | `build_finals_docx2.py` | 12.7 KB |  |
 | `build_pdf_v2.py` | 12.4 KB |  |
 | `v2_w1_longtext.py` | 12.1 KB |  |
@@ -300,6 +300,7 @@
 | `w13_keyword_miss_rate.py` | 7.4 KB |  |
 | `v2_w5_cv.py` | 7.4 KB |  |
 | `v2_gate_outside_probe.py` | 7.4 KB |  |
+| `same_basis_compare.py` | 7.4 KB |  |
 | `v2_w4_prescreen.py` | 7.3 KB |  |
 | `make_gold_set.py` | 7.0 KB |  |
 | `score_gold_set.py` | 7.0 KB |  |
@@ -316,6 +317,7 @@
 | `precommit_guard.py` | 5.8 KB |  |
 | `w11_data_efficiency.py` | 5.5 KB |  |
 | `distilbert_cv.py` | 5.4 KB |  |
+| `undersample_experiment.py` | 5.4 KB |  |
 | `md_to_docx.py` | 5.4 KB | 主文档 Markdown → Word |
 | `v2_m0_switch.py` | 5.3 KB |  |
 | `train_final.py` | 5.2 KB |  |
@@ -348,7 +350,6 @@
 | `purge_leaked_objects.py` | 3.2 KB |  |
 | `analyze_b_measure.py` | 3.1 KB |  |
 | `v2_repair_checklist.py` | 3.1 KB |  |
-| `v2_collect_history.py` | 3.1 KB |  |
 | `check_demo_alive.py` | 3.0 KB |  |
 | `audit_ppt.py` | 3.0 KB |  |
 | `check_url_consistency.py` | 3.0 KB |  |
@@ -476,7 +477,7 @@
 | `multi_label_model/` | 256.1 MB | 冻结的多标签归因模型权重（约 256MB），不入 git |
 | `sound_model/` | 256.1 MB | 冻结的二分类模型权重（约 256MB），不入 git |
 
-## 其他（58 项，49.7 MB）
+## 其他（60 项，49.7 MB）
 
 | 文件 | 大小 | 用途 |
 |---|---|---|
@@ -487,7 +488,7 @@
 | `v2/w4_review.jsonl` | 96.8 KB |  |
 | `v2/gate_outside_review.jsonl` | 86.8 KB |  |
 | `v2/gold_set_key.json` | 39.3 KB |  |
-| `更新世界的锋芒_SoundInsight_决赛入围定稿作品.docx` | 35.7 KB |  |
+| `更新世界的锋芒_SoundInsight_决赛入围定稿作品.docx` | 36.6 KB |  |
 | `v2/w4_estimate.json` | 9.4 KB |  |
 | `v2/w14_w15_w16_report.md` | 7.9 KB |  |
 | `v2/w17_failure_stats.json` | 6.5 KB |  |
@@ -495,6 +496,7 @@
 | `v2/w4_prescreen.json` | 6.0 KB |  |
 | `v2/w7_calibration.json` | 4.4 KB |  |
 | `v2/w5_final.json` | 3.9 KB |  |
+| `v2/same_basis_comparison.json` | 3.2 KB |  |
 | `v2/w14_w15_w16_summary.json` | 3.1 KB |  |
 | `视频录制速查.md` | 3.0 KB |  |
 | `v2/w1_hybrid_result.json` | 2.7 KB |  |
@@ -531,6 +533,7 @@
 | `v2/outside_gate_fp.json` | 0.6 KB |  |
 | `difficulty_stratification.json` | 0.5 KB |  |
 | `per_class_thresholds_probe.json` | 0.4 KB |  |
+| `v2/exp_undersample.json` | 0.4 KB |  |
 | `w11_data_efficiency.json` | 0.4 KB |  |
 | `v2/threshold.json` | 0.3 KB |  |
 | `v2/entrypoints_check.json` | 0.3 KB |  |

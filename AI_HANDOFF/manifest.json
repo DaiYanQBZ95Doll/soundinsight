@@ -1,7 +1,7 @@
 {
- "generated": "2026-10-01 13:36",
+ "generated": "2026-10-01 17:36",
  "root": "C:\\deepseek-harness-master\\soundinsight",
- "count": 457,
+ "count": 460,
  "entries": [
   {
    "path": ".gitignore",
@@ -48,9 +48,9 @@
   {
    "path": "PROGRESS_SYNC.md",
    "category": "过程与交接文档",
-   "size_bytes": 54902,
+   "size_bytes": 56709,
    "purpose": "",
-   "sha256_16": "b7e6e6a5e35950fe0cca6d46bb3b47268baf2fc407d301cd88bc1c4618f203b3"
+   "sha256_16": "35ff0c7b060e2bfd6a802d0d61101be84944b686f79ba4d9bbe76f3feb3996fb"
   },
   {
    "path": "PROJECT_BRIEF_QWEN.md",
@@ -230,9 +230,9 @@
   {
    "path": "build_finals_appendix.py",
    "category": "代码",
-   "size_bytes": 13512,
+   "size_bytes": 15465,
    "purpose": "",
-   "sha256_16": "2d39d863b0b335a4f4d3322a41296f4bdfe5ad8f811dda752e22e86be99b7232"
+   "sha256_16": "76ee6a5e85bd429a1d99f7b2c6fd77ea75965d41d4cfcd10f7a01f37b67137d1"
   },
   {
    "path": "build_finals_content.py",
@@ -608,9 +608,9 @@
   {
    "path": "hashes.txt",
    "category": "其他",
-   "size_bytes": 2057,
+   "size_bytes": 2058,
    "purpose": "",
-   "sha256_16": "0a7e55c70e707010f5e08420b6b4b773897b78d2fb24f1402ea53a3c7e0c54b5"
+   "sha256_16": "d786138cc38bb9b57cfd8bc4265562e5edba6e4c53ba2d6e2a688cf0516d171a"
   },
   {
    "path": "human_review_50.csv",
@@ -1114,7 +1114,7 @@
    "category": "验证报告",
    "size_bytes": 15161,
    "purpose": "数字一致性审计结果（含官方模板格式对照节）",
-   "sha256_16": "59fa504152c1a9ddc168c5f3468847a48f89b24f388b25d3d2340011616113bd"
+   "sha256_16": "cb172a9b46ee01d392f308b8249026ed39a1a3e093890051ee665e39fd5e76c2"
   },
   {
    "path": "outside_gate_fp.py",
@@ -1369,6 +1369,13 @@
    "sha256_16": "44b6ab7b647217472cd876ec6bba576ab86c0edee1dea9666f4014f20a275bff"
   },
   {
+   "path": "same_basis_compare.py",
+   "category": "代码",
+   "size_bytes": 7544,
+   "purpose": "",
+   "sha256_16": "ce3ebadf6785224e1e57a49cf1b4abba164406421863f03ff6e9d2710816cf73"
+  },
+  {
    "path": "sample_reviews_100.csv",
    "category": "数据",
    "size_bytes": 59326,
@@ -1579,6 +1586,13 @@
    "sha256_16": "fb01ff8a71505273918960d729045e63c69ecdc1aef62836033c304d2687d925"
   },
   {
+   "path": "undersample_experiment.py",
+   "category": "代码",
+   "size_bytes": 5537,
+   "purpose": "",
+   "sha256_16": "30968295c55ebe2a6da523d47a263c2770ac03cd56871e13f8054d0eca2c3188"
+  },
+  {
    "path": "update_finals_hashes.py",
    "category": "代码",
    "size_bytes": 2678,
@@ -1612,13 +1626,6 @@
    "size_bytes": 2124,
    "purpose": "",
    "sha256_16": "ed1e7409796b24c5caf28bf425ee463d994e304e71e11fbb1c449ce9ed95bc7a"
-  },
-  {
-   "path": "v2_collect_history.py",
-   "category": "代码",
-   "size_bytes": 3134,
-   "purpose": "",
-   "sha256_16": "58cc42718b0b598e966385f2d3fa80c42064a425f8740530158c2bee8b428581"
   },
   {
    "path": "v2_cv_doc.py",
@@ -1987,16 +1994,16 @@
   {
    "path": "更新世界的锋芒_SoundInsight_其他材料.zip",
    "category": "提交物",
-   "size_bytes": 808534,
+   "size_bytes": 811876,
    "purpose": "",
-   "sha256_16": "c71dcc2d073c6cc92e66be527e3aca0310347916049423455d48ce858da2aa4e"
+   "sha256_16": "3410d07b81546eed649ce2f1f652de0e4b2cd919dbf0232df966b9d0b5348750"
   },
   {
    "path": "更新世界的锋芒_SoundInsight_决赛入围定稿作品.docx",
    "category": "其他",
-   "size_bytes": 36517,
+   "size_bytes": 37471,
    "purpose": "",
-   "sha256_16": "73fabe07f1d491f3c7f8fce90d7244585318d28c23e8c40e1ddf1a47c1d26b2a"
+   "sha256_16": "1072dab175e5b484839266d738763f7a8b6aa81e441efea07cc81e4b1a18cd46"
   },
   {
    "path": "更新世界的锋芒_SoundInsight_复赛作品.docx",
@@ -2253,9 +2260,9 @@
   {
    "path": "docs/demo_uptime_log.md",
    "category": "过程与交接文档",
-   "size_bytes": 3231,
+   "size_bytes": 3486,
    "purpose": "",
-   "sha256_16": "cebb529ae63d2ec4abd19358942959bd6aec94254a4e0563ed6894617fa65dd8"
+   "sha256_16": "ed4c8f7c7a573fda520de3b7400b6dd62947e96f3f8be7afae7faf79a13b159a"
   },
   {
    "path": "docs/difficulty_stratification.md",
@@ -2323,9 +2330,9 @@
   {
    "path": "docs/frozen_execution_checklist.md",
    "category": "过程与交接文档",
-   "size_bytes": 70652,
+   "size_bytes": 71413,
    "purpose": "",
-   "sha256_16": "2a7a31b8fa70f8541eac27b6594281609047ff6ba2ecb71e1f220be09b47c20f"
+   "sha256_16": "baaf3ae87bcc44d42f120d65f09ebe86b9ac3a391930a0d5b2867b7bfdd2e456"
   },
   {
    "path": "docs/gap_and_roadmap_inventory.md",
@@ -2407,9 +2414,9 @@
   {
    "path": "docs/reassessment_after_credential.md",
    "category": "过程与交接文档",
-   "size_bytes": 13224,
+   "size_bytes": 13547,
    "purpose": "",
-   "sha256_16": "12c5ef6be53fd78567adf87bf79e67c75e8614c9a1b85c8f4be77381477a967a"
+   "sha256_16": "f009261de0010e6938112bc8f744d3f961326f1f4a56bf85a532fa1a517c810b"
   },
   {
    "path": "docs/repo_hygiene_scan.md",
@@ -2442,9 +2449,9 @@
   {
    "path": "docs/three_stage_comparison.md",
    "category": "过程与交接文档",
-   "size_bytes": 16702,
+   "size_bytes": 21742,
    "purpose": "",
-   "sha256_16": "94066d31920ca34570bab89d743a2064af0f0b8506835857ee3b892b819d142a"
+   "sha256_16": "a6543d0210ea8332f34721f8922535aa309a35948fa0539a3a15d809bc28c7d0"
   },
   {
    "path": "docs/treble_failure_analysis.md",
@@ -2734,6 +2741,13 @@
    "sha256_16": "2b1ae3ed0944e5d4b9a922000852e131f792f7b4c8ce8c02f8aa40e90a60c705"
   },
   {
+   "path": "v2/exp_undersample.json",
+   "category": "其他",
+   "size_bytes": 436,
+   "purpose": "",
+   "sha256_16": "63ef4177c8e69bbaf4cf0d98567c61f4a9a8e3fbfedbd79b2db5d371666cbfda"
+  },
+  {
    "path": "v2/gate_outside_estimate.json",
    "category": "其他",
    "size_bytes": 253,
@@ -2766,7 +2780,7 @@
    "category": "其他",
    "size_bytes": 6163,
    "purpose": "",
-   "sha256_16": "f533a05d126efb88e1960304d211a2b8aee2e847b6bd3937abd15df7742d7449"
+   "sha256_16": "a6fab0681860289657a6dbd6711983c2a64584f379c8488e17c9aec052f4d505"
   },
   {
    "path": "v2/m3_m8a_precheck.json",
@@ -2823,6 +2837,13 @@
    "size_bytes": 195,
    "purpose": "",
    "sha256_16": "b5c933431eb223137de7b047cc247a2c9508ac74920a2b20216cc4c248e5d26d"
+  },
+  {
+   "path": "v2/same_basis_comparison.json",
+   "category": "其他",
+   "size_bytes": 3263,
+   "purpose": "",
+   "sha256_16": "219d3195c7f0523ff2759bdb38073736761260fa173eb098f3f52c113ff13859"
   },
   {
    "path": "v2/scoped_estimates.json",
