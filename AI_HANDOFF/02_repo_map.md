@@ -1,6 +1,6 @@
 # 文件地图（由 make_ai_handoff.py 自动生成，勿手改）
 
-> 生成时间：2026-10-01 12:44；共 452 个条目；体积单位 KB/MB。
+> 生成时间：2026-10-01 12:57；共 453 个条目；体积单位 KB/MB。
 
 ## 提交物（5 项，43.5 MB）
 
@@ -57,7 +57,7 @@
 | `confidence_tiered.md` | 0.7 KB | 三星补漏置信度分层与中置信剔除记录 |
 | `significance_test.md` | 0.6 KB | Welch t 检验（p=0.000932） |
 
-## 过程与交接文档（64 项，0.8 MB）
+## 过程与交接文档（65 项，0.8 MB）
 
 | 文件 | 大小 | 用途 |
 |---|---|---|
@@ -88,6 +88,7 @@
 | `docs/w17_failure_cases.md` | 7.9 KB |  |
 | `docs/completeness_audit_round2.md` | 7.8 KB |  |
 | `docs/N1b_downgrade_narrative.md` | 7.0 KB |  |
+| `docs/decision_queue.md` | 6.8 KB |  |
 | `docs/external_sources_register.md` | 6.5 KB |  |
 | `docs/N2_narrative_final.md` | 6.5 KB |  |
 | `docs/N1_narrative_mainline.md` | 6.4 KB |  |
@@ -118,8 +119,8 @@
 | `docs/drift_plan.md` | 2.8 KB | 数据漂移监控方案 |
 | `docs/w17_confidence_actions.md` | 2.8 KB |  |
 | `AI_INDUCTION_REDLINE.md` | 2.7 KB |  |
+| `docs/demo_uptime_log.md` | 2.4 KB |  |
 | `docs/W5_cv_interpretation.md` | 2.2 KB |  |
-| `docs/demo_uptime_log.md` | 2.1 KB |  |
 | `docs/w13_keyword_miss_rate.md` | 2.1 KB |  |
 | `docs/outside_gate_fp.md` | 2.0 KB |  |
 | `docs/w11_data_efficiency.md` | 1.9 KB |  |
