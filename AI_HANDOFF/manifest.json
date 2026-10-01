@@ -1,7 +1,7 @@
 {
- "generated": "2026-10-01 10:59",
+ "generated": "2026-10-01 11:28",
  "root": "C:\\deepseek-harness-master\\soundinsight",
- "count": 427,
+ "count": 428,
  "entries": [
   {
    "path": ".gitignore",
@@ -244,9 +244,9 @@
   {
    "path": "build_finals_package.py",
    "category": "代码",
-   "size_bytes": 14722,
+   "size_bytes": 14767,
    "purpose": "",
-   "sha256_16": "d19a862f7fa11e5178b3845b1bc94aa17f98ee67ef643d92b08fba46e28e3f9a"
+   "sha256_16": "1fe7f323603f81924b02f3a5d3d4cd322137a4f505df19b44bea0410e51e534f"
   },
   {
    "path": "build_pdf.py",
@@ -594,9 +594,9 @@
   {
    "path": "hashes.txt",
    "category": "其他",
-   "size_bytes": 2046,
+   "size_bytes": 2047,
    "purpose": "",
-   "sha256_16": "fdf7f6aa915b4de3205fc852ffacc42035ad9b4273cdf96b3082d8887df0c10f"
+   "sha256_16": "e939328bda3d1452adc19fa60c640cf437cd1b01f4b3235b86a240566874ac09"
   },
   {
    "path": "human_review_50.csv",
@@ -1086,7 +1086,7 @@
    "category": "验证报告",
    "size_bytes": 14981,
    "purpose": "数字一致性审计结果（含官方模板格式对照节）",
-   "sha256_16": "aa62e654acff338342aa44ccfb6e7200282f2d435e6362f1d0d8367b2c03c03b"
+   "sha256_16": "fb85d1609782ebc976ee8e7c84ff859ab26977db4b62b7b90c04021e10b85247"
   },
   {
    "path": "outside_gate_fp.py",
@@ -1924,9 +1924,9 @@
   {
    "path": "更新世界的锋芒_SoundInsight_其他材料.zip",
    "category": "提交物",
-   "size_bytes": 772234,
+   "size_bytes": 776437,
    "purpose": "",
-   "sha256_16": "b060c5d60d013f817a2f7cf781d6b143ab5549d4bb26a56c3746d663fa7df877"
+   "sha256_16": "59c5a38f14fcf85bde07a7ba2118aaa218470e8dccfd9cfbffbe6cf27805cf0e"
   },
   {
    "path": "更新世界的锋芒_SoundInsight_决赛入围定稿作品.docx",
@@ -2291,6 +2291,13 @@
    "size_bytes": 22123,
    "purpose": "初赛→复赛全流程记录",
    "sha256_16": "22c4830a25be023170ed9b26388b3bf06e52385d608e0189bfebf0a2b4554f38"
+  },
+  {
+   "path": "docs/reassessment_after_credential.md",
+   "category": "过程与交接文档",
+   "size_bytes": 7491,
+   "purpose": "",
+   "sha256_16": "7e911bc9f0dd9989e4ea70a3a98bac2ea288e9235aca11ebb53c99d16b9f96f0"
   },
   {
    "path": "docs/repo_hygiene_scan.md",

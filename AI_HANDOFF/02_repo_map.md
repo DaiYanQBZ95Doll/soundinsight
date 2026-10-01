@@ -1,13 +1,13 @@
 # 文件地图（由 make_ai_handoff.py 自动生成，勿手改）
 
-> 生成时间：2026-10-01 10:59；共 427 个条目；体积单位 KB/MB。
+> 生成时间：2026-10-01 11:28；共 428 个条目；体积单位 KB/MB。
 
 ## 提交物（5 项，43.5 MB）
 
 | 文件 | 大小 | 用途 |
 |---|---|---|
 | `更新世界的锋芒_SoundInsight_复赛作品.zip` | 42.4 MB |  |
-| `更新世界的锋芒_SoundInsight_其他材料.zip` | 754.1 KB |  |
+| `更新世界的锋芒_SoundInsight_其他材料.zip` | 758.2 KB |  |
 | `更新世界的锋芒_SoundInsight_复赛作品.pdf` | 210.1 KB |  |
 | `更新世界的锋芒_SoundInsight_Demo.zip` | 106.7 KB |  |
 | `更新世界的锋芒_SoundInsight_复赛作品.docx` | 48.0 KB |  |
@@ -57,7 +57,7 @@
 | `confidence_tiered.md` | 0.7 KB | 三星补漏置信度分层与中置信剔除记录 |
 | `significance_test.md` | 0.6 KB | Welch t 检验（p=0.000932） |
 
-## 过程与交接文档（57 项，0.6 MB）
+## 过程与交接文档（58 项，0.6 MB）
 
 | 文件 | 大小 | 用途 |
 |---|---|---|
@@ -83,6 +83,7 @@
 | `docs/legacy_materials_notice.md` | 8.3 KB |  |
 | `docs/w17_failure_cases.md` | 7.9 KB |  |
 | `docs/completeness_audit_round2.md` | 7.8 KB |  |
+| `docs/reassessment_after_credential.md` | 7.3 KB |  |
 | `docs/N1b_downgrade_narrative.md` | 7.0 KB |  |
 | `docs/external_sources_register.md` | 6.5 KB |  |
 | `docs/N2_narrative_final.md` | 6.5 KB |  |

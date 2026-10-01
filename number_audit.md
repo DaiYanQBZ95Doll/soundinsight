@@ -1,5 +1,5 @@
 # 文档数字一致性审计
-> 运行时刻：2026-10-01 10:57:58（用于判别报告新鲜度；脚本异常退出时本文件不会被改写）
+> 运行时刻：2026-10-01 11:27:35（用于判别报告新鲜度；脚本异常退出时本文件不会被改写）
 
 ## 清单版本与新增项一致性（v1.5 附加条款②）
 - [PASS] 清单已声明当前版本 v1.5
@@ -13,7 +13,7 @@
 - [PASS] docs/final_project_review_and_execution_plan.md：37212 B ∈ [15000, 80000]
 - [PASS] competition_v4.md：21214 B ∈ [20000, 80000]
 - [PASS] results_summary.md：4870 B ∈ [4000, 30000]
-- [PASS] AI_HANDOFF/manifest.json：91440 B ∈ [20000, 400000]
+- [PASS] AI_HANDOFF/manifest.json：91237 B ∈ [20000, 400000]
 - [PASS] docs/frozen_execution_checklist.md：13 个章节均唯一
 - [PASS] PROGRESS_SYNC.md：29 个章节均唯一
 - [PASS] competition_v4.md：13 个章节均唯一
