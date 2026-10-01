@@ -5,6 +5,7 @@ import datetime
 import hashlib
 import json
 import os
+import subprocess
 import re
 import sys
 import zipfile
@@ -639,6 +640,67 @@ def check_api_wording_consistency(out) -> None:
     out.append("")
 
 
+def check_checklist_version(out) -> None:
+    """v1.5 附加条款②：清单条目与版本元数据一致性（防"越权新增"重演）。
+
+    依据 `docs/checklist_version.json`：
+      ① 清单声明的当前版本 == JSON.current_version；
+      ② 清单条目 ID ⊆ 锁定 ID ∪ 追认新增（多出者即未登记新增 → FAIL）；
+      ③ 追认新增必须实际出现在清单中（只登记不落地也 FAIL）；
+      ④ JSON.locked_item_ids 必须与 base_locked_commit 的清单快照一致（防篡改基线）。
+    """
+    out.append("## 清单版本与新增项一致性（v1.5 附加条款②）")
+    meta_path = os.path.join(HERE, "docs", "checklist_version.json")
+    if not os.path.isfile(meta_path):
+        out.append("- [FAIL] 缺少 docs/checklist_version.json（v1.5 元数据）")
+        out.append("")
+        return
+    with open(meta_path, encoding="utf-8") as fh:
+        meta = json.load(fh)
+    lines, cpath = read_file("docs/frozen_execution_checklist.md")
+    if lines is None:
+        out.append("- [FAIL] 读不到清单文件")
+        out.append("")
+        return
+    text = "".join(lines)
+    declared = meta.get("current_version", "")
+    if f"**{declared}**" not in text and declared not in text.splitlines()[0]:
+        out.append(f"- [FAIL] 清单未声明当前版本 {declared}")
+    else:
+        out.append(f"- [PASS] 清单已声明当前版本 {declared}")
+    ids = set(re.findall(r"\*\*([A-Z]\d{1,2}[a-z]?)\*\*", text))
+    locked = set(meta.get("locked_item_ids", []))
+    ratified = set(meta.get("ratified_additions", []))
+    unknown = sorted(ids - locked - ratified)
+    if unknown:
+        out.append(f"- [FAIL] 清单含 {len(unknown)} 个未登记条目：{unknown}"
+                   f"——**锁定后新增必须先升版并登记到 checklist_version.json**")
+    else:
+        out.append(f"- [PASS] 清单条目 {len(ids)} 个，全部属于「锁定基线 ∪ 追认新增」")
+    missing = sorted(ratified - ids)
+    if missing:
+        out.append(f"- [FAIL] 追认新增 {missing} 未出现在清单中（只登记未落地）")
+    else:
+        out.append(f"- [PASS] 追认新增 {sorted(ratified)} 均已在清单中")
+    base_commit = meta.get("base_locked_commit", "")
+    if base_commit:
+        try:
+            snap = subprocess.run(
+                ["git", "show", f"{base_commit}:docs/frozen_execution_checklist.md"],
+                capture_output=True, text=True, encoding="utf-8", errors="replace",
+                cwd=HERE, timeout=30).stdout
+            snap_ids = set(re.findall(r"\*\*([A-Z]\d{1,2}[a-z]?)\*\*", snap)) if snap else set()
+            if snap_ids and snap_ids != locked:
+                out.append(f"- [FAIL] 锁定基线不一致：JSON {len(locked)} 个 vs "
+                           f"{base_commit} 快照 {len(snap_ids)} 个"
+                           f"（差异 {sorted(snap_ids ^ locked)[:6]}）")
+            else:
+                out.append(f"- [PASS] 锁定基线与 {base_commit} 快照一致（{len(locked)} 个条目）")
+        except Exception as e:  # noqa: BLE001
+            out.append(f"- [SKIP] 无法读取基线提交（{type(e).__name__}）")
+    out.append("")
+
+
 def check_file_integrity(out) -> None:
     """关键文件完整性：**体积下限 + 上限 + 章节唯一性**——防脚本化编辑的截断与重复。
 
@@ -883,6 +945,7 @@ def main() -> None:
     out = ["# 文档数字一致性审计",
            f"> 运行时刻：{datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')}"
            "（用于判别报告新鲜度；脚本异常退出时本文件不会被改写）", ""]
+    check_checklist_version(out)
     check_file_integrity(out)
     check_product_code_health(out)
     check_finals_numbers(out)
@@ -902,9 +965,15 @@ def main() -> None:
     text = "\n".join(out)
     with open(OUT_MD, "w", encoding="utf-8") as f:
         f.write(text)
+    n_fail = text.count("[FAIL]")
+    n_pass = text.count("[PASS]")
+    n_skip = text.count("[SKIP]")
     print(f"保存 -> {OUT_MD}")
     print(text)
+    print(f"\n=== 审计汇总 ===FAIL {n_fail}｜PASS {n_pass}｜SKIP {n_skip}")
+    # **退出码必须有意义**：2026-10-01 发现此前恒为 0，导致门槛链的"审计步骤"从未真正拦过失败
+    return 1 if n_fail else 0
 
 
 if __name__ == "__main__":
-    main()
+    sys.exit(main())

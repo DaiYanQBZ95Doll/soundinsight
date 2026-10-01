@@ -50,6 +50,43 @@
   },
   "superseded": {
     "old_value": 456,
-    "reason": "取样错误（便利样本按设计样本处理）"
+    "reason": "取样错误（便利样本按设计样本处理）",
+    "totals": {
+      "old": "2,460–2,730 / 47%–52%",
+      "reason": "上限混用口径（宽松 W4 + 严格闸门外）"
+    }
+  },
+  "gate_outside": {
+    "sample_file": "v2/gate_outside_sample.csv（300 条随机样本，seed 42）",
+    "review_file": "v2/gate_outside_review.jsonl",
+    "sampled": 300,
+    "llm_positive": 6,
+    "in_scope_positive": 4,
+    "unclear": 1,
+    "outside_rows": 87071,
+    "estimate_strict": 1160.9,
+    "estimate_inclusive": 1451.2,
+    "estimator": "简单随机抽样 → 比率 × 总体（Wilson 区间）"
+  },
+  "paired_totals": {
+    "strict_strict": {
+      "total": 2461,
+      "coverage_pct": 52.0,
+      "components": {
+        "labeled": 1280,
+        "w4": 19.9,
+        "gate_outside": 1160.9
+      }
+    },
+    "inclusive_inclusive": {
+      "total": 2826,
+      "coverage_pct": 45.3,
+      "components": {
+        "labeled": 1280,
+        "w4": 94.7,
+        "gate_outside": 1451.2
+      }
+    },
+    "rule": "两端口径必须一致：严格=仅明确耳机；宽松=再计入「无法判断产品」条目"
   }
 }

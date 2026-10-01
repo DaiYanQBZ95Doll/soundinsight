@@ -31,7 +31,7 @@ sys.stdout.reconfigure(encoding="utf-8", errors="replace")
 HERE = os.path.dirname(os.path.abspath(__file__))
 
 STEPS_FULL = [
-    ("数字审计（231 项检查）", ["check_doc_numbers.py"]),
+    ("数字审计（238 项检查）", ["check_doc_numbers.py"]),
     ("审计负向自测", ["test_audit_checks.py"]),
     ("断链 + 依赖声明", ["check_refs_and_deps.py"]),
     ("URL 一致性（M3c③）", ["check_url_consistency.py"]),
@@ -65,6 +65,15 @@ def main() -> int:
         p = subprocess.run([sys.executable, *cmd], capture_output=True, text=True,
                            encoding="utf-8", errors="replace", cwd=HERE)
         ok = p.returncode == 0
+        # 双保险：审计步骤额外核对报告内 FAIL 计数（防"退出码恒 0"类回归）
+        if ok and cmd and cmd[0] == "check_doc_numbers.py":
+            rep = os.path.join(HERE, "number_audit.md")
+            if os.path.isfile(rep):
+                with open(rep, encoding="utf-8", errors="replace") as fh:
+                    n_fail = fh.read().count("[FAIL]")
+                if n_fail:
+                    ok = False
+                    print(f"        → 报告内 FAIL {n_fail} 条（虽退出码为 0）")
         tail = (p.stdout or "").strip().splitlines()
         brief = next((l for l in reversed(tail)
                       if "FAIL" in l or "PASS" in l or "通过" in l or "密钥" in l

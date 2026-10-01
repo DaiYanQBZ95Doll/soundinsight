@@ -188,6 +188,51 @@ txt = run_with_lines(m.check_status_assertions,
                      STATUS_FILES=["fake.md"])
 check("诚实披露未开展 → 不触发", "[FAIL]" not in txt)
 
+print("\n== N. 清单版本一致性检查（v1.5 附加条款②）==")
+
+
+def _fake_version_env(lines, meta):
+    """把 m.HERE 指向带 docs/checklist_version.json 的临时目录，并伪造清单内容。"""
+    import json as _json
+    root = os.path.join(os.path.dirname(os.path.abspath(__file__)), "_tmp_selftest", "ver")
+    shutil.rmtree(root, ignore_errors=True)
+    os.makedirs(os.path.join(root, "docs"), exist_ok=True)
+    with open(os.path.join(root, "docs", "checklist_version.json"), "w",
+              encoding="utf-8") as fh:
+        _json.dump(meta, fh, ensure_ascii=False)
+    return root
+
+
+def run_version_check(lines, meta):
+    root = _fake_version_env(lines, meta)
+    old_here, old_read = m.HERE, m.read_file
+    m.HERE = root
+    m.read_file = lambda name: (lines, os.path.join(root, name))
+    out = []
+    try:
+        m.check_checklist_version(out)
+    finally:
+        m.HERE, m.read_file = old_here, old_read
+        shutil.rmtree(root, ignore_errors=True)
+    return "\n".join(out)
+
+
+META = {"current_version": "v9.9", "locked_item_ids": ["A1"], "ratified_additions": ["B2"],
+        "base_locked_commit": ""}
+
+txt = run_version_check(["版本 **v9.9** 为基准\n", "| **A1** | x |\n", "| **C3** | 越权新增 |\n"], META)
+check("未登记条目 → FAIL", "[FAIL]" in txt and "C3" in txt, txt.split("FAIL")[-1][:60])
+
+txt = run_version_check(["版本 **v9.9** 为基准\n", "| **A1** | x |\n", "| **B2** | 追认新增 |\n"], META)
+check("锁定∪追认 → 不 FAIL", "[FAIL]" not in txt)
+
+txt = run_version_check(["版本 **v8.8** 为基准\n", "| **A1** | x |\n"], META)
+check("版本未声明 → FAIL", "[FAIL]" in txt)
+
+META2 = dict(META, ratified_additions=["B2", "C9"])
+txt = run_version_check(["版本 **v9.9** 为基准\n", "| **A1** | x |\n"], META2)
+check("追认新增未落地 → FAIL", "[FAIL]" in txt and "C9" in txt)
+
 print(f"\n结果：{len(PASSED)} 项通过，{len(FAILED)} 项失败")
 if FAILED:
     print("失败项：" + "、".join(FAILED))
