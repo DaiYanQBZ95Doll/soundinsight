@@ -106,7 +106,7 @@
 | 项 | 值 |
 |---|---|
 | 决赛包 | `更新世界的锋芒_SoundInsight_决赛入围定稿作品.zip` |
-| 大小 / SHA256 | 44,538,005 B / `309f6bc243e0a3b0…`（完整值见 `hashes.txt` 决赛段） |
+| 大小 / SHA256 | **体积随每轮重建变化**——精确字节数与哈希见 `hashes.txt` 决赛段（当前构建批次以此文件为准，不在正文写死字节数） |
 | 条目数 | **5** |
 | 包内清单 | 更新世界的锋芒_SoundInsight_决赛入围定稿作品.docx；更新世界的锋芒_SoundInsight_Demo.zip；更新世界的锋芒_SoundInsight_演示视频.mp4；更新世界的锋芒_SoundInsight_其他材料.zip；README_SUBMISSION.txt |
 | 复赛包 | 全程未改动（构建前后双向核对 `e6cae286515ef1d2`）——红线 9 ✅ |

@@ -1,5 +1,8 @@
 # 文档数字一致性审计
-> 运行时刻：2026-10-01 17:35:40（用于判别报告新鲜度；脚本异常退出时本文件不会被改写）
+> 运行时刻：2026-10-01 17:44:43（用于判别报告新鲜度；脚本异常退出时本文件不会被改写）
+
+## 决赛包体积声明一致性
+- [PASS] 未发现陈旧的包体积声明（当前 44,605,664 B）
 
 ## 覆盖总量口径一致性（成对口径，防混用）
 - [PASS] 未发现混用口径的总量区间（权威成对值 ['2461', '2826']，覆盖率 ['45.3%', '52.0%']）
@@ -16,7 +19,7 @@
 - [PASS] docs/final_project_review_and_execution_plan.md：37212 B ∈ [15000, 80000]
 - [PASS] competition_v4.md：21214 B ∈ [20000, 80000]
 - [PASS] results_summary.md：4870 B ∈ [4000, 30000]
-- [PASS] AI_HANDOFF/manifest.json：97602 B ∈ [20000, 400000]
+- [PASS] AI_HANDOFF/manifest.json：98218 B ∈ [20000, 400000]
 - [PASS] docs/frozen_execution_checklist.md：13 个章节均唯一
 - [PASS] PROGRESS_SYNC.md：31 个章节均唯一
 - [PASS] competition_v4.md：13 个章节均唯一

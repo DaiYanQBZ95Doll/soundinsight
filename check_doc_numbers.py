@@ -640,6 +640,59 @@ def check_api_wording_consistency(out) -> None:
     out.append("")
 
 
+def check_package_size_claims(out) -> None:
+    """当前态文档里的决赛包**字节数**必须等于实际值（否则即为"重建后未同步"的陈旧数字）。
+
+    背景（2026-10-01 红队记账观察）：同一份包的体积在多次重建后出现在不同文档里
+    （44,538,005 / 44,582,250 / 44,592,798 …），而体积**每轮重建都会变**。
+    规则：当前态文档若写死字节数，必须与磁盘上一致；历史/勘误类文档豁免（须自带"当时/构建批次"字样）。
+    """
+    out.append("## 决赛包体积声明一致性")
+    finals = os.path.join(HERE, "更新世界的锋芒_SoundInsight_决赛入围定稿作品.zip")
+    if not os.path.isfile(finals):
+        out.append("- [SKIP] 决赛包不存在")
+        out.append("")
+        return
+    cur = os.path.getsize(finals)
+    # 当前态文档（写死字节数须等于实际值）；历史文档按文件名豁免
+    HIST = {"docs/D13_seal_declaration.md", "docs/overnight_summary.md",
+            "docs/legacy_materials_notice.md", "PROGRESS_SYNC.md"}
+    pat = re.compile(r"(4[0-9],\d{3},\d{3})\s*B")
+    bad = []
+    for root, dirs, files in os.walk(HERE):
+        dirs[:] = [d for d in dirs if d not in (".git", "__pycache__", "_tmp_selftest",
+                                                "_tmp_pkgcheck", "node_modules")]
+        for f in files:
+            if not f.endswith(".md"):
+                continue
+            fp = os.path.join(root, f)
+            rel = os.path.relpath(fp, HERE).replace("\\", "/")
+            if rel in HIST or rel == "number_audit.md":
+                continue
+            try:
+                lines = open(fp, encoding="utf-8", errors="replace").read().splitlines()
+            except OSError:
+                continue
+            for i, ln in enumerate(lines, 1):
+                for m in pat.finditer(ln):
+                    val = int(m.group(1).replace(",", ""))
+                    # 已冻结产物的体积不是"包体积声明"：视频 48,375,526（faststart）／复赛包 44,446,308
+                    if val in (cur, 44446308, 48375526):
+                        continue
+                    if "视频" in ln or "video" in ln.lower() or ".mp4" in ln:
+                        continue
+                    if any(k in ln for k in ("当时", "构建批次", "冻结值", "历史")):
+                        continue
+                    bad.append(f"{rel}:{i} → {m.group(1)} B（当前 {cur:,} B）")
+    if bad:
+        for b in bad[:8]:
+            out.append(f"- [FAIL] 陈旧的决赛包体积声明：{b}")
+        out.append("  （体积随重建变化；正文请写「精确值见 hashes.txt」或标注历史批次）")
+    else:
+        out.append(f"- [PASS] 未发现陈旧的包体积声明（当前 {cur:,} B）")
+    out.append("")
+
+
 def check_paired_totals(out) -> None:
     """覆盖总量与覆盖率必须与权威成对口径一致（防"两端混用口径"第四次出现）。
 
@@ -1008,6 +1061,7 @@ def main() -> None:
     out = ["# 文档数字一致性审计",
            f"> 运行时刻：{datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')}"
            "（用于判别报告新鲜度；脚本异常退出时本文件不会被改写）", ""]
+    check_package_size_claims(out)
     check_paired_totals(out)
     check_checklist_version(out)
     check_file_integrity(out)

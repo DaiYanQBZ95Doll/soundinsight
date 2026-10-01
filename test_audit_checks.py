@@ -268,6 +268,42 @@ check("成对口径区间 → 不 FAIL", "[FAIL]" not in txt)
 txt = run_paired_totals(["此前写作 2,460–2,730，属混用口径，现已更正。"])
 check("勘误语境 → 豁免", "[FAIL]" not in txt)
 
+print("\n== P. 决赛包体积声明一致性 ==")
+
+
+def run_size_check(lines):
+    """在临时工作区放一份含体积声明的 md，调用 check_package_size_claims。"""
+    root = os.path.join(os.path.dirname(os.path.abspath(__file__)), "_tmp_selftest", "size")
+    shutil.rmtree(root, ignore_errors=True)
+    os.makedirs(root, exist_ok=True)
+    shutil.copy2(os.path.join(os.path.dirname(os.path.abspath(__file__)),
+                              "更新世界的锋芒_SoundInsight_决赛入围定稿作品.zip"),
+                 os.path.join(root, "更新世界的锋芒_SoundInsight_决赛入围定稿作品.zip"))
+    with open(os.path.join(root, "probe.md"), "w", encoding="utf-8") as fh:
+        fh.write("\n".join(lines) + "\n")
+    old_here = m.HERE
+    m.HERE = root
+    out = []
+    try:
+        m.check_package_size_claims(out)
+    finally:
+        m.HERE = old_here
+        shutil.rmtree(root, ignore_errors=True)
+    return "\n".join(out)
+
+
+txt = run_size_check(["决赛包 44,582,250 B（写死的陈旧值）"])
+check("陈旧包体积 → FAIL", "[FAIL]" in txt, txt.split("FAIL")[-1][:70])
+
+txt = run_size_check(["演示视频 48,375,526 B（已冻结产物）"])
+check("视频体积 → 不 FAIL", "[FAIL]" not in txt)
+
+txt = run_size_check(["复赛包 44,446,308 B（冻结值）"])
+check("复赛包体积 → 不 FAIL", "[FAIL]" not in txt)
+
+txt = run_size_check(["决赛包体积随构建变化（当时构建批次）"])
+check("标注历史批次 → 不 FAIL", "[FAIL]" not in txt)
+
 print(f"\n结果：{len(PASSED)} 项通过，{len(FAILED)} 项失败")
 if FAILED:
     print("失败项：" + "、".join(FAILED))

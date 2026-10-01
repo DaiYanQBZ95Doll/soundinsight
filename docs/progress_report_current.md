@@ -22,7 +22,7 @@
 | 数字审计 | **FAIL 0 / PASS 239 / SKIP 0**（退出码可信） | `python check_doc_numbers.py` |
 | 审计负向自测 | **22/22**（证明检查会拒绝坏输入） | `python test_audit_checks.py` |
 | 仓库卫生 | 密钥 **0（含 git 历史）**／废弃 claim 需确认 **0**／清单过期 **0** | `python scan_repo_hygiene.py` |
-| 决赛包 | **5 条目 / 44,582,250 B**，包内哈希一致 + Demo 实跑通过 | `python verify_finals_package.py` |
+| 决赛包 | **5 条目**（体积随重建变化，精确字节数与哈希见 `hashes.txt` 决赛段），包内哈希一致 + Demo 实跑通过 | `python verify_finals_package.py` |
 | 评委路径端到端 | 解包 → 补权重 → **用包内代码跑出七节报告** | `python verify_demo_end_to_end.py` |
 | 产品入口 | Gradio UI **HTTP 200**、API `/health` 200、`POST /predict` 200 | `python verify_ui_and_api.py` |
 | 在线存活 | 四入口全部 **HTTP 200**（M3c④ 基线已留档） | `python check_demo_alive.py` |
@@ -41,7 +41,7 @@
 | `…_Demo.zip` | 109,248 B | 包内代码可实跑（端到端已验）；含快速开始 README、样例输出、API 契约说明 |
 | `…_演示视频.mp4` | 48.4 MB | faststart 重排版（2,923 块逐块字节比对零改动）；视频为 v1 口径，包内已写口径说明 |
 | `…_其他材料.zip` | 789,382 B | 94+ 条目：全部证据、报告、工具与更正留档（含作废批次，供核查） |
-| `…_决赛入围定稿作品.zip` | **44,582,250 B** | 上述 4 件 + `README_SUBMISSION.txt`（**共 5 条目**） |
+| `…_决赛入围定稿作品.zip` | **体积随重建变化（精确值见 `hashes.txt` 决赛段）** | 上述 4 件 + `README_SUBMISSION.txt`（**共 5 条目**） |
 | `…_复赛作品.zip` | 44,446,308 B | **全程未改动**（红线 9） |
 
 ### v2 关键结果（对外数字口径：`val_v3_test`）

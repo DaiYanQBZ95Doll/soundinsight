@@ -1,5 +1,5 @@
 {
- "generated": "2026-10-01 17:36",
+ "generated": "2026-10-01 17:45",
  "root": "C:\\deepseek-harness-master\\soundinsight",
  "count": 460,
  "entries": [
@@ -321,9 +321,9 @@
   {
    "path": "check_doc_numbers.py",
    "category": "代码",
-   "size_bytes": 49661,
+   "size_bytes": 52519,
    "purpose": "数字审计 + 模板格式对照脚本",
-   "sha256_16": "76a53091ddffa609107626894bb11e429e838f9ea7689d83495a3542561f906d"
+   "sha256_16": "720f2fe7b8bd0ebffdd838891cea0c0006b1e62a69d054144c31c68e07571c4e"
   },
   {
    "path": "check_edge_cases.py",
@@ -608,9 +608,9 @@
   {
    "path": "hashes.txt",
    "category": "其他",
-   "size_bytes": 2058,
+   "size_bytes": 2059,
    "purpose": "",
-   "sha256_16": "d786138cc38bb9b57cfd8bc4265562e5edba6e4c53ba2d6e2a688cf0516d171a"
+   "sha256_16": "0b19484de8d8c2206c1303fbc8e3e2f0a8ef768385018ed02fcdbd7306620b14"
   },
   {
    "path": "human_review_50.csv",
@@ -1112,9 +1112,9 @@
   {
    "path": "number_audit.md",
    "category": "验证报告",
-   "size_bytes": 15161,
+   "size_bytes": 15267,
    "purpose": "数字一致性审计结果（含官方模板格式对照节）",
-   "sha256_16": "cb172a9b46ee01d392f308b8249026ed39a1a3e093890051ee665e39fd5e76c2"
+   "sha256_16": "5bc5606c181015a98c1620edff151ed7efaa75cb163dd8916b279806eaa41733"
   },
   {
    "path": "outside_gate_fp.py",
@@ -1448,9 +1448,9 @@
   {
    "path": "test_audit_checks.py",
    "category": "代码",
-   "size_bytes": 12013,
+   "size_bytes": 13527,
    "purpose": "",
-   "sha256_16": "6e634e085e7ba14ad79a3cc27efbfb6b2197754164aec2a5fb6da52a576ec2af"
+   "sha256_16": "f473b420ec34e8dae3a65a5856573fdc7f2dc38b12e0705fa624045bd5659026"
   },
   {
    "path": "test_model.py",
@@ -1994,9 +1994,9 @@
   {
    "path": "更新世界的锋芒_SoundInsight_其他材料.zip",
    "category": "提交物",
-   "size_bytes": 811876,
+   "size_bytes": 813102,
    "purpose": "",
-   "sha256_16": "3410d07b81546eed649ce2f1f652de0e4b2cd919dbf0232df966b9d0b5348750"
+   "sha256_16": "83c0d0132b875a6051f1019e8cf89be81eb0fc60684c658b76aae4c8ce863b48"
   },
   {
    "path": "更新世界的锋芒_SoundInsight_决赛入围定稿作品.docx",
@@ -2260,9 +2260,9 @@
   {
    "path": "docs/demo_uptime_log.md",
    "category": "过程与交接文档",
-   "size_bytes": 3486,
+   "size_bytes": 3741,
    "purpose": "",
-   "sha256_16": "ed4c8f7c7a573fda520de3b7400b6dd62947e96f3f8be7afae7faf79a13b159a"
+   "sha256_16": "8fc51d67fb8d0951458f09f707696b1bfbdf8f6f178ca3977d8efe9f33cd86fd"
   },
   {
    "path": "docs/difficulty_stratification.md",
@@ -2323,9 +2323,9 @@
   {
    "path": "docs/finals_stage.md",
    "category": "过程与交接文档",
-   "size_bytes": 11215,
+   "size_bytes": 11297,
    "purpose": "",
-   "sha256_16": "b1ddef09538a2f7faa084914a56189e01b966b5e90932e44abb094a1d2fc501c"
+   "sha256_16": "87c34e66e2c999343194f8c6743bc01bb0d006af038c540cba445a95904b9aea"
   },
   {
    "path": "docs/frozen_execution_checklist.md",
@@ -2379,9 +2379,9 @@
   {
    "path": "docs/overnight_summary.md",
    "category": "过程与交接文档",
-   "size_bytes": 17644,
+   "size_bytes": 17719,
    "purpose": "",
-   "sha256_16": "ea834e60448db57eec85474067ae6414732d00123ac2782207fe9cf21dedd21e"
+   "sha256_16": "842269b5573b464d87245c769ba2c2d63682f5c54d00a3b375d614918d12b656"
   },
   {
    "path": "docs/pre_lock_completeness_audit.md",
@@ -2400,9 +2400,9 @@
   {
    "path": "docs/progress_report_current.md",
    "category": "过程与交接文档",
-   "size_bytes": 10517,
+   "size_bytes": 10632,
    "purpose": "",
-   "sha256_16": "f9b37f7ed944360bdd56a9f0ebc562ab946750bef3612bc9de602ad2b29f6097"
+   "sha256_16": "880ba9c9a8e0097238e851e58007a4905eb5c6d79ac4cb656da5ad930455acb1"
   },
   {
    "path": "docs/project_full_record.md",
@@ -2423,7 +2423,7 @@
    "category": "过程与交接文档",
    "size_bytes": 3966,
    "purpose": "",
-   "sha256_16": "92d6d39d558bedc58d52e25741f9e138734772ce7a9dc151350ecc5f1604eb97"
+   "sha256_16": "0885461d4b106978069e5609183c532ccaf75acce9ee3f011fb45a53f20fff6a"
   },
   {
    "path": "docs/retrospective_and_reflection.md",
@@ -2449,9 +2449,9 @@
   {
    "path": "docs/three_stage_comparison.md",
    "category": "过程与交接文档",
-   "size_bytes": 21742,
+   "size_bytes": 22357,
    "purpose": "",
-   "sha256_16": "a6543d0210ea8332f34721f8922535aa309a35948fa0539a3a15d809bc28c7d0"
+   "sha256_16": "e0339095d595294fbce3f476127d1f58587d49ae188c9502999a855e57f9c4c5"
   },
   {
    "path": "docs/treble_failure_analysis.md",
