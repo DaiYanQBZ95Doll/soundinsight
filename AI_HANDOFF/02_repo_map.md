@@ -1,13 +1,13 @@
 # 文件地图（由 make_ai_handoff.py 自动生成，勿手改）
 
-> 生成时间：2026-10-01 11:57；共 436 个条目；体积单位 KB/MB。
+> 生成时间：2026-10-01 12:06；共 437 个条目；体积单位 KB/MB。
 
 ## 提交物（5 项，43.5 MB）
 
 | 文件 | 大小 | 用途 |
 |---|---|---|
 | `更新世界的锋芒_SoundInsight_复赛作品.zip` | 42.4 MB |  |
-| `更新世界的锋芒_SoundInsight_其他材料.zip` | 770.9 KB |  |
+| `更新世界的锋芒_SoundInsight_其他材料.zip` | 771.0 KB |  |
 | `更新世界的锋芒_SoundInsight_复赛作品.pdf` | 210.1 KB |  |
 | `更新世界的锋芒_SoundInsight_Demo.zip` | 106.7 KB |  |
 | `更新世界的锋芒_SoundInsight_复赛作品.docx` | 48.0 KB |  |
@@ -57,7 +57,7 @@
 | `confidence_tiered.md` | 0.7 KB | 三星补漏置信度分层与中置信剔除记录 |
 | `significance_test.md` | 0.6 KB | Welch t 检验（p=0.000932） |
 
-## 过程与交接文档（62 项，0.8 MB）
+## 过程与交接文档（63 项，0.8 MB）
 
 | 文件 | 大小 | 用途 |
 |---|---|---|
@@ -80,6 +80,7 @@
 | `docs/finals_stage.md` | 11.0 KB |  |
 | `docs/decision_request_v15_and_nline.md` | 10.4 KB |  |
 | `docs/pre_lock_completeness_audit.md` | 10.4 KB |  |
+| `docs/progress_report_current.md` | 10.3 KB |  |
 | `docs/completion_statement_for_redteam.md` | 9.3 KB |  |
 | `QWEN_HANDOFF.md` | 9.1 KB |  |
 | `docs/process_review_d10.md` | 8.5 KB |  |
@@ -103,7 +104,7 @@
 | `docs/evidence_index_exp.md` | 4.4 KB |  |
 | `docs/human_gold_set_protocol.md` | 4.2 KB |  |
 | `docs/e2_erratum.md` | 4.2 KB |  |
-| `docs/repo_hygiene_scan.md` | 3.6 KB |  |
+| `docs/repo_hygiene_scan.md` | 3.7 KB |  |
 | `docs/dataset_audit.md` | 3.5 KB | 数据集字段考古 |
 | `docs/M8a_submission_precheck.md` | 3.5 KB |  |
 | `docs/N4_target_argument.md` | 3.5 KB |  |
@@ -120,7 +121,7 @@
 | `docs/w13_keyword_miss_rate.md` | 2.1 KB |  |
 | `docs/outside_gate_fp.md` | 2.0 KB |  |
 | `docs/w11_data_efficiency.md` | 1.9 KB |  |
-| `docs/demo_uptime_log.md` | 1.4 KB |  |
+| `docs/demo_uptime_log.md` | 1.6 KB |  |
 | `docs/checklist_version.json` | 0.8 KB |  |
 | `docs/year_split_output.txt` | 0.8 KB | 年份分桶脚本输出原文 |
 

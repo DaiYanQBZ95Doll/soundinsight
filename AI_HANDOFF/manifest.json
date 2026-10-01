@@ -1,7 +1,7 @@
 {
- "generated": "2026-10-01 11:57",
+ "generated": "2026-10-01 12:06",
  "root": "C:\\deepseek-harness-master\\soundinsight",
- "count": 436,
+ "count": 437,
  "entries": [
   {
    "path": ".gitignore",
@@ -601,9 +601,9 @@
   {
    "path": "hashes.txt",
    "category": "其他",
-   "size_bytes": 2050,
+   "size_bytes": 2051,
    "purpose": "",
-   "sha256_16": "87cd5f68b6f01eca4a2b9e05e9a7160219cabafed1a8d347bae2891bc56464a3"
+   "sha256_16": "55c837a85b841b6c306f05ff03723e7487d53e65e654f9f26b6e29a2023e898e"
   },
   {
    "path": "human_review_50.csv",
@@ -1100,7 +1100,7 @@
    "category": "验证报告",
    "size_bytes": 15161,
    "purpose": "数字一致性审计结果（含官方模板格式对照节）",
-   "sha256_16": "967e4ffd855f3b77ae4e359646e11219602e93f0fb2687ade075115eabe5cc2e"
+   "sha256_16": "658e0f20476c6c667dd2b1b7804fb6a1facb518d326abc4703424159fa3bc2d9"
   },
   {
    "path": "outside_gate_fp.py",
@@ -1945,9 +1945,9 @@
   {
    "path": "更新世界的锋芒_SoundInsight_其他材料.zip",
    "category": "提交物",
-   "size_bytes": 789382,
+   "size_bytes": 789453,
    "purpose": "",
-   "sha256_16": "8ab4481dbf9f248e452f66ff556d01fe9cff40dd70edb038e39b1f97d86b40db"
+   "sha256_16": "968988176730f89101cf921e6a439c3e78c79ef3c96dc25655a2bb0ef8965b19"
   },
   {
    "path": "更新世界的锋芒_SoundInsight_决赛入围定稿作品.docx",
@@ -2190,9 +2190,9 @@
   {
    "path": "docs/demo_uptime_log.md",
    "category": "过程与交接文档",
-   "size_bytes": 1394,
+   "size_bytes": 1649,
    "purpose": "",
-   "sha256_16": "43125716dce6df94f371e63da4446ac81114b37ed174ed25a4fe7d59eccd6396"
+   "sha256_16": "fce1c50f7bdad3a68005a16308c9b1cdb25117f8bea7fc6e67fdef513701d015"
   },
   {
    "path": "docs/difficulty_stratification.md",
@@ -2321,6 +2321,13 @@
    "sha256_16": "d596dcbe4fe9df8a0b0b6f8f4f6eabf5cd05969437954a8246efa78ac623fde9"
   },
   {
+   "path": "docs/progress_report_current.md",
+   "category": "过程与交接文档",
+   "size_bytes": 10517,
+   "purpose": "",
+   "sha256_16": "f9b37f7ed944360bdd56a9f0ebc562ab946750bef3612bc9de602ad2b29f6097"
+  },
+  {
    "path": "docs/project_full_record.md",
    "category": "过程与交接文档",
    "size_bytes": 22123,
@@ -2337,9 +2344,9 @@
   {
    "path": "docs/repo_hygiene_scan.md",
    "category": "过程与交接文档",
-   "size_bytes": 3643,
+   "size_bytes": 3757,
    "purpose": "",
-   "sha256_16": "8bc7e3419aa49848e4d95abf9ebf28441e5d362588c832cb98bf9372b5d83aac"
+   "sha256_16": "ba33b38f3c3257929acc53b5a512abb4f32c1d3ba237cd74c4cb81634116b4ff"
   },
   {
    "path": "docs/retrospective_and_reflection.md",
