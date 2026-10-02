@@ -1,13 +1,13 @@
 # 文件地图（由 make_ai_handoff.py 自动生成，勿手改）
 
-> 生成时间：2026-10-02 18:11；共 511 个条目；体积单位 KB/MB。
+> 生成时间：2026-10-02 18:37；共 517 个条目；体积单位 KB/MB。
 
 ## 提交物（5 项，44.2 MB）
 
 | 文件 | 大小 | 用途 |
 |---|---|---|
 | `更新世界的锋芒_SoundInsight_复赛作品.zip` | 42.4 MB |  |
-| `更新世界的锋芒_SoundInsight_其他材料.zip` | 1.4 MB |  |
+| `更新世界的锋芒_SoundInsight_其他材料.zip` | 1.5 MB |  |
 | `更新世界的锋芒_SoundInsight_复赛作品.pdf` | 210.1 KB |  |
 | `更新世界的锋芒_SoundInsight_Demo.zip` | 107.5 KB |  |
 | `更新世界的锋芒_SoundInsight_复赛作品.docx` | 48.0 KB |  |
@@ -58,7 +58,7 @@
 | `confidence_tiered.md` | 0.7 KB | 三星补漏置信度分层与中置信剔除记录 |
 | `significance_test.md` | 0.6 KB | Welch t 检验（p=0.000932） |
 
-## 过程与交接文档（97 项，2.8 MB）
+## 过程与交接文档（98 项，2.8 MB）
 
 | 文件 | 大小 | 用途 |
 |---|---|---|
@@ -88,14 +88,15 @@
 | `docs/reassessment_after_credential.md` | 13.2 KB |  |
 | `docs/file_inventory.md` | 12.8 KB | 项目文件总索引 |
 | `PROJECT_BRIEF_QWEN.md` | 11.6 KB |  |
+| `docs/demo_uptime_log.md` | 11.4 KB |  |
 | `docs/N_line_handoff_protocol.md` | 11.2 KB |  |
-| `docs/demo_uptime_log.md` | 11.2 KB |  |
 | `docs/finals_stage.md` | 11.0 KB |  |
 | `docs/decision_request_v15_and_nline.md` | 10.4 KB |  |
 | `docs/pre_lock_completeness_audit.md` | 10.4 KB |  |
 | `docs/gold_set/human_rulings_dsh.md` | 10.4 KB |  |
 | `docs/progress_report_current.md` | 10.4 KB |  |
 | `docs/bus/round-01/kimi.md` | 10.3 KB |  |
+| `docs/gold_set/gold_standard_findings.md` | 9.9 KB |  |
 | `docs/opinion_dsh_joint_review.md` | 9.5 KB |  |
 | `docs/completeness_audit_round2.md` | 9.3 KB |  |
 | `docs/completion_statement_for_redteam.md` | 9.3 KB |  |
@@ -106,9 +107,8 @@
 | `docs/w17_failure_cases.md` | 7.9 KB |  |
 | `docs/gold_set/human_rulings_dsh2.md` | 7.9 KB |  |
 | `docs/joint_review_agenda.md` | 7.8 KB |  |
-| `docs/gold_set/gold_standard_findings.md` | 7.8 KB |  |
+| `docs/decision_queue.md` | 7.1 KB |  |
 | `docs/N1b_downgrade_narrative.md` | 7.0 KB |  |
-| `docs/decision_queue.md` | 6.8 KB |  |
 | `docs/N2_narrative_final.md` | 6.6 KB |  |
 | `docs/taxonomy_three_paths.md` | 6.6 KB |  |
 | `docs/external_sources_register.md` | 6.5 KB |  |
@@ -152,10 +152,11 @@
 | `docs/bus/rulings.md` | 2.0 KB |  |
 | `docs/outside_gate_fp.md` | 2.0 KB |  |
 | `docs/w11_data_efficiency.md` | 1.9 KB |  |
+| `docs/gold_set/agreement_report.md` | 1.8 KB |  |
+| `docs/inscope_reeval.md` | 1.5 KB |  |
 | `docs/bus/TEMPLATE.md` | 1.2 KB |  |
 | `docs/gold_set/human_rulings_kimi.md` | 1.2 KB |  |
 | `docs/bus/availability.json` | 0.9 KB |  |
-| `docs/gold_set/agreement_report.md` | 0.9 KB |  |
 | `docs/gold_set/human_rulings_qwen.md` | 0.9 KB |  |
 | `docs/checklist_version.json` | 0.8 KB |  |
 | `docs/year_split_output.txt` | 0.8 KB | 年份分桶脚本输出原文 |
@@ -294,7 +295,7 @@
 | `sample_reviews_100.csv` | 57.9 KB |  |
 | `agent_test_input.csv` | 27.9 KB |  |
 
-## 代码（167 项，0.8 MB）
+## 代码（169 项，0.9 MB）
 
 | 文件 | 大小 | 用途 |
 |---|---|---|
@@ -302,15 +303,16 @@
 | `apply_human_rulings.py` | 22.0 KB |  |
 | `scan_repo_hygiene.py` | 19.7 KB |  |
 | `make_gold_set_notes.py` | 19.4 KB |  |
+| `build_finals_appendix.py` | 19.3 KB |  |
 | `v2_meta_analysis.py` | 19.1 KB |  |
-| `build_finals_appendix.py` | 17.6 KB |  |
-| `build_finals_package.py` | 15.6 KB |  |
+| `build_finals_package.py` | 15.7 KB |  |
 | `test_audit_checks.py` | 15.5 KB |  |
 | `v2_w4_mine.py` | 13.2 KB |  |
 | `build_finals_docx2.py` | 12.7 KB |  |
 | `build_pdf_v2.py` | 12.4 KB |  |
 | `v2_w1_longtext.py` | 12.1 KB |  |
 | `make_ai_handoff.py` | 11.5 KB |  |
+| `score_gold_set.py` | 11.5 KB |  |
 | `build_pdf.py` | 11.2 KB |  |
 | `report_builder.py` | 10.2 KB |  |
 | `demo_sound_v2.py` | 9.5 KB | 本地 Gradio Demo（三页；已内置代理绕过） |
@@ -330,12 +332,13 @@
 | `v2_w5_final.py` | 7.7 KB |  |
 | `make_faststart.py` | 7.6 KB |  |
 | `md_to_pdf.py` | 7.6 KB | 主文档 Markdown → PDF（内嵌中文字体） |
+| `scope_classify.py` | 7.5 KB |  |
 | `w13_keyword_miss_rate.py` | 7.4 KB |  |
-| `score_gold_set.py` | 7.4 KB |  |
 | `v2_w5_cv.py` | 7.4 KB |  |
 | `v2_gate_outside_probe.py` | 7.4 KB |  |
 | `same_basis_compare.py` | 7.4 KB |  |
 | `v2_w4_prescreen.py` | 7.3 KB |  |
+| `inscope_reeval.py` | 7.2 KB |  |
 | `make_gold_set.py` | 7.0 KB |  |
 | `v2_w6_split.py` | 7.0 KB |  |
 | `make_pause_snapshot.py` | 6.9 KB |  |
@@ -522,12 +525,13 @@
 | `multi_label_model/` | 256.1 MB | 冻结的多标签归因模型权重（约 256MB），不入 git |
 | `sound_model/` | 256.1 MB | 冻结的二分类模型权重（约 256MB），不入 git |
 
-## 其他（66 项，50.0 MB）
+## 其他（69 项，50.6 MB）
 
 | 文件 | 大小 | 用途 |
 |---|---|---|
 | `更新世界的锋芒_SoundInsight_演示视频.mp4` | 46.1 MB |  |
 | `v2/review_longtext.jsonl` | 2.8 MB |  |
+| `v2/scope_rows.jsonl` | 626.5 KB |  |
 | `v2/review_treble.jsonl` | 294.2 KB |  |
 | `v2/gold_set_notes.jsonl` | 245.0 KB |  |
 | `v2/w4_review_POOL_invalid.jsonl` | 98.0 KB |  |
@@ -535,7 +539,7 @@
 | `v2/gate_outside_review.jsonl` | 86.8 KB |  |
 | `v2/s1_add100_notes.jsonl` | 53.5 KB |  |
 | `v2/gold_set_key.json` | 39.3 KB |  |
-| `更新世界的锋芒_SoundInsight_决赛入围定稿作品.docx` | 37.7 KB |  |
+| `更新世界的锋芒_SoundInsight_决赛入围定稿作品.docx` | 38.3 KB |  |
 | `v2/w4_estimate.json` | 9.4 KB |  |
 | `v2/w14_w15_w16_report.md` | 7.9 KB |  |
 | `v2/m0_switch_report.json` | 7.0 KB |  |
@@ -554,6 +558,7 @@
 | `v2/w2_perclass_thresholds.json` | 2.3 KB |  |
 | `hashes.txt` | 2.0 KB |  |
 | `v2/w5_cv.json` | 2.0 KB |  |
+| `v2/gold_set_agreement.json` | 1.8 KB |  |
 | `v2/v2_artifacts.json` | 1.8 KB |  |
 | `v2/w6_split_manifest.json` | 1.8 KB |  |
 | `w13_keyword_miss_rate.json` | 1.8 KB |  |
@@ -562,10 +567,10 @@
 | `.gitignore` | 1.4 KB |  |
 | `v2/ai_scope_classification.json` | 1.4 KB |  |
 | `v2/w2_perclass_thresholds.md` | 1.4 KB |  |
+| `v2/inscope_reeval.json` | 1.1 KB |  |
 | `v2/w1_seg_threshold.json` | 1.1 KB |  |
 | `v2/v2_artifacts.template.json` | 1.1 KB |  |
 | `v2/w4_strata.json` | 1.0 KB |  |
-| `v2/gold_set_agreement.json` | 1.0 KB |  |
 | `v2/w1_eval_model_maxlen128_segment(seg128_stride64)_val_v3_test.json` | 0.9 KB |  |
 | `v2/w1_eval_model_maxlen128_truncate(max128)_val_v3_test.json` | 0.9 KB |  |
 | `v2/w1_eval_model_maxlen256_truncate(max256)_val_v3_test.json` | 0.9 KB |  |
@@ -578,6 +583,7 @@
 | `v2/w1_eval_maxlen256.json` | 0.9 KB |  |
 | `v2/w1_eval_maxlen512.json` | 0.9 KB |  |
 | `v2/bias_probe_ids.json` | 0.8 KB |  |
+| `v2/scope_summary.json` | 0.7 KB |  |
 | `v2/b_measure_results.json` | 0.7 KB |  |
 | `v2/outside_gate_fp.json` | 0.6 KB |  |
 | `v2/push_log.json` | 0.5 KB |  |

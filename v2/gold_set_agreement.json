@@ -2,47 +2,74 @@
   "per_stratum": {
     "S1": {
       "labeled": 100,
-      "human_labeled": 95,
+      "human_labeled": 105,
       "human_positive": 3,
+      "human_unknown": 5,
       "human_rate": 0.0316,
       "wilson95": [
         0.0108,
         0.0888
       ],
-      "llm_agreement_pct": 98.9,
+      "human_rate_unknown_as_neg": 0.03,
+      "wilson95_unknown_as_neg": [
+        0.0103,
+        0.0845
+      ],
+      "llm_agreement_pct": 99.0,
+      "llm_agreement_pct_excl_unknown": 98.9,
       "kappa": 0.852,
+      "kappa_excl_unknown": 0.852,
       "desc": "闸门外随机（校准 1.33% 一说）"
     },
     "S2": {
       "labeled": 100,
-      "human_labeled": 96,
+      "human_labeled": 104,
       "human_positive": 7,
+      "human_unknown": 4,
       "human_rate": 0.0729,
       "wilson95": [
         0.0358,
         0.1429
       ],
-      "llm_agreement_pct": 86.5,
-      "kappa": -0.072,
+      "human_rate_unknown_as_neg": 0.07,
+      "wilson95_unknown_as_neg": [
+        0.0343,
+        0.1375
+      ],
+      "llm_agreement_pct": 86.0,
+      "llm_agreement_pct_excl_unknown": 86.5,
+      "kappa": -0.075,
+      "kappa_excl_unknown": -0.072,
       "desc": "四五星候选池（校准 1.0%／3.1%）"
     },
     "S3": {
       "labeled": 100,
-      "human_labeled": 89,
+      "human_labeled": 111,
       "human_positive": 15,
+      "human_unknown": 11,
       "human_rate": 0.1685,
       "wilson95": [
         0.1049,
         0.2596
       ],
-      "llm_agreement_pct": 64.0,
-      "kappa": 0.264,
+      "human_rate_unknown_as_neg": 0.15,
+      "wilson95_unknown_as_neg": [
+        0.0931,
+        0.2328
+      ],
+      "llm_agreement_pct": 61.0,
+      "llm_agreement_pct_excl_unknown": 64.0,
+      "kappa": 0.22,
+      "kappa_excl_unknown": 0.264,
       "desc": "现有已标注集（校准标签质量本身）"
     }
   },
   "overall": {
-    "pairs": 280,
-    "agreement_pct": 83.6,
-    "kappa": 0.329
+    "pairs": 300,
+    "agreement_pct": 82.0,
+    "kappa": 0.288,
+    "agreement_pct_excl_unknown": 83.6,
+    "kappa_excl_unknown": 0.329,
+    "pairs_excl_unknown": 280
   }
 }

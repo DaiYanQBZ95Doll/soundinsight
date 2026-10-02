@@ -1,0 +1,31 @@
+{
+  "labeled_positive_total": 1280,
+  "labeled_positive_classified": 1280,
+  "labeled_positive_headphone": 530,
+  "labeled_positive_categories": {
+    "speaker": 255,
+    "earbud": 218,
+    "headphone": 239,
+    "unclear": 136,
+    "other_audio": 162,
+    "non_audio": 109,
+    "headset": 73,
+    "soundbar": 35,
+    "cable": 53
+  },
+  "test_total": 10000,
+  "test_classified": 9999,
+  "test_headphone": 778,
+  "test_categories": {
+    "cable": 1056,
+    "non_audio": 4831,
+    "unclear": 2363,
+    "other_audio": 535,
+    "speaker": 392,
+    "earbud": 345,
+    "headset": 97,
+    "headphone": 336,
+    "soundbar": 44
+  },
+  "note": "产品口径判定（LLM）；仅判产品类型，未判情感。用于估计口径外占比。"
+}

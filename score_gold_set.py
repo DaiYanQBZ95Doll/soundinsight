@@ -56,12 +56,15 @@ def kappa(pairs: list[tuple[int, int]]) -> float:
 
 
 def read_sheet(path: str) -> dict[str, int]:
+    """读人工判定；`?`（无法判断）**记为 -1**，由双口径统计分别处理。"""
     labels = {}
     with open(path, encoding="utf-8-sig", errors="replace") as fh:
         for r in csv.DictReader(fh):
             v = (r.get("人工判定(1=音质差评/0=不是)") or "").strip()
             if v in ("0", "1"):
                 labels[r["编号"].strip()] = int(v)
+            elif v == "?":
+                labels[r["编号"].strip()] = -1
     return labels
 
 
@@ -70,32 +73,67 @@ def score(human: dict[str, int], items: list[dict], quiet: bool = False) -> dict
     pairs_all = []
     for tag in STRATA:
         rows = [it for it in items if it["stratum"] == tag]
-        pairs, n_pos = [], 0
+        pairs, n_pos, n_unknown = [], 0, 0
         for it in rows:
             h = human.get(it["id"])
             llm = it.get("llm_label")
             if h is None:
                 continue
+            if h == -1:                     # 口径 A：排除；口径 B：记为负
+                n_unknown += 1
+                if str(llm) in ("0", "1"):
+                    pairs.append((0, int(llm)))
+                continue
             n_pos += h
             if str(llm) in ("0", "1"):
                 pairs.append((h, int(llm)))
-        k, n = n_pos, len(pairs) if pairs else sum(1 for it in rows if human.get(it["id"]) is not None)
-        lo, hi = wilson(k, n)
+        # 口径 A（排除 ?）与口径 B（? 记为负）
+        kA, nA = n_pos, n_pos + sum(1 for a, _ in pairs if a == 0) - 0
+        kB, nB = n_pos, (len(pairs) if pairs else n_pos) + n_unknown
+        k, n = n_pos, sum(1 for a, _ in pairs if True)      # 兼容旧字段
+        lo, hi = wilson(kA, max(1, len([p for p in pairs if p[0] != 0 or True]) - n_unknown))
         agree = (sum(1 for a, b in pairs if a == b) / len(pairs) * 100) if pairs else float("nan")
-        per[tag] = {"labeled": len(rows), "human_labeled": n, "human_positive": k,
-                    "human_rate": round(k / n, 4) if n else None,
-                    "wilson95": [round(lo, 4), round(hi, 4)],
+        # 口径 A（排除 "?"）：只统计明确判定条目的一致率与 κ
+        pairsA = [(human[it["id"]], int(it["llm_label"])) for it in rows
+                  if human.get(it["id"]) in (0, 1) and str(it.get("llm_label")) in ("0", "1")]
+        agreeA = (sum(1 for a, b in pairsA if a == b) / len(pairsA) * 100) if pairsA else float("nan")
+        nA_eff = n_pos + (len(pairs) - n_pos - n_unknown)      # 口径 A 分母 = 明确判定数
+        loA, hiA = wilson(n_pos, max(1, nA_eff))
+        loB, hiB = wilson(n_pos, max(1, nA_eff + n_unknown))
+        per[tag] = {"labeled": len(rows), "human_labeled": n + n_unknown, "human_positive": n_pos,
+                    "human_unknown": n_unknown,
+                    "human_rate": round(n_pos / nA_eff, 4) if nA_eff else None,
+                    "wilson95": [round(loA, 4), round(hiA, 4)],
+                    "human_rate_unknown_as_neg": round(n_pos / (nA_eff + n_unknown), 4)
+                    if (nA_eff + n_unknown) else None,
+                    "wilson95_unknown_as_neg": [round(loB, 4), round(hiB, 4)],
                     "llm_agreement_pct": round(agree, 1) if pairs else None,
+                    "llm_agreement_pct_excl_unknown": round(agreeA, 1) if pairsA else None,
                     "kappa": round(kappa(pairs), 3) if pairs else None,
+                    "kappa_excl_unknown": round(kappa(pairsA), 3) if pairsA else None,
                     "desc": STRATA[tag]}
         pairs_all += pairs
+    pairsA_all = [(a, b) for a, b in pairs_all if a in (0, 1) and not (a == 0 and b == 0 and False)]
+    # 口径 A 的总体：仅由各层 "排除 ?" 集合构成
+    pairsA_all = []
+    for tag in STRATA:
+        rows = [it for it in items if it["stratum"] == tag]
+        pairsA_all += [(human[it["id"]], int(it["llm_label"])) for it in rows
+                       if human.get(it["id"]) in (0, 1) and str(it.get("llm_label")) in ("0", "1")]
     overall = {"pairs": len(pairs_all),
                "agreement_pct": round(sum(1 for a, b in pairs_all if a == b) / len(pairs_all) * 100, 1)
                if pairs_all else None,
-               "kappa": round(kappa(pairs_all), 3) if pairs_all else None}
+               "kappa": round(kappa(pairs_all), 3) if pairs_all else None,
+               "agreement_pct_excl_unknown": round(
+                   sum(1 for a, b in pairsA_all if a == b) / len(pairsA_all) * 100, 1)
+               if pairsA_all else None,
+               "kappa_excl_unknown": round(kappa(pairsA_all), 3) if pairsA_all else None,
+               "pairs_excl_unknown": len(pairsA_all)}
     if not quiet:
-        print(f"总体：可比对 {overall['pairs']} 条｜一致率 {overall['agreement_pct']}%"
-              f"｜κ {overall['kappa']}")
+        print(f"总体：口径A（排除?）可比对 {overall['pairs_excl_unknown']} 条｜"
+              f"一致率 {overall['agreement_pct_excl_unknown']}%｜κ {overall['kappa_excl_unknown']}"
+              f"　｜　口径B（?记为负）可比对 {overall['pairs']} 条｜"
+              f"一致率 {overall['agreement_pct']}%｜κ {overall['kappa']}")
         for tag, d in per.items():
             print(f"  [{tag}] {d['desc']}：人工标注 {d['human_labeled']} 条｜"
                   f"人工判正 {d['human_positive']}（{d['human_rate']}）｜"
@@ -142,18 +180,34 @@ def main() -> int:
     res = score(human, items)
     json.dump(res, open(OUT_JSON, "w", encoding="utf-8"), ensure_ascii=False, indent=2)
     lines = ["# 人工金标 vs LLM 判定：一致性与重算", "",
-             f"> 已填 {len(human)} 条｜总体一致率 **{res['overall']['agreement_pct']}%**"
-             f"｜Cohen's κ **{res['overall']['kappa']}**", "",
-             "| 层 | 说明 | 人工标注 | 人工判正 | 人工率（95% CI） | 与 LLM 一致率 | κ |",
-             "|---|---|---|---|---|---|---|"]
+             f"> 已填 {len(human)} 条｜**口径 A（排除「无法判断」）**：可比对 "
+             f"{res['overall']['pairs_excl_unknown']} 条、一致率 "
+             f"**{res['overall']['agreement_pct_excl_unknown']}%**、κ "
+             f"**{res['overall']['kappa_excl_unknown']}**｜"
+             f"**口径 B（「无法判断」记为负）**：可比对 {res['overall']['pairs']} 条、一致率 "
+             f"**{res['overall']['agreement_pct']}%**、κ **{res['overall']['kappa']}**", "",
+             "| 层 | 说明 | 人工标注 | 人工判正 | 无法判断 | **口径A：排除 ?（95% CI）** | "
+             "**口径B：? 记为负（95% CI）** | 与 LLM 一致率 | κ |",
+             "|---|---|---|---|---|---|---|---|---|"]
     for tag, d in res["per_stratum"].items():
         lines.append(f"| {tag} | {d['desc']} | {d['human_labeled']} | {d['human_positive']} | "
+                     f"{d.get('human_unknown', 0)} | "
                      f"{d['human_rate']}（{d['wilson95'][0]}–{d['wilson95'][1]}） | "
-                     f"{d['llm_agreement_pct']}% | {d['kappa']} |")
+                     f"{d.get('human_rate_unknown_as_neg')}"
+                     f"（{d.get('wilson95_unknown_as_neg', ['—', '—'])[0]}–"
+                     f"{d.get('wilson95_unknown_as_neg', ['—', '—'])[1]}） | "
+                     f"{d['llm_agreement_pct_excl_unknown']}%（A）／{d['llm_agreement_pct']}%（B） | "
+                     f"{d['kappa_excl_unknown']}（A）／{d['kappa']}（B） |")
     lines += ["", "## 读法", "",
               "- **S1** 的人工率即「闸门外真阳性率」的**校准值**——用它替换/并列 1.33%；",
               "- **S3** 的一致率与 κ 直接回答「现有标签质量如何」，是全部指标可信度的天花板；",
-              "- κ 参考：<0.2 差／0.2–0.4 一般／0.4–0.6 中等／0.6–0.8 良好／>0.8 极好。"]
+              "- κ 参考：<0.2 差／0.2–0.4 一般／0.4–0.6 中等／0.6–0.8 良好／>0.8 极好。",
+              "",
+              "## 两个口径为何并列（决策方 2026-10-02 裁定）", "",
+              "- **口径 A（排除「无法判断」）**：只统计明确判定的条目——反映「能判的那些里有多少是」；",
+              "- **口径 B（「无法判断」记为负）**：把所有条目都计入分母——反映「面对全部文本时的下界」；",
+              "- 两者差 = 「无法判断」的比例。两遍判定之间的摆动主要来自这些条目的归类，",
+              "  故**固定并公开该政策**比再判一遍更能消减歧义。"]
     open(OUT_MD, "w", encoding="utf-8", newline="\n").write("\n".join(lines) + "\n")
     print(f"[写出] {os.path.relpath(OUT_MD, HERE)}、v2/gold_set_agreement.json")
     return 0
