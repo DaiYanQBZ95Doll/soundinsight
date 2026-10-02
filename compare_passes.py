@@ -16,6 +16,8 @@ import argparse
 import csv
 import os
 import re
+
+import rulings_io
 import sys
 
 sys.stdout.reconfigure(encoding="utf-8", errors="replace")
@@ -50,35 +52,9 @@ def load(src: str) -> dict:
             if i and v in ("0", "1", "?"):
                 out[i] = v
         return out
-    cur, fence = None, False
-    pat_id = re.compile(r"^#{2,4}\s*([A-Z]\d{0,3}-\d{3})")
-    pat_inline = re.compile(r"([A-Z]\d{0,3}-\d{3})[^\n]*?\*\*判定\*\*\s*[:：]\s*[_\-—\s]*([012?])(?![0-9])")
-    for ln in open(path, encoding="utf-8", errors="replace"):
-        t = ln.strip()
-        if t.startswith("```"):
-            fence = not fence
-            continue
-        if fence or t.startswith(">"):
-            continue
-        # 表格行（我方席位文件的写法）：| S2-037 | 1 | 是（…） |
-        mt = re.match(r"\|\s*([A-Z]\d{0,3}-\d{3})\s*\|\s*([012?])\s*\|", t)
-        if mt:
-            out[mt.group(1)] = "?" if mt.group(2) == "2" else mt.group(2)
-            continue
-        mi = pat_inline.match(t)
-        if mi:
-            out[mi.group(1)] = "?" if mi.group(2) == "2" else mi.group(2)
-            cur = mi.group(1)
-            continue
-        m = pat_id.match(t)
-        if m:
-            cur = m.group(1)
-            continue
-        if cur and "判定" in t:
-            v = _slot(t)
-            if v and v != "AMBIG":
-                out[cur] = v
-    return out
+    # 非表格来源交给共享模块（R32）
+    got, _ambig = rulings_io.read_judgements(path)
+    return got
 
 
 def kappa(pairs):

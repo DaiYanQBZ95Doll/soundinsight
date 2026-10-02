@@ -19,6 +19,8 @@ import csv
 import json
 import os
 import re
+
+import rulings_io
 import sys
 
 sys.stdout.reconfigure(encoding="utf-8", errors="replace")
@@ -65,94 +67,10 @@ def print_batch(rows, n: int, author: str = "dsh") -> None:
     print(f"\n（顺序即编号顺序：{ids[0]} … {ids[-1]}；也可用 ②带编号／③只报例外／④区间 格式）")
 
 
-def parse_text(text: str, ids: list[str], all_ids: list[str] | None = None) \
-        -> tuple[dict, list[str]]:
-    """解析判定文本。`all_ids` 为工作表全序，用于把 **绝对编号 G###** 映射为 S 编号。"""
-    """返回 {编号: 单元格值} 与 错误列表。"""
-    out, errs = {}, []
-    text = text.strip()
-    all_ids = all_ids or ids
-    # 只保留"数据行"：丢弃标题／引用／表格／代码块／不含编号的行。
-    # 理由：答题卡与席位的**表头说明**里会出现编号与数字（示例、口径），
-    # 若一并解析会写入假判定（干跑已实测到假阳性）。
-    kept, in_fence = [], False
-    for ln in text.splitlines():
-        t = ln.strip()
-        if t.startswith("```"):
-            in_fence = not in_fence
-            continue
-        if in_fence or t.startswith(("#", ">", "|")):
-            continue
-        if not re.search(r"(?:[A-Z]\d-\d{3}|\bG\d{1,3}\b)", t):
-            continue
-        kept.append(ln)
-    text = "\n".join(kept)
-
-    def g2s(tok: str):
-        m = re.fullmatch(r"G(\d{1,3})", tok.strip(), re.I)
-        if not m:
-            return None
-        k = int(m.group(1))
-        return all_ids[k - 1] if 1 <= k <= len(all_ids) else None
-
-    # G 编号（绝对）：G007=0 或 G007:0
-    for m in re.finditer(r"\bG(\d{1,3})\s*[=:：]\s*([012?])(?![0-9])", text, re.I):
-        sid = g2s("G" + m.group(1))
-        if sid:
-            out[sid] = VAL2CELL[m.group(2)]
-        text = text.replace(m.group(0), " ")
-    # G 区间：G001..G025 = 1,0,2,...
-    for m in re.finditer(r"G(\d{1,3})\s*\.\.\s*G(\d{1,3})\s*=\s*([0-9?.,\s]+)",
-                         text, re.I):
-        a, b = int(m.group(1)), int(m.group(2))
-        vals = [v for v in re.split(r"[,\s]+", m.group(3)) if v in VAL2CELL]
-        for k, v in zip(range(a, b + 1), vals):
-            sid = g2s(f"G{k}")
-            if sid:
-                out[sid] = VAL2CELL[v]
-        text = text.replace(m.group(0), " ")
-    # ④ 区间：S1-001..S1-020 = 1,0,2,...
-    for m in re.finditer(r"([A-Z]\d-\d{3})\s*\.\.\s*([A-Z]\d-\d{3})\s*=\s*([0-9.,\s]+)", text):
-        a, b, vals = m.group(1), m.group(2), [v for v in re.split(r"[,\s]+", m.group(3)) if v]
-        pre, na = a.split("-")[0], int(a.split("-")[1])
-        nb = int(b.split("-")[1])
-        for k, v in zip(range(na, nb + 1), vals):
-            if v in VAL2CELL:
-                out[f"{pre}-{k:03d}"] = VAL2CELL[v]
-            else:
-                errs.append(f"非法值 {v}")
-        text = text.replace(m.group(0), " ")
-    # ③ 只报例外
-    m = re.search(r"(?:除|except)\s*(S\d-\d{3})\s*=\s*([0-9])\s*[，,]?\s*(?:外)?[，,]?\s*(?:其余|其他|全)\s*(?:为|是)?\s*([0-9])", text)
-    if m:
-        ex_id, ex_val, rest_val = m.group(1), m.group(2), m.group(3)
-        for i in ids:
-            out[i] = VAL2CELL[rest_val]
-        out[ex_id] = VAL2CELL[ex_val]
-        text = text.replace(m.group(0), " ")
-    # ② 带编号
-    for m in re.finditer(r"(S\d-\d{3})\s*[=:：]?\s*([0-9])", text):
-        out[m.group(1)] = VAL2CELL[m.group(2)]
-        text = text.replace(m.group(0), " ")
-    # ① 按顺序一串（剩下的纯数字）
-    rest = [v for v in re.split(r"[\s,;，；]+", text) if v in VAL2CELL]
-    if rest:
-        if len(rest) > len(ids):
-            errs.append(f"按序数字 {len(rest)} 个 > 本批 {len(ids)} 条，多余的已忽略")
-        for i, v in zip(ids, rest):
-            out.setdefault(i, VAL2CELL[v])
-    for v in re.split(r"[\s,;，；]+", text):
-        if not v or v.startswith("#") or re.match(r"^[A-Z]\d-\d{3}$", v):
-            continue
-        if v in VAL2CELL or _UNFILLED.match(v):
-            continue      # 未填占位（_ / ___ / ?）静默跳过
-        if re.fullmatch(r"[A-Z]\d-\d{3}[:=：][_\-—?？]*", v) or \
-                re.fullmatch(r"G\d{1,3}[:=：][_\-—?？]*", v, re.I):
-            continue      # 未填的编号（S2-037:_）不是错误
-        if not any(ch.isdigit() for ch in v):
-            continue      # 纯文字（表头/说明）不是数据，静默跳过
-        errs.append(f"无法解析的片段：{v[:20]}")
-    return out, errs
+def parse_text(text: str, ids: list[str], all_ids=None):
+    """委托给共享实现（R32）：聊天输入的 4 种格式。"""
+    mapping, notes, _ = rulings_io.parse_inline_text(text, ids, all_ids or ids)
+    return mapping, notes
 
 
 def apply_rulings(rows, mapping: dict, author: str, write_csv: bool = False) -> int:
@@ -190,78 +108,34 @@ def apply_rulings(rows, mapping: dict, author: str, write_csv: bool = False) -> 
 
 
 def _slot_value(line: str):
-    """从判定位行中稳妥取值：取反引号内容里的 0/1/2。
-
-    决策方的实际写法是**在横线内填数字**（如 `` `_0__` ``、`` `__0_` ``），
-    故不能要求"恰好一个字符"。返回 ('0'|'1'|'?'|None, 说明)：
-      · 恰好一个不同数字 → 值（2 映射为 ?）；
-      · 无数字 → None（未填）；
-      · 两个不同数字 → ('AMBIG', 原样内容)，交人工确认，**不猜**。
-    """
-    m = re.search(r"`([^`]*)`", line)
-    content = m.group(1) if m else line
-    digs = [c for c in content if c in "012"]
-    distinct = sorted(set(digs))
-    if len(distinct) > 1:
-        return "AMBIG", content
-    if not distinct:
-        return None, content
-    return ("?" if distinct[0] == "2" else distinct[0]), content
+    """委托给共享实现（R32：解析逻辑单点实现）。"""
+    return rulings_io.slot_value(line), ""
 
 
 def import_from_notes(path: str) -> dict:
-    """从 review_notes.md 解析 `**判定（决策方填）**：`<值>`` —— 只接受 1/0/? 。
-    空白（`___`）视为未判，不返回。"""
-    out = {}
-    cur = None
-    ambig = []          # 歧义条目（含两个不同数字）——收集后由调用方报出，不猜
-    # 编号规则放宽（本会话第 6 种写法）：兼容 `S1-049`（带连字符）与 `C001`／`T001`（无连字符）
-    _ID = r"[A-Z]{1,4}(?:\d{1,3}-\d{3}|\d{3})"
-    pat_id = re.compile(r"^#{2,4}\s*(" + _ID + r")(?:\s*[\u3000 ]\s*G\d{1,3})?\s*$")
-    pat_val = re.compile(r"判定（决策方填）\*\*：\s*`?\s*([012?])\s*`?\s*$")
-    # Kimi 答题卡的内联形式：`### S2-037　**判定**：1`（也容忍「判定：_」未填）
-    pat_inline = re.compile(r"^#{2,4}\s*(" + _ID
-                            + r")[^\n]*?\*\*判定\*\*\s*[:：]\s*[_\-—\s]*([012?])(?![0-9])")
-    for ln in open(path, encoding="utf-8", errors="replace").read().splitlines():
-        # 内联形式（Kimi 的答题卡）：`### S2-037　**判定**：1` —— ID 与值同行
-        mi = pat_inline.match(ln.strip())
-        if mi:
-            cur = mi.group(1)
-            out[cur] = VAL2CELL[mi.group(2)]
-            continue
-        m = pat_id.match(ln.strip())
-        if m:
-            cur = m.group(1)
-            continue
-        if cur and ("判定（决策方填）" in ln or "判定" in ln):
-            val, raw = _slot_value(ln.strip())
-            if val == "AMBIG":
-                ambig.append(f"{cur}（内容 {raw!r}）")
-            elif val is not None:
-                out[cur] = VAL2CELL.get(val, val)
-    return out
-
-
-# 未填占位：静默跳过（答题卡里未判的条目长这样）
-_UNFILLED = re.compile(r"^[_\-—\s?？]*$")
+    """委托给共享实现（R32）：读取任意格式的判定位。"""
+    got, ambig = rulings_io.read_judgements(path)
+    if ambig:
+        print("⚠ 判定位有歧义（含两个不同数字），**未接收**，请确认：")
+        for a in ambig[:10]:
+            print("   " + a)
+    return got
 
 
 def import_answer_sheet(path: str, all_ids: list[str]) -> tuple[dict, list[str]]:
-    """接收**任一方**的答题卡：识别 `S#-###:1`／`S#-###=1`／`G###=1`／表格行／
-    Kimi 紧凑行（`S2-037:_　S1-040:_`）；未填占位忽略。返回（映射, 备注）。"""
-    text = open(path, encoding="utf-8", errors="replace").read()
-    # 块式优先：按 `## S2-037　G001` 标题跟踪条目，读该块内的判定位（新答题卡/review_notes）
-    block = import_from_notes(path)
-    if block:
-        blanks = len(re.findall(r"判定（决策方填）[^\n]*", text)) - len(block)
-        notes = [f"块式解析：{len(block)} 条已填"
-                 + (f"｜另有 {blanks} 条未填（已跳过）" if blanks > 0 else "")]
+    """接收答题卡：块式/内联/表格/网格统一由共享模块处理（R32）。"""
+    block, ambig = rulings_io.read_judgements(path)
+    if block or ambig:
+        text = open(path, encoding="utf-8", errors="replace").read()
+        blanks = (len(re.findall(r"判定（决策方填）[^\n]*", text))
+                  + len(re.findall(r"\*\*判定\*\*", text)) - len(block))
+        notes = [f"共享解析：{len(block)} 条已填"
+                 + (f"｜另有 {max(0, blanks)} 条未填（已跳过）" if blanks > 0 else "")]
+        if ambig:
+            notes.append(f"歧义 {len(ambig)} 条已拒收（不猜）")
         return block, notes
-    mapping, notes = parse_text(text, all_ids, all_ids)
-    # 统计未填（仅提示，不算错误）
-    blanks = len(re.findall(r"[SG]\d{1,3}(?:-\d{3})?\s*[:=：]\s*[_\-—?？]", text))
-    if blanks:
-        notes.append(f"未填 {blanks} 处（已跳过）")
+    text = open(path, encoding="utf-8", errors="replace").read()
+    mapping, notes, _ = rulings_io.parse_inline_text(text, all_ids, all_ids)
     return mapping, notes
 
 
@@ -313,15 +187,9 @@ def reconcile() -> None:
                 vals[m2.group(1)] = m2.group(2)
         prints[a] = vals
     # 登记为不可用的一方，其席位缺失属**预期**（执行纪律 R30：流程要有降级路径）
-    unavailable = set()
-    _avp = os.path.join(GDIR, os.pardir, "bus", "availability.json")
-    if os.path.isfile(_avp):
-        try:
-            import json as _json
-            _av = _json.load(open(_avp, encoding="utf-8")).get("parties", {})
-            unavailable = {k for k, v in _av.items() if v.get("status") == "unavailable"}
-        except (OSError, ValueError):
-            unavailable = set()
+    unavailable = {k for k, v in rulings_io.load_availability(
+        os.path.join(GDIR, os.pardir, "bus")).items()
+        if rulings_io.is_unavailable(k, {k: v})}
     expected = [m for m in missing if m in unavailable]
     missing = [m for m in missing if m not in unavailable]
     if expected:

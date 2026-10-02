@@ -92,5 +92,12 @@ POINTER = ("\n---\n\n> **勘误指针（自动追加，勿手改本文件）**�
 
 if __name__ == "__main__":
     main()
-    with open(OUT_MD, "a", encoding="utf-8") as f:
-        f.write(POINTER)
+    # 幂等追加（红队 Qwen 提示的风险：若导出逻辑不生成指针，跑一次链就会抹掉一次；
+    # 这里既保证"由导出逻辑生成"，又保证重复运行不会叠加）
+    with open(OUT_MD, encoding="utf-8", errors="replace") as f:
+        already = "勘误指针" in f.read()
+    if already:
+        print("[跳过] dump 已含勘误指针")
+    else:
+        with open(OUT_MD, "a", encoding="utf-8") as f:
+            f.write(POINTER)

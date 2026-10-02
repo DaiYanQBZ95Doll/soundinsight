@@ -1,6 +1,6 @@
 # 文件地图（由 make_ai_handoff.py 自动生成，勿手改）
 
-> 生成时间：2026-10-02 20:08；共 527 个条目；体积单位 KB/MB。
+> 生成时间：2026-10-02 20:18；共 529 个条目；体积单位 KB/MB。
 
 ## 提交物（5 项，44.2 MB）
 
@@ -92,7 +92,7 @@
 | `docs/reassessment_after_credential.md` | 13.2 KB |  |
 | `docs/file_inventory.md` | 12.8 KB | 项目文件总索引 |
 | `docs/gold_set/human_rulings_dsh.md` | 12.6 KB |  |
-| `docs/demo_uptime_log.md` | 12.0 KB |  |
+| `docs/demo_uptime_log.md` | 12.2 KB |  |
 | `PROJECT_BRIEF_QWEN.md` | 11.6 KB |  |
 | `docs/N_line_handoff_protocol.md` | 11.2 KB |  |
 | `docs/finals_stage.md` | 11.0 KB |  |
@@ -100,13 +100,13 @@
 | `docs/pre_lock_completeness_audit.md` | 10.4 KB |  |
 | `docs/progress_report_current.md` | 10.4 KB |  |
 | `docs/bus/round-01/kimi.md` | 10.3 KB |  |
+| `docs/EXECUTION_DISCIPLINE.md` | 9.8 KB |  |
 | `docs/opinion_dsh_joint_review.md` | 9.5 KB |  |
 | `docs/completion_statement_for_redteam.md` | 9.4 KB |  |
 | `docs/completeness_audit_round2.md` | 9.3 KB |  |
 | `QWEN_HANDOFF.md` | 9.1 KB |  |
 | `docs/process_review_d10.md` | 8.5 KB |  |
 | `docs/legacy_materials_notice.md` | 8.3 KB |  |
-| `docs/EXECUTION_DISCIPLINE.md` | 8.1 KB |  |
 | `docs/w17_failure_cases.md` | 7.9 KB |  |
 | `docs/gold_set/human_rulings_dsh2.md` | 7.9 KB |  |
 | `docs/joint_review_agenda.md` | 7.8 KB |  |
@@ -133,7 +133,7 @@
 | `docs/PAUSE_SNAPSHOT.md` | 4.4 KB |  |
 | `docs/evidence_index_exp.md` | 4.4 KB |  |
 | `docs/e2_erratum.md` | 4.2 KB |  |
-| `docs/bus/INDEX.md` | 3.7 KB |  |
+| `docs/bus/INDEX.md` | 3.6 KB |  |
 | `docs/repo_hygiene_scan.md` | 3.5 KB |  |
 | `docs/dataset_audit.md` | 3.5 KB | 数据集字段考古 |
 | `docs/M8a_submission_precheck.md` | 3.5 KB |  |
@@ -160,7 +160,7 @@
 | `docs/inscope_reeval.md` | 1.5 KB |  |
 | `docs/bus/TEMPLATE.md` | 1.2 KB |  |
 | `docs/gold_set/human_rulings_kimi.md` | 1.2 KB |  |
-| `docs/bus/availability.json` | 0.9 KB |  |
+| `docs/bus/availability.json` | 1.1 KB |  |
 | `docs/gold_set/human_rulings_qwen.md` | 0.9 KB |  |
 | `docs/checklist_version.json` | 0.8 KB |  |
 | `docs/year_split_output.txt` | 0.8 KB | 年份分桶脚本输出原文 |
@@ -299,16 +299,16 @@
 | `sample_reviews_100.csv` | 57.9 KB |  |
 | `agent_test_input.csv` | 27.9 KB |  |
 
-## 代码（171 项，0.9 MB）
+## 代码（173 项，0.9 MB）
 
 | 文件 | 大小 | 用途 |
 |---|---|---|
 | `check_doc_numbers.py` | 57.5 KB | 数字审计 + 模板格式对照脚本 |
-| `apply_human_rulings.py` | 22.2 KB |  |
 | `build_finals_appendix.py` | 20.3 KB |  |
 | `scan_repo_hygiene.py` | 19.7 KB |  |
-| `make_gold_set_notes.py` | 19.4 KB |  |
 | `v2_meta_analysis.py` | 19.1 KB |  |
+| `make_gold_set_notes.py` | 18.8 KB |  |
+| `apply_human_rulings.py` | 15.9 KB |  |
 | `build_finals_package.py` | 15.7 KB |  |
 | `test_audit_checks.py` | 15.5 KB |  |
 | `v2_w4_mine.py` | 13.2 KB |  |
@@ -319,6 +319,7 @@
 | `score_gold_set.py` | 11.5 KB |  |
 | `build_pdf.py` | 11.2 KB |  |
 | `report_builder.py` | 10.2 KB |  |
+| `rulings_io.py` | 9.8 KB |  |
 | `demo_sound_v2.py` | 9.5 KB | 本地 Gradio Demo（三页；已内置代理绕过） |
 | `build_submission.py` | 9.3 KB |  |
 | `v2_w2_perclass.py` | 9.1 KB |  |
@@ -359,7 +360,6 @@
 | `gen_v2_artifacts.py` | 5.8 KB |  |
 | `precommit_guard.py` | 5.8 KB |  |
 | `push_daily.py` | 5.7 KB |  |
-| `run_all_checks.py` | 5.6 KB |  |
 | `w11_data_efficiency.py` | 5.5 KB |  |
 | `distilbert_cv.py` | 5.4 KB |  |
 | `undersample_experiment.py` | 5.4 KB |  |
@@ -367,6 +367,7 @@
 | `v2_m0_switch.py` | 5.3 KB |  |
 | `train_final.py` | 5.2 KB |  |
 | `train_roberta_quick.py` | 5.2 KB |  |
+| `run_all_checks.py` | 5.2 KB |  |
 | `make_missing_figures.py` | 5.1 KB |  |
 | `v2_w1_seg_threshold.py` | 5.1 KB |  |
 | `predict_core.py` | 5.1 KB | 共享推理核心（含非英文显式拒绝） |
@@ -374,31 +375,31 @@
 | `make_reviewer_brief.py` | 5.0 KB |  |
 | `fix_ppt_threshold.py` | 4.8 KB |  |
 | `make_video_assets.py` | 4.6 KB |  |
-| `compare_passes.py` | 4.5 KB |  |
 | `v2_record_incident.py` | 4.5 KB |  |
 | `make_samples.py` | 4.4 KB |  |
 | `make_bus_index.py` | 4.4 KB |  |
 | `verify_finals_package.py` | 4.4 KB |  |
 | `check_refs_and_deps.py` | 4.4 KB |  |
 | `analyze_s5.py` | 4.3 KB |  |
-| `score_bias_probe.py` | 4.2 KB |  |
 | `retime_srt.py` | 4.2 KB |  |
 | `check_external_deps.py` | 4.1 KB |  |
 | `tune_per_class_threshold.py` | 4.0 KB |  |
 | `upload_models.py` | 3.9 KB |  |
 | `test_model.py` | 3.9 KB |  |
 | `m3_m8a_recheck.py` | 3.9 KB |  |
+| `audit_ppt.py` | 3.9 KB |  |
 | `merge_refine.py` | 3.8 KB |  |
 | `train_multilabel.py` | 3.8 KB |  |
 | `gold_set_helper.py` | 3.7 KB |  |
 | `v2_cv_doc.py` | 3.7 KB |  |
 | `distilbert_vs_llm.py` | 3.6 KB |  |
+| `compare_passes.py` | 3.6 KB |  |
 | `extend_data.py` | 3.6 KB |  |
 | `baseline_cv.py` | 3.5 KB |  |
 | `verify_demo_end_to_end.py` | 3.5 KB |  |
-| `audit_ppt.py` | 3.5 KB |  |
 | `v2_register_cv.py` | 3.3 KB |  |
 | `finalize_curve.py` | 3.3 KB |  |
+| `score_bias_probe.py` | 3.2 KB |  |
 | `purge_leaked_objects.py` | 3.2 KB |  |
 | `check_demo_alive.py` | 3.1 KB |  |
 | `analyze_b_measure.py` | 3.1 KB |  |
@@ -406,6 +407,7 @@
 | `check_url_consistency.py` | 3.0 KB |  |
 | `w4_model_vs_llm.py` | 3.0 KB |  |
 | `deploy_check.py` | 3.0 KB | 在线 Demo 单条验收脚本 |
+| `check_single_parser.py` | 2.9 KB |  |
 | `svm_ttest.py` | 2.9 KB |  |
 | `refresh_samples.py` | 2.9 KB |  |
 | `verify_faststart.py` | 2.9 KB |  |

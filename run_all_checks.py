@@ -4,19 +4,10 @@
 为什么需要：各步骤有**顺序依赖**（审计报告会被打包进决赛包；manifest 必须在所有文件改动之后生成，
 否则"清单过期"不为 0；包内验证必须在打包之后）。手工按序执行容易漏步——本脚本把顺序固化。
 
-顺序：
-  1. `check_doc_numbers.py`        —— 数字审计（含 全部检查项检查）
-  2. `test_audit_checks.py`        —— 审计负向自测（证明检查会拒绝坏输入）
-  3. `check_refs_and_deps.py`      —— 断链 + 依赖声明（信息性，附在输出里）
-  4. `check_url_consistency.py`    —— URL 一致性（M3c③）
-  5. `v2_m0_switch_check.py`       —— 换代核对（待处理应为 0）
-  6. `build_finals_package.py`     —— 构建决赛包（内含红线 9 双向核对）
-  7. `update_finals_hashes.py`     —— 登记决赛包哈希
-  8. `verify_finals_package.py`    —— 包内校验 + Demo 冒烟
-  9. `make_ai_handoff.py`          —— 刷新 AI 交接包（manifest）
- 10. `scan_repo_hygiene.py`        —— 仓库卫生（密钥/隐私/废弃 claim/清单过期）
+顺序：见文件末尾的 `STEPS_FULL`——**它是步骤清单的唯一权威源**，本 docstring 不再重复列举
+（此前列举 10 步、实际已 19 步，属 R13「声明与实现不符」；红队 Qwen 指出后改为引用）。
 
-用法：python run_all_checks.py [--skip-package]
+用法：python run_all_checks.py [--skip-package] [--list]
 退出码：0 = 全绿；非 0 = 有步骤失败（并打印失败步骤名）。
 """
 from __future__ import annotations
@@ -48,6 +39,8 @@ STEPS_FULL = [
     ("包外依赖检查（P9：配置/权重可达/包内结构）", ["check_external_deps.py"]),
     ("推送状态（每日一次，只读）", ["push_daily.py", "--status"]),
     ("刷新三方总线总览（INDEX）", ["make_bus_index.py"]),
+    ("判定解析单点实现（R32 机制化）", ["check_single_parser.py"]),
+    ("共享解析模块自测", ["rulings_io.py", "--self-test"]),
     ("刷新 AI 交接包 manifest", ["make_ai_handoff.py"]),
     ("仓库卫生扫描", ["scan_repo_hygiene.py"]),
 ]

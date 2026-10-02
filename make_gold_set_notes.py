@@ -20,6 +20,8 @@ import json
 import os
 import re
 import sys
+
+import rulings_io
 import threading
 import time
 import urllib.request
@@ -114,23 +116,8 @@ def call(text: str, key: str, retries: int = 2) -> dict:
 
 
 def _slot_value(line: str):
-    """从判定位行中稳妥取值：取反引号内容里的 0/1/2。
-
-    决策方的实际写法是**在横线内填数字**（如 `` `_0__` ``、`` `__0_` ``），
-    故不能要求"恰好一个字符"。返回 ('0'|'1'|'?'|None, 说明)：
-      · 恰好一个不同数字 → 值（2 映射为 ?）；
-      · 无数字 → None（未填）；
-      · 两个不同数字 → ('AMBIG', 原样内容)，交人工确认，**不猜**。
-    """
-    m = re.search(r"`([^`]*)`", line)
-    content = m.group(1) if m else line
-    digs = [c for c in content if c in "012"]
-    distinct = sorted(set(digs))
-    if len(distinct) > 1:
-        return "AMBIG", content
-    if not distinct:
-        return None, content
-    return ("?" if distinct[0] == "2" else distinct[0]), content
+    """委托给共享实现（R32）。"""
+    return rulings_io.slot_value(line), ""
 
 
 def _read_existing_judgements(csv_path: str, *md_paths: str) -> dict:

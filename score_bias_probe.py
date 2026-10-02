@@ -13,6 +13,8 @@ import csv
 import json
 import os
 import re
+
+import rulings_io
 import sys
 
 sys.stdout.reconfigure(encoding="utf-8", errors="replace")
@@ -32,33 +34,9 @@ def read_main() -> dict:
 
 
 def read_inline(path: str) -> dict:
-    """读含内联判定的卡：`## S2-037　P01` + 之后 `**重判（只看原文）**：`1``；
-    也兼容 `### S2-037　**判定**：1`。忽略引用块与代码块。"""
-    out, cur, fence = {}, None, False
-    pat_id = re.compile(r"^#{2,4}\s*(S\d-\d{3})")
-    pat_val = re.compile(r"(?:重判（只看原文）|判定（决策方填）|判定)\*{0,2}\s*[:：]\s*`?\s*([012?])\s*`?\s*$")
-    pat_inline = re.compile(r"^#{2,4}\s*(S\d-\d{3})[^\n]*?\*\*判定\*\*\s*[:：]\s*([012?])(?![0-9])")
-    for ln in open(path, encoding="utf-8", errors="replace"):
-        if ln.lstrip().startswith("```"):
-            fence = not fence
-            continue
-        if fence or ln.lstrip().startswith(">"):
-            continue
-        t = ln.strip()
-        mi = pat_inline.match(t)
-        if mi:
-            cur = mi.group(1)
-            out[cur] = "?" if mi.group(2) == "2" else mi.group(2)
-            continue
-        m = pat_id.match(t)
-        if m:
-            cur = m.group(1)
-            continue
-        if cur:
-            mv = pat_val.search(t)
-            if mv:
-                out[cur] = "?" if mv.group(1) == "2" else mv.group(1)
-    return out
+    """委托给共享实现（R32）。"""
+    got, _ambig = rulings_io.read_judgements(path)
+    return got
 
 
 def kappa(pairs):

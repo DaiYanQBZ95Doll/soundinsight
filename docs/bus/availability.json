@@ -1,6 +1,8 @@
 {
-  "updated": "2026-10-02 16:27",
+  "updated": "2026-10-02 20:30",
   "note": "执行方维护；任一方短时不可用（额度/网络/离线）时在此登记，流程据此走降级路径（纪律 R30）。",
+  "expiry_note": "`until` 到期后**自动视为可用**（由 `rulings_io.is_unavailable` 实现；消费者含 apply_human_rulings 的对账与总线 INDEX），无需人工改本文件——红队 Qwen 指出旧版靠人工维护会长期显示过期状态。",
+  "concurrency_note": "Kimi 与执行方可能同时改动工作区；提交纪律见 EXECUTION_DISCIPLINE R31：只暂存自己的文件、永不 git add -A、共享文件写盘前校验是否被改动。",
   "parties": {
     "dsh": {
       "status": "available",
@@ -13,10 +15,9 @@
       "reason": "决策方 2026-10-02 告知：Kimi 正在操作（并发写入工作区）"
     },
     "qwen": {
-      "status": "unavailable",
-      "until": "2026-10-02 19:49",
-      "reason": "短时最大工作额度受限（决策方 2026-10-02 告知）：该时点前不参加工作区文件改动与审阅"
+      "status": "available",
+      "until": "",
+      "reason": "2026-10-02 晚短时额度限制解除；已提交对执行纪律文件的四条审视并全部闭合"
     }
-  },
-  "concurrency_note": "Kimi 与执行方可能同时改动工作区；提交纪律见 EXECUTION_DISCIPLINE R31：只暂存自己的文件、永不 git add -A、共享文件写盘前校验是否被改动。"
+  }
 }
