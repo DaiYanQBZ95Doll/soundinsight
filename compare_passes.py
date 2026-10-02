@@ -52,7 +52,7 @@ def load(src: str) -> dict:
         return out
     cur, fence = None, False
     pat_id = re.compile(r"^#{2,4}\s*([A-Z]\d{0,3}-\d{3})")
-    pat_inline = re.compile(r"([A-Z]\d{0,3}-\d{3})[^\n]*?\*\*判定\*\*\s*[:：]\s*([012?])(?![0-9])")
+    pat_inline = re.compile(r"([A-Z]\d{0,3}-\d{3})[^\n]*?\*\*判定\*\*\s*[:：]\s*[_\-—\s]*([012?])(?![0-9])")
     for ln in open(path, encoding="utf-8", errors="replace"):
         t = ln.strip()
         if t.startswith("```"):

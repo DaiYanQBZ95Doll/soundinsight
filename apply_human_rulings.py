@@ -218,7 +218,7 @@ def import_from_notes(path: str) -> dict:
     pat_id = re.compile(r"^#{2,4}\s*(S\d-\d{3})(?:\s*[\u3000 ]\s*G\d{1,3})?\s*$")
     pat_val = re.compile(r"判定（决策方填）\*\*：\s*`?\s*([012?])\s*`?\s*$")
     # Kimi 答题卡的内联形式：`### S2-037　**判定**：1`（也容忍「判定：_」未填）
-    pat_inline = re.compile(r"^#{2,4}\s*(S\d-\d{3})[^\n]*?\*\*判定\*\*\s*[:：]\s*([012?])(?![0-9])")
+    pat_inline = re.compile(r"^#{2,4}\s*(S\d-\d{3})[^\n]*?\*\*判定\*\*\s*[:：]\s*[_\-—\s]*([012?])(?![0-9])")
     for ln in open(path, encoding="utf-8", errors="replace").read().splitlines():
         # 内联形式（Kimi 的答题卡）：`### S2-037　**判定**：1` —— ID 与值同行
         mi = pat_inline.match(ln.strip())

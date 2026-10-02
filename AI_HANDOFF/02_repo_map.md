@@ -1,6 +1,6 @@
 # 文件地图（由 make_ai_handoff.py 自动生成，勿手改）
 
-> 生成时间：2026-10-02 17:48；共 510 个条目；体积单位 KB/MB。
+> 生成时间：2026-10-02 18:11；共 511 个条目；体积单位 KB/MB。
 
 ## 提交物（5 项，44.2 MB）
 
@@ -58,18 +58,18 @@
 | `confidence_tiered.md` | 0.7 KB | 三星补漏置信度分层与中置信剔除记录 |
 | `significance_test.md` | 0.6 KB | Welch t 检验（p=0.000932） |
 
-## 过程与交接文档（96 项，2.8 MB）
+## 过程与交接文档（97 项，2.8 MB）
 
 | 文件 | 大小 | 用途 |
 |---|---|---|
 | `docs/gold_set/review_notes.md` | 439.9 KB |  |
 | `docs/gold_set/answer_sheet.md` | 437.7 KB |  |
 | `docs/gold_set/assisted_worksheet.csv` | 402.0 KB |  |
-| `docs/gold_set/answer_sheet_decision.md` | 361.8 KB |  |
+| `docs/gold_set/answer_sheet_decision.md` | 362.1 KB |  |
 | `docs/gold_set/worksheet.csv` | 177.2 KB |  |
-| `docs/gold_set/answer_sheet_s1_add100.md` | 94.5 KB |  |
-| `docs/gold_set/s1_add100.csv` | 83.2 KB |  |
-| `docs/frozen_execution_checklist.md` | 70.8 KB |  |
+| `docs/gold_set/answer_sheet_s1_add100.md` | 94.6 KB |  |
+| `docs/gold_set/s1_add100.csv` | 83.3 KB |  |
+| `docs/frozen_execution_checklist.md` | 71.1 KB |  |
 | `PROGRESS_SYNC.md` | 57.6 KB |  |
 | `docs/gold_set/worksheet.md` | 45.6 KB |  |
 | `docs/gap_and_roadmap_inventory.md` | 44.1 KB |  |
@@ -89,10 +89,11 @@
 | `docs/file_inventory.md` | 12.8 KB | 项目文件总索引 |
 | `PROJECT_BRIEF_QWEN.md` | 11.6 KB |  |
 | `docs/N_line_handoff_protocol.md` | 11.2 KB |  |
+| `docs/demo_uptime_log.md` | 11.2 KB |  |
 | `docs/finals_stage.md` | 11.0 KB |  |
-| `docs/demo_uptime_log.md` | 10.9 KB |  |
 | `docs/decision_request_v15_and_nline.md` | 10.4 KB |  |
 | `docs/pre_lock_completeness_audit.md` | 10.4 KB |  |
+| `docs/gold_set/human_rulings_dsh.md` | 10.4 KB |  |
 | `docs/progress_report_current.md` | 10.4 KB |  |
 | `docs/bus/round-01/kimi.md` | 10.3 KB |  |
 | `docs/opinion_dsh_joint_review.md` | 9.5 KB |  |
@@ -102,9 +103,10 @@
 | `docs/process_review_d10.md` | 8.5 KB |  |
 | `docs/legacy_materials_notice.md` | 8.3 KB |  |
 | `docs/EXECUTION_DISCIPLINE.md` | 8.1 KB |  |
-| `docs/gold_set/human_rulings_dsh.md` | 8.1 KB |  |
 | `docs/w17_failure_cases.md` | 7.9 KB |  |
+| `docs/gold_set/human_rulings_dsh2.md` | 7.9 KB |  |
 | `docs/joint_review_agenda.md` | 7.8 KB |  |
+| `docs/gold_set/gold_standard_findings.md` | 7.8 KB |  |
 | `docs/N1b_downgrade_narrative.md` | 7.0 KB |  |
 | `docs/decision_queue.md` | 6.8 KB |  |
 | `docs/N2_narrative_final.md` | 6.6 KB |  |
@@ -118,7 +120,6 @@
 | `docs/scoped_findings.md` | 5.9 KB |  |
 | `docs/N5_qna_factbase.md` | 5.9 KB |  |
 | `docs/N6_review_risk_list.md` | 5.7 KB |  |
-| `docs/gold_set/gold_standard_findings.md` | 5.4 KB |  |
 | `docs/llm_credential_status.md` | 5.0 KB |  |
 | `docs/b_measure_results.md` | 5.0 KB |  |
 | `docs/DoD_completion_table.md` | 4.9 KB |  |
@@ -302,7 +303,7 @@
 | `scan_repo_hygiene.py` | 19.7 KB |  |
 | `make_gold_set_notes.py` | 19.4 KB |  |
 | `v2_meta_analysis.py` | 19.1 KB |  |
-| `build_finals_appendix.py` | 17.3 KB |  |
+| `build_finals_appendix.py` | 17.6 KB |  |
 | `build_finals_package.py` | 15.6 KB |  |
 | `test_audit_checks.py` | 15.5 KB |  |
 | `v2_w4_mine.py` | 13.2 KB |  |
@@ -534,7 +535,7 @@
 | `v2/gate_outside_review.jsonl` | 86.8 KB |  |
 | `v2/s1_add100_notes.jsonl` | 53.5 KB |  |
 | `v2/gold_set_key.json` | 39.3 KB |  |
-| `更新世界的锋芒_SoundInsight_决赛入围定稿作品.docx` | 37.6 KB |  |
+| `更新世界的锋芒_SoundInsight_决赛入围定稿作品.docx` | 37.7 KB |  |
 | `v2/w4_estimate.json` | 9.4 KB |  |
 | `v2/w14_w15_w16_report.md` | 7.9 KB |  |
 | `v2/m0_switch_report.json` | 7.0 KB |  |
