@@ -127,8 +127,13 @@ def parse_text(text: str, ids: list[str], all_ids: list[str] | None = None) \
         for i, v in zip(ids, rest):
             out.setdefault(i, VAL2CELL[v])
     for v in re.split(r"[\s,;，；]+", text):
-        if v and v not in VAL2CELL and not v.startswith("#") and not re.match(r"^[A-Z]\d-\d{3}$", v):
-            errs.append(f"无法解析的片段：{v[:20]}")
+        if not v or v.startswith("#") or re.match(r"^[A-Z]\d-\d{3}$", v):
+            continue
+        if v in VAL2CELL or _UNFILLED.match(v):
+            continue      # 未填占位（_ / ___ / ?）静默跳过
+        if not any(ch.isdigit() for ch in v):
+            continue      # 纯文字（表头/说明）不是数据，静默跳过
+        errs.append(f"无法解析的片段：{v[:20]}")
     return out, errs
 
 
@@ -183,6 +188,22 @@ def import_from_notes(path: str) -> dict:
             if m2:
                 out[cur] = VAL2CELL[m2.group(1)]
     return out
+
+
+# 未填占位：静默跳过（答题卡里未判的条目长这样）
+_UNFILLED = re.compile(r"^[_\-—\s?？]*$")
+
+
+def import_answer_sheet(path: str, all_ids: list[str]) -> tuple[dict, list[str]]:
+    """接收**任一方**的答题卡：识别 `S#-###:1`／`S#-###=1`／`G###=1`／表格行／
+    Kimi 紧凑行（`S2-037:_　S1-040:_`）；未填占位忽略。返回（映射, 备注）。"""
+    text = open(path, encoding="utf-8", errors="replace").read()
+    mapping, notes = parse_text(text, all_ids, all_ids)
+    # 统计未填（仅提示，不算错误）
+    blanks = len(re.findall(r"[SG]\d{1,3}(?:-\d{3})?\s*[:=：]\s*[_\-—?？]", text))
+    if blanks:
+        notes.append(f"未填 {blanks} 处（已跳过）")
+    return mapping, notes
 
 
 def progress(rows) -> None:
@@ -296,6 +317,8 @@ def main() -> int:
     ap.add_argument("--file")
     ap.add_argument("--from-notes", action="store_true",
                     help="从 docs/gold_set/review_notes.md 的填好的判定位导入")
+    ap.add_argument("--from-answer-sheet", nargs="?", const="auto",
+                    help="接收答题卡（默认自动寻找 answer_sheet*.md；可指定路径）")
     ap.add_argument("--author", default="dsh", choices=("dsh", "kimi", "qwen"))
     ap.add_argument("--progress", action="store_true")
     ap.add_argument("--reconcile", action="store_true")
@@ -322,6 +345,32 @@ def main() -> int:
         return 0
     if args.batch:
         print_batch(rows, args.batch, args.author)
+        return 0
+    if args.from_answer_sheet:
+        if args.from_answer_sheet == "auto":
+            cands = [os.path.join(GDIR, f) for f in
+                     ("answer_sheet.md", "answer_sheet_kimi.md", "answer_sheet_qwen.md")]
+            path = next((c for c in cands if os.path.isfile(c)), None)
+        else:
+            path = args.from_answer_sheet
+        if not path or not os.path.isfile(path):
+            print("[缺] 未找到答题卡；可用 --from-answer-sheet <路径>")
+            return 1
+        mapping, notes = import_answer_sheet(path, [r["编号"] for r in rows])
+        print(f"接收答题卡：{os.path.relpath(path, HERE)}｜解析到 {len(mapping)} 条")
+        for n in notes:
+            print("  [提示] " + n)
+        if args.dry_run:
+            print("[dry-run] 未写入任何文件")
+            return 0
+        if not mapping:
+            print("[空] 答题卡尚无已填判定")
+            return 0
+        n = apply_rulings(rows, mapping, args.author, write_csv)
+        print(f"已接收 {n} 条 → {os.path.relpath(rulings_path(args.author), HERE)}"
+              + (f" 与 {os.path.relpath(CSV_PATH, HERE)}" if write_csv
+                 else "（未写共享 CSV：需 --author dsh 或 --write-csv）"))
+        progress(rows)
         return 0
     if args.from_notes:
         notes = os.path.join(GDIR, "review_notes.md")

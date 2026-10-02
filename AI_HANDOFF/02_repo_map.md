@@ -1,6 +1,6 @@
 # 文件地图（由 make_ai_handoff.py 自动生成，勿手改）
 
-> 生成时间：2026-10-02 15:27；共 490 个条目；体积单位 KB/MB。
+> 生成时间：2026-10-02 15:38；共 492 个条目；体积单位 KB/MB。
 
 ## 提交物（5 项，43.9 MB）
 
@@ -58,7 +58,7 @@
 | `confidence_tiered.md` | 0.7 KB | 三星补漏置信度分层与中置信剔除记录 |
 | `significance_test.md` | 0.6 KB | Welch t 检验（p=0.000932） |
 
-## 过程与交接文档（86 项，1.8 MB）
+## 过程与交接文档（88 项，1.8 MB）
 
 | 文件 | 大小 | 用途 |
 |---|---|---|
@@ -94,8 +94,8 @@
 | `QWEN_HANDOFF.md` | 9.1 KB |  |
 | `docs/process_review_d10.md` | 8.5 KB |  |
 | `docs/legacy_materials_notice.md` | 8.3 KB |  |
+| `docs/demo_uptime_log.md` | 8.3 KB |  |
 | `docs/bus/round-01/kimi.md` | 8.2 KB |  |
-| `docs/demo_uptime_log.md` | 8.0 KB |  |
 | `docs/w17_failure_cases.md` | 7.9 KB |  |
 | `docs/joint_review_agenda.md` | 7.8 KB |  |
 | `docs/N1b_downgrade_narrative.md` | 7.0 KB |  |
@@ -110,16 +110,18 @@
 | `docs/N5_qna_factbase.md` | 5.9 KB |  |
 | `docs/human_gold_set_protocol.md` | 5.8 KB |  |
 | `docs/N6_review_risk_list.md` | 5.7 KB |  |
+| `docs/gold_set/JUDGING.md` | 5.1 KB |  |
 | `docs/llm_credential_status.md` | 5.0 KB |  |
 | `docs/b_measure_results.md` | 5.0 KB |  |
 | `docs/DoD_completion_table.md` | 4.9 KB |  |
+| `docs/gold_set/answer_sheet_decision.md` | 4.9 KB |  |
 | `docs/w4_prescreen_estimate.md` | 4.8 KB |  |
 | `docs/gold_set/answer_sheet_kimi.md` | 4.8 KB |  |
 | `docs/SoundInsight决赛备战_现状盘点清单.md` | 4.8 KB |  |
 | `docs/v2_gate_verdict.md` | 4.7 KB |  |
 | `docs/w1_longtext_variants.md` | 4.7 KB |  |
+| `docs/gold_set/answer_sheet.md` | 4.7 KB |  |
 | `docs/evidence_index_exp.md` | 4.4 KB |  |
-| `docs/gold_set/JUDGING.md` | 4.2 KB |  |
 | `docs/e2_erratum.md` | 4.2 KB |  |
 | `docs/PAUSE_SNAPSHOT.md` | 3.7 KB |  |
 | `docs/bus/INDEX.md` | 3.6 KB |  |
@@ -144,7 +146,7 @@
 | `docs/outside_gate_fp.md` | 2.0 KB |  |
 | `docs/w11_data_efficiency.md` | 1.9 KB |  |
 | `docs/bus/TEMPLATE.md` | 1.2 KB |  |
-| `docs/gold_set/human_rulings_kimi.md` | 1.1 KB |  |
+| `docs/gold_set/human_rulings_kimi.md` | 1.2 KB |  |
 | `docs/gold_set/human_rulings_qwen.md` | 0.9 KB |  |
 | `docs/checklist_version.json` | 0.8 KB |  |
 | `docs/year_split_output.txt` | 0.8 KB | 年份分桶脚本输出原文 |
@@ -290,10 +292,10 @@
 | `check_doc_numbers.py` | 57.5 KB | 数字审计 + 模板格式对照脚本 |
 | `scan_repo_hygiene.py` | 19.7 KB |  |
 | `v2_meta_analysis.py` | 19.1 KB |  |
+| `apply_human_rulings.py` | 18.1 KB |  |
 | `build_finals_appendix.py` | 16.1 KB |  |
-| `apply_human_rulings.py` | 15.7 KB |  |
 | `test_audit_checks.py` | 15.5 KB |  |
-| `build_finals_package.py` | 15.2 KB |  |
+| `build_finals_package.py` | 15.3 KB |  |
 | `v2_w4_mine.py` | 13.2 KB |  |
 | `build_finals_docx2.py` | 12.7 KB |  |
 | `build_pdf_v2.py` | 12.4 KB |  |
