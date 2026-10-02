@@ -2,7 +2,7 @@
 
 > **席位可用性**：dsh:可用｜kimi:可用｜qwen:**不可用**（至 2026-10-02 19:49）
 
-> 生成时刻：2026-10-02 18:37:31｜当前 HEAD `bf8e2c8`｜刷新：`python make_bus_index.py`
+> 生成时刻：2026-10-02 19:27:36｜当前 HEAD `f36ec2b`｜刷新：`python make_bus_index.py`
 > 协议见 `docs/bus/README.md`；卡片格式见 `docs/bus/TEMPLATE.md`。
 
 ## round-01
@@ -39,7 +39,7 @@
 
 ## ⚠️ 基线落后提示（文件在变，请以最新 HEAD 复核）
 
-- round-01/dsh.md 基线 `483422d` ≠ 当前 `bf8e2c8`
-- round-01/kimi.md 基线 `483422d` ≠ 当前 `bf8e2c8`
-- round-01/qwen.md 基线 `483422d` ≠ 当前 `bf8e2c8`
+- round-01/dsh.md 基线 `483422d` ≠ 当前 `f36ec2b`
+- round-01/kimi.md 基线 `483422d` ≠ 当前 `f36ec2b`
+- round-01/qwen.md 基线 `483422d` ≠ 当前 `f36ec2b`
 

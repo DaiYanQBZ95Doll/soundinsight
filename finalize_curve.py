@@ -39,7 +39,7 @@ def main() -> None:
         ax.text(x, m + 0.008, f"{m:.3f}", ha="center", fontsize=9)
     ax.set_xlabel("正例数量")
     ax.set_ylabel("验证集 F1@0.5（val_v2）")
-    ax.set_title("学习曲线：正例数量对音质差评识别 F1 的影响")
+    ax.set_title("学习曲线：正例数量对声学相关抱怨识别 F1 的影响")
     ax.set_xlim(0, 1350)
     ax.annotate("所有数据量严格使用独立验证集 val_v2；500 档为 4 次平均",
                 xy=(1257, means[-1]), xytext=(800, means[-1] - 0.045),

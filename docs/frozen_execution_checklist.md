@@ -405,3 +405,5 @@ P0-3（字段恢复，分钟级） → W4（四五星开采：API 复核体量 +
 > 任何新增工作项须升版并注明理由；执行方不自行扩范围。
 
 > **待办（R32 落点，非提交周）**：抽出共享解析模块 `rulings_io.py`，统一答题卡/席位文件的解析（本会话已出现 **5 种**写法：Kimi 内联、决策方横线内数字、块式、逐行、表格行、下划线+数字），现为四处复制实现——违反 R32，须在提交后重构。
+
+> **S5 干净探针（2026-10-02 生成，待人填）**：`answer_sheet_s5_control.md`（50 条只给原文）＋`answer_sheet_s5_treatment.md`（50 条带材料），条目为闸门外**未用过**的 100 条、随机两臂（种子 20261004）。填毕：`python apply_human_rulings.py --from-answer-sheet <卡> --author dsh --csv docs/gold_set/s5_clean_probe.csv`，再用 `python compare_passes.py` 或分组统计出**材料效应**。
