@@ -2,12 +2,12 @@
   "per_stratum": {
     "S1": {
       "labeled": 100,
-      "human_labeled": 94,
+      "human_labeled": 95,
       "human_positive": 3,
-      "human_rate": 0.0319,
+      "human_rate": 0.0316,
       "wilson95": [
-        0.0109,
-        0.0897
+        0.0108,
+        0.0888
       ],
       "llm_agreement_pct": 98.9,
       "kappa": 0.852,
@@ -41,8 +41,8 @@
     }
   },
   "overall": {
-    "pairs": 279,
-    "agreement_pct": 83.5,
-    "kappa": 0.328
+    "pairs": 280,
+    "agreement_pct": 83.6,
+    "kappa": 0.329
   }
 }

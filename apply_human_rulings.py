@@ -419,7 +419,8 @@ def main() -> int:
         if args.from_answer_sheet == "auto":
             cands = [os.path.join(GDIR, f) for f in
                      ("answer_sheet_decision.md", "answer_sheet.md",
-                      "answer_sheet_kimi.md", "answer_sheet_qwen.md")]
+                      "answer_sheet_s1_add100.md", "answer_sheet_kimi.md",
+                      "answer_sheet_qwen.md")]
             path = next((c for c in cands if os.path.isfile(c)), None)
         else:
             path = args.from_answer_sheet

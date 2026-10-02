@@ -125,6 +125,8 @@ OTHER_FILES = [
     "docs/human_gold_set_protocol.md", "make_gold_set.py", "score_gold_set.py",
     "make_gold_set_notes.py", "gold_set_helper.py",
     "docs/gold_set/JUDGING.md", "apply_human_rulings.py",
+    "docs/gold_set/answer_sheet_s1_add100.md", "docs/gold_set/s1_add100.csv",
+    "make_s1_add100.py",
     "docs/gold_set/bias_probe_design.md", "docs/gold_set/bias_probe_sheet.md",
     "make_bias_probe.py", "score_bias_probe.py",
     "docs/gold_set/answer_sheet.md", "docs/gold_set/answer_sheet_kimi.md",
