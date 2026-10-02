@@ -39,6 +39,7 @@ STEPS_FULL = [
     ("包外依赖检查（P9：配置/权重可达/包内结构）", ["check_external_deps.py"]),
     ("推送状态（每日一次，只读）", ["push_daily.py", "--status"]),
     ("刷新三方总线总览（INDEX）", ["make_bus_index.py"]),
+    ("对外称谓一致性（正文 vs 附录）", ["check_scope_wording.py"]),
     ("判定解析单点实现（R32 机制化）", ["check_single_parser.py"]),
     ("共享解析模块自测", ["rulings_io.py", "--self-test"]),
     ("刷新 AI 交接包 manifest", ["make_ai_handoff.py"]),
