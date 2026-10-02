@@ -1,6 +1,6 @@
 # 文件地图（由 make_ai_handoff.py 自动生成，勿手改）
 
-> 生成时间：2026-10-02 17:38；共 509 个条目；体积单位 KB/MB。
+> 生成时间：2026-10-02 17:48；共 510 个条目；体积单位 KB/MB。
 
 ## 提交物（5 项，44.2 MB）
 
@@ -90,7 +90,7 @@
 | `PROJECT_BRIEF_QWEN.md` | 11.6 KB |  |
 | `docs/N_line_handoff_protocol.md` | 11.2 KB |  |
 | `docs/finals_stage.md` | 11.0 KB |  |
-| `docs/demo_uptime_log.md` | 10.7 KB |  |
+| `docs/demo_uptime_log.md` | 10.9 KB |  |
 | `docs/decision_request_v15_and_nline.md` | 10.4 KB |  |
 | `docs/pre_lock_completeness_audit.md` | 10.4 KB |  |
 | `docs/progress_report_current.md` | 10.4 KB |  |
@@ -101,16 +101,17 @@
 | `QWEN_HANDOFF.md` | 9.1 KB |  |
 | `docs/process_review_d10.md` | 8.5 KB |  |
 | `docs/legacy_materials_notice.md` | 8.3 KB |  |
+| `docs/EXECUTION_DISCIPLINE.md` | 8.1 KB |  |
 | `docs/gold_set/human_rulings_dsh.md` | 8.1 KB |  |
 | `docs/w17_failure_cases.md` | 7.9 KB |  |
 | `docs/joint_review_agenda.md` | 7.8 KB |  |
-| `docs/EXECUTION_DISCIPLINE.md` | 7.6 KB |  |
 | `docs/N1b_downgrade_narrative.md` | 7.0 KB |  |
 | `docs/decision_queue.md` | 6.8 KB |  |
 | `docs/N2_narrative_final.md` | 6.6 KB |  |
 | `docs/taxonomy_three_paths.md` | 6.6 KB |  |
 | `docs/external_sources_register.md` | 6.5 KB |  |
 | `docs/N1_narrative_mainline.md` | 6.5 KB |  |
+| `docs/gold_set/JUDGING.md` | 6.4 KB |  |
 | `docs/human_gold_set_protocol.md` | 6.3 KB |  |
 | `docs/work_summary_d7.md` | 6.2 KB |  |
 | `docs/how_to_expand_gains.md` | 6.1 KB |  |
@@ -118,7 +119,6 @@
 | `docs/N5_qna_factbase.md` | 5.9 KB |  |
 | `docs/N6_review_risk_list.md` | 5.7 KB |  |
 | `docs/gold_set/gold_standard_findings.md` | 5.4 KB |  |
-| `docs/gold_set/JUDGING.md` | 5.1 KB |  |
 | `docs/llm_credential_status.md` | 5.0 KB |  |
 | `docs/b_measure_results.md` | 5.0 KB |  |
 | `docs/DoD_completion_table.md` | 4.9 KB |  |
@@ -129,8 +129,8 @@
 | `docs/evidence_index_exp.md` | 4.4 KB |  |
 | `docs/e2_erratum.md` | 4.2 KB |  |
 | `docs/PAUSE_SNAPSHOT.md` | 3.9 KB |  |
-| `docs/repo_hygiene_scan.md` | 3.8 KB |  |
 | `docs/bus/INDEX.md` | 3.7 KB |  |
+| `docs/repo_hygiene_scan.md` | 3.5 KB |  |
 | `docs/dataset_audit.md` | 3.5 KB | 数据集字段考古 |
 | `docs/M8a_submission_precheck.md` | 3.5 KB |  |
 | `docs/N4_target_argument.md` | 3.5 KB |  |
@@ -293,12 +293,12 @@
 | `sample_reviews_100.csv` | 57.9 KB |  |
 | `agent_test_input.csv` | 27.9 KB |  |
 
-## 代码（166 项，0.8 MB）
+## 代码（167 项，0.8 MB）
 
 | 文件 | 大小 | 用途 |
 |---|---|---|
 | `check_doc_numbers.py` | 57.5 KB | 数字审计 + 模板格式对照脚本 |
-| `apply_human_rulings.py` | 21.7 KB |  |
+| `apply_human_rulings.py` | 22.0 KB |  |
 | `scan_repo_hygiene.py` | 19.7 KB |  |
 | `make_gold_set_notes.py` | 19.4 KB |  |
 | `v2_meta_analysis.py` | 19.1 KB |  |
@@ -365,6 +365,7 @@
 | `make_reviewer_brief.py` | 5.0 KB |  |
 | `fix_ppt_threshold.py` | 4.8 KB |  |
 | `make_video_assets.py` | 4.6 KB |  |
+| `compare_passes.py` | 4.5 KB |  |
 | `v2_record_incident.py` | 4.5 KB |  |
 | `make_samples.py` | 4.4 KB |  |
 | `make_bus_index.py` | 4.4 KB |  |

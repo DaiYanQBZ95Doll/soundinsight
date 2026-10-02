@@ -86,3 +86,18 @@ python apply_human_rulings.py --progress                 # 查看进度
 python apply_human_rulings.py --reconcile                # 三方对账
 python score_gold_set.py --sheet assisted                # 出 κ 与一致率（判完足够多之后）
 ```
+
+---
+
+## 六、接收通道（执行方按卡的**性质**分流，避免互相覆盖）
+
+| 你填的卡 | 性质 | 执行方接收命令 | 落到哪里 |
+|---|---|---|---|
+| `answer_sheet.md`（我方主卡，S1/S2/S3） | **第一遍判定**（真值） | `--from-answer-sheet docs/gold_set/answer_sheet.md --author dsh` | 共享表 `assisted_worksheet.csv` + `human_rulings_dsh.md` |
+| `answer_sheet_s1_add100.md`（S4 追加 100） | **新样本** | `--from-answer-sheet docs/gold_set/answer_sheet_s1_add100.md --author dsh --csv docs/gold_set/s1_add100.csv` | `s1_add100.csv` + 同席位文件（S4 并入统计） |
+| `answer_sheet_decision.md`（Kimi 卡，同一批 300） | **第二遍判定**（稳定性检验） | `--from-answer-sheet docs/gold_set/answer_sheet_decision.md --author dsh2` | `human_rulings_dsh2.md`（**不写共享表**） |
+| `bias_probe_sheet.md`（40 条只看原文） | 锚定探针 | `python score_bias_probe.py` | 只出报告，不落判定库 |
+
+**比较工具**：`python compare_passes.py --a csv --b <另一来源>` → 一致率、κ、分歧清单、方向性。
+- 我方卡 vs Kimi 卡 = **你的判定稳定性**（同一批题、不同呈现）；
+- 主卡 vs 探针卡 = **执行方材料的锚定影响**（Kimi 主导分析）。

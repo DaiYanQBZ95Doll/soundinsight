@@ -128,7 +128,7 @@ OTHER_FILES = [
     "docs/gold_set/answer_sheet_s1_add100.md", "docs/gold_set/s1_add100.csv",
     "make_s1_add100.py",
     "docs/gold_set/bias_probe_design.md", "docs/gold_set/bias_probe_sheet.md",
-    "make_bias_probe.py", "score_bias_probe.py",
+    "make_bias_probe.py", "score_bias_probe.py", "compare_passes.py",
     "docs/gold_set/answer_sheet.md", "docs/gold_set/answer_sheet_kimi.md",
     "docs/gold_set/review_notes.md", "docs/gold_set/assisted_worksheet.csv",
     "v2/ai_scope_classification.json", "v2/w4_review_POOL_invalid.jsonl", "w4_model_vs_llm.py",

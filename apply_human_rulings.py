@@ -214,6 +214,7 @@ def import_from_notes(path: str) -> dict:
     空白（`___`）视为未判，不返回。"""
     out = {}
     cur = None
+    ambig = []          # 歧义条目（含两个不同数字）——收集后由调用方报出，不猜
     pat_id = re.compile(r"^#{2,4}\s*(S\d-\d{3})(?:\s*[\u3000 ]\s*G\d{1,3})?\s*$")
     pat_val = re.compile(r"判定（决策方填）\*\*：\s*`?\s*([012?])\s*`?\s*$")
     # Kimi 答题卡的内联形式：`### S2-037　**判定**：1`（也容忍「判定：_」未填）
@@ -388,7 +389,9 @@ def main() -> int:
                     help="从 docs/gold_set/review_notes.md 的填好的判定位导入")
     ap.add_argument("--from-answer-sheet", nargs="?", const="auto",
                     help="接收答题卡（默认自动寻找 answer_sheet*.md；可指定路径）")
-    ap.add_argument("--author", default="dsh", choices=("dsh", "kimi", "qwen"))
+    ap.add_argument("--author", default="dsh",
+                    choices=("dsh", "dsh2", "kimi", "qwen"),
+                    help="dsh=主接收（可写共享 CSV）；dsh2=第二遍判定（只写自己席位）；kimi/qwen=其席位（执行方不代写）")
     ap.add_argument("--progress", action="store_true")
     ap.add_argument("--reconcile", action="store_true")
     ap.add_argument("--dry-run", action="store_true", help="只解析与报告，不写入任何文件")
