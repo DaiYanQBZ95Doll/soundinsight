@@ -1,6 +1,6 @@
 # 文件地图（由 make_ai_handoff.py 自动生成，勿手改）
 
-> 生成时间：2026-10-02 20:18；共 529 个条目；体积单位 KB/MB。
+> 生成时间：2026-10-02 20:31；共 532 个条目；体积单位 KB/MB。
 
 ## 提交物（5 项，44.2 MB）
 
@@ -58,7 +58,7 @@
 | `confidence_tiered.md` | 0.7 KB | 三星补漏置信度分层与中置信剔除记录 |
 | `significance_test.md` | 0.6 KB | Welch t 检验（p=0.000932） |
 
-## 过程与交接文档（102 项，3.0 MB）
+## 过程与交接文档（103 项，3.0 MB）
 
 | 文件 | 大小 | 用途 |
 |---|---|---|
@@ -84,15 +84,15 @@
 | `docs/v2_acceptance_benchmark.md` | 20.4 KB |  |
 | `docs/D13_seal_declaration.md` | 20.1 KB | D13 封包声明（提交技术质检终审） |
 | `docs/final_review_and_execution_plan.md` | 19.9 KB |  |
+| `docs/gold_set/gold_standard_findings.md` | 17.9 KB |  |
 | `docs/overnight_summary.md` | 17.3 KB |  |
 | `docs/bus/round-01/dsh.md` | 16.0 KB |  |
-| `docs/gold_set/gold_standard_findings.md` | 15.7 KB |  |
 | `docs/REVIEWER_BRIEF.md` | 14.8 KB |  |
 | `docs/bus/round-01/qwen.md` | 14.1 KB |  |
 | `docs/reassessment_after_credential.md` | 13.2 KB |  |
 | `docs/file_inventory.md` | 12.8 KB | 项目文件总索引 |
 | `docs/gold_set/human_rulings_dsh.md` | 12.6 KB |  |
-| `docs/demo_uptime_log.md` | 12.2 KB |  |
+| `docs/demo_uptime_log.md` | 12.5 KB |  |
 | `PROJECT_BRIEF_QWEN.md` | 11.6 KB |  |
 | `docs/N_line_handoff_protocol.md` | 11.2 KB |  |
 | `docs/finals_stage.md` | 11.0 KB |  |
@@ -129,8 +129,8 @@
 | `docs/w4_prescreen_estimate.md` | 4.8 KB |  |
 | `docs/SoundInsight决赛备战_现状盘点清单.md` | 4.8 KB |  |
 | `docs/v2_gate_verdict.md` | 4.7 KB |  |
+| `docs/PAUSE_SNAPSHOT.md` | 4.7 KB |  |
 | `docs/w1_longtext_variants.md` | 4.7 KB |  |
-| `docs/PAUSE_SNAPSHOT.md` | 4.4 KB |  |
 | `docs/evidence_index_exp.md` | 4.4 KB |  |
 | `docs/e2_erratum.md` | 4.2 KB |  |
 | `docs/bus/INDEX.md` | 3.6 KB |  |
@@ -160,6 +160,7 @@
 | `docs/inscope_reeval.md` | 1.5 KB |  |
 | `docs/bus/TEMPLATE.md` | 1.2 KB |  |
 | `docs/gold_set/human_rulings_kimi.md` | 1.2 KB |  |
+| `docs/realworld_eval.md` | 1.1 KB |  |
 | `docs/bus/availability.json` | 1.1 KB |  |
 | `docs/gold_set/human_rulings_qwen.md` | 0.9 KB |  |
 | `docs/checklist_version.json` | 0.8 KB |  |
@@ -299,12 +300,12 @@
 | `sample_reviews_100.csv` | 57.9 KB |  |
 | `agent_test_input.csv` | 27.9 KB |  |
 
-## 代码（173 项，0.9 MB）
+## 代码（174 项，0.9 MB）
 
 | 文件 | 大小 | 用途 |
 |---|---|---|
 | `check_doc_numbers.py` | 57.5 KB | 数字审计 + 模板格式对照脚本 |
-| `build_finals_appendix.py` | 20.3 KB |  |
+| `build_finals_appendix.py` | 21.9 KB |  |
 | `scan_repo_hygiene.py` | 19.7 KB |  |
 | `v2_meta_analysis.py` | 19.1 KB |  |
 | `make_gold_set_notes.py` | 18.8 KB |  |
@@ -335,17 +336,18 @@
 | `soundinsight_agent.py` | 8.1 KB | 一键洞察 Agent（md/excel、zh/en、非英文跳过） |
 | `pack_final.py` | 7.9 KB | 提交包打包与四项自检 |
 | `train_sound_model.py` | 7.8 KB |  |
+| `make_pause_snapshot.py` | 7.8 KB |  |
 | `v2_w5_final.py` | 7.7 KB |  |
 | `make_faststart.py` | 7.6 KB |  |
 | `md_to_pdf.py` | 7.6 KB | 主文档 Markdown → PDF（内嵌中文字体） |
 | `scope_classify.py` | 7.5 KB |  |
-| `make_pause_snapshot.py` | 7.4 KB |  |
 | `w13_keyword_miss_rate.py` | 7.4 KB |  |
 | `v2_w5_cv.py` | 7.4 KB |  |
 | `v2_gate_outside_probe.py` | 7.4 KB |  |
 | `same_basis_compare.py` | 7.4 KB |  |
 | `v2_w4_prescreen.py` | 7.3 KB |  |
 | `inscope_reeval.py` | 7.2 KB |  |
+| `realworld_eval.py` | 7.1 KB |  |
 | `make_gold_set.py` | 7.0 KB |  |
 | `v2_w6_split.py` | 7.0 KB |  |
 | `learning_curve.py` | 6.8 KB |  |
@@ -533,7 +535,7 @@
 | `multi_label_model/` | 256.1 MB | 冻结的多标签归因模型权重（约 256MB），不入 git |
 | `sound_model/` | 256.1 MB | 冻结的二分类模型权重（约 256MB），不入 git |
 
-## 其他（73 项，50.7 MB）
+## 其他（74 项，50.7 MB）
 
 | 文件 | 大小 | 用途 |
 |---|---|---|
@@ -546,10 +548,11 @@
 | `v2/w4_review.jsonl` | 96.8 KB |  |
 | `v2/gate_outside_review.jsonl` | 86.8 KB |  |
 | `v2/s1_add100_notes.jsonl` | 53.5 KB |  |
+| `更新世界的锋芒_SoundInsight_决赛入围定稿作品.docx` | 39.6 KB |  |
 | `v2/gold_set_key.json` | 39.3 KB |  |
-| `更新世界的锋芒_SoundInsight_决赛入围定稿作品.docx` | 38.9 KB |  |
 | `v2/cross_model_review.jsonl` | 35.4 KB |  |
 | `v2/s5_notes.jsonl` | 31.2 KB |  |
+| `v2/realworld_eval.json` | 31.0 KB |  |
 | `v2/w4_estimate.json` | 9.4 KB |  |
 | `v2/w14_w15_w16_report.md` | 7.9 KB |  |
 | `v2/m0_switch_report.json` | 7.0 KB |  |
