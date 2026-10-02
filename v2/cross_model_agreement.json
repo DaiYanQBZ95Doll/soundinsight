@@ -1,0 +1,11 @@
+{
+  "n": 300,
+  "comparable": 300,
+  "agreement_pct": 95.3,
+  "kappa": 0.845,
+  "models": {
+    "A": "deepseek-chat（标注方）",
+    "B": "qwen3.7-plus"
+  },
+  "caveat": "跨模型一致≠人类真值；材料须继续标注「未经人工校准」"
+}

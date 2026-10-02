@@ -1,0 +1,300 @@
+{"id": "S1-040", "sound_negative": 0, "classes": [], "why": "Review is about a broken USB3 card, not headphone sound."}
+{"id": "S1-037", "sound_negative": 0, "classes": [], "why": "No sound quality complaints; only mentions comfort and feel."}
+{"id": "S2-053", "sound_negative": 0, "classes": [], "why": "Review is about a GoPro pole, not headphone sound."}
+{"id": "S3-071", "sound_negative": 1, "classes": ["volume", "noise"], "why": "Left earbud is quiet; sound is staticky and flat."}
+{"id": "S2-037", "sound_negative": 0, "classes": [], "why": "Review discusses a cable, not headphone sound quality."}
+{"id": "S3-076", "sound_negative": 0, "classes": [], "why": "Complains about broken hardware, not sound quality."}
+{"id": "S1-020", "sound_negative": 0, "classes": [], "why": "Review is about an antenna, not headphone sound quality."}
+{"id": "S1-070", "sound_negative": 0, "classes": [], "why": "Review only mentions installation, no sound complaints."}
+{"id": "S2-081", "sound_negative": 0, "classes": [], "why": "Positive review; no complaints about sound quality."}
+{"id": "S2-044", "sound_negative": 0, "classes": [], "why": "Review discusses speaker stand stability and height, not sound."}
+{"id": "S2-093", "sound_negative": 0, "classes": [], "why": "Review discusses device fans, not headphone sound quality."}
+{"id": "S2-095", "sound_negative": 1, "classes": ["clarity"], "why": "States the audio is not clear and sounds muffled."}
+{"id": "S2-026", "sound_negative": 0, "classes": [], "why": "Review is about a camera, not headphone sound quality."}
+{"id": "S3-095", "sound_negative": 1, "classes": ["noise"], "why": "Complains about a high-pitch whine."}
+{"id": "S3-067", "sound_negative": 0, "classes": [], "why": "Complains about build quality and missing parts, not sound."}
+{"id": "S2-068", "sound_negative": 0, "classes": [], "why": "Review praises comfort and mic clarity; no negative sound complaints."}
+{"id": "S1-002", "sound_negative": 0, "classes": [], "why": "No sound quality complaints; review is about Wi-Fi."}
+{"id": "S1-084", "sound_negative": 0, "classes": [], "why": "Positive review; no sound quality complaints mentioned."}
+{"id": "S2-058", "sound_negative": 0, "classes": [], "why": "Review states sound quality is fine, no complaints."}
+{"id": "S2-087", "sound_negative": 0, "classes": [], "why": "Not about headphones; praises audio quality of cable."}
+{"id": "S2-059", "sound_negative": 0, "classes": [], "why": "Positive review about a speaker, not headphones."}
+{"id": "S3-011", "sound_negative": 1, "classes": ["volume", "noise"], "why": "Complains about insufficient volume and poor noise blocking."}
+{"id": "S1-009", "sound_negative": 0, "classes": [], "why": "Review discusses a memory card's loading speed, not headphones."}
+{"id": "S3-045", "sound_negative": 1, "classes": ["clarity", "volume"], "why": "States the sound is not clear and feels far away."}
+{"id": "S1-079", "sound_negative": 0, "classes": [], "why": "Review mentions gifting, not sound quality."}
+{"id": "S2-090", "sound_negative": 0, "classes": [], "why": "Review praises treble and clarity; no negative sound comments."}
+{"id": "S1-073", "sound_negative": 0, "classes": [], "why": "Review is positive and does not mention sound quality."}
+{"id": "S1-048", "sound_negative": 0, "classes": [], "why": "Review only mentions fit and color, no sound issues."}
+{"id": "S3-055", "sound_negative": 0, "classes": [], "why": "Review is about speakers, not headphones."}
+{"id": "S2-021", "sound_negative": 0, "classes": [], "why": "Review is about a computer fan, not headphone sound quality."}
+{"id": "S3-089", "sound_negative": 0, "classes": [], "why": "Review is about a NAS, not headphone sound quality."}
+{"id": "S2-013", "sound_negative": 0, "classes": [], "why": "Review is about a camera, not headphones."}
+{"id": "S3-097", "sound_negative": 0, "classes": [], "why": "No mention of headphones or sound quality."}
+{"id": "S1-091", "sound_negative": 0, "classes": [], "why": "Review is about a keyboard cover, not headphones."}
+{"id": "S1-046", "sound_negative": 1, "classes": ["clarity", "noise"], "why": "Complains about poor music quality and ineffective noise canceling."}
+{"id": "S3-093", "sound_negative": 0, "classes": [], "why": "Review mentions battery monitoring, not sound quality."}
+{"id": "S1-065", "sound_negative": 0, "classes": [], "why": "Review is about a power strip, not headphones."}
+{"id": "S2-078", "sound_negative": 0, "classes": [], "why": "Review discusses a smartwatch, not headphone sound quality."}
+{"id": "S3-004", "sound_negative": 0, "classes": [], "why": "Review is about a tablet case, not headphones."}
+{"id": "S2-092", "sound_negative": 0, "classes": [], "why": "No complaints about sound quality are mentioned."}
+{"id": "S2-055", "sound_negative": 0, "classes": [], "why": "Review is about a laptop, not headphone sound quality."}
+{"id": "S2-084", "sound_negative": 0, "classes": [], "why": "Complains about computer fan noise, not headphone sound."}
+{"id": "S1-005", "sound_negative": 0, "classes": [], "why": "The review is positive and contains no sound quality complaints."}
+{"id": "S3-099", "sound_negative": 0, "classes": [], "why": "Review praises TV sound, no headphone complaints."}
+{"id": "S1-034", "sound_negative": 0, "classes": [], "why": "No sound quality complaints are mentioned in this review."}
+{"id": "S1-064", "sound_negative": 0, "classes": [], "why": "Review complains about case fabric attracting lint, not sound."}
+{"id": "S1-031", "sound_negative": 0, "classes": [], "why": "No sound quality complaints are mentioned."}
+{"id": "S2-063", "sound_negative": 0, "classes": [], "why": "Review is about a telescope bag, not headphones."}
+{"id": "S2-011", "sound_negative": 0, "classes": [], "why": "Review is about a tablet case, not headphone sound quality."}
+{"id": "S3-034", "sound_negative": 0, "classes": [], "why": "Product is a smart speaker, not headphones."}
+{"id": "S1-026", "sound_negative": 0, "classes": [], "why": "Review is about a bag, not headphone sound."}
+{"id": "S1-074", "sound_negative": 0, "classes": [], "why": "No sound quality complaints; review praises a remote."}
+{"id": "S1-055", "sound_negative": 0, "classes": [], "why": "The review is positive and mentions no sound issues."}
+{"id": "S2-043", "sound_negative": 0, "classes": [], "why": "Refers to clock display clarity, not headphone sound quality."}
+{"id": "S2-097", "sound_negative": 0, "classes": [], "why": "Reviewer praises the sound as exceptional, no complaints."}
+{"id": "S1-097", "sound_negative": 0, "classes": [], "why": "Review praises a replacement cable, no sound complaints."}
+{"id": "S3-054", "sound_negative": 0, "classes": [], "why": "Review discusses a camera system, not headphone sound quality."}
+{"id": "S1-063", "sound_negative": 0, "classes": [], "why": "Review is about a USB fan, not headphones."}
+{"id": "S1-058", "sound_negative": 0, "classes": [], "why": "No mention of headphones or sound quality."}
+{"id": "S1-053", "sound_negative": 0, "classes": [], "why": "Review is about fencing, not headphone sound quality."}
+{"id": "S2-015", "sound_negative": 0, "classes": [], "why": "No sound complaints; volume is mentioned regarding remote buttons."}
+{"id": "S3-031", "sound_negative": 1, "classes": ["noise"], "why": "Complains about unwanted interference noise sounding like a busy signal."}
+{"id": "S1-098", "sound_negative": 0, "classes": [], "why": "Review is about a TV mount, not headphone sound quality."}
+{"id": "S1-050", "sound_negative": 0, "classes": [], "why": "No mention of headphones or sound quality."}
+{"id": "S1-036", "sound_negative": 0, "classes": [], "why": "Complains about lights, not sound quality."}
+{"id": "S1-015", "sound_negative": 0, "classes": [], "why": "Review is about a VCR converter, not headphone sound."}
+{"id": "S1-051", "sound_negative": 0, "classes": [], "why": "Review is about a Kindle, not headphones or sound."}
+{"id": "S3-053", "sound_negative": 1, "classes": ["volume"], "why": "Complains the amplifier's audio output volume is very low."}
+{"id": "S3-023", "sound_negative": 1, "classes": [], "why": "Complains about general sound quality without mentioning a particular aspect."}
+{"id": "S2-077", "sound_negative": 0, "classes": [], "why": "Review is positive; no sound quality complaints."}
+{"id": "S3-001", "sound_negative": 0, "classes": [], "why": "Review is about a Kindle cover, not audio."}
+{"id": "S2-036", "sound_negative": 0, "classes": [], "why": "Review discusses an HDMI extender, not headphone sound quality."}
+{"id": "S3-008", "sound_negative": 1, "classes": ["bass"], "why": "States the sound is now flat, lacking previous bass."}
+{"id": "S3-009", "sound_negative": 0, "classes": [], "why": "Review is about a camera, not headphones."}
+{"id": "S3-041", "sound_negative": 1, "classes": ["volume", "noise"], "why": "Complains about volume imbalance and static noise."}
+{"id": "S3-002", "sound_negative": 0, "classes": [], "why": "Review is about a floating wrist strap, not headphones."}
+{"id": "S1-061", "sound_negative": 0, "classes": [], "why": "Review complains about scratched screens and instructions, not sound."}
+{"id": "S2-007", "sound_negative": 0, "classes": [], "why": "Praises clear voice and no static; complains about hardware and mic."}
+{"id": "S2-091", "sound_negative": 0, "classes": [], "why": "Review discusses a security DVR, not headphone sound quality."}
+{"id": "S1-075", "sound_negative": 0, "classes": [], "why": "The review is about a router, not headphones."}
+{"id": "S1-066", "sound_negative": 0, "classes": [], "why": "The review is positive and mentions no sound quality complaints."}
+{"id": "S1-033", "sound_negative": 0, "classes": [], "why": "Review discusses cables and charging, not sound quality."}
+{"id": "S2-034", "sound_negative": 0, "classes": [], "why": "Review is about a camera lens filter, not headphones."}
+{"id": "S3-039", "sound_negative": 0, "classes": [], "why": "Review is about a blue light screen, not headphones."}
+{"id": "S1-012", "sound_negative": 0, "classes": [], "why": "Review is about a webcam, not headphones or sound quality."}
+{"id": "S2-035", "sound_negative": 0, "classes": [], "why": "Review is about a video adapter, not headphone sound quality."}
+{"id": "S1-100", "sound_negative": 0, "classes": [], "why": "No sound complaints; the review is about a TV remote."}
+{"id": "S2-032", "sound_negative": 0, "classes": [], "why": "No negative sound complaints; volume is praised."}
+{"id": "S3-016", "sound_negative": 1, "classes": ["clarity"], "why": "Complains sound quality is poor, no better than cell phone."}
+{"id": "S3-042", "sound_negative": 0, "classes": [], "why": "Review is about a storage device, not headphones."}
+{"id": "S2-064", "sound_negative": 0, "classes": [], "why": "Complains about missing hardware switch, not sound quality."}
+{"id": "S3-036", "sound_negative": 1, "classes": ["volume"], "why": "The reviewer complains the sound was not very loud."}
+{"id": "S2-004", "sound_negative": 0, "classes": [], "why": "Review is about a power supply, not headphones."}
+{"id": "S1-042", "sound_negative": 0, "classes": [], "why": "Review is about a PC case, not headphones."}
+{"id": "S1-001", "sound_negative": 0, "classes": [], "why": "Review is about an iPad case, not headphones."}
+{"id": "S3-059", "sound_negative": 1, "classes": ["noise"], "why": "Reviewer complains about static noise from the left earbud."}
+{"id": "S2-031", "sound_negative": 0, "classes": [], "why": "Review discusses a hard drive, not headphone sound quality."}
+{"id": "S2-050", "sound_negative": 0, "classes": [], "why": "Review discusses screen clarity, not headphone sound quality."}
+{"id": "S3-072", "sound_negative": 0, "classes": [], "why": "No mention of headphones or sound quality."}
+{"id": "S2-071", "sound_negative": 0, "classes": [], "why": "Review is about a keyboard, not headphones."}
+{"id": "S1-028", "sound_negative": 0, "classes": [], "why": "Review mentions a protection plan, not sound quality."}
+{"id": "S1-056", "sound_negative": 0, "classes": [], "why": "Review is positive and mentions no sound quality issues."}
+{"id": "S3-035", "sound_negative": 0, "classes": [], "why": "Review is about an HDMI cable, not headphone sound quality."}
+{"id": "S1-094", "sound_negative": 0, "classes": [], "why": "Product is a photography C stand, not headphones; no sound."}
+{"id": "S2-070", "sound_negative": 0, "classes": [], "why": "Review is about camera lenses, not headphone sound quality."}
+{"id": "S3-024", "sound_negative": 1, "classes": ["clarity"], "why": "Reviewer states the sound is tinny and mediocre."}
+{"id": "S2-029", "sound_negative": 0, "classes": [], "why": "Sound is clear; volume and static issues are blamed on phone/interference."}
+{"id": "S3-020", "sound_negative": 0, "classes": [], "why": "States sound is not terrible; only complains about limited distance."}
+{"id": "S2-100", "sound_negative": 0, "classes": [], "why": "Review discusses a telescope, not headphone sound quality."}
+{"id": "S3-081", "sound_negative": 1, "classes": ["noise"], "why": "Complains about rattling noise from broken pieces inside."}
+{"id": "S1-080", "sound_negative": 0, "classes": [], "why": "No complaints about sound quality; the review is positive."}
+{"id": "S1-023", "sound_negative": 0, "classes": [], "why": "No sound quality complaints; only a feature request."}
+{"id": "S3-064", "sound_negative": 0, "classes": [], "why": "Review is about a photography backdrop, not headphones."}
+{"id": "S1-078", "sound_negative": 0, "classes": [], "why": "Review is about a TV antenna, not headphones."}
+{"id": "S2-016", "sound_negative": 0, "classes": [], "why": "Review is about an iPad case, not headphone sound quality."}
+{"id": "S2-096", "sound_negative": 1, "classes": ["volume"], "why": "Volume is too low to hear on a plane."}
+{"id": "S3-098", "sound_negative": 0, "classes": [], "why": "Review praises sound quality, no negative sound complaints mentioned."}
+{"id": "S2-041", "sound_negative": 0, "classes": [], "why": "The review is about binoculars, not headphones."}
+{"id": "S2-069", "sound_negative": 0, "classes": [], "why": "Review discusses a streaming stick, not headphone sound quality."}
+{"id": "S1-090", "sound_negative": 0, "classes": [], "why": "Review is about a camera bag, not headphones."}
+{"id": "S3-040", "sound_negative": 0, "classes": [], "why": "Review is about a storage device, not headphones."}
+{"id": "S2-054", "sound_negative": 1, "classes": ["bass", "clarity", "treble"], "why": "Complains about lacking bass, clarity, and treble."}
+{"id": "S3-026", "sound_negative": 0, "classes": [], "why": "Review is about a home security system, not headphones."}
+{"id": "S3-007", "sound_negative": 1, "classes": ["clarity"], "why": "Reviewer complains about a tinny sound indicating poor clarity."}
+{"id": "S2-066", "sound_negative": 0, "classes": [], "why": "Review is about a keyboard and mouse, not headphones."}
+{"id": "S3-056", "sound_negative": 1, "classes": ["bass", "volume"], "why": "Complains about excessive bass and low volume in other rooms."}
+{"id": "S1-021", "sound_negative": 0, "classes": [], "why": "No mention of headphones or sound quality."}
+{"id": "S3-010", "sound_negative": 1, "classes": ["bass"], "why": "Complains about a severe lack of bass."}
+{"id": "S1-057", "sound_negative": 0, "classes": [], "why": "No complaints about sound quality are mentioned."}
+{"id": "S1-008", "sound_negative": 0, "classes": [], "why": "Review is about a smart cover, not headphone sound quality."}
+{"id": "S3-080", "sound_negative": 0, "classes": [], "why": "Review is about a network system, not headphone sound."}
+{"id": "S3-068", "sound_negative": 1, "classes": ["clarity"], "why": "Reviewer explicitly states the sound quality was poor."}
+{"id": "S1-044", "sound_negative": 0, "classes": [], "why": "Review is about SSDs, not headphone sound quality."}
+{"id": "S2-002", "sound_negative": 0, "classes": [], "why": "Review is about a keyboard case, not headphones."}
+{"id": "S2-025", "sound_negative": 0, "classes": [], "why": "No sound complaints; praises utility for motorcycle instruments."}
+{"id": "S2-023", "sound_negative": 0, "classes": [], "why": "Review discusses binoculars, not headphones or sound quality."}
+{"id": "S1-099", "sound_negative": 0, "classes": [], "why": "Review discusses voice assistant features, not sound quality."}
+{"id": "S2-028", "sound_negative": 0, "classes": [], "why": "Review is about a projector, not headphones."}
+{"id": "S2-051", "sound_negative": 0, "classes": [], "why": "Review is about a camera lens, not headphones."}
+{"id": "S3-044", "sound_negative": 1, "classes": ["noise"], "why": "The audio crackles, which is a type of unwanted noise."}
+{"id": "S1-081", "sound_negative": 0, "classes": [], "why": "Review discusses return issues, not sound quality."}
+{"id": "S3-029", "sound_negative": 1, "classes": ["volume"], "why": "The reviewer explicitly states the sound volume stinks."}
+{"id": "S3-014", "sound_negative": 0, "classes": [], "why": "Review is about a router, not headphone sound quality."}
+{"id": "S2-008", "sound_negative": 0, "classes": [], "why": "Not about headphones; no complaints about sound quality."}
+{"id": "S3-082", "sound_negative": 0, "classes": [], "why": "The review discusses laptop hardware and warranty, not sound."}
+{"id": "S3-085", "sound_negative": 0, "classes": [], "why": "Review is about a router, not headphones."}
+{"id": "S1-068", "sound_negative": 0, "classes": [], "why": "Review discusses a computer case, not headphone sound quality."}
+{"id": "S1-049", "sound_negative": 0, "classes": [], "why": "No sound quality complaints; the review is entirely positive."}
+{"id": "S3-037", "sound_negative": 1, "classes": ["noise", "clarity"], "why": "Complains about static and unclean sound."}
+{"id": "S2-098", "sound_negative": 0, "classes": [], "why": "Review is about a camera accessory, not headphones."}
+{"id": "S1-043", "sound_negative": 0, "classes": [], "why": "Review is about a clicker, not headphone sound quality."}
+{"id": "S3-078", "sound_negative": 0, "classes": [], "why": "Audio cuts out due to hardware failure, not sound quality."}
+{"id": "S3-094", "sound_negative": 0, "classes": [], "why": "No complaints; praises sound control, noise cancellation, and safe volume."}
+{"id": "S3-025", "sound_negative": 0, "classes": [], "why": "Review is about a laptop cooling pad, not headphones."}
+{"id": "S2-076", "sound_negative": 0, "classes": [], "why": "Review mentions screen and features, not sound quality."}
+{"id": "S2-065", "sound_negative": 0, "classes": [], "why": "Review is about a tablet, not headphone sound quality."}
+{"id": "S1-083", "sound_negative": 0, "classes": [], "why": "Review complains about device color, not sound quality."}
+{"id": "S2-082", "sound_negative": 0, "classes": [], "why": "Positive review praising noise cancellation and volume; no complaints."}
+{"id": "S1-092", "sound_negative": 0, "classes": [], "why": "Product did not work; no sound quality issues mentioned."}
+{"id": "S3-032", "sound_negative": 0, "classes": [], "why": "Review is about a power strip, not headphones."}
+{"id": "S1-087", "sound_negative": 0, "classes": [], "why": "Complains about noise cancelling feature and controls, not sound quality."}
+{"id": "S2-085", "sound_negative": 0, "classes": [], "why": "No mention of headphones or sound quality in this review."}
+{"id": "S2-022", "sound_negative": 0, "classes": [], "why": "Review is about a PC CPU cooler, not headphones."}
+{"id": "S2-089", "sound_negative": 0, "classes": [], "why": "Review is about binoculars, not headphones or sound quality."}
+{"id": "S3-043", "sound_negative": 1, "classes": ["bass", "clarity"], "why": "Complains about poor bass response and thin, unclear sound."}
+{"id": "S2-047", "sound_negative": 0, "classes": [], "why": "No sound quality complaints; praises lack of static."}
+{"id": "S3-092", "sound_negative": 1, "classes": ["noise"], "why": "Complains about noisy aux out jack and alternator whine."}
+{"id": "S1-016", "sound_negative": 0, "classes": [], "why": "Complains about hardware failure, not sound quality."}
+{"id": "S3-047", "sound_negative": 0, "classes": [], "why": "Review is about a PoE switch, not headphones."}
+{"id": "S3-061", "sound_negative": 0, "classes": [], "why": "Review is about a digital photo frame, not headphones."}
+{"id": "S3-046", "sound_negative": 0, "classes": [], "why": "Review is about a cable, not headphone sound."}
+{"id": "S2-019", "sound_negative": 0, "classes": [], "why": "Review is about a power strip, not headphones."}
+{"id": "S1-096", "sound_negative": 0, "classes": [], "why": "Review is about a phone case, not sound quality."}
+{"id": "S3-060", "sound_negative": 0, "classes": [], "why": "Discusses signal reception, not sound quality."}
+{"id": "S2-038", "sound_negative": 0, "classes": [], "why": "Review is about an air blower, not headphones."}
+{"id": "S2-086", "sound_negative": 0, "classes": [], "why": "Review is about a travel adapter, not headphones."}
+{"id": "S3-018", "sound_negative": 0, "classes": [], "why": "No complaints about sound quality are mentioned."}
+{"id": "S3-012", "sound_negative": 0, "classes": [], "why": "Review is about a monocular, not headphone sound quality."}
+{"id": "S3-003", "sound_negative": 1, "classes": ["clarity"], "why": "Complains sound quality is not the best and cuts out."}
+{"id": "S3-096", "sound_negative": 0, "classes": [], "why": "Review complains about Bluetooth connectivity issues, not sound quality."}
+{"id": "S2-020", "sound_negative": 0, "classes": [], "why": "No headphone complaints; praises TV sound."}
+{"id": "S2-003", "sound_negative": 0, "classes": [], "why": "No mention of headphones or sound quality in this laptop review."}
+{"id": "S3-048", "sound_negative": 0, "classes": [], "why": "Review discusses a broken iPad case, not headphone sound."}
+{"id": "S2-060", "sound_negative": 0, "classes": [], "why": "No sound complaints; reviewer is overall satisfied."}
+{"id": "S3-091", "sound_negative": 0, "classes": [], "why": "Review is about a tablet, not headphones."}
+{"id": "S1-069", "sound_negative": 0, "classes": [], "why": "The review is positive and contains no sound quality complaints."}
+{"id": "S2-042", "sound_negative": 0, "classes": [], "why": "No mention of headphones or sound quality."}
+{"id": "S3-083", "sound_negative": 0, "classes": [], "why": "Mentions a cracked screen, not headphone sound quality."}
+{"id": "S2-049", "sound_negative": 0, "classes": [], "why": "Praises noise isolation and complains about fit, not sound."}
+{"id": "S2-056", "sound_negative": 0, "classes": [], "why": "Review is about a ukulele, not headphones, and is positive."}
+{"id": "S1-007", "sound_negative": 0, "classes": [], "why": "Review is about a voltage converter, not headphones."}
+{"id": "S1-071", "sound_negative": 0, "classes": [], "why": "No headphone sound quality complaints are mentioned."}
+{"id": "S3-063", "sound_negative": 1, "classes": ["noise"], "why": "User reports a lot of static noise during audio playback."}
+{"id": "S3-022", "sound_negative": 1, "classes": ["clarity"], "why": "Reviewer explicitly complains about the sound quality."}
+{"id": "S1-014", "sound_negative": 0, "classes": [], "why": "Review is about a hard drive, not headphones."}
+{"id": "S2-046", "sound_negative": 0, "classes": [], "why": "Review is about a tablet sleeve, not headphones."}
+{"id": "S2-048", "sound_negative": 0, "classes": [], "why": "Review is about a camera lens filter, not headphones."}
+{"id": "S1-062", "sound_negative": 0, "classes": [], "why": "Review is about a smart door lock, not headphones."}
+{"id": "S1-047", "sound_negative": 0, "classes": [], "why": "Review is about a Kindle charger, not sound quality."}
+{"id": "S3-086", "sound_negative": 1, "classes": ["volume", "clarity"], "why": "Complains about low volume and tinny sound quality."}
+{"id": "S1-030", "sound_negative": 0, "classes": [], "why": "Review discusses fit and installation, not sound quality."}
+{"id": "S2-083", "sound_negative": 0, "classes": [], "why": "Review is about a TV antenna, not headphones."}
+{"id": "S2-030", "sound_negative": 0, "classes": [], "why": "Review is for walkie-talkies, not headphones, with no sound complaints."}
+{"id": "S3-017", "sound_negative": 1, "classes": ["noise"], "why": "Staticky sound is a direct complaint about audio noise."}
+{"id": "S2-099", "sound_negative": 0, "classes": [], "why": "Review is about a streaming device, not headphone sound quality."}
+{"id": "S3-050", "sound_negative": 0, "classes": [], "why": "Review is about a microscope, not headphone sound quality."}
+{"id": "S3-077", "sound_negative": 1, "classes": ["volume"], "why": "The reviewer states the sound is too quiet to hear."}
+{"id": "S3-065", "sound_negative": 1, "classes": ["treble", "noise", "bass"], "why": "Speaker lacks treble, has loud noise, and heavy bass."}
+{"id": "S2-033", "sound_negative": 0, "classes": [], "why": "No sound complaints; review praises speaker clarity and volume."}
+{"id": "S3-057", "sound_negative": 0, "classes": [], "why": "Review is about USB-C cables, not headphone sound."}
+{"id": "S2-039", "sound_negative": 0, "classes": [], "why": "Review discusses physical accessories, not sound quality."}
+{"id": "S2-052", "sound_negative": 0, "classes": [], "why": "Review is about a TV, not headphones, with no sound complaints."}
+{"id": "S1-019", "sound_negative": 0, "classes": [], "why": "No sound complaints; only mentions comfort and compatibility."}
+{"id": "S1-025", "sound_negative": 0, "classes": [], "why": "Review mentions heat transfer, not sound quality."}
+{"id": "S2-005", "sound_negative": 0, "classes": [], "why": "Review is about an SDR device, not headphone sound quality."}
+{"id": "S2-067", "sound_negative": 0, "classes": [], "why": "User praises sound quality; only complains about display brightness."}
+{"id": "S2-079", "sound_negative": 0, "classes": [], "why": "Review is about a projector, not headphones."}
+{"id": "S2-061", "sound_negative": 0, "classes": [], "why": "Review discusses a keyboard and mouse, not headphones."}
+{"id": "S2-062", "sound_negative": 0, "classes": [], "why": "No sound complaints; review focuses on cable durability and length."}
+{"id": "S2-010", "sound_negative": 0, "classes": [], "why": "No complaints about sound quality, only fit, battery, and pairing."}
+{"id": "S1-024", "sound_negative": 0, "classes": [], "why": "No sound complaints; mentions size, color, and build quality."}
+{"id": "S2-074", "sound_negative": 0, "classes": [], "why": "No sound quality complaints; reviewer states the product works great."}
+{"id": "S1-067", "sound_negative": 0, "classes": [], "why": "Review discusses a USB flash drive, not headphones."}
+{"id": "S2-045", "sound_negative": 0, "classes": [], "why": "Review is about a camera lens, not headphones."}
+{"id": "S3-070", "sound_negative": 0, "classes": [], "why": "Review is about a phone stand, not sound quality."}
+{"id": "S1-085", "sound_negative": 0, "classes": [], "why": "No sound quality complaints are mentioned in this positive review."}
+{"id": "S2-057", "sound_negative": 0, "classes": [], "why": "Review is about computer fans, not headphones."}
+{"id": "S2-073", "sound_negative": 0, "classes": [], "why": "Review is about a computer mouse, not headphones."}
+{"id": "S3-051", "sound_negative": 1, "classes": ["clarity"], "why": "The review explicitly states the sound is unclear."}
+{"id": "S1-082", "sound_negative": 0, "classes": [], "why": "No sound quality complaints are mentioned in this review."}
+{"id": "S3-019", "sound_negative": 1, "classes": ["treble", "clarity", "noise"], "why": "Mentions shrill treble, muffled clarity, and distorted noise."}
+{"id": "S2-014", "sound_negative": 0, "classes": [], "why": "Review is about a smartwatch, not headphones."}
+{"id": "S3-006", "sound_negative": 0, "classes": [], "why": "Review is about a photography lighting kit, not headphones."}
+{"id": "S2-018", "sound_negative": 0, "classes": [], "why": "Mentions battery, performance, and build quality, not sound."}
+{"id": "S1-035", "sound_negative": 0, "classes": [], "why": "Complains about poor build quality, not sound quality."}
+{"id": "S2-006", "sound_negative": 0, "classes": [], "why": "Review discusses metal plates, not headphone sound quality."}
+{"id": "S3-075", "sound_negative": 1, "classes": ["clarity"], "why": "Review explicitly states the sound quality is bad."}
+{"id": "S1-022", "sound_negative": 0, "classes": [], "why": "Review is positive and does not complain about sound quality."}
+{"id": "S2-017", "sound_negative": 0, "classes": [], "why": "Review is about a flash drive, not headphones."}
+{"id": "S3-028", "sound_negative": 0, "classes": [], "why": "Review is about a charger, not headphones or sound."}
+{"id": "S2-027", "sound_negative": 0, "classes": [], "why": "Review is about a camera lens, not headphones."}
+{"id": "S2-075", "sound_negative": 1, "classes": ["volume"], "why": "Reviewer says the volume is a bit low."}
+{"id": "S3-005", "sound_negative": 0, "classes": [], "why": "Review is about a charging cable, not headphones."}
+{"id": "S3-100", "sound_negative": 0, "classes": [], "why": "No mention of headphones or sound quality."}
+{"id": "S1-006", "sound_negative": 0, "classes": [], "why": "Review discusses a projector's image quality, not headphone sound."}
+{"id": "S1-039", "sound_negative": 1, "classes": ["noise", "volume"], "why": "Cites terrible noise cancellation and excessive sound leakage volume."}
+{"id": "S1-013", "sound_negative": 0, "classes": [], "why": "Review discusses a GPS mount, not headphone sound quality."}
+{"id": "S3-030", "sound_negative": 0, "classes": [], "why": "Review discusses case sturdiness and value, not sound."}
+{"id": "S1-060", "sound_negative": 0, "classes": [], "why": "Review is about a tablet case, not headphone sound quality."}
+{"id": "S3-069", "sound_negative": 1, "classes": ["noise"], "why": "User complains about too much static noise in the audio."}
+{"id": "S1-072", "sound_negative": 0, "classes": [], "why": "Review is about a bag, not headphone sound quality."}
+{"id": "S1-093", "sound_negative": 0, "classes": [], "why": "Review is about a bag, not headphones or sound."}
+{"id": "S1-095", "sound_negative": 0, "classes": [], "why": "Review is about a cable, not headphone sound quality."}
+{"id": "S2-009", "sound_negative": 0, "classes": [], "why": "Review is about drone camera filters, not headphones."}
+{"id": "S2-072", "sound_negative": 0, "classes": [], "why": "No complaints about sound quality; praises noise isolation."}
+{"id": "S2-080", "sound_negative": 0, "classes": [], "why": "No complaints; bass is mentioned positively."}
+{"id": "S3-027", "sound_negative": 1, "classes": ["clarity"], "why": "Says it sounds like garbage with really poor sound quality."}
+{"id": "S3-084", "sound_negative": 1, "classes": ["noise"], "why": "Complains about horrible static buzz noise in audio."}
+{"id": "S3-090", "sound_negative": 1, "classes": ["noise", "volume"], "why": "Reports crackling noise and needing to keep volume low."}
+{"id": "S1-077", "sound_negative": 0, "classes": [], "why": "Review mentions design and looks, not sound quality."}
+{"id": "S3-058", "sound_negative": 0, "classes": [], "why": "Review is about a backpack, not headphones."}
+{"id": "S1-010", "sound_negative": 0, "classes": [], "why": "No sound complaints; only praises battery and functionality."}
+{"id": "S3-033", "sound_negative": 0, "classes": [], "why": "Review does not mention any sound quality issues."}
+{"id": "S1-017", "sound_negative": 0, "classes": [], "why": "Review is about a computer, not headphone sound quality."}
+{"id": "S1-038", "sound_negative": 1, "classes": ["volume"], "why": "The radio is too quiet and hard to hear."}
+{"id": "S3-052", "sound_negative": 1, "classes": ["bass", "treble", "clarity"], "why": "Complains of tinny sound, poor deep bass, and bad treble."}
+{"id": "S3-021", "sound_negative": 0, "classes": [], "why": "Review is about a soundbar, not headphones."}
+{"id": "S2-088", "sound_negative": 0, "classes": [], "why": "Review is about a camera, not headphones, with no sound complaints."}
+{"id": "S3-074", "sound_negative": 0, "classes": [], "why": "Positive review, no complaints about sound quality."}
+{"id": "S1-054", "sound_negative": 0, "classes": [], "why": "Review discusses a car charger overheating, not sound quality."}
+{"id": "S1-088", "sound_negative": 0, "classes": [], "why": "Review discusses device compatibility, not sound quality."}
+{"id": "S2-024", "sound_negative": 0, "classes": [], "why": "The review discusses a tablet and mentions no sound quality."}
+{"id": "S1-018", "sound_negative": 0, "classes": [], "why": "No sound quality complaints are mentioned."}
+{"id": "S3-038", "sound_negative": 1, "classes": ["bass"], "why": "Complains about the lack of bass."}
+{"id": "S3-013", "sound_negative": 0, "classes": [], "why": "No mention of headphones or sound quality in this review."}
+{"id": "S1-045", "sound_negative": 0, "classes": [], "why": "Review is positive and does not complain about sound."}
+{"id": "S1-011", "sound_negative": 0, "classes": [], "why": "Review is about a streaming device and remote, not headphones."}
+{"id": "S1-089", "sound_negative": 0, "classes": [], "why": "Review complains about physical buttons, not sound quality."}
+{"id": "S3-066", "sound_negative": 1, "classes": ["bass", "volume"], "why": "User complains about lack of bass and inconsistent volume."}
+{"id": "S3-062", "sound_negative": 0, "classes": [], "why": "Review is about USB cables, not headphone sound."}
+{"id": "S2-040", "sound_negative": 0, "classes": [], "why": "Review is about a trackball mouse, not headphones."}
+{"id": "S1-059", "sound_negative": 0, "classes": [], "why": "Review discusses durability, not sound quality."}
+{"id": "S1-041", "sound_negative": 0, "classes": [], "why": "The review does not mention any sound quality issues."}
+{"id": "S2-094", "sound_negative": 0, "classes": [], "why": "Review praises clarity and mentions no negative sound complaints."}
+{"id": "S1-029", "sound_negative": 0, "classes": [], "why": "Review discusses a clock, not headphone sound quality."}
+{"id": "S1-076", "sound_negative": 0, "classes": [], "why": "Review is about a charging cable, not headphones."}
+{"id": "S3-015", "sound_negative": 0, "classes": [], "why": "Review is about a charger, not headphones or sound."}
+{"id": "S2-001", "sound_negative": 0, "classes": [], "why": "Review is about a DVD player case, not headphones."}
+{"id": "S3-079", "sound_negative": 0, "classes": [], "why": "Review is about camera audio, not headphone sound quality."}
+{"id": "S1-032", "sound_negative": 0, "classes": [], "why": "The review is about a desk stand, not headphones."}
+{"id": "S3-087", "sound_negative": 1, "classes": ["volume"], "why": "Reviewer states maximum volume is OK but not great."}
+{"id": "S3-049", "sound_negative": 0, "classes": [], "why": "Positive review; no sound quality complaints mentioned."}
+{"id": "S3-073", "sound_negative": 0, "classes": [], "why": "Review is about photo printers, not headphones."}
+{"id": "S1-052", "sound_negative": 0, "classes": [], "why": "Review discusses picture and app, not sound quality."}
+{"id": "S1-004", "sound_negative": 0, "classes": [], "why": "Review discusses a monitor stand, not headphone sound quality."}
+{"id": "S1-027", "sound_negative": 0, "classes": [], "why": "No headphone sound complaints; review praises smart speaker features."}
+{"id": "S1-086", "sound_negative": 0, "classes": [], "why": "Review is about smart lights, not headphone sound quality."}
+{"id": "S3-088", "sound_negative": 1, "classes": ["bass", "treble", "volume"], "why": "Reviewer complains about weak bass, tinny treble, and low volume."}
+{"id": "S1-003", "sound_negative": 0, "classes": [], "why": "No sound quality complaints; focuses on battery and portability."}
+{"id": "S2-012", "sound_negative": 0, "classes": [], "why": "Positive review about a speaker, no sound complaints."}

@@ -1,7 +1,7 @@
 {
- "generated": "2026-10-02 19:27",
+ "generated": "2026-10-02 20:08",
  "root": "C:\\deepseek-harness-master\\soundinsight",
- "count": 524,
+ "count": 527,
  "entries": [
   {
    "path": ".gitignore",
@@ -172,6 +172,13 @@
    "sha256_16": "0d117303e48122568561e6c15ecfdff71c7dc0e5d567745d4b22c1e15e874c67"
   },
   {
+   "path": "analyze_s5.py",
+   "category": "代码",
+   "size_bytes": 4403,
+   "purpose": "",
+   "sha256_16": "b167fcac0b1d6a03c7e03ddd5feeeec69e336249d385b8f0485e5c815102e611"
+  },
+  {
    "path": "api_server.py",
    "category": "代码",
    "size_bytes": 1806,
@@ -181,9 +188,9 @@
   {
    "path": "apply_human_rulings.py",
    "category": "代码",
-   "size_bytes": 22513,
+   "size_bytes": 22722,
    "purpose": "",
-   "sha256_16": "77d1091bcd091470275dc414864d5d06e5e02d7b25d0136e0b7f0cc5302310bb"
+   "sha256_16": "0f01d905927fba30c27f753cf4a40479a684fa5f019fe203d727fe331e9e092c"
   },
   {
    "path": "apply_mid_demotion.py",
@@ -237,9 +244,9 @@
   {
    "path": "build_finals_appendix.py",
    "category": "代码",
-   "size_bytes": 20011,
+   "size_bytes": 20758,
    "purpose": "",
-   "sha256_16": "0b17e84569a5fbaa52399a970954a7014e7fd04588b6ade89d793046a190e4d9"
+   "sha256_16": "2c9f29f653403004f4f9c21f5bff343353773da0fb36379a5fa1c2d70e1b36bd"
   },
   {
    "path": "build_finals_content.py",
@@ -643,9 +650,9 @@
   {
    "path": "hashes.txt",
    "category": "其他",
-   "size_bytes": 2089,
+   "size_bytes": 2090,
    "purpose": "",
-   "sha256_16": "e2e146ca50e6b4c5fad1458716293317dd6cff4c919342c260ea939b92a7c0dc"
+   "sha256_16": "3d451a4331c3c6463f4a4bdbc07c8d1aaa91a7973173f902253215b6c6e331a9"
   },
   {
    "path": "human_review_50.csv",
@@ -1098,9 +1105,9 @@
   {
    "path": "make_pause_snapshot.py",
    "category": "代码",
-   "size_bytes": 7076,
+   "size_bytes": 7609,
    "purpose": "",
-   "sha256_16": "f8ce29cdf1c64376dcf7af8997ff144d3f9f438bcf7784e9aff948ba85d9360e"
+   "sha256_16": "8426a26c898629674a8cddd60a973987606440051dd8e50896f88b9b793a78b2"
   },
   {
    "path": "make_reviewer_brief.py",
@@ -1205,7 +1212,7 @@
    "category": "验证报告",
    "size_bytes": 15507,
    "purpose": "数字一致性审计结果（含官方模板格式对照节）",
-   "sha256_16": "97f7f5c5c78eb3e7e2242c22e372fcb6d58e4a1c725c936725ce933349452136"
+   "sha256_16": "68c1c524800cb7e2fa4769ada2921876c09b3c522869008d25d06ca0a31ebabe"
   },
   {
    "path": "outside_gate_fp.py",
@@ -2120,16 +2127,16 @@
   {
    "path": "更新世界的锋芒_SoundInsight_其他材料.zip",
    "category": "提交物",
-   "size_bytes": 1526229,
+   "size_bytes": 1526330,
    "purpose": "",
-   "sha256_16": "5b2bb206ca5b62c47e6a4fc32d61d96819557415a3329de2082a08d633a39f24"
+   "sha256_16": "3971114d04f5838d732f000c806c71ec758e9656a7da0e2469eb91263083c9dd"
   },
   {
    "path": "更新世界的锋芒_SoundInsight_决赛入围定稿作品.docx",
    "category": "其他",
-   "size_bytes": 39341,
+   "size_bytes": 39831,
    "purpose": "",
-   "sha256_16": "feac1cd125418b074a699511855308eb69ec78190b43ee985f31f04057710f86"
+   "sha256_16": "753a11ac059029429d699b6b084dd37b6cde9b247f8008a69abf638804a0e1e4"
   },
   {
    "path": "更新世界的锋芒_SoundInsight_复赛作品.docx",
@@ -2323,16 +2330,16 @@
   {
    "path": "docs/PAUSE_SNAPSHOT.md",
    "category": "过程与交接文档",
-   "size_bytes": 4001,
+   "size_bytes": 4534,
    "purpose": "",
-   "sha256_16": "67597fa0bb7639a371e63733fe34c6b72850f31934376f5c2d2f02949b93b408"
+   "sha256_16": "499412f994804f4f522e0c2a2a8cda61747f1784f12da30c66f87b1ea99863b6"
   },
   {
    "path": "docs/REVIEWER_BRIEF.md",
    "category": "过程与交接文档",
    "size_bytes": 15192,
    "purpose": "",
-   "sha256_16": "9bd3bc89cb54deb1640b14e56001a58d0615287edeefd47e0cc409600d10c366"
+   "sha256_16": "3f0a11fe12f592b64b6a9dc52c463ea6af92463d86dc5781d2b3feca2e43b671"
   },
   {
    "path": "docs/SoundInsight决赛备战_现状盘点清单.md",
@@ -2400,9 +2407,9 @@
   {
    "path": "docs/demo_uptime_log.md",
    "category": "过程与交接文档",
-   "size_bytes": 11996,
+   "size_bytes": 12251,
    "purpose": "",
-   "sha256_16": "3503a95c40544d50b88aa7e833a205a5f54d98c28037d8037ffe3d4a5984c52e"
+   "sha256_16": "ddb2f08fc30485af6ab2c43fc4f5b126e6d9a3a3e4bdf2343c25d7f72f241e32"
   },
   {
    "path": "docs/difficulty_stratification.md",
@@ -2591,7 +2598,7 @@
    "category": "过程与交接文档",
    "size_bytes": 3620,
    "purpose": "",
-   "sha256_16": "a28a41463019cc1b2feeb575c975bd5de17590dd6a0344f246747efbaa7571ab"
+   "sha256_16": "02a64841b3f3ea3c1b1fe272a14fd172148e1e8e37c235090b164385edd4178e"
   },
   {
    "path": "docs/retrospective_and_reflection.md",
@@ -2738,7 +2745,7 @@
    "category": "过程与交接文档",
    "size_bytes": 3761,
    "purpose": "",
-   "sha256_16": "b673274cd38036cf592ac3df77d7b10774edf848010f65455818a2697a70158a"
+   "sha256_16": "86b339ae7b33c1e88242055e2831a1caf9b4edd4c4109c7a43bbe56d3491a4c7"
   },
   {
    "path": "docs/bus/README.md",
@@ -2827,16 +2834,16 @@
   {
    "path": "docs/gold_set/answer_sheet_s5_control.md",
    "category": "过程与交接文档",
-   "size_bytes": 25676,
+   "size_bytes": 25726,
    "purpose": "",
-   "sha256_16": "b911cfecc12d31cdf1e981f9174908e49791028892ff801c5c7ca25bdb0110d4"
+   "sha256_16": "cb303c093e1db0ddbf63a75755bd089bf96196e2b1de470be223704b70379d06"
   },
   {
    "path": "docs/gold_set/answer_sheet_s5_treatment.md",
    "category": "过程与交接文档",
-   "size_bytes": 54792,
+   "size_bytes": 54842,
    "purpose": "",
-   "sha256_16": "43ab4b0f0d729e98add321893a9f4735c7cbcfc575eb5f6e37da93af52e78b56"
+   "sha256_16": "caf4fa1e3d2c200688a03e71d93e7d78d7fbfc787fee92850cf7ee5a943ceaad"
   },
   {
    "path": "docs/gold_set/assisted_worksheet.csv",
@@ -2862,16 +2869,16 @@
   {
    "path": "docs/gold_set/gold_standard_findings.md",
    "category": "过程与交接文档",
-   "size_bytes": 12578,
+   "size_bytes": 16081,
    "purpose": "",
-   "sha256_16": "bfd81789d95bc27268759d24780f768b67ecde7dcb302223f2903d3598692430"
+   "sha256_16": "e6701260941e13bf6b2e59fd2ea42697c7f5392505a2d5b298daa873a42ec715"
   },
   {
    "path": "docs/gold_set/human_rulings_dsh.md",
    "category": "过程与交接文档",
-   "size_bytes": 10651,
+   "size_bytes": 12857,
    "purpose": "",
-   "sha256_16": "2c62bca83fb1aa8c454c66c251cefb16b1b1aaf594fc44c19188ad680e9d33b7"
+   "sha256_16": "81c55ad9b9712af5e5059a623cdfba54ec9cb301b7e0ac133733aff7503755bd"
   },
   {
    "path": "docs/gold_set/human_rulings_dsh2.md",
@@ -2911,9 +2918,9 @@
   {
    "path": "docs/gold_set/s5_clean_probe.csv",
    "category": "过程与交接文档",
-   "size_bytes": 44553,
+   "size_bytes": 44653,
    "purpose": "",
-   "sha256_16": "b707e947e0c30efe7708d6b23d999f984cd3cf264c65887e718fef5fb3731cda"
+   "sha256_16": "0792d683c4be88cc770de198391fbcd2b31f9b8c5f68c0eab289d0d5744ad4e3"
   },
   {
    "path": "docs/gold_set/worksheet.csv",
@@ -3096,6 +3103,20 @@
    "size_bytes": 799,
    "purpose": "",
    "sha256_16": "3eacc14eb580673f1d2633d7dadc63e2bf6587d3e97914a01b40fe43dccb3b04"
+  },
+  {
+   "path": "v2/cross_model_agreement.json",
+   "category": "其他",
+   "size_bytes": 266,
+   "purpose": "",
+   "sha256_16": "36435893e36cb00a1301070005ee60e738e96357dd6d59247e4bcaf4c1ef54a3"
+  },
+  {
+   "path": "v2/cross_model_review.jsonl",
+   "category": "其他",
+   "size_bytes": 36286,
+   "purpose": "",
+   "sha256_16": "fc881e7322ffed5efd5c002b850f3115676c81651f459b8f34b0d2c355c80db4"
   },
   {
    "path": "v2/entrypoints_check.json",

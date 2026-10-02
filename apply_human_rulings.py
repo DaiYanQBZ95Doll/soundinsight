@@ -215,10 +215,13 @@ def import_from_notes(path: str) -> dict:
     out = {}
     cur = None
     ambig = []          # 歧义条目（含两个不同数字）——收集后由调用方报出，不猜
-    pat_id = re.compile(r"^#{2,4}\s*(S\d-\d{3})(?:\s*[\u3000 ]\s*G\d{1,3})?\s*$")
+    # 编号规则放宽（本会话第 6 种写法）：兼容 `S1-049`（带连字符）与 `C001`／`T001`（无连字符）
+    _ID = r"[A-Z]{1,4}(?:\d{1,3}-\d{3}|\d{3})"
+    pat_id = re.compile(r"^#{2,4}\s*(" + _ID + r")(?:\s*[\u3000 ]\s*G\d{1,3})?\s*$")
     pat_val = re.compile(r"判定（决策方填）\*\*：\s*`?\s*([012?])\s*`?\s*$")
     # Kimi 答题卡的内联形式：`### S2-037　**判定**：1`（也容忍「判定：_」未填）
-    pat_inline = re.compile(r"^#{2,4}\s*(S\d-\d{3})[^\n]*?\*\*判定\*\*\s*[:：]\s*[_\-—\s]*([012?])(?![0-9])")
+    pat_inline = re.compile(r"^#{2,4}\s*(" + _ID
+                            + r")[^\n]*?\*\*判定\*\*\s*[:：]\s*[_\-—\s]*([012?])(?![0-9])")
     for ln in open(path, encoding="utf-8", errors="replace").read().splitlines():
         # 内联形式（Kimi 的答题卡）：`### S2-037　**判定**：1` —— ID 与值同行
         mi = pat_inline.match(ln.strip())
