@@ -1,6 +1,6 @@
 # 文件地图（由 make_ai_handoff.py 自动生成，勿手改）
 
-> 生成时间：2026-10-02 15:47；共 492 个条目；体积单位 KB/MB。
+> 生成时间：2026-10-02 15:56；共 493 个条目；体积单位 KB/MB。
 
 ## 提交物（5 项，43.9 MB）
 
@@ -24,7 +24,7 @@
 | `competition_v2.md` | 7.0 KB | 初赛版文档 |
 | `competition_v2.txt` | 7.0 KB |  |
 | `DEPLOY_GUIDE.md` | 4.2 KB |  |
-| `docs/bus/README.md` | 3.6 KB |  |
+| `docs/bus/README.md` | 3.8 KB |  |
 | `v2/README.md` | 1.7 KB |  |
 | `deployment/README.md` | 0.6 KB |  |
 | `REPO_INTRO.txt` | 0.6 KB |  |
@@ -58,7 +58,7 @@
 | `confidence_tiered.md` | 0.7 KB | 三星补漏置信度分层与中置信剔除记录 |
 | `significance_test.md` | 0.6 KB | Welch t 检验（p=0.000932） |
 
-## 过程与交接文档（88 项，1.8 MB）
+## 过程与交接文档（89 项，1.8 MB）
 
 | 文件 | 大小 | 用途 |
 |---|---|---|
@@ -77,8 +77,8 @@
 | `docs/D13_seal_declaration.md` | 20.1 KB | D13 封包声明（提交技术质检终审） |
 | `docs/final_review_and_execution_plan.md` | 19.9 KB |  |
 | `docs/overnight_summary.md` | 17.3 KB |  |
+| `docs/bus/round-01/dsh.md` | 16.0 KB |  |
 | `docs/REVIEWER_BRIEF.md` | 14.8 KB |  |
-| `docs/bus/round-01/dsh.md` | 14.8 KB |  |
 | `docs/bus/round-01/qwen.md` | 14.1 KB |  |
 | `docs/reassessment_after_credential.md` | 13.2 KB |  |
 | `docs/file_inventory.md` | 12.8 KB | 项目文件总索引 |
@@ -92,7 +92,7 @@
 | `docs/completeness_audit_round2.md` | 9.3 KB |  |
 | `docs/completion_statement_for_redteam.md` | 9.3 KB |  |
 | `QWEN_HANDOFF.md` | 9.1 KB |  |
-| `docs/demo_uptime_log.md` | 8.6 KB |  |
+| `docs/demo_uptime_log.md` | 8.8 KB |  |
 | `docs/process_review_d10.md` | 8.5 KB |  |
 | `docs/legacy_materials_notice.md` | 8.3 KB |  |
 | `docs/bus/round-01/kimi.md` | 8.2 KB |  |
@@ -110,6 +110,7 @@
 | `docs/N5_qna_factbase.md` | 5.9 KB |  |
 | `docs/human_gold_set_protocol.md` | 5.8 KB |  |
 | `docs/N6_review_risk_list.md` | 5.7 KB |  |
+| `docs/EXECUTION_DISCIPLINE.md` | 5.6 KB |  |
 | `docs/gold_set/JUDGING.md` | 5.1 KB |  |
 | `docs/llm_credential_status.md` | 5.0 KB |  |
 | `docs/b_measure_results.md` | 5.0 KB |  |
@@ -294,6 +295,7 @@
 | `v2_meta_analysis.py` | 19.1 KB |  |
 | `apply_human_rulings.py` | 19.0 KB |  |
 | `build_finals_appendix.py` | 16.1 KB |  |
+| `make_gold_set_notes.py` | 15.5 KB |  |
 | `test_audit_checks.py` | 15.5 KB |  |
 | `build_finals_package.py` | 15.3 KB |  |
 | `v2_w4_mine.py` | 13.2 KB |  |
@@ -303,7 +305,6 @@
 | `make_ai_handoff.py` | 11.5 KB |  |
 | `build_pdf.py` | 11.2 KB |  |
 | `report_builder.py` | 10.2 KB |  |
-| `make_gold_set_notes.py` | 9.5 KB |  |
 | `demo_sound_v2.py` | 9.5 KB | 本地 Gradio Demo（三页；已内置代理绕过） |
 | `build_submission.py` | 9.3 KB |  |
 | `v2_w2_perclass.py` | 9.1 KB |  |

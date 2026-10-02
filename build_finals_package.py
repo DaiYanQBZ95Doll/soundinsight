@@ -109,7 +109,7 @@ OTHER_FILES = [
     "docs/progress_report_current.md",
     "docs/decision_queue.md",
     "docs/three_stage_comparison.md",
-    "docs/REVIEWER_BRIEF.md",
+    "docs/REVIEWER_BRIEF.md", "docs/EXECUTION_DISCIPLINE.md",
     "docs/joint_review_agenda.md",
     "docs/opinion_dsh_joint_review.md",
     "docs/taxonomy_three_paths.md", "docs/ppt_claims_erratum.md",
