@@ -132,6 +132,25 @@ def apply_rulings(rows, mapping: dict, author: str) -> int:
     return len(applied)
 
 
+def import_from_notes(path: str) -> dict:
+    """从 review_notes.md 解析 `**判定（决策方填）**：`<值>`` —— 只接受 1/0/? 。
+    空白（`___`）视为未判，不返回。"""
+    out = {}
+    cur = None
+    pat_id = re.compile(r"^##\s*(S\d-\d{3})\s*$")
+    pat_val = re.compile(r"判定（决策方填）\*\*：\s*`?\s*([01?])\s*`?\s*$")
+    for ln in open(path, encoding="utf-8", errors="replace").read().splitlines():
+        m = pat_id.match(ln.strip())
+        if m:
+            cur = m.group(1)
+            continue
+        if cur:
+            m2 = pat_val.search(ln.strip())
+            if m2:
+                out[cur] = VAL2CELL[m2.group(1)]
+    return out
+
+
 def progress(rows) -> None:
     from collections import Counter
     done = Counter()
@@ -225,6 +244,8 @@ def main() -> int:
     ap.add_argument("--batch", type=int, default=0)
     ap.add_argument("--text")
     ap.add_argument("--file")
+    ap.add_argument("--from-notes", action="store_true",
+                    help="从 docs/gold_set/review_notes.md 的填好的判定位导入")
     ap.add_argument("--author", default="dsh", choices=("dsh", "kimi", "qwen"))
     ap.add_argument("--progress", action="store_true")
     ap.add_argument("--reconcile", action="store_true")
@@ -249,6 +270,21 @@ def main() -> int:
         return 0
     if args.batch:
         print_batch(rows, args.batch)
+        return 0
+    if args.from_notes:
+        notes = os.path.join(GDIR, "review_notes.md")
+        mapping = import_from_notes(notes)
+        if not mapping:
+            print(f"[空] {os.path.relpath(notes, HERE)} 中未发现已填判定")
+            return 0
+        if args.dry_run:
+            print(f"[dry-run] 从 notes 解析到 {len(mapping)} 条，未写入")
+            return 0
+        n = apply_rulings(rows, mapping, args.author)
+        print(f"已从 notes 写入 {n} 条 → "
+              f"{os.path.relpath(rulings_path(args.author), HERE)}"
+              f" 与 {os.path.relpath(CSV_PATH, HERE)}")
+        progress(rows)
         return 0
     text = args.text or ""
     if args.file:
