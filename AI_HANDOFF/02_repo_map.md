@@ -1,6 +1,6 @@
 # 文件地图（由 make_ai_handoff.py 自动生成，勿手改）
 
-> 生成时间：2026-10-02 14:58；共 488 个条目；体积单位 KB/MB。
+> 生成时间：2026-10-02 15:27；共 490 个条目；体积单位 KB/MB。
 
 ## 提交物（5 项，43.9 MB）
 
@@ -58,7 +58,7 @@
 | `confidence_tiered.md` | 0.7 KB | 三星补漏置信度分层与中置信剔除记录 |
 | `significance_test.md` | 0.6 KB | Welch t 检验（p=0.000932） |
 
-## 过程与交接文档（85 项，1.8 MB）
+## 过程与交接文档（86 项，1.8 MB）
 
 | 文件 | 大小 | 用途 |
 |---|---|---|
@@ -78,10 +78,10 @@
 | `docs/final_review_and_execution_plan.md` | 19.9 KB |  |
 | `docs/overnight_summary.md` | 17.3 KB |  |
 | `docs/REVIEWER_BRIEF.md` | 14.8 KB |  |
+| `docs/bus/round-01/dsh.md` | 14.8 KB |  |
 | `docs/bus/round-01/qwen.md` | 14.1 KB |  |
 | `docs/reassessment_after_credential.md` | 13.2 KB |  |
 | `docs/file_inventory.md` | 12.8 KB | 项目文件总索引 |
-| `docs/bus/round-01/dsh.md` | 11.7 KB |  |
 | `PROJECT_BRIEF_QWEN.md` | 11.6 KB |  |
 | `docs/N_line_handoff_protocol.md` | 11.2 KB |  |
 | `docs/finals_stage.md` | 11.0 KB |  |
@@ -95,9 +95,9 @@
 | `docs/process_review_d10.md` | 8.5 KB |  |
 | `docs/legacy_materials_notice.md` | 8.3 KB |  |
 | `docs/bus/round-01/kimi.md` | 8.2 KB |  |
+| `docs/demo_uptime_log.md` | 8.0 KB |  |
 | `docs/w17_failure_cases.md` | 7.9 KB |  |
 | `docs/joint_review_agenda.md` | 7.8 KB |  |
-| `docs/demo_uptime_log.md` | 7.7 KB |  |
 | `docs/N1b_downgrade_narrative.md` | 7.0 KB |  |
 | `docs/decision_queue.md` | 6.8 KB |  |
 | `docs/N2_narrative_final.md` | 6.6 KB |  |
@@ -119,6 +119,7 @@
 | `docs/v2_gate_verdict.md` | 4.7 KB |  |
 | `docs/w1_longtext_variants.md` | 4.7 KB |  |
 | `docs/evidence_index_exp.md` | 4.4 KB |  |
+| `docs/gold_set/JUDGING.md` | 4.2 KB |  |
 | `docs/e2_erratum.md` | 4.2 KB |  |
 | `docs/PAUSE_SNAPSHOT.md` | 3.7 KB |  |
 | `docs/bus/INDEX.md` | 3.6 KB |  |
@@ -133,7 +134,6 @@
 | `docs/sandbox_operation_notes.md` | 3.1 KB |  |
 | `docs/D14_resume_checklist.md` | 3.0 KB | 收尾四步清单（录视频/打包/上传/补推送） |
 | `docs/difficulty_stratification.md` | 2.9 KB |  |
-| `docs/gold_set/JUDGING.md` | 2.8 KB |  |
 | `docs/drift_plan.md` | 2.8 KB | 数据漂移监控方案 |
 | `docs/w17_confidence_actions.md` | 2.8 KB |  |
 | `AI_INDUCTION_REDLINE.md` | 2.7 KB |  |
@@ -144,9 +144,10 @@
 | `docs/outside_gate_fp.md` | 2.0 KB |  |
 | `docs/w11_data_efficiency.md` | 1.9 KB |  |
 | `docs/bus/TEMPLATE.md` | 1.2 KB |  |
+| `docs/gold_set/human_rulings_kimi.md` | 1.1 KB |  |
+| `docs/gold_set/human_rulings_qwen.md` | 0.9 KB |  |
 | `docs/checklist_version.json` | 0.8 KB |  |
 | `docs/year_split_output.txt` | 0.8 KB | 年份分桶脚本输出原文 |
-| `docs/gold_set/human_rulings_kimi.md` | 0.8 KB |  |
 
 ## 演示材料（6 项，18.1 MB）
 
@@ -282,7 +283,7 @@
 | `sample_reviews_100.csv` | 57.9 KB |  |
 | `agent_test_input.csv` | 27.9 KB |  |
 
-## 代码（161 项，0.8 MB）
+## 代码（162 项，0.8 MB）
 
 | 文件 | 大小 | 用途 |
 |---|---|---|
@@ -290,6 +291,7 @@
 | `scan_repo_hygiene.py` | 19.7 KB |  |
 | `v2_meta_analysis.py` | 19.1 KB |  |
 | `build_finals_appendix.py` | 16.1 KB |  |
+| `apply_human_rulings.py` | 15.7 KB |  |
 | `test_audit_checks.py` | 15.5 KB |  |
 | `build_finals_package.py` | 15.2 KB |  |
 | `v2_w4_mine.py` | 13.2 KB |  |
@@ -298,7 +300,6 @@
 | `v2_w1_longtext.py` | 12.1 KB |  |
 | `make_ai_handoff.py` | 11.5 KB |  |
 | `build_pdf.py` | 11.2 KB |  |
-| `apply_human_rulings.py` | 11.2 KB |  |
 | `report_builder.py` | 10.2 KB |  |
 | `make_gold_set_notes.py` | 9.5 KB |  |
 | `demo_sound_v2.py` | 9.5 KB | 本地 Gradio Demo（三页；已内置代理绕过） |
@@ -442,6 +443,7 @@
 | `requirements.txt` | 0.9 KB |  |
 | `启动Demo.bat` | 0.9 KB | 双击启动本地 Demo |
 | `v2_w1_compare.py` | 0.8 KB |  |
+| `show_batch.py` | 0.8 KB |  |
 | `exp08_ablation_B/config.json` | 0.5 KB |  |
 | `exp09_ablation_C/config.json` | 0.5 KB |  |
 | `exp07_ablation_A/config.json` | 0.5 KB |  |

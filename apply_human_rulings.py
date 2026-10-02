@@ -25,7 +25,8 @@ sys.stdout.reconfigure(encoding="utf-8", errors="replace")
 HERE = os.path.dirname(os.path.abspath(__file__))
 GDIR = os.path.join(HERE, "docs", "gold_set")
 CSV_PATH = os.path.join(GDIR, "assisted_worksheet.csv")
-BATCH_STATE = os.path.join(HERE, "v2", "gold_set_batch.json")
+# 批次状态**按席位隔离**（Qwen 指出共享状态会互相覆盖，导致裸数字串落到不同评论）
+BATCH_STATE_FMT = os.path.join(HERE, "v2", "gold_set_batch_{author}.json")
 COL = "人工判定(1=音质差评/0=不是)"
 VAL2CELL = {"1": "1", "0": "0", "2": "?"}
 CELL2NAME = {"1": "是（涉及耳机声音表现）", "0": "不是", "?": "无法判断"}
@@ -47,14 +48,15 @@ def rulings_path(author: str) -> str:
     return os.path.join(GDIR, f"human_rulings_{author}.md")
 
 
-def print_batch(rows, n: int) -> None:
+def print_batch(rows, n: int, author: str = "dsh") -> None:
     todo = [r for r in rows if not (r.get(COL) or "").strip()]
     batch = todo[:n]
     ids = [r["编号"] for r in batch]
-    json.dump({"ids": ids}, open(BATCH_STATE, "w", encoding="utf-8"), ensure_ascii=False)
+    json.dump({"ids": ids}, open(BATCH_STATE_FMT.format(author=author), "w",
+                                encoding="utf-8"), ensure_ascii=False)
     print(f"## 下一批（{len(batch)} 条）——请按顺序回 {len(batch)} 个数字（1=是｜0=不是｜2=无法判断）\n")
     for i, r in enumerate(batch, 1):
-        print(f"[{i}] {r['编号']}")
+        print(f"[{i}] G{i:03d} · {r['编号']}（绝对编号 G 与批次无关，推荐用它回）")
         print(f"    原文：{r['原文'][:300]}")
         print(f"    翻译：{(r.get('中文翻译') or '')[:200]}")
         snd = (r.get("关于声音的表述") or "").strip()
@@ -63,10 +65,37 @@ def print_batch(rows, n: int) -> None:
     print(f"\n（顺序即编号顺序：{ids[0]} … {ids[-1]}；也可用 ②带编号／③只报例外／④区间 格式）")
 
 
-def parse_text(text: str, ids: list[str]) -> tuple[dict, list[str]]:
+def parse_text(text: str, ids: list[str], all_ids: list[str] | None = None) \
+        -> tuple[dict, list[str]]:
+    """解析判定文本。`all_ids` 为工作表全序，用于把 **绝对编号 G###** 映射为 S 编号。"""
     """返回 {编号: 单元格值} 与 错误列表。"""
     out, errs = {}, []
     text = text.strip()
+    all_ids = all_ids or ids
+
+    def g2s(tok: str):
+        m = re.fullmatch(r"G(\d{1,3})", tok.strip(), re.I)
+        if not m:
+            return None
+        k = int(m.group(1))
+        return all_ids[k - 1] if 1 <= k <= len(all_ids) else None
+
+    # G 编号（绝对）：G007=0 或 G007:0
+    for m in re.finditer(r"\bG(\d{1,3})\s*[=:：]\s*([012?])(?![0-9])", text, re.I):
+        sid = g2s("G" + m.group(1))
+        if sid:
+            out[sid] = VAL2CELL[m.group(2)]
+        text = text.replace(m.group(0), " ")
+    # G 区间：G001..G025 = 1,0,2,...
+    for m in re.finditer(r"G(\d{1,3})\s*\.\.\s*G(\d{1,3})\s*=\s*([0-9?.,\s]+)",
+                         text, re.I):
+        a, b = int(m.group(1)), int(m.group(2))
+        vals = [v for v in re.split(r"[,\s]+", m.group(3)) if v in VAL2CELL]
+        for k, v in zip(range(a, b + 1), vals):
+            sid = g2s(f"G{k}")
+            if sid:
+                out[sid] = VAL2CELL[v]
+        text = text.replace(m.group(0), " ")
     # ④ 区间：S1-001..S1-020 = 1,0,2,...
     for m in re.finditer(r"([A-Z]\d-\d{3})\s*\.\.\s*([A-Z]\d-\d{3})\s*=\s*([0-9.,\s]+)", text):
         a, b, vals = m.group(1), m.group(2), [v for v in re.split(r"[,\s]+", m.group(3)) if v]
@@ -103,7 +132,11 @@ def parse_text(text: str, ids: list[str]) -> tuple[dict, list[str]]:
     return out, errs
 
 
-def apply_rulings(rows, mapping: dict, author: str) -> int:
+def apply_rulings(rows, mapping: dict, author: str, write_csv: bool = False) -> int:
+    """把判定写入**本席位文件**；仅当 write_csv=True 时才写共享 CSV。
+
+    共享 CSV 是单点资源：默认只允许 `--author dsh` 写（Qwen 指出旧版无条件写 CSV，
+    会让"只写自己席位"的规则被工具本身破坏）。"""
     by_id = {r["编号"]: r for r in rows}
     applied = []
     for i, cell in mapping.items():
@@ -112,7 +145,8 @@ def apply_rulings(rows, mapping: dict, author: str) -> int:
             continue
         r[COL] = cell
         applied.append((i, cell))
-    save_rows(rows)
+    if write_csv:
+        save_rows(rows)
     # 写作者文件
     p = rulings_path(author)
     lines = []
@@ -138,7 +172,7 @@ def import_from_notes(path: str) -> dict:
     out = {}
     cur = None
     pat_id = re.compile(r"^##\s*(S\d-\d{3})\s*$")
-    pat_val = re.compile(r"判定（决策方填）\*\*：\s*`?\s*([01?])\s*`?\s*$")
+    pat_val = re.compile(r"判定（决策方填）\*\*：\s*`?\s*([012?])\s*`?\s*$")
     for ln in open(path, encoding="utf-8", errors="replace").read().splitlines():
         m = pat_id.match(ln.strip())
         if m:
@@ -169,11 +203,15 @@ def progress(rows) -> None:
 
 
 def reconcile() -> None:
-    rows = {r["编号"]: (r.get(COL) or "").strip() for r in load_rows()}
-    prints = {}
+    csv_vals = {r["编号"]: (r.get(COL) or "").strip() for r in load_rows()
+                if (r.get(COL) or "").strip()}
+    prints, missing = {}, []
+    if csv_vals:
+        prints["csv"] = csv_vals          # 共享 CSV 也是一方（旧版读了却不用，属死代码）
     for a in ("dsh", "kimi", "qwen"):
         p = rulings_path(a)
         if not os.path.isfile(p):
+            missing.append(a)
             continue
         vals = {}
         in_fence = False
@@ -186,16 +224,19 @@ def reconcile() -> None:
             if in_fence or ln.lstrip().startswith(">"):
                 continue
             # 格式一：表格行 | S1-001 | 1 |
-            m = re.match(r"\|\s*(S\d-\d{3})\s*\|\s*([01?])\s*\|", ln)
+            m = re.match(r"\|\s*(S\d-\d{3})\s*\|\s*([012?])\s*\|", ln)
             if m:
                 vals[m.group(1)] = m.group(2)
                 continue
             # 格式二：行内 `S1-001=1`（红队 Kimi 采用的写法）
-            for m2 in re.finditer(r"(S\d-\d{3})\s*[=:：]\s*([01?])(?![0-9])", ln):
+            for m2 in re.finditer(r"(S\d-\d{3})\s*[=:：]\s*([012?])(?![0-9])", ln):
                 vals[m2.group(1)] = m2.group(2)
         prints[a] = vals
+    if missing:
+        print("⚠ 缺失席位文件：" + ", ".join(missing)
+              + "（未参与对账；若该方判定只写在共享 CSV 里，请其补写席位 md）")
     if len(prints) < 2:
-        print("对账需要至少两份裁定文件；当前：", list(prints) or "无")
+        print("对账需要至少两份来源（含共享 CSV）；当前：", list(prints) or "无")
         return
     keys = set().union(*[set(v) for v in prints.values()])
     diff = [k for k in sorted(keys)
@@ -210,6 +251,12 @@ def reconcile() -> None:
 def _self_test() -> int:
     """负向自测：引用块/代码块里的**格式示例**不得被当成真实判定。"""
     import tempfile
+    # 编号解析：数字 2 应映射为 ?
+    v2 = {}
+    for m2 in re.finditer(r"(S\d-\d{3})\s*[=:：]\s*([012?])(?![0-9])", "S1-009=2"):
+        v2[m2.group(1)] = m2.group(2)
+    ok2 = v2 == {"S1-009": "2"}
+    print(f"  [{'OK ' if ok2 else 'BAD'}] 三档写法 2：{v2}")
     cases = [
         ("> 回传格式：`S1-001=1 S1-002=0`\n", 0, "引用块示例"),
         ("```\nS1-001=1\n```\n", 0, "代码块示例"),
@@ -226,22 +273,25 @@ def _self_test() -> int:
                 continue
             if in_fence or ln.lstrip().startswith(">"):
                 continue
-            m = re.match(r"\|\s*(S\d-\d{3})\s*\|\s*([01?])\s*\|", ln)
+            m = re.match(r"\|\s*(S\d-\d{3})\s*\|\s*([012?])\s*\|", ln)
             if m:
                 vals[m.group(1)] = m.group(2)
                 continue
-            for m2 in re.finditer(r"(S\d-\d{3})\s*[=:：]\s*([01?])(?![0-9])", ln):
+            for m2 in re.finditer(r"(S\d-\d{3})\s*[=:：]\s*([012?])(?![0-9])", ln):
                 vals[m2.group(1)] = m2.group(2)
         ok = len(vals) == expect
         bad += 0 if ok else 1
         print(f"  [{'OK ' if ok else 'BAD'}] {label}：解析 {len(vals)} 条（期望 {expect}）")
-    print(f"  结果：{len(cases) - bad}/{len(cases)} 通过")
-    return 1 if bad else 0
+    print(f"  结果：{len(cases) - bad}/{len(cases)} 通过"
+          + ("；三档 2 映射 OK" if ok2 else "；**三档 2 映射失败**"))
+    return 1 if (bad or not ok2) else 0
 
 
 def main() -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("--batch", type=int, default=0)
+    ap.add_argument("--write-csv", action="store_true",
+                    help="显式允许写共享 CSV（默认仅 --author dsh 允许）")
     ap.add_argument("--text")
     ap.add_argument("--file")
     ap.add_argument("--from-notes", action="store_true",
@@ -262,6 +312,8 @@ def main() -> int:
         print("[缺] 先跑 python make_gold_set_notes.py")
         return 1
     rows = load_rows()
+    # 共享 CSV 的写入闸门：默认只有本席位 dsh 允许（他人须显式 --write-csv）
+    write_csv = args.write_csv or args.author == "dsh"
     if args.progress:
         progress(rows)
         return 0
@@ -269,7 +321,7 @@ def main() -> int:
         reconcile()
         return 0
     if args.batch:
-        print_batch(rows, args.batch)
+        print_batch(rows, args.batch, args.author)
         return 0
     if args.from_notes:
         notes = os.path.join(GDIR, "review_notes.md")
@@ -280,10 +332,11 @@ def main() -> int:
         if args.dry_run:
             print(f"[dry-run] 从 notes 解析到 {len(mapping)} 条，未写入")
             return 0
-        n = apply_rulings(rows, mapping, args.author)
+        n = apply_rulings(rows, mapping, args.author, write_csv)
         print(f"已从 notes 写入 {n} 条 → "
               f"{os.path.relpath(rulings_path(args.author), HERE)}"
-              f" 与 {os.path.relpath(CSV_PATH, HERE)}")
+              + (f" 与 {os.path.relpath(CSV_PATH, HERE)}" if write_csv
+                 else "（未写共享 CSV）"))
         progress(rows)
         return 0
     text = args.text or ""
@@ -292,9 +345,10 @@ def main() -> int:
     if not text:
         ap.print_help()
         return 0
-    ids = json.load(open(BATCH_STATE, encoding="utf-8"))["ids"] if os.path.isfile(BATCH_STATE) \
+    bs = BATCH_STATE_FMT.format(author=args.author)
+    ids = json.load(open(bs, encoding="utf-8"))["ids"] if os.path.isfile(bs) \
         else [r["编号"] for r in rows]
-    mapping, errs = parse_text(text, ids)
+    mapping, errs = parse_text(text, ids, [r["编号"] for r in rows])
     if args.dry_run:
         print(f"[dry-run] 解析到 {len(mapping)} 条，未写入任何文件")
         for i, c in list(mapping.items())[:8]:
@@ -302,9 +356,10 @@ def main() -> int:
         for e in errs[:5]:
             print("  [提示] " + e)
         return 0
-    n = apply_rulings(rows, mapping, args.author)
+    n = apply_rulings(rows, mapping, args.author, write_csv)
     print(f"已写入 {n} 条 → {os.path.relpath(rulings_path(args.author), HERE)}"
-          f" 与 {os.path.relpath(CSV_PATH, HERE)}")
+          + (f" 与 {os.path.relpath(CSV_PATH, HERE)}" if write_csv
+             else "（**未写共享 CSV**：本席位只记录，落库由 --author dsh 单点执行）"))
     for e in errs[:5]:
         print("  [提示] " + e)
     progress(rows)

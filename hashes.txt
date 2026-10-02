@@ -78,12 +78,13 @@
 
 
 
+
 # ===== 决赛包（v2 口径）=====
 # 决赛包（v2 口径）及其内部四件提交物在打包时刻的校验值；完整 SHA256。
 # 复赛包（上方一段）为已提交冻结物，两者互不影响。
-  45,018,681 B  sha256:6dd5a7892f942363922f15d08247b6691667e456776fb50ab29acc5741bf7505  更新世界的锋芒_SoundInsight_决赛入围定稿作品.zip
+  45,022,283 B  sha256:b363d84668332fbe69425a912d4545276c4f500874fbc7ab5eaca30b86d73bb1  更新世界的锋芒_SoundInsight_决赛入围定稿作品.zip
       37,917 B  sha256:26a0d603165f7112dde0677ff32b0f092eb27c1724ac585d64406463ddf43ce7  更新世界的锋芒_SoundInsight_决赛入围定稿作品.docx
      110,101 B  sha256:db96944a4d45924d764374e769c30173941b16fb1fdd486816f80b7efbd66a9c  更新世界的锋芒_SoundInsight_Demo.zip
 # 视频入包版本为 faststart 重排版（数据逐块验证零改动，见 verify_faststart.py）
   48,375,526 B  sha256:6f942099edeba79850c68dac2532022f9f7712f08df1ab3035cf0c07ab411634  更新世界的锋芒_SoundInsight_演示视频.mp4
-   1,224,567 B  sha256:6b598a083d768f0ca396fc42834ea0436265ecc693e2c63d20396de71f7e4f35  更新世界的锋芒_SoundInsight_其他材料.zip
+   1,228,260 B  sha256:0623e450027fd0e815bbb4593bbabc4c30f65eb99f5927e4c67022aae939f898  更新世界的锋芒_SoundInsight_其他材料.zip
