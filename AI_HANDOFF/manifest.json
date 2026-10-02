@@ -1,7 +1,7 @@
 {
- "generated": "2026-10-01 20:38",
+ "generated": "2026-10-02 14:40",
  "root": "C:\\deepseek-harness-master\\soundinsight",
- "count": 479,
+ "count": 484,
  "entries": [
   {
    "path": ".gitignore",
@@ -251,9 +251,9 @@
   {
    "path": "build_finals_package.py",
    "category": "代码",
-   "size_bytes": 15395,
+   "size_bytes": 15524,
    "purpose": "",
-   "sha256_16": "0c876276d5b177cce15e90e37fe1f07fca83d3c9eafb510beaf9c4e8d814d8e6"
+   "sha256_16": "bca4c44bb24b6b62f6e2f65b1927bf516012d744567307a44bf0cb4d9aa5fb3c"
   },
   {
    "path": "build_pdf.py",
@@ -629,9 +629,9 @@
   {
    "path": "hashes.txt",
    "category": "其他",
-   "size_bytes": 2071,
+   "size_bytes": 2072,
    "purpose": "",
-   "sha256_16": "1acbef5e9f798aff58f5f6a454e0a605d5a6289d4081a3058c857b112f932945"
+   "sha256_16": "5864c87f2a4fe4502d2f0bb1b04de38e203f56baf350eb9f2afacb27a6fc7091"
   },
   {
    "path": "human_review_50.csv",
@@ -1047,6 +1047,13 @@
    "sha256_16": "d996c79d779f32c8e31d99969812ff6d3aaf59838a1b2d420f82dd23bffa79aa"
   },
   {
+   "path": "make_gold_set_notes.py",
+   "category": "代码",
+   "size_bytes": 9722,
+   "purpose": "",
+   "sha256_16": "7835955044fa2665dcb2d79e240f001baa7cdb6171d6e708779fc02efadbba1f"
+  },
+  {
    "path": "make_missing_figures.py",
    "category": "代码",
    "size_bytes": 5241,
@@ -1056,9 +1063,9 @@
   {
    "path": "make_pause_snapshot.py",
    "category": "代码",
-   "size_bytes": 5572,
+   "size_bytes": 6017,
    "purpose": "",
-   "sha256_16": "63a37280d0a3d343f39cc31ac697d236099ad1197265481b23eeb1197d064cc7"
+   "sha256_16": "bd8d727f6bf3e68298fc3adc83c68a8ac0f6080275a720747e614f043a310dfe"
   },
   {
    "path": "make_reviewer_brief.py",
@@ -1156,7 +1163,7 @@
    "category": "验证报告",
    "size_bytes": 15507,
    "purpose": "数字一致性审计结果（含官方模板格式对照节）",
-   "sha256_16": "a5a0f64d3d5397606d059e3fd5974fa62ababa85348fb5c2f28d707b488514ca"
+   "sha256_16": "5b3996eddb2bd406d59a85b70121091fd6c13572d656a4ddd046ce7046c33202"
   },
   {
    "path": "outside_gate_fp.py",
@@ -1434,9 +1441,9 @@
   {
    "path": "score_gold_set.py",
    "category": "代码",
-   "size_bytes": 7157,
+   "size_bytes": 7590,
    "purpose": "",
-   "sha256_16": "bf91cf3e9fb4399a10e73295792d418b17389877c3d453c2457add8d783d96f1"
+   "sha256_16": "b961950ba93c059f278db758ca5eeff7e4d1126a3d3fa3b5141be8d840ddd2ca"
   },
   {
    "path": "significance_test.md",
@@ -2043,9 +2050,9 @@
   {
    "path": "更新世界的锋芒_SoundInsight_其他材料.zip",
    "category": "提交物",
-   "size_bytes": 865578,
+   "size_bytes": 1218156,
    "purpose": "",
-   "sha256_16": "8992ba756fc5d801cde73f33e357ab1d42d0693520943a8d31a94e174c4ca040"
+   "sha256_16": "07f31cc6b6e3704d4288683996fb6740f145a0c82be154f4329bee2520f658d4"
   },
   {
    "path": "更新世界的锋芒_SoundInsight_决赛入围定稿作品.docx",
@@ -2239,16 +2246,16 @@
   {
    "path": "docs/PAUSE_SNAPSHOT.md",
    "category": "过程与交接文档",
-   "size_bytes": 3368,
+   "size_bytes": 3792,
    "purpose": "",
-   "sha256_16": "14b3a45b4cd3c36a0d424d73c477cebd99105b116ef12345a820113cabb7858b"
+   "sha256_16": "24ad026b39c18bcad64cf16af8f6421d6baf736ceb51a02f954b15002f1312d7"
   },
   {
    "path": "docs/REVIEWER_BRIEF.md",
    "category": "过程与交接文档",
    "size_bytes": 15192,
    "purpose": "",
-   "sha256_16": "df140b3e587172d108e56770f8480e9fb805303efa2c534bbdf434d7e4de3c5b"
+   "sha256_16": "a37483792b592ffb4470c19253d869c2d5caf42ce50ce1413b2ebb9065a9287b"
   },
   {
    "path": "docs/SoundInsight决赛备战_现状盘点清单.md",
@@ -2316,9 +2323,9 @@
   {
    "path": "docs/demo_uptime_log.md",
    "category": "过程与交接文档",
-   "size_bytes": 7158,
+   "size_bytes": 7413,
    "purpose": "",
-   "sha256_16": "2bbaf6d1cab14d0f85c7251d849ac0fa85405e8c475e78b272f3383cd7feb6bd"
+   "sha256_16": "7765d9164484752ed86d38223c013db2d0d3231f25f7786b03462f1720957c37"
   },
   {
    "path": "docs/difficulty_stratification.md",
@@ -2407,9 +2414,9 @@
   {
    "path": "docs/human_gold_set_protocol.md",
    "category": "过程与交接文档",
-   "size_bytes": 4272,
+   "size_bytes": 5951,
    "purpose": "",
-   "sha256_16": "b36951bc46ba458596cb29a4d007fdbfa63496a5556e5e2f471a6a5879255fc5"
+   "sha256_16": "23bdc75c23b5f6688e992abddda1f741388c5757c9b09ad2b3146d5bdfdcec14"
   },
   {
    "path": "docs/joint_review_agenda.md",
@@ -2640,7 +2647,7 @@
    "category": "过程与交接文档",
    "size_bytes": 3664,
    "purpose": "",
-   "sha256_16": "efe240ba3e72030fb4925b97b8b26dc1e55aeb94009549063acbaf6fda6d8f58"
+   "sha256_16": "c88bb15563341c0c1796cdcebb304b231ef84c496aa70f1b465dc1d46f7ae5e2"
   },
   {
    "path": "docs/bus/README.md",
@@ -2666,9 +2673,9 @@
   {
    "path": "docs/bus/round-01/dsh.md",
    "category": "过程与交接文档",
-   "size_bytes": 10546,
+   "size_bytes": 11991,
    "purpose": "",
-   "sha256_16": "50fd3be61a10203d1ba23606b23d76248ad0d61e7b5f64ea7efc307feec7218a"
+   "sha256_16": "e523c5250bd5d5f4892112ace99148e93970a3c7177dd076845fca46e6962047"
   },
   {
    "path": "docs/bus/round-01/kimi.md",
@@ -2683,6 +2690,27 @@
    "size_bytes": 14408,
    "purpose": "",
    "sha256_16": "46cbb7a56271bf938b3e1319b4f14b19358a66a3de7524c124a4abf7a817c462"
+  },
+  {
+   "path": "docs/gold_set/assisted_worksheet.csv",
+   "category": "过程与交接文档",
+   "size_bytes": 411346,
+   "purpose": "",
+   "sha256_16": "a181255f49c69b2b2bd341f71ddc05b200ec069940effa67bb10b9415770d70f"
+  },
+  {
+   "path": "docs/gold_set/human_rulings_kimi.md",
+   "category": "过程与交接文档",
+   "size_bytes": 777,
+   "purpose": "",
+   "sha256_16": "bb1097f0acc3bb92e5ebd1bbbfbe45dfaa285bad855d506a5893046b0503447a"
+  },
+  {
+   "path": "docs/gold_set/review_notes.md",
+   "category": "过程与交接文档",
+   "size_bytes": 450360,
+   "purpose": "",
+   "sha256_16": "aa7b2848d1311fbbafe6fd3d4ee25f163c9f3865f449033839ec324428d13035"
   },
   {
    "path": "docs/gold_set/worksheet.csv",
@@ -2914,6 +2942,13 @@
    "size_bytes": 40212,
    "purpose": "",
    "sha256_16": "d9ff91d467c4cd0a35bcbd435aac2a9ae0fa7df67de999e37b0138c4ad5e1d99"
+  },
+  {
+   "path": "v2/gold_set_notes.jsonl",
+   "category": "其他",
+   "size_bytes": 250919,
+   "purpose": "",
+   "sha256_16": "63c4df927faf2621373ac2190be0018ac12ab9cf1042fdef5adddadd3026bd60"
   },
   {
    "path": "v2/m0_switch_report.json",

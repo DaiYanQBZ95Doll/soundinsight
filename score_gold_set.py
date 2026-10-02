@@ -23,7 +23,8 @@ sys.stdout.reconfigure(encoding="utf-8", errors="replace")
 HERE = os.path.dirname(os.path.abspath(__file__))
 GDIR = os.path.join(HERE, "docs", "gold_set")
 KEY = os.path.join(HERE, "v2", "gold_set_key.json")
-SHEET = os.path.join(GDIR, "worksheet.csv")
+SHEET = os.path.join(GDIR, "worksheet.csv")          # 盲评版（原始）
+SHEET_ASSISTED = os.path.join(GDIR, "assisted_worksheet.csv")  # 辅助版（含执行方中性翻译与解析）
 OUT_MD = os.path.join(GDIR, "agreement_report.md")
 OUT_JSON = os.path.join(HERE, "v2", "gold_set_agreement.json")
 
@@ -105,6 +106,8 @@ def score(human: dict[str, int], items: list[dict], quiet: bool = False) -> dict
 def main() -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("--self-test", action="store_true")
+    ap.add_argument("--sheet", choices=("blind", "assisted"), default="assisted",
+                    help="blind=盲评表；assisted=含中性翻译与解析的辅助表（默认）")
     args = ap.parse_args()
     if not os.path.isfile(KEY):
         print("[等待] 缺少 v2/gold_set_key.json —— 先跑 python make_gold_set.py")
@@ -123,14 +126,16 @@ def main() -> int:
         print("\n[self-test] 合成数据跑通，未写出任何结论文件")
         return 0
 
-    if not os.path.isfile(SHEET):
-        print("[等待] 缺少 docs/gold_set/worksheet.csv —— 先跑 python make_gold_set.py")
+    sheet = SHEET if args.sheet == "blind" else SHEET_ASSISTED
+    if not os.path.isfile(sheet):
+        print(f"[等待] 缺少 {os.path.relpath(sheet, HERE)} —— 先跑 make_gold_set.py"
+              "（辅助版还需 make_gold_set_notes.py）")
         return 0
-    human = read_sheet(SHEET)
+    human = read_sheet(sheet)
     if not human:
         n = len(items)
         print(f"[等待人工填写] 工作表 {n} 条，已填 0 条。")
-        print("  填写位置：docs/gold_set/worksheet.csv 的「人工判定(1=音质差评/0=不是)」列"
+        print(f"  填写位置：{os.path.relpath(sheet, HERE)} 的「人工判定」列"
               "（Excel 可直接打开；判为是填 1，不是填 0，无法判断产品填 ?）")
         print(f"  预计耗时 {n*20/60:.0f}–{n*35/60:.0f} 分钟；填毕后重跑本脚本即出结论。")
         return 0

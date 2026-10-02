@@ -1,13 +1,13 @@
 # 文件地图（由 make_ai_handoff.py 自动生成，勿手改）
 
-> 生成时间：2026-10-01 20:38；共 479 个条目；体积单位 KB/MB。
+> 生成时间：2026-10-02 14:40；共 484 个条目；体积单位 KB/MB。
 
-## 提交物（5 项，43.6 MB）
+## 提交物（5 项，43.9 MB）
 
 | 文件 | 大小 | 用途 |
 |---|---|---|
 | `更新世界的锋芒_SoundInsight_复赛作品.zip` | 42.4 MB |  |
-| `更新世界的锋芒_SoundInsight_其他材料.zip` | 845.3 KB |  |
+| `更新世界的锋芒_SoundInsight_其他材料.zip` | 1.2 MB |  |
 | `更新世界的锋芒_SoundInsight_复赛作品.pdf` | 210.1 KB |  |
 | `更新世界的锋芒_SoundInsight_Demo.zip` | 107.5 KB |  |
 | `更新世界的锋芒_SoundInsight_复赛作品.docx` | 48.0 KB |  |
@@ -58,10 +58,12 @@
 | `confidence_tiered.md` | 0.7 KB | 三星补漏置信度分层与中置信剔除记录 |
 | `significance_test.md` | 0.6 KB | Welch t 检验（p=0.000932） |
 
-## 过程与交接文档（80 项，1.0 MB）
+## 过程与交接文档（83 项，1.8 MB）
 
 | 文件 | 大小 | 用途 |
 |---|---|---|
+| `docs/gold_set/review_notes.md` | 439.8 KB |  |
+| `docs/gold_set/assisted_worksheet.csv` | 401.7 KB |  |
 | `docs/gold_set/worksheet.csv` | 177.2 KB |  |
 | `docs/frozen_execution_checklist.md` | 70.8 KB |  |
 | `PROGRESS_SYNC.md` | 57.0 KB |  |
@@ -79,13 +81,13 @@
 | `docs/bus/round-01/qwen.md` | 14.1 KB |  |
 | `docs/reassessment_after_credential.md` | 13.2 KB |  |
 | `docs/file_inventory.md` | 12.8 KB | 项目文件总索引 |
+| `docs/bus/round-01/dsh.md` | 11.7 KB |  |
 | `PROJECT_BRIEF_QWEN.md` | 11.6 KB |  |
 | `docs/N_line_handoff_protocol.md` | 11.2 KB |  |
 | `docs/finals_stage.md` | 11.0 KB |  |
 | `docs/decision_request_v15_and_nline.md` | 10.4 KB |  |
 | `docs/pre_lock_completeness_audit.md` | 10.4 KB |  |
 | `docs/progress_report_current.md` | 10.4 KB |  |
-| `docs/bus/round-01/dsh.md` | 10.3 KB |  |
 | `docs/opinion_dsh_joint_review.md` | 9.5 KB |  |
 | `docs/completeness_audit_round2.md` | 9.3 KB |  |
 | `docs/completion_statement_for_redteam.md` | 9.3 KB |  |
@@ -95,8 +97,8 @@
 | `docs/bus/round-01/kimi.md` | 8.2 KB |  |
 | `docs/w17_failure_cases.md` | 7.9 KB |  |
 | `docs/joint_review_agenda.md` | 7.8 KB |  |
+| `docs/demo_uptime_log.md` | 7.2 KB |  |
 | `docs/N1b_downgrade_narrative.md` | 7.0 KB |  |
-| `docs/demo_uptime_log.md` | 7.0 KB |  |
 | `docs/decision_queue.md` | 6.8 KB |  |
 | `docs/N2_narrative_final.md` | 6.6 KB |  |
 | `docs/taxonomy_three_paths.md` | 6.6 KB |  |
@@ -106,6 +108,7 @@
 | `docs/how_to_expand_gains.md` | 6.1 KB |  |
 | `docs/scoped_findings.md` | 5.9 KB |  |
 | `docs/N5_qna_factbase.md` | 5.9 KB |  |
+| `docs/human_gold_set_protocol.md` | 5.8 KB |  |
 | `docs/N6_review_risk_list.md` | 5.7 KB |  |
 | `docs/llm_credential_status.md` | 5.0 KB |  |
 | `docs/b_measure_results.md` | 5.0 KB |  |
@@ -115,8 +118,8 @@
 | `docs/v2_gate_verdict.md` | 4.7 KB |  |
 | `docs/w1_longtext_variants.md` | 4.7 KB |  |
 | `docs/evidence_index_exp.md` | 4.4 KB |  |
-| `docs/human_gold_set_protocol.md` | 4.2 KB |  |
 | `docs/e2_erratum.md` | 4.2 KB |  |
+| `docs/PAUSE_SNAPSHOT.md` | 3.7 KB |  |
 | `docs/bus/INDEX.md` | 3.6 KB |  |
 | `docs/repo_hygiene_scan.md` | 3.5 KB |  |
 | `docs/dataset_audit.md` | 3.5 KB | 数据集字段考古 |
@@ -124,7 +127,6 @@
 | `docs/N4_target_argument.md` | 3.5 KB |  |
 | `docs/w4_mining_estimate.md` | 3.4 KB |  |
 | `docs/M3b_judge_access_guide.md` | 3.3 KB |  |
-| `docs/PAUSE_SNAPSHOT.md` | 3.3 KB |  |
 | `docs/token_and_cost_budget.md` | 3.2 KB |  |
 | `docs/N3_calibration_evidence.md` | 3.1 KB |  |
 | `docs/sandbox_operation_notes.md` | 3.1 KB |  |
@@ -142,6 +144,7 @@
 | `docs/bus/TEMPLATE.md` | 1.2 KB |  |
 | `docs/checklist_version.json` | 0.8 KB |  |
 | `docs/year_split_output.txt` | 0.8 KB | 年份分桶脚本输出原文 |
+| `docs/gold_set/human_rulings_kimi.md` | 0.8 KB |  |
 
 ## 演示材料（6 项，18.1 MB）
 
@@ -277,7 +280,7 @@
 | `sample_reviews_100.csv` | 57.9 KB |  |
 | `agent_test_input.csv` | 27.9 KB |  |
 
-## 代码（159 项，0.8 MB）
+## 代码（160 项，0.8 MB）
 
 | 文件 | 大小 | 用途 |
 |---|---|---|
@@ -286,7 +289,7 @@
 | `v2_meta_analysis.py` | 19.1 KB |  |
 | `build_finals_appendix.py` | 16.1 KB |  |
 | `test_audit_checks.py` | 15.5 KB |  |
-| `build_finals_package.py` | 15.0 KB |  |
+| `build_finals_package.py` | 15.2 KB |  |
 | `v2_w4_mine.py` | 13.2 KB |  |
 | `build_finals_docx2.py` | 12.7 KB |  |
 | `build_pdf_v2.py` | 12.4 KB |  |
@@ -294,6 +297,7 @@
 | `make_ai_handoff.py` | 11.5 KB |  |
 | `build_pdf.py` | 11.2 KB |  |
 | `report_builder.py` | 10.2 KB |  |
+| `make_gold_set_notes.py` | 9.5 KB |  |
 | `demo_sound_v2.py` | 9.5 KB | 本地 Gradio Demo（三页；已内置代理绕过） |
 | `build_submission.py` | 9.3 KB |  |
 | `v2_w2_perclass.py` | 9.1 KB |  |
@@ -311,12 +315,12 @@
 | `make_faststart.py` | 7.6 KB |  |
 | `md_to_pdf.py` | 7.6 KB | 主文档 Markdown → PDF（内嵌中文字体） |
 | `w13_keyword_miss_rate.py` | 7.4 KB |  |
+| `score_gold_set.py` | 7.4 KB |  |
 | `v2_w5_cv.py` | 7.4 KB |  |
 | `v2_gate_outside_probe.py` | 7.4 KB |  |
 | `same_basis_compare.py` | 7.4 KB |  |
 | `v2_w4_prescreen.py` | 7.3 KB |  |
 | `make_gold_set.py` | 7.0 KB |  |
-| `score_gold_set.py` | 7.0 KB |  |
 | `v2_w6_split.py` | 7.0 KB |  |
 | `learning_curve.py` | 6.8 KB |  |
 | `diagnose_treble.py` | 6.6 KB |  |
@@ -327,11 +331,11 @@
 | `recover_meta_fields.py` | 6.0 KB |  |
 | `v2_w1_hybrid_select.py` | 6.0 KB |  |
 | `v2_m0_switch_check.py` | 6.0 KB |  |
+| `make_pause_snapshot.py` | 5.9 KB |  |
 | `gen_v2_artifacts.py` | 5.8 KB |  |
 | `precommit_guard.py` | 5.8 KB |  |
 | `run_all_checks.py` | 5.6 KB |  |
 | `w11_data_efficiency.py` | 5.5 KB |  |
-| `make_pause_snapshot.py` | 5.4 KB |  |
 | `distilbert_cv.py` | 5.4 KB |  |
 | `undersample_experiment.py` | 5.4 KB |  |
 | `md_to_docx.py` | 5.4 KB | 主文档 Markdown → Word |
@@ -497,13 +501,14 @@
 | `multi_label_model/` | 256.1 MB | 冻结的多标签归因模型权重（约 256MB），不入 git |
 | `sound_model/` | 256.1 MB | 冻结的二分类模型权重（约 256MB），不入 git |
 
-## 其他（59 项，49.7 MB）
+## 其他（60 项，49.9 MB）
 
 | 文件 | 大小 | 用途 |
 |---|---|---|
 | `更新世界的锋芒_SoundInsight_演示视频.mp4` | 46.1 MB |  |
 | `v2/review_longtext.jsonl` | 2.8 MB |  |
 | `v2/review_treble.jsonl` | 294.2 KB |  |
+| `v2/gold_set_notes.jsonl` | 245.0 KB |  |
 | `v2/w4_review_POOL_invalid.jsonl` | 98.0 KB |  |
 | `v2/w4_review.jsonl` | 96.8 KB |  |
 | `v2/gate_outside_review.jsonl` | 86.8 KB |  |
