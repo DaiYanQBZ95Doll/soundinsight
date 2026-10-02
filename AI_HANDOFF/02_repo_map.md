@@ -1,6 +1,6 @@
 # 文件地图（由 make_ai_handoff.py 自动生成，勿手改）
 
-> 生成时间：2026-10-02 21:10；共 535 个条目；体积单位 KB/MB。
+> 生成时间：2026-10-02 21:22；共 535 个条目；体积单位 KB/MB。
 
 ## 提交物（5 项，44.2 MB）
 
@@ -90,7 +90,7 @@
 | `docs/REVIEWER_BRIEF.md` | 14.8 KB |  |
 | `docs/reassessment_after_credential.md` | 14.6 KB |  |
 | `docs/bus/round-01/qwen.md` | 14.1 KB |  |
-| `docs/demo_uptime_log.md` | 13.3 KB |  |
+| `docs/demo_uptime_log.md` | 13.5 KB |  |
 | `docs/file_inventory.md` | 12.8 KB | 项目文件总索引 |
 | `docs/gold_set/human_rulings_dsh.md` | 12.6 KB |  |
 | `PROJECT_BRIEF_QWEN.md` | 11.6 KB |  |
@@ -574,11 +574,11 @@
 | `v2/w2_perclass_thresholds.json` | 2.3 KB |  |
 | `hashes.txt` | 2.0 KB |  |
 | `v2/w5_cv.json` | 2.0 KB |  |
+| `v2/push_log.json` | 1.9 KB |  |
 | `v2/gold_set_agreement.json` | 1.8 KB |  |
 | `v2/v2_artifacts.json` | 1.8 KB |  |
 | `v2/w6_split_manifest.json` | 1.8 KB |  |
 | `w13_keyword_miss_rate.json` | 1.8 KB |  |
-| `v2/push_log.json` | 1.7 KB |  |
 | `v2/w7_calibration.md` | 1.5 KB |  |
 | `v2/w5_final.md` | 1.5 KB |  |
 | `.gitignore` | 1.4 KB |  |

@@ -1,5 +1,5 @@
 {
- "generated": "2026-10-02 21:10",
+ "generated": "2026-10-02 21:22",
  "root": "C:\\deepseek-harness-master\\soundinsight",
  "count": 535,
  "entries": [
@@ -664,9 +664,9 @@
   {
    "path": "hashes.txt",
    "category": "其他",
-   "size_bytes": 2095,
+   "size_bytes": 2096,
    "purpose": "",
-   "sha256_16": "5edf597a12736fb319321638d60e26d13ee7003d1947976832efaaea320fffbb"
+   "sha256_16": "e4ffe4d951373531d084859533ad3e12bb18ee457e810627e9feeb6a2d87a62a"
   },
   {
    "path": "human_review_50.csv",
@@ -1226,7 +1226,7 @@
    "category": "验证报告",
    "size_bytes": 15507,
    "purpose": "数字一致性审计结果（含官方模板格式对照节）",
-   "sha256_16": "38ee081f48bc1cf22c97f511e9096ea7917f8cea6b9d9288563ad3efd8d2b522"
+   "sha256_16": "dba6ee71727c51cf63530b15b4913b2f104c871da7dcb7df2e8f679044c7e073"
   },
   {
    "path": "outside_gate_fp.py",
@@ -2155,9 +2155,9 @@
   {
    "path": "更新世界的锋芒_SoundInsight_其他材料.zip",
    "category": "提交物",
-   "size_bytes": 1530113,
+   "size_bytes": 1530109,
    "purpose": "",
-   "sha256_16": "a28a20a824ed6c20c0cbf8fb003b43a34e532c288ef2cae699f8d225666d3a73"
+   "sha256_16": "d6a34319535f2da15723a79620c8b796974c8cb09e6aa38056bcc7e1edacca03"
   },
   {
    "path": "更新世界的锋芒_SoundInsight_决赛入围定稿作品.docx",
@@ -2358,16 +2358,16 @@
   {
    "path": "docs/PAUSE_SNAPSHOT.md",
    "category": "过程与交接文档",
-   "size_bytes": 4839,
+   "size_bytes": 4838,
    "purpose": "",
-   "sha256_16": "55aed961ed7f91a17ebaec43369d9b940d05df7ea56dcb6646e248c3404a4e45"
+   "sha256_16": "119c95b903c81f00e29ac9d4cef5ccfde5447d771a59509064794325f4c7f365"
   },
   {
    "path": "docs/REVIEWER_BRIEF.md",
    "category": "过程与交接文档",
    "size_bytes": 15191,
    "purpose": "",
-   "sha256_16": "0f957ad341b16fe2a32f138fa1a276a66d633e7b1afc2148ae65212d0677c88b"
+   "sha256_16": "7a5a44665df2a9e5f84fa8c6700867c6693b0536dfc1e57a75ecef23c28dad04"
   },
   {
    "path": "docs/SoundInsight决赛备战_现状盘点清单.md",
@@ -2435,9 +2435,9 @@
   {
    "path": "docs/demo_uptime_log.md",
    "category": "过程与交接文档",
-   "size_bytes": 13571,
+   "size_bytes": 13871,
    "purpose": "",
-   "sha256_16": "8198de3364153e99fec6fbaf4586fb317712d0206f352cdaa9458420a1980dca"
+   "sha256_16": "f4e119a58d9bc5bc548a43e7d8285356ca3df4ab792cec0d882ec5c729abc7b3"
   },
   {
    "path": "docs/difficulty_stratification.md",
@@ -2780,7 +2780,7 @@
    "category": "过程与交接文档",
    "size_bytes": 4778,
    "purpose": "",
-   "sha256_16": "ba77ed76fbf81cee20cc4f91f866b64746cc308f08036e635189404c0b42ff06"
+   "sha256_16": "25a01b2b4a6c98584ff25a50be023d5b9fec1fd64cf6153f993d1a4c8e211dc7"
   },
   {
    "path": "docs/bus/README.md",
@@ -3282,9 +3282,9 @@
   {
    "path": "v2/push_log.json",
    "category": "其他",
-   "size_bytes": 1708,
+   "size_bytes": 1995,
    "purpose": "",
-   "sha256_16": "e8d90175b2c068d595c2b7e357c66d37e0a5c84ccf01c19c003c478d1ecd7cca"
+   "sha256_16": "a352c16701831426080ba7d1a09cb848d0a1de3a5b28f37bcf5f671535d4653d"
   },
   {
    "path": "v2/realworld_eval.json",
