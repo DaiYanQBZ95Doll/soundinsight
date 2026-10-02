@@ -1,6 +1,6 @@
 # 公开仓库卫生扫描（密钥 / 隐私 / 废弃 claim）
 
-- 扫描范围：git 跟踪文件 501 个（文本与数据类逐行扫；二进制仅按文件名判断）
+- 扫描范围：git 跟踪文件 506 个（文本与数据类逐行扫；二进制仅按文件名判断）
 - 生成方式：`python scan_repo_hygiene.py`（可随时重跑）
 
 ## 一、密钥与凭据
@@ -57,11 +57,9 @@
 - `ppt_speed_fix.py`：3 处（行 22, 23, 24）
 
 ## 四、生成物一致性（manifest.json 记录值 vs 实际文件）
-- [需修正] 4 处记录值已过期（跑 `python make_ai_handoff.py` 重新生成）：
-  - `docs/bus/round-01/kimi.md` size_bytes：记录 10209 → 实际 10561
-  - `docs/bus/round-01/kimi.md` sha256_16：记录 37328622b0f28f19 → 实际 f037c9a64965ccfc
-  - `docs/gold_set/answer_sheet_decision.md` size_bytes：记录 438283 → 实际 57741
-  - `docs/gold_set/answer_sheet_decision.md` sha256_16：记录 45025d75508afc44 → 实际 587b3b701f4230cc
+- [需修正] 2 处记录值已过期（跑 `python make_ai_handoff.py` 重新生成）：
+  - `docs/gold_set/answer_sheet_decision.md` size_bytes：记录 297936 → 实际 322259
+  - `docs/gold_set/answer_sheet_decision.md` sha256_16：记录 5f59b481e0aff8a6 → 实际 186d6c9439f6a033
 
 ## 五、结论与建议
 - 密钥：未发现（高危 0 处；历史提交命中 0 处）

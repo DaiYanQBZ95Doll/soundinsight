@@ -189,6 +189,26 @@ def apply_rulings(rows, mapping: dict, author: str, write_csv: bool = False) -> 
     return len(applied)
 
 
+def _slot_value(line: str):
+    """从判定位行中稳妥取值：取反引号内容里的 0/1/2。
+
+    决策方的实际写法是**在横线内填数字**（如 `` `_0__` ``、`` `__0_` ``），
+    故不能要求"恰好一个字符"。返回 ('0'|'1'|'?'|None, 说明)：
+      · 恰好一个不同数字 → 值（2 映射为 ?）；
+      · 无数字 → None（未填）；
+      · 两个不同数字 → ('AMBIG', 原样内容)，交人工确认，**不猜**。
+    """
+    m = re.search(r"`([^`]*)`", line)
+    content = m.group(1) if m else line
+    digs = [c for c in content if c in "012"]
+    distinct = sorted(set(digs))
+    if len(distinct) > 1:
+        return "AMBIG", content
+    if not distinct:
+        return None, content
+    return ("?" if distinct[0] == "2" else distinct[0]), content
+
+
 def import_from_notes(path: str) -> dict:
     """从 review_notes.md 解析 `**判定（决策方填）**：`<值>`` —— 只接受 1/0/? 。
     空白（`___`）视为未判，不返回。"""
@@ -209,10 +229,12 @@ def import_from_notes(path: str) -> dict:
         if m:
             cur = m.group(1)
             continue
-        if cur:
-            m2 = pat_val.search(ln.strip())
-            if m2:
-                out[cur] = VAL2CELL[m2.group(1)]
+        if cur and ("判定（决策方填）" in ln or "判定" in ln):
+            val, raw = _slot_value(ln.strip())
+            if val == "AMBIG":
+                ambig.append(f"{cur}（内容 {raw!r}）")
+            elif val is not None:
+                out[cur] = VAL2CELL.get(val, val)
     return out
 
 

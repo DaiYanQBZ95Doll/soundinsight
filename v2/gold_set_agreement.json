@@ -1,0 +1,48 @@
+{
+  "per_stratum": {
+    "S1": {
+      "labeled": 100,
+      "human_labeled": 94,
+      "human_positive": 3,
+      "human_rate": 0.0319,
+      "wilson95": [
+        0.0109,
+        0.0897
+      ],
+      "llm_agreement_pct": 98.9,
+      "kappa": 0.852,
+      "desc": "闸门外随机（校准 1.33% 一说）"
+    },
+    "S2": {
+      "labeled": 100,
+      "human_labeled": 96,
+      "human_positive": 7,
+      "human_rate": 0.0729,
+      "wilson95": [
+        0.0358,
+        0.1429
+      ],
+      "llm_agreement_pct": 86.5,
+      "kappa": -0.072,
+      "desc": "四五星候选池（校准 1.0%／3.1%）"
+    },
+    "S3": {
+      "labeled": 100,
+      "human_labeled": 89,
+      "human_positive": 15,
+      "human_rate": 0.1685,
+      "wilson95": [
+        0.1049,
+        0.2596
+      ],
+      "llm_agreement_pct": 64.0,
+      "kappa": 0.264,
+      "desc": "现有已标注集（校准标签质量本身）"
+    }
+  },
+  "overall": {
+    "pairs": 279,
+    "agreement_pct": 83.5,
+    "kappa": 0.328
+  }
+}

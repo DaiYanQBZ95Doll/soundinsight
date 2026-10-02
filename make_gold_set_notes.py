@@ -113,6 +113,26 @@ def call(text: str, key: str, retries: int = 2) -> dict:
     return {"_error": last}
 
 
+def _slot_value(line: str):
+    """从判定位行中稳妥取值：取反引号内容里的 0/1/2。
+
+    决策方的实际写法是**在横线内填数字**（如 `` `_0__` ``、`` `__0_` ``），
+    故不能要求"恰好一个字符"。返回 ('0'|'1'|'?'|None, 说明)：
+      · 恰好一个不同数字 → 值（2 映射为 ?）；
+      · 无数字 → None（未填）；
+      · 两个不同数字 → ('AMBIG', 原样内容)，交人工确认，**不猜**。
+    """
+    m = re.search(r"`([^`]*)`", line)
+    content = m.group(1) if m else line
+    digs = [c for c in content if c in "012"]
+    distinct = sorted(set(digs))
+    if len(distinct) > 1:
+        return "AMBIG", content
+    if not distinct:
+        return None, content
+    return ("?" if distinct[0] == "2" else distinct[0]), content
+
+
 def _read_existing_judgements(csv_path: str, *md_paths: str) -> dict:
     """读出**已填**判定（CSV 判定列 + MD 里 `判定（决策方填）` 后已填的值）。
 
@@ -130,10 +150,10 @@ def _read_existing_judgements(csv_path: str, *md_paths: str) -> dict:
             if m:
                 cur = m.group(1)
                 continue
-            if cur:
-                m2 = _JUDGE_MD.search(ln.strip())
-                if m2:
-                    md_vals.setdefault(cur, "?" if m2.group(1) == "2" else m2.group(1))
+            if cur and "判定" in ln:
+                val, _raw = _slot_value(ln.strip())
+                if val and val != "AMBIG":
+                    md_vals.setdefault(cur, val)
     if os.path.isfile(csv_path):
         try:
             for r in csv.DictReader(open(csv_path, encoding="utf-8-sig", errors="replace")):
