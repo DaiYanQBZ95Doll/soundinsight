@@ -1,6 +1,6 @@
 # 文件地图（由 make_ai_handoff.py 自动生成，勿手改）
 
-> 生成时间：2026-10-02 16:36；共 495 个条目；体积单位 KB/MB。
+> 生成时间：2026-10-02 16:44；共 500 个条目；体积单位 KB/MB。
 
 ## 提交物（5 项，44.1 MB）
 
@@ -58,12 +58,12 @@
 | `confidence_tiered.md` | 0.7 KB | 三星补漏置信度分层与中置信剔除记录 |
 | `significance_test.md` | 0.6 KB | Welch t 检验（p=0.000932） |
 
-## 过程与交接文档（89 项，2.6 MB）
+## 过程与交接文档（91 项，2.7 MB）
 
 | 文件 | 大小 | 用途 |
 |---|---|---|
 | `docs/gold_set/review_notes.md` | 439.9 KB |  |
-| `docs/gold_set/answer_sheet.md` | 436.9 KB |  |
+| `docs/gold_set/answer_sheet.md` | 437.4 KB |  |
 | `docs/gold_set/answer_sheet_decision.md` | 428.0 KB |  |
 | `docs/gold_set/assisted_worksheet.csv` | 401.7 KB |  |
 | `docs/gold_set/worksheet.csv` | 177.2 KB |  |
@@ -75,6 +75,7 @@
 | `docs/retrospective_and_reflection.md` | 27.9 KB |  |
 | `docs/three_stage_comparison.md` | 21.9 KB |  |
 | `docs/project_full_record.md` | 21.6 KB | 初赛→复赛全流程记录 |
+| `docs/gold_set/bias_probe_sheet.md` | 21.5 KB |  |
 | `docs/v2_acceptance_benchmark.md` | 20.4 KB |  |
 | `docs/D13_seal_declaration.md` | 20.1 KB | D13 封包声明（提交技术质检终审） |
 | `docs/final_review_and_execution_plan.md` | 19.9 KB |  |
@@ -90,8 +91,8 @@
 | `docs/decision_request_v15_and_nline.md` | 10.4 KB |  |
 | `docs/pre_lock_completeness_audit.md` | 10.4 KB |  |
 | `docs/progress_report_current.md` | 10.4 KB |  |
+| `docs/demo_uptime_log.md` | 10.2 KB |  |
 | `docs/bus/round-01/kimi.md` | 10.0 KB |  |
-| `docs/demo_uptime_log.md` | 9.8 KB |  |
 | `docs/opinion_dsh_joint_review.md` | 9.5 KB |  |
 | `docs/completeness_audit_round2.md` | 9.3 KB |  |
 | `docs/completion_statement_for_redteam.md` | 9.3 KB |  |
@@ -107,11 +108,11 @@
 | `docs/taxonomy_three_paths.md` | 6.6 KB |  |
 | `docs/external_sources_register.md` | 6.5 KB |  |
 | `docs/N1_narrative_mainline.md` | 6.5 KB |  |
+| `docs/human_gold_set_protocol.md` | 6.3 KB |  |
 | `docs/work_summary_d7.md` | 6.2 KB |  |
 | `docs/how_to_expand_gains.md` | 6.1 KB |  |
 | `docs/scoped_findings.md` | 5.9 KB |  |
 | `docs/N5_qna_factbase.md` | 5.9 KB |  |
-| `docs/human_gold_set_protocol.md` | 5.8 KB |  |
 | `docs/N6_review_risk_list.md` | 5.7 KB |  |
 | `docs/gold_set/JUDGING.md` | 5.1 KB |  |
 | `docs/llm_credential_status.md` | 5.0 KB |  |
@@ -140,6 +141,7 @@
 | `docs/w17_confidence_actions.md` | 2.8 KB |  |
 | `AI_INDUCTION_REDLINE.md` | 2.7 KB |  |
 | `docs/ppt_claims_erratum.md` | 2.6 KB |  |
+| `docs/gold_set/bias_probe_design.md` | 2.6 KB |  |
 | `docs/W5_cv_interpretation.md` | 2.2 KB |  |
 | `docs/w13_keyword_miss_rate.md` | 2.1 KB |  |
 | `docs/bus/rulings.md` | 2.0 KB |  |
@@ -286,7 +288,7 @@
 | `sample_reviews_100.csv` | 57.9 KB |  |
 | `agent_test_input.csv` | 27.9 KB |  |
 
-## 代码（163 项，0.8 MB）
+## 代码（165 项，0.8 MB）
 
 | 文件 | 大小 | 用途 |
 |---|---|---|
@@ -294,10 +296,10 @@
 | `apply_human_rulings.py` | 20.7 KB |  |
 | `scan_repo_hygiene.py` | 19.7 KB |  |
 | `v2_meta_analysis.py` | 19.1 KB |  |
-| `make_gold_set_notes.py` | 18.0 KB |  |
+| `make_gold_set_notes.py` | 18.6 KB |  |
 | `build_finals_appendix.py` | 16.1 KB |  |
 | `test_audit_checks.py` | 15.5 KB |  |
-| `build_finals_package.py` | 15.4 KB |  |
+| `build_finals_package.py` | 15.5 KB |  |
 | `v2_w4_mine.py` | 13.2 KB |  |
 | `build_finals_docx2.py` | 12.7 KB |  |
 | `build_pdf_v2.py` | 12.4 KB |  |
@@ -362,6 +364,7 @@
 | `make_bus_index.py` | 4.4 KB |  |
 | `verify_finals_package.py` | 4.4 KB |  |
 | `check_refs_and_deps.py` | 4.4 KB |  |
+| `score_bias_probe.py` | 4.2 KB |  |
 | `retime_srt.py` | 4.2 KB |  |
 | `check_external_deps.py` | 4.1 KB |  |
 | `tune_per_class_threshold.py` | 4.0 KB |  |
@@ -397,6 +400,7 @@
 | `update_finals_hashes.py` | 2.6 KB |  |
 | `capture_demo_output.py` | 2.6 KB |  |
 | `apply_mid_demotion.py` | 2.6 KB |  |
+| `make_bias_probe.py` | 2.6 KB |  |
 | `rebuild_video_timing.py` | 2.5 KB |  |
 | `download_models.py` | 2.5 KB |  |
 | `retier_conf.py` | 2.4 KB |  |
@@ -510,7 +514,7 @@
 | `multi_label_model/` | 256.1 MB | 冻结的多标签归因模型权重（约 256MB），不入 git |
 | `sound_model/` | 256.1 MB | 冻结的二分类模型权重（约 256MB），不入 git |
 
-## 其他（62 项，49.9 MB）
+## 其他（63 项，49.9 MB）
 
 | 文件 | 大小 | 用途 |
 |---|---|---|
@@ -562,6 +566,7 @@
 | `v2/w1_eval_maxlen128.json` | 0.9 KB |  |
 | `v2/w1_eval_maxlen256.json` | 0.9 KB |  |
 | `v2/w1_eval_maxlen512.json` | 0.9 KB |  |
+| `v2/bias_probe_ids.json` | 0.8 KB |  |
 | `v2/b_measure_results.json` | 0.7 KB |  |
 | `v2/outside_gate_fp.json` | 0.6 KB |  |
 | `v2/push_log.json` | 0.5 KB |  |

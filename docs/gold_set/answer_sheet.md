@@ -6,6 +6,11 @@
 > **1 = 是**（在说耳机/耳塞/头戴的音质）｜**0 = 不是**｜**2 = 无法判断**（产品不确定，不计入一致率）。
 > **填一部分也可以**；填完群发「答题卡已交」，执行方接收（重跑本生成器会**保留**已填判定）。
 
+> ⚠️ **锚定风险披露（执行方自查）**：下面的「解释」栏含 **声音表述** 一项，而你的判据正是「是否在说音质」——
+> 该栏与判据**高度相关**，客观上会把答案偏向你。缓解：① 解析由脚本强制中性（禁判定词，命中即打回）；
+> ② 提供**只看原文**的重判卡 `docs/gold_set/bias_probe_sheet.md`（40 条随机子集、可复现），
+> 用 `python score_bias_probe.py` 量化「我的材料把你的判读推动了多少、往哪个方向推」。
+
 ## S2-037　G001
 
 **原文**：I have a GeForce 750Ti and I broke the HDMI output on it.  I bought this because I found that my video card can provide audio via the DVI output.  This is a good product.  There is one issue that I find when playing video.  There is a hangup/buzzing that occurs periodically and in close succession.  It isn't something most folks would put up with.  I cannot say it is caused by the cable.  It may be my card.  I obviously did something to make the HDMI port stop working and it is reasonable to question if that impacted the card overall.
