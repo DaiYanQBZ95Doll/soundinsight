@@ -154,10 +154,19 @@ def main() -> int:
 
     h = head()
     log = load_log()
-    if all_ok_today and not args.force and not prio:
-        print(f"[跳过] 今天已成功推送（{today()}），且各可达远端均与本地一致")
+    # 每日限频的**真实**判据：今天是否已成功推送过（与"远端是否落后"无关）。
+    # 修正前用 all_ok_today 判据 → 远端一落后就为 False，限频实际上从未生效
+    # （只挡住"已同步时的冗余推送"），"每天一次"全靠人不去跑它；2026-10-02 自查发现并修正。
+    pushed_today = any(v.get("date") == today()
+                       for v in (log.get("last_success") or {}).values())
+    if pushed_today and not args.force and not prio and n_pending == 0:
+        print(f"[跳过] 今天已成功推送（{today()}），且无未推送变更")
         return 0
-    if prio and all_ok_today and not args.force:
+    if pushed_today and not args.force and not prio and n_pending > 0:
+        print(f"[跳过] 今天已成功推送（{today()}）——按 R29 每天一次，"
+              f"当前有 {n_pending} 个未推送文件留待下次；要立即推送用 --force")
+        return 0
+    if prio and pushed_today and not args.force:
         print(f"[当日必推] 检测到 {len(prio)} 个「给红队读」的文件变更"
               f"（共 {n_pending} 个未推送文件）——绕过每日限频")
         for f in prio[:8]:

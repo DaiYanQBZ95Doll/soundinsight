@@ -1,6 +1,6 @@
 # 文件地图（由 make_ai_handoff.py 自动生成，勿手改）
 
-> 生成时间：2026-10-02 21:00；共 535 个条目；体积单位 KB/MB。
+> 生成时间：2026-10-02 21:10；共 535 个条目；体积单位 KB/MB。
 
 ## 提交物（5 项，44.2 MB）
 
@@ -90,17 +90,17 @@
 | `docs/REVIEWER_BRIEF.md` | 14.8 KB |  |
 | `docs/reassessment_after_credential.md` | 14.6 KB |  |
 | `docs/bus/round-01/qwen.md` | 14.1 KB |  |
-| `docs/demo_uptime_log.md` | 13.0 KB |  |
+| `docs/demo_uptime_log.md` | 13.3 KB |  |
 | `docs/file_inventory.md` | 12.8 KB | 项目文件总索引 |
 | `docs/gold_set/human_rulings_dsh.md` | 12.6 KB |  |
 | `PROJECT_BRIEF_QWEN.md` | 11.6 KB |  |
 | `docs/N_line_handoff_protocol.md` | 11.2 KB |  |
 | `docs/finals_stage.md` | 11.0 KB |  |
+| `docs/EXECUTION_DISCIPLINE.md` | 10.9 KB |  |
 | `docs/decision_request_v15_and_nline.md` | 10.4 KB |  |
 | `docs/pre_lock_completeness_audit.md` | 10.4 KB |  |
 | `docs/progress_report_current.md` | 10.4 KB |  |
 | `docs/bus/round-01/kimi.md` | 10.3 KB |  |
-| `docs/EXECUTION_DISCIPLINE.md` | 10.2 KB |  |
 | `docs/opinion_dsh_joint_review.md` | 9.5 KB |  |
 | `docs/completion_statement_for_redteam.md` | 9.4 KB |  |
 | `docs/completeness_audit_round2.md` | 9.3 KB |  |
@@ -324,10 +324,10 @@
 | `report_builder.py` | 10.2 KB |  |
 | `build_finals_content.py` | 10.1 KB |  |
 | `rulings_io.py` | 9.8 KB |  |
+| `push_daily.py` | 9.7 KB |  |
 | `demo_sound_v2.py` | 9.5 KB | 本地 Gradio Demo（三页；已内置代理绕过） |
 | `build_submission.py` | 9.3 KB |  |
 | `v2_w2_perclass.py` | 9.1 KB |  |
-| `push_daily.py` | 9.0 KB |  |
 | `outside_gate_fp.py` | 8.9 KB |  |
 | `make_clean_probe.py` | 8.9 KB |  |
 | `v2_w7_calibration.py` | 8.9 KB |  |
@@ -578,6 +578,7 @@
 | `v2/v2_artifacts.json` | 1.8 KB |  |
 | `v2/w6_split_manifest.json` | 1.8 KB |  |
 | `w13_keyword_miss_rate.json` | 1.8 KB |  |
+| `v2/push_log.json` | 1.7 KB |  |
 | `v2/w7_calibration.md` | 1.5 KB |  |
 | `v2/w5_final.md` | 1.5 KB |  |
 | `.gitignore` | 1.4 KB |  |
@@ -599,7 +600,6 @@
 | `v2/w1_eval_maxlen128.json` | 0.9 KB |  |
 | `v2/w1_eval_maxlen256.json` | 0.9 KB |  |
 | `v2/w1_eval_maxlen512.json` | 0.9 KB |  |
-| `v2/push_log.json` | 0.8 KB |  |
 | `v2/bias_probe_ids.json` | 0.8 KB |  |
 | `v2/scope_summary.json` | 0.7 KB |  |
 | `v2/b_measure_results.json` | 0.7 KB |  |
