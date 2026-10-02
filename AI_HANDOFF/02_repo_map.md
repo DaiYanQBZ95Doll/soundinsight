@@ -1,6 +1,6 @@
 # 文件地图（由 make_ai_handoff.py 自动生成，勿手改）
 
-> 生成时间：2026-10-02 15:56；共 493 个条目；体积单位 KB/MB。
+> 生成时间：2026-10-02 16:06；共 494 个条目；体积单位 KB/MB。
 
 ## 提交物（5 项，43.9 MB）
 
@@ -91,8 +91,8 @@
 | `docs/opinion_dsh_joint_review.md` | 9.5 KB |  |
 | `docs/completeness_audit_round2.md` | 9.3 KB |  |
 | `docs/completion_statement_for_redteam.md` | 9.3 KB |  |
+| `docs/demo_uptime_log.md` | 9.1 KB |  |
 | `QWEN_HANDOFF.md` | 9.1 KB |  |
-| `docs/demo_uptime_log.md` | 8.8 KB |  |
 | `docs/process_review_d10.md` | 8.5 KB |  |
 | `docs/legacy_materials_notice.md` | 8.3 KB |  |
 | `docs/bus/round-01/kimi.md` | 8.2 KB |  |
@@ -104,13 +104,13 @@
 | `docs/taxonomy_three_paths.md` | 6.6 KB |  |
 | `docs/external_sources_register.md` | 6.5 KB |  |
 | `docs/N1_narrative_mainline.md` | 6.5 KB |  |
+| `docs/EXECUTION_DISCIPLINE.md` | 6.4 KB |  |
 | `docs/work_summary_d7.md` | 6.2 KB |  |
 | `docs/how_to_expand_gains.md` | 6.1 KB |  |
 | `docs/scoped_findings.md` | 5.9 KB |  |
 | `docs/N5_qna_factbase.md` | 5.9 KB |  |
 | `docs/human_gold_set_protocol.md` | 5.8 KB |  |
 | `docs/N6_review_risk_list.md` | 5.7 KB |  |
-| `docs/EXECUTION_DISCIPLINE.md` | 5.6 KB |  |
 | `docs/gold_set/JUDGING.md` | 5.1 KB |  |
 | `docs/llm_credential_status.md` | 5.0 KB |  |
 | `docs/b_measure_results.md` | 5.0 KB |  |
@@ -124,7 +124,7 @@
 | `docs/gold_set/answer_sheet.md` | 4.7 KB |  |
 | `docs/evidence_index_exp.md` | 4.4 KB |  |
 | `docs/e2_erratum.md` | 4.2 KB |  |
-| `docs/PAUSE_SNAPSHOT.md` | 3.7 KB |  |
+| `docs/PAUSE_SNAPSHOT.md` | 3.8 KB |  |
 | `docs/bus/INDEX.md` | 3.6 KB |  |
 | `docs/repo_hygiene_scan.md` | 3.5 KB |  |
 | `docs/dataset_audit.md` | 3.5 KB | 数据集字段考古 |
@@ -286,7 +286,7 @@
 | `sample_reviews_100.csv` | 57.9 KB |  |
 | `agent_test_input.csv` | 27.9 KB |  |
 
-## 代码（162 项，0.8 MB）
+## 代码（163 项，0.8 MB）
 
 | 文件 | 大小 | 用途 |
 |---|---|---|
@@ -332,15 +332,16 @@
 | `learning_curve.py` | 6.8 KB |  |
 | `diagnose_treble.py` | 6.6 KB |  |
 | `fetch_electronics.py` | 6.5 KB |  |
+| `make_pause_snapshot.py` | 6.3 KB |  |
 | `v2_w4_estimate.py` | 6.3 KB |  |
 | `cross_model_review.py` | 6.3 KB |  |
 | `difficulty_stratification.py` | 6.1 KB |  |
 | `recover_meta_fields.py` | 6.0 KB |  |
 | `v2_w1_hybrid_select.py` | 6.0 KB |  |
 | `v2_m0_switch_check.py` | 6.0 KB |  |
-| `make_pause_snapshot.py` | 5.9 KB |  |
 | `gen_v2_artifacts.py` | 5.8 KB |  |
 | `precommit_guard.py` | 5.8 KB |  |
+| `push_daily.py` | 5.7 KB |  |
 | `run_all_checks.py` | 5.6 KB |  |
 | `w11_data_efficiency.py` | 5.5 KB |  |
 | `distilbert_cv.py` | 5.4 KB |  |

@@ -37,6 +37,13 @@ fsize = os.path.getsize(os.path.join(HERE, FINALS))
 with zipfile.ZipFile(os.path.join(HERE, FINALS)) as z:
     n_entries = len(z.namelist())
 rsha = hashlib.sha256(open(os.path.join(HERE, RECAP), "rb").read()).hexdigest()[:16]
+# 推送记录（每日一次，见执行纪律 R29）
+try:
+    _pl = json.load(open(os.path.join(HERE, "v2", "push_log.json"), encoding="utf-8"))
+    _ls = _pl.get("last_success") or {}
+    last_push = "｜".join(f"{k} {v.get('at','—')}" for k, v in _ls.items()) or "—（尚无记录）"
+except (OSError, ValueError):
+    last_push = "—（无 push_log.json）"
 queue = [
     ("**R-1**", "**提供 Token Plan key**（我即跑跨模型判定 300 条，约 $0.01）", "**待决策方**"),
     ("**R-2**", "**确认 3-a 是否即刻执行**（五类归因只改表述，20 分钟、零风险）", "**待决策方一句话**"),
@@ -62,7 +69,8 @@ snap = f"""# 停工快照（生成式，勿手改）
 | 项 | 值 |
 |---|---|
 | 本地 HEAD | `{head}`（累计 {commits} 个提交；范围冻结后 {lock_commits} 个） |
-| 远端同步 | GitCode / GitHub｜**待推送 {pending}** |
+| 远端同步 | GitCode / GitHub｜**待推送 {pending}**（推送**每天一次**，见 R29） |
+| 上次成功推送 | {last_push} |
 | 工作区 | {"**干净**" if dirty == 0 else f"有 {dirty} 项未提交改动"} |
 | 决赛包 | {n_entries} 条目｜体积 {fsize:,} B（**随重建变化，以 `hashes.txt` 决赛段为准**） |
 | 复赛包（红线 9） | sha256 `{rsha}…`（冻结值 `e6cae286515ef1d2`） |
