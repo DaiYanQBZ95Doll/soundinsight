@@ -1,6 +1,6 @@
 # 三方沟通总线 · 总览（自动生成，勿手改）
 
-> 生成时刻：2026-10-02 14:51:40｜当前 HEAD `b1a8ec7`｜刷新：`python make_bus_index.py`
+> 生成时刻：2026-10-02 14:58:24｜当前 HEAD `6e63987`｜刷新：`python make_bus_index.py`
 > 协议见 `docs/bus/README.md`；卡片格式见 `docs/bus/TEMPLATE.md`。
 
 ## round-01
@@ -37,7 +37,7 @@
 
 ## ⚠️ 基线落后提示（文件在变，请以最新 HEAD 复核）
 
-- round-01/dsh.md 基线 `483422d` ≠ 当前 `b1a8ec7`
-- round-01/kimi.md 基线 `483422d` ≠ 当前 `b1a8ec7`
-- round-01/qwen.md 基线 `483422d` ≠ 当前 `b1a8ec7`
+- round-01/dsh.md 基线 `483422d` ≠ 当前 `6e63987`
+- round-01/kimi.md 基线 `483422d` ≠ 当前 `6e63987`
+- round-01/qwen.md 基线 `483422d` ≠ 当前 `6e63987`
 

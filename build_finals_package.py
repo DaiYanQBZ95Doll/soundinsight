@@ -123,6 +123,7 @@ OTHER_FILES = [
     "make_reviewer_brief.py",
     "docs/human_gold_set_protocol.md", "make_gold_set.py", "score_gold_set.py",
     "make_gold_set_notes.py", "gold_set_helper.py",
+    "docs/gold_set/JUDGING.md", "apply_human_rulings.py",
     "docs/gold_set/review_notes.md", "docs/gold_set/assisted_worksheet.csv",
     "v2/ai_scope_classification.json", "v2/w4_review_POOL_invalid.jsonl", "w4_model_vs_llm.py",
     "docs/difficulty_stratification.md", "outside_gate_fp.py",

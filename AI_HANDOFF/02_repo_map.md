@@ -1,6 +1,6 @@
 # 文件地图（由 make_ai_handoff.py 自动生成，勿手改）
 
-> 生成时间：2026-10-02 14:51；共 488 个条目；体积单位 KB/MB。
+> 生成时间：2026-10-02 14:58；共 488 个条目；体积单位 KB/MB。
 
 ## 提交物（5 项，43.9 MB）
 
@@ -97,7 +97,7 @@
 | `docs/bus/round-01/kimi.md` | 8.2 KB |  |
 | `docs/w17_failure_cases.md` | 7.9 KB |  |
 | `docs/joint_review_agenda.md` | 7.8 KB |  |
-| `docs/demo_uptime_log.md` | 7.5 KB |  |
+| `docs/demo_uptime_log.md` | 7.7 KB |  |
 | `docs/N1b_downgrade_narrative.md` | 7.0 KB |  |
 | `docs/decision_queue.md` | 6.8 KB |  |
 | `docs/N2_narrative_final.md` | 6.6 KB |  |
