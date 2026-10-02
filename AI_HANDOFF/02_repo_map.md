@@ -1,6 +1,6 @@
 # 文件地图（由 make_ai_handoff.py 自动生成，勿手改）
 
-> 生成时间：2026-10-02 14:40；共 484 个条目；体积单位 KB/MB。
+> 生成时间：2026-10-02 14:51；共 488 个条目；体积单位 KB/MB。
 
 ## 提交物（5 项，43.9 MB）
 
@@ -58,7 +58,7 @@
 | `confidence_tiered.md` | 0.7 KB | 三星补漏置信度分层与中置信剔除记录 |
 | `significance_test.md` | 0.6 KB | Welch t 检验（p=0.000932） |
 
-## 过程与交接文档（83 项，1.8 MB）
+## 过程与交接文档（85 项，1.8 MB）
 
 | 文件 | 大小 | 用途 |
 |---|---|---|
@@ -97,7 +97,7 @@
 | `docs/bus/round-01/kimi.md` | 8.2 KB |  |
 | `docs/w17_failure_cases.md` | 7.9 KB |  |
 | `docs/joint_review_agenda.md` | 7.8 KB |  |
-| `docs/demo_uptime_log.md` | 7.2 KB |  |
+| `docs/demo_uptime_log.md` | 7.5 KB |  |
 | `docs/N1b_downgrade_narrative.md` | 7.0 KB |  |
 | `docs/decision_queue.md` | 6.8 KB |  |
 | `docs/N2_narrative_final.md` | 6.6 KB |  |
@@ -114,6 +114,7 @@
 | `docs/b_measure_results.md` | 5.0 KB |  |
 | `docs/DoD_completion_table.md` | 4.9 KB |  |
 | `docs/w4_prescreen_estimate.md` | 4.8 KB |  |
+| `docs/gold_set/answer_sheet_kimi.md` | 4.8 KB |  |
 | `docs/SoundInsight决赛备战_现状盘点清单.md` | 4.8 KB |  |
 | `docs/v2_gate_verdict.md` | 4.7 KB |  |
 | `docs/w1_longtext_variants.md` | 4.7 KB |  |
@@ -132,6 +133,7 @@
 | `docs/sandbox_operation_notes.md` | 3.1 KB |  |
 | `docs/D14_resume_checklist.md` | 3.0 KB | 收尾四步清单（录视频/打包/上传/补推送） |
 | `docs/difficulty_stratification.md` | 2.9 KB |  |
+| `docs/gold_set/JUDGING.md` | 2.8 KB |  |
 | `docs/drift_plan.md` | 2.8 KB | 数据漂移监控方案 |
 | `docs/w17_confidence_actions.md` | 2.8 KB |  |
 | `AI_INDUCTION_REDLINE.md` | 2.7 KB |  |
@@ -280,7 +282,7 @@
 | `sample_reviews_100.csv` | 57.9 KB |  |
 | `agent_test_input.csv` | 27.9 KB |  |
 
-## 代码（160 项，0.8 MB）
+## 代码（161 项，0.8 MB）
 
 | 文件 | 大小 | 用途 |
 |---|---|---|
@@ -296,6 +298,7 @@
 | `v2_w1_longtext.py` | 12.1 KB |  |
 | `make_ai_handoff.py` | 11.5 KB |  |
 | `build_pdf.py` | 11.2 KB |  |
+| `apply_human_rulings.py` | 11.2 KB |  |
 | `report_builder.py` | 10.2 KB |  |
 | `make_gold_set_notes.py` | 9.5 KB |  |
 | `demo_sound_v2.py` | 9.5 KB | 本地 Gradio Demo（三页；已内置代理绕过） |
@@ -501,7 +504,7 @@
 | `multi_label_model/` | 256.1 MB | 冻结的多标签归因模型权重（约 256MB），不入 git |
 | `sound_model/` | 256.1 MB | 冻结的二分类模型权重（约 256MB），不入 git |
 
-## 其他（60 项，49.9 MB）
+## 其他（61 项，49.9 MB）
 
 | 文件 | 大小 | 用途 |
 |---|---|---|
@@ -565,3 +568,4 @@
 | `v2/model_vs_llm_on_w4_sample.json` | 0.2 KB |  |
 | `v2/w4_summary.json` | 0.2 KB |  |
 | `v2/review_longtext_summary.json` | 0.2 KB |  |
+| `v2/gold_set_batch.json` | 0.1 KB |  |
