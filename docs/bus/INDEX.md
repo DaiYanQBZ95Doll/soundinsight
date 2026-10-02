@@ -2,7 +2,7 @@
 
 > **席位可用性**：dsh:可用｜kimi:可用｜qwen:可用
 
-> 生成时刻：2026-10-02 20:45:00｜当前 HEAD `3939ef6`｜刷新：`python make_bus_index.py`
+> 生成时刻：2026-10-02 21:00:21｜当前 HEAD `c403565`｜刷新：`python make_bus_index.py`
 > 协议见 `docs/bus/README.md`；卡片格式见 `docs/bus/TEMPLATE.md`。
 
 ## round-01
@@ -49,10 +49,15 @@
   两张卡均已填满并已接收，两遍实验产出了 91.0% 一致率与 McNemar p=0.031。
   3. Kimi 的 S2 降级（κ −0.075）与 κ 并列呈现建议**已采纳**，写入 `docs/reassessment_after_credential.md` §三.3/§三.4。
 
+### s5_receipt_evidence（`round-02/s5_receipt_evidence.md`）
+
+- 基线 ``｜卡片更新 10-02 20:53｜声明的时刻 —
+- ⚠️ 未找到 TL;DR 段（请按 TEMPLATE 补齐）
+
 ## ⚠️ 基线落后提示（文件在变，请以最新 HEAD 复核）
 
-- round-01/dsh.md 基线 `483422d` ≠ 当前 `3939ef6`
-- round-01/kimi.md 基线 `483422d` ≠ 当前 `3939ef6`
-- round-01/qwen.md 基线 `483422d` ≠ 当前 `3939ef6`
-- round-02/dsh.md 基线 `?` ≠ 当前 `3939ef6`
+- round-01/dsh.md 基线 `483422d` ≠ 当前 `c403565`
+- round-01/kimi.md 基线 `483422d` ≠ 当前 `c403565`
+- round-01/qwen.md 基线 `483422d` ≠ 当前 `c403565`
+- round-02/dsh.md 基线 `?` ≠ 当前 `c403565`
 

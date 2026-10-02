@@ -1,6 +1,6 @@
 # 文件地图（由 make_ai_handoff.py 自动生成，勿手改）
 
-> 生成时间：2026-10-02 20:45；共 534 个条目；体积单位 KB/MB。
+> 生成时间：2026-10-02 21:00；共 535 个条目；体积单位 KB/MB。
 
 ## 提交物（5 项，44.2 MB）
 
@@ -58,7 +58,7 @@
 | `confidence_tiered.md` | 0.7 KB | 三星补漏置信度分层与中置信剔除记录 |
 | `significance_test.md` | 0.6 KB | Welch t 检验（p=0.000932） |
 
-## 过程与交接文档（104 项，3.0 MB）
+## 过程与交接文档（105 项，3.0 MB）
 
 | 文件 | 大小 | 用途 |
 |---|---|---|
@@ -90,8 +90,8 @@
 | `docs/REVIEWER_BRIEF.md` | 14.8 KB |  |
 | `docs/reassessment_after_credential.md` | 14.6 KB |  |
 | `docs/bus/round-01/qwen.md` | 14.1 KB |  |
+| `docs/demo_uptime_log.md` | 13.0 KB |  |
 | `docs/file_inventory.md` | 12.8 KB | 项目文件总索引 |
-| `docs/demo_uptime_log.md` | 12.7 KB |  |
 | `docs/gold_set/human_rulings_dsh.md` | 12.6 KB |  |
 | `PROJECT_BRIEF_QWEN.md` | 11.6 KB |  |
 | `docs/N_line_handoff_protocol.md` | 11.2 KB |  |
@@ -100,7 +100,7 @@
 | `docs/pre_lock_completeness_audit.md` | 10.4 KB |  |
 | `docs/progress_report_current.md` | 10.4 KB |  |
 | `docs/bus/round-01/kimi.md` | 10.3 KB |  |
-| `docs/EXECUTION_DISCIPLINE.md` | 9.8 KB |  |
+| `docs/EXECUTION_DISCIPLINE.md` | 10.2 KB |  |
 | `docs/opinion_dsh_joint_review.md` | 9.5 KB |  |
 | `docs/completion_statement_for_redteam.md` | 9.4 KB |  |
 | `docs/completeness_audit_round2.md` | 9.3 KB |  |
@@ -132,10 +132,11 @@
 | `docs/v2_gate_verdict.md` | 4.7 KB |  |
 | `docs/PAUSE_SNAPSHOT.md` | 4.7 KB |  |
 | `docs/w1_longtext_variants.md` | 4.7 KB |  |
-| `docs/bus/INDEX.md` | 4.5 KB |  |
+| `docs/bus/INDEX.md` | 4.7 KB |  |
 | `docs/evidence_index_exp.md` | 4.4 KB |  |
 | `docs/roadshow_slides_corrections.md` | 4.2 KB |  |
 | `docs/e2_erratum.md` | 4.2 KB |  |
+| `docs/bus/round-02/s5_receipt_evidence.md` | 4.1 KB |  |
 | `docs/repo_hygiene_scan.md` | 3.5 KB |  |
 | `docs/dataset_audit.md` | 3.5 KB | 数据集字段考古 |
 | `docs/M8a_submission_precheck.md` | 3.5 KB |  |
@@ -326,6 +327,7 @@
 | `demo_sound_v2.py` | 9.5 KB | 本地 Gradio Demo（三页；已内置代理绕过） |
 | `build_submission.py` | 9.3 KB |  |
 | `v2_w2_perclass.py` | 9.1 KB |  |
+| `push_daily.py` | 9.0 KB |  |
 | `outside_gate_fp.py` | 8.9 KB |  |
 | `make_clean_probe.py` | 8.9 KB |  |
 | `v2_w7_calibration.py` | 8.9 KB |  |
@@ -362,12 +364,11 @@
 | `v2_m0_switch_check.py` | 6.0 KB |  |
 | `gen_v2_artifacts.py` | 5.8 KB |  |
 | `precommit_guard.py` | 5.8 KB |  |
-| `push_daily.py` | 5.7 KB |  |
 | `w11_data_efficiency.py` | 5.5 KB |  |
 | `distilbert_cv.py` | 5.4 KB |  |
 | `undersample_experiment.py` | 5.4 KB |  |
+| `run_all_checks.py` | 5.4 KB |  |
 | `md_to_docx.py` | 5.4 KB | 主文档 Markdown → Word |
-| `run_all_checks.py` | 5.3 KB |  |
 | `v2_m0_switch.py` | 5.3 KB |  |
 | `train_final.py` | 5.2 KB |  |
 | `train_roberta_quick.py` | 5.2 KB |  |
@@ -598,11 +599,11 @@
 | `v2/w1_eval_maxlen128.json` | 0.9 KB |  |
 | `v2/w1_eval_maxlen256.json` | 0.9 KB |  |
 | `v2/w1_eval_maxlen512.json` | 0.9 KB |  |
+| `v2/push_log.json` | 0.8 KB |  |
 | `v2/bias_probe_ids.json` | 0.8 KB |  |
 | `v2/scope_summary.json` | 0.7 KB |  |
 | `v2/b_measure_results.json` | 0.7 KB |  |
 | `v2/outside_gate_fp.json` | 0.6 KB |  |
-| `v2/push_log.json` | 0.5 KB |  |
 | `difficulty_stratification.json` | 0.5 KB |  |
 | `per_class_thresholds_probe.json` | 0.4 KB |  |
 | `v2/exp_undersample.json` | 0.4 KB |  |

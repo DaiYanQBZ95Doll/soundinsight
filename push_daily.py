@@ -95,27 +95,73 @@ def status_lines(verbose: bool = True):
     return lines, all_ok_today
 
 
+# 「当日必推」路径（决策方 2026-10-02 追加）：**给红队读的文件**一旦变更即当日推送，
+# 不受"每天一次"限频约束。由来：S5 答题卡于 19:4x 生成、当日未推送，导致 Kimi/Qwen
+# 从远端读取时看不到该文件，误判为"未填写"——可见性滞后本身就是审计风险。
+REDTEAM_PATHS = (
+    "docs/bus/",                      # 总线卡片、证据卡、可用性、裁定台账
+    "docs/REVIEWER_BRIEF.md",         # 外部审阅者入口
+    "docs/EXECUTION_DISCIPLINE.md",   # 三方共同纪律
+    "docs/gold_set/",                 # 金标证据（答题卡、结果、findings）
+    "docs/realworld_eval.md",         # 真实场景测评
+    "docs/inscope_reeval.md",         # 范围内重评
+    "docs/agreement_report.md",
+)
+
+
+def priority_pending() -> tuple[list, int]:
+    """返回（命中"当日必推"的变更文件, 未推送文件总数）。
+
+    基准取**上次成功推送的 SHA**（记录在 v2/push_log.json），无记录则用远端分支引用。
+    """
+    log = load_log()
+    shas = [v.get("sha") for v in (log.get("last_success") or {}).values() if v.get("sha")]
+    base = shas[0] if shas else f"{REMOTES[0]}/{BRANCH}"
+    rc, out, _ = git("diff", "--name-only", f"{base}..HEAD")
+    if rc != 0:
+        rc, out, _ = git("diff", "--name-only", f"{REMOTES[0]}/{BRANCH}..HEAD")
+    files = [f.strip() for f in (out or "").splitlines() if f.strip()]
+    hit = [f for f in files
+           if any(f.startswith(p) or f == p for p in REDTEAM_PATHS)]
+    return hit, len(files)
+
+
 def main() -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("--status", action="store_true")
     ap.add_argument("--force", action="store_true")
     ap.add_argument("--retries", type=int, default=2)
+    ap.add_argument("--self-test", action="store_true")
     args = ap.parse_args()
 
+    if args.self_test:
+        return _self_test()
+
     lines, all_ok_today = status_lines()
+    prio, n_pending = priority_pending()
     if args.status:
-        print("## 推送状态（每日一次）")
+        print("## 推送状态（每日一次；但「当日必推」路径例外）")
         for ln in lines:
             print("- " + ln)
         print(f"- 今日状态：{'所有可达远端均已同步' if all_ok_today else '**存在落后或未达**'}"
               f"｜推送频次规则：每天一次（`python push_daily.py`）")
+        if prio:
+            print(f"- ⚠️ **当日必推**：检测到 {len(prio)} 个「给红队读」的文件变更"
+                  f"（共 {n_pending} 个文件未推送）→ 即使今日已推送过也应再推一次")
+            for f in prio[:8]:
+                print(f"    · {f}")
         return 0
 
     h = head()
     log = load_log()
-    if all_ok_today and not args.force:
+    if all_ok_today and not args.force and not prio:
         print(f"[跳过] 今天已成功推送（{today()}），且各可达远端均与本地一致")
         return 0
+    if prio and all_ok_today and not args.force:
+        print(f"[当日必推] 检测到 {len(prio)} 个「给红队读」的文件变更"
+              f"（共 {n_pending} 个未推送文件）——绕过每日限频")
+        for f in prio[:8]:
+            print(f"    · {f}")
 
     results = {}
     for r in REMOTES:
@@ -146,6 +192,26 @@ def main() -> int:
           f"跳过 {sum(1 for v in results.values() if v == 'skip')}｜失败 {len(fails)}"
           + (f"（{', '.join(fails)}——网络问题不阻塞工作，下次自动重试）" if fails else ""))
     return 1 if fails else 0
+
+
+def _self_test() -> int:
+    """自测「当日必推」判定：红队可见路径命中即视为需推；普通路径不触发。"""
+    cases = [
+        (["docs/bus/round-02/s5_receipt_evidence.md"], True, "总线证据卡"),
+        (["docs/REVIEWER_BRIEF.md"], True, "审阅者入口"),
+        (["docs/gold_set/s5_clean_probe.csv"], True, "金标证据"),
+        (["docs/EXECUTION_DISCIPLINE.md"], True, "执行纪律"),
+        (["v2/scope_rows.jsonl", "hashes.txt"], False, "普通生成物"),
+        (["AI_HANDOFF/manifest.json"], False, "交接包"),
+    ]
+    bad = 0
+    for files, expect, label in cases:
+        hit = [f for f in files if any(f.startswith(p) or f == p for p in REDTEAM_PATHS)]
+        ok = bool(hit) == expect
+        bad += 0 if ok else 1
+        print(f"  [{'OK ' if ok else 'BAD'}] {label}：命中 {len(hit)} 个（期望{'有' if expect else '无'}）")
+    print(f"  结果：{len(cases) - bad}/{len(cases)} 通过")
+    return 1 if bad else 0
 
 
 if __name__ == "__main__":
