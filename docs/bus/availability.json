@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-02 16:17",
+  "updated": "2026-10-02 16:27",
   "note": "执行方维护；任一方短时不可用（额度/网络/离线）时在此登记，流程据此走降级路径（纪律 R30）。",
   "parties": {
     "dsh": {
@@ -8,14 +8,15 @@
       "reason": ""
     },
     "kimi": {
-      "status": "unknown",
+      "status": "available",
       "until": "",
-      "reason": "未收到可用性说明"
+      "reason": "决策方 2026-10-02 告知：Kimi 正在操作（并发写入工作区）"
     },
     "qwen": {
       "status": "unavailable",
       "until": "2026-10-02 19:49",
       "reason": "短时最大工作额度受限（决策方 2026-10-02 告知）：该时点前不参加工作区文件改动与审阅"
     }
-  }
+  },
+  "concurrency_note": "Kimi 与执行方可能同时改动工作区；提交纪律见 EXECUTION_DISCIPLINE R31：只暂存自己的文件、永不 git add -A、共享文件写盘前校验是否被改动。"
 }

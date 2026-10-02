@@ -194,9 +194,17 @@ def import_from_notes(path: str) -> dict:
     空白（`___`）视为未判，不返回。"""
     out = {}
     cur = None
-    pat_id = re.compile(r"^##\s*(S\d-\d{3})\s*$")
+    pat_id = re.compile(r"^#{2,4}\s*(S\d-\d{3})(?:\s*[\u3000 ]\s*G\d{1,3})?\s*$")
     pat_val = re.compile(r"判定（决策方填）\*\*：\s*`?\s*([012?])\s*`?\s*$")
+    # Kimi 答题卡的内联形式：`### S2-037　**判定**：1`（也容忍「判定：_」未填）
+    pat_inline = re.compile(r"^#{2,4}\s*(S\d-\d{3})[^\n]*?\*\*判定\*\*\s*[:：]\s*([012?])(?![0-9])")
     for ln in open(path, encoding="utf-8", errors="replace").read().splitlines():
+        # 内联形式（Kimi 的答题卡）：`### S2-037　**判定**：1` —— ID 与值同行
+        mi = pat_inline.match(ln.strip())
+        if mi:
+            cur = mi.group(1)
+            out[cur] = VAL2CELL[mi.group(2)]
+            continue
         m = pat_id.match(ln.strip())
         if m:
             cur = m.group(1)
@@ -216,6 +224,13 @@ def import_answer_sheet(path: str, all_ids: list[str]) -> tuple[dict, list[str]]
     """接收**任一方**的答题卡：识别 `S#-###:1`／`S#-###=1`／`G###=1`／表格行／
     Kimi 紧凑行（`S2-037:_　S1-040:_`）；未填占位忽略。返回（映射, 备注）。"""
     text = open(path, encoding="utf-8", errors="replace").read()
+    # 块式优先：按 `## S2-037　G001` 标题跟踪条目，读该块内的判定位（新答题卡/review_notes）
+    block = import_from_notes(path)
+    if block:
+        blanks = len(re.findall(r"判定（决策方填）[^\n]*", text)) - len(block)
+        notes = [f"块式解析：{len(block)} 条已填"
+                 + (f"｜另有 {blanks} 条未填（已跳过）" if blanks > 0 else "")]
+        return block, notes
     mapping, notes = parse_text(text, all_ids, all_ids)
     # 统计未填（仅提示，不算错误）
     blanks = len(re.findall(r"[SG]\d{1,3}(?:-\d{3})?\s*[:=：]\s*[_\-—?？]", text))
@@ -381,7 +396,8 @@ def main() -> int:
     if args.from_answer_sheet:
         if args.from_answer_sheet == "auto":
             cands = [os.path.join(GDIR, f) for f in
-                     ("answer_sheet.md", "answer_sheet_kimi.md", "answer_sheet_qwen.md")]
+                     ("answer_sheet_decision.md", "answer_sheet.md",
+                      "answer_sheet_kimi.md", "answer_sheet_qwen.md")]
             path = next((c for c in cands if os.path.isfile(c)), None)
         else:
             path = args.from_answer_sheet

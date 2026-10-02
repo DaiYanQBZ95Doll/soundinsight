@@ -31,6 +31,7 @@ SHEET = os.path.join(GDIR, "worksheet.csv")
 CACHE = os.path.join(HERE, "v2", "gold_set_notes.jsonl")
 OUT_MD = os.path.join(GDIR, "review_notes.md")
 OUT_CSV = os.path.join(GDIR, "assisted_worksheet.csv")
+OUT_SHEET = os.path.join(GDIR, "answer_sheet.md")   # 决策方手填：原文＋翻译＋解释＋判定位
 BASE = os.environ.get("DEEPSEEK_BASE_URL", "https://api.deepseek.com/v1")
 # 降级兜底：只翻译、不解析（用于反复触发中性闸门的条目）
 SYS_ZH_ONLY = ("Translate the following English product review into natural Chinese. "
@@ -39,7 +40,7 @@ SYS_ZH_ONLY = ("Translate the following English product review into natural Chin
 MODEL = "deepseek-chat"
 COL = "人工判定(1=音质差评/0=不是)"
 _JUDGE_MD = re.compile(r"判定（决策方填）\*\*：\s*`?\s*([012?])\s*`?\s*$")
-_ID_MD = re.compile(r"^##\s*(S\d-\d{3})\s*$")
+_ID_MD = re.compile(r"^#{2,4}\s*(S\d-\d{3})(?:\s*[\u3000 ]\s*G\d{1,3})?\s*$")
 
 SYS = ("You are a bilingual translator and neutral describer. For the given English product review, "
        "return JSON only: {\"zh\": \"<Chinese translation>\", \"product\": \"<what product it is, "
@@ -112,7 +113,7 @@ def call(text: str, key: str, retries: int = 2) -> dict:
     return {"_error": last}
 
 
-def _read_existing_judgements(csv_path: str, md_path: str) -> dict:
+def _read_existing_judgements(csv_path: str, *md_paths: str) -> dict:
     """读出**已填**判定（CSV 判定列 + MD 里 `判定（决策方填）` 后已填的值）。
 
     这是"重跑不清空"的关键：生成器只负责翻译与解析，**判定属于决策方**，必须原样保留。
@@ -120,7 +121,9 @@ def _read_existing_judgements(csv_path: str, md_path: str) -> dict:
     """
     out = {}
     md_vals = {}
-    if os.path.isfile(md_path):
+    for md_path in md_paths:
+        if not os.path.isfile(md_path):
+            continue
         cur = None
         for ln in open(md_path, encoding="utf-8", errors="replace").read().splitlines():
             m = _ID_MD.match(ln.strip())
@@ -130,7 +133,7 @@ def _read_existing_judgements(csv_path: str, md_path: str) -> dict:
             if cur:
                 m2 = _JUDGE_MD.search(ln.strip())
                 if m2:
-                    md_vals[cur] = "?" if m2.group(1) == "2" else m2.group(1)
+                    md_vals.setdefault(cur, "?" if m2.group(1) == "2" else m2.group(1))
     if os.path.isfile(csv_path):
         try:
             for r in csv.DictReader(open(csv_path, encoding="utf-8-sig", errors="replace")):
@@ -210,14 +213,18 @@ def _self_test() -> int:
         with open(md_p, "w", encoding="utf-8", newline="\n") as fh:
             fh.write("## S1-002\n\n**判定（决策方填）**：`?`\n\n"
                      "## S1-004\n\n**判定（决策方填）**：`2`\n")
-        kept = _read_existing_judgements(csv_p, md_p)
-        ok1 = kept == {"S1-001": "1", "S1-002": "0", "S1-004": "?"}
+        sheet_p = os.path.join(d, "answer_sheet.md")
+        with open(sheet_p, "w", encoding="utf-8", newline="\n") as fh:
+            fh.write("## S1-003　G003\n\n**判定（决策方填）**：`2`\n")
+        kept = _read_existing_judgements(csv_p, sheet_p, md_p)
+        ok1 = kept == {"S1-001": "1", "S1-002": "0", "S1-003": "?", "S1-004": "?"}
         bad += 0 if ok1 else 1
         print(f"  [{'OK ' if ok1 else 'BAD'}] 保留判定：{kept}（CSV 优先于 MD；未填不计入）")
         md = ["## S1-001", "", "**判定（决策方填）**：`___`", "",
               "## S1-003", "", "**判定（决策方填）**：`___`", ""]
         joined = "\n".join(_merge_md_judgements(md, kept))
-        ok2 = "`1`" in joined and joined.count("`___`") == 1
+        # 本用例中 kept 含 S1-001 与 S1-003 → 两条都被填，未填占位应归零
+        ok2 = "`1`" in joined and "`?`" in joined and "`___`" not in joined
         bad += 0 if ok2 else 1
         print(f"  [{'OK ' if ok2 else 'BAD'}] MD 回填：已填保留、未填仍为 ___")
     finally:
@@ -236,16 +243,14 @@ def main() -> int:
                     help="自测：证明重跑保留判定、--force 才清空")
     ap.add_argument("--out-dir", help="输出目录（默认 docs/gold_set；测试用）")
     args = ap.parse_args()
-    global OUT_MD, OUT_CSV
+    global OUT_MD, OUT_CSV, OUT_SHEET
     if args.self_test:
         return _self_test()
     if args.out_dir:
         OUT_MD = os.path.join(args.out_dir, "review_notes.md")
         OUT_CSV = os.path.join(args.out_dir, "assisted_worksheet.csv")
+        OUT_SHEET = os.path.join(args.out_dir, "answer_sheet.md")
     key = os.environ.get("DEEPSEEK_API_KEY", "")
-    if not key:
-        print("[需要凭证] 未注入 DEEPSEEK_API_KEY")
-        return 2
     rows = list(csv.DictReader(open(SHEET, encoding="utf-8-sig", errors="replace")))
     done = {}
     if os.path.isfile(CACHE):
@@ -261,6 +266,11 @@ def main() -> int:
         todo = todo[:args.limit]
     print(f"中性翻译与解析：工作表 {len(rows)} 条｜已完成 {len(done)}｜本次 {len(todo)}"
           f"｜并发 {args.workers}")
+    if todo and not key:
+        print("[需要凭证] 尚有未完成条目，但未注入 DEEPSEEK_API_KEY")
+        return 2
+    if not todo:
+        print("  （全部命中缓存：只重写输出文件，不调用 API）")
     with open(CACHE, "a", encoding="utf-8") as fh, \
             cf.ThreadPoolExecutor(max_workers=args.workers) as ex:
         futs = {ex.submit(call, r["原文"], key): r for r in todo}
@@ -303,12 +313,31 @@ def main() -> int:
            "2. 或在本文件每条 `判定（决策方填）` 后填；",
            "3. 或口头/文本告诉我「编号 → 判定」，我写入 CSV 与本文档。", "",
            "填完后运行：`python score_gold_set.py`（读取 `assisted_worksheet.csv` 同名列）出 κ 与一致率。"]
+    # —— 答题卡（决策方要求：逐条同时给出 原文＋翻译＋解释，并可当场填判定）——
+    sheet = ["# 人工金标 · 答题卡（原文＋翻译＋解释）", "",
+             f"> 共 {len(rows)} 条｜生成器 `make_gold_set_notes.py`｜**本文件不含任何判定**", "",
+             "> **怎么填**：在每条末尾那一行（以「判定（决策方填）」开头）写一个数字 ——",
+             "> **1 = 是**（在说耳机/耳塞/头戴的音质）｜**0 = 不是**｜**2 = 无法判断**（产品不确定，不计入一致率）。",
+             "> **填一部分也可以**；填完群发「答题卡已交」，执行方接收（重跑本生成器会**保留**已填判定）。", ""]
+    for i, r in enumerate(rows, 1):
+        d = data.get(r["编号"], {})
+        snd = d.get("sound", "") or ("（仅翻译，无解析：该条反复触发中性闸门，按兜底策略只提供翻译）"
+                                     if d.get("_fallback") else "未提及声音相关内容")
+        sheet += [f"## {r['编号']}　G{i:03d}", "",
+                  f"**原文**：{r['原文']}", "",
+                  f"**翻译**：{d.get('zh', '')}", "",
+                  f"**解释**：产品：{d.get('product', '') or '不确定'}｜声音：{snd}"
+                  f"｜其他：{d.get('other', '')}", "",
+                  "**判定（决策方填）**：`___`", ""]
+    sheet += ["---", "", "> 填完后：`python score_gold_set.py --sheet assisted` 出一致率与 κ。"]
     # —— 保留决策方已填判定（红队 Qwen 指出的最高风险：旧版重跑即静默清空）——
-    kept = {} if args.force else _read_existing_judgements(OUT_CSV, OUT_MD)
+    kept = {} if args.force else _read_existing_judgements(OUT_CSV, OUT_SHEET, OUT_MD)
     if kept:
         md = _merge_md_judgements(md, kept)
-    b1, b2 = _backup(OUT_MD), _backup(OUT_CSV)
+        sheet = _merge_md_judgements(sheet, kept)
+    b1, b2, b3 = _backup(OUT_MD), _backup(OUT_CSV), _backup(OUT_SHEET)
     _atomic_write(OUT_MD, "\n".join(md) + "\n")
+    _atomic_write(OUT_SHEET, "\n".join(sheet) + "\n")
     _atomic_write(OUT_CSV,
                   [["编号", "原文", "中文翻译", "产品", "关于声音的表述", "其他提及", COL, "备注"]]
                   + [[r["编号"], r["原文"], (data.get(r["编号"], {}) or {}).get("zh", ""),
@@ -322,6 +351,7 @@ def main() -> int:
         print(f"[保留] 决策方已填判定 {len(kept)} 条未被覆盖"
               + (f"｜备份 {os.path.basename(b1)}, {os.path.basename(b2)}" if b1 else ""))
     print(f"[写出] {os.path.relpath(OUT_MD, HERE)}（{len(data)} 条）")
+    print(f"[写出] {os.path.relpath(OUT_SHEET, HERE)}（答题卡：原文＋翻译＋解释＋判定位）")
     print(f"[写出] {os.path.relpath(OUT_CSV, HERE)}")
     print(f"[统计] 成功 {_stat['ok']}｜打回 {_stat['reject']}（含判定词）｜失败 {_stat['fail']}")
     return 0

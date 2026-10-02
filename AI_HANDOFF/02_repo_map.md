@@ -1,13 +1,13 @@
 # 文件地图（由 make_ai_handoff.py 自动生成，勿手改）
 
-> 生成时间：2026-10-02 16:19；共 495 个条目；体积单位 KB/MB。
+> 生成时间：2026-10-02 16:36；共 495 个条目；体积单位 KB/MB。
 
-## 提交物（5 项，43.9 MB）
+## 提交物（5 项，44.1 MB）
 
 | 文件 | 大小 | 用途 |
 |---|---|---|
 | `更新世界的锋芒_SoundInsight_复赛作品.zip` | 42.4 MB |  |
-| `更新世界的锋芒_SoundInsight_其他材料.zip` | 1.2 MB |  |
+| `更新世界的锋芒_SoundInsight_其他材料.zip` | 1.4 MB |  |
 | `更新世界的锋芒_SoundInsight_复赛作品.pdf` | 210.1 KB |  |
 | `更新世界的锋芒_SoundInsight_Demo.zip` | 107.5 KB |  |
 | `更新世界的锋芒_SoundInsight_复赛作品.docx` | 48.0 KB |  |
@@ -58,11 +58,13 @@
 | `confidence_tiered.md` | 0.7 KB | 三星补漏置信度分层与中置信剔除记录 |
 | `significance_test.md` | 0.6 KB | Welch t 检验（p=0.000932） |
 
-## 过程与交接文档（89 项，1.8 MB）
+## 过程与交接文档（89 项，2.6 MB）
 
 | 文件 | 大小 | 用途 |
 |---|---|---|
-| `docs/gold_set/review_notes.md` | 439.8 KB |  |
+| `docs/gold_set/review_notes.md` | 439.9 KB |  |
+| `docs/gold_set/answer_sheet.md` | 436.9 KB |  |
+| `docs/gold_set/answer_sheet_decision.md` | 428.0 KB |  |
 | `docs/gold_set/assisted_worksheet.csv` | 401.7 KB |  |
 | `docs/gold_set/worksheet.csv` | 177.2 KB |  |
 | `docs/frozen_execution_checklist.md` | 70.8 KB |  |
@@ -88,9 +90,9 @@
 | `docs/decision_request_v15_and_nline.md` | 10.4 KB |  |
 | `docs/pre_lock_completeness_audit.md` | 10.4 KB |  |
 | `docs/progress_report_current.md` | 10.4 KB |  |
-| `docs/bus/round-01/kimi.md` | 9.7 KB |  |
+| `docs/bus/round-01/kimi.md` | 10.0 KB |  |
+| `docs/demo_uptime_log.md` | 9.8 KB |  |
 | `docs/opinion_dsh_joint_review.md` | 9.5 KB |  |
-| `docs/demo_uptime_log.md` | 9.3 KB |  |
 | `docs/completeness_audit_round2.md` | 9.3 KB |  |
 | `docs/completion_statement_for_redteam.md` | 9.3 KB |  |
 | `QWEN_HANDOFF.md` | 9.1 KB |  |
@@ -98,8 +100,8 @@
 | `docs/legacy_materials_notice.md` | 8.3 KB |  |
 | `docs/w17_failure_cases.md` | 7.9 KB |  |
 | `docs/joint_review_agenda.md` | 7.8 KB |  |
+| `docs/EXECUTION_DISCIPLINE.md` | 7.6 KB |  |
 | `docs/N1b_downgrade_narrative.md` | 7.0 KB |  |
-| `docs/EXECUTION_DISCIPLINE.md` | 6.9 KB |  |
 | `docs/decision_queue.md` | 6.8 KB |  |
 | `docs/N2_narrative_final.md` | 6.6 KB |  |
 | `docs/taxonomy_three_paths.md` | 6.6 KB |  |
@@ -115,12 +117,10 @@
 | `docs/llm_credential_status.md` | 5.0 KB |  |
 | `docs/b_measure_results.md` | 5.0 KB |  |
 | `docs/DoD_completion_table.md` | 4.9 KB |  |
-| `docs/gold_set/answer_sheet_decision.md` | 4.9 KB |  |
 | `docs/w4_prescreen_estimate.md` | 4.8 KB |  |
 | `docs/SoundInsight决赛备战_现状盘点清单.md` | 4.8 KB |  |
 | `docs/v2_gate_verdict.md` | 4.7 KB |  |
 | `docs/w1_longtext_variants.md` | 4.7 KB |  |
-| `docs/gold_set/answer_sheet.md` | 4.7 KB |  |
 | `docs/evidence_index_exp.md` | 4.4 KB |  |
 | `docs/e2_erratum.md` | 4.2 KB |  |
 | `docs/PAUSE_SNAPSHOT.md` | 3.9 KB |  |
@@ -147,10 +147,10 @@
 | `docs/w11_data_efficiency.md` | 1.9 KB |  |
 | `docs/bus/TEMPLATE.md` | 1.2 KB |  |
 | `docs/gold_set/human_rulings_kimi.md` | 1.2 KB |  |
+| `docs/bus/availability.json` | 0.9 KB |  |
 | `docs/gold_set/human_rulings_qwen.md` | 0.9 KB |  |
 | `docs/checklist_version.json` | 0.8 KB |  |
 | `docs/year_split_output.txt` | 0.8 KB | 年份分桶脚本输出原文 |
-| `docs/bus/availability.json` | 0.6 KB |  |
 
 ## 演示材料（6 项，18.1 MB）
 
@@ -291,11 +291,11 @@
 | 文件 | 大小 | 用途 |
 |---|---|---|
 | `check_doc_numbers.py` | 57.5 KB | 数字审计 + 模板格式对照脚本 |
-| `apply_human_rulings.py` | 19.7 KB |  |
+| `apply_human_rulings.py` | 20.7 KB |  |
 | `scan_repo_hygiene.py` | 19.7 KB |  |
 | `v2_meta_analysis.py` | 19.1 KB |  |
+| `make_gold_set_notes.py` | 18.0 KB |  |
 | `build_finals_appendix.py` | 16.1 KB |  |
-| `make_gold_set_notes.py` | 15.5 KB |  |
 | `test_audit_checks.py` | 15.5 KB |  |
 | `build_finals_package.py` | 15.4 KB |  |
 | `v2_w4_mine.py` | 13.2 KB |  |
