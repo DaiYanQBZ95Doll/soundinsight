@@ -1,6 +1,6 @@
 # 文件地图（由 make_ai_handoff.py 自动生成，勿手改）
 
-> 生成时间：2026-10-02 15:38；共 492 个条目；体积单位 KB/MB。
+> 生成时间：2026-10-02 15:47；共 492 个条目；体积单位 KB/MB。
 
 ## 提交物（5 项，43.9 MB）
 
@@ -92,9 +92,9 @@
 | `docs/completeness_audit_round2.md` | 9.3 KB |  |
 | `docs/completion_statement_for_redteam.md` | 9.3 KB |  |
 | `QWEN_HANDOFF.md` | 9.1 KB |  |
+| `docs/demo_uptime_log.md` | 8.6 KB |  |
 | `docs/process_review_d10.md` | 8.5 KB |  |
 | `docs/legacy_materials_notice.md` | 8.3 KB |  |
-| `docs/demo_uptime_log.md` | 8.3 KB |  |
 | `docs/bus/round-01/kimi.md` | 8.2 KB |  |
 | `docs/w17_failure_cases.md` | 7.9 KB |  |
 | `docs/joint_review_agenda.md` | 7.8 KB |  |
@@ -292,7 +292,7 @@
 | `check_doc_numbers.py` | 57.5 KB | 数字审计 + 模板格式对照脚本 |
 | `scan_repo_hygiene.py` | 19.7 KB |  |
 | `v2_meta_analysis.py` | 19.1 KB |  |
-| `apply_human_rulings.py` | 18.1 KB |  |
+| `apply_human_rulings.py` | 19.0 KB |  |
 | `build_finals_appendix.py` | 16.1 KB |  |
 | `test_audit_checks.py` | 15.5 KB |  |
 | `build_finals_package.py` | 15.3 KB |  |

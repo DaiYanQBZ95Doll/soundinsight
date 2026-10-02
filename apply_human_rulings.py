@@ -72,6 +72,21 @@ def parse_text(text: str, ids: list[str], all_ids: list[str] | None = None) \
     out, errs = {}, []
     text = text.strip()
     all_ids = all_ids or ids
+    # 只保留"数据行"：丢弃标题／引用／表格／代码块／不含编号的行。
+    # 理由：答题卡与席位的**表头说明**里会出现编号与数字（示例、口径），
+    # 若一并解析会写入假判定（干跑已实测到假阳性）。
+    kept, in_fence = [], False
+    for ln in text.splitlines():
+        t = ln.strip()
+        if t.startswith("```"):
+            in_fence = not in_fence
+            continue
+        if in_fence or t.startswith(("#", ">", "|")):
+            continue
+        if not re.search(r"(?:[A-Z]\d-\d{3}|\bG\d{1,3}\b)", t):
+            continue
+        kept.append(ln)
+    text = "\n".join(kept)
 
     def g2s(tok: str):
         m = re.fullmatch(r"G(\d{1,3})", tok.strip(), re.I)
@@ -131,6 +146,9 @@ def parse_text(text: str, ids: list[str], all_ids: list[str] | None = None) \
             continue
         if v in VAL2CELL or _UNFILLED.match(v):
             continue      # 未填占位（_ / ___ / ?）静默跳过
+        if re.fullmatch(r"[A-Z]\d-\d{3}[:=：][_\-—?？]*", v) or \
+                re.fullmatch(r"G\d{1,3}[:=：][_\-—?？]*", v, re.I):
+            continue      # 未填的编号（S2-037:_）不是错误
         if not any(ch.isdigit() for ch in v):
             continue      # 纯文字（表头/说明）不是数据，静默跳过
         errs.append(f"无法解析的片段：{v[:20]}")
