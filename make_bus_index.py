@@ -9,6 +9,7 @@ from __future__ import annotations
 
 import datetime
 import glob
+import json
 import os
 import re
 import subprocess
@@ -54,8 +55,22 @@ def main() -> int:
     rounds = sorted(d for d in os.listdir(BUS)
                     if os.path.isdir(os.path.join(BUS, d)) and d.startswith("round-"))
     now = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-    out = ["# 三方沟通总线 · 总览（自动生成，勿手改）", "",
-           f"> 生成时刻：{now}｜当前 HEAD `{head}`｜刷新：`python make_bus_index.py`",
+    avail = {}
+    _ap = os.path.join(BUS, "availability.json")
+    if os.path.isfile(_ap):
+        try:
+            avail = json.load(open(_ap, encoding="utf-8")).get("parties", {})
+        except ValueError:
+            avail = {}
+    out = ["# 三方沟通总线 · 总览（自动生成，勿手改）", ""]
+    if avail:
+        _st = {"available": "可用", "unavailable": "**不可用**", "unknown": "未明"}
+        out.append("> **席位可用性**：" + "｜".join(
+            f"{k}:{_st.get(v.get('status'), v.get('status', '?'))}"
+            + (f"（至 {v['until']}）" if v.get("until") else "")
+            for k, v in avail.items()))
+        out.append("")
+    out += [f"> 生成时刻：{now}｜当前 HEAD `{head}`｜刷新：`python make_bus_index.py`",
            "> 协议见 `docs/bus/README.md`；卡片格式见 `docs/bus/TEMPLATE.md`。", ""]
     stale = []
     for rnd in rounds:

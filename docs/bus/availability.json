@@ -1,0 +1,21 @@
+{
+  "updated": "2026-10-02 16:17",
+  "note": "执行方维护；任一方短时不可用（额度/网络/离线）时在此登记，流程据此走降级路径（纪律 R30）。",
+  "parties": {
+    "dsh": {
+      "status": "available",
+      "until": "",
+      "reason": ""
+    },
+    "kimi": {
+      "status": "unknown",
+      "until": "",
+      "reason": "未收到可用性说明"
+    },
+    "qwen": {
+      "status": "unavailable",
+      "until": "2026-10-02 19:49",
+      "reason": "短时最大工作额度受限（决策方 2026-10-02 告知）：该时点前不参加工作区文件改动与审阅"
+    }
+  }
+}

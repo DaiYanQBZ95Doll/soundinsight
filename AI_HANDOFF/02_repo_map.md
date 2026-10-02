@@ -1,6 +1,6 @@
 # 文件地图（由 make_ai_handoff.py 自动生成，勿手改）
 
-> 生成时间：2026-10-02 16:06；共 494 个条目；体积单位 KB/MB。
+> 生成时间：2026-10-02 16:19；共 495 个条目；体积单位 KB/MB。
 
 ## 提交物（5 项，43.9 MB）
 
@@ -88,23 +88,23 @@
 | `docs/decision_request_v15_and_nline.md` | 10.4 KB |  |
 | `docs/pre_lock_completeness_audit.md` | 10.4 KB |  |
 | `docs/progress_report_current.md` | 10.4 KB |  |
+| `docs/bus/round-01/kimi.md` | 9.7 KB |  |
 | `docs/opinion_dsh_joint_review.md` | 9.5 KB |  |
+| `docs/demo_uptime_log.md` | 9.3 KB |  |
 | `docs/completeness_audit_round2.md` | 9.3 KB |  |
 | `docs/completion_statement_for_redteam.md` | 9.3 KB |  |
-| `docs/demo_uptime_log.md` | 9.1 KB |  |
 | `QWEN_HANDOFF.md` | 9.1 KB |  |
 | `docs/process_review_d10.md` | 8.5 KB |  |
 | `docs/legacy_materials_notice.md` | 8.3 KB |  |
-| `docs/bus/round-01/kimi.md` | 8.2 KB |  |
 | `docs/w17_failure_cases.md` | 7.9 KB |  |
 | `docs/joint_review_agenda.md` | 7.8 KB |  |
 | `docs/N1b_downgrade_narrative.md` | 7.0 KB |  |
+| `docs/EXECUTION_DISCIPLINE.md` | 6.9 KB |  |
 | `docs/decision_queue.md` | 6.8 KB |  |
 | `docs/N2_narrative_final.md` | 6.6 KB |  |
 | `docs/taxonomy_three_paths.md` | 6.6 KB |  |
 | `docs/external_sources_register.md` | 6.5 KB |  |
 | `docs/N1_narrative_mainline.md` | 6.5 KB |  |
-| `docs/EXECUTION_DISCIPLINE.md` | 6.4 KB |  |
 | `docs/work_summary_d7.md` | 6.2 KB |  |
 | `docs/how_to_expand_gains.md` | 6.1 KB |  |
 | `docs/scoped_findings.md` | 5.9 KB |  |
@@ -117,15 +117,14 @@
 | `docs/DoD_completion_table.md` | 4.9 KB |  |
 | `docs/gold_set/answer_sheet_decision.md` | 4.9 KB |  |
 | `docs/w4_prescreen_estimate.md` | 4.8 KB |  |
-| `docs/gold_set/answer_sheet_kimi.md` | 4.8 KB |  |
 | `docs/SoundInsight决赛备战_现状盘点清单.md` | 4.8 KB |  |
 | `docs/v2_gate_verdict.md` | 4.7 KB |  |
 | `docs/w1_longtext_variants.md` | 4.7 KB |  |
 | `docs/gold_set/answer_sheet.md` | 4.7 KB |  |
 | `docs/evidence_index_exp.md` | 4.4 KB |  |
 | `docs/e2_erratum.md` | 4.2 KB |  |
-| `docs/PAUSE_SNAPSHOT.md` | 3.8 KB |  |
-| `docs/bus/INDEX.md` | 3.6 KB |  |
+| `docs/PAUSE_SNAPSHOT.md` | 3.9 KB |  |
+| `docs/bus/INDEX.md` | 3.7 KB |  |
 | `docs/repo_hygiene_scan.md` | 3.5 KB |  |
 | `docs/dataset_audit.md` | 3.5 KB | 数据集字段考古 |
 | `docs/M8a_submission_precheck.md` | 3.5 KB |  |
@@ -151,6 +150,7 @@
 | `docs/gold_set/human_rulings_qwen.md` | 0.9 KB |  |
 | `docs/checklist_version.json` | 0.8 KB |  |
 | `docs/year_split_output.txt` | 0.8 KB | 年份分桶脚本输出原文 |
+| `docs/bus/availability.json` | 0.6 KB |  |
 
 ## 演示材料（6 项，18.1 MB）
 
@@ -291,13 +291,13 @@
 | 文件 | 大小 | 用途 |
 |---|---|---|
 | `check_doc_numbers.py` | 57.5 KB | 数字审计 + 模板格式对照脚本 |
+| `apply_human_rulings.py` | 19.7 KB |  |
 | `scan_repo_hygiene.py` | 19.7 KB |  |
 | `v2_meta_analysis.py` | 19.1 KB |  |
-| `apply_human_rulings.py` | 19.0 KB |  |
 | `build_finals_appendix.py` | 16.1 KB |  |
 | `make_gold_set_notes.py` | 15.5 KB |  |
 | `test_audit_checks.py` | 15.5 KB |  |
-| `build_finals_package.py` | 15.3 KB |  |
+| `build_finals_package.py` | 15.4 KB |  |
 | `v2_w4_mine.py` | 13.2 KB |  |
 | `build_finals_docx2.py` | 12.7 KB |  |
 | `build_pdf_v2.py` | 12.4 KB |  |
@@ -329,10 +329,10 @@
 | `v2_w4_prescreen.py` | 7.3 KB |  |
 | `make_gold_set.py` | 7.0 KB |  |
 | `v2_w6_split.py` | 7.0 KB |  |
+| `make_pause_snapshot.py` | 6.9 KB |  |
 | `learning_curve.py` | 6.8 KB |  |
 | `diagnose_treble.py` | 6.6 KB |  |
 | `fetch_electronics.py` | 6.5 KB |  |
-| `make_pause_snapshot.py` | 6.3 KB |  |
 | `v2_w4_estimate.py` | 6.3 KB |  |
 | `cross_model_review.py` | 6.3 KB |  |
 | `difficulty_stratification.py` | 6.1 KB |  |
@@ -359,6 +359,7 @@
 | `make_video_assets.py` | 4.6 KB |  |
 | `v2_record_incident.py` | 4.5 KB |  |
 | `make_samples.py` | 4.4 KB |  |
+| `make_bus_index.py` | 4.4 KB |  |
 | `verify_finals_package.py` | 4.4 KB |  |
 | `check_refs_and_deps.py` | 4.4 KB |  |
 | `retime_srt.py` | 4.2 KB |  |
@@ -367,7 +368,6 @@
 | `upload_models.py` | 3.9 KB |  |
 | `test_model.py` | 3.9 KB |  |
 | `m3_m8a_recheck.py` | 3.9 KB |  |
-| `make_bus_index.py` | 3.8 KB |  |
 | `merge_refine.py` | 3.8 KB |  |
 | `train_multilabel.py` | 3.8 KB |  |
 | `gold_set_helper.py` | 3.7 KB |  |
@@ -510,7 +510,7 @@
 | `multi_label_model/` | 256.1 MB | 冻结的多标签归因模型权重（约 256MB），不入 git |
 | `sound_model/` | 256.1 MB | 冻结的二分类模型权重（约 256MB），不入 git |
 
-## 其他（61 项，49.9 MB）
+## 其他（62 项，49.9 MB）
 
 | 文件 | 大小 | 用途 |
 |---|---|---|
@@ -564,6 +564,7 @@
 | `v2/w1_eval_maxlen512.json` | 0.9 KB |  |
 | `v2/b_measure_results.json` | 0.7 KB |  |
 | `v2/outside_gate_fp.json` | 0.6 KB |  |
+| `v2/push_log.json` | 0.5 KB |  |
 | `difficulty_stratification.json` | 0.5 KB |  |
 | `per_class_thresholds_probe.json` | 0.4 KB |  |
 | `v2/exp_undersample.json` | 0.4 KB |  |

@@ -118,7 +118,7 @@ OTHER_FILES = [
     "docs/bus/README.md",
     "docs/bus/INDEX.md",
     "docs/bus/TEMPLATE.md",
-    "docs/bus/rulings.md",
+    "docs/bus/rulings.md", "docs/bus/availability.json",
     "docs/bus/round-01/dsh.md",
     "make_bus_index.py",
     "make_reviewer_brief.py",

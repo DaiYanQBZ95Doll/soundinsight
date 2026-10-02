@@ -38,6 +38,16 @@ with zipfile.ZipFile(os.path.join(HERE, FINALS)) as z:
     n_entries = len(z.namelist())
 rsha = hashlib.sha256(open(os.path.join(HERE, RECAP), "rb").read()).hexdigest()[:16]
 # 推送记录（每日一次，见执行纪律 R29）
+# 席位可用性（任一方短时不可用时登记；见执行纪律 R30）
+try:
+    _av = json.load(open(os.path.join(HERE, "docs", "bus", "availability.json"),
+                         encoding="utf-8")).get("parties", {})
+    avail_line = "｜".join(
+        f"{k}:" + ("可用" if v.get("status") == "available" else
+                   ("**不可用**" if v.get("status") == "unavailable" else "未明"))
+        + (f"（至 {v['until']}）" if v.get("until") else "") for k, v in _av.items())
+except (OSError, ValueError):
+    avail_line = "—（无 availability.json）"
 try:
     _pl = json.load(open(os.path.join(HERE, "v2", "push_log.json"), encoding="utf-8"))
     _ls = _pl.get("last_success") or {}
@@ -71,6 +81,7 @@ snap = f"""# 停工快照（生成式，勿手改）
 | 本地 HEAD | `{head}`（累计 {commits} 个提交；范围冻结后 {lock_commits} 个） |
 | 远端同步 | GitCode / GitHub｜**待推送 {pending}**（推送**每天一次**，见 R29） |
 | 上次成功推送 | {last_push} |
+| 席位可用性 | {avail_line} |
 | 工作区 | {"**干净**" if dirty == 0 else f"有 {dirty} 项未提交改动"} |
 | 决赛包 | {n_entries} 条目｜体积 {fsize:,} B（**随重建变化，以 `hashes.txt` 决赛段为准**） |
 | 复赛包（红线 9） | sha256 `{rsha}…`（冻结值 `e6cae286515ef1d2`） |

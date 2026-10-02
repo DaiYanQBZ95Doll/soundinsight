@@ -271,6 +271,20 @@ def reconcile() -> None:
             for m2 in re.finditer(r"(S\d-\d{3})\s*[=:：]\s*([012?])(?![0-9])", ln):
                 vals[m2.group(1)] = m2.group(2)
         prints[a] = vals
+    # 登记为不可用的一方，其席位缺失属**预期**（执行纪律 R30：流程要有降级路径）
+    unavailable = set()
+    _avp = os.path.join(GDIR, os.pardir, "bus", "availability.json")
+    if os.path.isfile(_avp):
+        try:
+            import json as _json
+            _av = _json.load(open(_avp, encoding="utf-8")).get("parties", {})
+            unavailable = {k for k, v in _av.items() if v.get("status") == "unavailable"}
+        except (OSError, ValueError):
+            unavailable = set()
+    expected = [m for m in missing if m in unavailable]
+    missing = [m for m in missing if m not in unavailable]
+    if expected:
+        print("（预期缺失：" + ", ".join(sorted(expected)) + " 已登记为不可用，非异常）")
     if missing:
         print("⚠ 缺失席位文件：" + ", ".join(missing)
               + "（未参与对账；若该方判定只写在共享 CSV 里，请其补写席位 md）")
