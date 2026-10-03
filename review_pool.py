@@ -103,10 +103,12 @@ def review_one(item: dict, key: str, retries: int = 2) -> dict:
 
 def main() -> int:
     ap = argparse.ArgumentParser()
-    ap.add_argument("--layer", choices=["longtext", "treble"])
+    ap.add_argument("--layer", choices=["longtext", "treble", "s6"], default="longtext")
     ap.add_argument("--workers", type=int, default=12)
     ap.add_argument("--limit", type=int, default=0)
     ap.add_argument("--report", action="store_true")
+    ap.add_argument("--rows-json", default="",
+                    help="按预注册行号清单复核（S6）：JSON 内含 row_index 列表")
     args = ap.parse_args()
 
     if args.report:
@@ -133,10 +135,23 @@ def main() -> int:
     if not key:
         print("[需要凭证] 未注入 DEEPSEEK_API_KEY")
         return 2
-    pool = build_pool(args.layer)
+    if args.rows_json:
+        rows_want = json.load(open(args.rows_json, encoding="utf-8"))["label_row_index"]
+        pool = []
+        with open(CORPUS, encoding="utf-8", errors="replace") as fh:
+            want = set(rows_want)
+            for i, r in enumerate(csv.DictReader(fh)):
+                if i in want:
+                    pool.append({"row_index": i, "text": str(r.get("text") or ""),
+                                 "words": len(str(r.get("text") or "").split())})
+        print(f"[s6] 按清单复核 {len(pool)} 条")
+    else:
+        pool = build_pool(args.layer)
     if args.limit:
         pool = pool[:args.limit]
     out_path = os.path.join(OUT, f"review_{args.layer}.jsonl")
+    if args.rows_json:
+        out_path = os.path.join(OUT, "review_s6_vocab.jsonl")
     done = set()
     if os.path.isfile(out_path):
         for line in open(out_path, encoding="utf-8", errors="replace"):

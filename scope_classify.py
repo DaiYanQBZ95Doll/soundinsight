@@ -64,7 +64,7 @@ def call(text: str, key: str, retries: int = 2) -> dict:
 
 
 def target_rows():
-    """返回 [(uid, text)]：uid = 'lab:<row_index>' 或 'test:<i>'。"""
+    """返回 [(uid, text)]：uid = 'lab:<row_index>'／'test:<i>'／'s6:<row_index>'（S6 扩词表抽样框）。"""
     rows = []
     with open(os.path.join(HERE, "labeled_llm.csv"), encoding="utf-8", errors="replace") as fh:
         for i, r in enumerate(csv.DictReader(fh)):
@@ -73,6 +73,15 @@ def target_rows():
     with open(os.path.join(HERE, "val_v3_test.csv"), encoding="utf-8", errors="replace") as fh:
         for i, r in enumerate(csv.DictReader(fh)):
             rows.append((f"test:{i}", str(r.get("text") or "")))
+    # S6：扩词表新增覆盖的 LLM 复核条目（重训 v3-lite-B 需要其产品口径分类）
+    s6 = os.path.join(OUT, "s6_preregistration.json")
+    if os.path.isfile(s6):
+        want = set(json.load(open(s6, encoding="utf-8"))["label_row_index"])
+        with open(os.path.join(HERE, "labeled_llm.csv"), encoding="utf-8",
+                  errors="replace") as fh:
+            for i, r in enumerate(csv.DictReader(fh)):
+                if i in want:
+                    rows.append((f"s6:{i}", str(r.get("text") or "")))
     return rows
 
 

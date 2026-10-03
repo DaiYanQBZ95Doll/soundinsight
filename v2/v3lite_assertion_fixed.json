@@ -1,0 +1,16 @@
+{
+  "val_v3_test": {
+    "rows": 10000,
+    "real_overlap": 0,
+    "consistent_with_holdout": 10000,
+    "not_found": 0,
+    "sample_overlap_text": []
+  },
+  "val_v3_tune": {
+    "rows": 10000,
+    "real_overlap": 0,
+    "consistent_with_holdout": 10000,
+    "not_found": 0,
+    "sample_overlap_text": []
+  }
+}
