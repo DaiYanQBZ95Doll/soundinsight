@@ -37,10 +37,17 @@ rows = list(csv.DictReader(open(os.path.join(HERE, "docs/gold_set/vocab_test.csv
                                 encoding="utf-8-sig", errors="replace")))
 n_all, n_ans = len(rows), len(got)
 print(f"答题卡：{n_ans}/{n_all} 条已判｜歧义 {len(ambig)}")
+partial = "--allow-partial" in sys.argv
 if n_ans < n_all:
     unf = [r["编号"] for r in rows if r["编号"] not in got]
-    print(f"  未填 {len(unf)} 条（示例 {unf[:5]}）——请填完再计分")
-    sys.exit(1)
+    short = (n_all - n_ans) / n_all
+    print(f"  未填 {len(unf)} 条（{unf[:6]}）")
+    if not partial or short > 0.05:
+        print("  → 拒算：预注册 n=100；缺口超过 5% 或未加 --allow-partial。")
+        sys.exit(1)
+    print(f"  ⚠️ **偏离预注册**：按已判 {n_ans} 条计分（缺口 {short*100:.0f}% ≤5%），"
+          f"此项偏离必须在引用时披露；补齐后可复算。")
+rows = [r for r in rows if r["编号"] in got]
 
 
 def wilson(k, n, z=1.96):

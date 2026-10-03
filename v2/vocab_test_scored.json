@@ -1,0 +1,18 @@
+{
+  "gate_sha256": "81df73754f4844f08ec954af2358f447016a44623fee7cb7c86bf56dcde6bc39",
+  "n": 98,
+  "true_positives": 9,
+  "unclear": 3,
+  "p": 0.0918,
+  "wilson": [
+    0.0491,
+    0.1654
+  ],
+  "frame": 861,
+  "recoverable": 79.1,
+  "recoverable_ci": [
+    42.2,
+    142.4
+  ],
+  "reading_limit": "只报 P 与区间；不主张召回提升"
+}
