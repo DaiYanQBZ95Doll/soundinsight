@@ -1,6 +1,6 @@
 # 文件地图（由 make_ai_handoff.py 自动生成，勿手改）
 
-> 生成时间：2026-10-03 13:22；共 616 个条目；体积单位 KB/MB。
+> 生成时间：2026-10-03 14:16；共 621 个条目；体积单位 KB/MB。
 
 ## 提交物（5 项，44.3 MB）
 
@@ -95,7 +95,7 @@
 | `docs/gold_set/gold_standard_findings.md` | 18.1 KB |  |
 | `docs/overnight_summary.md` | 17.3 KB |  |
 | `docs/bus/round-01/dsh.md` | 16.0 KB |  |
-| `docs/demo_uptime_log.md` | 15.3 KB |  |
+| `docs/demo_uptime_log.md` | 15.5 KB |  |
 | `docs/REVIEWER_BRIEF.md` | 14.8 KB |  |
 | `docs/reassessment_after_credential.md` | 14.6 KB |  |
 | `docs/bus/round-01/qwen.md` | 14.1 KB |  |
@@ -133,8 +133,8 @@
 | `docs/how_to_expand_gains.md` | 6.1 KB |  |
 | `docs/scoped_findings.md` | 5.9 KB |  |
 | `docs/bus/round-02/dsh.md` | 5.6 KB |  |
+| `docs/extrapolation_register.md` | 5.3 KB |  |
 | `docs/PAUSE_SNAPSHOT.md` | 5.2 KB |  |
-| `docs/extrapolation_register.md` | 5.0 KB |  |
 | `docs/llm_credential_status.md` | 5.0 KB |  |
 | `docs/b_measure_results.md` | 5.0 KB |  |
 | `docs/DoD_completion_table.md` | 4.9 KB |  |
@@ -143,6 +143,7 @@
 | `docs/v2_gate_verdict.md` | 4.7 KB |  |
 | `docs/w1_longtext_variants.md` | 4.7 KB |  |
 | `docs/bus/INDEX.md` | 4.7 KB |  |
+| `docs/v3lite_filing.md` | 4.5 KB |  |
 | `docs/regrets_and_gaps.md` | 4.5 KB |  |
 | `docs/evidence_index_exp.md` | 4.4 KB |  |
 | `docs/e2_erratum.md` | 4.2 KB |  |
@@ -152,7 +153,6 @@
 | `docs/dataset_audit.md` | 3.5 KB | 数据集字段考古 |
 | `docs/M8a_submission_precheck.md` | 3.5 KB |  |
 | `docs/N4_target_argument.md` | 3.5 KB |  |
-| `docs/v3lite_filing.md` | 3.4 KB |  |
 | `docs/w4_mining_estimate.md` | 3.4 KB |  |
 | `docs/M3b_judge_access_guide.md` | 3.3 KB |  |
 | `docs/token_and_cost_budget.md` | 3.2 KB |  |
@@ -321,12 +321,12 @@
 | `_coldstart_test/sample_reviews_100.csv` | 57.9 KB |  |
 | `agent_test_input.csv` | 27.9 KB |  |
 
-## 代码（207 项，1.1 MB）
+## 代码（209 项，1.1 MB）
 
 | 文件 | 大小 | 用途 |
 |---|---|---|
 | `check_doc_numbers.py` | 57.5 KB | 数字审计 + 模板格式对照脚本 |
-| `build_finals_appendix.py` | 26.3 KB |  |
+| `build_finals_appendix.py` | 26.2 KB |  |
 | `scan_repo_hygiene.py` | 19.7 KB |  |
 | `v2_meta_analysis.py` | 19.1 KB |  |
 | `make_gold_set_notes.py` | 18.8 KB |  |
@@ -334,8 +334,8 @@
 | `apply_human_rulings.py` | 15.9 KB |  |
 | `test_audit_checks.py` | 15.5 KB |  |
 | `v2_w4_mine.py` | 13.2 KB |  |
+| `s34_docs.py` | 12.8 KB |  |
 | `build_finals_docx2.py` | 12.7 KB |  |
-| `s34_docs.py` | 12.5 KB |  |
 | `build_pdf_v2.py` | 12.4 KB |  |
 | `v2_w1_longtext.py` | 12.1 KB |  |
 | `make_ai_handoff.py` | 11.5 KB |  |
@@ -405,12 +405,14 @@
 | `distilbert_cv.py` | 5.4 KB |  |
 | `undersample_experiment.py` | 5.4 KB |  |
 | `md_to_docx.py` | 5.4 KB | 主文档 Markdown → Word |
+| `eval_v3liteb.py` | 5.3 KB |  |
 | `v2_m0_switch.py` | 5.3 KB |  |
 | `train_final.py` | 5.2 KB |  |
 | `train_roberta_quick.py` | 5.2 KB |  |
 | `make_missing_figures.py` | 5.1 KB |  |
 | `v2_w1_seg_threshold.py` | 5.1 KB |  |
 | `make_reviewer_brief.py` | 5.0 KB |  |
+| `fair_pool_compare.py` | 4.9 KB |  |
 | `fix_ppt_threshold.py` | 4.8 KB |  |
 | `make_video_assets.py` | 4.6 KB |  |
 | `fix_clean_alerts_notes.py` | 4.5 KB |  |
@@ -598,7 +600,7 @@
 | `multi_label_model/` | 256.1 MB | 冻结的多标签归因模型权重（约 256MB），不入 git |
 | `sound_model/` | 256.1 MB | 冻结的二分类模型权重（约 256MB），不入 git |
 
-## 其他（95 项，51.3 MB）
+## 其他（98 项，51.3 MB）
 
 | 文件 | 大小 | 用途 |
 |---|---|---|
@@ -673,6 +675,7 @@
 | `v2/w1_eval_maxlen256.json` | 0.9 KB |  |
 | `v2/w1_eval_maxlen512.json` | 0.9 KB |  |
 | `v2/clean_alerts_scored.json` | 0.9 KB |  |
+| `v2/v3liteb_eval_test.json` | 0.9 KB |  |
 | `v2/bias_probe_ids.json` | 0.8 KB |  |
 | `v2/scope_summary.json` | 0.7 KB |  |
 | `v2/b_measure_results.json` | 0.7 KB |  |
@@ -683,7 +686,9 @@
 | `v2/exp_undersample.json` | 0.4 KB |  |
 | `w11_data_efficiency.json` | 0.4 KB |  |
 | `v2/vocab_test_scored.json` | 0.4 KB |  |
+| `v2/v3liteb_realworld.json` | 0.3 KB |  |
 | `v2/v3lite_assertion_fixed.json` | 0.3 KB |  |
+| `v2/clean_pool_three_models.json` | 0.3 KB |  |
 | `v2/threshold.json` | 0.3 KB |  |
 | `v2/entrypoints_check.json` | 0.3 KB |  |
 | `v2/cross_model_agreement.json` | 0.3 KB |  |
