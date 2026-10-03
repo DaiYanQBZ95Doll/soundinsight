@@ -1,6 +1,6 @@
 # 文件地图（由 make_ai_handoff.py 自动生成，勿手改）
 
-> 生成时间：2026-10-03 18:23；共 671 个条目；体积单位 KB/MB。
+> 生成时间：2026-10-03 19:08；共 672 个条目；体积单位 KB/MB。
 
 ## 提交物（5 项，44.3 MB）
 
@@ -62,7 +62,7 @@
 | `confidence_tiered.md` | 0.7 KB | 三星补漏置信度分层与中置信剔除记录 |
 | `significance_test.md` | 0.6 KB | Welch t 检验（p=0.000932） |
 
-## 过程与交接文档（127 项，4.1 MB）
+## 过程与交接文档（128 项，4.1 MB）
 
 | 文件 | 大小 | 用途 |
 |---|---|---|
@@ -73,14 +73,14 @@
 | `docs/gold_set/answer_sheet_vocab_test.md` | 183.0 KB |  |
 | `docs/gold_set/worksheet.csv` | 177.2 KB |  |
 | `docs/gold_set/vocab_test.csv` | 146.9 KB |  |
-| `docs/gold_set/answer_sheet_p0_accept.md` | 138.3 KB |  |
+| `docs/gold_set/answer_sheet_p0_accept.md` | 138.5 KB |  |
 | `docs/gold_set/p0_accept.csv` | 131.1 KB |  |
 | `docs/gold_set/answer_sheet_clean_alerts.md` | 116.1 KB |  |
 | `docs/gold_set/answer_sheet_s1_add100.md` | 94.6 KB |  |
 | `docs/gold_set/s1_add100.csv` | 83.3 KB |  |
 | `docs/gold_set/clean_alerts.csv` | 82.8 KB |  |
 | `docs/frozen_execution_checklist.md` | 71.5 KB |  |
-| `docs/gold_set/answer_sheet_types.md` | 67.9 KB |  |
+| `docs/gold_set/answer_sheet_types.md` | 68.2 KB |  |
 | `docs/gold_set/answer_sheet_attribution.md` | 66.1 KB |  |
 | `docs/gold_set/types_validation.csv` | 60.0 KB |  |
 | `docs/gold_set/attribution_test.csv` | 57.8 KB |  |
@@ -99,8 +99,8 @@
 | `docs/D13_seal_declaration.md` | 20.1 KB | D13 封包声明（提交技术质检终审） |
 | `docs/final_review_and_execution_plan.md` | 19.9 KB |  |
 | `docs/gold_set/gold_standard_findings.md` | 18.1 KB |  |
+| `docs/demo_uptime_log.md` | 17.3 KB |  |
 | `docs/overnight_summary.md` | 17.3 KB |  |
-| `docs/demo_uptime_log.md` | 17.1 KB |  |
 | `docs/bus/round-01/dsh.md` | 16.0 KB |  |
 | `docs/REVIEWER_BRIEF.md` | 14.8 KB |  |
 | `docs/reassessment_after_credential.md` | 14.6 KB |  |
@@ -141,22 +141,22 @@
 | `docs/scoped_findings.md` | 5.9 KB |  |
 | `docs/bus/round-02/dsh.md` | 5.6 KB |  |
 | `docs/PAUSE_SNAPSHOT.md` | 5.2 KB |  |
+| `docs/split_manifest.md` | 5.1 KB |  |
 | `docs/llm_credential_status.md` | 5.0 KB |  |
 | `docs/b_measure_results.md` | 5.0 KB |  |
 | `docs/DoD_completion_table.md` | 4.9 KB |  |
 | `docs/w4_prescreen_estimate.md` | 4.8 KB |  |
 | `docs/SoundInsight决赛备战_现状盘点清单.md` | 4.8 KB |  |
 | `docs/v2_gate_verdict.md` | 4.7 KB |  |
+| `docs/TECH_FREEZE.md` | 4.7 KB |  |
 | `docs/w1_longtext_variants.md` | 4.7 KB |  |
 | `docs/bus/INDEX.md` | 4.7 KB |  |
 | `docs/v3lite_filing.md` | 4.5 KB |  |
 | `docs/regrets_and_gaps.md` | 4.5 KB |  |
 | `docs/evidence_index_exp.md` | 4.4 KB |  |
-| `docs/split_manifest.md` | 4.3 KB |  |
 | `docs/e2_erratum.md` | 4.2 KB |  |
 | `docs/bus/round-02/s5_receipt_evidence.md` | 4.1 KB |  |
 | `docs/p0_preregistration.md` | 4.0 KB |  |
-| `docs/TECH_FREEZE.md` | 3.8 KB |  |
 | `docs/repo_hygiene_scan.md` | 3.5 KB |  |
 | `docs/dataset_audit.md` | 3.5 KB | 数据集字段考古 |
 | `docs/M8a_submission_precheck.md` | 3.5 KB |  |
@@ -176,6 +176,7 @@
 | `docs/p1_preregistration.md` | 2.7 KB |  |
 | `docs/ppt_claims_erratum.md` | 2.6 KB |  |
 | `docs/gold_set/bias_probe_design.md` | 2.6 KB |  |
+| `docs/SUBMISSION_CHECKLIST.md` | 2.4 KB |  |
 | `docs/W5_cv_interpretation.md` | 2.2 KB |  |
 | `docs/w13_keyword_miss_rate.md` | 2.1 KB |  |
 | `docs/s6_preregistration.md` | 2.1 KB |  |
