@@ -1,0 +1,116 @@
+# -*- coding: utf-8 -*-
+"""归因校验计分：人工归因 vs ① 出厂模型（多标签 @0.5）② LLM 标签（0.8273 的评测对象）。
+
+判读要点：0.8273 是"模型 vs **LLM** 标签"的宏 F1；本表给出"模型 vs **人工**"与
+"LLM vs **人工**"，两者一对比即可回答"该数字是否被人工支持"。
+
+用法：python score_attribution.py
+"""
+from __future__ import annotations
+
+import csv
+import importlib.util
+import json
+import os
+import re
+import sys
+
+sys.stdout.reconfigure(encoding="utf-8", errors="replace")
+HERE = os.path.dirname(os.path.abspath(__file__))
+spec = importlib.util.spec_from_file_location("rio", os.path.join(HERE, "rulings_io.py"))
+rio = importlib.util.module_from_spec(spec)
+spec.loader.exec_module(rio)
+CLASSES = ["低音", "清晰度", "杂音", "音量", "高音"]
+IDX2C = {"1": "低音", "2": "清晰度", "3": "杂音", "4": "音量", "5": "高音"}
+
+
+def parse_multi(path):
+    """解析 `**归因（决策方填，可多选）**：`1,3`` 形式的判定位 → {uid: set(classes)}。"""
+    out, cur, fence = {}, None, False
+    for ln in open(path, encoding="utf-8", errors="replace"):
+        t = ln.strip()
+        if t.startswith("```"):
+            fence = not fence
+            continue
+        if fence or t.startswith(">"):
+            continue
+        m = re.match(r"^#{2,4}\s*([AB]\d{2})\b", t)
+        if m:
+            cur = m.group(1)
+            continue
+        if cur and "归因（决策方填" in t:
+            m2 = re.search(r"`([^`]*)`", t)
+            content = m2.group(1) if m2 else t
+            digits = set(re.findall(r"[1-5]", content))
+            if "0" in content and not digits:
+                out[cur] = set()
+            elif digits or "0" in content:
+                out[cur] = {IDX2C[d] for d in digits}
+    return out
+
+
+meta = json.load(open(os.path.join(HERE, "v2", "attribution_ids.json"), encoding="utf-8"))
+human = parse_multi(os.path.join(HERE, "docs/gold_set/answer_sheet_attribution.md"))
+print(f"答题卡：{len(human)}/{len(meta['row_index'])} 条已判")
+if len(human) < len(meta["row_index"]):
+    miss = [u for u in (meta["armA"] + meta["armB"]) if u not in human]
+    print(f"  未填 {len(miss)} 条（示例 {miss[:5]}）→ 请填完再计分")
+    sys.exit(1)
+
+# 模型归因（多标签 @0.5）
+import importlib.util  # noqa: E402
+import predict_core  # noqa: E402
+st = predict_core.load()
+texts = []
+with open(os.path.join(HERE, "labeled_llm.csv"), encoding="utf-8", errors="replace") as fh:
+    for r in csv.DictReader(fh):
+        texts.append(str(r.get("text") or ""))
+uids = meta["armA"] + meta["armB"]
+ridx = [meta["row_index"][uids.index(u)] if u in uids else None for u in uids]
+sel = [(u, r) for u, r in zip(uids, ridx)]
+ml = predict_core._ml_sigmoid(st["ml"], st["tok"], [texts[r] for _u, r in sel], st["device"])
+names = st["issues"]["names"]
+model_cls = {u: {names[k] for k in range(len(names)) if ml[i, k] >= 0.5}
+             for i, (u, _r) in enumerate(sel)}
+llm_cls = {u: set(meta["llm_classes"].get(u) or []) for u in uids}
+
+
+def prf(truth, pred, c):
+    tp = sum(1 for u in uids if c in truth[u] and c in pred[u])
+    fp = sum(1 for u in uids if c not in truth[u] and c in pred[u])
+    fn = sum(1 for u in uids if c in truth[u] and c not in pred[u])
+    p = tp / (tp + fp) if tp + fp else 0.0
+    r = tp / (tp + fn) if tp + fn else 0.0
+    f = 2 * p * r / (p + r) if p + r else 0.0
+    return tp, fp, fn, p, r, f
+
+
+print(f"\n{'类':<6}{'模型 P':>8}{'模型 R':>8}{'模型 F1':>9}   {'LLM P':>8}{'LLM R':>8}{'LLM F1':>9}")
+mf1s, lf1s = [], []
+for c in CLASSES:
+    _tp, _fp, _fn, p, r, f = prf(human, model_cls, c)
+    _tp2, _fp2, _fn2, p2, r2, f2 = prf(human, llm_cls, c)
+    mf1s.append(f)
+    lf1s.append(f2)
+    print(f"{c:<6}{p:>8.3f}{r:>8.3f}{f:>9.3f}   {p2:>8.3f}{r2:>8.3f}{f2:>9.3f}")
+macro_m = sum(mf1s) / len(mf1s)
+macro_l = sum(lf1s) / len(lf1s)
+exact_m = sum(1 for u in uids if model_cls[u] == human[u]) / len(uids)
+exact_l = sum(1 for u in uids if llm_cls[u] == human[u]) / len(uids)
+jac = lambda a, b: len(a & b) / len(a | b) if (a | b) else 1.0
+print(f"\n**宏 F1：模型 vs 人工 = {macro_m:.4f}｜LLM vs 人工 = {macro_l:.4f}**")
+print(f"完全一致率：模型 {exact_m*100:.0f}%｜LLM {exact_l*100:.0f}%")
+print(f"平均 Jaccard：模型 {sum(jac(model_cls[u], human[u]) for u in uids)/len(uids):.3f}"
+      f"｜LLM {sum(jac(llm_cls[u], human[u]) for u in uids)/len(uids):.3f}")
+print(f"\n对照：出厂宣称的归因宏 F1 = **0.8273**（对 LLM 标签）——"
+      f"本表给出它相对**人工**的水平：模型 {macro_m:.4f}。")
+out = {"n": len(uids), "macro_f1_model_vs_human": round(macro_m, 4),
+       "macro_f1_llm_vs_human": round(macro_l, 4),
+       "exact_model": round(exact_m, 3), "exact_llm": round(exact_l, 3),
+       "per_class": {c: dict(zip(("tp", "fp", "fn", "p", "r", "f1"),
+                                 [round(x, 4) if isinstance(x, float) else x
+                                  for x in prf(human, model_cls, c)])) for c in CLASSES},
+       "claimed": 0.8273, "reading_limit": "n=50，区间较宽；只报区间与方向，不外推"}
+json.dump(out, open(os.path.join(HERE, "v2", "attribution_scored.json"), "w",
+                    encoding="utf-8"), ensure_ascii=False, indent=2)
+print("[写出] v2/attribution_scored.json")
