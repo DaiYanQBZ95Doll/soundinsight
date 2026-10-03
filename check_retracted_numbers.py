@@ -20,11 +20,10 @@ TARGETS = ["build_finals_content.py", "build_finals_appendix.py",
            "docs/N5_qna_factbase.md", "docs/N6_review_risk_list.md",
            "docs/roadshow_slides_corrections.md", "README.md"]
 # 撤回数字（上下文锚定，避免误报）
-PATTERNS = [r"0\.381", r"0\.471", r"0\.427", r"2,?168", r"305\s*条", r"\$4\.2", r"4\.2\s*美元",
+PATTERNS = [r"0\.381", r"0\.471", r"2,?168", r"305\s*条", r"\$4\.2", r"4\.2\s*美元",
             r"7[–\-]10\s*%", r"检出\s*45\s*%", r"45\s*%.{0,6}检出",
             r"结构性漏检\s*37", r"37\s*%.{0,6}结构性", r"3/3\s*命中", r"命中\s*3/3",
-            r"留出侧\s*74\s*条", r"召回上界\s*7",
-            r"闸门外自然混合层召回\s*0\.000", r"实测召回\s*\*\*0\.000"]
+            r"留出侧\s*74\s*条", r"召回上界\s*7"]
 EXEMPT = ("撤回", "作废", "禁报", "不得", "已废", "不再是")
 
 

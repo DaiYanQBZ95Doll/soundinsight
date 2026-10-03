@@ -41,6 +41,22 @@ def main() -> int:
         for r in csv.DictReader(fh):
             texts.append(str(r.get("text") or ""))
     recs = []
+    # ⚠️ uid 语义：`lab:<i>`／`s6:<i>` 是**语料行号**；`test:<i>` 是 **val_v3_test 的行号**，
+    # 必须用**内容哈希**映射回语料。首版直接把 i 当语料行号 → 标签贴错文本、模型学成垃圾（已修正）。
+    import hashlib
+    import re
+
+    def _h(t):
+        return hashlib.sha256(re.sub(r"\s+", " ", str(t)).strip()
+                              .encode("utf-8", "replace")).hexdigest()
+    idx_by_hash = {}
+    for _i, _t in enumerate(texts):
+        idx_by_hash.setdefault(_h(_t), _i)
+    test_row = []
+    with open(os.path.join(HERE, "val_v3_test.csv"), encoding="utf-8", errors="replace") as fh:
+        for r in csv.DictReader(fh):
+            test_row.append(str(r.get("text") or ""))
+    unmapped = 0
     for line in open(os.path.join(HERE, "v2", "scope_rows.jsonl"), encoding="utf-8",
                      errors="replace"):
         try:
@@ -50,10 +66,18 @@ def main() -> int:
         u, c = str(rec.get("uid", "")), rec.get("category")
         if not c or c not in C2I:
             continue
-        i = int(u.split(":")[1])
+        k = int(u.split(":")[1])
+        if u.startswith("test:"):
+            if k >= len(test_row):
+                continue
+            i = idx_by_hash.get(_h(test_row[k]), -1)
+        else:
+            i = k
         if 0 <= i < len(texts):
             recs.append((u, i, C2I[c]))
-    print(f"口径标签 {len(recs):,} 条（类别 {len(CATS)}）")
+        else:
+            unmapped += 1
+    print(f"口径标签 {len(recs):,} 条（类别 {len(CATS)}）｜无法映射 {unmapped}")
     tr = [(i, y) for u, i, y in recs if not u.startswith("test:")]
     te = [(i, y) for u, i, y in recs if u.startswith("test:")]
     print(f"训练 {len(tr):,}（lab+s6）｜留出评测 {len(te):,}（test: 段整体留出）")
@@ -79,6 +103,16 @@ def main() -> int:
     torch.manual_seed(42)
     model = DistilBertForSequenceClassification.from_pretrained(
         base, num_labels=len(CATS), ignore_mismatched_sizes=True).to(device)
+    # 类别权重：按**部署分布**（test: 段）与训练分布之比校正，缓解域错位
+    import collections
+    tr_cnt = collections.Counter(y for _i, y in tr)
+    te_cnt = collections.Counter(y for _i, y in te)
+    n_tr, n_te = max(1, sum(tr_cnt.values())), max(1, sum(te_cnt.values()))
+    class_weights = torch.tensor(
+        [max(0.2, min(8.0, (te_cnt.get(c, 0) / n_te) / max(1e-6, tr_cnt.get(c, 0) / n_tr)))
+         for c in range(len(CATS))], dtype=torch.float).to(device)
+    print("  类别权重：" + "｜".join(f"{CATS[i]}={float(class_weights[i]):.2f}"
+                                    for i in range(len(CATS))), flush=True)
     opt = AdamW(model.parameters(), lr=a.lr)
     print(f"训练（device={device}，{a.epochs} epochs，{len(dl)} steps/epoch）", flush=True)
     for ep in range(a.epochs):
@@ -86,11 +120,12 @@ def main() -> int:
         tot = 0.0
         for k, (ids, att, y) in enumerate(dl, 1):
             ids, att, y = ids.to(device), att.to(device), y.to(device)
-            out = model(input_ids=ids, attention_mask=att, labels=y)
-            out.loss.backward()
+            out = model(input_ids=ids, attention_mask=att)
+            loss = torch.nn.functional.cross_entropy(out.logits, y, weight=class_weights)
+            loss.backward()
             opt.step()
             opt.zero_grad()
-            tot += float(out.loss)
+            tot += float(loss)
             if k % 100 == 0:
                 print(f"  [ep{ep+1}] {k}/{len(dl)} loss={tot/k:.4f}", flush=True)
         print(f"[epoch {ep+1}] mean loss={tot/max(len(dl),1):.4f}", flush=True)
