@@ -111,6 +111,7 @@ def build_report(*, src_name: str, n_total: int, n_unsupported: int,
                  n_valid: int, n_neg: int, avg_rating: float,
                  issue_counts: dict, examples=None, n_mid: int = 0,
                  n_out_of_scope: int = 0, n_priority: int = 0, n_review: int = 0,
+                 type_counts: dict = None, vague_counts: dict = None,
                  lang: str = "zh", generated_at: str = None) -> str:
     """生成六节洞察报告（Markdown 文本）。所有数字由调用方传入，不在此处编造。
 
@@ -184,6 +185,13 @@ def build_report(*, src_name: str, n_total: int, n_unsupported: int,
     if rating_known:
         lines.append(f"平均评分：{avg_rating:.2f}")
     lines.append(f"结论一句话：{verdict(rate)}")
+    if type_counts:
+        lines += ["", "## 二之二、非音质差评的类型分布（本地模型，初步）",
+                  "｜".join(f"{k} {v}" for k, v in list(type_counts.items())[:10]),
+                  "⚠️ 类型由**本地模型**给出（训练自 LLM 标签，**非精度最优**），用于分诊；未经人工校准前不得作为结论引用。"]
+    if vague_counts:
+        lines += ["", "## 二之三、不可归因原因（提到声音但说不清）",
+                  "｜".join(f"{k} {v}" for k, v in list(vague_counts.items())[:8])]
     lines += ["", "## 二、问题分布",
               "| 问题类别 | 数量 | 占比 | 优先级 |",
               "|---------|------|------|--------|"]

@@ -129,6 +129,20 @@ def analyze(csv_path: str, export: bool = False, lang: str = "zh") -> str:
     n_priority = int((probs >= TIER_HIGH).sum())
     n_review = int(((probs >= TIER_LOW) & (probs < TIER_HIGH)).sum())
     n_mid = int(((probs >= 0.5) & (probs < thr)).sum())
+    # 类型/原因（本地模型，缺模型即跳过）
+    _type_counts = _vague_counts = None
+    try:
+        import types_helper as _th
+        if _th.available():
+            _nonsnd = [texts[i] for i in range(len(texts)) if not df["is_sound_negative"].iloc[i]]
+            _preds = _th.predict(_nonsnd) or []
+            _type_counts = _th.type_counts(_preds)
+            _preds2 = _th.predict([texts[i] for i in range(len(texts))
+                                   if df["is_sound_negative"].iloc[i]]) or []
+            _vague_counts = _th.vague_counts(_preds2)
+    except Exception as _e:  # noqa: BLE001
+        print(f"  [提示] 类型/原因模型不可用，跳过：{type(_e).__name__}")
+
     examples = []
     for i in sorted(neg_idx, key=lambda j: -probs[j])[:5]:
         ip = {}
@@ -143,7 +157,8 @@ def analyze(csv_path: str, export: bool = False, lang: str = "zh") -> str:
         src_name=src_name, n_total=len(texts) + n_unsup + n_oos, n_unsupported=n_unsup,
         n_valid=n, n_neg=n_neg, avg_rating=avg_rating,
         issue_counts=issue_counts, examples=examples, n_mid=n_mid,
-        n_out_of_scope=n_oos, n_priority=n_priority, n_review=n_review, lang=lang)
+        n_out_of_scope=n_oos, n_priority=n_priority, n_review=n_review,
+        type_counts=_type_counts, vague_counts=_vague_counts, lang=lang)
     out_path = os.path.join(
         HERE,
         "insight_report_v2_en.md" if lang == "en" else "insight_report_v2.md")
