@@ -1,0 +1,16 @@
+{
+  "clean_pool": 14165,
+  "alerts": 2,
+  "alert_rate": 0.000141,
+  "v1_reference": {
+    "alerts": 15,
+    "alert_rate": 0.001049
+  },
+  "face2_realworld_subset": {
+    "n": 59,
+    "positives": 1,
+    "hits": 0,
+    "alerts": 0
+  },
+  "note": "新告警的精确率未测（需人工判定）；本表只报计数与率"
+}
