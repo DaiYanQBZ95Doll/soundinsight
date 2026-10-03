@@ -6,8 +6,8 @@
 | 步骤 | 结果 | 耗时 |
 |---|---|---|
 | ① 解包决赛包→Demo.zip | ✓（20 项，**自带权重 False**） | — |
-| ② `download_models.py`（约 530MB） | **成功 ✓** | 52.9s |
-| ③ `soundinsight_agent.py --csv sample_reviews_100.csv` | **成功 ✓** | 15.8s |
+| ② `download_models.py`（约 530MB） | **成功 ✓** | 42.9s |
+| ③ `soundinsight_agent.py --csv sample_reviews_100.csv` | **成功 ✓** | 10.7s |
 
 - 报告节数：**7**｜未判定（不含音频词汇）计数：**68**
 - 总判定：**全通过 ✓**
@@ -15,4 +15,4 @@
 
 ## 结论
 
-冷启动路径**已实测可用**——评委按 README 首次运行可在约 1 分钟内完成（含 530MB 下载）（详见 `v2/coldstart_report.json` 的逐步输出）。
+冷启动路径**已实测可用**——评委按 README 首次运行可在约 0 分钟内完成（含 530MB 下载）（详见 `v2/coldstart_report.json` 的逐步输出）。
