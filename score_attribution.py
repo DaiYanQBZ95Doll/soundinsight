@@ -25,8 +25,15 @@ IDX2C = {"1": "低音", "2": "清晰度", "3": "杂音", "4": "音量", "5": "�
 
 
 def parse_multi(path):
-    """解析 `**归因（决策方填，可多选）**：`1,3`` 形式的判定位 → {uid: set(classes)}。"""
-    out, cur, fence = {}, None, False
+    """解析判定位 → ({uid: set(classes)}, {uid: 原样文字}, {uid: 待确认原因})。
+
+    支持：`` `1,3` ``、`` `1,3` 低音最明显，杂音轻微 ``、无引号写法、以及**自由文字备注**。
+    规则（不猜）：
+      · 优先取反引号内内容；无引号则取冒号后前 24 个字符里的独立数字 token；
+      · token 级解析（`\\b[0-5]\\b`），避免把 "10" 之类误拆；
+      · 同时出现 0 与 1–5 → **标为待确认**，不计入。
+    """
+    out, notes, ambig, cur, fence = {}, {}, {}, None, False
     for ln in open(path, encoding="utf-8", errors="replace"):
         t = ln.strip()
         if t.startswith("```"):
@@ -39,23 +46,46 @@ def parse_multi(path):
             cur = m.group(1)
             continue
         if cur and "归因（决策方填" in t:
-            m2 = re.search(r"`([^`]*)`", t)
-            content = m2.group(1) if m2 else t
-            digits = set(re.findall(r"[1-5]", content))
-            if "0" in content and not digits:
-                out[cur] = set()
-            elif digits or "0" in content:
-                out[cur] = {IDX2C[d] for d in digits}
-    return out
+            after = t.split("：", 1)[1] if "：" in t else t
+            m2 = re.search(r"`([^`]*)`", after)
+            slot = m2.group(1) if m2 else after[:24]
+            toks = re.findall(r"(?<![\d])[0-5](?![\d])", slot)
+            if not toks:                     # 无数字 → 视为未填，但保留文字
+                if after.strip("`_ "):
+                    notes[cur] = after.strip()
+                continue
+            has0 = "0" in toks
+            cls = {IDX2C[d] for d in toks if d in IDX2C}
+            if has0 and cls:
+                ambig[cur] = f"同时出现 0 与 1–5：{after.strip()[:60]}"
+                notes[cur] = after.strip()
+                continue
+            out[cur] = cls
+            rest = after.replace(m2.group(0), "", 1) if m2 else after
+            rest = rest.strip("`_ \t—–-")
+            if len(rest) > 2:
+                notes[cur] = rest
+    return out, notes, ambig
 
 
 meta = json.load(open(os.path.join(HERE, "v2", "attribution_ids.json"), encoding="utf-8"))
-human = parse_multi(os.path.join(HERE, "docs/gold_set/answer_sheet_attribution.md"))
-print(f"答题卡：{len(human)}/{len(meta['row_index'])} 条已判")
+human, user_notes, ambig = parse_multi(os.path.join(HERE, "docs/gold_set/answer_sheet_attribution.md"))
+print(f"答题卡：{len(human)}/{len(meta['row_index'])} 条已判"
+      f"｜带文字备注 {len(user_notes)} 条｜待确认 {len(ambig)} 条")
+if ambig:
+    for u, why in list(ambig.items())[:5]:
+        print(f"  ⚠️ {u}：{why}")
 if len(human) < len(meta["row_index"]):
     miss = [u for u in (meta["armA"] + meta["armB"]) if u not in human]
     print(f"  未填 {len(miss)} 条（示例 {miss[:5]}）→ 请填完再计分")
     sys.exit(1)
+if user_notes:
+    print("\n=== 你的文字备注（原样保留，将一并归档）===")
+    for u in (meta["armA"] + meta["armB"]):
+        if u in user_notes:
+            print(f"  {u}（判 {sorted(human[u]) or ['无法判断']}）：{user_notes[u]}")
+    json.dump(user_notes, open(os.path.join(HERE, "v2", "attribution_user_notes.json"), "w",
+                               encoding="utf-8"), ensure_ascii=False, indent=2)
 
 # 模型归因（多标签 @0.5）
 import importlib.util  # noqa: E402
