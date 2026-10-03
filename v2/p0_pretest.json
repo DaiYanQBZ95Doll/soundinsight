@@ -1,0 +1,14 @@
+{
+  "sample": 7109,
+  "headphone_subset": 313,
+  "triggers": 1,
+  "expected_positives": [
+    1,
+    7
+  ],
+  "implied_precision": [
+    0.814,
+    6.917
+  ],
+  "note": "免费预试：口径标签来自 val_v3_test，零 LLM 成本"
+}
