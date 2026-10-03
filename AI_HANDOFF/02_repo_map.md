@@ -1,6 +1,6 @@
 # 文件地图（由 make_ai_handoff.py 自动生成，勿手改）
 
-> 生成时间：2026-10-03 12:03；共 565 个条目；体积单位 KB/MB。
+> 生成时间：2026-10-03 12:22；共 567 个条目；体积单位 KB/MB。
 
 ## 提交物（5 项，44.3 MB）
 
@@ -67,7 +67,7 @@
 | `docs/gold_set/assisted_worksheet.csv` | 402.0 KB |  |
 | `docs/gold_set/answer_sheet_decision.md` | 362.1 KB |  |
 | `docs/gold_set/worksheet.csv` | 177.2 KB |  |
-| `docs/gold_set/answer_sheet_clean_alerts.md` | 116.0 KB |  |
+| `docs/gold_set/answer_sheet_clean_alerts.md` | 116.1 KB |  |
 | `docs/gold_set/answer_sheet_s1_add100.md` | 94.6 KB |  |
 | `docs/gold_set/s1_add100.csv` | 83.3 KB |  |
 | `docs/gold_set/clean_alerts.csv` | 82.8 KB |  |
@@ -90,8 +90,8 @@
 | `docs/overnight_summary.md` | 17.3 KB |  |
 | `docs/bus/round-01/dsh.md` | 16.0 KB |  |
 | `docs/REVIEWER_BRIEF.md` | 14.8 KB |  |
+| `docs/demo_uptime_log.md` | 14.8 KB |  |
 | `docs/reassessment_after_credential.md` | 14.6 KB |  |
-| `docs/demo_uptime_log.md` | 14.5 KB |  |
 | `docs/bus/round-01/qwen.md` | 14.1 KB |  |
 | `docs/file_inventory.md` | 12.8 KB | 项目文件总索引 |
 | `docs/三方探讨意见.txt` | 12.8 KB |  |
@@ -138,6 +138,7 @@
 | `docs/bus/INDEX.md` | 4.7 KB |  |
 | `docs/regrets_and_gaps.md` | 4.5 KB |  |
 | `docs/evidence_index_exp.md` | 4.4 KB |  |
+| `docs/extrapolation_register.md` | 4.3 KB |  |
 | `docs/e2_erratum.md` | 4.2 KB |  |
 | `docs/bus/round-02/s5_receipt_evidence.md` | 4.1 KB |  |
 | `docs/repo_hygiene_scan.md` | 3.5 KB |  |
@@ -145,7 +146,6 @@
 | `docs/dataset_audit.md` | 3.5 KB | 数据集字段考古 |
 | `docs/M8a_submission_precheck.md` | 3.5 KB |  |
 | `docs/N4_target_argument.md` | 3.5 KB |  |
-| `docs/extrapolation_register.md` | 3.4 KB |  |
 | `docs/w4_mining_estimate.md` | 3.4 KB |  |
 | `docs/M3b_judge_access_guide.md` | 3.3 KB |  |
 | `docs/token_and_cost_budget.md` | 3.2 KB |  |
@@ -310,12 +310,12 @@
 | `sample_reviews_100.csv` | 57.9 KB |  |
 | `agent_test_input.csv` | 27.9 KB |  |
 
-## 代码（186 项，1.0 MB）
+## 代码（187 项，1.0 MB）
 
 | 文件 | 大小 | 用途 |
 |---|---|---|
 | `check_doc_numbers.py` | 57.5 KB | 数字审计 + 模板格式对照脚本 |
-| `build_finals_appendix.py` | 24.3 KB |  |
+| `build_finals_appendix.py` | 25.2 KB |  |
 | `scan_repo_hygiene.py` | 19.7 KB |  |
 | `v2_meta_analysis.py` | 19.1 KB |  |
 | `make_gold_set_notes.py` | 18.8 KB |  |
@@ -328,12 +328,12 @@
 | `v2_w1_longtext.py` | 12.1 KB |  |
 | `make_ai_handoff.py` | 11.5 KB |  |
 | `score_gold_set.py` | 11.5 KB |  |
+| `s34_docs.py` | 11.4 KB |  |
 | `build_pdf.py` | 11.2 KB |  |
 | `cleanup_numbers.py` | 11.1 KB |  |
-| `build_finals_content.py` | 10.8 KB |  |
-| `s34_docs.py` | 10.5 KB |  |
+| `build_finals_content.py` | 11.0 KB |  |
+| `rulings_io.py` | 10.2 KB |  |
 | `report_builder.py` | 10.2 KB |  |
-| `rulings_io.py` | 9.8 KB |  |
 | `push_daily.py` | 9.7 KB |  |
 | `demo_sound_v2.py` | 9.5 KB | 本地 Gradio Demo（三页；已内置代理绕过） |
 | `s2_membership.py` | 9.4 KB |  |
@@ -397,6 +397,7 @@
 | `fix_clean_alerts_notes.py` | 4.5 KB |  |
 | `v2_record_incident.py` | 4.5 KB |  |
 | `make_samples.py` | 4.4 KB |  |
+| `score_clean_alerts.py` | 4.4 KB |  |
 | `make_bus_index.py` | 4.4 KB |  |
 | `verify_finals_package.py` | 4.4 KB |  |
 | `check_refs_and_deps.py` | 4.4 KB |  |
@@ -432,9 +433,9 @@
 | `check_single_parser.py` | 2.9 KB |  |
 | `svm_ttest.py` | 2.9 KB |  |
 | `refresh_samples.py` | 2.9 KB |  |
-| `check_retracted_numbers.py` | 2.9 KB |  |
 | `verify_faststart.py` | 2.9 KB |  |
 | `a4_mid_remove.py` | 2.8 KB |  |
+| `check_retracted_numbers.py` | 2.8 KB |  |
 | `fix_ppt_roles.py` | 2.7 KB |  |
 | `year_split_eval.py` | 2.7 KB |  |
 | `prep_llm_eval.py` | 2.7 KB |  |
@@ -557,7 +558,7 @@
 | `multi_label_model/` | 256.1 MB | 冻结的多标签归因模型权重（约 256MB），不入 git |
 | `sound_model/` | 256.1 MB | 冻结的二分类模型权重（约 256MB），不入 git |
 
-## 其他（85 项，50.9 MB）
+## 其他（86 项，50.9 MB）
 
 | 文件 | 大小 | 用途 |
 |---|---|---|
@@ -572,7 +573,7 @@
 | `v2/gate_outside_review.jsonl` | 86.8 KB |  |
 | `v2/clean_alerts_notes_ridx.jsonl` | 64.7 KB |  |
 | `v2/s1_add100_notes.jsonl` | 53.5 KB |  |
-| `更新世界的锋芒_SoundInsight_决赛入围定稿作品.docx` | 41.3 KB |  |
+| `更新世界的锋芒_SoundInsight_决赛入围定稿作品.docx` | 41.8 KB |  |
 | `v2/gold_set_key.json` | 39.3 KB |  |
 | `v2/cross_model_review.jsonl` | 35.4 KB |  |
 | `v2/s5_notes.jsonl` | 31.2 KB |  |
@@ -627,6 +628,7 @@
 | `v2/w1_eval_maxlen128.json` | 0.9 KB |  |
 | `v2/w1_eval_maxlen256.json` | 0.9 KB |  |
 | `v2/w1_eval_maxlen512.json` | 0.9 KB |  |
+| `v2/clean_alerts_scored.json` | 0.9 KB |  |
 | `v2/bias_probe_ids.json` | 0.8 KB |  |
 | `v2/scope_summary.json` | 0.7 KB |  |
 | `v2/b_measure_results.json` | 0.7 KB |  |

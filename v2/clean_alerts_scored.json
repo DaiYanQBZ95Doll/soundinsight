@@ -1,0 +1,58 @@
+{
+  "pool": 14299,
+  "received": 115,
+  "total_items": 115,
+  "alert": {
+    "n": 15,
+    "positives": 3,
+    "unclear": 6,
+    "rate": 0.2,
+    "ci": [
+      0.0705,
+      0.4519
+    ],
+    "ids_positive": [
+      "K001",
+      "K002",
+      "K003"
+    ]
+  },
+  "background": {
+    "n": 100,
+    "positives": 0,
+    "unclear": 0,
+    "rate": 0.0,
+    "ci": [
+      0.0,
+      0.037
+    ],
+    "ids_positive": []
+  },
+  "recall": {
+    "point": NaN,
+    "interval": [
+      0.0057,
+      NaN
+    ],
+    "expected_true_positives": 0.0,
+    "note": "分母用背景臂基线率；区间由基线率 Wilson CI 两端传导"
+  },
+  "anc_items": [
+    {
+      "id": "K001",
+      "judged": "1"
+    },
+    {
+      "id": "K002",
+      "judged": "1"
+    },
+    {
+      "id": "K004",
+      "judged": "0"
+    },
+    {
+      "id": "K010",
+      "judged": "?"
+    }
+  ]
+}
