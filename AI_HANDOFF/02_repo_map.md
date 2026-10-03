@@ -1,6 +1,6 @@
 # 文件地图（由 make_ai_handoff.py 自动生成，勿手改）
 
-> 生成时间：2026-10-03 15:55；共 633 个条目；体积单位 KB/MB。
+> 生成时间：2026-10-03 16:06；共 634 个条目；体积单位 KB/MB。
 
 ## 提交物（5 项，44.3 MB）
 
@@ -96,7 +96,7 @@
 | `docs/final_review_and_execution_plan.md` | 19.9 KB |  |
 | `docs/gold_set/gold_standard_findings.md` | 18.1 KB |  |
 | `docs/overnight_summary.md` | 17.3 KB |  |
-| `docs/demo_uptime_log.md` | 16.3 KB |  |
+| `docs/demo_uptime_log.md` | 16.6 KB |  |
 | `docs/bus/round-01/dsh.md` | 16.0 KB |  |
 | `docs/REVIEWER_BRIEF.md` | 14.8 KB |  |
 | `docs/reassessment_after_credential.md` | 14.6 KB |  |
@@ -324,7 +324,7 @@
 | `_coldstart_test/sample_reviews_100.csv` | 57.9 KB |  |
 | `agent_test_input.csv` | 27.9 KB |  |
 
-## 代码（212 项，1.1 MB）
+## 代码（213 项，1.1 MB）
 
 | 文件 | 大小 | 用途 |
 |---|---|---|
@@ -405,8 +405,8 @@
 | `gen_v2_artifacts.py` | 5.8 KB |  |
 | `precommit_guard.py` | 5.8 KB |  |
 | `verify_ui_and_api.py` | 5.7 KB |  |
+| `run_all_checks.py` | 5.6 KB |  |
 | `w11_data_efficiency.py` | 5.5 KB |  |
-| `run_all_checks.py` | 5.5 KB |  |
 | `distilbert_cv.py` | 5.4 KB |  |
 | `undersample_experiment.py` | 5.4 KB |  |
 | `md_to_docx.py` | 5.4 KB | 主文档 Markdown → Word |
@@ -492,6 +492,7 @@
 | `check_llm_class_coverage.py` | 2.1 KB |  |
 | `v2_w2_diag.py` | 2.1 KB |  |
 | `check_video.py` | 2.1 KB |  |
+| `check_docx_build.py` | 2.1 KB |  |
 | `demo_sound.py` | 2.1 KB |  |
 | `v2_check_product_code.py` | 2.1 KB |  |
 | `_coldstart_test/demo_sound.py` | 2.1 KB |  |
@@ -623,7 +624,7 @@
 | `v2/gate_outside_review.jsonl` | 86.8 KB |  |
 | `v2/clean_alerts_notes_ridx.jsonl` | 64.7 KB |  |
 | `v2/s1_add100_notes.jsonl` | 53.5 KB |  |
-| `更新世界的锋芒_SoundInsight_决赛入围定稿作品.docx` | 42.7 KB |  |
+| `更新世界的锋芒_SoundInsight_决赛入围定稿作品.docx` | 43.2 KB |  |
 | `v2/gold_set_key.json` | 39.3 KB |  |
 | `v2/cross_model_review.jsonl` | 35.4 KB |  |
 | `v2/s5_notes.jsonl` | 31.2 KB |  |

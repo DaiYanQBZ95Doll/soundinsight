@@ -27,6 +27,7 @@ STEPS_FULL = [
     ("断链 + 依赖声明", ["check_refs_and_deps.py"]),
     ("URL 一致性（M3c③）", ["check_url_consistency.py"]),
     ("换代核对（M0）", ["v2_m0_switch_check.py"]),
+    ("材料生成器与 docx 构建（本次事故机制化）", ["check_docx_build.py"]),
     ("构建决赛包（含红线 9 核对）", ["build_finals_package.py"]),
     ("登记决赛包哈希", ["update_finals_hashes.py"]),
     ("包内校验 + Demo 冒烟", ["verify_finals_package.py"]),
