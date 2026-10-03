@@ -1,0 +1,44 @@
+{
+  "acc": 0.6774,
+  "hp_precision": 0.8848,
+  "hp_recall": 0.7802,
+  "n_test": 9999,
+  "per_class": {
+    "headphone": {
+      "n": 336,
+      "acc": 0.6548
+    },
+    "earbud": {
+      "n": 345,
+      "acc": 0.6986
+    },
+    "headset": {
+      "n": 97,
+      "acc": 0.5567
+    },
+    "speaker": {
+      "n": 392,
+      "acc": 0.7908
+    },
+    "soundbar": {
+      "n": 44,
+      "acc": 0.3409
+    },
+    "other_audio": {
+      "n": 535,
+      "acc": 0.329
+    },
+    "cable": {
+      "n": 1056,
+      "acc": 0.6127
+    },
+    "non_audio": {
+      "n": 4831,
+      "acc": 0.9439
+    },
+    "unclear": {
+      "n": 2363,
+      "acc": 0.2328
+    }
+  }
+}

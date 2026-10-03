@@ -1,0 +1,7 @@
+{
+  "positives_old": 453,
+  "positives_new_p1": 519,
+  "positives_total": 972,
+  "train_side": 80000,
+  "max_len": 256
+}
