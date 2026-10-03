@@ -34,7 +34,7 @@ FROZEN_RECAP_SHA = "e6cae286515ef1d2"
 # Demo 包：入口与配置（**显式白名单**——产品运行所需的最小完整集合）
 DEMO_INCLUDE = ["demo_sound_v2.py", "demo_sound.py", "soundinsight_agent.py",
                 "report_builder.py", "api_server.py", "predict_core.py",
-                "text_utils.py", "config.json",
+                "text_utils.py", "audio_gate.py", "config.json",
                 "requirements.txt", "README.md", "MODEL_CARD.md", "edge_cases.md",
                 "install.bat", "sample_reviews_100.csv", "download_models.py",
                 # 样例输出：让评委不必装模型也能看到报告长什么样

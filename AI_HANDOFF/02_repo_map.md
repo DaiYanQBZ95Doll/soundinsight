@@ -1,6 +1,6 @@
 # 文件地图（由 make_ai_handoff.py 自动生成，勿手改）
 
-> 生成时间：2026-10-03 12:22；共 567 个条目；体积单位 KB/MB。
+> 生成时间：2026-10-03 12:57；共 574 个条目；体积单位 KB/MB。
 
 ## 提交物（5 项，44.3 MB）
 
@@ -9,7 +9,7 @@
 | `更新世界的锋芒_SoundInsight_复赛作品.zip` | 42.4 MB |  |
 | `更新世界的锋芒_SoundInsight_其他材料.zip` | 1.6 MB |  |
 | `更新世界的锋芒_SoundInsight_复赛作品.pdf` | 210.1 KB |  |
-| `更新世界的锋芒_SoundInsight_Demo.zip` | 107.5 KB |  |
+| `更新世界的锋芒_SoundInsight_Demo.zip` | 110.7 KB |  |
 | `更新世界的锋芒_SoundInsight_复赛作品.docx` | 48.0 KB |  |
 
 ## 主文档与模板（12 项，0.1 MB）
@@ -19,7 +19,7 @@
 | `hackathon-决赛入围定稿作品提交模板-天池版.docx` | 35.8 KB |  |
 | `hackathon-复赛作品提交模板-天池版.docx` | 35.7 KB | 官方复赛模板原文（格式对照基准） |
 | `competition_v4.md` | 20.8 KB | 主文档（13 章，含模板九章 + 合规披露 + 局限） |
-| `README.md` | 10.3 KB |  |
+| `README.md` | 10.6 KB |  |
 | `competition_v3.txt` | 8.9 KB | 官方模板九章版主文档 |
 | `competition_v2.md` | 7.0 KB | 初赛版文档 |
 | `competition_v2.txt` | 7.0 KB |  |
@@ -40,7 +40,7 @@
 | `edge_case_benchmark.py` | 5.6 KB |  |
 | `results_summary.py` | 4.8 KB |  |
 | `results_summary.md` | 4.8 KB | 冻结数字唯一权威源（含 ±1 混淆矩阵调和行） |
-| `MODEL_CARD.md` | 4.0 KB | 模型卡：任务/基座/指标/六条局限 |
+| `MODEL_CARD.md` | 4.2 KB | 模型卡：任务/基座/指标/六条局限 |
 | `length_bucket_eval.py` | 3.9 KB |  |
 | `edge_cases.md` | 3.2 KB |  |
 | `calibration_eval.py` | 3.0 KB |  |
@@ -58,7 +58,7 @@
 | `confidence_tiered.md` | 0.7 KB | 三星补漏置信度分层与中置信剔除记录 |
 | `significance_test.md` | 0.6 KB | Welch t 检验（p=0.000932） |
 
-## 过程与交接文档（113 项，3.2 MB）
+## 过程与交接文档（116 项，3.5 MB）
 
 | 文件 | 大小 | 用途 |
 |---|---|---|
@@ -66,7 +66,9 @@
 | `docs/gold_set/answer_sheet.md` | 437.7 KB |  |
 | `docs/gold_set/assisted_worksheet.csv` | 402.0 KB |  |
 | `docs/gold_set/answer_sheet_decision.md` | 362.1 KB |  |
+| `docs/gold_set/answer_sheet_vocab_test.md` | 182.9 KB |  |
 | `docs/gold_set/worksheet.csv` | 177.2 KB |  |
+| `docs/gold_set/vocab_test.csv` | 146.9 KB |  |
 | `docs/gold_set/answer_sheet_clean_alerts.md` | 116.1 KB |  |
 | `docs/gold_set/answer_sheet_s1_add100.md` | 94.6 KB |  |
 | `docs/gold_set/s1_add100.csv` | 83.3 KB |  |
@@ -89,8 +91,8 @@
 | `docs/gold_set/gold_standard_findings.md` | 18.1 KB |  |
 | `docs/overnight_summary.md` | 17.3 KB |  |
 | `docs/bus/round-01/dsh.md` | 16.0 KB |  |
+| `docs/demo_uptime_log.md` | 15.0 KB |  |
 | `docs/REVIEWER_BRIEF.md` | 14.8 KB |  |
-| `docs/demo_uptime_log.md` | 14.8 KB |  |
 | `docs/reassessment_after_credential.md` | 14.6 KB |  |
 | `docs/bus/round-01/qwen.md` | 14.1 KB |  |
 | `docs/file_inventory.md` | 12.8 KB | 项目文件总索引 |
@@ -115,13 +117,13 @@
 | `docs/w17_failure_cases.md` | 7.9 KB |  |
 | `docs/gold_set/human_rulings_dsh2.md` | 7.9 KB |  |
 | `docs/joint_review_agenda.md` | 7.8 KB |  |
-| `docs/decision_queue.md` | 7.3 KB |  |
+| `docs/decision_queue.md` | 7.5 KB |  |
 | `docs/N5_qna_factbase.md` | 7.1 KB |  |
+| `docs/gold_set/JUDGING.md` | 7.1 KB |  |
 | `docs/N1b_downgrade_narrative.md` | 7.0 KB |  |
 | `docs/taxonomy_three_paths.md` | 6.6 KB |  |
 | `docs/external_sources_register.md` | 6.5 KB |  |
 | `docs/N6_review_risk_list.md` | 6.4 KB |  |
-| `docs/gold_set/JUDGING.md` | 6.4 KB |  |
 | `docs/human_gold_set_protocol.md` | 6.3 KB |  |
 | `docs/work_summary_d7.md` | 6.2 KB |  |
 | `docs/how_to_expand_gains.md` | 6.1 KB |  |
@@ -162,6 +164,7 @@
 | `docs/review_coverage_table.md` | 2.4 KB |  |
 | `docs/W5_cv_interpretation.md` | 2.2 KB |  |
 | `docs/w13_keyword_miss_rate.md` | 2.1 KB |  |
+| `docs/s6_preregistration.md` | 2.1 KB |  |
 | `docs/bus/rulings.md` | 2.0 KB |  |
 | `docs/outside_gate_fp.md` | 2.0 KB |  |
 | `docs/w11_data_efficiency.md` | 1.9 KB |  |
@@ -310,7 +313,7 @@
 | `sample_reviews_100.csv` | 57.9 KB |  |
 | `agent_test_input.csv` | 27.9 KB |  |
 
-## 代码（187 项，1.0 MB）
+## 代码（189 项，1.0 MB）
 
 | 文件 | 大小 | 用途 |
 |---|---|---|
@@ -332,10 +335,11 @@
 | `build_pdf.py` | 11.2 KB |  |
 | `cleanup_numbers.py` | 11.1 KB |  |
 | `build_finals_content.py` | 11.0 KB |  |
+| `report_builder.py` | 11.0 KB |  |
+| `demo_sound_v2.py` | 10.5 KB | 本地 Gradio Demo（三页；已内置代理绕过） |
+| `make_vocab_test.py` | 10.3 KB |  |
 | `rulings_io.py` | 10.2 KB |  |
-| `report_builder.py` | 10.2 KB |  |
 | `push_daily.py` | 9.7 KB |  |
-| `demo_sound_v2.py` | 9.5 KB | 本地 Gradio Demo（三页；已内置代理绕过） |
 | `s2_membership.py` | 9.4 KB |  |
 | `build_submission.py` | 9.3 KB |  |
 | `v2_w2_perclass.py` | 9.1 KB |  |
@@ -345,11 +349,11 @@
 | `s2_docs.py` | 8.5 KB |  |
 | `make_s1_add100.py` | 8.4 KB |  |
 | `v2_w1_hybrid.py` | 8.4 KB |  |
+| `soundinsight_agent.py` | 8.4 KB | 一键洞察 Agent（md/excel、zh/en、非英文跳过） |
 | `v2_w17_failure_stats.py` | 8.4 KB |  |
 | `review_pool.py` | 8.3 KB |  |
 | `make_pause_snapshot.py` | 8.2 KB |  |
 | `ablation_train.py` | 8.2 KB |  |
-| `soundinsight_agent.py` | 8.1 KB | 一键洞察 Agent（md/excel、zh/en、非英文跳过） |
 | `make_clean_alerts_sheet.py` | 8.0 KB |  |
 | `pack_final.py` | 7.9 KB | 提交包打包与四项自检 |
 | `train_sound_model.py` | 7.8 KB |  |
@@ -377,8 +381,10 @@
 | `recover_meta_fields.py` | 6.0 KB |  |
 | `v2_w1_hybrid_select.py` | 6.0 KB |  |
 | `v2_m0_switch_check.py` | 6.0 KB |  |
+| `predict_core.py` | 5.9 KB | 共享推理核心（含非英文显式拒绝） |
 | `gen_v2_artifacts.py` | 5.8 KB |  |
 | `precommit_guard.py` | 5.8 KB |  |
+| `verify_ui_and_api.py` | 5.7 KB |  |
 | `w11_data_efficiency.py` | 5.5 KB |  |
 | `run_all_checks.py` | 5.5 KB |  |
 | `distilbert_cv.py` | 5.4 KB |  |
@@ -389,8 +395,6 @@
 | `train_roberta_quick.py` | 5.2 KB |  |
 | `make_missing_figures.py` | 5.1 KB |  |
 | `v2_w1_seg_threshold.py` | 5.1 KB |  |
-| `predict_core.py` | 5.1 KB | 共享推理核心（含非英文显式拒绝） |
-| `verify_ui_and_api.py` | 5.0 KB |  |
 | `make_reviewer_brief.py` | 5.0 KB |  |
 | `fix_ppt_threshold.py` | 4.8 KB |  |
 | `make_video_assets.py` | 4.6 KB |  |
@@ -463,6 +467,7 @@
 | `check_video.py` | 2.1 KB |  |
 | `demo_sound.py` | 2.1 KB |  |
 | `v2_check_product_code.py` | 2.1 KB |  |
+| `audio_gate.py` | 2.1 KB |  |
 | `batch_check.py` | 2.1 KB | 在线 Demo 批量验收脚本 |
 | `taxonomy_agg.py` | 2.0 KB |  |
 | `prep_refine.py` | 2.0 KB |  |
@@ -498,15 +503,15 @@
 | `show_batch.py` | 0.8 KB |  |
 | `exp08_ablation_B/config.json` | 0.5 KB |  |
 | `exp09_ablation_C/config.json` | 0.5 KB |  |
+| `config.json` | 0.5 KB |  |
 | `exp07_ablation_A/config.json` | 0.5 KB |  |
 | `打包提交包.bat` | 0.4 KB | 双击执行最终打包与自检 |
-| `config.json` | 0.3 KB |  |
 
 ## 部署包（7 项，0.0 MB）
 
 | 文件 | 大小 | 用途 |
 |---|---|---|
-| `deployment/app.py` | 11.6 KB |  |
+| `deployment/app.py` | 12.2 KB |  |
 | `deployment/report_builder.py` | 10.2 KB |  |
 | `deployment/.gitattributes` | 2.1 KB |  |
 | `deployment/text_utils.py` | 0.9 KB |  |
@@ -539,8 +544,8 @@
 | 文件 | 大小 | 用途 |
 |---|---|---|
 | `insight_report.xlsx` | 7.1 KB |  |
-| `insight_report_v2.md` | 3.3 KB |  |
 | `insight_report_v2_en.md` | 3.2 KB |  |
+| `insight_report_v2.md` | 3.2 KB |  |
 | `summary_log.txt` | 3.1 KB |  |
 | `exp07_ablation_A/training_output.txt` | 1.9 KB |  |
 | `training_output.txt` | 0.9 KB |  |
@@ -558,7 +563,7 @@
 | `multi_label_model/` | 256.1 MB | 冻结的多标签归因模型权重（约 256MB），不入 git |
 | `sound_model/` | 256.1 MB | 冻结的二分类模型权重（约 256MB），不入 git |
 
-## 其他（86 项，50.9 MB）
+## 其他（88 项，51.0 MB）
 
 | 文件 | 大小 | 用途 |
 |---|---|---|
@@ -567,6 +572,7 @@
 | `v2/scope_rows.jsonl` | 626.5 KB |  |
 | `v2/review_treble.jsonl` | 294.2 KB |  |
 | `v2/gold_set_notes.jsonl` | 245.0 KB |  |
+| `v2/vocab_test_notes.jsonl` | 99.4 KB |  |
 | `v2/w4_review_POOL_invalid.jsonl` | 98.0 KB |  |
 | `v2/w4_review.jsonl` | 96.8 KB |  |
 | `v2/clean_alerts_notes.jsonl` | 89.4 KB |  |
@@ -578,6 +584,7 @@
 | `v2/cross_model_review.jsonl` | 35.4 KB |  |
 | `v2/s5_notes.jsonl` | 31.2 KB |  |
 | `v2/realworld_eval.json` | 31.0 KB |  |
+| `v2/s6_preregistration.json` | 10.6 KB |  |
 | `v2/w4_estimate.json` | 9.4 KB |  |
 | `v2/s2_membership.json` | 8.3 KB |  |
 | `v2/w14_w15_w16_report.md` | 7.9 KB |  |

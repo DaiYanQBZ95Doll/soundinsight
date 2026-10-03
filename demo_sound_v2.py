@@ -56,6 +56,14 @@ def single_predict(text):
         return ("**不支持的语种（非拉丁字母文本）**：本系统按英文训练，对中文/日文/韩文/西里尔等显式拒绝。\n"
                 "该条未给出音质判定——批量路径会将其跳过并计数。"
                 "（注：德文/法文/西文等**拉丁字母**语言不在检测范围内，其表现未经测试，见主文档附录 B 第 6 条）")
+    # 闸门预筛（与 predict_core / app.py 同一口径；定义唯一来源 audio_gate.py）
+    from audio_gate import gate as _gate
+    if not _gate(text):
+        return ("**未判定（不含音频词汇）**：本工具**只对提到声音的评论判定**。"
+                "该条未出现任何音频相关词，故不给判定——这**不是**「音质正常」，"
+                "而是「不在本工具的作用范围内」。\n"
+                "（依据：干净池实测，见主文档附录 C 第 13 条；如需全量扫描，"
+                "本工具的定位是**分诊与预警**，人工复核仍不可省。）")
     enc = tok(text.strip(), padding=True, truncation=True, max_length=128,
               return_tensors="pt")
     enc = {k: v.to(device) for k, v in enc.items()}
@@ -88,8 +96,15 @@ def batch_analyze(file_obj):
     from text_utils import is_unsupported
     texts = [t for t in all_texts if not is_unsupported(t)]
     n_unsup = len(all_texts) - len(texts)
+
+    # 闸门预筛：只对提到声音的评论判定（与 predict_core / app.py 同一口径）
+    from audio_gate import gate as _gate
+    _mask = [_gate(t) for t in texts]
+    n_oos = _mask.count(False)
+    texts = [t for t, m in zip(texts, _mask) if m]
     if not texts:
-        return "未找到可分析的英文评论（非英文评论已跳过）", None
+        return (f"未找到可分析的评论：非英文 {n_unsup} 条、"
+                f"不含音频词汇 {n_oos} 条均已跳过（本工具只对提到声音的评论判定）"), None
 
     probs = []
     with torch.no_grad():
@@ -139,6 +154,7 @@ def batch_analyze(file_obj):
     report_text = rb.build_report(
         src_name=os.path.basename(path), n_total=len(all_texts),
         n_unsupported=n_unsup, n_valid=len(texts), n_neg=len(neg_idx),
+        n_out_of_scope=n_oos,
         avg_rating=avg_rating, issue_counts=issue_counts, examples=examples,
         n_mid=n_mid, lang="zh")
     report_path = os.path.join(HERE, "batch_report.md")

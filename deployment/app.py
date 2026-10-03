@@ -20,6 +20,8 @@ from transformers import (DistilBertForSequenceClassification,
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import report_builder as rb  # noqa: E402
 from text_utils import is_unsupported  # noqa: E402
+from audio_gate import gate as _gate  # noqa: E402  闸门定义唯一来源（R32）
+from predict_core import GATE_PREFILTER  # noqa: E402  与 Agent/API 同一开关
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 with open(os.path.join(HERE, "config.json"), encoding="utf-8") as f:
@@ -141,8 +143,17 @@ def batch_analyze(file_obj):
     # 非英文评论显式跳过（与本地版同一实现）
     texts = [t for t in all_texts if not is_unsupported(t)]
     n_unsup = len(all_texts) - len(texts)
+
+    # 闸门预筛：只对提到声音的评论判定，其余计为「未判定」（与 Agent/API 同一口径，见附录 C 第 13 条）
+    if GATE_PREFILTER:
+        _mask = [_gate(t) for t in texts]
+        n_oos = _mask.count(False)
+        texts = [t for t, m in zip(texts, _mask) if m]
+    else:
+        n_oos = 0
     if not texts:
-        return "未找到可分析的英文评论（非英文评论已跳过）", None
+        return ("未找到可分析的评论（非英文或无音频词汇的评论已跳过）"
+                f"｜跳过非英文 {n_unsup} 条、未判定 {n_oos} 条"), None
 
     probs = []
     with torch.no_grad():
@@ -189,7 +200,7 @@ def batch_analyze(file_obj):
         src_name=os.path.basename(path), n_total=len(all_texts),
         n_unsupported=n_unsup, n_valid=len(texts), n_neg=len(neg_idx),
         avg_rating=avg_rating, issue_counts=issue_counts, examples=examples,
-        n_mid=n_mid, lang="zh")
+        n_mid=n_mid, n_out_of_scope=n_oos, lang="zh")
     report_path = os.path.join(HERE, "batch_report.md")
     with open(report_path, "w", encoding="utf-8") as f:
         f.write(report_text)

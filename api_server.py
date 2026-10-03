@@ -51,7 +51,9 @@ def predict(req: PredictRequest):
     n_neg = sum(1 for r in results if r["pred"] == 1)
     n_unsup = sum(1 for r in results if r["is_unsupported"])
     return {"n": len(results), "n_negative": n_neg,
-            "n_unsupported": n_unsup, "results": results}
+            "n_unsupported": n_unsup,
+        "n_out_of_scope": sum(1 for r in results if r.get("is_out_of_scope")),
+        "results": results}
 
 
 if __name__ == "__main__":

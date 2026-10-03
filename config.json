@@ -7,5 +7,7 @@
   "batch_size": 64,
   "server_host": "127.0.0.1",
   "server_port": 7860,
-  "model_repo_id": "DaiYanQBZ95Doll/SoundInsight_models"
+  "model_repo_id": "DaiYanQBZ95Doll/SoundInsight_models",
+  "gate_prefilter": true,
+  "gate_note": "true=仅对含音频词汇的评论判定（其余标 is_out_of_scope）；依据附录 C 第 13 条的干净池实测"
 }

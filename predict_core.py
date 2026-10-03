@@ -28,6 +28,9 @@ MAX_LEN = int(CFG["max_len"])
 
 # 语种判定（非英文显式拒绝）的实现唯一放在 text_utils.py
 from text_utils import is_unsupported  # noqa: E402,F401
+from audio_gate import gate  # noqa: E402  闸门定义唯一来源（R32）
+
+GATE_PREFILTER = bool(CFG.get("gate_prefilter", False))
 
 
 _state = None
@@ -83,11 +86,16 @@ def _ml_sigmoid(model, tok, texts, device):
 def predict_batch(texts, device: str = None):
     """批量推理。返回与输入等长的结果列表，每项为 dict：
     {text, is_unsupported, prob, pred, issues, issue_probs}
-    不支持/空文本：prob=None, pred=None, issues=[]。"""
+    不支持/空文本：prob=None, pred=None, issues=[]。
+    闸门预筛开启且未命中：is_out_of_scope=True, prob=None, pred=None（明确"未判定"）。
+    每项均含 gate_matched 供报告与界面披露。"""
     st = load(device)
     texts = [str(t) for t in texts]
     flags = [is_unsupported(t) for t in texts]
-    supported = [t for t, f in zip(texts, flags) if not f]
+    gates = [gate(t) for t in texts]
+    # 预筛开启时：未命中闸门者不进入模型（既不判正也不判负，明确标注"未判定"）
+    supported = [t for t, f, g in zip(texts, flags, gates)
+                 if not f and (g or not GATE_PREFILTER)]
     probs_map, ml_map = {}, {}
     if supported:
         p = _bin_probs(st["bin"], st["tok"], supported, st["device"])
@@ -102,9 +110,15 @@ def predict_batch(texts, device: str = None):
                                           for k in range(len(names))}}
                       for i, t in enumerate(pos_texts)}
     results = []
-    for t, f in zip(texts, flags):
+    for t, f, g in zip(texts, flags, gates):
         if f:
-            results.append({"text": t, "is_unsupported": True, "prob": None,
+            results.append({"text": t, "is_unsupported": True, "is_out_of_scope": False,
+                            "gate_matched": g, "prob": None,
+                            "pred": None, "issues": [], "issue_probs": {}})
+            continue
+        if GATE_PREFILTER and not g:
+            results.append({"text": t, "is_unsupported": False, "is_out_of_scope": True,
+                            "gate_matched": False, "prob": None,
                             "pred": None, "issues": [], "issue_probs": {}})
             continue
         prob = probs_map[t]
@@ -114,7 +128,8 @@ def predict_batch(texts, device: str = None):
             issue_probs = ml_map.get(t, {}).get("issue_probs", {})
         else:
             issues, issue_probs = [], {}
-        results.append({"text": t, "is_unsupported": False, "prob": prob,
+        results.append({"text": t, "is_unsupported": False, "is_out_of_scope": False,
+                        "gate_matched": g, "prob": prob,
                         "pred": pred, "issues": issues,
                         "issue_probs": issue_probs})
     return results

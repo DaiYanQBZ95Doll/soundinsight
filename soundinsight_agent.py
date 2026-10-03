@@ -19,7 +19,7 @@ sys.stdout.reconfigure(encoding="utf-8", errors="replace")
 HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, HERE)
 import report_builder as rb  # noqa: E402
-from predict_core import is_unsupported  # noqa: E402
+from predict_core import GATE_PREFILTER, is_unsupported  # noqa: E402
 
 with open(os.path.join(HERE, "config.json"), encoding="utf-8") as f:
     CFG = json.load(f)
@@ -82,6 +82,16 @@ def analyze(csv_path: str, export: bool = False, lang: str = "zh") -> str:
     print(f"分析 {len(texts)} 条评论 (device={device})，"
           f"跳过非英文 {n_unsup} 条")
 
+    # 闸门预筛：只对提到声音的评论判定（其余明确计为"未判定"；口径见附录 C 第 13 条）
+    from audio_gate import gate as _gate
+    n_oos = 0
+    if GATE_PREFILTER:
+        mask = df["_text"].map(_gate)
+        n_oos = int((~mask).sum())
+        df = df[mask].reset_index(drop=True)
+        texts = df["_text"].tolist()
+        print(f"闸门预筛：跳过不含音频词汇 {n_oos} 条（计为未判定）；判定 {len(texts)} 条")
+
     probs = predict_probs(bin_model, tok, texts, device)
     df["sound_negative_prob"] = probs
     df["is_sound_negative"] = (probs >= thr).astype(int)
@@ -127,9 +137,10 @@ def analyze(csv_path: str, export: bool = False, lang: str = "zh") -> str:
 
     src_name = os.path.basename(csv_path)
     report = rb.build_report(
-        src_name=src_name, n_total=n + n_unsup, n_unsupported=n_unsup,
+        src_name=src_name, n_total=len(texts) + n_unsup + n_oos, n_unsupported=n_unsup,
         n_valid=n, n_neg=n_neg, avg_rating=avg_rating,
-        issue_counts=issue_counts, examples=examples, n_mid=n_mid, lang=lang)
+        issue_counts=issue_counts, examples=examples, n_mid=n_mid,
+        n_out_of_scope=n_oos, lang=lang)
     out_path = os.path.join(
         HERE,
         "insight_report_v2_en.md" if lang == "en" else "insight_report_v2.md")

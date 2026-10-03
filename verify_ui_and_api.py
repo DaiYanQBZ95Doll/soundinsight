@@ -87,7 +87,7 @@ def main() -> int:
                 # 契约见 api_server.py 头部注释：POST /predict {"texts": [...]}
                 body = json.dumps({"texts": [
                     "The bass is muddy and the treble is harsh.",
-                    "Battery life is great, sound is fine.",
+                    "Fast shipping, well packed, arrived on time.",
                 ]}).encode()
                 req = urllib.request.Request(base + "/predict", data=body,
                                              headers={"Content-Type": "application/json"})
@@ -97,6 +97,15 @@ def main() -> int:
                     print(f"  [POST /predict] HTTP {r.status}｜返回键：{list(payload)[:6]}")
                     print(f"    返回内容预览：{json.dumps(payload, ensure_ascii=False)[:200]}")
                     ok = True
+                    # 闸门预筛断言（机制而非约定）：不含音频词汇的评论必须标 is_out_of_scope
+                    _res = (payload or {}).get("results") or []
+                    _oos = [_x for _x in _res if _x.get("is_out_of_scope")]
+                    _ok = bool(_oos) and all(_x.get("prob") is None and _x.get("pred") is None
+                                            for _x in _oos)
+                    print(f"  [闸门断言] is_out_of_scope {len(_oos)}/{len(_res)} 条｜"
+                          f"概率与判定均为 None：{_ok}")
+                    if not _ok:
+                        raise AssertionError("闸门预筛未生效：非音频评论未被标为未判定")
                 except Exception as e:  # noqa: BLE001
                     print(f"  [POST /predict] 失败：{type(e).__name__}: {str(e)[:90]}")
                 break

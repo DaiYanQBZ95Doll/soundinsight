@@ -110,10 +110,15 @@ def confidence_action_lines(n_high: int, n_mid: int, n_low: int, lang: str) -> l
 def build_report(*, src_name: str, n_total: int, n_unsupported: int,
                  n_valid: int, n_neg: int, avg_rating: float,
                  issue_counts: dict, examples=None, n_mid: int = 0,
+                 n_out_of_scope: int = 0,
                  lang: str = "zh", generated_at: str = None) -> str:
-    """生成六节洞察报告（Markdown 文本）。所有数字由调用方传入，不在此处编造。"""
+    """生成六节洞察报告（Markdown 文本）。所有数字由调用方传入，不在此处编造。
+
+    `n_out_of_scope`：因**不含音频词汇**而未判定的条数（闸门预筛开启时）。
+    该计数与判定条数**必须同屏**——产品只对含音频词汇的评论判定，这是实测口径（附录 C 第 13 条）。"""
     examples = examples or []
     rate = (n_neg / n_valid) if n_valid else 0.0
+    scope_rate = (n_out_of_scope / n_total) if n_total else 0.0
     ranked, priority = rank_issues(issue_counts)
     total_issue = sum(issue_counts.values())
     stamp = generated_at or datetime.now().strftime("%Y-%m-%d %H:%M")
@@ -123,6 +128,8 @@ def build_report(*, src_name: str, n_total: int, n_unsupported: int,
         lines = ["# SoundInsight Sound Quality Report", "", "## 1. Overview",
                  f"Source: {src_name}", f"Generated: {stamp}",
                  f"Total reviews: {n_total} ({n_unsupported} non-English skipped)",
+                 f"**Not assessed (no audio vocabulary): {n_out_of_scope} ({scope_rate:.1%})** — this tool assesses only reviews mentioning sound; "
+                 "the rest are reported as not assessed, not as negatives.",
                  f"Valid reviews: {n_valid}",
                  f"Sound-quality negatives: {n_neg} ({rate:.2%})"]
         if rating_known:
@@ -166,6 +173,8 @@ def build_report(*, src_name: str, n_total: int, n_unsupported: int,
              f"分析对象：{src_name}",
              f"分析时间：{stamp}",
              f"评论总数：{n_total} 条（其中非英文 {n_unsupported} 条已跳过）",
+             f"**未判定（不含音频词汇）：{n_out_of_scope} 条（占比 {scope_rate:.2%}）**——"
+             "本工具**只对提到声音的评论判定**；其余按「未判定」计，**不计入差评也不计入正常**。",
              f"有效评论：{n_valid} 条",
              f"音质差评数：{n_neg} 条（占比 {rate:.2%}）"]
     if rating_known:
