@@ -13,5 +13,7 @@
   "tier_high": 0.9,
   "tier_low": 0.5,
   "scope_filter": false,
-  "tier_note": "三档：priority(≥tier_high)／review(≥tier_low)／out_of_scope(未提及声音)；实测精确率与 n 见报告文案，档位名不得省略数字"
+  "tier_note": "三档：priority(≥tier_high)／review(≥tier_low)／out_of_scope(未提及声音)；实测精确率与 n 见报告文案，档位名不得省略数字",
+  "scope_model_dir": "v2/model_scope",
+  "scope_note": "默认关闭。实测取舍（40 条人工告警）：全部精确率 37.5%（15/40）→ 过滤后 53.8%（7/13），但**丢弃人工真阳 8/15＝53%**、仅保留 13/40＝32% 条目——**取舍不划算，故默认不启用**；品类仅作展示信息。本地品类模型留出段：acc 0.6774、耳机家族合并精确 0.8848／召回 0.7802"
 }

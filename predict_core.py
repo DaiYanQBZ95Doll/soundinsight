@@ -34,6 +34,32 @@ GATE_PREFILTER = bool(CFG.get("gate_prefilter", False))
 TIER_HIGH = float(CFG.get("tier_high", 0.9))
 TIER_LOW = float(CFG.get("tier_low", 0.5))
 SCOPE_FILTER = bool(CFG.get("scope_filter", False))
+SCOPE_DIR = os.path.join(HERE, CFG.get("scope_model_dir", "v2/model_scope"))
+SCOPE_CATS = ["headphone", "earbud", "headset", "speaker", "soundbar", "other_audio",
+              "cable", "non_audio", "unclear"]
+_scope_cache = {}
+
+
+def _scope_category(texts):
+    """本地品类模型（零 API）。缺失模型时返回 None 列表，不阻断主流程。"""
+    if not os.path.isdir(SCOPE_DIR):
+        return [None] * len(texts)
+    if not _scope_cache:
+        from transformers import DistilBertForSequenceClassification as _C
+        st = load()
+        _scope_cache["tok"] = st["tok"]
+        _scope_cache["model"] = _C.from_pretrained(SCOPE_DIR).to(st["device"]).eval()
+        _scope_cache["device"] = st["device"]
+    tok, mdl, dev = _scope_cache["tok"], _scope_cache["model"], _scope_cache["device"]
+    import torch as _t
+    out = []
+    with _t.no_grad():
+        for b in range(0, len(texts), 64):
+            e = tok(texts[b:b + 64], padding=True, truncation=True, max_length=192,
+                    return_tensors="pt")
+            e = {k: v.to(dev) for k, v in e.items()}
+            out += [SCOPE_CATS[k] for k in mdl(**e).logits.argmax(-1).cpu().tolist()]
+    return out
 
 
 _state = None
@@ -112,12 +138,20 @@ def predict_batch(texts, device: str = None):
                           "issue_probs": {names[k]: float(ml[i, k])
                                           for k in range(len(names))}}
                       for i, t in enumerate(pos_texts)}
+    scope_cats = _scope_category(texts)
     results = []
-    for t, f, g in zip(texts, flags, gates):
+    for t, f, g, sc in zip(texts, flags, gates, scope_cats):
         if f:
             results.append({"text": t, "is_unsupported": True, "is_out_of_scope": False,
                             "gate_matched": g, "prob": None,
                             "pred": None, "issues": [], "issue_probs": {}})
+            continue
+        if SCOPE_FILTER and sc in ("speaker", "soundbar", "other_audio", "cable",
+                                   "non_audio"):   # 只排除**明确非耳机**；unclear 保留（否则丢真阳）
+            results.append({"text": t, "is_unsupported": False, "is_out_of_scope": True,
+                            "gate_matched": g, "scope_category": sc, "prob": None,
+                            "pred": None, "tier": "excluded_nonheadphone",
+                            "issues": [], "issue_probs": {}})
             continue
         if GATE_PREFILTER and not g:
             results.append({"text": t, "is_unsupported": False, "is_out_of_scope": True,
@@ -134,7 +168,7 @@ def predict_batch(texts, device: str = None):
         tier = ("priority" if prob >= TIER_HIGH else
                 ("review" if prob >= TIER_LOW else "below_threshold"))
         results.append({"text": t, "is_unsupported": False, "is_out_of_scope": False,
-                        "gate_matched": g, "prob": prob, "tier": tier,
+                        "gate_matched": g, "scope_category": sc, "prob": prob, "tier": tier,
                         "pred": pred, "issues": issues,
                         "issue_probs": issue_probs})
     return results

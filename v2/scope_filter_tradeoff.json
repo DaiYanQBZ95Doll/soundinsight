@@ -1,0 +1,10 @@
+{
+  "n_all": 40,
+  "tp_all": 15,
+  "n_kept": 13,
+  "tp_kept": 7,
+  "precision_all": 0.375,
+  "precision_kept": 0.5385,
+  "discarded_true_positives": 8,
+  "rule": "只排除 speaker/soundbar/other_audio/cable/non_audio；保留 unclear"
+}
