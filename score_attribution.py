@@ -132,15 +132,36 @@ print(f"\n**宏 F1：模型 vs 人工 = {macro_m:.4f}｜LLM vs 人工 = {macro_l
 print(f"完全一致率：模型 {exact_m*100:.0f}%｜LLM {exact_l*100:.0f}%")
 print(f"平均 Jaccard：模型 {sum(jac(model_cls[u], human[u]) for u in uids)/len(uids):.3f}"
       f"｜LLM {sum(jac(llm_cls[u], human[u]) for u in uids)/len(uids):.3f}")
-print(f"\n对照：出厂宣称的归因宏 F1 = **0.8273**（对 LLM 标签）——"
-      f"本表给出它相对**人工**的水平：模型 {macro_m:.4f}。")
+
+# ---- 同子集公平对比：只在**有 LLM 类标签**的条目上比（0.8273 的真实评测面）----
+sub = [u for u in uids if llm_cls[u]]
+if sub:
+    def macro_on(subset, pred):
+        fs = []
+        for c in CLASSES:
+            tp = sum(1 for u in subset if c in human[u] and c in pred[u])
+            fp = sum(1 for u in subset if c not in human[u] and c in pred[u])
+            fn = sum(1 for u in subset if c in human[u] and c not in pred[u])
+            pp = tp / (tp + fp) if tp + fp else 0.0
+            rr = tp / (tp + fn) if tp + fn else 0.0
+            fs.append(2 * pp * rr / (pp + rr) if pp + rr else 0.0)
+        return sum(fs) / len(fs)
+    m_sub = macro_on(sub, model_cls)
+    l_sub = macro_on(sub, llm_cls)
+    print(f"\n**同子集（有 LLM 类标签的 {len(sub)} 条）**：模型 vs 人工 **{m_sub:.4f}**"
+          f"｜LLM vs 人工 **{l_sub:.4f}**")
+    print(f"  ⇒ 出厂宣称 0.8273 是「模型 vs **LLM**」；此处给出「模型 vs **人工**」的同子集水平："
+          f"**{m_sub:.4f}**")
 out = {"n": len(uids), "macro_f1_model_vs_human": round(macro_m, 4),
        "macro_f1_llm_vs_human": round(macro_l, 4),
+       "n_with_llm_classes": len(sub),
+       "macro_f1_model_vs_human_subset": round(m_sub, 4) if sub else None,
+       "macro_f1_llm_vs_human_subset": round(l_sub, 4) if sub else None,
        "exact_model": round(exact_m, 3), "exact_llm": round(exact_l, 3),
        "per_class": {c: dict(zip(("tp", "fp", "fn", "p", "r", "f1"),
                                  [round(x, 4) if isinstance(x, float) else x
                                   for x in prf(human, model_cls, c)])) for c in CLASSES},
-       "claimed": 0.8273, "reading_limit": "n=50，区间较宽；只报区间与方向，不外推"}
+       "claimed": 0.8273, "reading_limit": "n=50（有 LLM 类标签者 28）；区间较宽，只报区间与方向"}
 json.dump(out, open(os.path.join(HERE, "v2", "attribution_scored.json"), "w",
                     encoding="utf-8"), ensure_ascii=False, indent=2)
 print("[写出] v2/attribution_scored.json")
