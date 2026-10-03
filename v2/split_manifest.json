@@ -1,0 +1,104 @@
+{
+  "v1 训练输入": {
+    "file": "labeled_llm_before_treble.csv",
+    "sha256": "7618d2976deffe562f1559e5a70ab5d87f43ec797fbd1aa84bfc8c47838e74ab",
+    "sha256_1mb": "b48a4af74016ca7feab3fca228897f9095e52a08d16743ca188c0c7fd9cfca3d",
+    "rows": 100000,
+    "positives": 1257,
+    "unique_norm": 94777,
+    "dup_rows": 5223
+  },
+  "v1 真留出侧": {
+    "file": "val_v2.csv",
+    "sha256": "1779a6404323d7fb8abb4d00f50ba24958e82ed35e2a1ed7eab9d2d5566ea5e9",
+    "sha256_1mb": "1ced854d464dff257582c43bc3d92da84ca7b2775434bd91df38083265a654c7",
+    "rows": 20000,
+    "positives": 251,
+    "unique_norm": 19282,
+    "dup_rows": 718
+  },
+  "v2 候选训练输入": {
+    "file": "labeled_llm.csv",
+    "sha256": "348f913cd86c72d224ece6a518c5345f149c07d07a4d0bb2db206418c528b2d1",
+    "sha256_1mb": "8eef1c7e39e2239f5ca55f8cec61b19a6212c8d3e3caad8b62f5c4639fdc8131",
+    "rows": 100000,
+    "positives": 1280,
+    "unique_norm": 94777,
+    "dup_rows": 5223
+  },
+  "v2 冻结测试集": {
+    "file": "val_v3_test.csv",
+    "sha256": "9d8b979cd98507de64fa9b4cc330134bc47e890e3ad3924f352c5a600bb6cff8",
+    "sha256_1mb": "11a5120dc87b61e4ca1d50954c9a51eee0a46756e9d09fd792bb0df77e7884f1",
+    "rows": 10000,
+    "positives": 128,
+    "unique_norm": 9710,
+    "dup_rows": 290
+  },
+  "v2 调参侧": {
+    "file": "val_v3_tune.csv",
+    "sha256": "4b44837aa5a75a35475f4dd71cee242f3bc3216afd508fe9c9848321d3905d23",
+    "sha256_1mb": "4fa32d1e66ac47bfcaa9d6398d122376a4da77bf11628e6c8d7e6bb011ab5a5d",
+    "rows": 10000,
+    "positives": 128,
+    "unique_norm": 9734,
+    "dup_rows": 266
+  },
+  "另一世代(中间态)": {
+    "file": "labeled_llm_before_mid_remove.csv",
+    "sha256": "91a2bfa297fa9994934fa9f1f8ff5bf2b8b88e84cfb59e9eeebde10dda2ef5b5",
+    "sha256_1mb": "8eef1c7e39e2239f5ca55f8cec61b19a6212c8d3e3caad8b62f5c4639fdc8131",
+    "rows": 100000,
+    "positives": 1283,
+    "unique_norm": 94777,
+    "dup_rows": 5223
+  },
+  "另一世代(中间态2)": {
+    "file": "labeled_llm_before_mid_demote.csv",
+    "sha256": "05ee74fd6eeeb79a09324fc97a312fa058ff1759b37bd4bfec3caaee38420bef",
+    "sha256_1mb": "029222080a595c7eac8e5a3b90485cdf3a7eebc11c99dba322359afbe8d6f717",
+    "rows": 100000,
+    "positives": 1288,
+    "unique_norm": 94777,
+    "dup_rows": 5223
+  },
+  "prefix_collision_demo": {
+    "a": "labeled_llm.csv",
+    "b": "labeled_llm_before_mid_remove.csv",
+    "same_1mb": true,
+    "same_full": false
+  },
+  "v1_reproduction": {
+    "log": {
+      "train": 80000,
+      "train_pos": 1006,
+      "val": 20000,
+      "val_pos": 251
+    },
+    "reproduced": {
+      "train": 80000,
+      "train_pos": 1006,
+      "val": 20000,
+      "val_pos": 251
+    },
+    "match": true
+  },
+  "val_v2_overlap": {
+    "raw_hit": 19281,
+    "norm_hit": 19281,
+    "unique_v2": 19282,
+    "unique_val": 19282,
+    "unmatched_rows": 4,
+    "unmatched_sample": [
+      "nan",
+      "nan",
+      "nan"
+    ]
+  },
+  "val_v2_duplicates": {
+    "rows": 20000,
+    "unique": 19282,
+    "dup_rows": 935,
+    "dup_positives": 0
+  }
+}

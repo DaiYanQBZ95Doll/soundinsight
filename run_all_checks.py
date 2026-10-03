@@ -40,6 +40,7 @@ STEPS_FULL = [
     ("推送状态（每日一次 + 当日必推判定）", ["push_daily.py", "--status"]),
     ("推送机制自测（当日必推规则）", ["push_daily.py", "--self-test"]),
     ("刷新三方总线总览（INDEX）", ["make_bus_index.py"]),
+    ("禁报数字机械门（R5 扩展）", ["check_retracted_numbers.py"]),
     ("对外称谓一致性（正文 vs 附录）", ["check_scope_wording.py"]),
     ("判定解析单点实现（R32 机制化）", ["check_single_parser.py"]),
     ("共享解析模块自测", ["rulings_io.py", "--self-test"]),
