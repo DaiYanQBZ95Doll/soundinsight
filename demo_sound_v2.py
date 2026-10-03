@@ -150,11 +150,15 @@ def batch_analyze(file_obj):
     avg_rating = (float(pd.to_numeric(df[rating_col], errors="coerce").mean())
                   if rating_col else float("nan"))
     n_mid = int(((probs >= 0.5) & (probs < THR)).sum())
+    _th = json.load(open(os.path.join(HERE, "config.json"), encoding="utf-8"))
+    n_priority = int((probs >= float(_th.get("tier_high", 0.9))).sum())
+    n_review = int(((probs >= float(_th.get("tier_low", 0.5)))
+                    & (probs < float(_th.get("tier_high", 0.9)))).sum())
 
     report_text = rb.build_report(
         src_name=os.path.basename(path), n_total=len(all_texts),
         n_unsupported=n_unsup, n_valid=len(texts), n_neg=len(neg_idx),
-        n_out_of_scope=n_oos,
+        n_out_of_scope=n_oos, n_priority=n_priority, n_review=n_review,
         avg_rating=avg_rating, issue_counts=issue_counts, examples=examples,
         n_mid=n_mid, lang="zh")
     report_path = os.path.join(HERE, "batch_report.md")

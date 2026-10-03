@@ -125,6 +125,9 @@ def analyze(csv_path: str, export: bool = False, lang: str = "zh") -> str:
     ranked, priority = rb.rank_issues(issue_counts)
 
     rate = (n_neg / n) if n else 0.0
+    from predict_core import TIER_HIGH, TIER_LOW
+    n_priority = int((probs >= TIER_HIGH).sum())
+    n_review = int(((probs >= TIER_LOW) & (probs < TIER_HIGH)).sum())
     n_mid = int(((probs >= 0.5) & (probs < thr)).sum())
     examples = []
     for i in sorted(neg_idx, key=lambda j: -probs[j])[:5]:
@@ -140,7 +143,7 @@ def analyze(csv_path: str, export: bool = False, lang: str = "zh") -> str:
         src_name=src_name, n_total=len(texts) + n_unsup + n_oos, n_unsupported=n_unsup,
         n_valid=n, n_neg=n_neg, avg_rating=avg_rating,
         issue_counts=issue_counts, examples=examples, n_mid=n_mid,
-        n_out_of_scope=n_oos, lang=lang)
+        n_out_of_scope=n_oos, n_priority=n_priority, n_review=n_review, lang=lang)
     out_path = os.path.join(
         HERE,
         "insight_report_v2_en.md" if lang == "en" else "insight_report_v2.md")

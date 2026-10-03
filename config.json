@@ -9,5 +9,9 @@
   "server_port": 7860,
   "model_repo_id": "DaiYanQBZ95Doll/SoundInsight_models",
   "gate_prefilter": true,
-  "gate_note": "true=仅对含音频词汇的评论判定（其余标 is_out_of_scope）；依据附录 C 第 13 条的干净池实测"
+  "gate_note": "true=仅对含音频词汇的评论判定（其余标 is_out_of_scope）；依据附录 C 第 13 条的干净池实测",
+  "tier_high": 0.9,
+  "tier_low": 0.5,
+  "scope_filter": false,
+  "tier_note": "三档：priority(≥tier_high)／review(≥tier_low)／out_of_scope(未提及声音)；实测精确率与 n 见报告文案，档位名不得省略数字"
 }

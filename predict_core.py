@@ -31,6 +31,9 @@ from text_utils import is_unsupported  # noqa: E402,F401
 from audio_gate import gate  # noqa: E402  闸门定义唯一来源（R32）
 
 GATE_PREFILTER = bool(CFG.get("gate_prefilter", False))
+TIER_HIGH = float(CFG.get("tier_high", 0.9))
+TIER_LOW = float(CFG.get("tier_low", 0.5))
+SCOPE_FILTER = bool(CFG.get("scope_filter", False))
 
 
 _state = None
@@ -128,8 +131,10 @@ def predict_batch(texts, device: str = None):
             issue_probs = ml_map.get(t, {}).get("issue_probs", {})
         else:
             issues, issue_probs = [], {}
+        tier = ("priority" if prob >= TIER_HIGH else
+                ("review" if prob >= TIER_LOW else "below_threshold"))
         results.append({"text": t, "is_unsupported": False, "is_out_of_scope": False,
-                        "gate_matched": g, "prob": prob,
+                        "gate_matched": g, "prob": prob, "tier": tier,
                         "pred": pred, "issues": issues,
                         "issue_probs": issue_probs})
     return results

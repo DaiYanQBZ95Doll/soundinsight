@@ -110,7 +110,7 @@ def confidence_action_lines(n_high: int, n_mid: int, n_low: int, lang: str) -> l
 def build_report(*, src_name: str, n_total: int, n_unsupported: int,
                  n_valid: int, n_neg: int, avg_rating: float,
                  issue_counts: dict, examples=None, n_mid: int = 0,
-                 n_out_of_scope: int = 0,
+                 n_out_of_scope: int = 0, n_priority: int = 0, n_review: int = 0,
                  lang: str = "zh", generated_at: str = None) -> str:
     """生成六节洞察报告（Markdown 文本）。所有数字由调用方传入，不在此处编造。
 
@@ -175,6 +175,10 @@ def build_report(*, src_name: str, n_total: int, n_unsupported: int,
              f"评论总数：{n_total} 条（其中非英文 {n_unsupported} 条已跳过）",
              f"**未判定（不含音频词汇）：{n_out_of_scope} 条（占比 {scope_rate:.2%}）**——"
              "本工具**只对提到声音的评论判定**；其余按「未判定」计，**不计入差评也不计入正常**。",
+             f"**档位**：优先处理档 **{n_priority}** 条（实测精确率 **63%**，n=19）｜"
+             f"待复核档 **{n_review}** 条｜范围外档 **{n_out_of_scope}** 条"
+             "——档位名后的实测数字来自人工告警样本（见附录 C 第 13 条），**引用时不得省略**。",
+             "⚠️ **未判定 ≠ 正常**：范围外档只是我们未评估，不代表该评论没有问题。",
              f"有效评论：{n_valid} 条",
              f"音质差评数：{n_neg} 条（占比 {rate:.2%}）"]
     if rating_known:

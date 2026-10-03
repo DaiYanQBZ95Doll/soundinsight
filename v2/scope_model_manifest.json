@@ -1,0 +1,17 @@
+{
+  "categories": [
+    "headphone",
+    "earbud",
+    "headset",
+    "speaker",
+    "soundbar",
+    "other_audio",
+    "cable",
+    "non_audio",
+    "unclear"
+  ],
+  "n_train": 1980,
+  "n_test": 9999,
+  "input": "v2/scope_rows.jsonl (11,979 labels)",
+  "split_rule": "uid 前缀：test: 整体留出；lab:/s6: 用于训练"
+}
