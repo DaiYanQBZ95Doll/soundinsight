@@ -72,6 +72,18 @@ for f in ("docs/gold_set/s5_clean_probe.csv", "docs/gold_set/clean_alerts.csv",
 
 pool = [i for i in range(len(texts))
         if i not in judged and len(texts[i]) >= 40 and mgs.RX.search(texts[i])]
+# ⚠️ **只抽留出侧**：否则 v5 见过这些条目，验收测量失真（首版 100 条里 88 条落在训练侧）
+import json as _json  # noqa: E402
+_lab = []
+with open(os.path.join(HERE, "labeled_llm.csv"), encoding="utf-8", errors="replace") as fh:
+    for r in csv.DictReader(fh):
+        _lab.append(int(float(r.get("sound_negative_llm") or 0)))
+from sklearn.model_selection import train_test_split  # noqa: E402
+_hold = set(train_test_split(list(range(len(_lab))), test_size=0.2, random_state=42,
+                             stratify=_lab)[1])
+_before = len(pool)
+pool = [i for i in pool if i in _hold]
+print(f"留出侧限定：{_before:,} → **{len(pool):,}** 条（仅留出侧）")
 rng = random.Random(SEED)
 rng.shuffle(pool)
 pool = pool[:4000]

@@ -1,0 +1,5 @@
+{
+  "n": 100,
+  "in_train_side": 88,
+  "holdout_side": 12
+}
