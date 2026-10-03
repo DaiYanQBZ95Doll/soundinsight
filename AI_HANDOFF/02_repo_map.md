@@ -1,6 +1,6 @@
 # 文件地图（由 make_ai_handoff.py 自动生成，勿手改）
 
-> 生成时间：2026-10-03 15:33；共 633 个条目；体积单位 KB/MB。
+> 生成时间：2026-10-03 15:55；共 633 个条目；体积单位 KB/MB。
 
 ## 提交物（5 项，44.3 MB）
 
@@ -35,7 +35,7 @@
 
 | 文件 | 大小 | 用途 |
 |---|---|---|
-| `number_audit.md` | 15.3 KB | 数字一致性审计结果（含官方模板格式对照节） |
+| `number_audit.md` | 15.1 KB | 数字一致性审计结果（含官方模板格式对照节） |
 | `error_taxonomy.md` | 8.2 KB | 错误分类学：FP/FN 构成 + 标注噪声人工终审 |
 | `llm_baseline.md` | 6.4 KB | LLM 对照报告（deepseek + qwen3.7-plus，含循环性红利声明） |
 | `qna_preparation.md` | 5.9 KB | 答辩 Q&A（10 问，含口径警示） |
@@ -96,8 +96,8 @@
 | `docs/final_review_and_execution_plan.md` | 19.9 KB |  |
 | `docs/gold_set/gold_standard_findings.md` | 18.1 KB |  |
 | `docs/overnight_summary.md` | 17.3 KB |  |
+| `docs/demo_uptime_log.md` | 16.3 KB |  |
 | `docs/bus/round-01/dsh.md` | 16.0 KB |  |
-| `docs/demo_uptime_log.md` | 15.8 KB |  |
 | `docs/REVIEWER_BRIEF.md` | 14.8 KB |  |
 | `docs/reassessment_after_credential.md` | 14.6 KB |  |
 | `docs/bus/round-01/qwen.md` | 14.1 KB |  |
@@ -328,8 +328,8 @@
 
 | 文件 | 大小 | 用途 |
 |---|---|---|
-| `check_doc_numbers.py` | 57.5 KB | 数字审计 + 模板格式对照脚本 |
-| `build_finals_appendix.py` | 26.8 KB |  |
+| `check_doc_numbers.py` | 58.0 KB | 数字审计 + 模板格式对照脚本 |
+| `build_finals_appendix.py` | 27.9 KB |  |
 | `scan_repo_hygiene.py` | 19.7 KB |  |
 | `v2_meta_analysis.py` | 19.1 KB |  |
 | `make_gold_set_notes.py` | 18.8 KB |  |
