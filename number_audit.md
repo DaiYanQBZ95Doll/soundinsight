@@ -1,11 +1,11 @@
 # 文档数字一致性审计
-> 运行时刻：2026-10-03 16:05:07（用于判别报告新鲜度；脚本异常退出时本文件不会被改写）
+> 运行时刻：2026-10-03 17:23:34（用于判别报告新鲜度；脚本异常退出时本文件不会被改写）
 
 ## 审计项数声明一致性
 - [PASS] 未发现审计项数不一致（当前 242 项）
 
 ## 决赛包体积声明一致性
-- [PASS] 未发现陈旧的包体积声明（当前 45,465,015 B）
+- [PASS] 未发现陈旧的包体积声明（当前 45,465,462 B）
 
 ## 覆盖总量口径一致性（成对口径，防混用）
 - [PASS] 未发现混用口径的总量区间（权威成对值 ['2461', '2826']，覆盖率 ['45.3%', '52.0%']）
@@ -22,7 +22,7 @@
 - [PASS] docs/final_project_review_and_execution_plan.md：37212 B ∈ [15000, 80000]
 - [PASS] competition_v4.md：21256 B ∈ [20000, 80000]
 - [PASS] results_summary.md：4870 B ∈ [4000, 30000]
-- [PASS] AI_HANDOFF/manifest.json：134760 B ∈ [20000, 400000]
+- [PASS] AI_HANDOFF/manifest.json：134959 B ∈ [20000, 400000]
 - [PASS] docs/frozen_execution_checklist.md：13 个章节均唯一
 - [PASS] PROGRESS_SYNC.md：32 个章节均唯一
 - [PASS] competition_v4.md：13 个章节均唯一
@@ -54,7 +54,7 @@
 - 结论：主文档数字与证据一致、代际可辨、并含不可直比声明
 
 ## 依赖声明一致性（requirements.txt vs 产品 import）
-- [PASS] 产品模块的 22 个 import 全部已声明（第三方 10 个）
+- [PASS] 产品模块的 23 个 import 全部已声明（第三方 10 个）
 
 ## competition_v3.txt
 - [PASS] 最终模型 F1 (0\.687): 行 57,144
