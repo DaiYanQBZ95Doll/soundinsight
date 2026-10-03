@@ -1,0 +1,80 @@
+{
+  "status": "pending_approval",
+  "frozen": {
+    "出厂二分类权重": {
+      "path": "sound_model",
+      "tree_sha256": "82a4b23fe30a9486018e4d0a9b1f280002a0942d6f254dd938d6004a18be3195",
+      "files": 5
+    },
+    "出厂多标签权重": {
+      "path": "multi_label_model",
+      "tree_sha256": "ae068c4170ff41178359ece6972156e0fbc1fb019026d68c1f9ef952d933a892",
+      "files": 5
+    },
+    "config.json": {
+      "path": "config.json",
+      "sha256": "fc323029e7a20a2c51b45675d34d839477cc3b74db02f775a20d9e63d4dc805b",
+      "bytes": 514
+    },
+    "val_v2.csv": {
+      "path": "val_v2.csv",
+      "sha256": "1779a6404323d7fb8abb4d00f50ba24958e82ed35e2a1ed7eab9d2d5566ea5e9",
+      "bytes": 7408223
+    },
+    "val_v3_test.csv": {
+      "path": "val_v3_test.csv",
+      "sha256": "9d8b979cd98507de64fa9b4cc330134bc47e890e3ad3924f352c5a600bb6cff8",
+      "bytes": 3859961
+    },
+    "val_v3_tune.csv": {
+      "path": "val_v3_tune.csv",
+      "sha256": "4b44837aa5a75a35475f4dd71cee242f3bc3216afd508fe9c9848321d3905d23",
+      "bytes": 3781334
+    },
+    "labeled_llm_before_treble.csv": {
+      "path": "labeled_llm_before_treble.csv",
+      "sha256": "7618d2976deffe562f1559e5a70ab5d87f43ec797fbd1aa84bfc8c47838e74ab",
+      "bytes": 40108627
+    },
+    "audio_gate.py": {
+      "path": "audio_gate.py",
+      "sha256": "81df73754f4844f08ec954af2358f447016a44623fee7cb7c86bf56dcde6bc39",
+      "bytes": 2112
+    },
+    "predict_core.py": {
+      "path": "predict_core.py",
+      "sha256": "5b8830c26907a0f98bf805079bdd2e68920f1a803bbb441ed4a6ac74d7192cd1",
+      "bytes": 6026
+    },
+    "report_builder.py": {
+      "path": "report_builder.py",
+      "sha256": "0e82a4e41473ebfc2943171e48c0b8387f48edb1017b88399782cd5b198bdbcb",
+      "bytes": 11247
+    },
+    "text_utils.py": {
+      "path": "text_utils.py",
+      "sha256": "2cb515a4d110cb1c83872db401cbf8f23faa63e783c6eddb59bfb6e529d8a293",
+      "bytes": 1472
+    },
+    "soundinsight_agent.py": {
+      "path": "soundinsight_agent.py",
+      "sha256": "07dfcbb397767287a3b1d1af43ba6dbadbd76eeb4543a3703c6d20847758a597",
+      "bytes": 8606
+    },
+    "demo_sound_v2.py": {
+      "path": "demo_sound_v2.py",
+      "sha256": "bbb459f17ffc9d6a67f7b96fefcf01cd080fd9bc5b4cc5f4426889a8515f3917",
+      "bytes": 10763
+    },
+    "api_server.py": {
+      "path": "api_server.py",
+      "sha256": "50bd74882548e197e5450a3cf81a98f173e0751f0f7f5de7835598caf24436c1",
+      "bytes": 1893
+    },
+    "deployment/app.py": {
+      "path": "deployment/app.py",
+      "sha256": "ef20f7c413e46d234b171ab10bbd56d9d9e63ccbf77212bd03fb59cc4755f4f1",
+      "bytes": 12483
+    }
+  }
+}
