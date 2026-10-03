@@ -1,0 +1,49 @@
+{
+  "labels": [
+    "连接/配对",
+    "续航/充电",
+    "做工/耐用",
+    "佩戴/舒适",
+    "麦克风/通话",
+    "功能/操作",
+    "物流/包装",
+    "价格/性价比",
+    "客服/售后",
+    "描述不符/假货",
+    "音质(听感)",
+    "非负面/无抱怨",
+    "其他",
+    "NONE",
+    "sound_vague",
+    "anc_only",
+    "functional_not_sound",
+    "weak_praise",
+    "not_headphone",
+    "insufficient"
+  ],
+  "types": [
+    "连接/配对",
+    "续航/充电",
+    "做工/耐用",
+    "佩戴/舒适",
+    "麦克风/通话",
+    "功能/操作",
+    "物流/包装",
+    "价格/性价比",
+    "客服/售后",
+    "描述不符/假货",
+    "音质(听感)",
+    "非负面/无抱怨",
+    "其他"
+  ],
+  "vague": [
+    "NONE",
+    "sound_vague",
+    "anc_only",
+    "functional_not_sound",
+    "weak_praise",
+    "not_headphone",
+    "insufficient"
+  ],
+  "n_train": 15956
+}

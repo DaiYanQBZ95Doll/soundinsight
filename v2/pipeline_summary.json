@@ -1,0 +1,12 @@
+{
+  "v5": {
+    "clean_pool": 14299,
+    "alerts": 22,
+    "v1_reference": 15,
+    "expected_positives": [
+      37,
+      316
+    ]
+  },
+  "types_available": true
+}
