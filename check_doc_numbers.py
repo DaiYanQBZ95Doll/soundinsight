@@ -752,6 +752,11 @@ def check_package_size_claims(out) -> None:
                         continue
                     if any(k in ln for k in ("当时", "构建批次", "冻结值", "历史", "随重建变化", "以 `hashes.txt`")):
                         continue
+                    # 只在**包体语境**里才算体积声明：否则同一量级的文件字节数（如语料 CSV 40,108,627 B）
+                    # 会被误报为"陈旧的决赛包体积"（2026-10-03 实测误报一次）。
+                    if not any(k in ln for k in ("决赛包", "包体", "zip", "ZIP", "提交包",
+                                                 "定稿作品", "其他材料")):
+                        continue
                     bad.append(f"{rel}:{i} → {m.group(1)} B（当前 {cur:,} B）")
     if bad:
         for b in bad[:8]:
