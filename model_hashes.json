@@ -1,4 +1,4 @@
 {
   "sound_model/model.safetensors": "690d337483f847006411aa05bd57c237048832ac19afae08d0dfdf47e2b0d937",
-  "note": "出厂 v2 权重（2026-10-05 起）"
+  "note": "出厂 v2 权重（2026-10-05 换型）；v1 归档见 v2/model_v1_archive"
 }

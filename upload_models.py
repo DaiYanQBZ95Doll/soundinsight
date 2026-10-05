@@ -24,21 +24,46 @@ SRC_DIRS = [
 ]
 
 
+def _redact(text: str, secret: str) -> str:
+    """把令牌从任何输出中抹掉（git 失败时 stderr 可能带回带令牌的 URL）。"""
+    if not secret:
+        return text
+    return text.replace(secret, "***REDACTED***")
+
+
 def main() -> None:
     ap = argparse.ArgumentParser()
     ap.add_argument("--repo", required=True, help="ModelScope 仓库路径，如 用户名/SoundInsight_models")
-    ap.add_argument("--token", required=True, help="ModelScope 访问令牌")
+    ap.add_argument("--token", default="", help="ModelScope 访问令牌（不推荐：会留在命令记录里）")
+    ap.add_argument("--token-file", default=os.path.join(HERE, ".ms_token"),
+                    help="从文件读取令牌（推荐；默认 .ms_token，一行，无引号）")
+    ap.add_argument("--src-sound", default="sound_model",
+                    help="作为 sound_model/ 上传的本地目录（出厂权重）")
     ap.add_argument("--dry-run", action="store_true",
                     help="只打印将上传的文件清单，不执行 git 操作")
     args = ap.parse_args()
 
-    tmp = os.path.join(HERE, ".ms_upload_tmp")
+    # 令牌来源：文件优先（避免留在命令记录与会话日志里）
+    token = args.token
+    if not token and os.path.isfile(args.token_file):
+        token = open(args.token_file, encoding="utf-8").read().strip()
+        print(f"已从 {os.path.basename(args.token_file)} 读取令牌（长度 {len(token)}）")
+    if not token and not args.dry_run:
+        raise SystemExit(
+            f"未提供令牌：请把访问令牌写入 {args.token_file}（一行、无引号），"
+            "或用 --token 传入（不推荐）。")
+
+    # 目录映射：sound_model ← --src-sound（默认出厂 v2），multi_label_model 保持原样
+    src_dirs = [("multi_label_model", "multi_label_model"),
+                (args.src_sound, "sound_model")]
+
+    tmp = os.path.join(HERE, "_ms_upload_tmp")
     if os.path.isdir(tmp):
         shutil.rmtree(tmp, ignore_errors=True)
     os.makedirs(tmp, exist_ok=True)
     total_size = 0
     total_files = 0
-    for src, dst in SRC_DIRS:
+    for src, dst in src_dirs:
         src_path = os.path.join(HERE, src)
         if not os.path.isdir(src_path):
             raise SystemExit(
@@ -56,21 +81,22 @@ def main() -> None:
 
     print(f"文件总数：{total_files}")
     print(f"总大小：{total_size / 1e6:.0f} MB")
+    print(f"sound_model/ 来源：{args.src_sound}（将覆盖仓库中的同名目录）")
     if args.dry_run:
         print("dry-run 模式：不执行 git 推送")
         return
 
     # 克隆远程仓库（自带 README/configuration），放入模型文件后正常推送，
     # 全程快进合并，不需要强制推送，兼容分支保护。
-    remote = f"https://oauth2:{args.token}@www.modelscope.cn/{args.repo}.git"
+    remote = f"https://oauth2:{token}@www.modelscope.cn/{args.repo}.git"
     clone_dir = os.path.join(tmp, "repo")
     r = subprocess.run(["git", "clone", remote, clone_dir],
                        capture_output=True, text=True)
     print("> git clone <远程仓库>")
     if r.returncode != 0:
-        print(r.stderr[-800:])
+        print(_redact(r.stderr[-800:], token))
         raise SystemExit("克隆远程仓库失败")
-    for src, dst in SRC_DIRS:
+    for src, dst in src_dirs:
         shutil.copytree(os.path.join(HERE, src),
                         os.path.join(clone_dir, dst), dirs_exist_ok=True)
     cmds = [
@@ -88,7 +114,7 @@ def main() -> None:
                            shell=False)
         print(f"> {' '.join(c)}")
         if r.returncode != 0 and c[1] != "init":
-            print(r.stderr[-800:])
+            print(_redact(r.stderr[-800:], token))
             raise SystemExit(f"命令失败：{' '.join(c)}")
     print(f"上传完成 -> https://modelscope.cn/models/{args.repo}")
     print(f"请把 {args.repo} 填入 deployment/config.json 的 model_repo_id")

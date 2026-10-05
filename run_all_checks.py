@@ -91,6 +91,7 @@ def main() -> int:
                 print(f"        stderr: {p.stderr.strip().splitlines()[-1][:160]}")
 
     failed = [n for n, ok, _, _ in results if not ok and n not in NON_FATAL]
+    _write_machine_result(len(results), failed)
     print(f"\n=== 门槛链{'（跳过打包）' if args.skip_package else ''} ==="
           f"总用时 {time.time()-t0:.0f}s")
     print(f"步骤 {len(results)} 个｜失败 {len(failed)} 个"
@@ -99,6 +100,25 @@ def main() -> int:
         return 1
     print("提示：审计报告头部的「运行时刻」用于判断读数新鲜度；本脚本已确认每步退出码。")
     return 0
+
+
+
+def _write_machine_result(steps, failed):
+    """写出机器可读结果，供 safe_commit --require-green-chain 使用。"""
+    import datetime
+    import json as _json
+    import os as _os
+    import subprocess as _sp
+    try:
+        head = _sp.run(["git", "rev-parse", "--short", "HEAD"], capture_output=True,
+                       text=True).stdout.strip()
+    except Exception:  # noqa: BLE001
+        head = ""
+    _json.dump({"ts": datetime.datetime.now().isoformat(timespec="seconds"),
+                "steps": steps, "failed": failed, "head": head},
+               open(_os.path.join(_os.path.dirname(_os.path.abspath(__file__)),
+                                  "v2", "checks_result.json"), "w", encoding="utf-8"),
+               ensure_ascii=False, indent=2)
 
 
 if __name__ == "__main__":

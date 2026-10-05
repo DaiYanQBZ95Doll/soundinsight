@@ -25,16 +25,40 @@ def run(args: list[str]) -> tuple[int, str]:
     return p.returncode, (p.stdout or "") + (p.stderr or "")
 
 
+def chain_is_green() -> tuple[bool, str]:
+    """读门槛链的机器可读结果：失败项非空 → 不绿。"""
+    import json as _json
+    import os as _os
+    p = _os.path.join(_os.path.dirname(_os.path.abspath(__file__)), "v2", "checks_result.json")
+    if not _os.path.isfile(p):
+        return False, "未找到门槛链结果（请先跑 run_all_checks.py）"
+    try:
+        d = _json.load(open(p, encoding="utf-8"))
+    except ValueError:
+        return False, "门槛链结果文件损坏"
+    failed = d.get("failed") or []
+    if failed:
+        return False, f"门槛链有 {len(failed)} 项失败：{failed}｜运行于 {d.get('ts')}"
+    return True, f"门槛链全绿（{d.get('steps')} 步，{d.get('ts')}）"
+
 def main() -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("-m", "--message", action="append", required=True)
     ap.add_argument("--allow-guard-fail", action="store_true")
+    ap.add_argument("--require-green-chain", action="store_true",
+                    help="门槛链有失败项时拒绝提交（读 v2/checks_result.json）")
     args = ap.parse_args()
 
     rc, out = run([sys.executable, "precommit_guard.py"])
     print(out.strip())
     if rc != 0 and not args.allow_guard_fail:
         print("[安全提交] 守卫未通过 → 已阻止提交（如需强制，用 --allow-guard-fail 并说明理由）")
+    if getattr(args, "require_green_chain", False):
+        ok, why = chain_is_green()
+        print(f"[安全提交] 门槛链：{why}")
+        if not ok:
+            print("[安全提交] 门槛链未通过 → 已阻止提交")
+            return 1
         return 2
 
     cmd = [GIT, "-c", "core.quotepath=false", "commit", "-q"]

@@ -77,3 +77,5 @@ _log_*.txt
 # 实验产物（模型权重不入库，仅存 JSON 结论）
 v2/exp_*/
 *.bak-*
+# ModelScope 访问令牌（本地文件，绝不入库）
+.ms_token
