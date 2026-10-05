@@ -1,9 +1,9 @@
 {
-  "bin_model_dir": "sound_model",
+  "bin_model_dir": "v2/model_maxlen256",
   "multi_label_dir": "multi_label_model",
   "threshold_file": "sound_model/threshold.json",
   "issue_labels_file": "multi_label_model/issue_labels.json",
-  "max_len": 128,
+  "max_len": 256,
   "batch_size": 64,
   "server_host": "127.0.0.1",
   "server_port": 7860,
@@ -15,5 +15,6 @@
   "scope_filter": false,
   "tier_note": "tier_high=0.95 取自范围内子集阈值扫描的最佳 F1 点（P 75.0%／R 87.5%／F1 0.8077，LLM 口径，n=778/48）",
   "scope_model_dir": "v2/model_scope",
-  "scope_note": "默认关闭。实测取舍（40 条人工告警）：全部精确率 37.5%（15/40）→ 过滤后 53.8%（7/13），但**丢弃人工真阳 8/15＝53%**、仅保留 13/40＝32% 条目——**取舍不划算，故默认不启用**；品类仅作展示信息。本地品类模型留出段：acc 0.6774、耳机家族合并精确 0.8848／召回 0.7802"
+  "scope_note": "默认关闭。实测取舍（40 条人工告警）：全部精确率 37.5%（15/40）→ 过滤后 53.8%（7/13），但**丢弃人工真阳 8/15＝53%**、仅保留 13/40＝32% 条目——**取舍不划算，故默认不启用**；品类仅作展示信息。本地品类模型留出段：acc 0.6774、耳机家族合并精确 0.8848／召回 0.7802",
+  "model_note": "出厂模型自 2026-10-05 起为 v2（人工真值下 P 62.1%@0.5／73.3%@0.9，漏判 0；v1 为开卷口径且精确率仅 42.0%／46.5%，见登记表 X-25/X-26）"
 }

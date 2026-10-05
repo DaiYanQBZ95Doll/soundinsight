@@ -29,13 +29,13 @@
 <!-- STATE-CARD:BEGIN -->
 | 项 | 值 |
 |---|---|
-| 生成时刻 | 2026-10-05 14:45:39 |
-| 本地 HEAD | `19f08fb`（282 个提交；工作区有 20 项改动；待推送 0） |
+| 生成时刻 | 2026-10-05 15:09:19 |
+| 本地 HEAD | `861f08a`（284 个提交；工作区有 21 项改动；待推送 2） |
 | 清单版本 | **v1.5**（`docs/checklist_version.json`） |
-| 数字审计 | FAIL 0／PASS 242／SKIP 0（运行时刻：2026-10-05 14:44:37（用于判） |
+| 数字审计 | FAIL 0／PASS 242／SKIP 0（运行时刻：2026-10-05 15:08:01（用于判） |
 | 负向自测 | 结果：31 项通过，0 项失败 |
 | 卫生扫描 | [PASS] 跟踪文件内未发现密钥 / 令牌 / 明文口令（扫描器自身与扫描报告已排除，避免自指命中） |
-| 决赛包 | 5 条目｜体积 45,474,329 B（**随重建变化，以 `hashes.txt` 决赛段为准**） |
+| 决赛包 | 5 条目｜体积 45,475,883 B（**随重建变化，以 `hashes.txt` 决赛段为准**） |
 | 复赛包（红线 9） | sha256 `e6cae286515ef1d2…`（应与冻结值 `e6cae286515ef1d2` 一致） |
 | 一键复跑 | `python run_all_checks.py`（13 步门槛链，约 6 分钟） |
 
@@ -49,7 +49,7 @@ https://raw.githubusercontent.com/DaiYanQBZ95Doll/soundinsight/main/docs/REVIEWE
 https://raw.githubusercontent.com/DaiYanQBZ95Doll/soundinsight/<SHA>/docs/REVIEWER_BRIEF.md
 ```
 
-> **注意**：本卡生成于提交 `19f08fb` **之前**（本文件自身的提交），因此 `19f08fbc7d45c5bb4532be85b491c70ba294f2b7` 形态的链接
+> **注意**：本卡生成于提交 `861f08a` **之前**（本文件自身的提交），因此 `861f08af07c654a565239fec3daca16e06d2b8da` 形态的链接
 > 要在该提交推送后才生效；**要立刻可用，请用上面的 ①**。
 > 其他关键文件的 SHA 链接：`python make_reviewer_brief.py --links`
 <!-- STATE-CARD:END -->

@@ -64,7 +64,7 @@ def single_predict(text):
                 "而是「不在本工具的作用范围内」。\n"
                 "（依据：干净池实测，见主文档附录 C 第 13 条；如需全量扫描，"
                 "本工具的定位是**分诊与预警**，人工复核仍不可省。）")
-    enc = tok(text.strip(), padding=True, truncation=True, max_length=128,
+    enc = tok(text.strip(), padding=True, truncation=True, max_length=int(CFG.get("max_len", 256)),
               return_tensors="pt")
     enc = {k: v.to(device) for k, v in enc.items()}
     with torch.no_grad():
@@ -110,7 +110,7 @@ def batch_analyze(file_obj):
     with torch.no_grad():
         for b in range(0, len(texts), 64):
             enc = tok(texts[b:b + 64], padding=True, truncation=True,
-                      max_length=128, return_tensors="pt")
+                      max_length=int(CFG.get("max_len", 256)), return_tensors="pt")
             enc = {k: v.to(device) for k, v in enc.items()}
             probs.append(torch.softmax(bin_model(**enc).logits, -1)
                          [:, 1].cpu().numpy())
@@ -125,7 +125,7 @@ def batch_analyze(file_obj):
         with torch.no_grad():
             for b in range(0, len(neg_texts), 64):
                 enc = tok(neg_texts[b:b + 64], padding=True, truncation=True,
-                          max_length=128, return_tensors="pt")
+                          max_length=int(CFG.get("max_len", 256)), return_tensors="pt")
                 enc = {k: v.to(device) for k, v in enc.items()}
                 ml_out.append(torch.sigmoid(ml_model(**enc).logits)
                               .cpu().numpy())

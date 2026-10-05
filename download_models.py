@@ -59,6 +59,27 @@ def main() -> None:
         if size < min_size:
             raise SystemExit(f"文件大小异常 {fname}: {size} < {min_size}")
         print(f"完成 {dname}/{fname} ({size / 1e6:.1f} MB)")
+    # 权重哈希校验：与登记值不符即报错（防止仓库仍是旧权重、Demo 静默跑错模型）
+    hp = os.path.join(HERE, "model_hashes.json")
+    if os.path.isfile(hp):
+        import hashlib
+        want = json.load(open(hp, encoding="utf-8"))
+        for rel, exp in want.items():
+            if rel == "note":
+                continue
+            fp = os.path.join(HERE, rel)
+            if not os.path.isfile(fp):
+                continue
+            h = hashlib.sha256()
+            with open(fp, "rb") as fh:
+                for c in iter(lambda: fh.read(1 << 20), b""):
+                    h.update(c)
+            got = h.hexdigest()
+            if got != exp:
+                raise SystemExit(
+                    f"权重哈希不符：{rel}\n  期望 {exp[:16]}…\n  实际 {got[:16]}…\n"
+                    "→ 模型仓库尚未更新为出厂版本，请先上传或改用包内权重。")
+            print(f"哈希校验通过：{rel}")
     print("全部模型文件下载并校验完成。")
 
 
