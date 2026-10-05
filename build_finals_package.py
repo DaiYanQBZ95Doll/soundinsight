@@ -37,6 +37,8 @@ DEMO_INCLUDE = ["demo_sound_v2.py", "demo_sound.py", "soundinsight_agent.py",
                 "text_utils.py", "audio_gate.py", "config.json",
                 "requirements.txt", "README.md", "MODEL_CARD.md", "edge_cases.md",
                 "install.bat", "sample_reviews_100.csv", "download_models.py",
+                # 权重哈希校验清单（缺它则下载防呆失效）与类型推理入口
+                "model_hashes.json", "types_helper.py",
                 # 样例输出：让评委不必装模型也能看到报告长什么样
                 "insight_report_v2.md", "insight_report_v2_en.md",
                 "demo_output.png"]

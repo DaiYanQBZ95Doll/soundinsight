@@ -68,6 +68,12 @@ report["steps"].append({"label": "unpack", "ok": True, "files": len(names),
 print("② 下载权重（530MB，计时中…）")
 r = run([sys.executable, "download_models.py"], WORK, 3600, "download_models")
 report["steps"].append(r)
+# 权重哈希证据：download_models.py 内置校验（不符即退出码非 0），故 rc=0 即通过
+report["hash_evidence"] = [ln.strip() for ln in r.get("tail", "").splitlines()
+                           if "哈希校验" in ln]
+report["hash_check_enabled"] = True
+print(f"   权重哈希校验：{'通过 ✓' if r['ok'] else '未通过 ✗'}"
+      f"（{('｜'.join(report['hash_evidence']) or '下载输出未见明细，按退出码判定')}）")
 print(f"   rc={r['rc']}｜{r['sec']}s｜{'成功 ✓' if r['ok'] else '失败 ✗'}")
 if not r["ok"]:
     print("   末尾输出：" + r["tail"][-400:])

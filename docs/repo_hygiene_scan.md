@@ -1,6 +1,6 @@
 # 公开仓库卫生扫描（密钥 / 隐私 / 废弃 claim）
 
-- 扫描范围：git 跟踪文件 646 个（文本与数据类逐行扫；二进制仅按文件名判断）
+- 扫描范围：git 跟踪文件 654 个（文本与数据类逐行扫；二进制仅按文件名判断）
 - 生成方式：`python scan_repo_hygiene.py`（可随时重跑）
 
 ## 一、密钥与凭据
@@ -30,7 +30,7 @@
   - 行 5｜中国大陆手机号｜`19195907942`
   - 行 5｜邮箱地址｜`2799920054@qq.com`
 - `upload_models.py`：1 处
-  - 行 81｜邮箱地址｜`soundinsight@users.noreply.github.com`
+  - 行 107｜邮箱地址｜`soundinsight@users.noreply.github.com`
 - `v2_check_docx.py`：1 处
   - 行 25｜中国大陆手机号｜`19195907942`
 
