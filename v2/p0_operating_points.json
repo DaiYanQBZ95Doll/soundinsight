@@ -1,0 +1,74 @@
+[
+  {
+    "filter": "不过滤",
+    "thr": 0.5,
+    "n": 50,
+    "tp": 21,
+    "precision": 0.42,
+    "recall_kept": 1.0
+  },
+  {
+    "filter": "不过滤",
+    "thr": 0.9,
+    "n": 43,
+    "tp": 20,
+    "precision": 0.4651,
+    "recall_kept": 0.9524
+  },
+  {
+    "filter": "不过滤",
+    "thr": 0.95,
+    "n": 38,
+    "tp": 20,
+    "precision": 0.5263,
+    "recall_kept": 0.9524
+  },
+  {
+    "filter": "仅耳机",
+    "thr": 0.5,
+    "n": 50,
+    "tp": 21,
+    "precision": 0.42,
+    "recall_kept": 1.0
+  },
+  {
+    "filter": "仅耳机",
+    "thr": 0.9,
+    "n": 43,
+    "tp": 20,
+    "precision": 0.4651,
+    "recall_kept": 0.9524
+  },
+  {
+    "filter": "仅耳机",
+    "thr": 0.95,
+    "n": 38,
+    "tp": 20,
+    "precision": 0.5263,
+    "recall_kept": 0.9524
+  },
+  {
+    "filter": "排除明确非耳机",
+    "thr": 0.5,
+    "n": 50,
+    "tp": 21,
+    "precision": 0.42,
+    "recall_kept": 1.0
+  },
+  {
+    "filter": "排除明确非耳机",
+    "thr": 0.9,
+    "n": 43,
+    "tp": 20,
+    "precision": 0.4651,
+    "recall_kept": 0.9524
+  },
+  {
+    "filter": "排除明确非耳机",
+    "thr": 0.95,
+    "n": 38,
+    "tp": 20,
+    "precision": 0.5263,
+    "recall_kept": 0.9524
+  }
+]
