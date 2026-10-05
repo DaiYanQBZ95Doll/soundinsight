@@ -1,0 +1,56 @@
+[
+  {
+    "model": "判别器（出厂）",
+    "thr": 0.5,
+    "fires": 50,
+    "captured": 39,
+    "capture_rate": 0.9512,
+    "false_pos": 11,
+    "precision": 0.78
+  },
+  {
+    "model": "判别器（出厂）",
+    "thr": 0.9,
+    "fires": 36,
+    "captured": 27,
+    "capture_rate": 0.6585,
+    "false_pos": 9,
+    "precision": 0.75
+  },
+  {
+    "model": "v2",
+    "thr": 0.5,
+    "fires": 32,
+    "captured": 26,
+    "capture_rate": 0.6341,
+    "false_pos": 6,
+    "precision": 0.8125
+  },
+  {
+    "model": "v2",
+    "thr": 0.9,
+    "fires": 25,
+    "captured": 20,
+    "capture_rate": 0.4878,
+    "false_pos": 5,
+    "precision": 0.8
+  },
+  {
+    "model": "v1",
+    "thr": 0.5,
+    "fires": 46,
+    "captured": 34,
+    "capture_rate": 0.8293,
+    "false_pos": 12,
+    "precision": 0.7391
+  },
+  {
+    "model": "v1",
+    "thr": 0.9,
+    "fires": 42,
+    "captured": 31,
+    "capture_rate": 0.7561,
+    "false_pos": 11,
+    "precision": 0.7381
+  }
+]

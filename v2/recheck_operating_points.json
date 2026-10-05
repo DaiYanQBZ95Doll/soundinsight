@@ -1,0 +1,79 @@
+[
+  {
+    "thr": 0.2,
+    "fires": 87,
+    "tp": 58,
+    "precision": 0.6605,
+    "recall": 0.6831,
+    "recall_ci": [
+      0.6459,
+      0.7086
+    ]
+  },
+  {
+    "thr": 0.3,
+    "fires": 74,
+    "tp": 58,
+    "precision": 0.78,
+    "recall": 0.6831,
+    "recall_ci": [
+      0.6459,
+      0.7086
+    ]
+  },
+  {
+    "thr": 0.4,
+    "fires": 74,
+    "tp": 58,
+    "precision": 0.78,
+    "recall": 0.6831,
+    "recall_ci": [
+      0.6459,
+      0.7086
+    ]
+  },
+  {
+    "thr": 0.5,
+    "fires": 74,
+    "tp": 58,
+    "precision": 0.78,
+    "recall": 0.6831,
+    "recall_ci": [
+      0.6459,
+      0.7086
+    ]
+  },
+  {
+    "thr": 0.7,
+    "fires": 65,
+    "tp": 50,
+    "precision": 0.7727,
+    "recall": 0.6527,
+    "recall_ci": [
+      0.6459,
+      0.7086
+    ]
+  },
+  {
+    "thr": 0.9,
+    "fires": 53,
+    "tp": 40,
+    "precision": 0.75,
+    "recall": 0.5988,
+    "recall_ci": [
+      0.6315,
+      0.7039
+    ]
+  },
+  {
+    "thr": 0.95,
+    "fires": 49,
+    "tp": 37,
+    "precision": 0.7576,
+    "recall": 0.5802,
+    "recall_ci": [
+      0.6388,
+      0.7039
+    ]
+  }
+]
