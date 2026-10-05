@@ -1,0 +1,46 @@
+{
+  "v2（干净）": {
+    "0.5": {
+      "A_fires": 29,
+      "A_tp": 18,
+      "B_fires": 0,
+      "B_tp": 0,
+      "pop_fires": 93.4,
+      "pop_tp": 58.0,
+      "precision": 0.6207,
+      "recall_pop": 1.0
+    },
+    "0.9": {
+      "A_fires": 15,
+      "A_tp": 11,
+      "B_fires": 0,
+      "B_tp": 0,
+      "pop_fires": 48.3,
+      "pop_tp": 35.4,
+      "precision": 0.7333,
+      "recall_pop": 1.0
+    }
+  },
+  "v1（出厂，open-book）": {
+    "0.5": {
+      "A_fires": 50,
+      "A_tp": 21,
+      "B_fires": 0,
+      "B_tp": 0,
+      "pop_fires": 161.0,
+      "pop_tp": 67.6,
+      "precision": 0.42,
+      "recall_pop": 1.0
+    },
+    "0.9": {
+      "A_fires": 43,
+      "A_tp": 20,
+      "B_fires": 0,
+      "B_tp": 0,
+      "pop_fires": 138.5,
+      "pop_tp": 64.4,
+      "precision": 0.4651,
+      "recall_pop": 1.0
+    }
+  }
+}
