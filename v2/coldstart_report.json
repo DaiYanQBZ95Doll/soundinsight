@@ -9,18 +9,22 @@
     {
       "label": "download_models",
       "rc": 0,
-      "sec": 110.5,
+      "sec": 80.2,
       "tail": "完成 sound_model/config.json (0.0 MB)\n完成 sound_model/tokenizer.json (0.7 MB)\n完成 sound_model/tokenizer_config.json (0.0 MB)\n完成 sound_model/threshold.json (0.0 MB)\n完成 sound_model/model.safetensors (267.8 MB)\n完成 multi_label_model/config.json (0.0 MB)\n完成 multi_label_model/tokenizer.json (0.7 MB)\n完成 multi_label_model/tokenizer_config.json (0.0 MB)\n完成 multi_label_model/issue_labels.json (0.0 MB)\n完成 multi_label_model/model.safetensors (267.8 MB)\n哈希校验通过：sound_model/model.safetensors\n全部模型文件下载并校验完成。",
       "ok": true
     },
     {
       "label": "agent_run",
       "rc": 0,
-      "sec": 13.9,
-      "tail": "指标\n建议复评周期：2-4 周后重新运行批量分析，追踪同口径差评率变化。\n- 中置信提示：有 4 条评论概率落在 0.5-0.9744 区间，当前判为正常但建议人工抽查（疑似负面）。\n\n## 六、置信度档位与建议动作\n| 档位 | 概率区间 | 含义 | 建议动作 |\n|---|---|---|---|\n| 高 | ≥ 0.9744（调优档） | 高置信音质差评 | 直接进入整改/研发评审（7 条） |\n| 中 | 0.5 – 0.9744 | 疑似负面，证据不足 | 先做小规模人工抽查（4 条） |\n| 低 | < 0.5 | 判为正常 | 仅计入趋势观察，不进入问题分布（21 条） |\n\n## 七、附注\n本报告由 SoundInsight 自动生成，判定基于 DistilBERT 微调模型（验证集 F1 0.687，阈值 0.97）与五类多标签归因模型，边界案例存在一定误差，关键决策建议结合人工抽查。\n模型输出概率未经校准，仅供排序参考（见 calibration_eval.md）。\n- 成本对照：本地推理 0 API 费用；同等 32 条若调用 LLM（deepseek-chat，实测约 $0.03/1000 条，见 llm_baseline.md）约 $0.00。\n\nLoading weights:   0%|          | 0/104 [00:00<?, ?it/s]\nLoading weights: 100%|██████████| 104/104 [00:00<00:00, 11286.10it/s]\n\nLoading weights:   0%|          | 0/104 [00:00<?, ?it/s]\nLoading weights: 100%|██████████| 104/104 [00:00<00:00, 11103.39it/s]",
+      "sec": 12.6,
+      "tail": "类差评率。\n- 紧急（低音｜置信档：高）：建议检查 生产/质检 环节，预期降低该类差评率。\n\n## 五、验证指标\n建议复评周期：2-4 周后重新运行批量分析，追踪同口径差评率变化。\n\n## 六、置信度档位与建议动作\n| 档位 | 概率区间 | 含义 | 建议动作 |\n|---|---|---|---|\n| 高 | ≥ 0.9744（调优档） | 高置信音质差评 | 直接进入整改/研发评审（12 条） |\n| 中 | 0.5 – 0.9744 | 疑似负面，证据不足 | 先做小规模人工抽查（0 条） |\n| 低 | < 0.5 | 判为正常 | 仅计入趋势观察，不进入问题分布（20 条） |\n\n## 七、附注\n本报告由 SoundInsight 自动生成，判定基于 DistilBERT 微调模型（验证集 F1 0.687，阈值 0.97）与五类多标签归因模型，边界案例存在一定误差，关键决策建议结合人工抽查。\n模型输出概率未经校准，仅供排序参考（见 calibration_eval.md）。\n- 成本对照：本地推理 0 API 费用；同等 32 条若调用 LLM（deepseek-chat，实测约 $0.03/1000 条，见 llm_baseline.md）约 $0.00。\n\nLoading weights:   0%|          | 0/104 [00:00<?, ?it/s]\nLoading weights: 100%|██████████| 104/104 [00:00<00:00, 12191.72it/s]\n\nLoading weights:   0%|          | 0/104 [00:00<?, ?it/s]\nLoading weights: 100%|██████████| 104/104 [00:00<00:00, 10259.85it/s]",
       "ok": true
     }
   ],
+  "hash_evidence": [
+    "哈希校验通过：sound_model/model.safetensors"
+  ],
+  "hash_check_enabled": true,
   "report": {
     "sections": 7,
     "n_out_of_scope": 68

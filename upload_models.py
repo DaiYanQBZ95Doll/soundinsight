@@ -39,6 +39,8 @@ def main() -> None:
                     help="从文件读取令牌（推荐；默认 .ms_token，一行，无引号）")
     ap.add_argument("--src-sound", default="sound_model",
                     help="作为 sound_model/ 上传的本地目录（出厂权重）")
+    ap.add_argument("--keep-tmp", action="store_true",
+                    help="保留临时目录以便排查")
     ap.add_argument("--dry-run", action="store_true",
                     help="只打印将上传的文件清单，不执行 git 操作")
     args = ap.parse_args()
@@ -57,7 +59,8 @@ def main() -> None:
     src_dirs = [("multi_label_model", "multi_label_model"),
                 (args.src_sound, "sound_model")]
 
-    tmp = os.path.join(HERE, "_ms_upload_tmp")
+    import time as _time
+    tmp = os.path.join(HERE, f"_ms_upload_{_time.strftime('%m%d_%H%M%S')}")
     if os.path.isdir(tmp):
         shutil.rmtree(tmp, ignore_errors=True)
     os.makedirs(tmp, exist_ok=True)
@@ -116,6 +119,9 @@ def main() -> None:
         if r.returncode != 0 and c[1] != "init":
             print(_redact(r.stderr[-800:], token))
             raise SystemExit(f"命令失败：{' '.join(c)}")
+    if not args.keep_tmp:
+        shutil.rmtree(tmp, ignore_errors=True)
+        print(f"已清理临时目录 {os.path.basename(tmp)}")
     print(f"上传完成 -> https://modelscope.cn/models/{args.repo}")
     print(f"请把 {args.repo} 填入 deployment/config.json 的 model_repo_id")
 

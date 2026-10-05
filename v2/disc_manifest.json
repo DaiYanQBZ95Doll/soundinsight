@@ -1,0 +1,8 @@
+{
+  "base": "v2/model_maxlen256",
+  "positives": 1337,
+  "hard_negatives": 1167,
+  "hard_negative_rule": "P1 vague_reason ∈ {functional_not_sound, weak_praise} ∧ 闸门内 ∧ 训练侧",
+  "holdout_rule": "只用 seed42 训练侧；val_v3_test 与人工卡保持干净",
+  "abandon_rule": "val_v3_test 范围内召回下降 >5 点则放弃"
+}

@@ -1,0 +1,68 @@
+[
+  {
+    "model": "disc（判别器）",
+    "thr": 0.5,
+    "A_fires": 28,
+    "A_tp": 19,
+    "B_fires": 0,
+    "B_tp": 0,
+    "pop_fires": 90,
+    "pop_tp": 61,
+    "precision": 0.6786
+  },
+  {
+    "model": "disc（判别器）",
+    "thr": 0.9,
+    "A_fires": 20,
+    "A_tp": 15,
+    "B_fires": 0,
+    "B_tp": 0,
+    "pop_fires": 64,
+    "pop_tp": 48,
+    "precision": 0.75
+  },
+  {
+    "model": "v2（现出厂）",
+    "thr": 0.5,
+    "A_fires": 29,
+    "A_tp": 18,
+    "B_fires": 0,
+    "B_tp": 0,
+    "pop_fires": 93,
+    "pop_tp": 58,
+    "precision": 0.6207
+  },
+  {
+    "model": "v2（现出厂）",
+    "thr": 0.9,
+    "A_fires": 15,
+    "A_tp": 11,
+    "B_fires": 0,
+    "B_tp": 0,
+    "pop_fires": 48,
+    "pop_tp": 35,
+    "precision": 0.7333
+  },
+  {
+    "model": "v1（旧出厂）",
+    "thr": 0.5,
+    "A_fires": 50,
+    "A_tp": 21,
+    "B_fires": 0,
+    "B_tp": 0,
+    "pop_fires": 161,
+    "pop_tp": 68,
+    "precision": 0.42
+  },
+  {
+    "model": "v1（旧出厂）",
+    "thr": 0.9,
+    "A_fires": 43,
+    "A_tp": 20,
+    "B_fires": 0,
+    "B_tp": 0,
+    "pop_fires": 138,
+    "pop_tp": 64,
+    "precision": 0.4651
+  }
+]
