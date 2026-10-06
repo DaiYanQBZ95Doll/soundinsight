@@ -1,6 +1,6 @@
 # 文件地图（由 make_ai_handoff.py 自动生成，勿手改）
 
-> 生成时间：2026-10-06 12:20；共 705 个条目；体积单位 KB/MB。
+> 生成时间：2026-10-06 12:31；共 709 个条目；体积单位 KB/MB。
 
 ## 提交物（5 项，44.3 MB）
 
@@ -62,7 +62,7 @@
 | `confidence_tiered.md` | 0.7 KB | 三星补漏置信度分层与中置信剔除记录 |
 | `significance_test.md` | 0.6 KB | Welch t 检验（p=0.000932） |
 
-## 过程与交接文档（134 项，4.4 MB）
+## 过程与交接文档（136 项，4.5 MB）
 
 | 文件 | 大小 | 用途 |
 |---|---|---|
@@ -89,8 +89,10 @@
 | `PROGRESS_SYNC.md` | 57.6 KB |  |
 | `docs/gold_set/answer_sheet_s5_treatment.md` | 53.6 KB |  |
 | `docs/gold_set/worksheet.md` | 45.6 KB |  |
+| `docs/gold_set/answer_sheet_xcat_mini.md` | 44.8 KB |  |
 | `docs/gap_and_roadmap_inventory.md` | 44.1 KB |  |
 | `docs/gold_set/s5_clean_probe.csv` | 43.6 KB |  |
+| `docs/gold_set/xcat_mini.csv` | 40.9 KB |  |
 | `docs/final_project_review_and_execution_plan.md` | 36.3 KB |  |
 | `docs/retrospective_and_reflection.md` | 27.9 KB |  |
 | `docs/gold_set/answer_sheet_s5_control.md` | 25.1 KB |  |
@@ -98,8 +100,8 @@
 | `docs/project_full_record.md` | 21.6 KB | 初赛→复赛全流程记录 |
 | `docs/gold_set/bias_probe_sheet.md` | 21.5 KB |  |
 | `docs/bus/round-03/kimi-audit-round03.md` | 21.2 KB |  |
+| `docs/demo_uptime_log.md` | 20.5 KB |  |
 | `docs/v2_acceptance_benchmark.md` | 20.4 KB |  |
-| `docs/demo_uptime_log.md` | 20.3 KB |  |
 | `docs/D13_seal_declaration.md` | 20.1 KB | D13 封包声明（提交技术质检终审） |
 | `docs/final_review_and_execution_plan.md` | 19.9 KB |  |
 | `docs/gold_set/gold_standard_findings.md` | 18.1 KB |  |
@@ -337,7 +339,7 @@
 | `_coldstart_test/sample_reviews_100.csv` | 57.9 KB |  |
 | `agent_test_input.csv` | 27.9 KB |  |
 
-## 代码（231 项，1.2 MB）
+## 代码（232 项，1.2 MB）
 
 | 文件 | 大小 | 用途 |
 |---|---|---|
@@ -409,6 +411,7 @@
 | `make_recheck_sheet.py` | 7.0 KB |  |
 | `learning_curve.py` | 6.8 KB |  |
 | `s2_generation_audit.py` | 6.7 KB |  |
+| `make_xcat_mini.py` | 6.7 KB |  |
 | `diagnose_treble.py` | 6.6 KB |  |
 | `fetch_electronics.py` | 6.5 KB |  |
 | `run_all_checks.py` | 6.5 KB |  |
@@ -639,7 +642,7 @@
 | `multi_label_model/` | 256.1 MB | 冻结的多标签归因模型权重（约 256MB），不入 git |
 | `sound_model/` | 256.1 MB | 冻结的二分类模型权重（约 256MB），不入 git |
 
-## 其他（143 项，57.8 MB）
+## 其他（144 项，57.8 MB）
 
 | 文件 | 大小 | 用途 |
 |---|---|---|
@@ -647,7 +650,7 @@
 | `v2/p1_labels.jsonl` | 5.8 MB |  |
 | `v2/review_longtext.jsonl` | 2.8 MB |  |
 | `v2/scope_rows.jsonl` | 664.8 KB |  |
-| `v2/p0_val_notes.jsonl` | 302.4 KB |  |
+| `v2/p0_val_notes.jsonl` | 339.6 KB |  |
 | `v2/review_treble.jsonl` | 294.2 KB |  |
 | `v2/gold_set_notes.jsonl` | 245.0 KB |  |
 | `v2/p1_label_sample.json` | 232.7 KB |  |
@@ -678,8 +681,8 @@
 | `v2/w4_prescreen.json` | 6.0 KB |  |
 | `v2/w7_calibration.json` | 4.4 KB |  |
 | `v2/alert_scope_filtered.json` | 4.2 KB |  |
+| `v2/push_log.json` | 4.2 KB |  |
 | `v2/attribution_user_notes.json` | 4.2 KB |  |
-| `v2/push_log.json` | 3.9 KB |  |
 | `当前输出版本_报告原文.md` | 3.9 KB |  |
 | `v2/w5_final.json` | 3.9 KB |  |
 | `v2/s1_add100_ids.json` | 3.6 KB |  |
@@ -693,6 +696,7 @@
 | `v2/w1_hybrid_result.json` | 2.7 KB |  |
 | `v2/tech_freeze.json` | 2.7 KB |  |
 | `LICENSE` | 2.6 KB |  |
+| `v2/xcat_mini_ids.json` | 2.6 KB |  |
 | `v2/scoped_estimates.json` | 2.6 KB |  |
 | `v2/coldstart_report.json` | 2.5 KB |  |
 | `v2/recheck_ids.json` | 2.5 KB |  |
