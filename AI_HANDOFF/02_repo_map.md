@@ -1,6 +1,6 @@
 # 文件地图（由 make_ai_handoff.py 自动生成，勿手改）
 
-> 生成时间：2026-10-06 12:31；共 709 个条目；体积单位 KB/MB。
+> 生成时间：2026-10-06 21:50；共 715 个条目；体积单位 KB/MB。
 
 ## 提交物（5 项，44.3 MB）
 
@@ -88,8 +88,8 @@
 | `docs/gold_set/attribution_test.csv` | 57.8 KB |  |
 | `PROGRESS_SYNC.md` | 57.6 KB |  |
 | `docs/gold_set/answer_sheet_s5_treatment.md` | 53.6 KB |  |
+| `docs/gold_set/answer_sheet_xcat_mini.md` | 46.8 KB |  |
 | `docs/gold_set/worksheet.md` | 45.6 KB |  |
-| `docs/gold_set/answer_sheet_xcat_mini.md` | 44.8 KB |  |
 | `docs/gap_and_roadmap_inventory.md` | 44.1 KB |  |
 | `docs/gold_set/s5_clean_probe.csv` | 43.6 KB |  |
 | `docs/gold_set/xcat_mini.csv` | 40.9 KB |  |
@@ -100,7 +100,7 @@
 | `docs/project_full_record.md` | 21.6 KB | 初赛→复赛全流程记录 |
 | `docs/gold_set/bias_probe_sheet.md` | 21.5 KB |  |
 | `docs/bus/round-03/kimi-audit-round03.md` | 21.2 KB |  |
-| `docs/demo_uptime_log.md` | 20.5 KB |  |
+| `docs/demo_uptime_log.md` | 20.8 KB |  |
 | `docs/v2_acceptance_benchmark.md` | 20.4 KB |  |
 | `docs/D13_seal_declaration.md` | 20.1 KB | D13 封包声明（提交技术质检终审） |
 | `docs/final_review_and_execution_plan.md` | 19.9 KB |  |
@@ -110,10 +110,10 @@
 | `docs/REVIEWER_BRIEF.md` | 14.8 KB |  |
 | `docs/reassessment_after_credential.md` | 14.6 KB |  |
 | `docs/bus/round-01/qwen.md` | 14.1 KB |  |
+| `docs/extrapolation_register.md` | 13.0 KB |  |
 | `docs/file_inventory.md` | 12.8 KB | 项目文件总索引 |
 | `docs/三方探讨意见.txt` | 12.8 KB |  |
 | `docs/gold_set/human_rulings_dsh.md` | 12.6 KB |  |
-| `docs/extrapolation_register.md` | 12.3 KB |  |
 | `docs/EXECUTION_DISCIPLINE.md` | 12.1 KB |  |
 | `PROJECT_BRIEF_QWEN.md` | 11.6 KB |  |
 | `docs/N_line_handoff_protocol.md` | 11.2 KB |  |
@@ -146,8 +146,8 @@
 | `docs/work_summary_d7.md` | 6.2 KB |  |
 | `docs/how_to_expand_gains.md` | 6.1 KB |  |
 | `docs/scoped_findings.md` | 5.9 KB |  |
+| `docs/split_manifest.md` | 5.8 KB |  |
 | `docs/bus/round-02/dsh.md` | 5.6 KB |  |
-| `docs/split_manifest.md` | 5.4 KB |  |
 | `docs/bus/INDEX.md` | 5.4 KB |  |
 | `docs/PAUSE_SNAPSHOT.md` | 5.2 KB |  |
 | `docs/llm_credential_status.md` | 5.0 KB |  |
@@ -339,20 +339,20 @@
 | `_coldstart_test/sample_reviews_100.csv` | 57.9 KB |  |
 | `agent_test_input.csv` | 27.9 KB |  |
 
-## 代码（232 项，1.2 MB）
+## 代码（235 项，1.3 MB）
 
 | 文件 | 大小 | 用途 |
 |---|---|---|
 | `check_doc_numbers.py` | 58.0 KB | 数字审计 + 模板格式对照脚本 |
-| `build_finals_appendix.py` | 34.4 KB |  |
-| `s34_docs.py` | 19.7 KB |  |
+| `build_finals_appendix.py` | 34.9 KB |  |
+| `s34_docs.py` | 20.4 KB |  |
 | `scan_repo_hygiene.py` | 19.7 KB |  |
 | `v2_meta_analysis.py` | 19.1 KB |  |
 | `make_gold_set_notes.py` | 18.8 KB |  |
 | `build_finals_package.py` | 17.2 KB |  |
 | `apply_human_rulings.py` | 15.9 KB |  |
 | `test_audit_checks.py` | 15.5 KB |  |
-| `build_finals_content.py` | 13.6 KB |  |
+| `build_finals_content.py` | 13.7 KB |  |
 | `report_builder.py` | 13.5 KB |  |
 | `v2_w4_mine.py` | 13.2 KB |  |
 | `_coldstart_test/report_builder.py` | 13.2 KB |  |
@@ -414,6 +414,7 @@
 | `make_xcat_mini.py` | 6.7 KB |  |
 | `diagnose_treble.py` | 6.6 KB |  |
 | `fetch_electronics.py` | 6.5 KB |  |
+| `xcat_freeze.py` | 6.5 KB |  |
 | `run_all_checks.py` | 6.5 KB |  |
 | `v3liteb_train.py` | 6.4 KB |  |
 | `coldstart_test.py` | 6.4 KB |  |
@@ -444,6 +445,7 @@
 | `make_reviewer_brief.py` | 5.0 KB |  |
 | `fair_pool_compare.py` | 4.9 KB |  |
 | `fix_ppt_threshold.py` | 4.8 KB |  |
+| `xcat_train.py` | 4.7 KB |  |
 | `eval_v5.py` | 4.6 KB |  |
 | `make_video_assets.py` | 4.6 KB |  |
 | `fix_clean_alerts_notes.py` | 4.5 KB |  |
@@ -460,6 +462,7 @@
 | `check_external_deps.py` | 4.1 KB |  |
 | `score_vocab_test.py` | 4.1 KB |  |
 | `tune_per_class_threshold.py` | 4.0 KB |  |
+| `score_xcat_mini.py` | 3.9 KB |  |
 | `test_model.py` | 3.9 KB |  |
 | `m3_m8a_recheck.py` | 3.9 KB |  |
 | `audit_ppt.py` | 3.9 KB |  |
@@ -642,7 +645,7 @@
 | `multi_label_model/` | 256.1 MB | 冻结的多标签归因模型权重（约 256MB），不入 git |
 | `sound_model/` | 256.1 MB | 冻结的二分类模型权重（约 256MB），不入 git |
 
-## 其他（144 项，57.8 MB）
+## 其他（147 项，57.9 MB）
 
 | 文件 | 大小 | 用途 |
 |---|---|---|
@@ -663,8 +666,9 @@
 | `v2/types_val_notes.jsonl` | 84.5 KB |  |
 | `v2/clean_alerts_notes_ridx.jsonl` | 64.7 KB |  |
 | `v2/s1_add100_notes.jsonl` | 53.5 KB |  |
-| `更新世界的锋芒_SoundInsight_决赛入围定稿作品.docx` | 47.0 KB |  |
+| `更新世界的锋芒_SoundInsight_决赛入围定稿作品.docx` | 47.3 KB |  |
 | `v2/gold_set_key.json` | 39.3 KB |  |
+| `v2/xcat_speaker_split.json` | 36.1 KB |  |
 | `v2/cross_model_review.jsonl` | 35.4 KB |  |
 | `v2/s5_notes.jsonl` | 31.2 KB |  |
 | `v2/realworld_eval.json` | 31.0 KB |  |
@@ -679,9 +683,9 @@
 | `v2/w17_failure_stats.json` | 6.5 KB |  |
 | `v2/clean_pool_disc.json` | 6.1 KB |  |
 | `v2/w4_prescreen.json` | 6.0 KB |  |
+| `v2/push_log.json` | 4.5 KB |  |
 | `v2/w7_calibration.json` | 4.4 KB |  |
 | `v2/alert_scope_filtered.json` | 4.2 KB |  |
-| `v2/push_log.json` | 4.2 KB |  |
 | `v2/attribution_user_notes.json` | 4.2 KB |  |
 | `当前输出版本_报告原文.md` | 3.9 KB |  |
 | `v2/w5_final.json` | 3.9 KB |  |
@@ -752,6 +756,8 @@
 | `v2/b_measure_results.json` | 0.7 KB |  |
 | `v2/recheck_scored.json` | 0.6 KB |  |
 | `v2/outside_gate_fp.json` | 0.6 KB |  |
+| `v2/xcat_speaker_eval.json` | 0.6 KB |  |
+| `v2/xcat_mini_scored.json` | 0.6 KB |  |
 | `v2/v3lite_assertion.json` | 0.5 KB |  |
 | `difficulty_stratification.json` | 0.5 KB |  |
 | `v2/attribution_llm_coverage.json` | 0.4 KB |  |
