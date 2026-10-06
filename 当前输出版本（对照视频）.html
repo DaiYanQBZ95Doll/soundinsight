@@ -1,0 +1,84 @@
+<!DOCTYPE html><html lang="zh"><head><meta charset="utf-8">
+<title>SoundInsight 当前输出版本（对照 9/14 演示视频）</title>
+<style>
+ body{font-family:-apple-system,"Segoe UI","Microsoft YaHei",sans-serif;max-width:900px;
+      margin:32px auto;padding:0 20px;line-height:1.75;color:#1f2328}
+ h1{font-size:24px;border-bottom:2px solid #d0d7de;padding-bottom:8px}
+ h2{font-size:19px;margin-top:28px;color:#0a3069}
+ .note{background:#fff8c5;border:1px solid #d4a72c;border-radius:6px;padding:12px 16px;margin:16px 0}
+ .new{background:#ddf4ff;border-left:4px solid #0969da;padding:8px 12px;margin:8px 0}
+ code{background:#f6f8fa;padding:2px 5px;border-radius:4px}
+ pre{white-space:pre-wrap;word-wrap:break-word;background:#f6f8fa;padding:12px;border-radius:6px}
+</style></head><body>
+<div class="note"><b>本件用途</b>：包内演示视频为 <b>2026-09-14 成片</b>，其界面与指标属 v1 世代，
+<b>不含</b>下列当前功能。本页为<b>当前出厂版本的真实输出</b>（同一次 Demo 运行生成），
+用于对照视频阅读；<b>两者不一致时，以本页与主文档为准</b>。</div>
+<div class="new"><b>与本视频的差异（当前新增）</b>：
+① 三档输出（优先处理档／待复核档／范围外档）；
+② 「未判定 ≠ 正常」显式声明；
+③ 非音质差评的类型分布（初步）；
+④ 不可归因原因（提到声音但说不清）；
+⑤ 品类字段（本地品类模型）。</div>
+<h1>SoundInsight 当前输出版本（Demo 报告原文）</h1>
+<h1>SoundInsight 音质洞察报告</h1>
+
+<h2>一、总体概况</h2>
+<p>分析对象：sample_reviews_100.csv</p>
+<p>分析时间：2026-10-05 17:13</p>
+<p>评论总数：100 条（其中非英文 0 条已跳过）</p>
+<p><b>未判定（不含音频词汇）：68 条（占比 68.00%）</b>——本工具<b>只对提到声音的评论判定</b>；其余按「未判定」计，<b>不计入差评也不计入正常</b>。</p>
+<p><b>档位</b>：优先处理档 <b>12</b> 条（<b>人工盲判 P 75–78%、召回 68%</b>（46–100%），两张独立样本；同条目捕获 39/41 真阳 vs v2 26/41，见登记表 X-25～X-28）｜待复核档 <b>0</b> 条｜范围外档 <b>68</b> 条——档位名后的实测数字来自<b>人工盲判验收</b>（100 条分层样本），<b>引用时不得省略</b>。</p>
+<p>⚠️ <b>未判定 ≠ 正常</b>：范围外档只是我们未评估，不代表该评论没有问题。</p>
+<p>有效评论：32 条</p>
+<p>音质差评数：12 条（占比 37.50%）</p>
+<p>平均评分：3.50</p>
+<p>结论一句话：严重，音质差评率显著偏高，建议立即排查</p>
+
+<h2>二之二、非音质差评的类型分布（本地模型，初步）</h2>
+<p>非负面/无抱怨 12｜音质(听感) 4｜其他 2｜功能/操作 1｜价格/性价比 1</p>
+<p>⚠️ 类型由<b>本地模型</b>给出（训练自 LLM 标签，<b>非精度最优</b>），用于分诊；未经人工校准前不得作为结论引用。</p>
+
+<h2>二之三、不可归因原因（提到声音但说不清）</h2>
+<p>NONE 9｜not_headphone 2｜weak_praise 1</p>
+
+<h2>二、问题分布</h2>
+<pre>| 问题类别 | 数量 | 占比 | 优先级 |</pre>
+<pre>|---------|------|------|--------|</pre>
+<pre>| 杂音 | 6 | 46.2% | 高 |</pre>
+<pre>| 音量 | 3 | 23.1% | 高 |</pre>
+<pre>| 低音 | 2 | 15.4% | 高 |</pre>
+<pre>| 清晰度 | 2 | 15.4% | 中 |</pre>
+<pre>| 高音 | 0 | 0.0% | 低 |</pre>
+
+<h2>三、典型案例</h2>
+<p>1. （99.9%）I bought this Nexus 7 32G at the end of January 2013 via online store and have had it since February 2013.  Within about</p>
+<p>   归因概率：音量 0.86、清晰度 0.22、杂音 0.12</p>
+<p>2. （99.9%）For the relatively little money paid - this is an OK receiver. My previous Sony of the similar basic level has been play</p>
+<p>   归因概率：低音 0.91、清晰度 0.37、高音 0.23</p>
+<p>3. （99.9%）This is much smaller than I thought and does not have the best bass in the music.  My husband says he likes it but he ma</p>
+<p>   归因概率：低音 0.90、清晰度 0.16、音量 0.14</p>
+<p>4. （99.9%）Worked great and sounded wonderful for a week and then nothing. No sound.</p>
+<p>   归因概率：音量 0.79、杂音 0.25、清晰度 0.06</p>
+<p>5. （99.9%）I have mixed feelings about these.  Overall they sound pretty good, and  I&#x27;ve heard notes on some of my classical albums</p>
+<p>   归因概率：清晰度 0.92、高音 0.08、低音 0.07</p>
+
+<h2>四、行动建议</h2>
+<p>- 紧急（杂音｜置信档：高）：建议检查 生产/质检 环节，预期降低该类差评率。</p>
+<p>- 紧急（音量｜置信档：高）：建议检查 客服/详情页 环节，预期降低该类差评率。</p>
+<p>- 紧急（低音｜置信档：高）：建议检查 生产/质检 环节，预期降低该类差评率。</p>
+
+<h2>五、验证指标</h2>
+<p>建议复评周期：2-4 周后重新运行批量分析，追踪同口径差评率变化。</p>
+
+<h2>六、置信度档位与建议动作</h2>
+<pre>| 档位 | 概率区间 | 含义 | 建议动作 |</pre>
+<pre>|---|---|---|---|</pre>
+<pre>| 高 | ≥ 0.9744（调优档） | 高置信音质差评 | 直接进入整改/研发评审（12 条） |</pre>
+<pre>| 中 | 0.5 – 0.9744 | 疑似负面，证据不足 | 先做小规模人工抽查（0 条） |</pre>
+<pre>| 低 | &lt; 0.5 | 判为正常 | 仅计入趋势观察，不进入问题分布（20 条） |</pre>
+
+<h2>七、附注</h2>
+<p>本报告由 SoundInsight 自动生成，判定基于 DistilBERT 微调模型（验证集 F1 0.687，阈值 0.97）与五类多标签归因模型，边界案例存在一定误差，关键决策建议结合人工抽查。</p>
+<p>模型输出概率未经校准，仅供排序参考（见 calibration_eval.md）。</p>
+<p>- 成本对照：本地推理 0 API 费用；同等 32 条若调用 LLM（deepseek-chat，实测约 $0.03/1000 条，见 llm_baseline.md）约 $0.00。</p>
+</body></html>

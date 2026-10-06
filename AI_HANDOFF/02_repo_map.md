@@ -1,6 +1,6 @@
 # 文件地图（由 make_ai_handoff.py 自动生成，勿手改）
 
-> 生成时间：2026-10-06 11:50；共 702 个条目；体积单位 KB/MB。
+> 生成时间：2026-10-06 12:20；共 705 个条目；体积单位 KB/MB。
 
 ## 提交物（5 项，44.3 MB）
 
@@ -99,8 +99,8 @@
 | `docs/gold_set/bias_probe_sheet.md` | 21.5 KB |  |
 | `docs/bus/round-03/kimi-audit-round03.md` | 21.2 KB |  |
 | `docs/v2_acceptance_benchmark.md` | 20.4 KB |  |
+| `docs/demo_uptime_log.md` | 20.3 KB |  |
 | `docs/D13_seal_declaration.md` | 20.1 KB | D13 封包声明（提交技术质检终审） |
-| `docs/demo_uptime_log.md` | 20.0 KB |  |
 | `docs/final_review_and_execution_plan.md` | 19.9 KB |  |
 | `docs/gold_set/gold_standard_findings.md` | 18.1 KB |  |
 | `docs/overnight_summary.md` | 17.3 KB |  |
@@ -162,11 +162,11 @@
 | `docs/p0_preregistration.md` | 4.1 KB |  |
 | `docs/bus/round-02/s5_receipt_evidence.md` | 4.1 KB |  |
 | `docs/gold_set/clean_pool_disc_items.csv` | 3.6 KB |  |
+| `docs/SUBMISSION_CHECKLIST.md` | 3.6 KB |  |
 | `docs/repo_hygiene_scan.md` | 3.5 KB |  |
 | `docs/dataset_audit.md` | 3.5 KB | 数据集字段考古 |
 | `docs/M8a_submission_precheck.md` | 3.5 KB |  |
 | `docs/N4_target_argument.md` | 3.5 KB |  |
-| `docs/SUBMISSION_CHECKLIST.md` | 3.5 KB |  |
 | `docs/w4_mining_estimate.md` | 3.4 KB |  |
 | `docs/M3b_judge_access_guide.md` | 3.3 KB |  |
 | `docs/token_and_cost_budget.md` | 3.2 KB |  |
@@ -337,7 +337,7 @@
 | `_coldstart_test/sample_reviews_100.csv` | 57.9 KB |  |
 | `agent_test_input.csv` | 27.9 KB |  |
 
-## 代码（230 项，1.2 MB）
+## 代码（231 项，1.2 MB）
 
 | 文件 | 大小 | 用途 |
 |---|---|---|
@@ -347,7 +347,7 @@
 | `scan_repo_hygiene.py` | 19.7 KB |  |
 | `v2_meta_analysis.py` | 19.1 KB |  |
 | `make_gold_set_notes.py` | 18.8 KB |  |
-| `build_finals_package.py` | 16.7 KB |  |
+| `build_finals_package.py` | 17.2 KB |  |
 | `apply_human_rulings.py` | 15.9 KB |  |
 | `test_audit_checks.py` | 15.5 KB |  |
 | `build_finals_content.py` | 13.6 KB |  |
@@ -475,6 +475,7 @@
 | `s6_relabel_retrain.py` | 3.5 KB |  |
 | `download_models.py` | 3.4 KB |  |
 | `_coldstart_test/download_models.py` | 3.4 KB |  |
+| `make_current_output.py` | 3.4 KB |  |
 | `check_generation_consistency.py` | 3.4 KB |  |
 | `v2_register_cv.py` | 3.3 KB |  |
 | `finalize_curve.py` | 3.3 KB |  |
@@ -605,11 +606,12 @@
 | `SoundInsight_创意方案/confusion_matrix.png` | 32.4 KB |  |
 | `SoundInsight_创意方案/training_output.txt` | 0.8 KB |  |
 
-## 参考材料（1 项，0.0 MB）
+## 参考材料（2 项，0.0 MB）
 
 | 文件 | 大小 | 用途 |
 |---|---|---|
 | `AI+跨境黑客松巅峰赛 · 复赛公示名单（手机版）.html` | 42.1 KB |  |
+| `当前输出版本（对照视频）.html` | 5.8 KB |  |
 
 ## 生成产物·日志（12 项，0.0 MB）
 
@@ -637,7 +639,7 @@
 | `multi_label_model/` | 256.1 MB | 冻结的多标签归因模型权重（约 256MB），不入 git |
 | `sound_model/` | 256.1 MB | 冻结的二分类模型权重（约 256MB），不入 git |
 
-## 其他（142 项，57.8 MB）
+## 其他（143 项，57.8 MB）
 
 | 文件 | 大小 | 用途 |
 |---|---|---|
@@ -677,8 +679,9 @@
 | `v2/w7_calibration.json` | 4.4 KB |  |
 | `v2/alert_scope_filtered.json` | 4.2 KB |  |
 | `v2/attribution_user_notes.json` | 4.2 KB |  |
+| `v2/push_log.json` | 3.9 KB |  |
+| `当前输出版本_报告原文.md` | 3.9 KB |  |
 | `v2/w5_final.json` | 3.9 KB |  |
-| `v2/push_log.json` | 3.6 KB |  |
 | `v2/s1_add100_ids.json` | 3.6 KB |  |
 | `v2/types_validation_ids.json` | 3.6 KB |  |
 | `v2/p0_accept_ids.json` | 3.5 KB |  |

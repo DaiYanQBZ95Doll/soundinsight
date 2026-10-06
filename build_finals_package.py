@@ -76,6 +76,8 @@ EXCLUDE_DIRS = {".git", ".ms_upload_tmp", ".dsh", "node_modules", "__pycache__",
 
 # 其他材料：显式清单（存在才收，缺失会列出）
 OTHER_FILES = [
+    # 视频对照件（round-03 处置：视频为 9/14 成片，此件展示当前界面）
+    "当前输出版本（对照视频）.html", "当前输出版本_报告原文.md",
     # 验证报告
     "results_summary.md", "llm_baseline.md", "length_bucket_eval.md",
     "edge_case_benchmark.md", "calibration_eval.md", "error_taxonomy.md",
@@ -140,8 +142,7 @@ OTHER_FILES = [
     "docs/gold_set/clean_alerts.csv",
     "docs/gold_set/bias_probe_design.md", "docs/gold_set/bias_probe_sheet.md",
     "make_bias_probe.py", "score_bias_probe.py", "compare_passes.py",
-    "docs/gold_set/answer_sheet.md", "docs/gold_set/answer_sheet_kimi.md",
-    "docs/gold_set/review_notes.md", "docs/gold_set/assisted_worksheet.csv",
+    "docs/gold_set/answer_sheet.md",     "docs/gold_set/review_notes.md", "docs/gold_set/assisted_worksheet.csv",
     "v2/ai_scope_classification.json", "v2/w4_review_POOL_invalid.jsonl", "w4_model_vs_llm.py",
     "docs/difficulty_stratification.md", "outside_gate_fp.py",
     "difficulty_stratification.py", "check_url_consistency.py",
@@ -186,6 +187,7 @@ README = f"""# SoundInsight 决赛入围定稿提交包
 - **⚠️ 演示视频为 9/14 成片，早于本轮全部工作**：画面里的界面与指标属于 v1 世代，
   **不含**闸门三档、非音质类型分布、品类判定等当前功能。
   **视频与文档不一致之处，一律以主文档、`docs/SUBMISSION_CHECKLIST.md` 与本说明为准。**
+  **当前界面请看对照件**：`其他材料.zip` 内 `当前输出版本（对照视频）.html`（同一次 Demo 运行生成的真实报告，含三档输出、「未判定 ≠ 正常」、非音质类型分布、不可归因原因、品类字段）。**D-Q4 据此关闭：不重录，以对照件加本说明替代。**
 
 ## 模型调用与边界（唯一权威表述）
 1. 本项目产品推理 100% 本地、零第三方 API。

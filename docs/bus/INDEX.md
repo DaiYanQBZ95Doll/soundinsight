@@ -2,7 +2,7 @@
 
 > **席位可用性**：dsh:可用｜kimi:可用｜qwen:可用
 
-> 生成时刻：2026-10-06 11:50:14｜当前 HEAD `98afbd5`｜刷新：`python make_bus_index.py`
+> 生成时刻：2026-10-06 12:20:47｜当前 HEAD `33a5a68`｜刷新：`python make_bus_index.py`
 > 协议见 `docs/bus/README.md`；卡片格式见 `docs/bus/TEMPLATE.md`。
 
 ## round-01
@@ -73,11 +73,11 @@
 
 ## ⚠️ 基线落后提示（文件在变，请以最新 HEAD 复核）
 
-- round-01/dsh.md 基线 `483422d` ≠ 当前 `98afbd5`
-- round-01/kimi.md 基线 `483422d` ≠ 当前 `98afbd5`
-- round-01/qwen.md 基线 `483422d` ≠ 当前 `98afbd5`
-- round-02/dsh.md 基线 `?` ≠ 当前 `98afbd5`
-- round-03/dsh-audit-request.md 基线 `ed8770b` ≠ 当前 `98afbd5`
-- round-03/dsh-response.md 基线 `?` ≠ 当前 `98afbd5`
-- round-03/kimi-audit-round03.md 基线 `?` ≠ 当前 `98afbd5`
+- round-01/dsh.md 基线 `483422d` ≠ 当前 `33a5a68`
+- round-01/kimi.md 基线 `483422d` ≠ 当前 `33a5a68`
+- round-01/qwen.md 基线 `483422d` ≠ 当前 `33a5a68`
+- round-02/dsh.md 基线 `?` ≠ 当前 `33a5a68`
+- round-03/dsh-audit-request.md 基线 `ed8770b` ≠ 当前 `33a5a68`
+- round-03/dsh-response.md 基线 `?` ≠ 当前 `33a5a68`
+- round-03/kimi-audit-round03.md 基线 `?` ≠ 当前 `33a5a68`
 
