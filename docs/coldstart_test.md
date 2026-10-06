@@ -6,8 +6,8 @@
 | 步骤 | 结果 | 耗时 |
 |---|---|---|
 | ① 解包决赛包→Demo.zip | ✓（22 项，**自带权重 False**） | — |
-| ② `download_models.py`（约 530MB） | **成功 ✓** | 80.2s |
-| ③ `soundinsight_agent.py --csv sample_reviews_100.csv` | **成功 ✓** | 12.6s |
+| ② `download_models.py`（约 530MB） | **成功 ✓** | 75.9s |
+| ③ `soundinsight_agent.py --csv sample_reviews_100.csv` | **成功 ✓** | 10.2s |
 
 - 报告节数：**7**｜未判定（不含音频词汇）计数：**68**
 - 总判定：**全通过 ✓**

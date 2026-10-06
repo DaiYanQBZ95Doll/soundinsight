@@ -1,0 +1,6 @@
+{
+  "v1_seed": 42,
+  "val_v2_vs_v1_train_pct": 6.3,
+  "val_v3_vs_v1_train_pct": 79.66,
+  "val_v3_vs_v2_train_pct": 6.37
+}

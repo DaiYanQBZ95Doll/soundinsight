@@ -39,7 +39,17 @@ def chain_is_green() -> tuple[bool, str]:
     failed = d.get("failed") or []
     if failed:
         return False, f"门槛链有 {len(failed)} 项失败：{failed}｜运行于 {d.get('ts')}"
-    return True, f"门槛链全绿（{d.get('steps')} 步，{d.get('ts')}）"
+    # 时效：链结果必须来自当前 HEAD，否则视为过期（防"用旧绿链放行新改动"）
+    import subprocess as _sp
+    try:
+        head = _sp.run(["git", "rev-parse", "--short", "HEAD"], cwd=_os.path.dirname(
+            _os.path.abspath(__file__)), capture_output=True, text=True).stdout.strip()
+    except Exception:  # noqa: BLE001
+        head = ""
+    if d.get("head") and head and d["head"] != head:
+        return False, (f"门槛链结果过期：结果来自 {d['head']}，当前 HEAD 为 {head}"
+                       "——请重跑 run_all_checks.py")
+    return True, f"门槛链全绿（{d.get('steps')} 步，{d.get('ts')}，HEAD {d.get('head')}）"
 
 def main() -> int:
     ap = argparse.ArgumentParser()
@@ -53,13 +63,13 @@ def main() -> int:
     print(out.strip())
     if rc != 0 and not args.allow_guard_fail:
         print("[安全提交] 守卫未通过 → 已阻止提交（如需强制，用 --allow-guard-fail 并说明理由）")
+        return 1
     if getattr(args, "require_green_chain", False):
         ok, why = chain_is_green()
         print(f"[安全提交] 门槛链：{why}")
         if not ok:
             print("[安全提交] 门槛链未通过 → 已阻止提交")
             return 1
-        return 2
 
     cmd = [GIT, "-c", "core.quotepath=false", "commit", "-q"]
     for m in args.message:
