@@ -1,6 +1,6 @@
 # 文件地图（由 make_ai_handoff.py 自动生成，勿手改）
 
-> 生成时间：2026-10-06 21:50；共 715 个条目；体积单位 KB/MB。
+> 生成时间：2026-10-06 22:16；共 716 个条目；体积单位 KB/MB。
 
 ## 提交物（5 项，44.3 MB）
 
@@ -100,7 +100,7 @@
 | `docs/project_full_record.md` | 21.6 KB | 初赛→复赛全流程记录 |
 | `docs/gold_set/bias_probe_sheet.md` | 21.5 KB |  |
 | `docs/bus/round-03/kimi-audit-round03.md` | 21.2 KB |  |
-| `docs/demo_uptime_log.md` | 20.8 KB |  |
+| `docs/demo_uptime_log.md` | 21.1 KB |  |
 | `docs/v2_acceptance_benchmark.md` | 20.4 KB |  |
 | `docs/D13_seal_declaration.md` | 20.1 KB | D13 封包声明（提交技术质检终审） |
 | `docs/final_review_and_execution_plan.md` | 19.9 KB |  |
@@ -352,11 +352,11 @@
 | `build_finals_package.py` | 17.2 KB |  |
 | `apply_human_rulings.py` | 15.9 KB |  |
 | `test_audit_checks.py` | 15.5 KB |  |
-| `build_finals_content.py` | 13.7 KB |  |
+| `build_finals_docx2.py` | 14.5 KB |  |
+| `build_finals_content.py` | 14.0 KB |  |
 | `report_builder.py` | 13.5 KB |  |
 | `v2_w4_mine.py` | 13.2 KB |  |
 | `_coldstart_test/report_builder.py` | 13.2 KB |  |
-| `build_finals_docx2.py` | 12.7 KB |  |
 | `build_pdf_v2.py` | 12.4 KB |  |
 | `v2_w1_longtext.py` | 12.1 KB |  |
 | `make_ai_handoff.py` | 11.5 KB |  |
@@ -490,6 +490,7 @@
 | `check_demo_alive.py` | 3.1 KB |  |
 | `analyze_b_measure.py` | 3.1 KB |  |
 | `check_scope_wording.py` | 3.1 KB |  |
+| `check_docx_build.py` | 3.1 KB |  |
 | `v2_repair_checklist.py` | 3.1 KB |  |
 | `check_url_consistency.py` | 3.0 KB |  |
 | `w4_model_vs_llm.py` | 3.0 KB |  |
@@ -529,7 +530,6 @@
 | `check_llm_class_coverage.py` | 2.1 KB |  |
 | `v2_w2_diag.py` | 2.1 KB |  |
 | `check_video.py` | 2.1 KB |  |
-| `check_docx_build.py` | 2.1 KB |  |
 | `demo_sound.py` | 2.1 KB |  |
 | `v2_check_product_code.py` | 2.1 KB |  |
 | `_coldstart_test/demo_sound.py` | 2.1 KB |  |
@@ -645,7 +645,7 @@
 | `multi_label_model/` | 256.1 MB | 冻结的多标签归因模型权重（约 256MB），不入 git |
 | `sound_model/` | 256.1 MB | 冻结的二分类模型权重（约 256MB），不入 git |
 
-## 其他（147 项，57.9 MB）
+## 其他（148 项，57.9 MB）
 
 | 文件 | 大小 | 用途 |
 |---|---|---|
@@ -666,7 +666,7 @@
 | `v2/types_val_notes.jsonl` | 84.5 KB |  |
 | `v2/clean_alerts_notes_ridx.jsonl` | 64.7 KB |  |
 | `v2/s1_add100_notes.jsonl` | 53.5 KB |  |
-| `更新世界的锋芒_SoundInsight_决赛入围定稿作品.docx` | 47.3 KB |  |
+| `更新世界的锋芒_SoundInsight_决赛入围定稿作品.docx` | 48.8 KB |  |
 | `v2/gold_set_key.json` | 39.3 KB |  |
 | `v2/xcat_speaker_split.json` | 36.1 KB |  |
 | `v2/cross_model_review.jsonl` | 35.4 KB |  |
@@ -683,7 +683,7 @@
 | `v2/w17_failure_stats.json` | 6.5 KB |  |
 | `v2/clean_pool_disc.json` | 6.1 KB |  |
 | `v2/w4_prescreen.json` | 6.0 KB |  |
-| `v2/push_log.json` | 4.5 KB |  |
+| `v2/push_log.json` | 4.8 KB |  |
 | `v2/w7_calibration.json` | 4.4 KB |  |
 | `v2/alert_scope_filtered.json` | 4.2 KB |  |
 | `v2/attribution_user_notes.json` | 4.2 KB |  |
@@ -758,6 +758,7 @@
 | `v2/outside_gate_fp.json` | 0.6 KB |  |
 | `v2/xcat_speaker_eval.json` | 0.6 KB |  |
 | `v2/xcat_mini_scored.json` | 0.6 KB |  |
+| `v2/xcat_by_category.json` | 0.5 KB |  |
 | `v2/v3lite_assertion.json` | 0.5 KB |  |
 | `difficulty_stratification.json` | 0.5 KB |  |
 | `v2/attribution_llm_coverage.json` | 0.4 KB |  |

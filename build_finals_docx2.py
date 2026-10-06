@@ -170,7 +170,7 @@ def polish_cover_and_checklist(doc) -> tuple[bool, int]:
     return cover_done, ticked
 
 
-def fix_participation_section(doc) -> tuple[int, int]:
+def fix_participation_section(doc) -> tuple[int, int, int]:
     """清理"二、参赛信息"的重复与占位：
 
     - 模板结构是「表（参赛场景／方案名称） + 一行『一句话定义（…）：』」；
@@ -194,8 +194,60 @@ def fix_participation_section(doc) -> tuple[int, int]:
             else:
                 p.add_run("一句话定义：" + definition)
             rewritten += 1
-    return removed, rewritten
+    # 把「适用范围与价值边界」段移到定义之后（评委应先读到价值，再读到边界）
+    def_p = boundary_p = None
+    for p in doc.paragraphs:
+        t = p.text.strip()
+        if t.startswith("一句话定义：") and def_p is None:
+            def_p = p
+        elif ("价值边界" in t) and boundary_p is None:
+            boundary_p = p
+    if def_p is not None and boundary_p is not None:
+        boundary_p._p.getparent().remove(boundary_p._p)
+        def_p._p.addnext(boundary_p._p)
+        moved = 1
+    else:
+        moved = 0
+    return removed, rewritten, moved
 
+
+def apply_inline_format(doc) -> tuple[int, int]:
+    """把 Markdown 行内标记转为 Word 格式：`**粗体**` → bold run；反引号 → 去掉（保留文本）。
+
+    只处理含标记的段落，避免影响模板自带的样式与其它 run 级格式。
+    """
+    n_bold = n_code = 0
+
+    def fix_paragraph(p) -> None:
+        nonlocal n_bold, n_code
+        t = p.text or ""
+        if "**" not in t and "`" not in t:
+            return
+        segs = []
+        for k, part in enumerate(t.split("**")):
+            if part == "":
+                continue
+            if "`" in part:
+                n_code += part.count("`")
+                part = part.replace("`", "")
+            segs.append((part, k % 2 == 1))
+        if not segs:
+            return
+        for r in list(p.runs):
+            r._element.getparent().remove(r._element)
+        for text, bold in segs:
+            run = p.add_run(text)
+            run.bold = bold
+        n_bold += 1
+
+    for p in doc.paragraphs:
+        fix_paragraph(p)
+    for tb in doc.tables:
+        for row in tb.rows:
+            for cell in row.cells:
+                for p in cell.paragraphs:
+                    fix_paragraph(p)
+    return n_bold, n_code
 
 def insert_after(doc, paragraph, lines: list[str]) -> int:
     """在段落之后依次插入内容（正文段落或 Word 表格），返回插入的块数。"""
@@ -258,7 +310,7 @@ def main() -> int:
                 break
     print(f"已填充小节 {len(matched)}：{'、'.join(matched)}")
     print(f"插入内容块 {inserted}")
-    rm, rw = fix_participation_section(doc)
+    rm, rw, mv = fix_participation_section(doc)
     print(f"参赛信息节：删除重复段落 {rm}、改写占位行 {rw}")
     # 附录：同样支持 Markdown 表格 → Word 表格
     app_blocks = split_blocks(APPENDIX)
@@ -288,6 +340,8 @@ def main() -> int:
             n_tbl += 1
     print(f"追加附录：{len(app_blocks)} 块（含 {n_tbl} 个表格）")
     fill_tables(doc)
+    n_bold, n_code = apply_inline_format(doc)
+    print(f"行内格式化：粗体 {n_bold} 处、去反引号 {n_code} 处")
     doc.save(args.out)
     print(f"[写出] {os.path.basename(args.out)}（{os.path.getsize(args.out)/1024:.0f} KB）")
 

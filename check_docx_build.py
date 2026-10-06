@@ -41,6 +41,22 @@ def main() -> int:
                     and f.startswith("更新世界的锋芒_SoundInsight_决赛")]
             if not docx or os.path.getsize(os.path.join(HERE, docx[0])) < 10000:
                 bad.append("docx 产物缺失或过小")
+            # 机械门：docx 不得残留 Markdown 行内标记（round-03 自查发现 32% 段落带字面 `**`）
+            try:
+                from docx import Document as _D
+                _d = _D(os.path.join(HERE, docx[0]))
+                _texts = [(p.text or "") for p in _d.paragraphs]
+                _texts += [c.text for _t in _d.tables for _r in _t.rows for c in _r.cells]
+                _bad_bold = sum(1 for t in _texts if "**" in t)
+                _bad_tick = sum(1 for t in _texts if "`" in t)
+                if _bad_bold or _bad_tick:
+                    bad.append(f"docx 残留 Markdown 标记：** {_bad_bold} 处、反引号 {_bad_tick} 处"
+                               "（应由 apply_inline_format 转换）")
+                else:
+                    print(f"- [OK] docx 无 Markdown 残留（粗体 run "
+                          f"{sum(1 for p in _d.paragraphs for r in p.runs if r.bold)} 个）")
+            except Exception as _e:  # noqa: BLE001
+                bad.append(f"docx Markdown 残留检查失败：{type(_e).__name__}")
             else:
                 print(f"- [OK] 生成器语法与 docx 构建正常（{docx[0]}，"
                       f"{os.path.getsize(os.path.join(HERE, docx[0])):,} B）")
