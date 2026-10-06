@@ -52,10 +52,13 @@ def cost_line(n: int, lang: str = "zh") -> str:
         return (f"- Cost: local inference = 0 API fee; same batch via LLM "
                 f"(deepseek-chat, measured ~$0.03/1000) ≈ ${est:.2f} "
                 f"(see llm_baseline.md).")
+    # 两个实测单价对应不同任务，必须在可见处说明（round-03 回验 A2-5）
     return (f"- 成本对照：本地推理 0 API 费用；同等 {n} 条若调用 LLM"
             # 注意：$0.03/千条＝二元短文本实测；$0.1378/千条＝五类归因长文本重 prompt 实测
 
-            f"（deepseek-chat，实测约 $0.03/1000 条，见 llm_baseline.md）"
+            f"（deepseek-chat；**两个实测单价**：二元判定短文本 **$0.03/千条**（llm_baseline.md）、"
+            "五类归因长文本重 prompt **$0.1378/千条**（b_measure）——"
+            "本行按二元口径估算）"
             f"约 ${est:.2f}。")
 
 

@@ -57,8 +57,12 @@ trig = [(i, float(q)) for i, q in zip(clean, p) if q >= 0.5]
 print(f"判别器触发：**{len(trig)} 条**（v1 对照 15 条 = 0.105%）"
       f"｜触发率 {len(trig)/len(clean)*100:.3f}%")
 lo, hi = len(clean) * 0.0026, len(clean) * 0.0221
+r_lo = len(trig) / hi * 100 if hi else 0.0
+r_hi = len(trig) / lo * 100 if lo else 0.0
 print(f"期望正例区间（X-14 基线 0.26–2.21%）：{lo:.0f}–{hi:.0f} 条"
-      f" ⇒ 隐含精确率上界 {hi/max(1,len(trig)):.2f}")
+      f" ⇒ 期望正例÷告警 = {lo/max(1,len(trig)):.2f}–{hi/max(1,len(trig)):.2f}"
+      f"（该比值 >1 即触发不足，**不是精确率**）｜"
+      f"**若 {len(trig)} 条全为真阳，召回也只有 {r_lo:.0f}%–{r_hi:.0f}%**")
 rows = [{"row_index": i, "prob": round(q, 6), "text": texts[i][:600],
          "rating": None, "note": "判别器触发（干净池）"} for i, q in
         sorted(trig, key=lambda x: -x[1])]

@@ -1,6 +1,6 @@
 # 文件地图（由 make_ai_handoff.py 自动生成，勿手改）
 
-> 生成时间：2026-10-06 11:29；共 701 个条目；体积单位 KB/MB。
+> 生成时间：2026-10-06 11:50；共 702 个条目；体积单位 KB/MB。
 
 ## 提交物（5 项，44.3 MB）
 
@@ -9,7 +9,7 @@
 | `更新世界的锋芒_SoundInsight_复赛作品.zip` | 42.4 MB |  |
 | `更新世界的锋芒_SoundInsight_其他材料.zip` | 1.6 MB |  |
 | `更新世界的锋芒_SoundInsight_复赛作品.pdf` | 210.1 KB |  |
-| `更新世界的锋芒_SoundInsight_Demo.zip` | 116.1 KB |  |
+| `更新世界的锋芒_SoundInsight_Demo.zip` | 116.2 KB |  |
 | `更新世界的锋芒_SoundInsight_复赛作品.docx` | 48.0 KB |  |
 
 ## 主文档与模板（14 项，0.1 MB）
@@ -41,9 +41,9 @@
 | `qna_preparation.md` | 5.9 KB | 答辩 Q&A（10 问，含口径警示） |
 | `edge_case_benchmark.py` | 5.6 KB |  |
 | `MODEL_CARD.md` | 5.0 KB | 模型卡：任务/基座/指标/六条局限 |
+| `_coldstart_test/MODEL_CARD.md` | 5.0 KB |  |
 | `results_summary.py` | 4.8 KB |  |
 | `results_summary.md` | 4.8 KB | 冻结数字唯一权威源（含 ±1 混淆矩阵调和行） |
-| `_coldstart_test/MODEL_CARD.md` | 4.7 KB |  |
 | `length_bucket_eval.py` | 3.9 KB |  |
 | `edge_cases.md` | 3.2 KB |  |
 | `_coldstart_test/edge_cases.md` | 3.2 KB |  |
@@ -62,7 +62,7 @@
 | `confidence_tiered.md` | 0.7 KB | 三星补漏置信度分层与中置信剔除记录 |
 | `significance_test.md` | 0.6 KB | Welch t 检验（p=0.000932） |
 
-## 过程与交接文档（133 项，4.4 MB）
+## 过程与交接文档（134 项，4.4 MB）
 
 | 文件 | 大小 | 用途 |
 |---|---|---|
@@ -97,11 +97,11 @@
 | `docs/three_stage_comparison.md` | 21.9 KB |  |
 | `docs/project_full_record.md` | 21.6 KB | 初赛→复赛全流程记录 |
 | `docs/gold_set/bias_probe_sheet.md` | 21.5 KB |  |
+| `docs/bus/round-03/kimi-audit-round03.md` | 21.2 KB |  |
 | `docs/v2_acceptance_benchmark.md` | 20.4 KB |  |
 | `docs/D13_seal_declaration.md` | 20.1 KB | D13 封包声明（提交技术质检终审） |
+| `docs/demo_uptime_log.md` | 20.0 KB |  |
 | `docs/final_review_and_execution_plan.md` | 19.9 KB |  |
-| `docs/demo_uptime_log.md` | 19.7 KB |  |
-| `docs/bus/round-03/kimi-audit-round03.md` | 18.5 KB |  |
 | `docs/gold_set/gold_standard_findings.md` | 18.1 KB |  |
 | `docs/overnight_summary.md` | 17.3 KB |  |
 | `docs/bus/round-01/dsh.md` | 16.0 KB |  |
@@ -146,7 +146,7 @@
 | `docs/scoped_findings.md` | 5.9 KB |  |
 | `docs/bus/round-02/dsh.md` | 5.6 KB |  |
 | `docs/split_manifest.md` | 5.4 KB |  |
-| `docs/bus/INDEX.md` | 5.2 KB |  |
+| `docs/bus/INDEX.md` | 5.4 KB |  |
 | `docs/PAUSE_SNAPSHOT.md` | 5.2 KB |  |
 | `docs/llm_credential_status.md` | 5.0 KB |  |
 | `docs/b_measure_results.md` | 5.0 KB |  |
@@ -159,8 +159,8 @@
 | `docs/regrets_and_gaps.md` | 4.5 KB |  |
 | `docs/evidence_index_exp.md` | 4.4 KB |  |
 | `docs/e2_erratum.md` | 4.2 KB |  |
+| `docs/p0_preregistration.md` | 4.1 KB |  |
 | `docs/bus/round-02/s5_receipt_evidence.md` | 4.1 KB |  |
-| `docs/p0_preregistration.md` | 4.0 KB |  |
 | `docs/gold_set/clean_pool_disc_items.csv` | 3.6 KB |  |
 | `docs/repo_hygiene_scan.md` | 3.5 KB |  |
 | `docs/dataset_audit.md` | 3.5 KB | 数据集字段考古 |
@@ -182,6 +182,7 @@
 | `docs/p1_preregistration.md` | 2.7 KB |  |
 | `docs/ppt_claims_erratum.md` | 2.6 KB |  |
 | `docs/gold_set/bias_probe_design.md` | 2.6 KB |  |
+| `docs/bus/round-03/dsh-response.md` | 2.4 KB |  |
 | `docs/W5_cv_interpretation.md` | 2.2 KB |  |
 | `docs/w13_keyword_miss_rate.md` | 2.1 KB |  |
 | `docs/s6_preregistration.md` | 2.1 KB |  |
@@ -341,7 +342,7 @@
 | 文件 | 大小 | 用途 |
 |---|---|---|
 | `check_doc_numbers.py` | 58.0 KB | 数字审计 + 模板格式对照脚本 |
-| `build_finals_appendix.py` | 34.2 KB |  |
+| `build_finals_appendix.py` | 34.4 KB |  |
 | `s34_docs.py` | 19.7 KB |  |
 | `scan_repo_hygiene.py` | 19.7 KB |  |
 | `v2_meta_analysis.py` | 19.1 KB |  |
@@ -350,11 +351,11 @@
 | `apply_human_rulings.py` | 15.9 KB |  |
 | `test_audit_checks.py` | 15.5 KB |  |
 | `build_finals_content.py` | 13.6 KB |  |
+| `report_builder.py` | 13.5 KB |  |
 | `v2_w4_mine.py` | 13.2 KB |  |
-| `report_builder.py` | 13.2 KB |  |
+| `_coldstart_test/report_builder.py` | 13.2 KB |  |
 | `build_finals_docx2.py` | 12.7 KB |  |
 | `build_pdf_v2.py` | 12.4 KB |  |
-| `_coldstart_test/report_builder.py` | 12.2 KB |  |
 | `v2_w1_longtext.py` | 12.1 KB |  |
 | `make_ai_handoff.py` | 11.5 KB |  |
 | `score_gold_set.py` | 11.5 KB |  |
@@ -450,11 +451,11 @@
 | `verify_finals_package.py` | 4.4 KB |  |
 | `check_refs_and_deps.py` | 4.4 KB |  |
 | `analyze_s5.py` | 4.3 KB |  |
+| `measure_clean_disc.py` | 4.3 KB |  |
 | `retime_srt.py` | 4.2 KB |  |
 | `score_recheck_full.py` | 4.1 KB |  |
 | `check_external_deps.py` | 4.1 KB |  |
 | `score_vocab_test.py` | 4.1 KB |  |
-| `measure_clean_disc.py` | 4.0 KB |  |
 | `tune_per_class_threshold.py` | 4.0 KB |  |
 | `test_model.py` | 3.9 KB |  |
 | `m3_m8a_recheck.py` | 3.9 KB |  |
@@ -541,8 +542,8 @@
 | `_coldstart_test/install.bat` | 1.7 KB |  |
 | `mask_history_secrets.py` | 1.6 KB |  |
 | `prep_quick_split.py` | 1.6 KB |  |
-| `_coldstart_test/config.json` | 1.5 KB |  |
 | `config.json` | 1.5 KB |  |
+| `_coldstart_test/config.json` | 1.5 KB |  |
 | `v2_hybrid_selftest.py` | 1.5 KB |  |
 | `verify_remote_weights.py` | 1.5 KB |  |
 | `verify_download_urls.py` | 1.5 KB |  |
@@ -615,8 +616,8 @@
 | 文件 | 大小 | 用途 |
 |---|---|---|
 | `insight_report.xlsx` | 7.1 KB |  |
+| `_coldstart_test/insight_report_v2.md` | 4.1 KB |  |
 | `insight_report_v2.md` | 3.9 KB |  |
-| `_coldstart_test/insight_report_v2.md` | 3.5 KB |  |
 | `insight_report_v2_en.md` | 3.2 KB |  |
 | `_coldstart_test/insight_report_v2_en.md` | 3.2 KB |  |
 | `summary_log.txt` | 3.1 KB |  |
@@ -657,7 +658,7 @@
 | `v2/types_val_notes.jsonl` | 84.5 KB |  |
 | `v2/clean_alerts_notes_ridx.jsonl` | 64.7 KB |  |
 | `v2/s1_add100_notes.jsonl` | 53.5 KB |  |
-| `更新世界的锋芒_SoundInsight_决赛入围定稿作品.docx` | 46.9 KB |  |
+| `更新世界的锋芒_SoundInsight_决赛入围定稿作品.docx` | 47.0 KB |  |
 | `v2/gold_set_key.json` | 39.3 KB |  |
 | `v2/cross_model_review.jsonl` | 35.4 KB |  |
 | `v2/s5_notes.jsonl` | 31.2 KB |  |
@@ -677,10 +678,10 @@
 | `v2/alert_scope_filtered.json` | 4.2 KB |  |
 | `v2/attribution_user_notes.json` | 4.2 KB |  |
 | `v2/w5_final.json` | 3.9 KB |  |
+| `v2/push_log.json` | 3.6 KB |  |
 | `v2/s1_add100_ids.json` | 3.6 KB |  |
 | `v2/types_validation_ids.json` | 3.6 KB |  |
 | `v2/p0_accept_ids.json` | 3.5 KB |  |
-| `v2/push_log.json` | 3.4 KB |  |
 | `v2/same_basis_comparison.json` | 3.2 KB |  |
 | `v2/w14_w15_w16_summary.json` | 3.1 KB |  |
 | `v2/split_manifest.json` | 3.1 KB |  |
@@ -766,7 +767,6 @@
 | `v2/scope_filter_tradeoff.json` | 0.2 KB |  |
 | `model_hashes.json` | 0.2 KB |  |
 | `_coldstart_test/model_hashes.json` | 0.2 KB |  |
-| `v2/checks_result.json` | 0.2 KB |  |
 | `v2/gate_vocab_gap.json` | 0.2 KB |  |
 | `v2/w4_summary.json` | 0.2 KB |  |
 | `v2/clean_alert_rate.json` | 0.2 KB |  |
@@ -780,5 +780,6 @@
 | `v2/v5_eval.json` | 0.1 KB |  |
 | `v2/gold_set_batch.json` | 0.1 KB |  |
 | `v2/p1_label_stats.json` | 0.1 KB |  |
+| `v2/checks_result.json` | 0.1 KB |  |
 | `v2/v3liteb_manifest.json` | 0.1 KB |  |
 | `v2/p0_accept_contamination.json` | 0.1 KB |  |
