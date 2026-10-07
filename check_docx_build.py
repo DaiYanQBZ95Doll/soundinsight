@@ -35,7 +35,18 @@ def main() -> int:
                            capture_output=True, text=True, encoding="utf-8", errors="replace")
         out = (r.stdout or "") + (r.stderr or "")
         if r.returncode != 0:
-            bad.append(f"docx 构建失败（rc={r.returncode}）：{out.strip()[-200:]}")
+            _tail = [ln for ln in out.strip().splitlines() if ln.strip()]
+            _exc = _tail[-1][:200] if _tail else "(无输出)"
+            _hint = ""
+            _low = out.lower()
+            if "permissionerror" in _low or "errno 13" in _low or "access is denied" in _low:
+                _hint = ("｜**提示：写入被拒绝** —— 常见原因：① docx 正被 Word/资源管理器占用；"
+                         "② 当前执行环境是只读沙箱（请换到普通 PowerShell 运行）；"
+                         "③ 目标文件/目录 ACL 受限")
+            elif "modulenotfounderror" in _low or "importerror" in _low:
+                _hint = "｜**提示：依赖缺失** —— 请确认 python-docx 等已安装"
+            bad.append(f"docx 构建失败（rc={r.returncode}）：**{_exc}**{_hint}\n"
+                       f"        完整输出（前 5 行）：" + " / ".join(_tail[:5])[:400])
         else:
             docx = [f for f in os.listdir(HERE) if f.endswith(".docx")
                     and f.startswith("更新世界的锋芒_SoundInsight_决赛")]

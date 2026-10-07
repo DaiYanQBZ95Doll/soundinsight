@@ -1,6 +1,6 @@
 # 文件地图（由 make_ai_handoff.py 自动生成，勿手改）
 
-> 生成时间：2026-10-07 20:18；共 729 个条目；体积单位 KB/MB。
+> 生成时间：2026-10-07 20:30；共 729 个条目；体积单位 KB/MB。
 
 ## 提交物（5 项，44.3 MB）
 
@@ -97,7 +97,7 @@
 | `docs/gold_set/xcat_mini.csv` | 40.9 KB |  |
 | `docs/final_project_review_and_execution_plan.md` | 36.3 KB |  |
 | `docs/retrospective_and_reflection.md` | 27.9 KB |  |
-| `docs/demo_uptime_log.md` | 25.8 KB |  |
+| `docs/demo_uptime_log.md` | 26.1 KB |  |
 | `docs/gold_set/answer_sheet_s5_control.md` | 25.1 KB |  |
 | `docs/three_stage_comparison.md` | 21.9 KB |  |
 | `docs/project_full_record.md` | 21.6 KB | 初赛→复赛全流程记录 |
@@ -376,6 +376,7 @@
 | `push_daily.py` | 9.7 KB |  |
 | `s2_membership.py` | 9.4 KB |  |
 | `build_submission.py` | 9.3 KB |  |
+| `run_all_checks.py` | 9.2 KB |  |
 | `v2_w2_perclass.py` | 9.1 KB |  |
 | `review_pool.py` | 9.1 KB |  |
 | `outside_gate_fp.py` | 8.9 KB |  |
@@ -386,7 +387,6 @@
 | `make_attribution_sheet.py` | 8.4 KB |  |
 | `v2_w1_hybrid.py` | 8.4 KB |  |
 | `v2_w17_failure_stats.py` | 8.4 KB |  |
-| `run_all_checks.py` | 8.4 KB |  |
 | `p1_train_models.py` | 8.3 KB |  |
 | `make_pause_snapshot.py` | 8.2 KB |  |
 | `ablation_train.py` | 8.2 KB |  |
@@ -471,6 +471,7 @@
 | `check_external_deps.py` | 4.1 KB |  |
 | `score_vocab_test.py` | 4.1 KB |  |
 | `tune_per_class_threshold.py` | 4.0 KB |  |
+| `check_docx_build.py` | 4.0 KB |  |
 | `score_xcat_mini.py` | 3.9 KB |  |
 | `test_model.py` | 3.9 KB |  |
 | `m3_m8a_recheck.py` | 3.9 KB |  |
@@ -499,7 +500,6 @@
 | `check_demo_alive.py` | 3.1 KB |  |
 | `analyze_b_measure.py` | 3.1 KB |  |
 | `check_scope_wording.py` | 3.1 KB |  |
-| `check_docx_build.py` | 3.1 KB |  |
 | `v2_repair_checklist.py` | 3.1 KB |  |
 | `check_url_consistency.py` | 3.0 KB |  |
 | `w4_model_vs_llm.py` | 3.0 KB |  |

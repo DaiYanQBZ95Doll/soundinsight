@@ -141,6 +141,19 @@ def main() -> int:
             print(f"        → 步骤失败，命令：python {' '.join(cmd)}")
             if p.stderr:
                 print(f"        stderr: {p.stderr.strip().splitlines()[-1][:160]}")
+            # 失败留证：完整输出落盘，供事后诊断（终端只看得到截断的尾部）
+            try:
+                _ld = os.path.join(HERE, "_chain_logs")
+                os.makedirs(_ld, exist_ok=True)
+                _safe = "".join(c if c.isalnum() or c in "._-" else "_" for c in name)[:60]
+                _lp = os.path.join(_ld, f"step-{len(results):02d}-{_safe}.log")
+                with open(_lp, "w", encoding="utf-8") as _fh:
+                    _fh.write(f"# 步骤：{name}\n# 命令：python {' '.join(cmd)}\n"
+                              f"# 退出码：{p.returncode}\n\n== STDOUT ==\n{p.stdout or ''}\n"
+                              f"\n== STDERR ==\n{p.stderr or ''}\n")
+                print(f"        → 完整输出已留证：{os.path.relpath(_lp, HERE)}")
+            except OSError as _e:
+                print(f"        （留证失败：{type(_e).__name__}）")
 
     failed = [n for n, ok, _, _ in results if not ok and n not in NON_FATAL]
     _write_machine_result(len(results), failed)
