@@ -2,48 +2,51 @@
 
 ## 一、总体概况
 分析对象：sample_reviews_100.csv
-分析时间：2026-10-05 17:13
+分析时间：2026-10-07 15:56
 评论总数：100 条（其中非英文 0 条已跳过）
-**未判定（不含音频词汇）：68 条（占比 68.00%）**——本工具**只对提到声音的评论判定**；其余按「未判定」计，**不计入差评也不计入正常**。
-**档位**：优先处理档 **12** 条（**人工盲判 P 75–78%、召回 68%**（46–100%），两张独立样本；同条目捕获 39/41 真阳 vs v2 26/41，见登记表 X-25～X-28）｜待复核档 **0** 条｜范围外档 **68** 条——档位名后的实测数字来自**人工盲判验收**（100 条分层样本），**引用时不得省略**。
+**未判定（不含音频词汇）：80 条（占比 80.00%）**——本工具**只对提到声音的评论判定**；其余按「未判定」计，**不计入差评也不计入正常**。
+**档位**：优先处理档 **8** 条（**人工盲判 P 75–78%、召回 68%**（46–100%），两张独立样本；同条目捕获 39/41 真阳 vs v2 26/41，见登记表 X-25～X-28）｜待复核档 **0** 条｜范围外档 **80** 条——档位名后的实测数字来自**人工盲判验收**（100 条分层样本），**引用时不得省略**。
 ⚠️ **未判定 ≠ 正常**：范围外档只是我们未评估，不代表该评论没有问题。
-有效评论：32 条
-音质差评数：12 条（占比 37.50%）
-平均评分：3.50
+**两条线不是一条线**：**分诊档 0.95**（优先处理档的下界，用于分流人工）与**判定线 0.9744**（写进 threshold.json 的判正阈值，用于「是不是音质差评」的结论）——0.95–0.9744 之间的评论会出现在优先处理档、但**不计入音质差评数**；两条线的口径来源不同（前者＝人工验收的分档，后者＝v1 冻结世代的调优档），引用时勿混。
+有效评论：20 条
+音质差评数：8 条（占比 40.00%）
+平均评分：3.25
 结论一句话：严重，音质差评率显著偏高，建议立即排查
 
 ## 二之二、非音质差评的类型分布（本地模型，初步）
-非负面/无抱怨 12｜音质(听感) 4｜其他 2｜功能/操作 1｜价格/性价比 1
+非负面/无抱怨 5｜音质(听感) 4｜功能/操作 1｜佩戴/舒适 1
 ⚠️ 类型由**本地模型**给出（训练自 LLM 标签，**非精度最优**），用于分诊；未经人工校准前不得作为结论引用。
 
 ## 二之三、不可归因原因（提到声音但说不清）
-NONE 9｜not_headphone 2｜weak_praise 1
+⚠️ 与上一节同源：**本地模型、训练自 LLM 标签、未经人工校准**，仅作分诊线索，不得作为结论引用。
+NONE 7｜functional_not_sound 1
 
 ## 二、问题分布
 | 问题类别 | 数量 | 占比 | 优先级 |
 |---------|------|------|--------|
-| 杂音 | 6 | 46.2% | 高 |
-| 音量 | 3 | 23.1% | 高 |
-| 低音 | 2 | 15.4% | 高 |
-| 清晰度 | 2 | 15.4% | 中 |
+| 低音 | 3 | 30.0% | 高 |
+| 杂音 | 3 | 30.0% | 高 |
+| 清晰度 | 2 | 20.0% | 高 |
+| 音量 | 2 | 20.0% | 中 |
 | 高音 | 0 | 0.0% | 低 |
 
 ## 三、典型案例
-1. （99.9%）I bought this Nexus 7 32G at the end of January 2013 via online store and have had it since February 2013.  Within about
-   归因概率：音量 0.86、清晰度 0.22、杂音 0.12
-2. （99.9%）For the relatively little money paid - this is an OK receiver. My previous Sony of the similar basic level has been play
-   归因概率：低音 0.91、清晰度 0.37、高音 0.23
-3. （99.9%）This is much smaller than I thought and does not have the best bass in the music.  My husband says he likes it but he ma
-   归因概率：低音 0.90、清晰度 0.16、音量 0.14
-4. （99.9%）Worked great and sounded wonderful for a week and then nothing. No sound.
-   归因概率：音量 0.79、杂音 0.25、清晰度 0.06
-5. （99.9%）I have mixed feelings about these.  Overall they sound pretty good, and  I've heard notes on some of my classical albums
-   归因概率：清晰度 0.92、高音 0.08、低音 0.07
+（案例**优先选取耳机品类**；若出现非目标品类，已在条目后显式标注）
+1. （99.9%）These caught my attention because of the cool led inside the charging case. Practical use though they kind of fell short　【品类：耳机】
+   归因概率：音量 0.93、清晰度 0.16、低音 0.11
+2. （99.9%）After 4 months of careful use, only one speaker works. Apparently the connection of the cord to the headset is flimsy an　【品类：耳机】
+   归因概率：杂音 0.94、清晰度 0.11、音量 0.09
+3. （99.9%）I definitely prefer to use Bluetooth earbuds any day over wired, but sometimes it can't be helped.  Such as times when m　【品类：耳机】
+   归因概率：低音 0.92、音量 0.29、高音 0.17
+4. （99.9%）These were my first pair of Bluetooth headphones and honestly I wasn't impressed. They didn't work very well and the sou　【品类：耳机】
+   归因概率：清晰度 0.94、高音 0.09、音量 0.09
+5. （99.8%）For the price I paid I didn't have high expectations, but I did expect them to work.  To be completely honest, I feel li　【品类：耳机】
+   归因概率：音量 0.90、杂音 0.13、清晰度 0.08
 
 ## 四、行动建议
-- 紧急（杂音｜置信档：高）：建议检查 生产/质检 环节，预期降低该类差评率。
-- 紧急（音量｜置信档：高）：建议检查 客服/详情页 环节，预期降低该类差评率。
 - 紧急（低音｜置信档：高）：建议检查 生产/质检 环节，预期降低该类差评率。
+- 紧急（杂音｜置信档：高）：建议检查 生产/质检 环节，预期降低该类差评率。
+- 紧急（清晰度｜置信档：高）：建议检查 客服/详情页 环节，预期降低该类差评率。
 
 ## 五、验证指标
 建议复评周期：2-4 周后重新运行批量分析，追踪同口径差评率变化。
@@ -51,11 +54,11 @@ NONE 9｜not_headphone 2｜weak_praise 1
 ## 六、置信度档位与建议动作
 | 档位 | 概率区间 | 含义 | 建议动作 |
 |---|---|---|---|
-| 高 | ≥ 0.9744（调优档） | 高置信音质差评 | 直接进入整改/研发评审（12 条） |
+| 高 | ≥ 0.9744（调优档） | 高置信音质差评 | 直接进入整改/研发评审（8 条） |
 | 中 | 0.5 – 0.9744 | 疑似负面，证据不足 | 先做小规模人工抽查（0 条） |
-| 低 | < 0.5 | 判为正常 | 仅计入趋势观察，不进入问题分布（20 条） |
+| 低 | < 0.5 | 判为正常 | 仅计入趋势观察，不进入问题分布（12 条） |
 
 ## 七、附注
-本报告由 SoundInsight 自动生成，判定基于 DistilBERT 微调模型（验证集 F1 0.687，阈值 0.97）与五类多标签归因模型，边界案例存在一定误差，关键决策建议结合人工抽查。
+本报告由 SoundInsight 自动生成，判定基于 DistilBERT 微调模型（**判别器世代**；人工盲判口径 P 75–78%、召回 68.3%（46–100%），两张独立样本各 50 条；LLM 标签口径见附录 C 第 16 条）与五类多标签归因模型（人工口径宏 F1 0.44–0.52），边界案例存在一定误差，关键决策建议结合人工抽查。
 模型输出概率未经校准，仅供排序参考（见 calibration_eval.md）。
-- 成本对照：本地推理 0 API 费用；同等 32 条若调用 LLM（deepseek-chat，实测约 $0.03/1000 条，见 llm_baseline.md）约 $0.00。
+- 成本对照：本地推理 0 API 费用；同等 20 条若调用 LLM（deepseek-chat；**两个实测单价**：二元判定短文本 **$0.03/千条**（llm_baseline.md）、五类归因长文本重 prompt **$0.1378/千条**（b_measure）——本行按二元口径估算）约 $0.00。

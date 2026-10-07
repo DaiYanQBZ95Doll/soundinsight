@@ -9,15 +9,15 @@
     {
       "label": "download_models",
       "rc": 0,
-      "sec": 75.9,
+      "sec": 231.1,
       "tail": "完成 sound_model/config.json (0.0 MB)\n完成 sound_model/tokenizer.json (0.7 MB)\n完成 sound_model/tokenizer_config.json (0.0 MB)\n完成 sound_model/threshold.json (0.0 MB)\n完成 sound_model/model.safetensors (267.8 MB)\n完成 multi_label_model/config.json (0.0 MB)\n完成 multi_label_model/tokenizer.json (0.7 MB)\n完成 multi_label_model/tokenizer_config.json (0.0 MB)\n完成 multi_label_model/issue_labels.json (0.0 MB)\n完成 multi_label_model/model.safetensors (267.8 MB)\n哈希校验通过：sound_model/model.safetensors\n全部模型文件下载并校验完成。",
       "ok": true
     },
     {
       "label": "agent_run",
       "rc": 0,
-      "sec": 10.2,
-      "tail": "析，追踪同口径差评率变化。\n\n## 六、置信度档位与建议动作\n| 档位 | 概率区间 | 含义 | 建议动作 |\n|---|---|---|---|\n| 高 | ≥ 0.9744（调优档） | 高置信音质差评 | 直接进入整改/研发评审（12 条） |\n| 中 | 0.5 – 0.9744 | 疑似负面，证据不足 | 先做小规模人工抽查（0 条） |\n| 低 | < 0.5 | 判为正常 | 仅计入趋势观察，不进入问题分布（20 条） |\n\n## 七、附注\n本报告由 SoundInsight 自动生成，判定基于 DistilBERT 微调模型（**判别器世代**；人工盲判口径 P 75–78%、召回 68.3%（46–100%），两张独立样本各 50 条；LLM 标签口径见附录 C 第 16 条）与五类多标签归因模型（人工口径宏 F1 0.44–0.52），边界案例存在一定误差，关键决策建议结合人工抽查。\n模型输出概率未经校准，仅供排序参考（见 calibration_eval.md）。\n- 成本对照：本地推理 0 API 费用；同等 32 条若调用 LLM（deepseek-chat，实测约 $0.03/1000 条，见 llm_baseline.md）约 $0.00。\n\nLoading weights:   0%|          | 0/104 [00:00<?, ?it/s]\nLoading weights: 100%|██████████| 104/104 [00:00<00:00, 13003.66it/s]\n\nLoading weights:   0%|          | 0/104 [00:00<?, ?it/s]\nLoading weights: 100%|██████████| 104/104 [00:00<00:00, 11512.47it/s]",
+      "sec": 12.2,
+      "tail": "|---|---|\n| 高 | ≥ 0.9744（调优档） | 高置信音质差评 | 直接进入整改/研发评审（8 条） |\n| 中 | 0.5 – 0.9744 | 疑似负面，证据不足 | 先做小规模人工抽查（0 条） |\n| 低 | < 0.5 | 判为正常 | 仅计入趋势观察，不进入问题分布（12 条） |\n\n## 七、附注\n本报告由 SoundInsight 自动生成，判定基于 DistilBERT 微调模型（**判别器世代**；人工盲判口径 P 75–78%、召回 68.3%（46–100%），两张独立样本各 50 条；LLM 标签口径见附录 C 第 16 条）与五类多标签归因模型（人工口径宏 F1 0.44–0.52），边界案例存在一定误差，关键决策建议结合人工抽查。\n模型输出概率未经校准，仅供排序参考（见 calibration_eval.md）。\n- 成本对照：本地推理 0 API 费用；同等 20 条若调用 LLM（deepseek-chat；**两个实测单价**：二元判定短文本 **$0.03/千条**（llm_baseline.md）、五类归因长文本重 prompt **$0.1378/千条**（b_measure）——本行按二元口径估算）约 $0.00。\n\nLoading weights:   0%|          | 0/104 [00:00<?, ?it/s]\nLoading weights: 100%|██████████| 104/104 [00:00<00:00, 10043.23it/s]\n\nLoading weights:   0%|          | 0/104 [00:00<?, ?it/s]\nLoading weights: 100%|██████████| 104/104 [00:00<00:00, 9239.73it/s]",
       "ok": true
     }
   ],
@@ -27,7 +27,7 @@
   "hash_check_enabled": true,
   "report": {
     "sections": 7,
-    "n_out_of_scope": 68
+    "n_out_of_scope": 80
   },
   "freed_bytes": 535674356
 }

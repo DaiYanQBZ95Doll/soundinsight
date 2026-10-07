@@ -69,6 +69,10 @@ def _example_lines(examples, lang: str = "zh", top_text: int = 120):
         text = str(ex.get("text", "")).replace("\n", " ")[:top_text]
         prob = ex.get("prob")
         head = f"{i}. （{prob:.1%}）{text}" if prob is not None else f"{i}. {text}"
+        _sc = ex.get("scope")
+        if _sc:
+            head += ("　【品类：耳机】" if _sc in ("headphone", "earbud", "headset")
+                     else f"　【品类：{_sc}（非目标品类）】")
         lines.append(head)
         probs = ex.get("issue_probs") or {}
         if probs:
@@ -211,7 +215,8 @@ def build_report(*, src_name: str, n_total: int, n_unsupported: int,
     for name, cnt in ranked:
         lines.append(f"| {name} | {cnt} | "
                      f"{cnt / max(total_issue, 1):.1%} | {priority[name]} |")
-    lines += ["", "## 三、典型案例"]
+    lines += ["", "## 三、典型案例",
+              "（案例**优先选取耳机品类**；若出现非目标品类，已在条目后显式标注）"]
     lines += _example_lines(examples, "zh") or ["未检测到音质负面评论。"]
     lines += ["", "## 四、行动建议"]
     highs = [n for n, _ in ranked if priority[n] == "高"]

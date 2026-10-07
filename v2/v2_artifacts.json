@@ -15,7 +15,7 @@
     "v2\\w2_perclass_thresholds.json": "649f41ccfae25b1bf1609275f6421a937b7133d177b28f9174347e022c6e9c0c",
     "v2\\w7_calibration.json": "b8b08ff962f19991949623e59d95a7a0c7976bdbf2133761830952a8f08a9a59"
   },
-  "model_card": "v2\\MODEL_CARD_v2.md",
+  "model_card": "v2/MODEL_CARD_v2.md",
   "weight_availability": {
     "policy": "hash_and_command_only",
     "url": null,

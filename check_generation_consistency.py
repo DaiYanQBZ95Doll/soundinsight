@@ -23,7 +23,9 @@ sys.stdout.reconfigure(encoding="utf-8", errors="replace")
 HERE = os.path.dirname(os.path.abspath(__file__))
 # 必须出现当前世代标识的材料（面向评委或卖家）
 MATERIALS = ["build_finals_content.py", "build_finals_appendix.py", "report_builder.py",
-             "MODEL_CARD.md", "docs/SUBMISSION_CHECKLIST.md", "docs/split_manifest.md"]
+             "MODEL_CARD.md", "docs/SUBMISSION_CHECKLIST.md", "docs/split_manifest.md",
+             # round-04 Qwen 盲读发现 README 仍写「默认模型＝v1」→ 纳入机械门
+             "README.md", "deployment/README.md", "当前输出版本（对照视频）.html"]
 
 
 def sha(p):

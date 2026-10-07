@@ -143,14 +143,29 @@ def analyze(csv_path: str, export: bool = False, lang: str = "zh") -> str:
     except Exception as _e:  # noqa: BLE001
         print(f"  [提示] 类型/原因模型不可用，跳过：{type(_e).__name__}")
 
+    # 案例选择：优先「耳机家族」，避免展示位被跨品类误报占据（round-04 Qwen B3-3）
+    # 注意：这里必须直接调用品类模型——先前版本引用了不存在的变量，被 try/except 静默吞掉
+    try:
+        from predict_core import _scope_category as _scope_of
+        _cats = _scope_of(texts)
+        _scopes = {k: c for k, c in enumerate(_cats)}
+    except Exception as _e:  # noqa: BLE001
+        print(f"  [提示] 品类模型不可用，案例不做品类优先：{type(_e).__name__}")
+        _scopes = {}
+    _HP = ("headphone", "earbud", "headset")
+
+    def _rank(j):
+        in_hp = 1 if _scopes.get(j) in _HP else 0
+        return (-in_hp, -probs[j])
+
     examples = []
-    for i in sorted(neg_idx, key=lambda j: -probs[j])[:5]:
+    for i in sorted(neg_idx, key=_rank)[:5]:
         ip = {}
         if i in ml_probs_by_idx:
             ip = {name: float(ml_probs_by_idx[i][k])
                   for k, name in enumerate(issue_names)}
         examples.append({"text": texts[i], "prob": float(probs[i]),
-                         "issue_probs": ip})
+                         "issue_probs": ip, "scope": _scopes.get(i)})
 
     src_name = os.path.basename(csv_path)
     report = rb.build_report(

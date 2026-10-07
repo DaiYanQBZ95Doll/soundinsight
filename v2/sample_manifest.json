@@ -1,0 +1,9 @@
+{
+  "seed": 20261015,
+  "frame": "品类判为耳机家族的语料评论",
+  "n": 100,
+  "gate_inside": 20,
+  "gate_outside": 80,
+  "labelled_positive": 8,
+  "note": "替代原「全语料混合」样例，使演示代表目标用户（round-04 Qwen B3-3）"
+}

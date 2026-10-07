@@ -9,7 +9,10 @@
   "labels_source": "P1 LLM sound_complaint ∧ 本地品类模型（人工抽检确认率 96.6%，n=29）",
   "human_corrections": {
     "flipped_to_negative": 11,
-    "dropped": 1
+    "dropped": 1,
+    "flipped_positive_candidates": 1,
+    "negative_candidates_reconfirmed": 10,
+    "_field_note": "原 flipped_to_negative=11 语义偏宽（含 10 条本就为负的负例候选）；此处拆分，含义见两个新字段（Kimi R4 提示）"
   },
   "dedup": "normalized content sha256（先去重再划分）",
   "n_train": 2449,

@@ -1,6 +1,6 @@
 # 文件地图（由 make_ai_handoff.py 自动生成，勿手改）
 
-> 生成时间：2026-10-07 15:03；共 722 个条目；体积单位 KB/MB。
+> 生成时间：2026-10-07 17:53；共 726 个条目；体积单位 KB/MB。
 
 ## 提交物（5 项，44.3 MB）
 
@@ -9,7 +9,7 @@
 | `更新世界的锋芒_SoundInsight_复赛作品.zip` | 42.4 MB |  |
 | `更新世界的锋芒_SoundInsight_其他材料.zip` | 1.6 MB |  |
 | `更新世界的锋芒_SoundInsight_复赛作品.pdf` | 210.1 KB |  |
-| `更新世界的锋芒_SoundInsight_Demo.zip` | 116.2 KB |  |
+| `更新世界的锋芒_SoundInsight_Demo.zip` | 109.3 KB |  |
 | `更新世界的锋芒_SoundInsight_复赛作品.docx` | 48.0 KB |  |
 
 ## 主文档与模板（14 项，0.1 MB）
@@ -19,16 +19,16 @@
 | `hackathon-决赛入围定稿作品提交模板-天池版.docx` | 35.8 KB |  |
 | `hackathon-复赛作品提交模板-天池版.docx` | 35.7 KB | 官方复赛模板原文（格式对照基准） |
 | `competition_v4.md` | 20.8 KB | 主文档（13 章，含模板九章 + 合规披露 + 局限） |
-| `README.md` | 10.6 KB |  |
-| `_coldstart_test/README.md` | 10.6 KB |  |
+| `README.md` | 11.1 KB |  |
+| `_coldstart_test/README.md` | 10.9 KB |  |
 | `competition_v3.txt` | 8.9 KB | 官方模板九章版主文档 |
 | `competition_v2.md` | 7.0 KB | 初赛版文档 |
 | `competition_v2.txt` | 7.0 KB |  |
 | `DEPLOY_GUIDE.md` | 4.2 KB |  |
 | `docs/bus/README.md` | 3.8 KB |  |
 | `v2/README.md` | 1.7 KB |  |
-| `deployment/README.md` | 0.6 KB |  |
-| `_coldstart_test/deployment/README.md` | 0.6 KB |  |
+| `deployment/README.md` | 1.4 KB |  |
+| `_coldstart_test/deployment/README.md` | 1.4 KB |  |
 | `REPO_INTRO.txt` | 0.6 KB |  |
 
 ## 验证报告（26 项，0.1 MB）
@@ -62,7 +62,7 @@
 | `confidence_tiered.md` | 0.7 KB | 三星补漏置信度分层与中置信剔除记录 |
 | `significance_test.md` | 0.6 KB | Welch t 检验（p=0.000932） |
 
-## 过程与交接文档（138 项，4.6 MB）
+## 过程与交接文档（140 项，4.6 MB）
 
 | 文件 | 大小 | 用途 |
 |---|---|---|
@@ -73,15 +73,15 @@
 | `docs/gold_set/answer_sheet_vocab_test.md` | 183.0 KB |  |
 | `docs/gold_set/worksheet.csv` | 177.2 KB |  |
 | `docs/gold_set/vocab_test.csv` | 146.9 KB |  |
-| `docs/gold_set/answer_sheet_p0_accept.md` | 140.6 KB |  |
-| `docs/gold_set/answer_sheet_recheck.md` | 136.4 KB |  |
+| `docs/gold_set/answer_sheet_p0_accept.md` | 141.0 KB |  |
+| `docs/gold_set/answer_sheet_recheck.md` | 136.8 KB |  |
 | `docs/gold_set/p0_accept.csv` | 131.1 KB |  |
 | `docs/gold_set/recheck.csv` | 127.2 KB |  |
 | `docs/gold_set/answer_sheet_clean_alerts.md` | 116.1 KB |  |
 | `docs/gold_set/answer_sheet_s1_add100.md` | 94.6 KB |  |
 | `docs/gold_set/s1_add100.csv` | 83.3 KB |  |
 | `docs/gold_set/clean_alerts.csv` | 82.8 KB |  |
-| `docs/gold_set/answer_sheet_xcat_accept.md` | 72.0 KB |  |
+| `docs/gold_set/answer_sheet_xcat_accept.md` | 72.4 KB |  |
 | `docs/frozen_execution_checklist.md` | 71.5 KB |  |
 | `docs/gold_set/answer_sheet_types.md` | 68.2 KB |  |
 | `docs/gold_set/answer_sheet_attribution.md` | 66.1 KB |  |
@@ -98,9 +98,9 @@
 | `docs/final_project_review_and_execution_plan.md` | 36.3 KB |  |
 | `docs/retrospective_and_reflection.md` | 27.9 KB |  |
 | `docs/gold_set/answer_sheet_s5_control.md` | 25.1 KB |  |
+| `docs/demo_uptime_log.md` | 22.7 KB |  |
 | `docs/three_stage_comparison.md` | 21.9 KB |  |
 | `docs/project_full_record.md` | 21.6 KB | 初赛→复赛全流程记录 |
-| `docs/demo_uptime_log.md` | 21.6 KB |  |
 | `docs/gold_set/bias_probe_sheet.md` | 21.5 KB |  |
 | `docs/bus/round-03/kimi-audit-round03.md` | 21.2 KB |  |
 | `docs/v2_acceptance_benchmark.md` | 20.4 KB |  |
@@ -112,11 +112,11 @@
 | `docs/REVIEWER_BRIEF.md` | 14.8 KB |  |
 | `docs/reassessment_after_credential.md` | 14.6 KB |  |
 | `docs/bus/round-01/qwen.md` | 14.1 KB |  |
-| `docs/extrapolation_register.md` | 13.7 KB |  |
+| `docs/extrapolation_register.md` | 13.8 KB |  |
 | `docs/file_inventory.md` | 12.8 KB | 项目文件总索引 |
 | `docs/三方探讨意见.txt` | 12.8 KB |  |
 | `docs/gold_set/human_rulings_dsh.md` | 12.6 KB |  |
-| `docs/EXECUTION_DISCIPLINE.md` | 12.1 KB |  |
+| `docs/EXECUTION_DISCIPLINE.md` | 12.6 KB |  |
 | `PROJECT_BRIEF_QWEN.md` | 11.6 KB |  |
 | `docs/N_line_handoff_protocol.md` | 11.2 KB |  |
 | `docs/finals_stage.md` | 11.0 KB |  |
@@ -140,22 +140,24 @@
 | `docs/N5_qna_factbase.md` | 7.1 KB |  |
 | `docs/gold_set/JUDGING.md` | 7.1 KB |  |
 | `docs/N1b_downgrade_narrative.md` | 7.0 KB |  |
+| `docs/bus/round-04/dsh-audit-request.md` | 6.9 KB |  |
 | `docs/taxonomy_three_paths.md` | 6.6 KB |  |
 | `docs/external_sources_register.md` | 6.5 KB |  |
+| `docs/TECH_FREEZE.md` | 6.4 KB |  |
 | `docs/N6_review_risk_list.md` | 6.4 KB |  |
 | `docs/human_gold_set_protocol.md` | 6.3 KB |  |
-| `docs/TECH_FREEZE.md` | 6.3 KB |  |
 | `docs/work_summary_d7.md` | 6.2 KB |  |
 | `docs/how_to_expand_gains.md` | 6.1 KB |  |
+| `docs/bus/INDEX.md` | 5.9 KB |  |
 | `docs/scoped_findings.md` | 5.9 KB |  |
 | `docs/split_manifest.md` | 5.8 KB |  |
 | `docs/bus/round-02/dsh.md` | 5.6 KB |  |
-| `docs/bus/INDEX.md` | 5.4 KB |  |
 | `docs/PAUSE_SNAPSHOT.md` | 5.2 KB |  |
 | `docs/llm_credential_status.md` | 5.0 KB |  |
 | `docs/b_measure_results.md` | 5.0 KB |  |
 | `docs/DoD_completion_table.md` | 4.9 KB |  |
 | `docs/w4_prescreen_estimate.md` | 4.8 KB |  |
+| `docs/bus/round-04/dsh-response.md` | 4.8 KB |  |
 | `docs/SoundInsight决赛备战_现状盘点清单.md` | 4.8 KB |  |
 | `docs/v2_gate_verdict.md` | 4.7 KB |  |
 | `docs/w1_longtext_variants.md` | 4.7 KB |  |
@@ -337,17 +339,17 @@
 | `train_quick.csv` | 1.2 MB |  |
 | `v2/w4_sample.csv` | 257.1 KB |  |
 | `v2/gate_outside_sample.csv` | 108.6 KB |  |
-| `sample_reviews_100.csv` | 57.9 KB |  |
-| `_coldstart_test/sample_reviews_100.csv` | 57.9 KB |  |
+| `sample_reviews_100.csv` | 37.9 KB |  |
+| `_coldstart_test/sample_reviews_100.csv` | 37.9 KB |  |
 | `agent_test_input.csv` | 27.9 KB |  |
 
-## 代码（237 项，1.3 MB）
+## 代码（238 项，1.3 MB）
 
 | 文件 | 大小 | 用途 |
 |---|---|---|
 | `check_doc_numbers.py` | 58.0 KB | 数字审计 + 模板格式对照脚本 |
-| `build_finals_appendix.py` | 35.1 KB |  |
-| `s34_docs.py` | 21.1 KB |  |
+| `build_finals_appendix.py` | 36.0 KB |  |
+| `s34_docs.py` | 21.2 KB |  |
 | `scan_repo_hygiene.py` | 19.7 KB |  |
 | `v2_meta_analysis.py` | 19.1 KB |  |
 | `make_gold_set_notes.py` | 18.8 KB |  |
@@ -355,10 +357,10 @@
 | `apply_human_rulings.py` | 15.9 KB |  |
 | `test_audit_checks.py` | 15.5 KB |  |
 | `build_finals_docx2.py` | 14.5 KB |  |
-| `build_finals_content.py` | 14.1 KB |  |
-| `report_builder.py` | 13.5 KB |  |
+| `build_finals_content.py` | 14.5 KB |  |
+| `report_builder.py` | 13.8 KB |  |
+| `_coldstart_test/report_builder.py` | 13.8 KB |  |
 | `v2_w4_mine.py` | 13.2 KB |  |
-| `_coldstart_test/report_builder.py` | 13.2 KB |  |
 | `build_pdf_v2.py` | 12.4 KB |  |
 | `v2_w1_longtext.py` | 12.1 KB |  |
 | `make_ai_handoff.py` | 11.5 KB |  |
@@ -368,10 +370,10 @@
 | `_coldstart_test/demo_sound_v2.py` | 10.9 KB |  |
 | `rulings_io.py` | 10.4 KB |  |
 | `make_vocab_test.py` | 10.3 KB |  |
+| `soundinsight_agent.py` | 10.1 KB | 一键洞察 Agent（md/excel、zh/en、非英文跳过） |
+| `_coldstart_test/soundinsight_agent.py` | 10.1 KB |  |
 | `push_daily.py` | 9.7 KB |  |
 | `s2_membership.py` | 9.4 KB |  |
-| `soundinsight_agent.py` | 9.4 KB | 一键洞察 Agent（md/excel、zh/en、非英文跳过） |
-| `_coldstart_test/soundinsight_agent.py` | 9.4 KB |  |
 | `build_submission.py` | 9.3 KB |  |
 | `v2_w2_perclass.py` | 9.1 KB |  |
 | `review_pool.py` | 9.1 KB |  |
@@ -402,8 +404,8 @@
 | `v2_w5_cv.py` | 7.4 KB |  |
 | `v2_gate_outside_probe.py` | 7.4 KB |  |
 | `same_basis_compare.py` | 7.4 KB |  |
+| `make_p0_accept_sheet.py` | 7.3 KB |  |
 | `v2_w4_prescreen.py` | 7.3 KB |  |
-| `make_p0_accept_sheet.py` | 7.2 KB |  |
 | `inscope_reeval.py` | 7.2 KB |  |
 | `v3lite_train.py` | 7.2 KB |  |
 | `train_discriminator.py` | 7.2 KB |  |
@@ -418,10 +420,10 @@
 | `fetch_electronics.py` | 6.5 KB |  |
 | `xcat_freeze.py` | 6.5 KB |  |
 | `run_all_checks.py` | 6.5 KB |  |
+| `make_xcat_accept.py` | 6.4 KB |  |
 | `v3liteb_train.py` | 6.4 KB |  |
 | `coldstart_test.py` | 6.4 KB |  |
 | `v2_w4_estimate.py` | 6.3 KB |  |
-| `make_xcat_accept.py` | 6.3 KB |  |
 | `cross_model_review.py` | 6.3 KB |  |
 | `p1_label_corpus.py` | 6.3 KB |  |
 | `difficulty_stratification.py` | 6.1 KB |  |
@@ -448,13 +450,14 @@
 | `make_reviewer_brief.py` | 5.0 KB |  |
 | `fair_pool_compare.py` | 4.9 KB |  |
 | `fix_ppt_threshold.py` | 4.8 KB |  |
+| `eval_v5.py` | 4.7 KB |  |
 | `xcat_train.py` | 4.7 KB |  |
-| `eval_v5.py` | 4.6 KB |  |
 | `make_video_assets.py` | 4.6 KB |  |
 | `fix_clean_alerts_notes.py` | 4.5 KB |  |
 | `v2_record_incident.py` | 4.5 KB |  |
 | `make_samples.py` | 4.4 KB |  |
 | `score_clean_alerts.py` | 4.4 KB |  |
+| `make_samples_headphone.py` | 4.4 KB |  |
 | `make_bus_index.py` | 4.4 KB |  |
 | `verify_finals_package.py` | 4.4 KB |  |
 | `check_refs_and_deps.py` | 4.4 KB |  |
@@ -473,11 +476,13 @@
 | `train_multilabel.py` | 3.8 KB |  |
 | `gold_set_helper.py` | 3.7 KB |  |
 | `score_p0_accept.py` | 3.7 KB |  |
+| `make_current_output.py` | 3.7 KB |  |
 | `realworld_eval_split.py` | 3.7 KB |  |
 | `v2_cv_doc.py` | 3.7 KB |  |
 | `safe_commit.py` | 3.7 KB |  |
 | `distilbert_vs_llm.py` | 3.6 KB |  |
 | `compare_passes.py` | 3.6 KB |  |
+| `check_generation_consistency.py` | 3.6 KB |  |
 | `extend_data.py` | 3.6 KB |  |
 | `baseline_cv.py` | 3.5 KB |  |
 | `verify_demo_end_to_end.py` | 3.5 KB |  |
@@ -485,8 +490,6 @@
 | `s6_relabel_retrain.py` | 3.5 KB |  |
 | `download_models.py` | 3.4 KB |  |
 | `_coldstart_test/download_models.py` | 3.4 KB |  |
-| `make_current_output.py` | 3.4 KB |  |
-| `check_generation_consistency.py` | 3.4 KB |  |
 | `v2_register_cv.py` | 3.3 KB |  |
 | `finalize_curve.py` | 3.3 KB |  |
 | `score_bias_probe.py` | 3.2 KB |  |
@@ -621,15 +624,15 @@
 | 文件 | 大小 | 用途 |
 |---|---|---|
 | `AI+跨境黑客松巅峰赛 · 复赛公示名单（手机版）.html` | 42.1 KB |  |
-| `当前输出版本（对照视频）.html` | 5.8 KB |  |
+| `当前输出版本（对照视频）.html` | 7.3 KB |  |
 
 ## 生成产物·日志（12 项，0.0 MB）
 
 | 文件 | 大小 | 用途 |
 |---|---|---|
 | `insight_report.xlsx` | 7.1 KB |  |
-| `_coldstart_test/insight_report_v2.md` | 4.1 KB |  |
-| `insight_report_v2.md` | 3.9 KB |  |
+| `insight_report_v2.md` | 5.0 KB |  |
+| `_coldstart_test/insight_report_v2.md` | 4.4 KB |  |
 | `insight_report_v2_en.md` | 3.2 KB |  |
 | `_coldstart_test/insight_report_v2_en.md` | 3.2 KB |  |
 | `summary_log.txt` | 3.1 KB |  |
@@ -649,7 +652,7 @@
 | `multi_label_model/` | 256.1 MB | 冻结的多标签归因模型权重（约 256MB），不入 git |
 | `sound_model/` | 256.1 MB | 冻结的二分类模型权重（约 256MB），不入 git |
 
-## 其他（150 项，57.9 MB）
+## 其他（151 项，57.9 MB）
 
 | 文件 | 大小 | 用途 |
 |---|---|---|
@@ -670,9 +673,9 @@
 | `v2/types_val_notes.jsonl` | 84.5 KB |  |
 | `v2/clean_alerts_notes_ridx.jsonl` | 64.7 KB |  |
 | `v2/s1_add100_notes.jsonl` | 53.5 KB |  |
-| `更新世界的锋芒_SoundInsight_决赛入围定稿作品.docx` | 49.0 KB |  |
+| `更新世界的锋芒_SoundInsight_决赛入围定稿作品.docx` | 49.6 KB |  |
 | `v2/gold_set_key.json` | 39.3 KB |  |
-| `v2/xcat_speaker_split.json` | 36.1 KB |  |
+| `v2/xcat_speaker_split.json` | 36.4 KB |  |
 | `v2/cross_model_review.jsonl` | 35.4 KB |  |
 | `v2/s5_notes.jsonl` | 31.2 KB |  |
 | `v2/realworld_eval.json` | 31.0 KB |  |
@@ -682,16 +685,16 @@
 | `v2/s2_membership.json` | 8.3 KB |  |
 | `v2/w14_w15_w16_report.md` | 7.9 KB |  |
 | `v2/human_overlap_split.json` | 7.2 KB |  |
-| `v2/m0_switch_report.json` | 6.8 KB |  |
+| `v2/m0_switch_report.json` | 7.1 KB |  |
 | `v2/clean_alerts_ids.json` | 6.5 KB |  |
 | `v2/w17_failure_stats.json` | 6.5 KB |  |
 | `v2/clean_pool_disc.json` | 6.1 KB |  |
 | `v2/w4_prescreen.json` | 6.0 KB |  |
-| `v2/push_log.json` | 5.3 KB |  |
+| `v2/push_log.json` | 5.9 KB |  |
+| `当前输出版本_报告原文.md` | 5.0 KB |  |
 | `v2/w7_calibration.json` | 4.4 KB |  |
 | `v2/alert_scope_filtered.json` | 4.2 KB |  |
 | `v2/attribution_user_notes.json` | 4.2 KB |  |
-| `当前输出版本_报告原文.md` | 3.9 KB |  |
 | `v2/w5_final.json` | 3.9 KB |  |
 | `v2/s1_add100_ids.json` | 3.6 KB |  |
 | `v2/types_validation_ids.json` | 3.6 KB |  |
@@ -707,8 +710,8 @@
 | `LICENSE` | 2.6 KB |  |
 | `v2/xcat_mini_ids.json` | 2.6 KB |  |
 | `v2/scoped_estimates.json` | 2.6 KB |  |
-| `v2/coldstart_report.json` | 2.5 KB |  |
 | `v2/recheck_ids.json` | 2.5 KB |  |
+| `v2/coldstart_report.json` | 2.5 KB |  |
 | `v2/m3_m8a_precheck.json` | 2.3 KB |  |
 | `v2/w2_perclass_thresholds.json` | 2.3 KB |  |
 | `hashes.txt` | 2.1 KB |  |
@@ -779,6 +782,7 @@
 | `v2/clean_pool_three_models.json` | 0.3 KB |  |
 | `v2/threshold.json` | 0.3 KB |  |
 | `v2/entrypoints_check.json` | 0.3 KB |  |
+| `v2/sample_manifest.json` | 0.3 KB |  |
 | `v2/cross_model_agreement.json` | 0.3 KB |  |
 | `v2/transfer_feasibility.json` | 0.3 KB |  |
 | `v2/gate_outside_estimate.json` | 0.2 KB |  |

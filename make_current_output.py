@@ -32,6 +32,7 @@ HEAD = """<!DOCTYPE html><html lang="zh"><head><meta charset="utf-8">
  code{background:#f6f8fa;padding:2px 5px;border-radius:4px}
  pre{white-space:pre-wrap;word-wrap:break-word;background:#f6f8fa;padding:12px;border-radius:6px}
 </style></head><body>
+<div class="note"><b>证据等级（请先读）</b>：本件为**脚本渲染的当前输出快照**（由本仓库管线实跑生成），<b>不是屏幕录制</b>；界面实录见演示视频（2026-09-14 版，界面与指标属 v1 世代）。<b>冲突时以本件与主文档为准。</b></div>
 <div class="note"><b>本件用途</b>：包内演示视频为 <b>2026-09-14 成片</b>，其界面与指标属 v1 世代，
 <b>不含</b>下列当前功能。本页为<b>当前出厂版本的真实输出</b>（同一次 Demo 运行生成），
 用于对照视频阅读；<b>两者不一致时，以本页与主文档为准</b>。</div>
