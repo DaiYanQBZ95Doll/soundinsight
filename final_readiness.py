@@ -141,6 +141,9 @@ head = subprocess.run(["git", "rev-parse", "--short", "HEAD"], cwd=HERE, capture
                       text=True).stdout.strip()
 MD = [f"# 提交前核对（{datetime.datetime.now().strftime('%Y-%m-%d %H:%M')}）", "",
       f"> HEAD `{head}`｜**结论：{'可提交 ✓' if not ISSUES else '存在问题 ✗'}**", "",
+      f"> **产出解释器**：`{sys.executable}`（Python {sys.version.split()[0]}）——"
+      "本清单的哈希由该解释器构建；**换用未装依赖的解释器（如另一版本的 Python）会报缺包，"
+      "属环境问题、不影响本清单的有效性**。", "",
       "| 核对项 | 结果 | 备注 |", "|---|---|---|"]
 for a, b, c in ROWS:
     MD.append(f"| {a} | {b} | {c} |")

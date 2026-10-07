@@ -1,6 +1,6 @@
 # 文件地图（由 make_ai_handoff.py 自动生成，勿手改）
 
-> 生成时间：2026-10-07 20:30；共 729 个条目；体积单位 KB/MB。
+> 生成时间：2026-10-07 21:01；共 730 个条目；体积单位 KB/MB。
 
 ## 提交物（5 项，44.3 MB）
 
@@ -97,7 +97,7 @@
 | `docs/gold_set/xcat_mini.csv` | 40.9 KB |  |
 | `docs/final_project_review_and_execution_plan.md` | 36.3 KB |  |
 | `docs/retrospective_and_reflection.md` | 27.9 KB |  |
-| `docs/demo_uptime_log.md` | 26.1 KB |  |
+| `docs/demo_uptime_log.md` | 26.9 KB |  |
 | `docs/gold_set/answer_sheet_s5_control.md` | 25.1 KB |  |
 | `docs/three_stage_comparison.md` | 21.9 KB |  |
 | `docs/project_full_record.md` | 21.6 KB | 初赛→复赛全流程记录 |
@@ -344,7 +344,7 @@
 | `_coldstart_test/sample_reviews_100.csv` | 37.9 KB |  |
 | `agent_test_input.csv` | 27.9 KB |  |
 
-## 代码（239 项，1.3 MB）
+## 代码（240 项，1.3 MB）
 
 | 文件 | 大小 | 用途 |
 |---|---|---|
@@ -376,7 +376,7 @@
 | `push_daily.py` | 9.7 KB |  |
 | `s2_membership.py` | 9.4 KB |  |
 | `build_submission.py` | 9.3 KB |  |
-| `run_all_checks.py` | 9.2 KB |  |
+| `run_all_checks.py` | 9.3 KB |  |
 | `v2_w2_perclass.py` | 9.1 KB |  |
 | `review_pool.py` | 9.1 KB |  |
 | `outside_gate_fp.py` | 8.9 KB |  |
@@ -415,10 +415,10 @@
 | `make_gold_set.py` | 7.0 KB |  |
 | `v2_w6_split.py` | 7.0 KB |  |
 | `make_recheck_sheet.py` | 7.0 KB |  |
+| `final_readiness.py` | 6.9 KB |  |
 | `learning_curve.py` | 6.8 KB |  |
 | `s2_generation_audit.py` | 6.7 KB |  |
 | `make_xcat_mini.py` | 6.7 KB |  |
-| `final_readiness.py` | 6.6 KB |  |
 | `diagnose_treble.py` | 6.6 KB |  |
 | `fetch_electronics.py` | 6.5 KB |  |
 | `xcat_freeze.py` | 6.5 KB |  |
@@ -550,6 +550,7 @@
 | `merge_review.py` | 2.0 KB |  |
 | `pack_when_free.py` | 1.9 KB |  |
 | `archive_exp.py` | 1.9 KB |  |
+| `check_deps.py` | 1.9 KB |  |
 | `api_server.py` | 1.8 KB | FastAPI 服务（/health、/predict） |
 | `_coldstart_test/api_server.py` | 1.8 KB |  |
 | `miss_rate.py` | 1.7 KB |  |
