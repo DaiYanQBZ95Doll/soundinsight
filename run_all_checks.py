@@ -22,6 +22,7 @@ sys.stdout.reconfigure(encoding="utf-8", errors="replace")
 HERE = os.path.dirname(os.path.abspath(__file__))
 
 STEPS_FULL = [
+    ("依赖前置检查（环境问题一句话定位）", ["check_deps.py"]),
     ("数字审计（项数见报告头部）", ["check_doc_numbers.py"]),
     ("审计负向自测", ["test_audit_checks.py"]),
     ("断链 + 依赖声明", ["check_refs_and_deps.py"]),
