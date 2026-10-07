@@ -1,0 +1,42 @@
+{
+  "recorded_at": "2026-10-07T21:22:59",
+  "interpreter": "C:\\Python312\\python.exe",
+  "files": [
+    {
+      "file": "更新世界的锋芒_SoundInsight_决赛入围定稿作品.zip",
+      "bytes": 45488069,
+      "sha256": "62f37c28eab13da36a6a998244f3c39e1b51fd9fce19333b050bc005129af073",
+      "content_sha256": "db6c435b87fc135fc57e01730cccbd63acbc3a0f8f4b12a15b29c0556002b8f2",
+      "members": 5
+    },
+    {
+      "file": "更新世界的锋芒_SoundInsight_演示视频.mp4",
+      "bytes": 48375526,
+      "sha256": "9664f7f9c597d06141de7506e1262fcb983f93dea65c87e0936b40039b78e8ca",
+      "content_sha256": null,
+      "members": null
+    },
+    {
+      "file": "更新世界的锋芒_SoundInsight_其他材料.zip",
+      "bytes": 1675945,
+      "sha256": "47e892dadfcc57b20c1d6f905355b6c86005073d2179b662b62a2c912a033c80",
+      "content_sha256": "5f6c840af3e90e7be52302953fb099f48ef3264be8c2d6d44fb6c5b31b2d8cf1",
+      "members": 171
+    },
+    {
+      "file": "更新世界的锋芒_SoundInsight_Demo.zip",
+      "bytes": 111939,
+      "sha256": "5a32f2959c108ac8f5bae825c19e3a1d52e4a816be858646a7228bc58953c4d4",
+      "content_sha256": "591262644bc32e42bbf1f986b1d9d92331d08ac2d3065862323336db57adfda5",
+      "members": 29
+    },
+    {
+      "file": "更新世界的锋芒_SoundInsight_决赛入围定稿作品.docx",
+      "bytes": 50886,
+      "sha256": "3896e73bc151f88743cc215403ab4764c3e0c651ef69f6fb67760f7e841f8e22",
+      "content_sha256": "4e77a25ec326168fc14e7fc0ceb77ee9f700e88f188655e39ca341af6b4ba55d",
+      "members": 13
+    }
+  ],
+  "mismatch_vs_readiness": []
+}

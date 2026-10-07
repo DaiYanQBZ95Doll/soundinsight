@@ -132,7 +132,7 @@ for f in FILES:
         note = sha(p)[:16] + "…（容器）"
         if ch:
             note += f"｜内容级 {ch[0][:16]}…（{ch[1]} 成员，跨重建稳定）"
-        ROWS.append((f"交付文件 {f[:30]}", f"{os.path.getsize(p)/1e6:.2f} MB", note))
+        ROWS.append((f"交付文件 `{f}`", f"{os.path.getsize(p)/1e6:.2f} MB", note))
     else:
         ROWS.append((f"交付文件 {f[:30]}", "缺失 ✗", ""))
         ISSUES.append(f"交付文件缺失：{f}")

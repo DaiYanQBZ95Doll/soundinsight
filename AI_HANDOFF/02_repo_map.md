@@ -1,6 +1,6 @@
 # 文件地图（由 make_ai_handoff.py 自动生成，勿手改）
 
-> 生成时间：2026-10-07 21:01；共 730 个条目；体积单位 KB/MB。
+> 生成时间：2026-10-07 21:25；共 733 个条目；体积单位 KB/MB。
 
 ## 提交物（5 项，44.3 MB）
 
@@ -62,7 +62,7 @@
 | `confidence_tiered.md` | 0.7 KB | 三星补漏置信度分层与中置信剔除记录 |
 | `significance_test.md` | 0.6 KB | Welch t 检验（p=0.000932） |
 
-## 过程与交接文档（141 项，4.6 MB）
+## 过程与交接文档（142 项，4.6 MB）
 
 | 文件 | 大小 | 用途 |
 |---|---|---|
@@ -97,7 +97,7 @@
 | `docs/gold_set/xcat_mini.csv` | 40.9 KB |  |
 | `docs/final_project_review_and_execution_plan.md` | 36.3 KB |  |
 | `docs/retrospective_and_reflection.md` | 27.9 KB |  |
-| `docs/demo_uptime_log.md` | 26.9 KB |  |
+| `docs/demo_uptime_log.md` | 27.4 KB |  |
 | `docs/gold_set/answer_sheet_s5_control.md` | 25.1 KB |  |
 | `docs/three_stage_comparison.md` | 21.9 KB |  |
 | `docs/project_full_record.md` | 21.6 KB | 初赛→复赛全流程记录 |
@@ -132,11 +132,11 @@
 | `docs/bus/round-03/dsh-audit-request.md` | 8.5 KB |  |
 | `docs/legacy_materials_notice.md` | 8.3 KB |  |
 | `docs/N2_narrative_final.md` | 8.1 KB |  |
+| `docs/decision_queue.md` | 8.1 KB |  |
 | `docs/N1_narrative_mainline.md` | 8.0 KB |  |
 | `docs/w17_failure_cases.md` | 7.9 KB |  |
 | `docs/gold_set/human_rulings_dsh2.md` | 7.9 KB |  |
 | `docs/joint_review_agenda.md` | 7.8 KB |  |
-| `docs/decision_queue.md` | 7.5 KB |  |
 | `docs/N5_qna_factbase.md` | 7.1 KB |  |
 | `docs/gold_set/JUDGING.md` | 7.1 KB |  |
 | `docs/N1b_downgrade_narrative.md` | 7.0 KB |  |
@@ -174,6 +174,7 @@
 | `docs/M8a_submission_precheck.md` | 3.5 KB |  |
 | `docs/N4_target_argument.md` | 3.5 KB |  |
 | `docs/w4_mining_estimate.md` | 3.4 KB |  |
+| `docs/SUBMISSION_RECORD.md` | 3.3 KB |  |
 | `docs/M3b_judge_access_guide.md` | 3.3 KB |  |
 | `docs/token_and_cost_budget.md` | 3.2 KB |  |
 | `docs/roadshow_slides_corrections.md` | 3.2 KB |  |
@@ -184,11 +185,11 @@
 | `docs/drift_plan.md` | 2.8 KB | 数据漂移监控方案 |
 | `docs/review_coverage_table.md` | 2.8 KB |  |
 | `docs/w17_confidence_actions.md` | 2.8 KB |  |
+| `docs/SUBMISSION_READINESS.md` | 2.7 KB |  |
 | `AI_INDUCTION_REDLINE.md` | 2.7 KB |  |
 | `docs/p1_preregistration.md` | 2.7 KB |  |
 | `docs/ppt_claims_erratum.md` | 2.6 KB |  |
 | `docs/gold_set/bias_probe_design.md` | 2.6 KB |  |
-| `docs/SUBMISSION_READINESS.md` | 2.5 KB |  |
 | `docs/bus/round-03/dsh-response.md` | 2.4 KB |  |
 | `docs/W5_cv_interpretation.md` | 2.2 KB |  |
 | `docs/w13_keyword_miss_rate.md` | 2.1 KB |  |
@@ -344,7 +345,7 @@
 | `_coldstart_test/sample_reviews_100.csv` | 37.9 KB |  |
 | `agent_test_input.csv` | 27.9 KB |  |
 
-## 代码（240 项，1.3 MB）
+## 代码（241 项，1.3 MB）
 
 | 文件 | 大小 | 用途 |
 |---|---|---|
@@ -486,6 +487,7 @@
 | `safe_commit.py` | 3.7 KB |  |
 | `distilbert_vs_llm.py` | 3.6 KB |  |
 | `compare_passes.py` | 3.6 KB |  |
+| `archive_submission.py` | 3.6 KB |  |
 | `extend_data.py` | 3.6 KB |  |
 | `baseline_cv.py` | 3.5 KB |  |
 | `verify_demo_end_to_end.py` | 3.5 KB |  |
@@ -655,7 +657,7 @@
 | `multi_label_model/` | 256.1 MB | 冻结的多标签归因模型权重（约 256MB），不入 git |
 | `sound_model/` | 256.1 MB | 冻结的二分类模型权重（约 256MB），不入 git |
 
-## 其他（152 项，57.9 MB）
+## 其他（153 项，57.9 MB）
 
 | 文件 | 大小 | 用途 |
 |---|---|---|
@@ -725,6 +727,7 @@
 | `v2/w6_split_manifest.json` | 1.8 KB |  |
 | `w13_keyword_miss_rate.json` | 1.8 KB |  |
 | `v2/realworld_eval_split.json` | 1.7 KB |  |
+| `v2/submission_archive.json` | 1.6 KB |  |
 | `v2/w7_calibration.md` | 1.5 KB |  |
 | `v2/w5_final.md` | 1.5 KB |  |
 | `.gitignore` | 1.5 KB |  |
