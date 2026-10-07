@@ -1,6 +1,6 @@
 # 文件地图（由 make_ai_handoff.py 自动生成，勿手改）
 
-> 生成时间：2026-10-06 22:16；共 716 个条目；体积单位 KB/MB。
+> 生成时间：2026-10-07 10:33；共 721 个条目；体积单位 KB/MB。
 
 ## 提交物（5 项，44.3 MB）
 
@@ -62,7 +62,7 @@
 | `confidence_tiered.md` | 0.7 KB | 三星补漏置信度分层与中置信剔除记录 |
 | `significance_test.md` | 0.6 KB | Welch t 检验（p=0.000932） |
 
-## 过程与交接文档（136 项，4.5 MB）
+## 过程与交接文档（138 项，4.6 MB）
 
 | 文件 | 大小 | 用途 |
 |---|---|---|
@@ -82,8 +82,10 @@
 | `docs/gold_set/s1_add100.csv` | 83.3 KB |  |
 | `docs/gold_set/clean_alerts.csv` | 82.8 KB |  |
 | `docs/frozen_execution_checklist.md` | 71.5 KB |  |
+| `docs/gold_set/answer_sheet_xcat_accept.md` | 70.6 KB |  |
 | `docs/gold_set/answer_sheet_types.md` | 68.2 KB |  |
 | `docs/gold_set/answer_sheet_attribution.md` | 66.1 KB |  |
+| `docs/gold_set/xcat_accept.csv` | 63.7 KB |  |
 | `docs/gold_set/types_validation.csv` | 60.0 KB |  |
 | `docs/gold_set/attribution_test.csv` | 57.8 KB |  |
 | `PROGRESS_SYNC.md` | 57.6 KB |  |
@@ -99,8 +101,8 @@
 | `docs/three_stage_comparison.md` | 21.9 KB |  |
 | `docs/project_full_record.md` | 21.6 KB | 初赛→复赛全流程记录 |
 | `docs/gold_set/bias_probe_sheet.md` | 21.5 KB |  |
+| `docs/demo_uptime_log.md` | 21.3 KB |  |
 | `docs/bus/round-03/kimi-audit-round03.md` | 21.2 KB |  |
-| `docs/demo_uptime_log.md` | 21.1 KB |  |
 | `docs/v2_acceptance_benchmark.md` | 20.4 KB |  |
 | `docs/D13_seal_declaration.md` | 20.1 KB | D13 封包声明（提交技术质检终审） |
 | `docs/final_review_and_execution_plan.md` | 19.9 KB |  |
@@ -339,7 +341,7 @@
 | `_coldstart_test/sample_reviews_100.csv` | 57.9 KB |  |
 | `agent_test_input.csv` | 27.9 KB |  |
 
-## 代码（235 项，1.3 MB）
+## 代码（237 项，1.3 MB）
 
 | 文件 | 大小 | 用途 |
 |---|---|---|
@@ -419,6 +421,7 @@
 | `v3liteb_train.py` | 6.4 KB |  |
 | `coldstart_test.py` | 6.4 KB |  |
 | `v2_w4_estimate.py` | 6.3 KB |  |
+| `make_xcat_accept.py` | 6.3 KB |  |
 | `cross_model_review.py` | 6.3 KB |  |
 | `p1_label_corpus.py` | 6.3 KB |  |
 | `difficulty_stratification.py` | 6.1 KB |  |
@@ -478,6 +481,7 @@
 | `extend_data.py` | 3.6 KB |  |
 | `baseline_cv.py` | 3.5 KB |  |
 | `verify_demo_end_to_end.py` | 3.5 KB |  |
+| `score_xcat_accept.py` | 3.5 KB |  |
 | `s6_relabel_retrain.py` | 3.5 KB |  |
 | `download_models.py` | 3.4 KB |  |
 | `_coldstart_test/download_models.py` | 3.4 KB |  |
@@ -645,7 +649,7 @@
 | `multi_label_model/` | 256.1 MB | 冻结的多标签归因模型权重（约 256MB），不入 git |
 | `sound_model/` | 256.1 MB | 冻结的二分类模型权重（约 256MB），不入 git |
 
-## 其他（148 项，57.9 MB）
+## 其他（149 项，57.9 MB）
 
 | 文件 | 大小 | 用途 |
 |---|---|---|
@@ -653,7 +657,7 @@
 | `v2/p1_labels.jsonl` | 5.8 MB |  |
 | `v2/review_longtext.jsonl` | 2.8 MB |  |
 | `v2/scope_rows.jsonl` | 664.8 KB |  |
-| `v2/p0_val_notes.jsonl` | 339.6 KB |  |
+| `v2/p0_val_notes.jsonl` | 403.6 KB |  |
 | `v2/review_treble.jsonl` | 294.2 KB |  |
 | `v2/gold_set_notes.jsonl` | 245.0 KB |  |
 | `v2/p1_label_sample.json` | 232.7 KB |  |
@@ -683,7 +687,7 @@
 | `v2/w17_failure_stats.json` | 6.5 KB |  |
 | `v2/clean_pool_disc.json` | 6.1 KB |  |
 | `v2/w4_prescreen.json` | 6.0 KB |  |
-| `v2/push_log.json` | 4.8 KB |  |
+| `v2/push_log.json` | 5.0 KB |  |
 | `v2/w7_calibration.json` | 4.4 KB |  |
 | `v2/alert_scope_filtered.json` | 4.2 KB |  |
 | `v2/attribution_user_notes.json` | 4.2 KB |  |
@@ -692,6 +696,7 @@
 | `v2/s1_add100_ids.json` | 3.6 KB |  |
 | `v2/types_validation_ids.json` | 3.6 KB |  |
 | `v2/p0_accept_ids.json` | 3.5 KB |  |
+| `v2/xcat_accept_ids.json` | 3.3 KB |  |
 | `v2/same_basis_comparison.json` | 3.2 KB |  |
 | `v2/w14_w15_w16_summary.json` | 3.1 KB |  |
 | `v2/split_manifest.json` | 3.1 KB |  |
