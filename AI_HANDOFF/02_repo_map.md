@@ -1,6 +1,6 @@
 # 文件地图（由 make_ai_handoff.py 自动生成，勿手改）
 
-> 生成时间：2026-10-07 17:53；共 726 个条目；体积单位 KB/MB。
+> 生成时间：2026-10-07 18:03；共 727 个条目；体积单位 KB/MB。
 
 ## 提交物（5 项，44.3 MB）
 
@@ -98,7 +98,7 @@
 | `docs/final_project_review_and_execution_plan.md` | 36.3 KB |  |
 | `docs/retrospective_and_reflection.md` | 27.9 KB |  |
 | `docs/gold_set/answer_sheet_s5_control.md` | 25.1 KB |  |
-| `docs/demo_uptime_log.md` | 22.7 KB |  |
+| `docs/demo_uptime_log.md` | 22.9 KB |  |
 | `docs/three_stage_comparison.md` | 21.9 KB |  |
 | `docs/project_full_record.md` | 21.6 KB | 初赛→复赛全流程记录 |
 | `docs/gold_set/bias_probe_sheet.md` | 21.5 KB |  |
@@ -148,9 +148,9 @@
 | `docs/human_gold_set_protocol.md` | 6.3 KB |  |
 | `docs/work_summary_d7.md` | 6.2 KB |  |
 | `docs/how_to_expand_gains.md` | 6.1 KB |  |
+| `docs/split_manifest.md` | 6.1 KB |  |
 | `docs/bus/INDEX.md` | 5.9 KB |  |
 | `docs/scoped_findings.md` | 5.9 KB |  |
-| `docs/split_manifest.md` | 5.8 KB |  |
 | `docs/bus/round-02/dsh.md` | 5.6 KB |  |
 | `docs/PAUSE_SNAPSHOT.md` | 5.2 KB |  |
 | `docs/llm_credential_status.md` | 5.0 KB |  |
@@ -343,7 +343,7 @@
 | `_coldstart_test/sample_reviews_100.csv` | 37.9 KB |  |
 | `agent_test_input.csv` | 27.9 KB |  |
 
-## 代码（238 项，1.3 MB）
+## 代码（239 项，1.3 MB）
 
 | 文件 | 大小 | 用途 |
 |---|---|---|
@@ -430,6 +430,7 @@
 | `recover_meta_fields.py` | 6.0 KB |  |
 | `v2_w1_hybrid_select.py` | 6.0 KB |  |
 | `v2_m0_switch_check.py` | 6.0 KB |  |
+| `final_readiness.py` | 5.8 KB |  |
 | `gen_v2_artifacts.py` | 5.8 KB |  |
 | `precommit_guard.py` | 5.8 KB |  |
 | `verify_ui_and_api.py` | 5.7 KB |  |
