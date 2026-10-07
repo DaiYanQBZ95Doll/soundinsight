@@ -1,5 +1,5 @@
 {
- "generated": "2026-10-07 18:26",
+ "generated": "2026-10-07 18:41",
  "root": "C:\\deepseek-harness-master\\soundinsight",
  "count": 728,
  "entries": [
@@ -748,9 +748,9 @@
   {
    "path": "hashes.txt",
    "category": "其他",
-   "size_bytes": 2133,
+   "size_bytes": 2134,
    "purpose": "",
-   "sha256_16": "542be4f73390b2110a378e352f322679a808d3e03623ce3660031743b5bcee24"
+   "sha256_16": "5f5f65da88b9d70eaf9ac4e64c4afa28ef0bf24a169ac4b43eef6ddaf49f40ee"
   },
   {
    "path": "human_review_50.csv",
@@ -1387,7 +1387,7 @@
    "category": "验证报告",
    "size_bytes": 15512,
    "purpose": "数字一致性审计结果（含官方模板格式对照节）",
-   "sha256_16": "0702e3be074c7e9258585f1d2a8f04910d0847c8006321ea31be5091650a17ec"
+   "sha256_16": "29301e9f1aeea84d5836a5c36224d6e964a4d84061d37e8f63ab0a7b589e314d"
   },
   {
    "path": "outside_gate_fp.py",
@@ -2533,16 +2533,16 @@
   {
    "path": "更新世界的锋芒_SoundInsight_其他材料.zip",
    "category": "提交物",
-   "size_bytes": 1675942,
+   "size_bytes": 1675945,
    "purpose": "",
-   "sha256_16": "d82a2e618185d758ffea7b2560d6dc498d3f9ecd17fcc8fc945e62778a2b345c"
+   "sha256_16": "dac06fd488b2725a96cb38a23b8496f8824624e36767ed21bc47fce7ef814c36"
   },
   {
    "path": "更新世界的锋芒_SoundInsight_决赛入围定稿作品.docx",
    "category": "其他",
    "size_bytes": 50886,
    "purpose": "",
-   "sha256_16": "f836e40a96e1827b331d8f00b39710c255fc695f2f05dab10df0596d44367ad4"
+   "sha256_16": "23ef50959084629e382a9b076adcfd95160009e173e4069ea1bc23961e891471"
   },
   {
    "path": "更新世界的锋芒_SoundInsight_复赛作品.docx",
@@ -2738,14 +2738,14 @@
    "category": "过程与交接文档",
    "size_bytes": 5283,
    "purpose": "",
-   "sha256_16": "b50eec343b623bcdff999cd125e3fa377e62b378b3692490d4043d72a44e09a3"
+   "sha256_16": "cfc62593b4c5d4ee86a3dcb64c4d1737fdc55a5dd4bdb42bbf7487768e1d4a4f"
   },
   {
    "path": "docs/REVIEWER_BRIEF.md",
    "category": "过程与交接文档",
    "size_bytes": 15192,
    "purpose": "",
-   "sha256_16": "1aa271e5504e862d74feb4d34763a9dff2ef30ca5fd82b31a8417bd97f6fb90f"
+   "sha256_16": "2390e56a5f58ad4da695602f9c4345e8e32763336477b83f1db8ae5db2c817dc"
   },
   {
    "path": "docs/SUBMISSION_CHECKLIST.md",
@@ -2841,9 +2841,9 @@
   {
    "path": "docs/demo_uptime_log.md",
    "category": "过程与交接文档",
-   "size_bytes": 23790,
+   "size_bytes": 24090,
    "purpose": "",
-   "sha256_16": "331bf60060c127a08bb4260bba1976551643093ae411b7e5b2b8dd105b996e5c"
+   "sha256_16": "976cf63898f631b9c9fd85b43e1e3e5b1f5efee74deda7c93b15739b193889a7"
   },
   {
    "path": "docs/difficulty_stratification.md",
@@ -3067,7 +3067,7 @@
    "category": "过程与交接文档",
    "size_bytes": 3621,
    "purpose": "",
-   "sha256_16": "abdbef49fe54ef13006e9ff24eb8f369bf561e1e9990d5c21a3aa5726c67e6f8"
+   "sha256_16": "1c016e8ee7c32272f8a9f27ac7985a183e963025bd737afbcadbf638d2d9d381"
   },
   {
    "path": "docs/retrospective_and_reflection.md",
@@ -3256,7 +3256,7 @@
    "category": "过程与交接文档",
    "size_bytes": 6042,
    "purpose": "",
-   "sha256_16": "a27f63c0b9419f2421e2dde29f40a5e9fb9309c2d784d2a44c8cb6e8fbab4a0a"
+   "sha256_16": "88a4d1f57a9387b8e15dd33f455bf926d47c8a79845f8cde5c45e594c4aa4aad"
   },
   {
    "path": "docs/bus/README.md",
@@ -3352,9 +3352,9 @@
   {
    "path": "docs/bus/round-04/dsh-response.md",
    "category": "过程与交接文档",
-   "size_bytes": 4908,
+   "size_bytes": 6452,
    "purpose": "",
-   "sha256_16": "e840be8971fd636298c0fd110766031ce48aaf8adab277e2e721b0e2b4a1ee6c"
+   "sha256_16": "54f7762ef884807d3fed63ec7c0c97ba090e88990e1c398ad01089320eb07788"
   },
   {
    "path": "docs/gold_set/JUDGING.md",
@@ -3837,7 +3837,7 @@
    "category": "其他",
    "size_bytes": 90,
    "purpose": "",
-   "sha256_16": "ca238704614c3b5052f440e9e3cbea26472dc2c77f79541a6f9c7190dcdf86a4"
+   "sha256_16": "b6525c4ccd07c17838d106f350038bd99f166ac96832dc8e244cb54d32bd4f1e"
   },
   {
    "path": "v2/clean_alert_rate.json",
@@ -4164,9 +4164,9 @@
   {
    "path": "v2/push_log.json",
    "category": "其他",
-   "size_bytes": 6023,
+   "size_bytes": 6025,
    "purpose": "",
-   "sha256_16": "afb161058f4850ecae618112bda024ba224963891f942175e65acc1006e4078a"
+   "sha256_16": "a5e4505109366a858a7faef8a84134b86a4bd8c63076129f0c9971e6e6442648"
   },
   {
    "path": "v2/realworld_eval.json",
