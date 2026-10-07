@@ -1,6 +1,6 @@
 # 文件地图（由 make_ai_handoff.py 自动生成，勿手改）
 
-> 生成时间：2026-10-07 19:24；共 728 个条目；体积单位 KB/MB。
+> 生成时间：2026-10-07 20:18；共 729 个条目；体积单位 KB/MB。
 
 ## 提交物（5 项，44.3 MB）
 
@@ -97,8 +97,8 @@
 | `docs/gold_set/xcat_mini.csv` | 40.9 KB |  |
 | `docs/final_project_review_and_execution_plan.md` | 36.3 KB |  |
 | `docs/retrospective_and_reflection.md` | 27.9 KB |  |
+| `docs/demo_uptime_log.md` | 25.8 KB |  |
 | `docs/gold_set/answer_sheet_s5_control.md` | 25.1 KB |  |
-| `docs/demo_uptime_log.md` | 24.5 KB |  |
 | `docs/three_stage_comparison.md` | 21.9 KB |  |
 | `docs/project_full_record.md` | 21.6 KB | 初赛→复赛全流程记录 |
 | `docs/gold_set/bias_probe_sheet.md` | 21.5 KB |  |
@@ -386,6 +386,7 @@
 | `make_attribution_sheet.py` | 8.4 KB |  |
 | `v2_w1_hybrid.py` | 8.4 KB |  |
 | `v2_w17_failure_stats.py` | 8.4 KB |  |
+| `run_all_checks.py` | 8.4 KB |  |
 | `p1_train_models.py` | 8.3 KB |  |
 | `make_pause_snapshot.py` | 8.2 KB |  |
 | `ablation_train.py` | 8.2 KB |  |
@@ -421,7 +422,6 @@
 | `diagnose_treble.py` | 6.6 KB |  |
 | `fetch_electronics.py` | 6.5 KB |  |
 | `xcat_freeze.py` | 6.5 KB |  |
-| `run_all_checks.py` | 6.5 KB |  |
 | `make_xcat_accept.py` | 6.4 KB |  |
 | `v3liteb_train.py` | 6.4 KB |  |
 | `coldstart_test.py` | 6.4 KB |  |
@@ -654,7 +654,7 @@
 | `multi_label_model/` | 256.1 MB | 冻结的多标签归因模型权重（约 256MB），不入 git |
 | `sound_model/` | 256.1 MB | 冻结的二分类模型权重（约 256MB），不入 git |
 
-## 其他（151 项，57.9 MB）
+## 其他（152 项，57.9 MB）
 
 | 文件 | 大小 | 用途 |
 |---|---|---|
@@ -799,7 +799,6 @@
 | `v2/review_longtext_summary.json` | 0.2 KB |  |
 | `v2/review_s6_summary.json` | 0.2 KB |  |
 | `v2/pipeline_summary.json` | 0.2 KB |  |
-| `v2/checks_result.json` | 0.2 KB |  |
 | `v2/p1_labels_summary.json` | 0.2 KB |  |
 | `v2/v3lite_split_manifest.json` | 0.1 KB |  |
 | `v2/kimi_x25_recheck.json` | 0.1 KB |  |
@@ -807,5 +806,7 @@
 | `v2/v5_eval.json` | 0.1 KB |  |
 | `v2/gold_set_batch.json` | 0.1 KB |  |
 | `v2/p1_label_stats.json` | 0.1 KB |  |
+| `v2/checks_result.json` | 0.1 KB |  |
 | `v2/v3liteb_manifest.json` | 0.1 KB |  |
 | `v2/p0_accept_contamination.json` | 0.1 KB |  |
+| `.chain.lock` | 0.0 KB |  |

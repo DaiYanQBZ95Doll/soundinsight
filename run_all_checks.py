@@ -56,11 +56,62 @@ STEPS_NO_PKG = [(n, c) for n, c in STEPS_FULL
 NON_FATAL = {"断链 + 依赖声明", "在线 Demo 存活巡检（M3c④）"}
 
 
+def _acquire_lock():
+    """链锁：防止两个链/重建进程重叠（重叠会造成读半成品 → 假 FAIL）。"""
+    import os as _os
+    import time as _time
+    lock = _os.path.join(HERE, ".chain.lock")
+
+    def _pid_alive(pid):
+        """跨平台判断 PID 是否存活（避免死进程留下的锁把人挡在门外）。"""
+        try:
+            if _os.name == "nt":
+                import subprocess as _sp
+                out = _sp.run(["tasklist", "/FI", f"PID eq {pid}", "/NH"],
+                              capture_output=True, text=True).stdout
+                return str(pid) in out
+            _os.kill(pid, 0)
+            return True
+        except Exception:  # noqa: BLE001
+            return False
+
+    if _os.path.isfile(lock):
+        age = _time.time() - _os.path.getmtime(lock)
+        owner = ""
+        try:
+            for ln in open(lock, encoding="utf-8").read().splitlines():
+                if ln.startswith("pid="):
+                    owner = ln.split("=", 1)[1].split()[0]
+        except OSError:
+            owner = ""
+        if owner and not _pid_alive(int(owner)):
+            print(f"[链锁] 锁的持有者 pid={owner} 已不存在 → 接管（清理死锁）")
+        elif age < 1800:
+            print(f"[链锁] 检测到另一条链正在运行（pid={owner or '未知'}，锁龄 {age/60:.1f} 分钟）"
+                  "→ 本次退出，避免与并发重建互相踩踏。")
+            return None
+        else:
+            print(f"[链锁] 发现过期锁（{age/60:.1f} 分钟，pid 未知）→ 接管")
+    with open(lock, "w", encoding="utf-8") as fh:
+        fh.write(f"pid={_os.getpid()} ts={_time.time()}\n")
+    return lock
+
+
+def _release_lock(lock):
+    try:
+        if lock and os.path.isfile(lock):
+            os.remove(lock)
+    except OSError:
+        pass
+
 def main() -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("--skip-package", action="store_true",
                     help="跳过打包三步（仅做检查时用）")
     args = ap.parse_args()
+    _lock = _acquire_lock()
+    if _lock is None:
+        return 0
     steps = STEPS_NO_PKG if args.skip_package else STEPS_FULL
 
     results = []
@@ -93,6 +144,7 @@ def main() -> int:
 
     failed = [n for n, ok, _, _ in results if not ok and n not in NON_FATAL]
     _write_machine_result(len(results), failed)
+    _release_lock(_lock)
     print(f"\n=== 门槛链{'（跳过打包）' if args.skip_package else ''} ==="
           f"总用时 {time.time()-t0:.0f}s")
     print(f"步骤 {len(results)} 个｜失败 {len(failed)} 个"
