@@ -1,6 +1,6 @@
 # 文件地图（由 make_ai_handoff.py 自动生成，勿手改）
 
-> 生成时间：2026-10-07 18:03；共 727 个条目；体积单位 KB/MB。
+> 生成时间：2026-10-07 18:26；共 728 个条目；体积单位 KB/MB。
 
 ## 提交物（5 项，44.3 MB）
 
@@ -62,7 +62,7 @@
 | `confidence_tiered.md` | 0.7 KB | 三星补漏置信度分层与中置信剔除记录 |
 | `significance_test.md` | 0.6 KB | Welch t 检验（p=0.000932） |
 
-## 过程与交接文档（140 项，4.6 MB）
+## 过程与交接文档（141 项，4.6 MB）
 
 | 文件 | 大小 | 用途 |
 |---|---|---|
@@ -98,7 +98,7 @@
 | `docs/final_project_review_and_execution_plan.md` | 36.3 KB |  |
 | `docs/retrospective_and_reflection.md` | 27.9 KB |  |
 | `docs/gold_set/answer_sheet_s5_control.md` | 25.1 KB |  |
-| `docs/demo_uptime_log.md` | 22.9 KB |  |
+| `docs/demo_uptime_log.md` | 23.2 KB |  |
 | `docs/three_stage_comparison.md` | 21.9 KB |  |
 | `docs/project_full_record.md` | 21.6 KB | 初赛→复赛全流程记录 |
 | `docs/gold_set/bias_probe_sheet.md` | 21.5 KB |  |
@@ -194,6 +194,7 @@
 | `docs/s6_preregistration.md` | 2.1 KB |  |
 | `docs/bus/rulings.md` | 2.0 KB |  |
 | `docs/outside_gate_fp.md` | 2.0 KB |  |
+| `docs/SUBMISSION_READINESS.md` | 2.0 KB |  |
 | `docs/w11_data_efficiency.md` | 1.9 KB |  |
 | `docs/gold_set/agreement_report.md` | 1.8 KB |  |
 | `docs/s2c_true_holdout.md` | 1.8 KB |  |
@@ -348,7 +349,7 @@
 | 文件 | 大小 | 用途 |
 |---|---|---|
 | `check_doc_numbers.py` | 58.0 KB | 数字审计 + 模板格式对照脚本 |
-| `build_finals_appendix.py` | 36.0 KB |  |
+| `build_finals_appendix.py` | 36.2 KB |  |
 | `s34_docs.py` | 21.2 KB |  |
 | `scan_repo_hygiene.py` | 19.7 KB |  |
 | `v2_meta_analysis.py` | 19.1 KB |  |
@@ -461,6 +462,7 @@
 | `make_samples_headphone.py` | 4.4 KB |  |
 | `make_bus_index.py` | 4.4 KB |  |
 | `verify_finals_package.py` | 4.4 KB |  |
+| `check_generation_consistency.py` | 4.4 KB |  |
 | `check_refs_and_deps.py` | 4.4 KB |  |
 | `analyze_s5.py` | 4.3 KB |  |
 | `measure_clean_disc.py` | 4.3 KB |  |
@@ -483,7 +485,6 @@
 | `safe_commit.py` | 3.7 KB |  |
 | `distilbert_vs_llm.py` | 3.6 KB |  |
 | `compare_passes.py` | 3.6 KB |  |
-| `check_generation_consistency.py` | 3.6 KB |  |
 | `extend_data.py` | 3.6 KB |  |
 | `baseline_cv.py` | 3.5 KB |  |
 | `verify_demo_end_to_end.py` | 3.5 KB |  |
@@ -674,7 +675,7 @@
 | `v2/types_val_notes.jsonl` | 84.5 KB |  |
 | `v2/clean_alerts_notes_ridx.jsonl` | 64.7 KB |  |
 | `v2/s1_add100_notes.jsonl` | 53.5 KB |  |
-| `更新世界的锋芒_SoundInsight_决赛入围定稿作品.docx` | 49.6 KB |  |
+| `更新世界的锋芒_SoundInsight_决赛入围定稿作品.docx` | 49.7 KB |  |
 | `v2/gold_set_key.json` | 39.3 KB |  |
 | `v2/xcat_speaker_split.json` | 36.4 KB |  |
 | `v2/cross_model_review.jsonl` | 35.4 KB |  |
