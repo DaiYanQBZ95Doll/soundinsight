@@ -1,6 +1,6 @@
 # 文件地图（由 make_ai_handoff.py 自动生成，勿手改）
 
-> 生成时间：2026-10-07 18:41；共 728 个条目；体积单位 KB/MB。
+> 生成时间：2026-10-07 19:24；共 728 个条目；体积单位 KB/MB。
 
 ## 提交物（5 项，44.3 MB）
 
@@ -98,7 +98,7 @@
 | `docs/final_project_review_and_execution_plan.md` | 36.3 KB |  |
 | `docs/retrospective_and_reflection.md` | 27.9 KB |  |
 | `docs/gold_set/answer_sheet_s5_control.md` | 25.1 KB |  |
-| `docs/demo_uptime_log.md` | 23.5 KB |  |
+| `docs/demo_uptime_log.md` | 24.5 KB |  |
 | `docs/three_stage_comparison.md` | 21.9 KB |  |
 | `docs/project_full_record.md` | 21.6 KB | 初赛→复赛全流程记录 |
 | `docs/gold_set/bias_probe_sheet.md` | 21.5 KB |  |
@@ -164,11 +164,11 @@
 | `docs/v3lite_filing.md` | 4.5 KB |  |
 | `docs/regrets_and_gaps.md` | 4.5 KB |  |
 | `docs/evidence_index_exp.md` | 4.4 KB |  |
+| `docs/SUBMISSION_CHECKLIST.md` | 4.2 KB |  |
 | `docs/e2_erratum.md` | 4.2 KB |  |
 | `docs/p0_preregistration.md` | 4.1 KB |  |
 | `docs/bus/round-02/s5_receipt_evidence.md` | 4.1 KB |  |
 | `docs/gold_set/clean_pool_disc_items.csv` | 3.6 KB |  |
-| `docs/SUBMISSION_CHECKLIST.md` | 3.6 KB |  |
 | `docs/repo_hygiene_scan.md` | 3.5 KB |  |
 | `docs/dataset_audit.md` | 3.5 KB | 数据集字段考古 |
 | `docs/M8a_submission_precheck.md` | 3.5 KB |  |
@@ -188,13 +188,13 @@
 | `docs/p1_preregistration.md` | 2.7 KB |  |
 | `docs/ppt_claims_erratum.md` | 2.6 KB |  |
 | `docs/gold_set/bias_probe_design.md` | 2.6 KB |  |
+| `docs/SUBMISSION_READINESS.md` | 2.5 KB |  |
 | `docs/bus/round-03/dsh-response.md` | 2.4 KB |  |
 | `docs/W5_cv_interpretation.md` | 2.2 KB |  |
 | `docs/w13_keyword_miss_rate.md` | 2.1 KB |  |
 | `docs/s6_preregistration.md` | 2.1 KB |  |
 | `docs/bus/rulings.md` | 2.0 KB |  |
 | `docs/outside_gate_fp.md` | 2.0 KB |  |
-| `docs/SUBMISSION_READINESS.md` | 2.0 KB |  |
 | `docs/w11_data_efficiency.md` | 1.9 KB |  |
 | `docs/gold_set/agreement_report.md` | 1.8 KB |  |
 | `docs/s2c_true_holdout.md` | 1.8 KB |  |
@@ -417,6 +417,7 @@
 | `learning_curve.py` | 6.8 KB |  |
 | `s2_generation_audit.py` | 6.7 KB |  |
 | `make_xcat_mini.py` | 6.7 KB |  |
+| `final_readiness.py` | 6.6 KB |  |
 | `diagnose_treble.py` | 6.6 KB |  |
 | `fetch_electronics.py` | 6.5 KB |  |
 | `xcat_freeze.py` | 6.5 KB |  |
@@ -431,7 +432,6 @@
 | `recover_meta_fields.py` | 6.0 KB |  |
 | `v2_w1_hybrid_select.py` | 6.0 KB |  |
 | `v2_m0_switch_check.py` | 6.0 KB |  |
-| `final_readiness.py` | 5.8 KB |  |
 | `gen_v2_artifacts.py` | 5.8 KB |  |
 | `precommit_guard.py` | 5.8 KB |  |
 | `verify_ui_and_api.py` | 5.7 KB |  |
@@ -452,6 +452,7 @@
 | `make_reviewer_brief.py` | 5.0 KB |  |
 | `fair_pool_compare.py` | 4.9 KB |  |
 | `fix_ppt_threshold.py` | 4.8 KB |  |
+| `check_generation_consistency.py` | 4.8 KB |  |
 | `eval_v5.py` | 4.7 KB |  |
 | `xcat_train.py` | 4.7 KB |  |
 | `make_video_assets.py` | 4.6 KB |  |
@@ -462,7 +463,6 @@
 | `make_samples_headphone.py` | 4.4 KB |  |
 | `make_bus_index.py` | 4.4 KB |  |
 | `verify_finals_package.py` | 4.4 KB |  |
-| `check_generation_consistency.py` | 4.4 KB |  |
 | `check_refs_and_deps.py` | 4.4 KB |  |
 | `analyze_s5.py` | 4.3 KB |  |
 | `measure_clean_disc.py` | 4.3 KB |  |
@@ -799,6 +799,7 @@
 | `v2/review_longtext_summary.json` | 0.2 KB |  |
 | `v2/review_s6_summary.json` | 0.2 KB |  |
 | `v2/pipeline_summary.json` | 0.2 KB |  |
+| `v2/checks_result.json` | 0.2 KB |  |
 | `v2/p1_labels_summary.json` | 0.2 KB |  |
 | `v2/v3lite_split_manifest.json` | 0.1 KB |  |
 | `v2/kimi_x25_recheck.json` | 0.1 KB |  |
@@ -806,6 +807,5 @@
 | `v2/v5_eval.json` | 0.1 KB |  |
 | `v2/gold_set_batch.json` | 0.1 KB |  |
 | `v2/p1_label_stats.json` | 0.1 KB |  |
-| `v2/checks_result.json` | 0.1 KB |  |
 | `v2/v3liteb_manifest.json` | 0.1 KB |  |
 | `v2/p0_accept_contamination.json` | 0.1 KB |  |

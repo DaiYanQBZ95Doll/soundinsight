@@ -22,6 +22,14 @@ import sys
 sys.stdout.reconfigure(encoding="utf-8", errors="replace")
 HERE = os.path.dirname(os.path.abspath(__file__))
 # 必须出现当前世代标识的材料（面向评委或卖家）
+# 构建输入：真正进入 docx／包的源（门 ④ 只对这些要求提交后再打包）
+BUILD_INPUTS = ["build_finals_content.py", "build_finals_appendix.py",
+                "build_finals_docx2.py", "build_finals_package.py",
+                "make_current_output.py", "report_builder.py",
+                "predict_core.py", "soundinsight_agent.py", "audio_gate.py",
+                "types_helper.py", "config.json", "README.md", "MODEL_CARD.md",
+                "sample_reviews_100.csv", "model_hashes.json"]
+
 MATERIALS = ["build_finals_content.py", "build_finals_appendix.py", "report_builder.py",
              "MODEL_CARD.md", "docs/SUBMISSION_CHECKLIST.md", "docs/split_manifest.md",
              # round-04 Qwen 盲读发现 README 仍写「默认模型＝v1」→ 纳入机械门
@@ -75,8 +83,7 @@ def main() -> int:
 
     # ④ 源-产物一致性（R4-6）：生成器/材料源若有未提交改动，产物可能"新于源"
     import subprocess as _sp
-    _gens = [f for f in MATERIALS] + ["build_finals_docx2.py", "make_current_output.py",
-                                      "build_finals_package.py"]
+    _gens = BUILD_INPUTS
     try:
         _st = _sp.run(["git", "status", "--porcelain", "--", *_gens],
                       cwd=HERE, capture_output=True, text=True, encoding="utf-8",

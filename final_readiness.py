@@ -30,6 +30,19 @@ def sha(p):
     return h.hexdigest()
 
 
+def content_hash(path):
+    """容器类产物的**内容级**哈希（跨重建稳定）。"""
+    try:
+        zf = zipfile.ZipFile(path)
+    except zipfile.BadZipFile:
+        return None
+    names = [n for n in zf.namelist() if not n.endswith("/")]
+    parts = []
+    for n in sorted(names):
+        h = hashlib.sha256(zf.read(n)).hexdigest()
+        parts.append(f"{n}:{h}")
+    return hashlib.sha256("\n".join(parts).encode()).hexdigest(), len(names)
+
 def run(cmd):
     r = subprocess.run([sys.executable, *cmd], cwd=HERE, capture_output=True, text=True,
                        encoding="utf-8", errors="replace")
@@ -115,7 +128,11 @@ FILES = [PKG, "更新世界的锋芒_SoundInsight_演示视频.mp4",
 for f in FILES:
     p = os.path.join(HERE, f)
     if os.path.isfile(p):
-        ROWS.append((f"交付文件 {f[:30]}", f"{os.path.getsize(p)/1e6:.2f} MB", sha(p)[:16] + "…"))
+        ch = content_hash(p)
+        note = sha(p)[:16] + "…（容器）"
+        if ch:
+            note += f"｜内容级 {ch[0][:16]}…（{ch[1]} 成员，跨重建稳定）"
+        ROWS.append((f"交付文件 {f[:30]}", f"{os.path.getsize(p)/1e6:.2f} MB", note))
     else:
         ROWS.append((f"交付文件 {f[:30]}", "缺失 ✗", ""))
         ISSUES.append(f"交付文件缺失：{f}")
@@ -130,7 +147,9 @@ for a, b, c in ROWS:
 if ISSUES:
     MD += ["", "## 待处理", ""] + [f"- {x}" for x in ISSUES]
 else:
-    MD += ["", "**全部通过。**上传按 `docs/SUBMISSION_CHECKLIST.md` 三步："
+    MD += ["", "> **哈希用法**：**容器哈希**仅用于上传前那一刻核对文件未被动过；"
+      "**内容级哈希**跨重建稳定，用于对账（zip 容器每次重建时间戳变化 → 容器哈希必变）。", "",
+      "**全部通过。**上传按 `docs/SUBMISSION_CHECKLIST.md` 三步："
                "① 核对本页文件哈希；② 可选复跑 `python run_all_checks.py`；③ 上传并回填。"]
 open(os.path.join(HERE, "docs", "SUBMISSION_READINESS.md"), "w", encoding="utf-8",
      newline="\n").write("\n".join(MD) + "\n")
