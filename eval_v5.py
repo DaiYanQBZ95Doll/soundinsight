@@ -60,8 +60,9 @@ print(f"[面 1] 干净池 {len(clean):,}｜**v5 触发 {len(alerts)} 条 = "
       f"{len(alerts)/len(clean)*100:.3f}%**｜对照 v1 = 15 条 = 0.105%")
 lo, hi = 0.0026, 0.0221
 print(f"        期望正例区间（X-14）：{len(clean)*lo:.0f}–{len(clean)*hi:.0f} 条"
-      f" ⇒ 隐含精确率上界 {len(clean)*hi/max(1,len(alerts)):.2f}")
-print(f"[面 2] 闸门外触发占全部触发：**{len(alerts)}/{len(alerts)}**（干净池本身即闸门外）")
+      f" ⇒ 期望正例÷告警 = {len(clean)*lo/max(1,len(alerts)):.2f}–"
+      f"{len(clean)*hi/max(1,len(alerts)):.2f}（比值 >1 即触发不足，**不是精确率**）")
+print(f"[面 2] 干净池本身即闸门外；触发 {len(alerts)} 条，占池 {len(alerts)/len(clean)*100:.3f}%")
 
 # 面 3：S2c 留出侧条目
 mem = json.load(open(os.path.join(HERE, "v2", "s2_membership.json"), encoding="utf-8"))

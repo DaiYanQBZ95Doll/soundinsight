@@ -72,6 +72,21 @@ def main() -> int:
     if miss:
         bad.append(f"以下材料未出现当前世代标识「{label}」：{'、'.join(miss)}")
 
+
+    # ④ 源-产物一致性（R4-6）：生成器/材料源若有未提交改动，产物可能"新于源"
+    import subprocess as _sp
+    _gens = [f for f in MATERIALS] + ["build_finals_docx2.py", "make_current_output.py",
+                                      "build_finals_package.py"]
+    try:
+        _st = _sp.run(["git", "status", "--porcelain", "--", *_gens],
+                      cwd=HERE, capture_output=True, text=True, encoding="utf-8",
+                      errors="replace").stdout.strip()
+    except Exception:  # noqa: BLE001
+        _st = ""
+    if _st:
+        _dirty = [ln[2:].strip() for ln in _st.splitlines() if len(ln) > 3]
+        bad.append("**产物可能新于源**：以下生成器/材料源有未提交改动 → "
+                   "请先提交再打包（否则重建会静默回退）：" + "、".join(_dirty))
     print("## 世代一致性")
     print(f"- 当前世代：`{gen}`／标识「{label}」｜权重 {rel}")
     if want and actual and want == actual:

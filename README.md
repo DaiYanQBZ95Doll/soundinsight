@@ -36,6 +36,8 @@ python soundinsight_agent.py --csv sample_reviews_100.csv   # 3) 生成七节洞
   `insight_report_v2.md`（中文，含"置信度档位与建议动作"七节）／`insight_report_v2_en.md`（英文）。
 - **不想下载权重？** 在线体验：<https://modelscope.cn/studios/DaiYanQBZ95Doll/SoundInsight>
   （应用直链 <https://daiyanqbz95doll-soundinsight.ms.show>）；环境受限时见包内演示视频（3 分 23 秒）。
+
+> ⚠️ **演示视频为 2026-09-14 成片**（界面与指标属 v1 世代），不含闸门三档／类型分布／品类判定等当前功能；**当前界面请看随包「当前输出版本（对照视频）」对照件**，冲突以其与主文档为准。
 - 报告怎么读：六节结构 + 置信度三档（高＝直接进整改评审／中＝先抽查／低＝仅趋势观察）；
   非英文评论会被**显式跳过并计数**，不是静默丢弃。
 
