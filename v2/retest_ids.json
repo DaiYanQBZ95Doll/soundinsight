@@ -1,0 +1,708 @@
+{
+  "seed": 20261021,
+  "n": 100,
+  "items": [
+    {
+      "rid": "R01",
+      "source": "answer_sheet_xcat_accept.md",
+      "source_id": "B22",
+      "domain": "音箱",
+      "original_verdict": "0"
+    },
+    {
+      "rid": "R02",
+      "source": "answer_sheet_xcat_accept.md",
+      "source_id": "A22",
+      "domain": "音箱",
+      "original_verdict": "1"
+    },
+    {
+      "rid": "R03",
+      "source": "answer_sheet_recheck.md",
+      "source_id": "A23",
+      "domain": "耳机",
+      "original_verdict": "1"
+    },
+    {
+      "rid": "R04",
+      "source": "answer_sheet_xcat_accept.md",
+      "source_id": "A13",
+      "domain": "音箱",
+      "original_verdict": "1"
+    },
+    {
+      "rid": "R05",
+      "source": "answer_sheet_xcat_accept.md",
+      "source_id": "A08",
+      "domain": "音箱",
+      "original_verdict": "1"
+    },
+    {
+      "rid": "R06",
+      "source": "answer_sheet_xcat_accept.md",
+      "source_id": "A36",
+      "domain": "音箱",
+      "original_verdict": "1"
+    },
+    {
+      "rid": "R07",
+      "source": "answer_sheet_p0_accept.md",
+      "source_id": "B45",
+      "domain": "耳机",
+      "original_verdict": "0"
+    },
+    {
+      "rid": "R08",
+      "source": "answer_sheet_recheck.md",
+      "source_id": "A42",
+      "domain": "耳机",
+      "original_verdict": "1"
+    },
+    {
+      "rid": "R09",
+      "source": "answer_sheet_recheck.md",
+      "source_id": "A46",
+      "domain": "耳机",
+      "original_verdict": "1"
+    },
+    {
+      "rid": "R10",
+      "source": "answer_sheet_p0_accept.md",
+      "source_id": "A27",
+      "domain": "耳机",
+      "original_verdict": "1"
+    },
+    {
+      "rid": "R11",
+      "source": "answer_sheet_p0_accept.md",
+      "source_id": "B37",
+      "domain": "耳机",
+      "original_verdict": "0"
+    },
+    {
+      "rid": "R12",
+      "source": "answer_sheet_p0_accept.md",
+      "source_id": "B44",
+      "domain": "耳机",
+      "original_verdict": "0"
+    },
+    {
+      "rid": "R13",
+      "source": "answer_sheet_xcat_accept.md",
+      "source_id": "B15",
+      "domain": "音箱",
+      "original_verdict": "0"
+    },
+    {
+      "rid": "R14",
+      "source": "answer_sheet_recheck.md",
+      "source_id": "A16",
+      "domain": "耳机",
+      "original_verdict": "1"
+    },
+    {
+      "rid": "R15",
+      "source": "answer_sheet_p0_accept.md",
+      "source_id": "A17",
+      "domain": "耳机",
+      "original_verdict": "0"
+    },
+    {
+      "rid": "R16",
+      "source": "answer_sheet_xcat_accept.md",
+      "source_id": "B31",
+      "domain": "音箱",
+      "original_verdict": "0"
+    },
+    {
+      "rid": "R17",
+      "source": "answer_sheet_recheck.md",
+      "source_id": "B10",
+      "domain": "耳机",
+      "original_verdict": "0"
+    },
+    {
+      "rid": "R18",
+      "source": "answer_sheet_recheck.md",
+      "source_id": "B41",
+      "domain": "耳机",
+      "original_verdict": "0"
+    },
+    {
+      "rid": "R19",
+      "source": "answer_sheet_recheck.md",
+      "source_id": "A08",
+      "domain": "耳机",
+      "original_verdict": "1"
+    },
+    {
+      "rid": "R20",
+      "source": "answer_sheet_xcat_accept.md",
+      "source_id": "B43",
+      "domain": "音箱",
+      "original_verdict": "0"
+    },
+    {
+      "rid": "R21",
+      "source": "answer_sheet_p0_accept.md",
+      "source_id": "A25",
+      "domain": "耳机",
+      "original_verdict": "0"
+    },
+    {
+      "rid": "R22",
+      "source": "answer_sheet_xcat_accept.md",
+      "source_id": "B26",
+      "domain": "音箱",
+      "original_verdict": "0"
+    },
+    {
+      "rid": "R23",
+      "source": "answer_sheet_recheck.md",
+      "source_id": "A22",
+      "domain": "耳机",
+      "original_verdict": "0"
+    },
+    {
+      "rid": "R24",
+      "source": "answer_sheet_xcat_accept.md",
+      "source_id": "B23",
+      "domain": "音箱",
+      "original_verdict": "0"
+    },
+    {
+      "rid": "R25",
+      "source": "answer_sheet_p0_accept.md",
+      "source_id": "A38",
+      "domain": "耳机",
+      "original_verdict": "0"
+    },
+    {
+      "rid": "R26",
+      "source": "answer_sheet_xcat_accept.md",
+      "source_id": "B39",
+      "domain": "音箱",
+      "original_verdict": "0"
+    },
+    {
+      "rid": "R27",
+      "source": "answer_sheet_p0_accept.md",
+      "source_id": "B28",
+      "domain": "耳机",
+      "original_verdict": "0"
+    },
+    {
+      "rid": "R28",
+      "source": "answer_sheet_p0_accept.md",
+      "source_id": "A16",
+      "domain": "耳机",
+      "original_verdict": "0"
+    },
+    {
+      "rid": "R29",
+      "source": "answer_sheet_recheck.md",
+      "source_id": "A28",
+      "domain": "耳机",
+      "original_verdict": "1"
+    },
+    {
+      "rid": "R30",
+      "source": "answer_sheet_p0_accept.md",
+      "source_id": "A31",
+      "domain": "耳机",
+      "original_verdict": "1"
+    },
+    {
+      "rid": "R31",
+      "source": "answer_sheet_p0_accept.md",
+      "source_id": "A23",
+      "domain": "耳机",
+      "original_verdict": "0"
+    },
+    {
+      "rid": "R32",
+      "source": "answer_sheet_p0_accept.md",
+      "source_id": "A07",
+      "domain": "耳机",
+      "original_verdict": "1"
+    },
+    {
+      "rid": "R33",
+      "source": "answer_sheet_xcat_accept.md",
+      "source_id": "B28",
+      "domain": "音箱",
+      "original_verdict": "0"
+    },
+    {
+      "rid": "R34",
+      "source": "answer_sheet_p0_accept.md",
+      "source_id": "B09",
+      "domain": "耳机",
+      "original_verdict": "0"
+    },
+    {
+      "rid": "R35",
+      "source": "answer_sheet_p0_accept.md",
+      "source_id": "A11",
+      "domain": "耳机",
+      "original_verdict": "0"
+    },
+    {
+      "rid": "R36",
+      "source": "answer_sheet_p0_accept.md",
+      "source_id": "A22",
+      "domain": "耳机",
+      "original_verdict": "1"
+    },
+    {
+      "rid": "R37",
+      "source": "answer_sheet_recheck.md",
+      "source_id": "A33",
+      "domain": "耳机",
+      "original_verdict": "0"
+    },
+    {
+      "rid": "R38",
+      "source": "answer_sheet_xcat_accept.md",
+      "source_id": "A39",
+      "domain": "音箱",
+      "original_verdict": "1"
+    },
+    {
+      "rid": "R39",
+      "source": "answer_sheet_recheck.md",
+      "source_id": "A40",
+      "domain": "耳机",
+      "original_verdict": "1"
+    },
+    {
+      "rid": "R40",
+      "source": "answer_sheet_recheck.md",
+      "source_id": "B11",
+      "domain": "耳机",
+      "original_verdict": "1"
+    },
+    {
+      "rid": "R41",
+      "source": "answer_sheet_p0_accept.md",
+      "source_id": "B02",
+      "domain": "耳机",
+      "original_verdict": "0"
+    },
+    {
+      "rid": "R42",
+      "source": "answer_sheet_xcat_accept.md",
+      "source_id": "A30",
+      "domain": "音箱",
+      "original_verdict": "1"
+    },
+    {
+      "rid": "R43",
+      "source": "answer_sheet_recheck.md",
+      "source_id": "A10",
+      "domain": "耳机",
+      "original_verdict": "1"
+    },
+    {
+      "rid": "R44",
+      "source": "answer_sheet_xcat_accept.md",
+      "source_id": "A31",
+      "domain": "音箱",
+      "original_verdict": "1"
+    },
+    {
+      "rid": "R45",
+      "source": "answer_sheet_xcat_accept.md",
+      "source_id": "B18",
+      "domain": "音箱",
+      "original_verdict": "0"
+    },
+    {
+      "rid": "R46",
+      "source": "answer_sheet_xcat_accept.md",
+      "source_id": "A38",
+      "domain": "音箱",
+      "original_verdict": "1"
+    },
+    {
+      "rid": "R47",
+      "source": "answer_sheet_p0_accept.md",
+      "source_id": "A39",
+      "domain": "耳机",
+      "original_verdict": "0"
+    },
+    {
+      "rid": "R48",
+      "source": "answer_sheet_p0_accept.md",
+      "source_id": "A48",
+      "domain": "耳机",
+      "original_verdict": "1"
+    },
+    {
+      "rid": "R49",
+      "source": "answer_sheet_xcat_accept.md",
+      "source_id": "B34",
+      "domain": "音箱",
+      "original_verdict": "0"
+    },
+    {
+      "rid": "R50",
+      "source": "answer_sheet_xcat_accept.md",
+      "source_id": "B36",
+      "domain": "音箱",
+      "original_verdict": "0"
+    },
+    {
+      "rid": "R51",
+      "source": "answer_sheet_recheck.md",
+      "source_id": "A13",
+      "domain": "耳机",
+      "original_verdict": "0"
+    },
+    {
+      "rid": "R52",
+      "source": "answer_sheet_p0_accept.md",
+      "source_id": "A04",
+      "domain": "耳机",
+      "original_verdict": "1"
+    },
+    {
+      "rid": "R53",
+      "source": "answer_sheet_p0_accept.md",
+      "source_id": "B35",
+      "domain": "耳机",
+      "original_verdict": "0"
+    },
+    {
+      "rid": "R54",
+      "source": "answer_sheet_recheck.md",
+      "source_id": "B29",
+      "domain": "耳机",
+      "original_verdict": "0"
+    },
+    {
+      "rid": "R55",
+      "source": "answer_sheet_recheck.md",
+      "source_id": "A24",
+      "domain": "耳机",
+      "original_verdict": "1"
+    },
+    {
+      "rid": "R56",
+      "source": "answer_sheet_recheck.md",
+      "source_id": "A17",
+      "domain": "耳机",
+      "original_verdict": "1"
+    },
+    {
+      "rid": "R57",
+      "source": "answer_sheet_xcat_accept.md",
+      "source_id": "A33",
+      "domain": "音箱",
+      "original_verdict": "1"
+    },
+    {
+      "rid": "R58",
+      "source": "answer_sheet_xcat_accept.md",
+      "source_id": "A16",
+      "domain": "音箱",
+      "original_verdict": "1"
+    },
+    {
+      "rid": "R59",
+      "source": "answer_sheet_p0_accept.md",
+      "source_id": "B05",
+      "domain": "耳机",
+      "original_verdict": "0"
+    },
+    {
+      "rid": "R60",
+      "source": "answer_sheet_xcat_accept.md",
+      "source_id": "B21",
+      "domain": "音箱",
+      "original_verdict": "0"
+    },
+    {
+      "rid": "R61",
+      "source": "answer_sheet_xcat_accept.md",
+      "source_id": "A34",
+      "domain": "音箱",
+      "original_verdict": "1"
+    },
+    {
+      "rid": "R62",
+      "source": "answer_sheet_xcat_accept.md",
+      "source_id": "A09",
+      "domain": "音箱",
+      "original_verdict": "1"
+    },
+    {
+      "rid": "R63",
+      "source": "answer_sheet_recheck.md",
+      "source_id": "B04",
+      "domain": "耳机",
+      "original_verdict": "0"
+    },
+    {
+      "rid": "R64",
+      "source": "answer_sheet_recheck.md",
+      "source_id": "A48",
+      "domain": "耳机",
+      "original_verdict": "1"
+    },
+    {
+      "rid": "R65",
+      "source": "answer_sheet_recheck.md",
+      "source_id": "A25",
+      "domain": "耳机",
+      "original_verdict": "1"
+    },
+    {
+      "rid": "R66",
+      "source": "answer_sheet_recheck.md",
+      "source_id": "B32",
+      "domain": "耳机",
+      "original_verdict": "0"
+    },
+    {
+      "rid": "R67",
+      "source": "answer_sheet_recheck.md",
+      "source_id": "A49",
+      "domain": "耳机",
+      "original_verdict": "1"
+    },
+    {
+      "rid": "R68",
+      "source": "answer_sheet_xcat_accept.md",
+      "source_id": "A37",
+      "domain": "音箱",
+      "original_verdict": "0"
+    },
+    {
+      "rid": "R69",
+      "source": "answer_sheet_recheck.md",
+      "source_id": "B13",
+      "domain": "耳机",
+      "original_verdict": "0"
+    },
+    {
+      "rid": "R70",
+      "source": "answer_sheet_recheck.md",
+      "source_id": "A27",
+      "domain": "耳机",
+      "original_verdict": "1"
+    },
+    {
+      "rid": "R71",
+      "source": "answer_sheet_recheck.md",
+      "source_id": "A47",
+      "domain": "耳机",
+      "original_verdict": "1"
+    },
+    {
+      "rid": "R72",
+      "source": "answer_sheet_recheck.md",
+      "source_id": "A32",
+      "domain": "耳机",
+      "original_verdict": "1"
+    },
+    {
+      "rid": "R73",
+      "source": "answer_sheet_xcat_accept.md",
+      "source_id": "A23",
+      "domain": "音箱",
+      "original_verdict": "1"
+    },
+    {
+      "rid": "R74",
+      "source": "answer_sheet_xcat_accept.md",
+      "source_id": "A27",
+      "domain": "音箱",
+      "original_verdict": "1"
+    },
+    {
+      "rid": "R75",
+      "source": "answer_sheet_recheck.md",
+      "source_id": "A12",
+      "domain": "耳机",
+      "original_verdict": "1"
+    },
+    {
+      "rid": "R76",
+      "source": "answer_sheet_recheck.md",
+      "source_id": "A39",
+      "domain": "耳机",
+      "original_verdict": "1"
+    },
+    {
+      "rid": "R77",
+      "source": "answer_sheet_p0_accept.md",
+      "source_id": "B40",
+      "domain": "耳机",
+      "original_verdict": "0"
+    },
+    {
+      "rid": "R78",
+      "source": "answer_sheet_p0_accept.md",
+      "source_id": "B24",
+      "domain": "耳机",
+      "original_verdict": "0"
+    },
+    {
+      "rid": "R79",
+      "source": "answer_sheet_recheck.md",
+      "source_id": "A34",
+      "domain": "耳机",
+      "original_verdict": "1"
+    },
+    {
+      "rid": "R80",
+      "source": "answer_sheet_p0_accept.md",
+      "source_id": "A33",
+      "domain": "耳机",
+      "original_verdict": "1"
+    },
+    {
+      "rid": "R81",
+      "source": "answer_sheet_recheck.md",
+      "source_id": "B31",
+      "domain": "耳机",
+      "original_verdict": "0"
+    },
+    {
+      "rid": "R82",
+      "source": "answer_sheet_recheck.md",
+      "source_id": "A44",
+      "domain": "耳机",
+      "original_verdict": "0"
+    },
+    {
+      "rid": "R83",
+      "source": "answer_sheet_recheck.md",
+      "source_id": "B46",
+      "domain": "耳机",
+      "original_verdict": "0"
+    },
+    {
+      "rid": "R84",
+      "source": "answer_sheet_p0_accept.md",
+      "source_id": "A37",
+      "domain": "耳机",
+      "original_verdict": "1"
+    },
+    {
+      "rid": "R85",
+      "source": "answer_sheet_p0_accept.md",
+      "source_id": "A43",
+      "domain": "耳机",
+      "original_verdict": "1"
+    },
+    {
+      "rid": "R86",
+      "source": "answer_sheet_recheck.md",
+      "source_id": "A15",
+      "domain": "耳机",
+      "original_verdict": "1"
+    },
+    {
+      "rid": "R87",
+      "source": "answer_sheet_p0_accept.md",
+      "source_id": "A14",
+      "domain": "耳机",
+      "original_verdict": "1"
+    },
+    {
+      "rid": "R88",
+      "source": "answer_sheet_xcat_accept.md",
+      "source_id": "B20",
+      "domain": "音箱",
+      "original_verdict": "0"
+    },
+    {
+      "rid": "R89",
+      "source": "answer_sheet_xcat_accept.md",
+      "source_id": "B32",
+      "domain": "音箱",
+      "original_verdict": "0"
+    },
+    {
+      "rid": "R90",
+      "source": "answer_sheet_p0_accept.md",
+      "source_id": "B16",
+      "domain": "耳机",
+      "original_verdict": "0"
+    },
+    {
+      "rid": "R91",
+      "source": "answer_sheet_recheck.md",
+      "source_id": "A26",
+      "domain": "耳机",
+      "original_verdict": "1"
+    },
+    {
+      "rid": "R92",
+      "source": "answer_sheet_recheck.md",
+      "source_id": "B48",
+      "domain": "耳机",
+      "original_verdict": "0"
+    },
+    {
+      "rid": "R93",
+      "source": "answer_sheet_recheck.md",
+      "source_id": "B06",
+      "domain": "耳机",
+      "original_verdict": "0"
+    },
+    {
+      "rid": "R94",
+      "source": "answer_sheet_xcat_accept.md",
+      "source_id": "A41",
+      "domain": "音箱",
+      "original_verdict": "1"
+    },
+    {
+      "rid": "R95",
+      "source": "answer_sheet_p0_accept.md",
+      "source_id": "B46",
+      "domain": "耳机",
+      "original_verdict": "0"
+    },
+    {
+      "rid": "R96",
+      "source": "answer_sheet_xcat_accept.md",
+      "source_id": "A02",
+      "domain": "音箱",
+      "original_verdict": "1"
+    },
+    {
+      "rid": "R97",
+      "source": "answer_sheet_p0_accept.md",
+      "source_id": "A36",
+      "domain": "耳机",
+      "original_verdict": "1"
+    },
+    {
+      "rid": "R98",
+      "source": "answer_sheet_recheck.md",
+      "source_id": "B39",
+      "domain": "耳机",
+      "original_verdict": "0"
+    },
+    {
+      "rid": "R99",
+      "source": "answer_sheet_xcat_accept.md",
+      "source_id": "A32",
+      "domain": "音箱",
+      "original_verdict": "1"
+    },
+    {
+      "rid": "R100",
+      "source": "answer_sheet_p0_accept.md",
+      "source_id": "B38",
+      "domain": "耳机",
+      "original_verdict": "0"
+    }
+  ],
+  "purpose": "intra-rater reliability（单标注者条件下的重测一致性）",
+  "warning": "本文件含原判定，评分用；不得进入给判定者看的卡片"
+}

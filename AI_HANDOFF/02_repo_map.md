@@ -1,6 +1,6 @@
 # 文件地图（由 make_ai_handoff.py 自动生成，勿手改）
 
-> 生成时间：2026-10-14 19:18；共 737 个条目；体积单位 KB/MB。
+> 生成时间：2026-10-14 19:38；共 745 个条目；体积单位 KB/MB。
 
 ## 提交物（5 项，44.3 MB）
 
@@ -62,7 +62,7 @@
 | `confidence_tiered.md` | 0.7 KB | 三星补漏置信度分层与中置信剔除记录 |
 | `significance_test.md` | 0.6 KB | Welch t 检验（p=0.000932） |
 
-## 过程与交接文档（144 项，4.6 MB）
+## 过程与交接文档（148 项，4.8 MB）
 
 | 文件 | 大小 | 用途 |
 |---|---|---|
@@ -78,6 +78,8 @@
 | `docs/gold_set/p0_accept.csv` | 131.1 KB |  |
 | `docs/gold_set/recheck.csv` | 127.2 KB |  |
 | `docs/gold_set/answer_sheet_clean_alerts.md` | 116.1 KB |  |
+| `docs/gold_set/answer_sheet_retest.md` | 108.1 KB |  |
+| `docs/gold_set/retest.csv` | 100.7 KB |  |
 | `docs/gold_set/answer_sheet_s1_add100.md` | 94.6 KB |  |
 | `docs/gold_set/s1_add100.csv` | 83.3 KB |  |
 | `docs/gold_set/clean_alerts.csv` | 82.8 KB |  |
@@ -96,8 +98,8 @@
 | `docs/gold_set/s5_clean_probe.csv` | 43.6 KB |  |
 | `docs/gold_set/xcat_mini.csv` | 40.9 KB |  |
 | `docs/final_project_review_and_execution_plan.md` | 36.3 KB |  |
+| `docs/demo_uptime_log.md` | 27.9 KB |  |
 | `docs/retrospective_and_reflection.md` | 27.9 KB |  |
-| `docs/demo_uptime_log.md` | 27.6 KB |  |
 | `docs/gold_set/answer_sheet_s5_control.md` | 25.1 KB |  |
 | `docs/three_stage_comparison.md` | 21.9 KB |  |
 | `docs/project_full_record.md` | 21.6 KB | 初赛→复赛全流程记录 |
@@ -132,6 +134,7 @@
 | `docs/process_review_d10.md` | 8.5 KB |  |
 | `docs/bus/round-03/dsh-audit-request.md` | 8.5 KB |  |
 | `docs/legacy_materials_notice.md` | 8.3 KB |  |
+| `docs/thesis/01_标注手册.md` | 8.2 KB |  |
 | `docs/N2_narrative_final.md` | 8.1 KB |  |
 | `docs/decision_queue.md` | 8.1 KB |  |
 | `docs/N1_narrative_mainline.md` | 8.0 KB |  |
@@ -142,6 +145,7 @@
 | `docs/gold_set/JUDGING.md` | 7.1 KB |  |
 | `docs/N1b_downgrade_narrative.md` | 7.0 KB |  |
 | `docs/bus/round-04/dsh-audit-request.md` | 6.9 KB |  |
+| `docs/thesis/00_选题与实验草案.md` | 6.7 KB |  |
 | `docs/taxonomy_three_paths.md` | 6.6 KB |  |
 | `docs/external_sources_register.md` | 6.5 KB |  |
 | `docs/TECH_FREEZE.md` | 6.4 KB |  |
@@ -347,7 +351,7 @@
 | `_coldstart_test/sample_reviews_100.csv` | 37.9 KB |  |
 | `agent_test_input.csv` | 27.9 KB |  |
 
-## 代码（242 项，1.3 MB）
+## 代码（245 项，1.3 MB）
 
 | 文件 | 大小 | 用途 |
 |---|---|---|
@@ -424,6 +428,7 @@
 | `make_xcat_mini.py` | 6.7 KB |  |
 | `diagnose_treble.py` | 6.6 KB |  |
 | `fetch_electronics.py` | 6.5 KB |  |
+| `make_retest_card.py` | 6.5 KB |  |
 | `xcat_freeze.py` | 6.5 KB |  |
 | `make_xcat_accept.py` | 6.4 KB |  |
 | `v3liteb_train.py` | 6.4 KB |  |
@@ -461,6 +466,7 @@
 | `make_video_assets.py` | 4.6 KB |  |
 | `fix_clean_alerts_notes.py` | 4.5 KB |  |
 | `v2_record_incident.py` | 4.5 KB |  |
+| `score_retest.py` | 4.5 KB |  |
 | `make_samples.py` | 4.4 KB |  |
 | `score_clean_alerts.py` | 4.4 KB |  |
 | `make_samples_headphone.py` | 4.4 KB |  |
@@ -564,6 +570,7 @@
 | `_coldstart_test/install.bat` | 1.7 KB |  |
 | `mask_history_secrets.py` | 1.6 KB |  |
 | `prep_quick_split.py` | 1.6 KB |  |
+| `fix_leakcheck.py` | 1.6 KB |  |
 | `config.json` | 1.5 KB |  |
 | `_coldstart_test/config.json` | 1.5 KB |  |
 | `v2_hybrid_selftest.py` | 1.5 KB |  |
@@ -661,7 +668,7 @@
 | `multi_label_model/` | 256.1 MB | 冻结的多标签归因模型权重（约 256MB），不入 git |
 | `sound_model/` | 256.1 MB | 冻结的二分类模型权重（约 256MB），不入 git |
 
-## 其他（153 项，57.9 MB）
+## 其他（154 项，58.0 MB）
 
 | 文件 | 大小 | 用途 |
 |---|---|---|
@@ -689,6 +696,7 @@
 | `v2/s5_notes.jsonl` | 31.2 KB |  |
 | `v2/realworld_eval.json` | 31.0 KB |  |
 | `v2/attribution_notes.jsonl` | 26.9 KB |  |
+| `v2/retest_ids.json` | 16.5 KB |  |
 | `v2/s6_preregistration.json` | 10.6 KB |  |
 | `v2/w4_estimate.json` | 9.4 KB |  |
 | `v2/s2_membership.json` | 8.3 KB |  |
