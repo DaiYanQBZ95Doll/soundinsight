@@ -1,0 +1,8 @@
+{
+  "T": 1.85,
+  "val_nll_before": 0.1415,
+  "test_ece_before": 0.0448,
+  "test_ece_after": 0.0203,
+  "test_brier_before": 0.0506,
+  "test_brier_after": 0.0454
+}

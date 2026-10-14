@@ -1,6 +1,6 @@
 # 文件地图（由 make_ai_handoff.py 自动生成，勿手改）
 
-> 生成时间：2026-10-14 20:44；共 763 个条目；体积单位 KB/MB。
+> 生成时间：2026-10-14 21:19；共 774 个条目；体积单位 KB/MB。
 
 ## 提交物（5 项，44.3 MB）
 
@@ -98,7 +98,7 @@
 | `docs/gold_set/s5_clean_probe.csv` | 43.6 KB |  |
 | `docs/gold_set/xcat_mini.csv` | 40.9 KB |  |
 | `docs/final_project_review_and_execution_plan.md` | 36.3 KB |  |
-| `docs/demo_uptime_log.md` | 28.4 KB |  |
+| `docs/demo_uptime_log.md` | 28.7 KB |  |
 | `docs/retrospective_and_reflection.md` | 27.9 KB |  |
 | `docs/gold_set/answer_sheet_s5_control.md` | 25.1 KB |  |
 | `docs/three_stage_comparison.md` | 21.9 KB |  |
@@ -126,6 +126,7 @@
 | `docs/pre_lock_completeness_audit.md` | 10.4 KB |  |
 | `docs/progress_report_current.md` | 10.4 KB |  |
 | `docs/bus/round-01/kimi.md` | 10.3 KB |  |
+| `docs/thesis/02_实验方案.md` | 10.2 KB |  |
 | `docs/opinion_dsh_joint_review.md` | 9.5 KB |  |
 | `docs/completion_statement_for_redteam.md` | 9.4 KB |  |
 | `docs/completeness_audit_round2.md` | 9.3 KB |  |
@@ -136,7 +137,6 @@
 | `docs/legacy_materials_notice.md` | 8.3 KB |  |
 | `docs/thesis/01_标注手册.md` | 8.2 KB |  |
 | `docs/N2_narrative_final.md` | 8.1 KB |  |
-| `docs/thesis/02_实验方案.md` | 8.1 KB |  |
 | `docs/decision_queue.md` | 8.1 KB |  |
 | `docs/N1_narrative_mainline.md` | 8.0 KB |  |
 | `docs/w17_failure_cases.md` | 7.9 KB |  |
@@ -213,9 +213,9 @@
 | `docs/bus/availability.json` | 1.1 KB |  |
 | `docs/coldstart_test.md` | 0.9 KB |  |
 | `docs/gold_set/human_rulings_qwen.md` | 0.9 KB |  |
+| `docs/thesis/tables/exp_results.md` | 0.8 KB |  |
 | `docs/checklist_version.json` | 0.8 KB |  |
 | `docs/year_split_output.txt` | 0.8 KB | 年份分桶脚本输出原文 |
-| `docs/thesis/tables/exp_results.md` | 0.7 KB |  |
 
 ## 演示材料（6 项，18.1 MB）
 
@@ -353,7 +353,7 @@
 | `_coldstart_test/sample_reviews_100.csv` | 37.9 KB |  |
 | `agent_test_input.csv` | 27.9 KB |  |
 
-## 代码（252 项，1.3 MB）
+## 代码（256 项，1.3 MB）
 
 | 文件 | 大小 | 用途 |
 |---|---|---|
@@ -421,6 +421,7 @@
 | `v3lite_train.py` | 7.2 KB |  |
 | `train_discriminator.py` | 7.2 KB |  |
 | `realworld_eval.py` | 7.1 KB |  |
+| `exp_m_main.py` | 7.0 KB |  |
 | `make_gold_set.py` | 7.0 KB |  |
 | `v2_w6_split.py` | 7.0 KB |  |
 | `make_recheck_sheet.py` | 7.0 KB |  |
@@ -436,9 +437,11 @@
 | `make_xcat_accept.py` | 6.4 KB |  |
 | `v3liteb_train.py` | 6.4 KB |  |
 | `coldstart_test.py` | 6.4 KB |  |
+| `exp_a1_a5.py` | 6.3 KB |  |
 | `v2_w4_estimate.py` | 6.3 KB |  |
 | `cross_model_review.py` | 6.3 KB |  |
 | `p1_label_corpus.py` | 6.3 KB |  |
+| `exp_cv.py` | 6.2 KB |  |
 | `difficulty_stratification.py` | 6.1 KB |  |
 | `recover_meta_fields.py` | 6.0 KB |  |
 | `v2_w1_hybrid_select.py` | 6.0 KB |  |
@@ -607,6 +610,7 @@
 | `exp09_ablation_C/config.json` | 0.5 KB |  |
 | `exp07_ablation_A/config.json` | 0.5 KB |  |
 | `打包提交包.bat` | 0.4 KB | 双击执行最终打包与自检 |
+| `v2/exp_mhard_config.json` | 0.3 KB |  |
 | `v2/exp_b2svc_config.json` | 0.1 KB |  |
 | `v2/exp_b2lr_config.json` | 0.1 KB |  |
 
@@ -677,7 +681,7 @@
 | `multi_label_model/` | 256.1 MB | 冻结的多标签归因模型权重（约 256MB），不入 git |
 | `sound_model/` | 256.1 MB | 冻结的二分类模型权重（约 256MB），不入 git |
 
-## 其他（163 项，58.9 MB）
+## 其他（170 项，59.4 MB）
 
 | 文件 | 大小 | 用途 |
 |---|---|---|
@@ -687,6 +691,7 @@
 | `v2/thesis_split.json` | 814.8 KB |  |
 | `v2/scope_rows.jsonl` | 664.8 KB |  |
 | `v2/p0_val_notes.jsonl` | 403.6 KB |  |
+| `v2/cv_b2_oof.json` | 367.4 KB |  |
 | `v2/review_treble.jsonl` | 294.2 KB |  |
 | `v2/gold_set_notes.jsonl` | 245.0 KB |  |
 | `v2/p1_label_sample.json` | 232.7 KB |  |
@@ -701,6 +706,8 @@
 | `v2/s1_add100_notes.jsonl` | 53.5 KB |  |
 | `更新世界的锋芒_SoundInsight_决赛入围定稿作品.docx` | 49.7 KB |  |
 | `v2/gold_set_key.json` | 39.3 KB |  |
+| `v2/exp_mhard_test.json` | 39.1 KB |  |
+| `v2/exp_mhard_val.json` | 39.0 KB |  |
 | `v2/exp_b2svc_test.json` | 37.4 KB |  |
 | `v2/exp_b2svc_val.json` | 37.3 KB |  |
 | `v2/exp_b2lr_test.json` | 36.8 KB |  |
@@ -801,6 +808,7 @@
 | `v2/xcat_speaker_eval.json` | 0.6 KB |  |
 | `v2/xcat_mini_scored.json` | 0.6 KB |  |
 | `v2/xcat_by_category.json` | 0.5 KB |  |
+| `v2/exp_mhard_test_metrics.json` | 0.5 KB |  |
 | `v2/v3lite_assertion.json` | 0.5 KB |  |
 | `difficulty_stratification.json` | 0.5 KB |  |
 | `v2/exp_b1_test_metrics.json` | 0.5 KB |  |
@@ -809,6 +817,7 @@
 | `v2/xcat_accept_scored.json` | 0.4 KB |  |
 | `per_class_thresholds_probe.json` | 0.4 KB |  |
 | `v2/exp_undersample.json` | 0.4 KB |  |
+| `v2/exp_a1_gate.json` | 0.4 KB |  |
 | `w11_data_efficiency.json` | 0.4 KB |  |
 | `v2/vocab_test_scored.json` | 0.4 KB |  |
 | `v2/disc_manifest.json` | 0.3 KB |  |
@@ -832,7 +841,9 @@
 | `v2/clean_alert_rate.json` | 0.2 KB |  |
 | `v2/review_longtext_summary.json` | 0.2 KB |  |
 | `v2/review_s6_summary.json` | 0.2 KB |  |
+| `v2/cv_b2_summary.json` | 0.2 KB |  |
 | `v2/pipeline_summary.json` | 0.2 KB |  |
+| `v2/exp_a5_calibration.json` | 0.2 KB |  |
 | `v2/p1_labels_summary.json` | 0.2 KB |  |
 | `v2/v3lite_split_manifest.json` | 0.1 KB |  |
 | `v2/kimi_x25_recheck.json` | 0.1 KB |  |

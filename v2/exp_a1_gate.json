@@ -1,0 +1,11 @@
+{
+  "gate_out_n": 87071,
+  "gate_out_pos": 0,
+  "gate_in_pos": 1280,
+  "sample_out_n": 2000,
+  "fire_rate_out": 0.0015,
+  "fp_out_est_scaled": 130.6,
+  "precision_with_gate": 0.686,
+  "precision_without_gate": 0.3299,
+  "note": "闸门外正例数为 0（实测：全部 1,280 个 LLM 正例都在闸门内），故闸门外触发全为 FP；外推按闸门外样本的真实比例缩放"
+}
