@@ -1,6 +1,6 @@
 # 文件地图（由 make_ai_handoff.py 自动生成，勿手改）
 
-> 生成时间：2026-10-14 21:19；共 774 个条目；体积单位 KB/MB。
+> 生成时间：2026-10-14 21:31；共 778 个条目；体积单位 KB/MB。
 
 ## 提交物（5 项，44.3 MB）
 
@@ -98,7 +98,7 @@
 | `docs/gold_set/s5_clean_probe.csv` | 43.6 KB |  |
 | `docs/gold_set/xcat_mini.csv` | 40.9 KB |  |
 | `docs/final_project_review_and_execution_plan.md` | 36.3 KB |  |
-| `docs/demo_uptime_log.md` | 28.7 KB |  |
+| `docs/demo_uptime_log.md` | 29.0 KB |  |
 | `docs/retrospective_and_reflection.md` | 27.9 KB |  |
 | `docs/gold_set/answer_sheet_s5_control.md` | 25.1 KB |  |
 | `docs/three_stage_comparison.md` | 21.9 KB |  |
@@ -122,11 +122,11 @@
 | `PROJECT_BRIEF_QWEN.md` | 11.6 KB |  |
 | `docs/N_line_handoff_protocol.md` | 11.2 KB |  |
 | `docs/finals_stage.md` | 11.0 KB |  |
+| `docs/thesis/02_实验方案.md` | 10.5 KB |  |
 | `docs/decision_request_v15_and_nline.md` | 10.4 KB |  |
 | `docs/pre_lock_completeness_audit.md` | 10.4 KB |  |
 | `docs/progress_report_current.md` | 10.4 KB |  |
 | `docs/bus/round-01/kimi.md` | 10.3 KB |  |
-| `docs/thesis/02_实验方案.md` | 10.2 KB |  |
 | `docs/opinion_dsh_joint_review.md` | 9.5 KB |  |
 | `docs/completion_statement_for_redteam.md` | 9.4 KB |  |
 | `docs/completeness_audit_round2.md` | 9.3 KB |  |
@@ -211,9 +211,9 @@
 | `docs/bus/TEMPLATE.md` | 1.2 KB |  |
 | `docs/gold_set/human_rulings_kimi.md` | 1.2 KB |  |
 | `docs/bus/availability.json` | 1.1 KB |  |
+| `docs/thesis/tables/exp_results.md` | 1.0 KB |  |
 | `docs/coldstart_test.md` | 0.9 KB |  |
 | `docs/gold_set/human_rulings_qwen.md` | 0.9 KB |  |
-| `docs/thesis/tables/exp_results.md` | 0.8 KB |  |
 | `docs/checklist_version.json` | 0.8 KB |  |
 | `docs/year_split_output.txt` | 0.8 KB | 年份分桶脚本输出原文 |
 
@@ -353,7 +353,7 @@
 | `_coldstart_test/sample_reviews_100.csv` | 37.9 KB |  |
 | `agent_test_input.csv` | 27.9 KB |  |
 
-## 代码（256 项，1.3 MB）
+## 代码（257 项，1.3 MB）
 
 | 文件 | 大小 | 用途 |
 |---|---|---|
@@ -611,6 +611,7 @@
 | `exp07_ablation_A/config.json` | 0.5 KB |  |
 | `打包提交包.bat` | 0.4 KB | 双击执行最终打包与自检 |
 | `v2/exp_mhard_config.json` | 0.3 KB |  |
+| `v2/exp_mbase_config.json` | 0.3 KB |  |
 | `v2/exp_b2svc_config.json` | 0.1 KB |  |
 | `v2/exp_b2lr_config.json` | 0.1 KB |  |
 
@@ -681,7 +682,7 @@
 | `multi_label_model/` | 256.1 MB | 冻结的多标签归因模型权重（约 256MB），不入 git |
 | `sound_model/` | 256.1 MB | 冻结的二分类模型权重（约 256MB），不入 git |
 
-## 其他（170 项，59.4 MB）
+## 其他（173 项，59.4 MB）
 
 | 文件 | 大小 | 用途 |
 |---|---|---|
@@ -708,6 +709,8 @@
 | `v2/gold_set_key.json` | 39.3 KB |  |
 | `v2/exp_mhard_test.json` | 39.1 KB |  |
 | `v2/exp_mhard_val.json` | 39.0 KB |  |
+| `v2/exp_mbase_test.json` | 38.6 KB |  |
+| `v2/exp_mbase_val.json` | 38.6 KB |  |
 | `v2/exp_b2svc_test.json` | 37.4 KB |  |
 | `v2/exp_b2svc_val.json` | 37.3 KB |  |
 | `v2/exp_b2lr_test.json` | 36.8 KB |  |
@@ -810,6 +813,7 @@
 | `v2/xcat_by_category.json` | 0.5 KB |  |
 | `v2/exp_mhard_test_metrics.json` | 0.5 KB |  |
 | `v2/v3lite_assertion.json` | 0.5 KB |  |
+| `v2/exp_mbase_test_metrics.json` | 0.5 KB |  |
 | `difficulty_stratification.json` | 0.5 KB |  |
 | `v2/exp_b1_test_metrics.json` | 0.5 KB |  |
 | `v2/exp_b2lr_test_metrics.json` | 0.5 KB |  |
