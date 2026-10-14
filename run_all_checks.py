@@ -23,6 +23,7 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 
 STEPS_FULL = [
     ("依赖前置检查（环境问题一句话定位）", ["check_deps.py"]),
+    ("外部契合度（审题卡：输出目标/形态/范围是否对得上）", ["check_brief_alignment.py"]),
     ("数字审计（项数见报告头部）", ["check_doc_numbers.py"]),
     ("审计负向自测", ["test_audit_checks.py"]),
     ("断链 + 依赖声明", ["check_refs_and_deps.py"]),

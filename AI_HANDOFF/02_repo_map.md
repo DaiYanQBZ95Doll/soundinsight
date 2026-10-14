@@ -1,6 +1,6 @@
 # 文件地图（由 make_ai_handoff.py 自动生成，勿手改）
 
-> 生成时间：2026-10-07 21:25；共 733 个条目；体积单位 KB/MB。
+> 生成时间：2026-10-14 19:18；共 737 个条目；体积单位 KB/MB。
 
 ## 提交物（5 项，44.3 MB）
 
@@ -62,7 +62,7 @@
 | `confidence_tiered.md` | 0.7 KB | 三星补漏置信度分层与中置信剔除记录 |
 | `significance_test.md` | 0.6 KB | Welch t 检验（p=0.000932） |
 
-## 过程与交接文档（142 项，4.6 MB）
+## 过程与交接文档（144 项，4.6 MB）
 
 | 文件 | 大小 | 用途 |
 |---|---|---|
@@ -97,7 +97,7 @@
 | `docs/gold_set/xcat_mini.csv` | 40.9 KB |  |
 | `docs/final_project_review_and_execution_plan.md` | 36.3 KB |  |
 | `docs/retrospective_and_reflection.md` | 27.9 KB |  |
-| `docs/demo_uptime_log.md` | 27.4 KB |  |
+| `docs/demo_uptime_log.md` | 27.6 KB |  |
 | `docs/gold_set/answer_sheet_s5_control.md` | 25.1 KB |  |
 | `docs/three_stage_comparison.md` | 21.9 KB |  |
 | `docs/project_full_record.md` | 21.6 KB | 初赛→复赛全流程记录 |
@@ -128,6 +128,7 @@
 | `docs/completion_statement_for_redteam.md` | 9.4 KB |  |
 | `docs/completeness_audit_round2.md` | 9.3 KB |  |
 | `QWEN_HANDOFF.md` | 9.1 KB |  |
+| `docs/POSTMORTEM.md` | 8.8 KB |  |
 | `docs/process_review_d10.md` | 8.5 KB |  |
 | `docs/bus/round-03/dsh-audit-request.md` | 8.5 KB |  |
 | `docs/legacy_materials_notice.md` | 8.3 KB |  |
@@ -189,6 +190,7 @@
 | `AI_INDUCTION_REDLINE.md` | 2.7 KB |  |
 | `docs/p1_preregistration.md` | 2.7 KB |  |
 | `docs/ppt_claims_erratum.md` | 2.6 KB |  |
+| `docs/BRIEF_ALIGNMENT.md` | 2.6 KB |  |
 | `docs/gold_set/bias_probe_design.md` | 2.6 KB |  |
 | `docs/bus/round-03/dsh-response.md` | 2.4 KB |  |
 | `docs/W5_cv_interpretation.md` | 2.2 KB |  |
@@ -345,7 +347,7 @@
 | `_coldstart_test/sample_reviews_100.csv` | 37.9 KB |  |
 | `agent_test_input.csv` | 27.9 KB |  |
 
-## 代码（241 项，1.3 MB）
+## 代码（242 项，1.3 MB）
 
 | 文件 | 大小 | 用途 |
 |---|---|---|
@@ -375,9 +377,9 @@
 | `soundinsight_agent.py` | 10.1 KB | 一键洞察 Agent（md/excel、zh/en、非英文跳过） |
 | `_coldstart_test/soundinsight_agent.py` | 10.1 KB |  |
 | `push_daily.py` | 9.7 KB |  |
+| `run_all_checks.py` | 9.4 KB |  |
 | `s2_membership.py` | 9.4 KB |  |
 | `build_submission.py` | 9.3 KB |  |
-| `run_all_checks.py` | 9.3 KB |  |
 | `v2_w2_perclass.py` | 9.1 KB |  |
 | `review_pool.py` | 9.1 KB |  |
 | `outside_gate_fp.py` | 8.9 KB |  |
@@ -470,6 +472,7 @@
 | `retime_srt.py` | 4.2 KB |  |
 | `score_recheck_full.py` | 4.1 KB |  |
 | `check_external_deps.py` | 4.1 KB |  |
+| `check_brief_alignment.py` | 4.1 KB |  |
 | `score_vocab_test.py` | 4.1 KB |  |
 | `tune_per_class_threshold.py` | 4.0 KB |  |
 | `check_docx_build.py` | 4.0 KB |  |
@@ -610,10 +613,11 @@
 | `deployment/config.json` | 0.2 KB |  |
 | `_coldstart_test/deployment/config.json` | 0.2 KB |  |
 
-## 历史材料·初赛（9 项，2.2 MB）
+## 历史材料·初赛（10 项，2.8 MB）
 
 | 文件 | 大小 | 用途 |
 |---|---|---|
+| `SoundInsight_创意方案/微信图片_20261014191701.png` | 642.7 KB |  |
 | `SoundInsight_创意方案/SoundInsight_创意方案.pdf` | 415.2 KB |  |
 | `SoundInsight_创意方案.zip` | 361.1 KB |  |
 | `SoundInsight_创意方案_v3.pdf` | 351.9 KB |  |
