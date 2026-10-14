@@ -1,6 +1,6 @@
 # 文件地图（由 make_ai_handoff.py 自动生成，勿手改）
 
-> 生成时间：2026-10-14 19:38；共 745 个条目；体积单位 KB/MB。
+> 生成时间：2026-10-14 19:54；共 746 个条目；体积单位 KB/MB。
 
 ## 提交物（5 项，44.3 MB）
 
@@ -62,7 +62,7 @@
 | `confidence_tiered.md` | 0.7 KB | 三星补漏置信度分层与中置信剔除记录 |
 | `significance_test.md` | 0.6 KB | Welch t 检验（p=0.000932） |
 
-## 过程与交接文档（148 项，4.8 MB）
+## 过程与交接文档（149 项，4.9 MB）
 
 | 文件 | 大小 | 用途 |
 |---|---|---|
@@ -98,7 +98,7 @@
 | `docs/gold_set/s5_clean_probe.csv` | 43.6 KB |  |
 | `docs/gold_set/xcat_mini.csv` | 40.9 KB |  |
 | `docs/final_project_review_and_execution_plan.md` | 36.3 KB |  |
-| `docs/demo_uptime_log.md` | 27.9 KB |  |
+| `docs/demo_uptime_log.md` | 28.2 KB |  |
 | `docs/retrospective_and_reflection.md` | 27.9 KB |  |
 | `docs/gold_set/answer_sheet_s5_control.md` | 25.1 KB |  |
 | `docs/three_stage_comparison.md` | 21.9 KB |  |
@@ -157,6 +157,7 @@
 | `docs/split_manifest.md` | 6.1 KB |  |
 | `docs/bus/INDEX.md` | 5.9 KB |  |
 | `docs/scoped_findings.md` | 5.9 KB |  |
+| `docs/thesis/02_实验方案.md` | 5.9 KB |  |
 | `docs/bus/round-02/dsh.md` | 5.6 KB |  |
 | `docs/PAUSE_SNAPSHOT.md` | 5.2 KB |  |
 | `docs/llm_credential_status.md` | 5.0 KB |  |
