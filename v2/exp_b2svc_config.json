@@ -1,0 +1,6 @@
+{
+  "model": "tfidf+svc",
+  "val_best_thr": 0.3,
+  "val_best_f1": 0.5944,
+  "dim": 123903
+}

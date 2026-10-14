@@ -1,0 +1,6 @@
+{
+  "model": "tfidf+lr",
+  "val_best_thr": 0.4,
+  "val_best_f1": 0.6007,
+  "dim": 123903
+}
